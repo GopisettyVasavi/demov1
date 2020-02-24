@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Profile Parser</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <h1>Profile Parser Login</h1>        
+
+        <form class="form-horizontal" id="login-form">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Username</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="username"/>
+                </div>
+            </div>
+
+			<div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="password"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" id="bth-login"
+                            class="btn btn-primary btn-lg" onclick="clickonlogin()">Login
+                    </button>
+                </div>
+            </div>
+        </form>
+
+	<div id="feedback"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+function clickonlogin(){
+	  event.preventDefault();
+
+    var loginForm = {}
+    loginForm["username"] = $("#username").val();
+    loginForm["password"] = $("#password").val();
+
+    $("#btn-login").prop("disabled", true);
+    
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/login",
+        data: JSON.stringify(loginForm),
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+        	
+           
+            window.location='/fileupload'
+
+        },
+        error: function (e) {
+        	
+
+            var json = "<h4>Response Error: Incorrect credentials.</h4><pre>"
+                + e.responseText + "</pre>";
+            $('#feedback').html(json);
+
+            console.log("ERROR : ", e);
+            $("#btn-login").prop("disabled", false);
+
+        }
+    });
+    
+}</script>
+
+</body>
+</html>

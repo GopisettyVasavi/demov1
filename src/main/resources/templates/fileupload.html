@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Profile Parser - Create Profile</title>
+    
+</head>
+<body>
+<!--  <script src="/js/main.js" ></script>
+ <script src="/js/idle_timeout.js" ></script> -->
+
+<h1>File upload </h1>
+<div>
+<form method="POST" action="/upload" enctype="multipart/form-data"  id="singleUploadForm" onsubmit="checkFileSelected(event)">
+    <input type="file" name="file" accept="image/*,.pdf" id="selectFileId" /><br/><br/>
+    <input type="submit" value="Submit" onclick="selectFile()"/>
+    
+
+</form>
+ <form method="post"     id="candidateDetails" >
+  
+   <div>
+   <object th:src="${fileLocation}">
+			<embed th:src="${fileLocation}" height="500px" width="500px"/>
+		</object> 
+	</div>	
+		<div th:switch="${profile}" class="container my-5">
+            <h1>Candidate profile</h1>
+            <div class="col-md-10">
+                <h2 th:case="null">No record found !!</h2>
+                <div th:case="*">
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Candidate Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Skill</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                               <td> <input type="text" id="candidateName" name="candidateName" th:field="${profile.candidateName}"/></td>
+                               <td> <input type="text" id="primaryEmail" name="primaryEmail" th:field="${profile.primaryEmail}"/></td>
+                               <td> <input type="text" id="primaryPhone" name="primaryPhone" th:field="${profile.primaryPhone}"/></td>
+                              <!--  <td> <input type="text" id="skill" name="skill" th:field="${profile.skill}"/></td> -->
+                                
+                             <!--  <td><input type="hidden"  th:attr="name='+ ${profile}'"  id="candidateProfileHidden" /></td> -->
+                                
+                            </tr>
+                            <tr>  <td><input type="submit" value="Save" onclick="createProfile()"/></td></tr>
+                            
+                        </tbody>
+                    </table>
+                    
+                    <div hidden="true">
+  <input type="text" id="skills" name="skills" th:field="${profile.skills}"/>
+  <input type="text" id="education" name="education" th:field="${profile.education}"/>
+  <input type="text" id="certification" name="certification" th:field="${profile.certification}"/>
+   <input type="text" id="profileText" name="profileText" th:field="${profile.profileText}"/>
+    <input type="text" id="secondaryEmail" name="secondaryEmail" th:field="${profile.secondaryEmail}"/>
+     <input type="text" id="candidateId" name="candidateId" th:field="${profile.candidateId}"/>
+      <input type="text" id="secondaryPhone" name="secondaryPhone" th:field="${profile.secondaryPhone}"/>
+       <input type="text" id="visa" name="visa" th:field="${profile.visa}"/>
+        <input type="text" id="currentLocation" name="currentLocation" th:field="${profile.currentLocation}"/>
+         <input type="text" id="availability" name="availability" th:field="${profile.availability}"/>
+          <input type="text" id="summary" name="summary" th:field="${profile.summary}"/>
+         
+         <input type="text" id="workExperience" name="workExperience" th:field="${profile.workExperience}"/>
+  <input type="text" id="reference" name="reference" th:field="${profile.reference}"/>
+  <input type="text" id="title" name="title" th:field="${profile.title}"/>
+   <input type="text" id="awards" name="awards" th:field="${profile.awards}"/>
+    <input type="text" id="gender" name="gender" th:field="${profile.gender}"/>
+     <input type="text" id="dateOfBirth" name="dateOfBirth" th:field="${profile.dateOfBirth}"/>
+      <input type="text" id="socialMediaLink" name="socialMediaLink" th:field="${profile.socialMediaLink}"/>
+       <input type="text" id="nationality" name="nationality" th:field="${profile.nationality}"/>
+        <input type="text" id="version" name="version" th:field="${profile.version}"/>
+         <input type="text" id="filePath" name="filePath" th:field="${profile.filePath}"/>
+         <input type="text" id="additionalNotes" name="additionalNotes" th:field="${profile.additionalNotes}"/>
+  <input type="text" id="assignedToEmployeeId" name="assignedToEmployeeId" th:field="${profile.assignedToEmployeeId}"/>
+  <input type="text" id="assignedToEmployeeName" name="assignedToEmployeeName" th:field="${profile.assignedToEmployeeName}"/>
+   <input type="text" id="employedByRen" name="employedByRen" th:field="${profile.employedByRen}"/>
+    <input type="text" id="assignedDate" name="assignedDate" th:field="${profile.assignedDate}"/>
+     <input type="text" id="organization" name="organization" th:field="${profile.organization}"/>
+      <input type="text" id="designation" name="designation" th:field="${profile.designation}"/>
+       <input type="text" id="workStartDate" name="workStartDate" th:field="${profile.workStartDate}"/>
+        <input type="text" id="workEndDate" name="workEndDate" th:field="${profile.workEndDate}"/>
+         <input type="text" id="lastUpdatedByUser" name="lastUpdatedByUser" th:field="${profile.lastUpdatedByUser}"/>
+  
+  </div>   
+                </div>
+</div>
+</div>
+  
+         
+
+
+
+</form>
+ 
+ 
+
+</div>
+</body>
+
+ <script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<script>
+
+var inactivityTimeOut = 10 * 180000; //30 minutes
+inactivitySessionExpireTimeOut = '';
+
+setSessionExpireTimeOut();
+
+function setSessionExpireTimeOut () {
+'use strict';
+clearSessionExpireTimeout();
+inactivitySessionExpireTimeOut = setTimeout(function() {
+	expireSessionIdleTime();
+}, inactivityTimeOut);
+}
+
+function expireSessionIdleTime () {
+'use strict';
+
+console.log('user inactive for ' + inactivityTimeOut + " seconds");
+console.log('session expired');
+alert('Session has expired. Please login again.');
+clearSessionExpireTimeout();
+//document.location.href = "login.html";
+window.location='/'
+
+}
+
+function clearSessionExpireTimeout () {
+    'use strict';
+
+    clearTimeout(inactivitySessionExpireTimeOut);
+}
+function checkFileSelected(event){
+			
+	var selectedFile=document.getElementById("selectFileId").value;
+	if(null==selectedFile || selectedFile==''){
+		event.preventDefault();
+		alert("Please select a file to upload");
+		return false;
+	}
+	else return true;
+}
+function createProfile() {
+var url = "/createProfile";
+var candidateName=document.getElementById("candidateName").value;
+var primaryEmail=document.getElementById("primaryEmail").value;
+var primaryPhone=document.getElementById("primaryPhone").value;
+alert(candidateName+ ":"+primaryEmail+":"+primaryPhone);
+/*  if(null==candidateName || candidateName=''
+		|| null==primaryEmail || primaryEmail==''
+		|| null==primaryPhone || primaryPhone=='')
+	{
+	alert("Name, Primary Email and Primary contact fields cannot be blank");
+	event.preventDefault();
+	return false;
+	} */
+	event.preventDefault();
+var candidateDto = {}
+candidateDto["candidateName"] = $("#candidateName").val();
+candidateDto["primaryEmail"] = $("#primaryEmail").val();
+candidateDto["primaryPhone"] = $("#primaryPhone").val();
+candidateDto["skills"] = $("#skills").val();
+candidateDto["education"] = $("#education").val();
+candidateDto["certification"] = $("#certification").val();
+candidateDto["profileText"] = $("#profileText").val();
+candidateDto["candidateId"] = $("#candidateId").val();
+candidateDto["secondaryPhone"] = $("#secondaryPhone").val();
+candidateDto["secondaryEmail"] = $("#secondaryEmail").val();
+candidateDto["visa"] = $("#visa").val();
+candidateDto["currentLocation"] = $("#currentLocation").val();
+candidateDto["availability"] = $("#availability").val();
+candidateDto["workExperience"] = $("#workExperience").val();
+candidateDto["reference"] = $("#reference").val();
+candidateDto["title"] = $("#title").val();
+candidateDto["awards"] = $("#awards").val();
+candidateDto["dateOfBirth"] = $("#dateOfBirth").val();
+candidateDto["socialMediaLink"] = $("#socialMediaLink").val();
+candidateDto["nationality"] = $("#nationality").val();
+candidateDto["version"] = $("#version").val();
+candidateDto["filePath"] = $("#filePath").val();
+candidateDto["additionalNotes"] = $("#additionalNotes").val();
+candidateDto["assignedToEmployeeId"] = $("#assignedToEmployeeId").val();
+candidateDto["assignedToEmployeeName"] = $("#assignedToEmployeeName").val();
+candidateDto["employedByRen"] = $("#employedByRen").val();
+candidateDto["assignedDate"] = $("#assignedDate").val();
+candidateDto["organization"] = $("#organization").val();
+candidateDto["designation"] = $("#designation").val();
+candidateDto["workStartDate"] = $("#workStartDate").val();
+candidateDto["workEndDate"] = $("#workEndDate").val();
+candidateDto["lastUpdatedByUser"] = $("#lastUpdatedByUser").val();
+candidateDto["summary"] = $("#summary").val();
+
+
+
+	/* var candidateData=$("#candidateProfileHidden").val();
+	var myform = document.getElementById("candidateDetails");
+    var fd = new FormData(myform ); */
+//alert(fd);
+$.ajax({
+	type: "POST",
+    contentType: "application/json",
+    url: "/createProfile",
+    data: JSON.stringify(candidateDto),
+    dataType: 'json',
+    cache: false,
+    timeout: 600000,
+    success: function (data) {
+    	var json=JSON.stringify(candidateDto);
+    	alert("Profile created..");
+       
+      
+    },
+    error: function (e) {
+    	
+    	alert("Error:: "+e.responseText);
+    	if(e.responseText.includes('Session Expired')) {
+    		window.location='/'
+    	}
+
+    }
+});
+	
+}
+function response(data){
+	alert("success");
+}
+</script>
+</html>
