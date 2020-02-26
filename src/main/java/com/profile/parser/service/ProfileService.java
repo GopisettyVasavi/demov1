@@ -21,7 +21,12 @@ import com.profile.parser.repository.CandidateEducationRepository;
 import com.profile.parser.repository.CandidatePersonalRepository;
 import com.profile.parser.repository.CandidateProfileRepository;
 import com.profile.parser.repository.CandidateWorkHistoryRepository;
-
+import com.profile.parser.util.ProfileParserUtils;
+/**
+ * This class will have methods to save/update or retrieve information related to candidate.
+ * @author Vasavi
+ *
+ */
 @Service
 public class ProfileService {
 
@@ -37,6 +42,11 @@ public class ProfileService {
 
 	@Autowired
 	CandidateEducationRepository candidateEducationRepository;
+	/**
+	 * This method will check whether the candidate is existing or not. And then either update or create profile accordingly.
+	 * @param candidateDto
+	 * @return
+	 */
 
 	public CandidateDTO createProfile(CandidateDTO candidateDto) {
 		
@@ -61,7 +71,7 @@ public class ProfileService {
 			LocalDateTime localDate = LocalDateTime.now();
 			candidatePersonalVO.setLastUpdatedByDateTime(localDate);
 			candidatePersonalVO = candidatePersonalRepository.save(candidatePersonalVO);
-
+			candidateDto.setCandidateId(candidatePersonalVO.getCandidateId());
 			logger.info("Created ID:: " + candidatePersonalVO.getCandidateId());
 
 			if (null != candidatePersonalVO.getCandidateId()) {
@@ -95,7 +105,11 @@ public class ProfileService {
 
 		return candidateDto;
 	}
-
+/**
+ * This method will check whether the candidate exists or not, if exists it updates the details.
+ * @param candidateDto
+ * @return
+ */
 	private CandidateDTO updateCandidateDetails(CandidateDTO candidateDto) {
 		CandidatePersonalEntity candidavtePersonal = candidatePersonalRepository.getCandidates(
 				candidateDto.getCandidateName(), candidateDto.getPrimaryEmail(), candidateDto.getPrimaryPhone());
@@ -149,17 +163,21 @@ public class ProfileService {
 		return candidateDto;
 
 	}
+	/**
+	 * This method will search candidate profiles based on the search criteria sent in searchform.
+	 * @param searchForm
+	 * @return
+	 */
 	
 	public List<CandidateDTO> searchProfiles(ProfileSearchForm searchForm){
 		
 		List<CandidatePersonalEntity> personalDetails=candidatePersonalRepository.getCandidateProfiles(searchForm);
 		logger.info("Search Results, {}",personalDetails.size());
 		List<CandidateDTO> candidateProfiles= new ArrayList<CandidateDTO>();
-		if(null!=personalDetails && !personalDetails.isEmpty()) {
+		if(!ProfileParserUtils.isObjectEmpty(personalDetails)) {
 		for(CandidatePersonalEntity personalEntity: personalDetails) {
 			CandidateDTO candidateDto=new CandidateDTO();
 			BeanUtils.copyProperties(personalEntity, candidateDto);
-			logger.info("Copied Bean, {},{}",personalEntity.toString(),candidateDto.toString() );
 			candidateProfiles.add(candidateDto);
 		}
 		}

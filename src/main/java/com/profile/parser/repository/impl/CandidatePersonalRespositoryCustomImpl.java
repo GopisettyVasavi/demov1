@@ -21,7 +21,12 @@ import com.profile.parser.model.CandidatePersonalEntity;
 import com.profile.parser.model.ProfileSearchForm;
 import com.profile.parser.repository.CandidatePersonalRepository;
 import com.profile.parser.repository.CandidatePersonalRespositoryCustom;
-
+import com.profile.parser.util.ProfileParserUtils;
+/**
+ * This is a custom repository class for candidate personal repo.
+ * @author Dell
+ *
+ */
 @Repository
 @Transactional(readOnly = true)
 public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersonalRespositoryCustom{
@@ -32,8 +37,9 @@ public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersona
 	
 	@Lazy
 	CandidatePersonalRepository candidateRepo;
-	
-	   
+	/**
+	 * This method will get candidate details for the given candidate name, email and phone number combination.
+	 */	   
 	  public CandidatePersonalEntity getCandidates(String candidateName,
 	  String primaryEmail, String primaryPhone) {
 	  
@@ -70,13 +76,16 @@ public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersona
 	        
 	        List<CandidatePersonalEntity> candidatePersonalList=entityManager.createQuery(query)
 	                .getResultList();
-	        if(null!=candidatePersonalList && !candidatePersonalList.isEmpty())
+	        if(!ProfileParserUtils.isObjectEmpty(candidatePersonalList))
 	        	return candidatePersonalList.get(0);
 	        else 
 		  return  new CandidatePersonalEntity();
 	  
 	  
 	  }
+	  /**
+	   * This method will fetch candidates details for the values entered in search form.
+	   */
 	 public List<CandidatePersonalEntity> getCandidateProfiles(ProfileSearchForm searchForm){
 		  CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 	        CriteriaQuery<CandidatePersonalEntity> query = cb.createQuery(CandidatePersonalEntity.class);
@@ -84,18 +93,17 @@ public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersona
 	       
             List<Predicate> predicates = new ArrayList<Predicate>();
 	       // Predicate[] predicates = new Predicate[3];
-	        if(null!=searchForm.getCandidateName() && !"".equalsIgnoreCase(searchForm.getCandidateName()))
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getCandidateName()))
 	        predicates.add(cb.like(cb.upper(candidatePersonal.get("candidateName")),"%"+searchForm.getCandidateName().
 		       		  toUpperCase()+"%"));
-	        if(null!=searchForm.getPrimaryEmail() && !"".equalsIgnoreCase(searchForm.getPrimaryEmail()))
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getPrimaryEmail()))
 	        predicates.add(cb.like(cb.upper(candidatePersonal.get("primaryEmail")),"%"+searchForm.getPrimaryEmail().
 	       		  toUpperCase()+"%"));
-	        if(null!=searchForm.getPrimaryContactNo() && !"".equalsIgnoreCase(searchForm.getPrimaryContactNo()))
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getPrimaryContactNo()))
 	        predicates.add(cb.like(candidatePersonal.get("primaryPhone"),searchForm.getPrimaryContactNo()));
 			 
 	        if(predicates.size()>0) {
 	        Predicate[] predicatesArray = new Predicate[predicates.size()];
-	       // cb.or(predicates.toArray(predicatesArray));
 	        query.select(candidatePersonal).where( cb.or(predicates.toArray(predicatesArray)));
 	        }
 	        else query.select(candidatePersonal);

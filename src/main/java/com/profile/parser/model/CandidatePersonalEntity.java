@@ -1,6 +1,7 @@
 package com.profile.parser.model;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -56,8 +57,14 @@ public class CandidatePersonalEntity {
 	@Column(name = "\"NATIONALITY\"")
 	private String nationality;
 
-	@Column(name = "\"VISA\"")
-	private String visa;
+	@Column(name = "\"VISA_TYPE\"")
+	private String visaType;
+	
+	@Column(name = "\"VISA_NO\"")
+	private String visaNo;
+	
+	@Column(name = "\"VALID_UPTO\"")
+	private LocalDate validUpto;
 
 	@Column(name = "\"WORK_EXPERIENCE\"")
 	private String workExperrience;
@@ -164,13 +171,7 @@ public class CandidatePersonalEntity {
 		this.nationality = nationality;
 	}
 
-	public String getVisa() {
-		return visa;
-	}
-
-	public void setVisa(String visa) {
-		this.visa = visa;
-	}
+	
 
 	public String getWorkExperrience() {
 		return workExperrience;
@@ -196,15 +197,42 @@ public class CandidatePersonalEntity {
 		this.lastUpdatedByDateTime = lastUpdatedByDateTime;
 	}
 
+	public String getVisaType() {
+		return visaType;
+	}
+
+	public void setVisaType(String visaType) {
+		this.visaType = visaType;
+	}
+
+	public String getVisaNo() {
+		return visaNo;
+	}
+
+	public void setVisaNo(String visaNo) {
+		this.visaNo = visaNo;
+	}
+
+	
+
+	public LocalDate getValidUpto() {
+		return validUpto;
+	}
+
+	public void setValidUpto(LocalDate validUpto) {
+		this.validUpto = validUpto;
+	}
+
 	@Override
 	public String toString() {
 		return "CandidatePersonalEntity [candidateId=" + candidateId + ", candidateName=" + candidateName
 				+ ", primaryEmail=" + primaryEmail + ", secondaryEmail=" + secondaryEmail + ", primaryPhone="
 				+ primaryPhone + ", secondaryPhone=" + secondaryPhone + ", title=" + title + ", gender=" + gender
 				+ ", current_location=" + current_location + ", dateOfBirth=" + dateOfBirth + ", socialMediaLink="
-				+ socialMediaLink + ", nationality=" + nationality + ", visa=" + visa + ", workExperrience="
-				+ workExperrience + ", lastUpdatedByUser=" + lastUpdatedByUser + ", lastUpdatedByDateTime="
-				+ lastUpdatedByDateTime + "]";
+				+ socialMediaLink + ", nationality=" + nationality + ", visaType=" + visaType + ", visaNo=" + visaNo
+				+ ", validupto=" + validUpto + ", workExperrience=" + workExperrience + ", lastUpdatedByUser="
+				+ lastUpdatedByUser + ", lastUpdatedByDateTime=" + lastUpdatedByDateTime + "]";
 	}
+
 
 }

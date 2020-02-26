@@ -35,7 +35,14 @@ public class LoginController {
 	    public String index() {
 	        return "login";
 	    }
-
+/**
+ * This method will check whether the details entered by user or correct or not against database and sends response accordingly.
+ * @param loginForm
+ * @param errors
+ * @param redirectAttributes
+ * @param request
+ * @return
+ */
 		@PostMapping("/login")
 	    public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody LoginForm loginForm, Errors errors, RedirectAttributes redirectAttributes, HttpServletRequest request) {
 			    AjaxResponseBody result = new AjaxResponseBody();
@@ -70,22 +77,6 @@ public class LoginController {
 
 	    }
 		
-		@PostMapping("/logout")
-		public String logout(@RequestBody HttpServletRequest request){
-			try {
-				request.logout();
-			
-			HttpSession session = request.getSession(false);
-		      if (session != null) {
-		          //invalidate session specially if we have added some user specific info
-		          session.invalidate();
-		      }
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			return "redirect:/logout";
-		}
+		
 	 
 }

@@ -1,6 +1,5 @@
 package com.profile.parser.model;
 
-import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.Date;
 

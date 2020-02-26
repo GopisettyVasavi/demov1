@@ -1,6 +1,5 @@
 package com.profile.parser.web;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,8 +33,13 @@ public class ProfileSearchMvcController {
 		}
 		return "profilesearch";
 	}
-	
-	@GetMapping("/searchcandidates") 
+	/**
+	 * This method will take the search criteria entered by user and sends the details to the service to retrieve profiles matching the search criteria.
+	 * @param searchForm
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/searchcandidates") 
 	public  ResponseEntity<?> getSearchResults(@RequestBody ProfileSearchForm searchForm,  HttpServletRequest request) {
 		
 		if (!ProfileParserUtils.isSessionAlive(request)) {

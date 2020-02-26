@@ -4,6 +4,10 @@ import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.Column;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class CandidateDTO {
 
 	private BigInteger candidateId;
@@ -12,7 +16,10 @@ public class CandidateDTO {
 	private String secondaryEmail;
 	private String primaryPhone;
 	private String secondaryPhone;
-	private String visa;
+	private String visaType;
+	private String visaNo;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate validUpto;
 	private String availability;
 	private String education;
 	private String certification;
@@ -32,12 +39,15 @@ public class CandidateDTO {
 	private Integer assignedToEmployeeId;
 	private String assignedToEmployeeName;
 	private String employedByRen;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate assignedDate;
 	private String profileText;
 	private String skills;
 	private String organization;
 	private String designation;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date workStartDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date workEndDate;
 	private String lastUpdatedByUser;
 
@@ -89,13 +99,6 @@ public class CandidateDTO {
 		this.secondaryPhone = secondaryPhone;
 	}
 
-	public String getVisa() {
-		return visa;
-	}
-
-	public void setVisa(String visa) {
-		this.visa = visa;
-	}
 
 	public String getAvailability() {
 		return availability;
@@ -313,21 +316,48 @@ public class CandidateDTO {
 		this.lastUpdatedByUser = lastUpdatedByUser;
 	}
 
+	public String getVisaType() {
+		return visaType;
+	}
+
+	public void setVisaType(String visaType) {
+		this.visaType = visaType;
+	}
+
+	public String getVisaNo() {
+		return visaNo;
+	}
+
+	public void setVisaNo(String visaNo) {
+		this.visaNo = visaNo;
+	}
+
+	
+
+	public LocalDate getValidUpto() {
+		return validUpto;
+	}
+
+	public void setValidUpto(LocalDate validUpto) {
+		this.validUpto = validUpto;
+	}
+
 	@Override
 	public String toString() {
 		return "CandidateDTO [candidateId=" + candidateId + ", candidateName=" + candidateName + ", primaryEmail="
 				+ primaryEmail + ", secondaryEmail=" + secondaryEmail + ", primaryPhone=" + primaryPhone
-				+ ", secondaryPhone=" + secondaryPhone + ", visa=" + visa + ", availability=" + availability
-				+ ", education=" + education + ", certification=" + certification + ", summary=" + summary
-				+ ", currentLocation=" + currentLocation + ", workExperience=" + workExperience + ", reference="
-				+ reference + ", title=" + title + ", awards=" + awards + ", gender=" + gender + ", dateOfBirth="
-				+ dateOfBirth + ", socialMediaLink=" + socialMediaLink + ", nationality=" + nationality + ", version="
-				+ version + ", filePath=" + filePath + ", additionalNotes=" + additionalNotes
-				+ ", assignedToEmployeeId=" + assignedToEmployeeId + ", assignedToEmployeeName="
-				+ assignedToEmployeeName + ", employedByRen=" + employedByRen + ", assignedDate=" + assignedDate
-				+ ", profileText=" + profileText + ", skills=" + skills + ", organization=" + organization
-				+ ", designation=" + designation + ", workStartDate=" + workStartDate + ", workEndDate=" + workEndDate
-				+ "]";
+				+ ", secondaryPhone=" + secondaryPhone + ", visaType=" + visaType + ", visaNo=" + visaNo
+				+ ", validupto=" + validUpto + ", availability=" + availability + ", education=" + education
+				+ ", certification=" + certification + ", summary=" + summary + ", currentLocation=" + currentLocation
+				+ ", workExperience=" + workExperience + ", reference=" + reference + ", title=" + title + ", awards="
+				+ awards + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", socialMediaLink="
+				+ socialMediaLink + ", nationality=" + nationality + ", version=" + version + ", filePath=" + filePath
+				+ ", additionalNotes=" + additionalNotes + ", assignedToEmployeeId=" + assignedToEmployeeId
+				+ ", assignedToEmployeeName=" + assignedToEmployeeName + ", employedByRen=" + employedByRen
+				+ ", assignedDate=" + assignedDate + ", profileText=" + profileText + ", skills=" + skills
+				+ ", organization=" + organization + ", designation=" + designation + ", workStartDate=" + workStartDate
+				+ ", workEndDate=" + workEndDate + ", lastUpdatedByUser=" + lastUpdatedByUser + "]";
 	}
+
 
 }

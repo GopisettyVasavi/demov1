@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +45,14 @@ public class FileuploadMvcController {
 		}
 		return "fileupload";
 	}
-
+/**
+ * This method will get the file uploaded by user and parse the details and populate them to candidateDTO and rended them on browser.
+ * @param file
+ * @param redirectAttributes
+ * @param model
+ * @param request
+ * @return
+ */
 	@PostMapping("/upload") // //new annotation since 4.3
 	public String singleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
@@ -109,7 +115,7 @@ public class FileuploadMvcController {
 				"You successfully uploaded '" + file.getOriginalFilename() + "'");
 		redirectAttributes.addFlashAttribute("selectedFile", file.getOriginalFilename().toString());
 		
-		if (null != candidateDto) {
+		if (!ProfileParserUtils.isObjectEmpty(candidateDto)) {
 			redirectAttributes.addFlashAttribute("profile", candidateDto);
 			model.addAttribute("profile", candidateDto);
 		}
@@ -122,7 +128,12 @@ public class FileuploadMvcController {
 	public String uploadStatus() {
 		return "uploadStatus";
 	}
-
+/**
+ * This method will get the profile details entered by user and sets logged in user information and creates/updates profile.
+ * @param profile
+ * @param request
+ * @return
+ */
 	@PostMapping("/createProfile")
 	public ResponseEntity<?> createProfile(@RequestBody CandidateDTO profile, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -138,7 +149,7 @@ public class FileuploadMvcController {
 			profile.setLastUpdatedByUser(
 					request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME).toString());
 			
-			profileService.createProfile(profile);
+			profile=profileService.createProfile(profile);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body("An issue in creating profile. Please try again.");
 		}

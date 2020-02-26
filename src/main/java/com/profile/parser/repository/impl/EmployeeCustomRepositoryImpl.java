@@ -12,16 +12,24 @@ import javax.persistence.criteria.Root;
 import com.profile.parser.model.CandidateEducationEntity;
 import com.profile.parser.model.EmployeeEntity;
 import com.profile.parser.repository.EmployeeCustomRepository;
-
+import com.profile.parser.util.ProfileParserUtils;
+/**
+ * Custom repository class for Employee Repository.
+ * @author Vasavi
+ *
+ */
 public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
+	/**
+	 * This method will fetch employee details for the logged in user name and password.
+	 */
 	public EmployeeEntity getEmployeeDetails(String loggedInUserName, String loginPwd) {
 		
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<EmployeeEntity> query = cb.createQuery(EmployeeEntity.class);
 		Root<EmployeeEntity> employeeEntity = query.from(EmployeeEntity.class);
-		if(null!=loggedInUserName) {
+		if(!ProfileParserUtils.isObjectEmpty(loggedInUserName)) {
 			Predicate[] predicates = new Predicate[2];
 			predicates[0] = cb.equal(cb.upper(employeeEntity.get("profileParserAppLogin")),
 					loggedInUserName.toUpperCase());
@@ -33,7 +41,7 @@ public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 			
 		}
 		List<EmployeeEntity> employees=entityManager.createQuery(query).getResultList();
-		if (null != employees && !employees.isEmpty())
+		if (!ProfileParserUtils.isObjectEmpty(employees))
 			return employees.get(0);
 		else return null;
 		

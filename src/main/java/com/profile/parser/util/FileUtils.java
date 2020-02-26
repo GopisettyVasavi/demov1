@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.Files;
 import java.util.concurrent.Future;
 
 import org.apache.commons.io.FilenameUtils;
@@ -23,7 +22,11 @@ import com.documents4j.api.DocumentType;
 import com.documents4j.api.IConverter;
 import com.documents4j.job.LocalConverter;
 import com.profile.parser.dto.FileConversionDTO;
-
+/**
+ * This utility class will have all the methods required for file processing and conversion.
+ * @author Vasavi
+ *
+ */
 public class FileUtils {
 	
 	private static Logger logger=LoggerFactory.getLogger(FileUtils.class);

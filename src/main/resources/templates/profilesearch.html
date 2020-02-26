@@ -2,158 +2,87 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Profile Parser- Search Profiles</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Profile Parser- Search Profiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="/js/idle_timeout.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link th:href="@{../css/starter-template.css}" rel="stylesheet"
+	media="screen" />
+<link th:href="@{../css/datatables.min.css}" rel="stylesheet"
+	media="screen" />
 
-    <link rel="stylesheet" type="text/css"
-          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <link th:href="@{../css/starter-template.css}" rel="stylesheet" media="screen" />
-<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
-<script type="text/javascript"
-        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+	rel="stylesheet" media="screen" />	
+	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.jqueryui.min.css"
+	rel="stylesheet" media="screen" />	
+	
+	
+<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" 	th:src="@{../js/datatables.min.js}"></script>
+<script type="text/javascript" th:src="@{../js/datatables.min.js}"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js"></script>
+<script src="/js/fixedHeadermin.js" ></script>
+<script src="/js/profilesearchmain.js" ></script>
+
 </head>
 <body>
 
-<div class="container" style="min-height: 500px">
+	<div class="container" style="min-height: 500px">
 
-    <div class="starter-template">
-        <h1>Profile Parser Login</h1>        
+		<div class="starter-template">
+			<h1>Profile Parser Login</h1>
 
-        <form class="form-horizontal" id="search-form">
-            <div class="form-group form-group-lg">
-                <label >Candidate Name</label>
-                <div >
-                    <input type="text" class="form-control" id="candidateName"/>
-                </div>
-                <label >Candidate Primary Email</label>
-                <div>
-                    <input type="text" class="form-control" id="primaryEmail"/>
-                </div>
-                <label>Candidate Primary Contact No</label>
-                <div>
-                    <input type="text" class="form-control" id="primaryContactNo"/>
-                </div>
-            </div>
+			<form class="form-horizontal" id="search-form">
+				<div class="form-group form-group-lg">
+					<label>Candidate Name</label>
+					<div>
+						<input type="text" class="form-control" id="candidateName" />
+					</div>
+					<label>Candidate Primary Email</label>
+					<div>
+						<input type="text" class="form-control" id="primaryEmail" />
+					</div>
+					<label>Candidate Primary Contact No</label>
+					<div>
+						<input type="text" class="form-control" id="primaryContactNo" />
+					</div>
+				</div>
 
-			<div class="form-group form-group-lg">
-                <label >Skill</label>
-                <div >
-                    <input type="text" class="form-control" id="skill"/>
-                </div>
-                <label >Candidate Availability</label>
-                <div >
-                    <input type="text" class="form-control" id="availability"/>
-                </div>
-                <label >Current Location</label>
-                <div>
-                    <input type="text" class="form-control" id="currentLocation"/>
-                </div>
-            </div>
+				<div class="form-group form-group-lg">
+					<label>Skill</label>
+					<div>
+						<input type="text" class="form-control" id="skill" />
+					</div>
+					<label>Candidate Availability</label>
+					<div>
+						<input type="text" class="form-control" id="availability" />
+					</div>
+					<label>Current Location</label>
+					<div>
+						<input type="text" class="form-control" id="currentLocation" />
+					</div>
+				</div>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" id="bth-search"
-                            class="btn btn-primary btn-lg" onclick="clickonsearch()">Search
-                    </button>
-                </div>
-            </div>
-        </form>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-6">
+						<button type="submit" id="bth-search"
+							class="btn btn-primary btn-lg" onclick="clickonsearch()">Search
+						</button>
+					</div>
+				</div>
+			</form>
 
-	<div id="feedback"></div>
-	 <table id="paginatedTable" class="table table-striped">
-		            <thead>
-		                <tr>
-		                    <th>Id</th>
-		                    <th>Name</th>
-		                    <th>Salary</th>
-		                </tr>
-		            </thead>
-
-		        </table>
-    </div>
-
-</div>
+			<div id="feedback"></div>
+			<table id="paginatedTable" class="display">
 
 
+			</table>
+		</div>
 
-<script type="text/javascript">
+	</div>
 
 
-function clickonsearch(){
-	  event.preventDefault();
-
-    var searchForm = {}
-    searchForm["candidateName"] = $("#candidateName").val();
-    searchForm["primaryEmail"] = $("#primaryEmail").val();
-    searchForm["primaryContactNo"] = $("#primaryContactNo").val();
-    searchForm["skill"] = $("#skill").val();
-    searchForm["availability"] = $("#availability").val();
-    searchForm["currentLocation"] = $("#currentLocation").val();
-    
-   
-     
-    
-    table =  $('#paginatedTable').DataTable( {
-       
-        "pageLength": 5,
-        "ajax": {
-            "url": "/searchcandidates",
-            "data": "JSON.stringify(searchForm)",
-            "data": function ( data ) {
-			 //process data before sent to server.
-         }},
-        "columns": [
-                    { "data": "candidateName", "name" : "Name", "title" : "Name"  },
-                    { "data": "primaryEmail", "name" : "Email" , "title" : "Email"},
-                    { "data": "primaryContactNo", "name" : "ContactNo" , "title" : "ContactNo"}
-                ]    
-	});
-   // $("#bth-search").prop("disabled", true);
-    
-   /*  $.ajax({
-        type: "POST",
-        contentType: "application/json",
-        url: "/searchcandidates",
-        data: JSON.stringify(searchForm),
-        dataType: 'json',
-        cache: false,
-        timeout: 600000,
-        success: function (data) {
-        	// $("#btn-search").prop("disabled", false);
-            var json = "<h4>Candidates</h4><pre>"
-                    + JSON.stringify(data, null, 4) + "</pre>";
-                    $('#feedback').html(json);
-           // window.location='/profilesearch'
-           alert("before populating data table");
-                   /*  $('#table_id').DataTable( {
-                        ajax: ...,
-                        columns: [
-                            { data: 'candidateName' },
-                            { data: 'primaryEmail' },
-                            { data: 'primaryContactNo' },
-                            { data: 'skill' },
-                            { data: 'availability' },
-                            { data: 'currentLocation' }
-                        ]
-                    } ); 
-
-        },
-        error: function (e) {
-        	
-
-            var json = "<h4>Response Error:Error occured while searching for candidates.</h4><pre>"
-                + e.responseText + "</pre>";
-            $('#feedback').html(json);
-
-            console.log("ERROR : ", e);
-           // $("#btn-search").prop("disabled", false);
-
-        }
-    }); */
-    
-}</script>
 
 </body>
 </html>

@@ -15,7 +15,12 @@ import org.springframework.context.annotation.Lazy;
 import com.profile.parser.model.CandidateEducationEntity;
 import com.profile.parser.repository.CandidateEducationCustomRespository;
 import com.profile.parser.repository.CandidateEducationRepository;
-
+import com.profile.parser.util.ProfileParserUtils;
+/**
+ * This is a custom repository for candidate education repository class.
+ * @author Dell
+ *
+ */
 public class CandidateEducationCustomRespositoryImpl implements CandidateEducationCustomRespository {
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -23,6 +28,9 @@ public class CandidateEducationCustomRespositoryImpl implements CandidateEducati
 	@Lazy
 	CandidateEducationRepository candidateEducation;
 
+	/**
+	 * This method will get candidate education details for the given candidate Id.
+	 */
 	@Override
 	public CandidateEducationEntity getCandidateEducationByCandidateId(BigInteger candidateId) {
 
@@ -43,7 +51,7 @@ public class CandidateEducationCustomRespositoryImpl implements CandidateEducati
 		// finalPredicate=cb.createQuery();
 		
 		List<CandidateEducationEntity> candidateEducations = entityManager.createQuery(query).getResultList();
-		if (null != candidateEducations && !candidateEducations.isEmpty())
+		if (!ProfileParserUtils.isObjectEmpty(candidateEducations))
 			return candidateEducations.get(0);
 		else
 			return new CandidateEducationEntity();

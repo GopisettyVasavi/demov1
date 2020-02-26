@@ -15,7 +15,13 @@ import org.springframework.context.annotation.Lazy;
 import com.profile.parser.model.CandidateProfileEntity;
 import com.profile.parser.repository.CandidateProfileCustomRepository;
 import com.profile.parser.repository.CandidateProfileRepository;
+import com.profile.parser.util.ProfileParserUtils;
 
+/**
+ * This class is a custom repository for candidateprofile repository.
+ * @author Dell
+ *
+ */
 public class CandidateProfileCustomRepositoryImpl implements CandidateProfileCustomRepository{
 	
 	@PersistenceContext
@@ -23,6 +29,9 @@ public class CandidateProfileCustomRepositoryImpl implements CandidateProfileCus
 	@Lazy
 	CandidateProfileRepository candaiteRepo;
 	
+	/**
+	 * This method will fetch candidate profiles for the given candidate Id.
+	 */
 	@Override
 	public CandidateProfileEntity getCandidateProfileByCandidateId(BigInteger candidateId){
 		
@@ -44,7 +53,7 @@ public class CandidateProfileCustomRepositoryImpl implements CandidateProfileCus
        
         List<CandidateProfileEntity> candidateProfiles=entityManager.createQuery(query)
                 .getResultList();
-        if(null!=candidateProfiles && !candidateProfiles.isEmpty())
+        if(!ProfileParserUtils.isObjectEmpty(candidateProfiles))
         	return candidateProfiles.get(0);
         else 
 	  return  new CandidateProfileEntity();

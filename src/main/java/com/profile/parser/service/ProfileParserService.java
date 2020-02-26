@@ -72,7 +72,7 @@ public class ProfileParserService {
 		candidateDto.setEducation(findEducation(content, sortedIndex));
 		candidateDto.setSkills(findSkills(content, sortedIndex));
 		candidateDto.setCertification(findCertification(content, sortedIndex));
-		candidateDto.setVisa(findVisa(content, sortedIndex));
+		candidateDto.setVisaType(findVisa(content, sortedIndex));
 		candidateDto.setSocialMediaLink(findSocialMedia(content).toString());
 		// Removes all special characters to store in DB the entire file
 		String profileText = populateProfileText(content);

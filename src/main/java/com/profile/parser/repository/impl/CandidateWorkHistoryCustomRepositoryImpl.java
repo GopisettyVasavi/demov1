@@ -15,7 +15,13 @@ import org.springframework.context.annotation.Lazy;
 import com.profile.parser.model.CandidateWorkHistoryEntity;
 import com.profile.parser.repository.CandidateWorkHistoryCustomRepository;
 import com.profile.parser.repository.CandidateWorkHistoryRepository;
+import com.profile.parser.util.ProfileParserUtils;
 
+/**
+ * Custom repository class for CandidateWorkHistory repository
+ * @author Vasavi
+ *
+ */
 public class CandidateWorkHistoryCustomRepositoryImpl implements CandidateWorkHistoryCustomRepository {
 	
 	@PersistenceContext
@@ -23,7 +29,11 @@ public class CandidateWorkHistoryCustomRepositoryImpl implements CandidateWorkHi
 	
 	@Lazy
 	CandidateWorkHistoryRepository candidateWorkRepo;
-	@Override
+	
+	/**
+	 * This method will get candidate work history details for the given candidate Id.
+	 */
+		@Override
 	public CandidateWorkHistoryEntity getCandidateWorkByCandidateId(BigInteger candidateId){
 		
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -44,7 +54,7 @@ public class CandidateWorkHistoryCustomRepositoryImpl implements CandidateWorkHi
        
         List<CandidateWorkHistoryEntity> candidateProfiles=entityManager.createQuery(query)
                 .getResultList();
-        if(null!=candidateProfiles && !candidateProfiles.isEmpty())
+        if(!ProfileParserUtils.isObjectEmpty(candidateProfiles))
         	return candidateProfiles.get(0);
         else 
 	  return  new CandidateWorkHistoryEntity();

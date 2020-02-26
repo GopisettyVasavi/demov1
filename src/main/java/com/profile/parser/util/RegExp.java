@@ -1,5 +1,9 @@
 package com.profile.parser.util;
-
+/**
+ * This enum keeps all the regular expressions needed for parsing the profile.
+ * @author Vassavi
+ *
+ */
 public enum RegExp {
     LINK("(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)(([\\w\\-]+\\.){1,}?([\\w\\-.~]+\\/?)*[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)" + 
     		"| (?:(?:https?|ftp):\\/\\/)?[\\w\\-?=%.]+\\.[\\w/\\-?=%.]+"+ 
