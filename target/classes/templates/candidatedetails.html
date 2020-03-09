@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Profile Parser</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body onload="initialize()">
+
+<!-- header-start -->
+    <header>
+            
+        </header>
+        <!-- header-end -->
+	<!-- bradcam_area  -->
+	<div class="bradcam_area bradcam_bg_1">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="bradcam_text">
+						<h3>Candidate Profile Details</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ bradcam_area  -->
+	<div class="container mt-30 mb-30">
+		
+
+		<!-- Tab panes -->
+						
+					<div class="container" >
+						<div class="row">
+							
+							<div th:switch="${profile}">
+								<h2 th:case="null"></h2>
+								<div th:case="*">
+									<div class="col-lg-6">
+										<div class="pdf-container">
+											<object th:src="${profile.filePath}" height="1126px" width="500px" id="objid_dtl">
+												<embed th:src="${profile.filePath}"  id="embedid_dtl"/>
+											</object>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="row">
+									<div class="col-lg-12 mx-auto">
+										<div th:switch="${profile}">
+											<h2 th:case="null"></h2>
+											<div th:case="*">
+												<div hidden="true">
+													<input type="text" id="profileText_dtl" name="profileText"
+														th:field="${profile.profileText}" /> <input type="text"
+														id="candidateId_dtl" name="candidateId"
+														th:field="${profile.candidateId}" />  <input
+														type="text" id="summary_dtl" name="summary"
+														th:field="${profile.summary}" /> <input type="text"
+														id="title_dtl" name="title" th:field="${profile.title}" /> <input
+														type="text" id="gender_dtl" name="gender"
+														th:field="${profile.gender}" />  <input type="text"
+														id="socialMediaLink_dtl" name="socialMediaLink"
+														th:field="${profile.socialMediaLink}" /> <input
+														type="text" id="nationality_dtl" name="nationality"
+														th:field="${profile.nationality}" /> <input type="text"
+														id="version_dtl" name="version" th:field="${profile.version}" />
+													<input type="text" id="filePath_dtl" name="filePath"
+														th:field="${profile.filePath}" /> <input type="text"
+														id="assignedToEmployeeId_dtl" name="assignedToEmployeeId"
+														th:field="${profile.assignedToEmployeeId}" /> 
+														  <input type="text"
+														id="lastUpdatedByUser_dtl" name="lastUpdatedByUser"
+														th:field="${profile.lastUpdatedByUser}" />
+												</div>
+												<!-- Accordion -->
+												<div id="accordionExample" class="accordion shadow">
+
+													<!-- Accordion item 1 -->
+													<div class="card">
+														<div id="headingOne"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseOne" aria-expanded="true"
+																			aria-controls="collapseOne"
+																			class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Candidate
+																			Personal Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseOne"
+																	aria-expanded="true" aria-controls="collapseOne"
+																	class="d-block position-relative text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseOne" aria-labelledby="headingOne"
+															data-parent="#accordionExample" class="collapse show">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form" method="post"
+																		id="candidateDetails" novalidate="novalidate">
+																		<div class="row">
+
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">First Name</label> <input
+																						type="text" placeholder="First Name"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'First Name'" required
+																						class="single-input" id="candidateName_dtl"
+																						name="candidateName"
+																						th:field="${profile.candidateName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Middle Name</label> <input
+																						type="text" name="middle_name"
+																						placeholder="Middle Name"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Last Name'"
+																						class="single-input">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Last Name</label> <input
+																						type="text" name="last_name"
+																						placeholder="Last Name"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Last Name'" required
+																						class="single-input">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Primary Email Address</label> <input
+																						type="email" placeholder="Primary Email address"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Primary Email address'"
+																						required class="single-input" id="primaryEmail_dtl"
+																						name="primaryEmail"
+																						th:field="${profile.primaryEmail}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Secondary Email Address</label> <input
+																						type="email" placeholder="Secondary Email address"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Secondary Email address'"
+																						class="single-input" id="secondaryEmail_dtl"
+																						name="secondaryEmail"
+																						th:field="${profile.secondaryEmail}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Primary Contact Number</label> <input
+																						type="text" placeholder="Primary Contact Number"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Primary Contact number'"
+																						class="single-input-secondary" id="primaryPhone_dtl"
+																						name="primaryPhone"
+																						th:field="${profile.primaryPhone}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Secondary Contact Number</label>
+																					<input type="text"
+																						placeholder="Secondary Contact number"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Secondary Contact number'"
+																						class="single-input-secondary" id="secondaryPhone_dtl"
+																						name="secondaryPhone"
+																						th:field="${profile.secondaryPhone}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Gender</label>
+																					<div class="row">
+																						<div class="col-sm-6">
+																							<!-- Default checked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="defaultChecked" name="gender" value="male"  >
+																								<label class="custom-control-label"
+																									for="defaultChecked">Male</label>
+																							</div>
+																						</div>
+																						<div class="col-sm-6">
+																							<!-- Default unchecked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="defaultUnchecked"
+																									name="gender" value="female" > <label
+																									class="custom-control-label"
+																									for="defaultUnchecked">Female</label>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Date of Birth</label> <input
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Date of Birth"
+																						onfocus="this.placeholder = 'Date of Birth'"
+																						onblur="this.placeholder = 'Date of Birth'"
+																						class="single-input-secondary" id="dateOfBirth_dtl" name="dateOfBirth"
+																						th:field="${profile.dateOfBirth}" >
+
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Current Location</label> <input
+																						type="text" placeholder="Current Location"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Current Location'"
+																						class="single-input" id="currentLocation_dtl"
+																						name="currentLocation"
+																						th:field="${profile.currentLocation}">																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Visa</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="visatype_dtl" onchange="visaSelection()" 
+																							th:field="*{profile.visaType}"  >
+																								<option value="none"  selected="selected">Select Visa</option>
+																								<option value="PR">PR</option>
+																								<option value="Citizen">Citizen</option>
+																								<option value="Dependent Visa">Dependent Visa</option>
+																								<option value="Temporary graduate visa">Temporary graduate visa</option>
+																								<option value="Work Visa">Work Visa</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-6"  >
+																				<div class="form-group">
+																			<label for="name" id="visano_lbl_dtl" style="display: none">Visa No</label> <input
+																						type="text" placeholder="Visa No"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Visa No'"
+																						class="single-input" id="visaNo_dtl"
+																						name="visano" th:field="${profile.visaNo}" style="display: none">
+																					</div>
+																				</div>
+																				<div class="col-sm-6" >
+																				<div class="form-group">
+																						<label for="name" id="validupto_lbl_dtl" style="display: none">Valid upto</label>
+																						<input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Valid upto"
+																						onfocus="this.placeholder = 'Valid upto'"
+																						onblur="this.placeholder = 'Valid upto'"
+																						class="single-input-secondary" id="validUpto_dtl" 
+																						name="validUpto" th:field="${profile.validUpto}" style="display: none">
+																						
+																					</div>
+																				</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 2 -->
+													<div class="card">
+														<div id="headingTwo"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseTwo" aria-expanded="false"
+																			aria-controls="collapseTwo"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Candidate
+																			Profile</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseTwo"
+																	aria-expanded="false" aria-controls="collapseTwo"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseTwo" aria-labelledby="headingTwo"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form" action=""
+																		method="post" id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																		
+																		<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Work Experience</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Work Experience'"
+																						onblur="this.placeholder = 'Work Experience"
+																						placeholder="Work Experience" id="workExperience_dtl" name="workExperience"
+																						th:field="${profile.workExperience}"></textarea>
+																				</div>
+																			</div>
+																			<!-- <div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Work Experience</label> <input
+																						type="text" placeholder="Work Exp"
+																						onfocus="this.placeholder = 'Work Exp'"
+																						onblur="this.placeholder = 'Work Exp'"
+																						class="single-input" id="workExperience_dtl"
+																						name="workExperience"
+																						th:field="${profile.workExperience}">
+																				</div>
+																			</div> -->
+																			
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Skills</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Skill Set'"
+																						onblur="this.placeholder = 'Skill Set'"
+																						placeholder="Skill Set" id="skills_dtl" name="skills"
+																						th:field="${profile.skills}"></textarea>
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Certification</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Certifications'"
+																						onblur="this.placeholder = 'Certifications'"
+																						placeholder="Certifications" id="certification_dtl"
+																						name="certification"
+																						th:field="${profile.certification}"></textarea>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Employed By</label> <input
+																						type="text" placeholder="Employed By"
+																						onfocus="this.placeholder = 'Employed By'"
+																						onblur="this.placeholder = 'Employed By'"
+																						class="single-input" id="employedByRen_dtl"
+																						name="employedByRen"
+																						th:field="${profile.employedByRen}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Availability</label> <input
+																						type="text" placeholder="Availability"
+																						onfocus="this.placeholder = 'Availability'"
+																						onblur="this.placeholder = 'Availability'"
+																						class="single-input" id="availability_dtl"
+																						name="availability"
+																						th:field="${profile.availability}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Assigned to emp</label> <input
+																						type="text" placeholder="Employee Assigned"
+																						onfocus="this.placeholder = 'Employee Assigned'"
+																						onblur="this.placeholder = 'Employee Assigned'"
+																						class="single-input" id="assignedToEmployeeName_dtl"
+																						name="assignedToEmployeeName"
+																						th:field="${profile.assignedToEmployeeName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Assigned Date</label> <input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Assigned Date"
+																						onfocus="this.placeholder = 'Assigned Date'"
+																						onblur="this.placeholder = 'Assigned Date'"
+																						class="single-input-secondary" id="assignedDate_dtl" 
+																						name="assignedDate" th:field="${profile.assignedDate}">
+																					<!-- <input type="text" name="mobile_number" placeholder="Mobile number"
+                                                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile number'"
+                                                                                required class="single-input-secondary"> -->
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">References</label> <input
+																						type="text" placeholder="References"
+																						onfocus="this.placeholder = 'References'"
+																						onblur="this.placeholder = 'References'"
+																						class="single-input" id="reference_dtl"
+																						name="reference" th:field="${profile.reference}">
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Additional Notes</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Notes'"
+																						onblur="this.placeholder = 'Additional Notes'"
+																						placeholder="Additional Notes"
+																						id="additionalNotes_dtl" name="additionalNotes"
+																						th:field="${profile.additionalNotes}"></textarea>
+																				</div>
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 3 -->
+													<div class="card">
+														<div id="headingThree"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseThree" aria-expanded="false"
+																			aria-controls="collapseThree"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Candidate
+																			Education</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseThree"
+																	aria-expanded="false" aria-controls="collapseThree"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseThree" aria-labelledby="headingThree"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Education</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Education'"
+																						onblur="this.placeholder = 'Education'"
+																						placeholder="Education" id="education_dtl"
+																						name="education" th:field="${profile.education}"></textarea>
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name">Awards</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Awards'"
+																						onblur="this.placeholder = 'Awards'"
+																						placeholder="Awards" id="awards_dtl" name="awards"
+																						th:field="${profile.awards}"></textarea>
+																				</div>
+																			</div>
+
+
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 4 -->
+													<div class="card">
+														<div id="headingFour"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseFour" aria-expanded="false"
+																			aria-controls="collapseFour"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Candidate
+																			Work History</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseFour"
+																	aria-expanded="false" aria-controls="collapseFour"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseFour" aria-labelledby="headingFour"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Organization</label> <input
+																						type="text" placeholder="Organization"
+																						onfocus="this.placeholder = 'Organization'"
+																						onblur="this.placeholder = 'Organization'"
+																						class="single-input" id="organization_dtl"
+																						name="organization"
+																						th:field="${profile.organization}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Designation</label> <input
+																						type="text" placeholder="Designation"
+																						onfocus="this.placeholder = 'Designation'"
+																						onblur="this.placeholder = 'Designation'"
+																						class="single-input" id="designation_dtl"
+																						 name="designation" th:field="${profile.designation}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">Start Date</label> 
+																					 <input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input-secondary" id="workStartDate_dtl" 
+																						name="workStartDate" th:field="${profile.workStartDate}">
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name">End Date</label> 
+																					 <input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input-secondary" id="workEndDate_dtl" 
+																						name="workEndDate" th:field="${profile.workEndDate}">
+																					
+																				</div>
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div th:switch="${profile}">
+									<h2 th:case="null"></h2>
+									<div th:case="*">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group mt-3 pull-right">
+													<input type="submit" value="Update" onclick="updateProfile()"
+														class="button button-contactForm boxed-btn" />
+														<input type="submit" value="Close" onclick="windowClose();"
+														class="button button-contactForm boxed-btn" />
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+				
+
+			</div>
+			
+		
+	</div>
+	<!-- ================ contact section start ================= -->
+
+	<!-- ================ contact section end ================= -->
+
+	<!-- footer start -->
+	<footer class="footer"> </footer>
+	<!--/ footer end  -->
+
+	<!-- JS here -->
+	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+    
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+	<script>
+	$(document).ready(function(){ 
+		$('#dateOfBirth_dtl').datepicker({
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#assignedDate_dtl').datepicker({
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+
+		});
+		$('#validUpto_dtl').datepicker({
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down" id="validspn_dtl"></span>'
+			}
+		});
+		$('#workStartDate_dtl').datepicker({
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#workEndDate_dtl').datepicker({
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+	});	
+	
+	</script>
+	<script src="js/idle_timeout.js"></script>
+	<script src="/js/fileuploadmain.js"></script>
+	<script src="/js/profilesearchmain.js"></script>
+	<script src="/js/candidatedetailsmain.js"></script>
+	
+	
+	
+</body>
+
+</html>

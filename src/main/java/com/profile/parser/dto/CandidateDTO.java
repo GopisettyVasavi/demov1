@@ -2,14 +2,11 @@ package com.profile.parser.dto;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
-import java.util.Date;
-
-import javax.persistence.Column;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class CandidateDTO {
-
+	private static final long serialVersionUID = -4500094586165758427L;
 	private BigInteger candidateId;
 	private String candidateName;
 	private String primaryEmail;
@@ -46,9 +43,9 @@ public class CandidateDTO {
 	private String organization;
 	private String designation;
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	private Date workStartDate;
+	private LocalDate workStartDate;
 	@JsonFormat(pattern = "dd/MM/yyyy")
-	private Date workEndDate;
+	private LocalDate workEndDate;
 	private String lastUpdatedByUser;
 
 	public BigInteger getCandidateId() {
@@ -292,19 +289,19 @@ public class CandidateDTO {
 		this.designation = designation;
 	}
 
-	public Date getWorkStartDate() {
+	public LocalDate getWorkStartDate() {
 		return workStartDate;
 	}
 
-	public void setWorkStartDate(Date workStartDate) {
+	public void setWorkStartDate(LocalDate workStartDate) {
 		this.workStartDate = workStartDate;
 	}
 
-	public Date getWorkEndDate() {
+	public LocalDate getWorkEndDate() {
 		return workEndDate;
 	}
 
-	public void setWorkEndDate(Date workEndDate) {
+	public void setWorkEndDate(LocalDate workEndDate) {
 		this.workEndDate = workEndDate;
 	}
 

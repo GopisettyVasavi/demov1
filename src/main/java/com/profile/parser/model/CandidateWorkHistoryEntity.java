@@ -1,6 +1,7 @@
 package com.profile.parser.model;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -36,10 +37,10 @@ public class CandidateWorkHistoryEntity {
 	private String designation;
 
 	@Column(name = "\"WORK_START_DATE\"")
-	private Date workStartDate;
+	private LocalDate workStartDate;
 
 	@Column(name = "\"WORK_END_DATE\"")
-	private Date workEndDate;
+	private LocalDate workEndDate;
 	@Column(name = "\"LAST_UPDATED_BY_USER\"")
 	private String lastUpdatedByUser;
 
@@ -70,19 +71,19 @@ public class CandidateWorkHistoryEntity {
 		this.designation = designation;
 	}
 
-	public Date getWorkStartDate() {
+	public LocalDate getWorkStartDate() {
 		return workStartDate;
 	}
 
-	public void setWorkStartDate(Date workStartDate) {
+	public void setWorkStartDate(LocalDate workStartDate) {
 		this.workStartDate = workStartDate;
 	}
 
-	public Date getWorkEndDate() {
+	public LocalDate getWorkEndDate() {
 		return workEndDate;
 	}
 
-	public void setWorkEndDate(Date workEndDate) {
+	public void setWorkEndDate(LocalDate workEndDate) {
 		this.workEndDate = workEndDate;
 	}
 

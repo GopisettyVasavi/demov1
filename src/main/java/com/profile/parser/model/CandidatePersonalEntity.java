@@ -46,7 +46,7 @@ public class CandidatePersonalEntity {
 	private String gender;
 
 	@Column(name = "\"CURRENT_LOCATION\"")
-	private String current_location;
+	private String currentLocation;
 
 	@Column(name = "\"DATE_OF_BIRTH\"")
 	private String dateOfBirth;
@@ -67,7 +67,7 @@ public class CandidatePersonalEntity {
 	private LocalDate validUpto;
 
 	@Column(name = "\"WORK_EXPERIENCE\"")
-	private String workExperrience;
+	private String workExperience;
 
 	@Column(name = "\"LAST_UPDATED_BY_USER\"")
 	private String lastUpdatedByUser;
@@ -139,12 +139,12 @@ public class CandidatePersonalEntity {
 		this.gender = gender;
 	}
 
-	public String getCurrent_location() {
-		return current_location;
+	public String getCurrentLocation() {
+		return currentLocation;
 	}
 
-	public void setCurrent_location(String current_location) {
-		this.current_location = current_location;
+	public void setCurrentLocation(String currentLocation) {
+		this.currentLocation = currentLocation;
 	}
 
 	public String getDateOfBirth() {
@@ -174,11 +174,11 @@ public class CandidatePersonalEntity {
 	
 
 	public String getWorkExperrience() {
-		return workExperrience;
+		return workExperience;
 	}
 
 	public void setWorkExperrience(String workExperrience) {
-		this.workExperrience = workExperrience;
+		this.workExperience = workExperrience;
 	}
 
 	public String getLastUpdatedByUser() {
@@ -228,9 +228,9 @@ public class CandidatePersonalEntity {
 		return "CandidatePersonalEntity [candidateId=" + candidateId + ", candidateName=" + candidateName
 				+ ", primaryEmail=" + primaryEmail + ", secondaryEmail=" + secondaryEmail + ", primaryPhone="
 				+ primaryPhone + ", secondaryPhone=" + secondaryPhone + ", title=" + title + ", gender=" + gender
-				+ ", current_location=" + current_location + ", dateOfBirth=" + dateOfBirth + ", socialMediaLink="
+				+ ", current_location=" + currentLocation + ", dateOfBirth=" + dateOfBirth + ", socialMediaLink="
 				+ socialMediaLink + ", nationality=" + nationality + ", visaType=" + visaType + ", visaNo=" + visaNo
-				+ ", validupto=" + validUpto + ", workExperrience=" + workExperrience + ", lastUpdatedByUser="
+				+ ", validupto=" + validUpto + ", workExperrience=" + workExperience + ", lastUpdatedByUser="
 				+ lastUpdatedByUser + ", lastUpdatedByDateTime=" + lastUpdatedByDateTime + "]";
 	}
 

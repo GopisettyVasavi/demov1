@@ -3,7 +3,6 @@ package com.profile.parser.util;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,12 +10,9 @@ import java.io.OutputStream;
 import java.util.concurrent.Future;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.documents4j.api.DocumentType;
 import com.documents4j.api.IConverter;
@@ -32,10 +28,9 @@ public class FileUtils {
 	private static Logger logger=LoggerFactory.getLogger(FileUtils.class);
 	public static FileConversionDTO convertDoctoPdf(File docFile, String contentType) {
 		FileConversionDTO fileDto= new FileConversionDTO();
-		
-		//logger.info("Name before:: {}",filename);
+	
 		String filenameWithoutX=FilenameUtils.removeExtension(docFile.getName());
-		File pdfFile= new File(ProfileParserConstants.UPLOADED_FOLDER +filenameWithoutX+".pdf");
+		File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
 		logger.info("Name After:: {},   {}",filenameWithoutX,pdfFile);
 		try {
 		 ByteArrayOutputStream bo = new ByteArrayOutputStream();
@@ -64,13 +59,14 @@ public class FileUtils {
          }
          in.close();
          bo.close();
+         bo.flush();
          converter.shutDown();
 		}catch(Exception e) {
 			logger.error("Error occured while converting doc to pdf.");
 		}
 		logger.info("Successfully converted document {} to Pdf as {}", docFile.getName(), pdfFile.getName());
 		fileDto.setConvertedFile(pdfFile);
-		fileDto.setMultipartFile(filetoMultipartFile(pdfFile,contentType));
+		//fileDto.setMultipartFile(filetoMultipartFile(pdfFile,contentType));
 		
 		return fileDto;
 	}
@@ -91,22 +87,18 @@ public static boolean  isFileTypePdf(String name) {
 	else return false;
 }
 
-private static MultipartFile filetoMultipartFile(File convFile, String contentType) {
-	
-	FileInputStream input;
-	MultipartFile multipartFile=null;
-	try {
-		input = new FileInputStream(convFile);
-		 multipartFile = new MockMultipartFile("name",
-				convFile.getName(), "application/pdf", IOUtils.toByteArray(input));
-	} catch (FileNotFoundException e) {
-		logger.error("Error in converting file");
-		e.printStackTrace();
-	} catch (IOException e) {
-		logger.error("Error in converting file");
-		e.printStackTrace();
-	}
-	return multipartFile;
-	
-}
+	/*
+	 * private static MultipartFile filetoMultipartFile(File convFile, String
+	 * contentType) {
+	 * 
+	 * FileInputStream input; MultipartFile multipartFile=null; try { input = new
+	 * FileInputStream(convFile); multipartFile = new MockMultipartFile("name",
+	 * convFile.getName(), "application/pdf", IOUtils.toByteArray(input)); } catch
+	 * (FileNotFoundException e) { logger.error("Error in converting file");
+	 * e.printStackTrace(); } catch (IOException e) {
+	 * logger.error("Error in converting file"); e.printStackTrace(); } return
+	 * multipartFile;
+	 * 
+	 * }
+	 */
 }

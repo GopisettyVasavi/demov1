@@ -12,11 +12,12 @@ public class FileConversionDTO {
 	public String getFilepath() {
 		return filepath;
 	}
-	@Override
-	public String toString() {
-		return "FileConversionDTO [filepath=" + filepath + ", multipartFile=" + multipartFile.getOriginalFilename() + ", convertedFile="
-				+ convertedFile + "]";
-	}
+
+	/*
+	 * @Override public String toString() { return "FileConversionDTO [filepath=" +
+	 * filepath + ", multipartFile=" + multipartFile.getOriginalFilename() +
+	 * ", convertedFile=" + convertedFile + "]"; }
+	 */
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
 	}

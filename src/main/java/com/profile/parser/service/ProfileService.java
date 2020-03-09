@@ -1,10 +1,15 @@
 package com.profile.parser.service;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
+import org.apache.commons.beanutils.BeanUtilsBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -22,15 +27,18 @@ import com.profile.parser.repository.CandidatePersonalRepository;
 import com.profile.parser.repository.CandidateProfileRepository;
 import com.profile.parser.repository.CandidateWorkHistoryRepository;
 import com.profile.parser.util.ProfileParserUtils;
+
 /**
- * This class will have methods to save/update or retrieve information related to candidate.
+ * This class will have methods to save/update or retrieve information related
+ * to candidate.
+ * 
  * @author Vasavi
  *
  */
 @Service
 public class ProfileService {
 
-	private static final Logger logger=LoggerFactory.getLogger(ProfileService.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProfileService.class);
 	@Autowired
 	CandidatePersonalRepository candidatePersonalRepository;
 
@@ -42,18 +50,21 @@ public class ProfileService {
 
 	@Autowired
 	CandidateEducationRepository candidateEducationRepository;
+
 	/**
-	 * This method will check whether the candidate is existing or not. And then either update or create profile accordingly.
+	 * This method will check whether the candidate is existing or not. And then
+	 * either update or create profile accordingly.
+	 * 
 	 * @param candidateDto
 	 * @return
 	 */
 
 	public CandidateDTO createProfile(CandidateDTO candidateDto) {
-		
-		candidateDto.setAssignedDate(LocalDate.now());
-		logger.info("Profile creation..");
 
-		
+		// candidateDto.setAssignedDate(ProfileParserUtils.parseDate(new Date()));
+		logger.info("Profile creation..");
+		candidateDto = ProfileParserUtils.parseAllDates(candidateDto);
+
 		// Check whether candidate profile exists for the same name, email and phone
 		// number combination. If so, update data for that candidate.
 		candidateDto = updateCandidateDetails(candidateDto);
@@ -105,11 +116,14 @@ public class ProfileService {
 
 		return candidateDto;
 	}
-/**
- * This method will check whether the candidate exists or not, if exists it updates the details.
- * @param candidateDto
- * @return
- */
+
+	/**
+	 * This method will check whether the candidate exists or not, if exists it
+	 * updates the details.
+	 * 
+	 * @param candidateDto
+	 * @return
+	 */
 	private CandidateDTO updateCandidateDetails(CandidateDTO candidateDto) {
 		CandidatePersonalEntity candidavtePersonal = candidatePersonalRepository.getCandidates(
 				candidateDto.getCandidateName(), candidateDto.getPrimaryEmail(), candidateDto.getPrimaryPhone());
@@ -160,28 +174,87 @@ public class ProfileService {
 			// Populate candidateDto with all saved values
 			candidateDto.setCandidateId(candidavtePersonal.getCandidateId());
 		}
+
 		return candidateDto;
 
 	}
+
 	/**
-	 * This method will search candidate profiles based on the search criteria sent in searchform.
+	 * This method will search candidate profiles based on the search criteria sent
+	 * in searchform.
+	 * 
 	 * @param searchForm
-	 * @return
+	 * @return List<CandidateDTO>
 	 */
-	
-	public List<CandidateDTO> searchProfiles(ProfileSearchForm searchForm){
-		
-		List<CandidatePersonalEntity> personalDetails=candidatePersonalRepository.getCandidateProfiles(searchForm);
-		logger.info("Search Results, {}",personalDetails.size());
-		List<CandidateDTO> candidateProfiles= new ArrayList<CandidateDTO>();
-		if(!ProfileParserUtils.isObjectEmpty(personalDetails)) {
-		for(CandidatePersonalEntity personalEntity: personalDetails) {
-			CandidateDTO candidateDto=new CandidateDTO();
-			BeanUtils.copyProperties(personalEntity, candidateDto);
-			candidateProfiles.add(candidateDto);
+
+	public List<CandidateDTO> searchProfiles(ProfileSearchForm searchForm) {
+		// get profiles by personal search data from candidate personal table
+		List<CandidatePersonalEntity> personalDetails = candidatePersonalRepository.getCandidateProfiles(searchForm);
+		logger.info("Search Results personal table, {}", personalDetails.size());
+		List<BigInteger> candidateIdList = new ArrayList<BigInteger>();
+		List<CandidateDTO> candidateProfiles = new ArrayList<CandidateDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(personalDetails)) {
+			for (CandidatePersonalEntity personalEntity : personalDetails) {
+				candidateIdList.add(personalEntity.getCandidateId());
+				
+			}
 		}
+		// get profiles by profile search fields from candidate profile table
+		List<CandidateProfileEntity> profileDetails = candidateProfileRepository.getCandidateProfiles(searchForm);
+		logger.info("Search Results profile table, {}", profileDetails.size());
+		if (!ProfileParserUtils.isObjectEmpty(profileDetails)) {
+			for (CandidateProfileEntity profileEntity : profileDetails) {
+				candidateIdList.add(profileEntity.getCandidateId());
+				
+			}
+		}
+		logger.info("List size before.. ,{}", candidateIdList.size());
+		List<BigInteger> listWithoutDuplicates = candidateIdList.stream().distinct().collect(Collectors.toList());
+		logger.info("List size after.. ,{}", listWithoutDuplicates.size());
+		for (BigInteger candidateId : listWithoutDuplicates) {
+			candidateProfiles.add(getCandidateFullDetails(candidateId));
 		}
 		return candidateProfiles;
 	}
 
+	/**
+	 * This method will get all the details for the candidateId.
+	 * 
+	 * @param candidateId
+	 * @return
+	 */
+
+	public CandidateDTO getCandidateFullDetails(BigInteger candidateId) {
+		CandidateDTO candidateDetailsDto = new CandidateDTO();
+
+		try {
+			Optional<CandidatePersonalEntity> personalDetails = candidatePersonalRepository.findById(candidateId);
+			if (!ProfileParserUtils.isObjectEmpty(personalDetails) && personalDetails.isPresent()) {
+
+				CandidatePersonalEntity personal = personalDetails.get();
+				BeanUtils.copyProperties(personal, candidateDetailsDto);
+
+			}
+			CandidateProfileEntity profileDetail = candidateProfileRepository
+					.getCandidateProfileByCandidateId(candidateId);
+			if (!ProfileParserUtils.isObjectEmpty(profileDetail)) {
+				BeanUtils.copyProperties(profileDetail, candidateDetailsDto);
+			}
+			CandidateWorkHistoryEntity workDetail = candidateWorkRepository.getCandidateWorkByCandidateId(candidateId);
+			if (!ProfileParserUtils.isObjectEmpty(workDetail)) {
+				BeanUtils.copyProperties(workDetail, candidateDetailsDto);
+			}
+			CandidateEducationEntity educationDetail = candidateEducationRepository
+					.getCandidateEducationByCandidateId(candidateId);
+			if (!ProfileParserUtils.isObjectEmpty(educationDetail)) {
+				BeanUtils.copyProperties(educationDetail, candidateDetailsDto);
+			}
+			logger.info("All details,{}", candidateDetailsDto.getCandidateId() + " "
+					+ candidateDetailsDto.getCandidateName() + " " + candidateDetailsDto.getVisaType());
+		} catch (Exception e) {
+			logger.error("Error in retrieving details" + e.getStackTrace());
+		}
+
+		return candidateDetailsDto;
+	}
 }

@@ -11,14 +11,17 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.tika.Tika;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.profile.parser.dto.CandidateDTO;
+import com.profile.parser.util.ProfileParserUtils;
 import com.profile.parser.util.RegExp;
 
 @Service
 public class ProfileParserService {
-
+	private static final Logger logger = LoggerFactory.getLogger(ProfileParserService.class);
 	public CandidateDTO parse(File xfile) {
 		String content = getFileContent(xfile);
 		CandidateDTO candidateDto = populateprofileData(content);
@@ -65,23 +68,27 @@ public class ProfileParserService {
 		CandidateDTO candidateDto = new CandidateDTO();
 		candidateDto.setCandidateName(findName(content, sortedIndex));
 		List<String> emails = findEmail(content);
-		if (null != emails && !emails.isEmpty())
+		if (!ProfileParserUtils.isObjectEmpty(emails))
 			candidateDto.setPrimaryEmail(emails.get(0));
-		if (null != emails && !emails.isEmpty() && emails.size() > 1)
+		if (!ProfileParserUtils.isObjectEmpty(emails) && emails.size() > 1)
 			candidateDto.setSecondaryEmail(emails.get(1));
 		candidateDto.setEducation(findEducation(content, sortedIndex));
 		candidateDto.setSkills(findSkills(content, sortedIndex));
 		candidateDto.setCertification(findCertification(content, sortedIndex));
 		candidateDto.setVisaType(findVisa(content, sortedIndex));
 		candidateDto.setSocialMediaLink(findSocialMedia(content).toString());
+		candidateDto.setAwards(findAwards(content, sortedIndex));
+		candidateDto.setWorkExperience(findExperience(content, sortedIndex));
+		candidateDto.setReference(findReferences(content, sortedIndex));
 		// Removes all special characters to store in DB the entire file
 		String profileText = populateProfileText(content);
 		candidateDto.setProfileText(profileText);
-		List<String> phones = findPhone(profileText);
-		if (null != phones && !phones.isEmpty())
+		List<String> phones = findPhone(content);
+		if (!ProfileParserUtils.isObjectEmpty(phones))
 			candidateDto.setPrimaryPhone(phones.get(0));
-		if (null != phones && !phones.isEmpty() && phones.size() > 1)
+		if (!ProfileParserUtils.isObjectEmpty(phones) && phones.size() > 1)
 			candidateDto.setSecondaryPhone(phones.get(1));
+		logger.info("Social media:: "+candidateDto.getSocialMediaLink());
 		return candidateDto;
 	}
 
@@ -91,7 +98,7 @@ public class ProfileParserService {
 
 		RegExp[] sectionRegex = new RegExp[] { RegExp.LINK, RegExp.EMAIL, RegExp.PHONE, RegExp.OBJECTIVE,
 				RegExp.EDUCATION, RegExp.EXPERIENCE, RegExp.SKILLS, RegExp.LANGUAGE, RegExp.INTEREST, RegExp.MEMBERSHIP,
-				RegExp.VISA, RegExp.ADDITIONAL, RegExp.REFERENCE, RegExp.CERTIFICATION, RegExp.DATEFROMTO };
+				RegExp.VISA, RegExp.ADDITIONAL, RegExp.REFERENCE, RegExp.CERTIFICATION,RegExp.AWARDS, RegExp.DATEFROMTO };
 		for (RegExp r : sectionRegex) {
 
 			storeSectionIndexes(content, r, sectionIndexes);
@@ -188,6 +195,20 @@ public class ProfileParserService {
 		return email;
 
 	}
+	
+	// find References
+	private String findReferences(String content, Map<String, Integer> sortedIndex) {
+		String returnText = null;
+		int indexOfLink = getIndexOfThisSection(RegExp.REFERENCE, content, sortedIndex);
+		if (indexOfLink != -1) {
+			List<Integer> listOfSectionIndexes = getAllIndexes(sortedIndex);
+			returnText = content.replaceFirst(RegExp.REFERENCE.toString(), "");
+			returnText = getSectionContent(indexOfLink, listOfSectionIndexes, content);
+
+		}
+		return returnText;
+
+	}
 
 	// find SocialMedia
 	private List<String> findSocialMedia(String content) {
@@ -203,12 +224,8 @@ public class ProfileParserService {
 
 		List<String> result = new ArrayList<String>();
 
-		Pattern pattern = Pattern.compile("\\b(((ht|f)tp(s?)\\:\\/\\/|~\\/|\\/)|www.)"
-				+ "(\\w+:\\w+@)?(([-\\w]+\\.)+(com|org|net|gov" + "|mil|biz|info|mobi|name|aero|jobs|museum"
-				+ "|travel|[a-z]{2}))(:[\\d]{1,5})?" + "(((\\/([-\\w~!$+|.,=]|%[a-f\\d]{2})+)+|\\/)+|\\?|#)?"
-				+ "((\\?([-\\w~!$+|.,*:]|%[a-f\\d{2}])+=?" + "([-\\w~!$+|.,*:=]|%[a-f\\d]{2})*)"
-				+ "(&(?:[-\\w~!$+|.,*:]|%[a-f\\d{2}])+=?" + "([-\\w~!$+|.,*:=]|%[a-f\\d]{2})*)*)*"
-				+ "(#([-\\w~!$+|.,*:=]|%[a-f\\d]{2})*)?\\b");
+		Pattern pattern = Pattern.compile("^https://[a-z]{2,3}[.]linkedin[.]com/.*$ "
+				+ "|^linkedin[.]com/.*  ");
 
 		Matcher matcher = pattern.matcher(content);
 		while (matcher.find()) {
@@ -287,7 +304,19 @@ public class ProfileParserService {
 		return returnText;
 
 	}
+	// find Education
+		private String findAwards(String content, Map<String, Integer> sortedIndex) {
+			String returnText = null;
+			int indexOfLink = getIndexOfThisSection(RegExp.AWARDS, content, sortedIndex);
+			if (indexOfLink != -1) {
+				List<Integer> listOfSectionIndexes = getAllIndexes(sortedIndex);
+				returnText = content.replaceFirst(RegExp.AWARDS.toString(), "");
+				returnText = getSectionContent(indexOfLink, listOfSectionIndexes, content);
 
+			}
+			return returnText;
+
+		}
 	// find Visa
 	private String findVisa(String content, Map<String, Integer> sortedIndex) {
 		String returnText = null;
@@ -309,7 +338,6 @@ public class ProfileParserService {
 																				// in DB the entire file
 		profileText = profileText.replaceAll("^\\s|\n\\s|\\s$", "");
 
-		System.out.println("Profile Text in Parser..." + profileText);
 		return profileText;
 
 	}

@@ -11,15 +11,30 @@ public enum RegExp {
     		"| ((http|ftp|https):\\/\\/)?(([\\w.-]*)\\.([\\w]*))"
     		+ "| linkedin.com\\*"),
     EMAIL("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+"),
-    PHONE("\\(?([0-9]{3})\\)?[-. ]([0-9]{3})[-. ]?[-. ]?([0-9]{4})|"
-    		+ "\\d{11}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}|" + 
-    		"\\d\\d\\d\\d\\s\\d\\d\\d\\s\\d\\d\\d"
-    		+ "|\\d\\d\\d\\d\\d\\d\\d\\d\\d"),
+    /*PHONE("(\\+?\\(61\\)|\\(\\+?61\\)|\\+?61|\\(0[1-9]\\)|0[1-9])?( ?-?[0-9]){7,9} |"
+    		+ "(0[1-9]\\)|0[1-9])?( ?-?[0-9]){7,9} |"
+    		+ "(\\(\\+[0-9]\\)|\\+61|\\(0[1-9]\\)|0[1-9])?( ?-?[0-9]){6,9} |"
+    		+ "(\\+?\\(61\\)|\\(\\+?61\\)|\\+?61|\\(0[1-9]\\)|0[1-9])+( ?-?[0-9]){7,9}|"
+    		+"(\\(+61\\)|\\+61|\\(0[1-9]\\)|0[1-9])?( ?-?[0-9]){6,9} |"
+    		+ "\\(?([0-9]{3})\\)?[-. ]([0-9]{3})[-. ]?[-. ]?([0-9]{4})"
+    		+ "|\\d{11}|(?:\\d{3}-){2}\\d{4}"
+    		+ "|\\(\\d{3}\\)\\d{3}-?\\d{4}|\\d\\d\\d\\d\\s\\d\\d\\d\\s\\d\\d\\d\\d\\d\\d\\d\\\\d\\d\\d\\d\\d |"
+    		+ "(\\+?\\(61\\)|\\(\\+?61\\)|\\+?61)|\\d{3}\\s\\d{3}\\s\\d{3}|"
+    		+ "\\d{3}\\s\\d{3}\\s\\d{3}|"
+    		+ "\\d{9}"),*/
+	/*
+	 * PHONE("\\(?([0-9]{3})\\)?[-. ]([0-9]{3})[-. ]?[-. ]?([0-9]{4})|" +
+	 * "\\d{11}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}|" +
+	 * "\\d\\d\\d\\d\\s\\d\\d\\d\\s\\d\\d\\d" + "|\\d\\d\\d\\d\\d\\d\\d\\d\\d"),
+	 */
+    PHONE( "\\d{3}\\s\\d{3}\\s\\d{3}|"
+    		+ "\\d{9}"
+    		+ "|(\\(\\+61\\)|\\+61|(0[1-9])|0[1-9])?( ?-?[0-9]){6,9}"),
     OBJECTIVE("\\b(Objective(s?)|OBJECTIVE(S?)|Summary|SUMMARY|Statement|Profile)\\b"), // summary included here
-    EDUCATION("\\b(Education(s?)|EDUCATION(S?)|Diploma(s?)|DIPLOMA(S?)|Academics|ACADEMICS)\\b"),
+    EDUCATION("\\b(Education(s?)|EDUCATION(S?)|Diploma(s?)|DIPLOMA(S?)|Academics|ACADEMICS|EDUCATIONAL CREDENTIALS|Academic Qualification)\\b"),
     NAME("\\b(Name|NAME|Candidate Name|CANDIDATE NAME|Candidate|CANDIDATE)\\b"),
     EXPERIENCE("\\b(Experience(s?)|EXPERIENCE(S?)|Work Experience|WORK EXPERIENCE|Work History|WORK HISTORY | Work Detail(s?) | WORK DETAIL(S?)"
-    		+ "|EMPLOYMENT HISTORY|Employment History)\\b"),
+    		+ "|EMPLOYMENT HISTORY|Employment History|Career Path)\\b"),
     SKILLS("\\b(Skill(s?) & Expertise(s?)|Tool(s?) & Technolog(y?|ies?)|Skill(s?)|SKILL(S?)|Technical Skills|TECHNICAL SKILLS|"
     		+ "Computer Skills|COMPUTER SKILLS|Technical Summary|TECHNICAL SUMMARY|TECHNICAL IT SKILL(S?)|Core Skill(s?)|CORE SKILL(S?))\\b"),
     LANGUAGE("\\b(Language(s?)|LANGUAGE(S?))\\b"),
@@ -28,9 +43,10 @@ public enum RegExp {
     VISA("\\b(Visa(s?)|VISA(S?)|VISA STATUS|Visa Status|Status)\\b"),
     ADDITIONAL("\\b(Other Detail(s?)|OTHER DETAIL(S?))\\b"),
     REFERENCE("\\b(Reference(s?)|REFERENCE(S?))|Professional Referernce(s?)|PROFESSIONAL REFERENCE(S?)\\b"),
-    CERTIFICATION("\\b(Award(s?)|AWARD(S)|Honor(s?)|HONOR(S?)|Certification(s?)|CERTIFICATION(S?)|Accomplishment(s?)|ACCOMPLISHMENT(S?)"
-    		+ " | PROFESSIONAL CERTIFICATION(S?) & TRAINING(S?) | Professional Certification(s?) & Training(s?))"
-    		+ "| PROFESSIONAL CERTIFICATION(S?)| Professional Certification(s?)\\b"),
+    CERTIFICATION("\\b(Certification(s?)|CERTIFICATION(S?)|Accomplishment(s?)|ACCOMPLISHMENT(S?)"
+    		+ " | PROFESSIONAL CERTIFICATION(S?) & TRAINING(S?) | Professional Certification(s?) & Training(s?)"
+    		+ "| PROFESSIONAL CERTIFICATION(S?)| Professional Certification(s?))\\b"),
+    AWARDS("\\b(Award(s?)|AWARD(S?)|Honor(s?)|HONOR(S?)|Recognition(s?)|RECOGNITION(S?)|Academic Accolades|Achievements)\\b"),
     DATEFROMTO("([A-Za-z]+\\s)?([0-9]{4})\\s[-]\\s\\b((P|p)resent|(C|c)urrent)\\b|([A-Za-z]+\\s)?([0-9]{4})");
 
     /**

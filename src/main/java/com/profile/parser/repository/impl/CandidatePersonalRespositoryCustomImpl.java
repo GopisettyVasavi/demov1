@@ -101,14 +101,55 @@ public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersona
 	       		  toUpperCase()+"%"));
 	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getPrimaryContactNo()))
 	        predicates.add(cb.like(candidatePersonal.get("primaryPhone"),searchForm.getPrimaryContactNo()));
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getVisaType()))
+		        predicates.add(cb.like(cb.upper(candidatePersonal.get("visaType")),"%"+searchForm.getVisaType().
+			       		  toUpperCase()+"%"));
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm.getWorkExperience()))
+		        predicates.add(cb.like(cb.upper(candidatePersonal.get("workExperience")),"%"+searchForm.getWorkExperience().
+			       		  toUpperCase()+"%"));
+	        
+	        if(!ProfileParserUtils.isObjectEmpty(searchForm) && !ProfileParserUtils.isObjectEmpty(searchForm.getCurrentLocation())) {
+	   		  if(!searchForm.getCurrentLocation().contains("&&")&& !searchForm.getCurrentLocation().contains("||")&&!searchForm.getCurrentLocation().contains("!")) {
+	   			  predicates.add(cb.like(cb.upper(candidatePersonal.get("currentLocation")),"%"+searchForm.getCurrentLocation().
+	   		       		  toUpperCase()+"%"));
+	   	  
+	   		   
+	   		  }
+	   		  else if(searchForm.getCurrentLocation().contains("&&")){
+	   			  List<String>locListWithAnd=ProfileParserUtils.processSearchStringWithAND(searchForm.getCurrentLocation());
+	   			 for(String location: locListWithAnd) {
+					  predicates.add(cb.like(cb.upper(candidatePersonal.get("currentLocation")),"%"+location.
+	  		       		  toUpperCase()+"%"));
+					 
+				  }
+	   		  }else if(searchForm.getCurrentLocation().contains("||")) {
+	   			  List<String>locListWithOr=ProfileParserUtils.processSearchStringWithOR(searchForm.getCurrentLocation());
+	   			 for(String location: locListWithOr) {
+					  predicates.add(cb.like(cb.upper(candidatePersonal.get("currentLocation")),"%"+location.
+	  		       		  toUpperCase()+"%"));
+					 
+				  }
+	   			  
+	   		  }else if(searchForm.getCurrentLocation().contains("!")) {
+	   			  List<String>locListWithNot=ProfileParserUtils.processSearchStringWithNOT(searchForm.getCurrentLocation());
+	   			 for(String location: locListWithNot) {
+					  predicates.add(cb.notLike(cb.upper(candidatePersonal.get("currentLocation")),"%"+location.
+	  		       		  toUpperCase()+"%"));
+					 
+				  }
+	   			  
+	   		  }
+	   	   
+	      }
 			 
 	        if(predicates.size()>0) {
 	        Predicate[] predicatesArray = new Predicate[predicates.size()];
 	        query.select(candidatePersonal).where( cb.or(predicates.toArray(predicatesArray)));
+	      return  entityManager.createQuery(query)
+            .getResultList();
 	        }
-	        else query.select(candidatePersonal);
-		  return entityManager.createQuery(query)
-	                .getResultList();
+	       // else query.select(candidatePersonal);
+		  return new ArrayList<CandidatePersonalEntity>();
 	  }
 
 }

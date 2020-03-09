@@ -7,9 +7,18 @@
 <title>Profile Parser</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
 <!-- CSS here -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
+<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />	
+
+
+<!-- <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" media="screen" /> -->
+
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/magnific-popup.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -23,75 +32,47 @@
 
 </head>
 
-<body>
-	<!-- header-start -->
-	<header>
-		<div class="header-area ">
+<body onload="renderfile()">
 
-			<div id="sticky-header" class="main-header-area">
-				<div class="container">
-					<div class="header_bottom_border">
-						<div class="row align-items-center">
-							<div class="col-xl-3 col-lg-2" align="left">
-								<div class="logo">
-									<a href="https://reninfo.com.au/"> 
-									<img src="/img/Renaissance_logo.png" alt="" height="50px" width="150px">
-										
-									</a>
-								</div>
-							</div>
-							<!--  <div class="col-xl-6 col-lg-7">
+<!-- header-start -->
+    <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="50px" width="150px">
+
+				</a>
+			</div>
+		</div>
+                <div id="sticky-header" class="main-header-area">
+                    <div class="container">
+                        <div class="header_bottom_border">
+                            <div class="row">
+                                <div class="col-12">
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a href="index.html">home</a></li>
-                                                <li><a href="about.html">about</a></li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                            <li><a href="case_details.html">case details</a></li>
-                                                            <li><a href="about.html">about</a></li>
-                                                            <li><a href="elements.html">elements</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="study.html">Case study</a></li>
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">blog</a></li>
-                                                        <li><a href="single-blog.html">single-blog</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a  class="col-xl-12" href="logout" onclick="cleardata()">Logout</a></li>
                                             </ul>
                                         </nav>
                                     </div>
-                                </div> -->
-							<div class="col-xl-6 col-lg-7" align="right">
-                                   <!--  <div class="Appointment"> -->
-                                        <div class="main-menu d-none d-lg-block">
-                                           
-                                            <a  class="col-xl-12" href="logout" onclick="cleardata()">Logout</a>
-                                            
-                                       <!--  </div> -->
-                                    </div>
                                 </div>
-							
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- header-end -->
-
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
 	<!-- bradcam_area  -->
 	<div class="bradcam_area bradcam_bg_1">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="bradcam_text">
-						<h3>Candidate Info</h3>
+						<h3>Create Candidate Profile</h3>
 					</div>
 				</div>
 			</div>
@@ -123,6 +104,8 @@
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
 											id="selectFileId">
 									</div>
+									<div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert" id="divUploadSuccess"></div>
+									<!-- <div th:if="${fileLocation}" th:text="${fileLocation}" class="alert alert-success" role="alert" id="divUploadSuccess"></div> -->
 									<div class="col-md-12">
 										<input type="submit" value="Upload"
 											class="button button-contactForm boxed-btn pull-right mb-4" />
@@ -135,8 +118,8 @@
 								<div th:case="*">
 									<div class="col-lg-6">
 										<div class="pdf-container">
-											<object th:src="${fileLocation}">
-												<embed th:src="${fileLocation}" height="500px" width="500px" />
+											<object th:src="${fileLocation}" id="objId" height="1126px" width="500px">
+												<embed th:src="${fileLocation}"  id="embedId"/>
 											</object>
 										</div>
 									</div>
@@ -199,7 +182,7 @@
 															<div class="card-body">
 																<div class="col-lg-12">
 																	<form class="form-contact contact_form" method="post"
-																		id="candidateDetails" novalidate="novalidate">
+																		id="candidateDetails" novalidate="novalidate" >
 																		<div class="row">
 
 																			<div class="col-sm-6">
@@ -263,7 +246,7 @@
 																						onblur="this.placeholder = 'Primary Contact number'"
 																						class="single-input-secondary" id="primaryPhone"
 																						name="primaryPhone"
-																						th:field="${profile.primaryPhone}">
+																						th:field="${profile.primaryPhone}" >
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
@@ -286,7 +269,7 @@
 																							<!-- Default checked -->
 																							<div class="custom-control custom-radio">
 																								<input type="radio" class="custom-control-input"
-																									id="defaultChecked" name="defaultExampleRadios">
+																									id="defaultChecked" name="gender" value="male" >
 																								<label class="custom-control-label"
 																									for="defaultChecked">Male</label>
 																							</div>
@@ -296,7 +279,7 @@
 																							<div class="custom-control custom-radio">
 																								<input type="radio" class="custom-control-input"
 																									id="defaultUnchecked"
-																									name="defaultExampleRadios"> <label
+																									name="gender" value="female" > <label
 																									class="custom-control-label"
 																									for="defaultUnchecked">Female</label>
 																							</div>
@@ -312,7 +295,7 @@
 																						onfocus="this.placeholder = 'Date of Birth'"
 																						onblur="this.placeholder = 'Date of Birth'"
 																						class="single-input-secondary" id="dateOfBirth" name="dateOfBirth"
-																						th:field="${profile.dateOfBirth}" onchange="selval()">
+																						th:field="${profile.dateOfBirth}" >
 
 																				</div>
 																			</div>
@@ -330,12 +313,11 @@
 																				<div class="form-group">
 																					<label for="name">Visa</label>
 																					<div class="input-group-icon">
-																						<div class="icon">
-																							<i class="fa fa-plane" aria-hidden="true"></i>
-																						</div>
+																						
 																						<div class="form-select" id="default-select" >
-																							<select id="visatype" onchange="setSelectedVisaType()" th:field="*{profile.visaType}">
-																								<option value="None">Select Visa</option>
+																							<select id="visatype" onchange="setSelectedVisaType()" 
+																							th:field="*{profile.visaType}"  >
+																								<option value="none"  selected="selected">Select Visa</option>
 																								<option value="PR">PR</option>
 																								<option value="Citizen">Citizen</option>
 																								<option value="Dependent Visa">Dependent Visa</option>
@@ -402,37 +384,14 @@
 																	<form class="form-contact contact_form" action=""
 																		method="post" id="contactForm" novalidate="novalidate">
 																		<div class="row">
-																			<div class="col-sm-4">
+																		<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Work Experience</label> <input
-																						type="text" placeholder="Work Exp"
-																						onfocus="this.placeholder = 'Work Exp'"
-																						onblur="this.placeholder = 'Work Exp'"
-																						class="single-input" id="workExperience"
-																						name="workExperience"
-																						th:field="${profile.workExperience}">
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">Employed By</label> <input
-																						type="text" placeholder="Employed By"
-																						onfocus="this.placeholder = 'Employed By'"
-																						onblur="this.placeholder = 'Employed By'"
-																						class="single-input" id="employedByRen"
-																						name="employedByRen"
-																						th:field="${profile.employedByRen}">
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">Availability</label> <input
-																						type="text" placeholder="Availability"
-																						onfocus="this.placeholder = 'Availability'"
-																						onblur="this.placeholder = 'Availability'"
-																						class="single-input" id="availability"
-																						name="availability"
-																						th:field="${profile.availability}">
+																					<label for="name">Work Experience</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Work Experience'"
+																						onblur="this.placeholder = 'Work Experience'"
+																						placeholder="Work Experience" id="workExperience" name="workExperience"
+																						th:field="${profile.workExperience}"></textarea>
 																				</div>
 																			</div>
 																			<div class="col-12">
@@ -457,6 +416,40 @@
 																						th:field="${profile.certification}"></textarea>
 																				</div>
 																			</div>
+																			<!-- <div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Work Experience</label> <input
+																						type="text" placeholder="Work Exp"
+																						onfocus="this.placeholder = 'Work Exp'"
+																						onblur="this.placeholder = 'Work Exp'"
+																						class="single-input" id="workExperience"
+																						name="workExperience"
+																						th:field="${profile.workExperience}">
+																				</div>
+																			</div> -->
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Employed By</label> <input
+																						type="text" placeholder="Employed By"
+																						onfocus="this.placeholder = 'Employed By'"
+																						onblur="this.placeholder = 'Employed By'"
+																						class="single-input" id="employedByRen"
+																						name="employedByRen"
+																						th:field="${profile.employedByRen}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name">Availability</label> <input
+																						type="text" placeholder="Availability"
+																						onfocus="this.placeholder = 'Availability'"
+																						onblur="this.placeholder = 'Availability'"
+																						class="single-input" id="availability"
+																						name="availability"
+																						th:field="${profile.availability}">
+																				</div>
+																			</div>
+																			
 																			<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name">Assigned to emp</label> <input
@@ -686,8 +679,8 @@
 								<div class="form-group">
 									<label for="name">Name</label> <input type="text" name="name"
 										placeholder="Name" onfocus="this.placeholder = 'Name'"
-										onblur="this.placeholder = 'Name'" required
-										class="single-input">
+										onblur="this.placeholder = 'Name'" 
+										class="single-input" id="candidateName_s">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -695,7 +688,7 @@
 									<label for="name">Email</label> <input type="email"
 										name="EMAIL" placeholder="Email address"
 										onfocus="this.placeholder = 'Email address'"
-										onblur="this.placeholder = 'Email address'" required
+										onblur="this.placeholder = 'Email address'" id="primaryEmail_s"
 										class="single-input">
 								</div>
 							</div>
@@ -704,7 +697,7 @@
 									<label for="name">Contact number</label> <input type="text"
 										name="contact" placeholder="Contact number"
 										onfocus="this.placeholder = 'Contact number'"
-										onblur="this.placeholder = 'Contact number'" required
+										onblur="this.placeholder = 'Contact number'" id="primaryContactNo_s"
 										class="single-input-secondary">
 								</div>
 							</div>
@@ -713,7 +706,7 @@
 									<label for="name">Skills</label> <input type="text"
 										name="Skills" placeholder="Skills"
 										onfocus="this.placeholder = 'Skills'"
-										onblur="this.placeholder = 'Skills'" required
+										onblur="this.placeholder = 'Skills'" id="skill_s"
 										class="single-input">
 								</div>
 							</div>
@@ -722,7 +715,7 @@
 									<label for="name">Location</label> <input type="text"
 										name="Location" placeholder="Location"
 										onfocus="this.placeholder = 'Location'"
-										onblur="this.placeholder = 'Location'" required
+										onblur="this.placeholder = 'Location'" id="currentLocation_s"
 										class="single-input">
 								</div>
 							</div>
@@ -730,17 +723,15 @@
 								<div class="form-group">
 									<label for="name">Visa</label>
 									<div class="input-group-icon">
-										<div class="icon">
-											<i class="fa fa-plane" aria-hidden="true"></i>
-										</div>
+										
 										<div class="form-select" id="default-select">
-											<select>
-												<option value="1">Visa</option>
-												<option value="2">PR</option>
-												<option value="3">Citizen</option>
-												<option value="4">Dependent Visa</option>
-												<option value="5">Temporary graduate visa</option>
-												<option value="6">Work Visa</option>
+											<select id="visatype_s">
+												<option value="none" selected="selected">Select Visa</option>
+												<option value="PR">PR</option>
+												<option value="Citizen">Citizen</option>
+												<option value="Dependent Visa">Dependent Visa</option>
+												<option value="Temporary graduate visa">Temporary graduate visa</option>
+												<option value="Work Visa">Work Visa</option>
 											</select>
 										</div>
 									</div>
@@ -751,7 +742,7 @@
 									<label for="name">Experience</label> <input type="text"
 										name="Experience" placeholder="Experience"
 										onfocus="this.placeholder = 'Experience'"
-										onblur="this.placeholder = 'Experience'" required
+										onblur="this.placeholder = 'Experience'" id="workexperience_s"
 										class="single-input">
 								</div>
 							</div>
@@ -760,7 +751,7 @@
 									<label for="name">Certification</label> <input type="text"
 										name="Certification" placeholder="Certification"
 										onfocus="this.placeholder = 'Certification'"
-										onblur="this.placeholder = 'Certification'" required
+										onblur="this.placeholder = 'Certification'" id="certification_s"
 										class="single-input">
 								</div>
 							</div>
@@ -769,95 +760,39 @@
 									<label for="name">Availability</label> <input type="text"
 										name="Availability" placeholder="Availability"
 										onfocus="this.placeholder = 'Availability'"
-										onblur="this.placeholder = 'Availability'" required
+										onblur="this.placeholder = 'Availability'" id="availability_s"
 										class="single-input-secondary">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group text-center">
 									<button type="submit"
-										class="button button-contactForm boxed-btn">Search</button>
+										class="button button-contactForm boxed-btn" onclick="clickonsearch()">Search</button>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Phone</th>
-											<th>Skills</th>
-											<th>Certification</th>
-											<th>Visa</th>
-											<th>Available</th>
-											<th>File</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-										<tr>
-											<td>John</td>
-											<td>john@example.com</td>
-											<td>9866756897</td>
-											<td>ESB</td>
-											<td>Mulesoft Certified</td>
-											<td>Work Permit</td>
-											<td>Yes</td>
-											<td>Updated_profile.pdf</td>
-										</tr>
-									</tbody>
-								</table>
 							</div>
-						</div>
+							<div class="col-sm-12" id="searchresults_div" >
+							<div id="feedback"></div>
+			<table id="paginatedTable" class="display"  >
+			
+			
+<tfoot  style="display: none" hidden="true" id="table_foot">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Skill</th>               
+                <th>Location</th>
+                 <th>Visa Type</th>
+                <th>Availability</th>
+                <th>Assigned To</th>
+            </tr>
+        </tfoot>
+
+			</table>
+								
+							</div>
+						
 					</form>
 				</div>
 			</div>
@@ -872,38 +807,76 @@
 	<!--/ footer end  -->
 
 	<!-- JS here -->
-	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-	<script src="js/vendor/jquery-1.12.4.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/ajax-form.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/scrollIt.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/nice-select.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/gijgo.min.js"></script>
+	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+    <script type="text/javascript" th:src="@{../js/datatables.min.js}"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/js/fixedHeadermin.js" ></script>
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+	<!-- <script src="/js/vendor/modernizr-3.5.0.min.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+	<script src="js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script>
+ 	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="/js/isotope.pkgd.min.js" type="text/javascript"></script>
+	<script src="/js/ajax-form.js" type="text/javascript"></script>
+	<script src="/js/waypoints.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.counterup.min.js" type="text/javascript"></script>
+	<script src="/js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+	<script src="/js/scrollIt.js" type="text/javascript"></script>
+	<script src="/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+	<script src="/js/wow.min.js" type="text/javascript"></script>
+	<script src="/js/nice-select.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.slicknav.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+	<script src="/js/plugins.js" type="text/javascript" ></script>
+	<script src="/js/gijgo.min.js" type="text/javascript"></script>
+	Data table
+		
+<script type="text/javascript" src="/webjars/jquery/2.2.4/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" th:src="@{../js/datatables.min.js}"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/js/fixedHeadermin.js" ></script>
 
-	<!--contact js-->
-	<script src="js/contact.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.form.js"></script>
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/mail-script.js"></script>
 
-	<script src="js/main.js"></script>
-	<script src="js/idle_timeout.js"></script>
-	<script src="/js/fileuploadmain.js"></script>
+	contact js
+	<script src="/js/contact.js" type="text/javascript"></script>
+	<script src="/js/jquery.ajaxchimp.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.form.js" type="text/javascript"></script>
+	<script src="/js/jquery.validate.min.js" type="text/javascript" ></script>
+	<script src="/js/mail-script.js" type="text/javascript"></script>
+
+	<script src="/js/main.js" type="text/javascript"></script> -->
+	
 	<script>
 	
-	
+	$(document).ready(function(){ 
 		$('#dateOfBirth').datepicker({
 			iconsLibrary : 'fontawesome',
 			icons : {
@@ -920,7 +893,7 @@
 		$('#validUpto').datepicker({
 			iconsLibrary : 'fontawesome',
 			icons : {
-				rightIcon : '<span class="fa fa-caret-down"></span>'
+				rightIcon : '<span class="fa fa-caret-down" id="validupto_spn"></span>'
 			}
 		});
 		$('#workStartDate').datepicker({
@@ -935,7 +908,16 @@
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
 		});
+	});
+		
+	
 	</script>
+	
+	
+	
+	<script src="js/idle_timeout.js"></script>
+	<script src="/js/fileuploadmain.js"></script>
+	<script src="/js/profilesearchmain.js"></script>
 </body>
 
 </html>

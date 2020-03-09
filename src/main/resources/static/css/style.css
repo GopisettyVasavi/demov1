@@ -1035,7 +1035,7 @@ h3 {
 
 /* line 142, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu {
-  text-align: center;
+  text-align: right;
   padding: 12px 0;
 }
 
@@ -3497,6 +3497,7 @@ h3 {
   font-weight: 300;
   margin-bottom: 0;
   text-transform: capitalize;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -5026,6 +5027,7 @@ h6 {
 /* line 528, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .input-group-icon {
   position: relative;
+  
 }
 
 /* line 530, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */

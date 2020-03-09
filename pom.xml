@@ -57,7 +57,11 @@
     <artifactId>commons-lang3</artifactId>
     <version>3.0</version>
 </dependency>
-  
+  <dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.9.3</version>
+</dependency>
   <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
@@ -174,6 +178,10 @@
         <artifactId>guava</artifactId>
         <version>23.0</version>
     </dependency>
-   <!--  Docs4j Dependencies END -->     
+   <!--  Docs4j Dependencies END -->
+   <dependency>
+   	<groupId>org.springframework.boot</groupId>
+   	<artifactId>spring-boot-devtools</artifactId>
+   </dependency>
 	</dependencies>
 </project>
