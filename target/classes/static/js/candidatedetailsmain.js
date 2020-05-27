@@ -4,7 +4,7 @@ function windowClose() {
 		}
 
 function initialize(){
-
+//alert($("#lastupdateddatetime_dtl").val());
 	if(document.getElementById("filePath_dtl").value!=null){
 		//alert(document.getElementById("embedId").src);
 		document.getElementById("objid_dtl").src=document.getElementById("filePath_dtl").value;
@@ -57,24 +57,31 @@ function visaSelection() {
 }
 
 function updateProfile() {
+	//alert( $("#validUpto_dtl").val());
 	var url = "/createProfile";
 	event.preventDefault();
-	
-	var candidateName = document.getElementById("candidateName_dtl").value;
+	//alert($("#lastupdateddatetime_dtl").val());
+	var firstName = document.getElementById("firstName_dtl").value;
+	var lastName = document.getElementById("lastName_dtl").value;
+	var middleName = document.getElementById("middleName_dtl").value;
 	var primaryEmail = document.getElementById("primaryEmail_dtl").value;
 	var primaryPhone = document.getElementById("primaryPhone_dtl").value;
 	//alert($("#visatype").val())
-	if (candidateName.trim() == "" || primaryEmail.trim() == ""
-			|| primaryPhone.trim() == "") {
+	if (firstName.trim() == "" || primaryEmail.trim() == ""
+			|| primaryPhone.trim() == ""|| lastName.trim() == "") {
 
 		alert("Name, Primary Email and Primary Contact No fields cannot be blank.");
 	} else {
-		/*var d=$("#workStartDate_dtl").datepicker.parseDate("dd/mm/yy", "22/04/2009");
+		/*var d=$("#validUpto_dtl").datepicker.parseDate("dd/mm/yy", "22/04/2009");
 		
 alert(d);*/
+		alert("Middle "+$("#middleName_dtl").val());
 		var candidateDto = {}
 		candidateDto["candidateId"] = $("#candidateId_dtl").val();
-		candidateDto["candidateName"] = $("#candidateName_dtl").val();
+		candidateDto["candidateName"] = $("#firstName_dtl").val()+" "+$("#middleName_dtl").val()+" "+$("#lastName_dtl").val();
+		candidateDto["firstName"] = $("#firstName_dtl").val();
+		candidateDto["middleName"] = $("#middleName_dtl").val();
+		candidateDto["lastName"] =  $("#lastName_dtl").val();
 		candidateDto["primaryEmail"] = $("#primaryEmail_dtl").val();
 		candidateDto["primaryPhone"] = $("#primaryPhone_dtl").val();
 		candidateDto["skills"] = $("#skills_dtl").val();
@@ -106,6 +113,7 @@ alert(d);*/
 		candidateDto["workStartDate"] = $("#workStartDate_dtl").val();
 		candidateDto["workEndDate"] = $("#workEndDate_dtl").val();
 		candidateDto["lastUpdatedByUser"] = $("#lastUpdatedByUser_dtl").val();
+		//candidateDto["lastUpdatedByDateTime"] = $("#lastupdateddatetime_dtl").val();
 		candidateDto["summary"] = $("#summary_dtl").val();
 		if( $("#visatype").val()!="none"){
 			//alert("setting visatype");
@@ -128,6 +136,56 @@ alert(d);*/
 			success : function(data) {
 				var response = JSON.stringify(data);
 				//$('#candidateId').val(data.candidateId);
+				
+
+				$('#candidateId_dtl').val(data.candidateId);
+				$("#firstName_dtl").val(firstName);
+				$("#middleName_dtl").val(middleName);
+				$("#lastName_dtl").val(lastName);
+				$("#primaryEmail_dtl").val(data.primaryEmail);
+				 $("#primaryPhone_dtl").val(data.primaryPhone);
+				$("#skills_dtl").val(data.skills);
+				 $("#education_dtl").val(data.education);
+				$("#certification_dtl").val(data.certification);
+				$("#profileText_dtl").val(data.profileText);
+				$("#secondaryPhone_dtl").val(data.secondaryPhone);
+				$("#secondaryEmail_dtl").val(data.secondaryEmail);
+				$("#currentLocation_dtl").val(data.currentLocation);
+				$("#availability_dtl").val(data.availability);
+				$("#workExperience_dtl").val(data.workExperience);
+				$("#reference_dtl").val(data.reference);
+				$("#title_dtl").val(data.title);
+				$("#awards_dtl").val(data.awards);
+				$("#dateOfBirth_dtl").val(data.dateOfBirth);
+				$("#socialMediaLink_dtl").val(data.socialMediaLink);
+				$("#nationality_dtl").val(data.nationality);
+				$("#version_dtl").val(data.version);
+				$("#filePath_dtl").val(data.filePath);
+				$("#additionalNotes_dtl").val(data.additionalNotes);
+				$("#assignedToEmployeeId_dtl").val(data.assignedToEmployeeId);
+				$("#assignedToEmployeeName_dtl").val(data.assignedToEmployeeName);
+				$("#employedByRen_dtl").val(data.employedByRen);
+				$("#assignedDate_dtl").val(data.assignedDate);
+				$("#organization_dtl").val(data.organization);
+				$("#designation_dtl").val(data.designation);
+				$("#workStartDate_dtl").val(data.workStartDate);
+				$("#workEndDate_dtl").val(data.workEndDate);
+				$("#lastUpdatedByUser_dtl").val(data.lastUpdatedByUser);
+				$("#summary_dtl").val(data.summary);
+				$("#visatype_dtl").val(data.visaType);
+				$("#visaNo_dtl").val(data.visaNo);
+				 $("#validUpto_dtl").val(data.validUpto);
+				
+				 if($("#gender_dtl").val()=="male"){
+						//$('input:radio[name=gender]:nth(0)').attr('checked',true);
+						$('input:radio[name=gender]')[0].checked = true;
+						}
+						else if($("#gender_dtl").val()=="female"){
+							//alert("inside fem");
+							//$('input:radio[name=gender]:nth(1)').attr('checked',true);
+							$('input:radio[name=gender]')[1].checked = true;
+							
+					}
 				alert("Profile Updated..");
 				
 

@@ -95,6 +95,15 @@
 														  <input type="text"
 														id="lastUpdatedByUser_dtl" name="lastUpdatedByUser"
 														th:field="${profile.lastUpdatedByUser}" />
+														 <input type="text"
+														id="candidateName_dtl" name="lastUpdatedByUser"
+														th:field="${profile.candidateName}" />
+														<!-- <input type="text"
+       th:field="*{profile.lastUpdatedByDateTime}" 
+       th:value="${profile.lastUpdatedByDateTime}?${#temporals.format(profile.lastUpdatedByDateTime, 'dd-MM/yyyy hh:mm')}:''" id="lastupdateddatetime_dtl"/> -->
+														
+														
+														
 												</div>
 												<!-- Accordion -->
 												<div id="accordionExample" class="accordion shadow">
@@ -128,38 +137,39 @@
 
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">First Name</label> <input
+																					<label for="name" style="font-weight:bold">First Name *</label> <input
 																						type="text" placeholder="First Name"
 																						onfocus="this.placeholder = ''"
-																						onblur="this.placeholder = 'First Name'" required
-																						class="single-input" id="candidateName_dtl"
+																						onblur="this.placeholder = 'First Name'" 
+																						class="single-input" id="firstName_dtl"
 																						name="candidateName"
-																						th:field="${profile.candidateName}">
+																						th:field="${profile.firstName}" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Middle Name</label> <input
+																					<label for="name" style="font-weight:bold">Middle Name</label> <input
 																						type="text" name="middle_name"
 																						placeholder="Middle Name"
 																						onfocus="this.placeholder = ''"
-																						onblur="this.placeholder = 'Last Name'"
-																						class="single-input">
+																						onblur="this.placeholder = 'Middle Name'"
+																						class="single-input" 
+																						th:field="${profile.middleName}" id="middleName_dtl">
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Last Name</label> <input
+																					<label for="name" style="font-weight:bold">Last Name *</label> <input
 																						type="text" name="last_name"
 																						placeholder="Last Name"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Last Name'" required
-																						class="single-input">
+																						class="single-input" th:field="${profile.lastName}" id="lastName_dtl">
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Primary Email Address</label> <input
+																					<label for="name" style="font-weight:bold">Primary Email Address *</label> <input
 																						type="email" placeholder="Primary Email address"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Primary Email address'"
@@ -170,7 +180,7 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Secondary Email Address</label> <input
+																					<label for="name" style="font-weight:bold">Secondary Email Address</label> <input
 																						type="email" placeholder="Secondary Email address"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Secondary Email address'"
@@ -181,30 +191,30 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Primary Contact Number</label> <input
+																					<label for="name" style="font-weight:bold">Primary Contact Number *</label> <input
 																						type="text" placeholder="Primary Contact Number"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Primary Contact number'"
-																						class="single-input-secondary" id="primaryPhone_dtl"
+																						class="single-input" id="primaryPhone_dtl"
 																						name="primaryPhone"
-																						th:field="${profile.primaryPhone}">
+																						th:field="${profile.primaryPhone}" required>
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Secondary Contact Number</label>
+																					<label for="name" style="font-weight:bold">Secondary Contact Number</label>
 																					<input type="text"
 																						placeholder="Secondary Contact number"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Secondary Contact number'"
-																						class="single-input-secondary" id="secondaryPhone_dtl"
+																						class="single-input" id="secondaryPhone_dtl"
 																						name="secondaryPhone"
 																						th:field="${profile.secondaryPhone}">
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Gender</label>
+																					<label for="name" style="font-weight:bold">Gender</label>
 																					<div class="row">
 																						<div class="col-sm-6">
 																							<!-- Default checked -->
@@ -212,7 +222,7 @@
 																								<input type="radio" class="custom-control-input"
 																									id="defaultChecked" name="gender" value="male"  >
 																								<label class="custom-control-label"
-																									for="defaultChecked">Male</label>
+																									for="defaultChecked" style="font-weight:bold">Male</label>
 																							</div>
 																						</div>
 																						<div class="col-sm-6">
@@ -222,7 +232,7 @@
 																									id="defaultUnchecked"
 																									name="gender" value="female" > <label
 																									class="custom-control-label"
-																									for="defaultUnchecked">Female</label>
+																									for="defaultUnchecked" style="font-weight:bold">Female</label>
 																							</div>
 																						</div>
 																					</div>
@@ -230,19 +240,19 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Date of Birth</label> <input
-																						data-date-format="dd/mm/yyyy" 
+																					<label for="name" style="font-weight:bold">Date of Birth</label> <input
+																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Date of Birth"
 																						onfocus="this.placeholder = 'Date of Birth'"
 																						onblur="this.placeholder = 'Date of Birth'"
-																						class="single-input-secondary" id="dateOfBirth_dtl" name="dateOfBirth"
+																						class="single-input" id="dateOfBirth_dtl" name="dateOfBirth"
 																						th:field="${profile.dateOfBirth}" >
 
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Current Location</label> <input
+																					<label for="name" style="font-weight:bold">Current Location</label> <input
 																						type="text" placeholder="Current Location"
 																						onfocus="this.placeholder = ''"
 																						onblur="this.placeholder = 'Current Location'"
@@ -252,7 +262,36 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Visa</label>
+																					<label for="name" style="font-weight:bold">Employed By</label>
+																					 <div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="employedByRen_dtl"  
+																							th:field="*{profile.employedByRen}"  >
+																								<option value="No"  selected="selected">No</option>
+																								<option value="Yes">Yes</option>
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Availability</label> <input
+																						type="text" placeholder="Availability"
+																						onfocus="this.placeholder = 'Availability'"
+																						onblur="this.placeholder = 'Availability'"
+																						class="single-input" id="availability_dtl"
+																						name="availability"
+																						th:field="${profile.availability}">
+																				</div>
+																			</div>
+																			
+																			
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Visa Category</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -271,23 +310,23 @@
 																			</div>
 																			<div class="col-sm-6"  >
 																				<div class="form-group">
-																			<label for="name" id="visano_lbl_dtl" style="display: none">Visa No</label> <input
-																						type="text" placeholder="Visa No"
+																			<label for="name" id="visano_lbl_dtl" style="display: none;font-weight:bold">Visa Type</label> <input
+																						type="text" placeholder="Visa Type"
 																						onfocus="this.placeholder = ''"
-																						onblur="this.placeholder = 'Visa No'"
+																						onblur="this.placeholder = 'Visa Type'"
 																						class="single-input" id="visaNo_dtl"
 																						name="visano" th:field="${profile.visaNo}" style="display: none">
 																					</div>
 																				</div>
 																				<div class="col-sm-6" >
 																				<div class="form-group">
-																						<label for="name" id="validupto_lbl_dtl" style="display: none">Valid upto</label>
+																						<label for="name" id="validupto_lbl_dtl" style="display: none;font-weight:bold">Valid upto</label>
 																						<input 
-																						data-date-format="dd/mm/yyyy" 
+																						 
 																						 placeholder="Valid upto"
 																						onfocus="this.placeholder = 'Valid upto'"
 																						onblur="this.placeholder = 'Valid upto'"
-																						class="single-input-secondary" id="validUpto_dtl" 
+																						class="single-input" id="validUpto_dtl" 
 																						name="validUpto" th:field="${profile.validUpto}" style="display: none">
 																						
 																					</div>
@@ -326,16 +365,7 @@
 																		method="post" id="contactForm" novalidate="novalidate">
 																		<div class="row">
 																		
-																		<div class="col-12">
-																				<div class="form-group">
-																					<label for="name">Work Experience</label>
-																					<textarea class="form-control w-100" cols="30"
-																						rows="3" onfocus="this.placeholder = 'Work Experience'"
-																						onblur="this.placeholder = 'Work Experience"
-																						placeholder="Work Experience" id="workExperience_dtl" name="workExperience"
-																						th:field="${profile.workExperience}"></textarea>
-																				</div>
-																			</div>
+																		
 																			<!-- <div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name">Work Experience</label> <input
@@ -350,7 +380,7 @@
 																			
 																			<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Skills</label>
+																					<label for="name" style="font-weight:bold">Skills</label>
 																					<textarea class="form-control w-100" cols="30"
 																						rows="3" onfocus="this.placeholder = 'Skill Set'"
 																						onblur="this.placeholder = 'Skill Set'"
@@ -360,7 +390,7 @@
 																			</div>
 																			<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Certification</label>
+																					<label for="name" style="font-weight:bold">Certification</label>
 																					<textarea class="form-control w-100" cols="30"
 																						rows="3"
 																						onfocus="this.placeholder = 'Certifications'"
@@ -370,75 +400,27 @@
 																						th:field="${profile.certification}"></textarea>
 																				</div>
 																			</div>
-																			<div class="col-sm-4">
+																			<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Employed By</label> <input
-																						type="text" placeholder="Employed By"
-																						onfocus="this.placeholder = 'Employed By'"
-																						onblur="this.placeholder = 'Employed By'"
-																						class="single-input" id="employedByRen_dtl"
-																						name="employedByRen"
-																						th:field="${profile.employedByRen}">
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">Availability</label> <input
-																						type="text" placeholder="Availability"
-																						onfocus="this.placeholder = 'Availability'"
-																						onblur="this.placeholder = 'Availability'"
-																						class="single-input" id="availability_dtl"
-																						name="availability"
-																						th:field="${profile.availability}">
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">Assigned to emp</label> <input
-																						type="text" placeholder="Employee Assigned"
-																						onfocus="this.placeholder = 'Employee Assigned'"
-																						onblur="this.placeholder = 'Employee Assigned'"
-																						class="single-input" id="assignedToEmployeeName_dtl"
-																						name="assignedToEmployeeName"
-																						th:field="${profile.assignedToEmployeeName}">
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">Assigned Date</label> <input 
-																						data-date-format="dd/mm/yyyy" 
-																						 placeholder="Assigned Date"
-																						onfocus="this.placeholder = 'Assigned Date'"
-																						onblur="this.placeholder = 'Assigned Date'"
-																						class="single-input-secondary" id="assignedDate_dtl" 
-																						name="assignedDate" th:field="${profile.assignedDate}">
-																					<!-- <input type="text" name="mobile_number" placeholder="Mobile number"
-                                                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile number'"
-                                                                                required class="single-input-secondary"> -->
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name">References</label> <input
-																						type="text" placeholder="References"
-																						onfocus="this.placeholder = 'References'"
-																						onblur="this.placeholder = 'References'"
-																						class="single-input" id="reference_dtl"
-																						name="reference" th:field="${profile.reference}">
+																					<label for="name" style="font-weight:bold">Awards</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Awards'"
+																						onblur="this.placeholder = 'Awards'"
+																						placeholder="Awards" id="awards_dtl" name="awards"
+																						th:field="${profile.awards}"></textarea>
 																				</div>
 																			</div>
 																			<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Additional Notes</label>
+																					<label for="name" style="font-weight:bold">References</label>
 																					<textarea class="form-control w-100" cols="30"
-																						rows="3"
-																						onfocus="this.placeholder = 'Additional Notes'"
-																						onblur="this.placeholder = 'Additional Notes'"
-																						placeholder="Additional Notes"
-																						id="additionalNotes_dtl" name="additionalNotes"
-																						th:field="${profile.additionalNotes}"></textarea>
+																						rows="3" onfocus="this.placeholder = 'References'"
+																						onblur="this.placeholder = 'References'"
+																						placeholder="References" id="reference_dtl" name="References"
+																						th:field="${profile.reference}"></textarea>
 																				</div>
 																			</div>
+																			
 																		</div>
 																	</form>
 																</div>
@@ -475,7 +457,7 @@
 																		<div class="row">
 																			<div class="col-12">
 																				<div class="form-group">
-																					<label for="name">Education</label>
+																					<label for="name" style="font-weight:bold">Education</label>
 																					<textarea class="form-control w-100" cols="30"
 																						rows="3" onfocus="this.placeholder = 'Education'"
 																						onblur="this.placeholder = 'Education'"
@@ -483,18 +465,7 @@
 																						name="education" th:field="${profile.education}"></textarea>
 																				</div>
 																			</div>
-																			<div class="col-12">
-																				<div class="form-group">
-																					<label for="name">Awards</label>
-																					<textarea class="form-control w-100" cols="30"
-																						rows="3" onfocus="this.placeholder = 'Awards'"
-																						onblur="this.placeholder = 'Awards'"
-																						placeholder="Awards" id="awards_dtl" name="awards"
-																						th:field="${profile.awards}"></textarea>
-																				</div>
-																			</div>
-
-
+																			
 																		</div>
 																	</form>
 																</div>
@@ -529,9 +500,19 @@
 																		action="contact_process.php" method="post"
 																		id="contactForm" novalidate="novalidate">
 																		<div class="row">
+																		<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Experience</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3" onfocus="this.placeholder = 'Work Experience'"
+																						onblur="this.placeholder = 'Work Experience"
+																						placeholder="Work Experience" id="workExperience_dtl" name="workExperience"
+																						th:field="${profile.workExperience}"></textarea>
+																				</div>
+																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Organization</label> <input
+																					<label for="name" style="font-weight:bold">Organization</label> <input
 																						type="text" placeholder="Organization"
 																						onfocus="this.placeholder = 'Organization'"
 																						onblur="this.placeholder = 'Organization'"
@@ -542,7 +523,7 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Designation</label> <input
+																					<label for="name" style="font-weight:bold">Designation</label> <input
 																						type="text" placeholder="Designation"
 																						onfocus="this.placeholder = 'Designation'"
 																						onblur="this.placeholder = 'Designation'"
@@ -552,13 +533,13 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">Start Date</label> 
+																					<label for="name" style="font-weight:bold">Start Date</label> 
 																					 <input 
-																						data-date-format="dd/mm/yyyy" 
+																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Start Date"
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
-																						class="single-input-secondary" id="workStartDate_dtl" 
+																						class="single-input" id="workStartDate_dtl" 
 																						name="workStartDate" th:field="${profile.workStartDate}">
 																					
 																						
@@ -566,13 +547,13 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name">End Date</label> 
+																					<label for="name" style="font-weight:bold">End Date</label> 
 																					 <input 
-																						data-date-format="dd/mm/yyyy" 
+																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="End Date"
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
-																						class="single-input-secondary" id="workEndDate_dtl" 
+																						class="single-input" id="workEndDate_dtl" 
 																						name="workEndDate" th:field="${profile.workEndDate}">
 																					
 																				</div>
@@ -583,7 +564,103 @@
 															</div>
 														</div>
 													</div>
-
+													<div class="card">
+														<div id="headingFive"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseFive" aria-expanded="false"
+																			aria-controls="collapseFive"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Other Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseFive"
+																	aria-expanded="false" aria-controls="collapseFive"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseFive" aria-labelledby="headingFive"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																			
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Assigned to Emp</label> <input
+																						type="text" placeholder="Employee Assigned"
+																						onfocus="this.placeholder = 'Employee Assigned'"
+																						onblur="this.placeholder = 'Employee Assigned'"
+																						class="single-input" id="assignedToEmployeeName_dtl"
+																						name="assignedToEmployeeName"
+																						th:field="${profile.assignedToEmployeeName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Assigned Date</label> <input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Assigned Date"
+																						onfocus="this.placeholder = 'Assigned Date'"
+																						onblur="this.placeholder = 'Assigned Date'"
+																						class="single-input" id="assignedDate_dtl" 
+																						name="assignedDate" th:field="${profile.assignedDate}">
+																					<!-- <input type="text" name="mobile_number" placeholder="Mobile number"
+                                                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile number'"
+                                                                                required class="single-input"> -->
+																				</div>
+																			</div>
+																			
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Last Updated By</label> 
+																					 <input
+																						type="text" placeholder="Last updated by"
+																						onfocus="this.placeholder = 'Last updated by'"
+																						onblur="this.placeholder = 'Last updated by'"
+																						class="single-input" id="lastupdatedBy_dtl"
+																						name="lastupdatedBy"
+																						th:field="${profile.lastUpdatedByUser}" readonly="readonly">
+																					
+																						
+																				</div>
+																			</div>
+																			<!-- <div class="col-sm-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Last Updated Date</label> 
+																					 <input 
+																						data-date-format="dd/mm/yyyy" 
+																						 placeholder="Lastupdated Date"
+																						onfocus="this.placeholder = 'Lastupdated Date'"
+																						onblur="this.placeholder = 'Lastupdated Date'"
+																						class="single-input" id="LastupdatedDt_dtl" 
+																						name="LastupdatedDt" th:field="${profile.lastUpdatedByDateTime}" readonly="readonly">
+																					
+																				</div>
+																			</div> -->
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Notes</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Notes'"
+																						onblur="this.placeholder = 'Additional Notes'"
+																						placeholder="Additional Notes"
+																						id="additionalNotes_dtl" name="additionalNotes_dtl"
+																						th:field="${profile.additionalNotes}"></textarea>
+																				</div>
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -653,38 +730,50 @@
 	<script>
 	$(document).ready(function(){ 
 		$('#dateOfBirth_dtl').datepicker({
+			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
 		});
 		$('#assignedDate_dtl').datepicker({
+			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
 
 		});
-		$('#validUpto_dtl').datepicker({
+		$('input[id$=validUpto_dtl]').datepicker({
+			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down" id="validspn_dtl"></span>'
 			}
+		
 		});
+		//setMinDate(); // Set it now
+	      //setInterval(setMinDate, 60000);
 		$('#workStartDate_dtl').datepicker({
+			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
 		});
 		$('#workEndDate_dtl').datepicker({
+			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {
 				rightIcon : '<span class="fa fa-caret-down"></span>'
 			}
 		});
 	});	
-	
+	function setMinDate() {
+		  var minDate = new Date();
+		  minDate.setDate(minDate.getDate()+(minDate.getHours() < 16 ? 1 : 2));
+		  $('#validUpto_dtl').datepicker( {minDate: minDate, defaultDate: minDate});
+		}
 	</script>
 	<script src="js/idle_timeout.js"></script>
 	<script src="/js/fileuploadmain.js"></script>

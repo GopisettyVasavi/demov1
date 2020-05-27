@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
- <title>Profile Parser</title>
+ <title>Renaissance</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
@@ -53,22 +53,22 @@
     <div class="starter-template">
              
 
-        <form class="form-horizontal" id="login-form">
-            <div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label">User Name</label>
+        <form class="form-horizontal" id="login-form" >
+            <div class="form-group form-group-lg" style="padding-left: 300px">
+                <label class="col-sm-2 control-label" style="font-weight:bold">User Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="username"/>
                 </div>
             </div>
 
-			<div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label">Password</label>
+			<div class="form-group form-group-lg" style="padding-left: 300px">
+                <label class="col-sm-2 control-label" style="font-weight:bold">Password</label>
                 <div class="col-sm-6">
                     <input type="password" class="form-control" id="password"/>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="padding-left: 300px">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" id="bth-login"
                             class="button button-contactForm boxed-btn" onclick="clickonlogin()">Login
@@ -76,7 +76,16 @@
                 </div>
             </div>
         </form>
-
+<div class="row" style="padding-left: 330px">
+<h6> New User? To register
+<a href="#" onclick="register()" style="text-decoration:underline;"> click here.</a></h6>
+ 
+</div>
+<div class="row" style="padding-left: 330px">
+<h6> Need to change password?
+<a href="#" onclick="changepassword()" style="text-decoration:underline;"> click here.</a></h6>
+ 
+</div>
 	<div id="feedback"></div>
     </div>
 
@@ -86,6 +95,50 @@
         src="webjars/jquery/2.2.4/jquery.min.js"></script>
 
 <script type="text/javascript">
+function register(){
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/registeremployee",
+	       // data: JSON.stringify(loginForm),
+	       // dataType: 'json',
+	        cache: false,
+	        timeout: 600000,
+	        success: function (data) {
+	        	
+	           window.location='/registeremployee'
+
+	        },
+	        error: function (e) {
+	        	 var json = "<h4>Response Error: Error in redirecting.";
+	             $('#feedback').html(json);
+
+	        }
+	    });
+	
+}
+function changepassword(){
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/changepassword",
+	       // data: JSON.stringify(loginForm),
+	       // dataType: 'json',
+	        cache: false,
+	        timeout: 600000,
+	        success: function (data) {
+	        	
+	           window.location='/changepassword'
+
+	        },
+	        error: function (e) {
+	        	 var json = "<h4>Response Error: Error in redirecting.";
+	             $('#feedback').html(json);
+
+	        }
+	    });
+	
+}
 function clickonlogin(){
 	  event.preventDefault();
 
@@ -104,10 +157,14 @@ function clickonlogin(){
         cache: false,
         timeout: 600000,
         success: function (data) {
-        	
-           
-            window.location='/profileparser'
-
+        	//alert(data.result.employeeRole);
+        	//alert()
+           /* if(data.result.employeeRole==""|| data.result.employeeRole=="undefined"||data.result.employeeRole=="Recruiter"){
+            window.location='/profileparser';}
+            else{
+            	window.location='/bulkfileupload';} */
+            	
+        	window.location='/index';
         },
         error: function (e) {
         	

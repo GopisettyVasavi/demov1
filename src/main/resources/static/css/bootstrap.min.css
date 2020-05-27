@@ -249,7 +249,7 @@ th {
 
 label {
     display: inline-block;
-    margin-bottom: .5rem
+    margin-bottom: .1rem
 }
 
 button {
@@ -2055,7 +2055,7 @@ pre code {
     display: block;
     width: 100%;
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
@@ -4707,7 +4707,7 @@ tbody.collapse.show {
 }
 
 .card-header {
-    padding: .75rem 1.25rem;
+    padding: .25rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);
     border-bottom: 1px solid rgba(0, 0, 0, .125)
@@ -5179,8 +5179,8 @@ tbody.collapse.show {
 
 .alert {
     position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
+   /* padding: .75rem 1.25rem;*/
+    margin-bottom: .25rem;
     border: 1px solid transparent;
     border-radius: .25rem
 }
@@ -7795,22 +7795,22 @@ button.bg-dark:hover {
 
 .mt-4,
 .my-4 {
-    margin-top: 1.5rem!important
+    margin-top: .5rem!important
 }
 
 .mr-4,
 .mx-4 {
-    margin-right: 1.5rem!important
+    margin-right: .5rem!important
 }
 
 .mb-4,
 .my-4 {
-    margin-bottom: 1.5rem!important
+    margin-bottom: .5rem!important
 }
 
 .ml-4,
 .mx-4 {
-    margin-left: 1.5rem!important
+    margin-left: .5rem!important
 }
 
 .m-5 {

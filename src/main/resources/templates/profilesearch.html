@@ -11,16 +11,13 @@
 	media="screen" />
 <link th:href="@{../css/datatables.min.css}" rel="stylesheet"
 	media="screen" />
-
-<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-	rel="stylesheet" media="screen" />	
-	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.jqueryui.min.css"
-	rel="stylesheet" media="screen" />	
-	
-	
+	<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet"
+	media="screen" />
 <script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" th:src="@{../js/datatables.min.js}"></script>
+
+
 <script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js"></script>
 <script src="/js/fixedHeadermin.js" ></script>
 <script src="/js/profilesearchmain.js" ></script>
@@ -35,30 +32,30 @@
 
 			<form class="form-horizontal" id="search-form">
 				<div class="form-group form-group-lg">
-					<label>Candidate Name</label>
+					<label style="font-weight:bold">Candidate Name</label>
 					<div>
 						<input type="text" class="form-control" id="candidateName" />
 					</div>
-					<label>Candidate Primary Email</label>
+					<labe style="font-weight:bold"l>Candidate Primary Email</label>
 					<div>
 						<input type="text" class="form-control" id="primaryEmail" />
 					</div>
-					<label>Candidate Primary Contact No</label>
+					<label style="font-weight:bold">Candidate Primary Contact No</label>
 					<div>
 						<input type="text" class="form-control" id="primaryContactNo" />
 					</div>
 				</div>
 
 				<div class="form-group form-group-lg">
-					<label>Skill</label>
+					<label style="font-weight:bold">Skill</label>
 					<div>
 						<input type="text" class="form-control" id="skill" />
 					</div>
-					<label>Candidate Availability</label>
+					<label style="font-weight:bold">Candidate Availability</label>
 					<div>
 						<input type="text" class="form-control" id="availability" />
 					</div>
-					<label>Current Location</label>
+					<label style="font-weight:bold">Current Location</label>
 					<div>
 						<input type="text" class="form-control" id="currentLocation" />
 					</div>
@@ -74,6 +71,7 @@
 			</form>
 
 			<div id="feedback"></div>
+			
 			<table id="paginatedTable" class="display">
 
 
