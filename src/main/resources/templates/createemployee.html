@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+ <title>Renaissance</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<!-- header-start -->
+<header>
+		<div class="col-xl-3 col-lg-2">
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="50px" width="150px">
+
+				</a>
+			</div>
+		</div>
+
+</header>
+<!-- header-end -->
+	 <div class="bradcam_area bradcam_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="bradcam_text">
+                                <h3>Register Employee</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<body>
+
+<div class="col-lg-12">
+					<form class="form-contact contact_form"
+						  id="employeeform">
+						<div class="row">
+						<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">First Name *</label> <input type="text" name="name"
+										placeholder="First Name" onfocus="this.placeholder = 'FirstName'"
+										onblur="this.placeholder = 'First Name'" 
+										class="single-input" id="firstName" required pattern=".{4,}" title="Six or more characters">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Middle Name</label> <input type="text" name="name"
+										placeholder="Middle Name" onfocus="this.placeholder = 'Middle Name'"
+										onblur="this.placeholder = 'Middle Name'" 
+										class="single-input" id="middleName" >
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Last Name *</label> <input type="text" name="name"
+										placeholder="Last Name" onfocus="this.placeholder = 'Last Name'"
+										onblur="this.placeholder = 'Last Name'" 
+										class="single-input" id="lastName" required pattern=".{4,}" title="Six or more characters">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Full Name *</label> <input type="text" name="name"
+										placeholder="Name" onfocus="this.placeholder = 'Name'"
+										onblur="this.placeholder = 'Name'" 
+										class="single-input" id="employeeName" required pattern=".{4,}" title="Six or more characters">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Email</label> <input type="email"
+										name="EMAIL" placeholder="Email address"
+										onfocus="this.placeholder = 'Email address'"
+										onblur="this.placeholder = 'Email address'" id="email"
+										class="single-input">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact number</label> <input type="text"
+										name="contact" placeholder="Contact number"
+										onfocus="this.placeholder = 'Contact number'"
+										onblur="this.placeholder = 'Contact number'" id="contactno"
+										class="single-input">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+							<label for="name" style="font-weight:bold">Visa Category</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="visaType" onchange="setSelectedVisaType()" >
+																								<option value="none"  selected="selected">Select Visa</option>
+																								<option value="PR">PR</option>
+																								<option value="Citizen">Citizen</option>
+																								<option value="Dependent Visa">Dependent Visa</option>
+																								<option value="Temporary graduate visa">Temporary graduate visa</option>
+																								<option value="Work Visa">Work Visa</option>
+																							</select>
+																						</div>
+																					</div>
+																					</div>
+																					</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" id="visano_lbl" style="display: none; font-weight:bold">Visa Type</label> <input
+																						type="text" placeholder="Visa No"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Visa No'"
+																						class="single-input" id="visaNo"
+																						name="visano"  style="display: none">
+								</div>
+							</div>	
+							<div class="col-sm-4">
+								<div class="form-group" id="valid_div" style="display: none">
+									<label for="name" id="validupto_lbl" style="font-weight:bold">Valid upto</label>
+																						<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Valid upto"
+																						onfocus="this.placeholder = 'Valid upto'"
+																						onblur="this.placeholder = 'Valid upto'"
+																						class="single-input" id="validUpto" 
+																						name="validUpto"  style="display: none">
+								</div>
+							</div>														
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Address</label> <input type="text"
+										name="address" placeholder="Address"
+										onfocus="this.placeholder = 'Address'"
+										onblur="this.placeholder = 'Address'" id="address"
+										class="single-input">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Joining Date</label> <input data-date-format="dd/mm/yyyy" 
+									placeholder="Joining Date"
+									onfocus="this.placeholder = 'Joining Date'"
+									onblur="this.placeholder = 'Joining Date'"
+									class="single-input-secondary" id="joiningdate" 
+									name="joiningdate" >
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Role *</label>
+									<div class="input-group-icon">
+										
+										<div class="form-select" id="default-select">
+											<select id="role" required title="Please select a role.">
+												<option value="none" selected="selected">Select Role</option>
+												<option value="Recruiter">Recruiter</option>
+												<option value="Data Entry Operator">Data Entry Operator</option>
+												<option value="Admin">Admin</option>
+												
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">App Login *</label> <input type="text"
+										name="login" placeholder="login"
+										onfocus="this.placeholder = 'login'"
+										onblur="this.placeholder = 'login'" id="applogin"
+										class="single-input" required pattern=".{6,}" title="Six or more characters">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">App Password *</label> <input type="text"
+										name="password" placeholder="password"
+										onfocus="this.placeholder = 'password'"
+										onblur="this.placeholder = 'password'" id="apppassword"
+										class="single-input" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+										 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+						
+								</div>
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="form-group text-center">
+									<input type="submit"
+										class="button button-contactForm boxed-btn" onclick="clickonsave()" value="Register"/>
+										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" > 
+										<button type="submit"
+										class="button button-contactForm boxed-btn" onclick="javascript:history.go(-1);return false;">Back</button>
+										
+								</div>
+							</div>
+							</div>
+							
+						
+					</form>
+					<div id="feedback"></div>
+				</div>
+
+ <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+    
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+
+<script type="text/javascript">
+
+function reset() {
+	//window.open('','_parent','');
+	event.preventDefault();
+	window.close();
+	}
+	function goback(){
+		history.go(-1);
+		return false;
+	}
+function windowclose() {
+	//window.open('','_parent','');
+	 window.opener ='';
+
+           
+	window.close();
+	}
+$(document).ready(function(){ 
+	$('#joiningdate').datepicker({
+		format: 'dd/mm/yyyy',
+		iconsLibrary : 'fontawesome',
+		icons : {
+			rightIcon : '<span class="fa fa-caret-down"></span>'
+		}
+	});
+	$('#validUpto').datepicker({
+		format: 'dd/mm/yyyy',
+		iconsLibrary : 'fontawesome',
+		icons : {
+			rightIcon : '<span class="fa fa-caret-down"></span>'
+		}
+	});
+});
+	
+ function clickonsave(){
+	 $('#feedback').html("");
+	// alert($("#role").val());
+	 if($("#employeeName").val().length==0||$("#applogin").val().length==0||$("#apppassword").val().length==0 |$("#role").val()=='none'){
+		// alert("Validation error"+$("#role").val());
+		// var json = "<h4>Validation error: Please input manadatory fields.</h4>";
+         $('#feedback').html("<h4>Validation error: Please input manadatory fields.</h4>");
+         event.preventDefault();
+         return false;
+	 }
+	  event.preventDefault();
+
+    var employeeForm = {}
+    employeeForm["employeeName"] = $("#employeeName").val();
+    employeeForm["firstName"] = $("#firstName").val();
+    employeeForm["middleName"] = $("#middleName").val();
+    employeeForm["lastName"] = $("#lastName").val();
+    employeeForm["visaType"] = $("#visaType").val();
+    employeeForm["visaNo"] = $("#visaNo").val();
+    employeeForm["visaValidDate"] = $("#validUpto").val();
+    employeeForm["email"] = $("#email").val();
+    employeeForm["employeeRole"] = $("#role").val();
+    employeeForm["contactPhone"] = $("#contactno").val();
+    employeeForm["joiningDate"] = $("#joiningdate").val();
+   // employeeForm["contactPhone"] = $("#contactno").val();
+    employeeForm["profileParserAppLogin"] = $("#applogin").val();
+    employeeForm["profileParserAppPwd"] = $("#apppassword").val();
+    employeeForm["address"] = $("#address").val();
+    
+   //alert(employeeForm);
+    $.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/saveemployee",
+		data : JSON.stringify(employeeForm),
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+		success : function(data) {
+			var response = JSON.stringify(data);
+        	alert("Employee Registered Successfully...");
+           
+           // window.location='/profileparser'
+
+        },
+        error: function (e) {
+        	
+			//alert("error");
+           // var json = "<h4>Response Error: Employee with name "+$("#employeeName").val() +" already exists.</h4>";
+            $('#feedback').html("Error in registering Employee. Please check details and try again.");
+			alert("Error"+e.responseText);
+            console.log("ERROR : ", e);
+           // $("#btn-login").prop("disabled", false);
+
+        }
+    });
+    
+} 
+ 
+ function setSelectedVisaType() {
+		var visatype=document.getElementById("visaType").value;
+		var e = document.getElementById("visaType");
+		var result = e.options[e.selectedIndex].text;
+		//alert(result); //United State
+		//alert(visatype);
+		if(visatype=="Dependent Visa" || visatype=="Temporary graduate visa" || visatype=="Work Visa"){
+			//alert("Inside if");
+			$("#visano_lbl").show();
+			$("#visaNo").show();
+			$("#validupto_lbl").show();
+			$("#validUpto").show();
+			$("#valid_div").show();
+			$("#validupto_spn").show();
+			
+			
+			//document.getElementById("visaextracols").style.visibility='block';
+		}else{
+			
+			$("#visano_lbl").hide();
+			$("#visaNo").hide();
+			$("#validupto_lbl").hide();
+			$("#validUpto").hide();
+			$("#valid_div").hide();
+			$("#validupto_spn").hide();
+		}
+		
+	}
+ </script>
+<script src="js/idle_timeout.js"></script>
+</body>
+</html>

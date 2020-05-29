@@ -1,0 +1,294 @@
+2020-05-22 20:53:11,833 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@55fc8c6f
+2020-05-22 20:53:14,130 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File original file name::Aparna_CV - Copy.docx 
+2020-05-22 20:53:18,860 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was started successfully
+2020-05-22 20:53:18,864 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has started successfully
+2020-05-22 20:53:18,874 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-1-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1590144796847-0\e27dbc11-1066-4df4-ade5-f26444a85784\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1590144796847-0\e27dbc11-1066-4df4-ade5-f26444a85784\temp2 (application/pdf)
+2020-05-22 20:53:19,141 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] FILE EXISTS....false
+2020-05-22 20:53:19,434 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-05-22 20:53:19,434 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-05-22 20:53:19,435 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-3-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1590144799141-0\86afd030-7dfc-4c2c-b97b-710668ee0478\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1590144799141-0\86afd030-7dfc-4c2c-b97b-710668ee0478\temp2 (application/pdf)
+2020-05-22 20:53:21,172 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was shut down successfully
+2020-05-22 20:53:21,173 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has shut down successfully
+2020-05-22 20:53:21,174 INFO com.profile.parser.util.FileUtils [http-nio-8090-exec-2] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-05-22 20:53:21,319 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-05-22 20:53:21,320 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-05-22 20:53:21,320 INFO com.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-05-22 20:53:21,320 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File before redirecting..D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\src\main\resources\static\content\Aparna_CV - Copy.pdf,Aparna_CV - Copy.pdf
+2020-05-22 20:53:21,419 WARN org.apache.tika.parsers.PDFParser [http-nio-8090-exec-4] J2KImageReader not loaded. JPEG2000 files will not be processed.
+See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
+for optional dependencies.
+
+2020-05-22 20:53:21,436 WARN org.apache.tika.parser.SQLite3Parser [http-nio-8090-exec-4] org.xerial's sqlite-jdbc is not loaded.
+Please provide the jar on your classpath to parse sqlite files.
+See tika-parsers/pom.xml for the correct version.
+2020-05-22 21:01:42,416 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-8] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 21:01:42,435 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] Search Results personal table, 6
+2020-05-22 21:01:42,436 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] Search Results profile table, 0
+2020-05-22 21:01:42,436 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] List size before.. ,6
+2020-05-22 21:01:42,437 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] List size after.. ,6
+2020-05-22 21:01:42,461 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,94 Aparna   Palekar PR
+2020-05-22 21:01:42,468 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 21:01:42,473 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,106 Smita   Ture PR
+2020-05-22 21:01:42,478 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,124 Anish   Mohile PR
+2020-05-22 21:01:42,484 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 21:01:42,489 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,112 Abhijit   Pramanik PR
+2020-05-22 21:01:42,489 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-8] Search Results, 6
+2020-05-22 21:07:40,838 INFO com.profile.parser.web.LoginController [http-nio-8090-exec-9] Found matching User details for: {}vasavi
+2020-05-22 21:07:49,817 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-5] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 21:07:49,821 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] Search Results personal table, 6
+2020-05-22 21:07:49,822 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] Search Results profile table, 0
+2020-05-22 21:07:49,822 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] List size before.. ,6
+2020-05-22 21:07:49,822 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] List size after.. ,6
+2020-05-22 21:07:49,826 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,94 Aparna   Palekar PR
+2020-05-22 21:07:49,831 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 21:07:49,835 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,106 Smita   Ture PR
+2020-05-22 21:07:49,838 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,124 Anish   Mohile PR
+2020-05-22 21:07:49,841 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 21:07:49,845 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-5] All details,112 Abhijit   Pramanik PR
+2020-05-22 21:07:49,845 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-5] Search Results, 6
+2020-05-22 21:17:22,999 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 21:17:23,004 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 6
+2020-05-22 21:17:23,004 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-22 21:17:23,004 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,6
+2020-05-22 21:17:23,004 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,6
+2020-05-22 21:17:23,008 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-05-22 21:17:23,011 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 21:17:23,015 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,106 Smita   Ture PR
+2020-05-22 21:17:23,024 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,124 Anish   Mohile PR
+2020-05-22 21:17:23,027 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 21:17:23,031 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,112 Abhijit   Pramanik PR
+2020-05-22 21:17:23,031 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 6
+2020-05-22 21:38:37,128 INFO com.profile.parser.web.LoginController [http-nio-8090-exec-9] Found matching User details for: {}vasavi
+2020-05-22 21:38:50,902 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Dependent Visa, workExperience=, certification=]
+2020-05-22 21:38:50,908 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results personal table, 3
+2020-05-22 21:38:50,908 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results profile table, 0
+2020-05-22 21:38:50,908 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size before.. ,3
+2020-05-22 21:38:50,908 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size after.. ,3
+2020-05-22 21:38:50,917 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,60 Arti Yadav Dependent Visa
+2020-05-22 21:38:50,923 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,70 Ashish Sharma Dependent Visa
+2020-05-22 21:38:50,929 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,114 Prasad age1| 4 Dependent Visa
+2020-05-22 21:38:50,929 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search Results, 3
+2020-05-22 21:41:48,319 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 21:41:48,323 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results personal table, 6
+2020-05-22 21:41:48,323 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results profile table, 0
+2020-05-22 21:41:48,323 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size before.. ,6
+2020-05-22 21:41:48,323 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size after.. ,6
+2020-05-22 21:41:48,327 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,94 Aparna   Palekar PR
+2020-05-22 21:41:48,329 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 21:41:48,334 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,106 Smita   Ture PR
+2020-05-22 21:41:48,335 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,124 Anish   Mohile PR
+2020-05-22 21:41:48,339 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 21:41:48,342 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,112 Abhijit   Pramanik PR
+2020-05-22 21:41:48,342 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search Results, 6
+2020-05-22 21:50:55,417 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Citizen, workExperience=, certification=]
+2020-05-22 21:50:55,420 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results personal table, 0
+2020-05-22 21:50:55,420 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results profile table, 0
+2020-05-22 21:50:55,420 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size before.. ,0
+2020-05-22 21:50:55,420 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size after.. ,0
+2020-05-22 21:50:55,420 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search Results, 0
+2020-05-22 21:51:03,729 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 21:51:03,734 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results personal table, 6
+2020-05-22 21:51:03,734 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results profile table, 0
+2020-05-22 21:51:03,734 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size before.. ,6
+2020-05-22 21:51:03,734 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size after.. ,6
+2020-05-22 21:51:03,738 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,94 Aparna   Palekar PR
+2020-05-22 21:51:03,741 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 21:51:03,744 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,106 Smita   Ture PR
+2020-05-22 21:51:03,749 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,124 Anish   Mohile PR
+2020-05-22 21:51:03,752 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 21:51:03,755 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,112 Abhijit   Pramanik PR
+2020-05-22 21:51:03,755 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search Results, 6
+2020-05-22 21:52:39,212 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:16:44,322 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-22 22:16:44,327 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-22 22:29:22,966 INFO com.profile.parser.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 17428 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-22 22:29:22,967 INFO com.profile.parser.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-22 22:29:24,139 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-22 22:29:24,139 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-22 22:29:24,300 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-22 22:29:24,415 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-22 22:29:24,535 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-22 22:29:24,575 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-22 22:29:24,618 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2020-05-22 22:29:24,619 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2020-05-22 22:29:24,708 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-05-22 22:29:24,813 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-22 22:29:25,100 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-22 22:29:25,104 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@36528889
+2020-05-22 22:29:26,119 INFO com.profile.parser.DemoApplication [restartedMain] Started DemoApplication in 3.484 seconds (JVM running for 4.407)
+2020-05-22 22:29:26,121 INFO com.profile.parser.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-22 22:29:31,627 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 22:29:38,398 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-10] HHH000397: Using ASTQueryTranslatorFactory
+2020-05-22 22:29:38,591 INFO com.profile.parser.web.LoginController [http-nio-8090-exec-10] Found matching User details for: {}vasavi
+2020-05-22 22:29:47,116 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Citizen, workExperience=, certification=]
+2020-05-22 22:29:47,133 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results personal table, 0
+2020-05-22 22:29:47,133 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results profile table, 0
+2020-05-22 22:29:47,133 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size before.. ,0
+2020-05-22 22:29:47,134 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size after.. ,0
+2020-05-22 22:29:47,135 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search Results, 0
+2020-05-22 22:29:50,035 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Citizen, workExperience=, certification=]
+2020-05-22 22:29:50,038 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 0
+2020-05-22 22:29:50,038 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-22 22:29:50,039 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,0
+2020-05-22 22:29:50,039 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,0
+2020-05-22 22:29:50,039 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 0
+2020-05-22 22:29:57,559 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:29:57,564 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results personal table, 6
+2020-05-22 22:29:57,565 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results profile table, 0
+2020-05-22 22:29:57,565 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size before.. ,6
+2020-05-22 22:29:57,565 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size after.. ,6
+2020-05-22 22:29:57,589 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,94 Aparna   Palekar PR
+2020-05-22 22:29:57,595 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:29:57,600 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,106 Smita   Ture PR
+2020-05-22 22:29:57,606 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,124 Anish   Mohile PR
+2020-05-22 22:29:57,612 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:29:57,617 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:29:57,617 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search Results, 6
+2020-05-22 22:29:59,105 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:29:59,110 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results personal table, 6
+2020-05-22 22:29:59,110 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results profile table, 0
+2020-05-22 22:29:59,110 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size before.. ,6
+2020-05-22 22:29:59,110 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size after.. ,6
+2020-05-22 22:29:59,114 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,94 Aparna   Palekar PR
+2020-05-22 22:29:59,119 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:29:59,123 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,106 Smita   Ture PR
+2020-05-22 22:29:59,127 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,124 Anish   Mohile PR
+2020-05-22 22:29:59,131 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:29:59,136 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:29:59,136 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search Results, 6
+2020-05-22 22:31:06,624 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:31:06,628 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 6
+2020-05-22 22:31:06,629 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-22 22:31:06,629 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,6
+2020-05-22 22:31:06,629 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,6
+2020-05-22 22:31:06,634 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-05-22 22:31:06,638 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:31:06,643 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,106 Smita   Ture PR
+2020-05-22 22:31:06,654 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,124 Anish   Mohile PR
+2020-05-22 22:31:06,658 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:31:06,661 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:31:06,661 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 6
+2020-05-22 22:45:36,621 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:45:36,626 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results personal table, 6
+2020-05-22 22:45:36,627 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results profile table, 0
+2020-05-22 22:45:36,627 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size before.. ,6
+2020-05-22 22:45:36,627 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size after.. ,6
+2020-05-22 22:45:36,630 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,94 Aparna   Palekar PR
+2020-05-22 22:45:36,634 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:45:36,636 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,106 Smita   Ture PR
+2020-05-22 22:45:36,640 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,124 Anish   Mohile PR
+2020-05-22 22:45:36,642 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:45:36,645 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:45:36,645 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search Results, 6
+2020-05-22 22:51:43,699 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:51:43,705 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results personal table, 6
+2020-05-22 22:51:43,705 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results profile table, 0
+2020-05-22 22:51:43,705 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size before.. ,6
+2020-05-22 22:51:43,705 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size after.. ,6
+2020-05-22 22:51:43,708 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,94 Aparna   Palekar PR
+2020-05-22 22:51:43,713 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:51:43,716 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,106 Smita   Ture PR
+2020-05-22 22:51:43,719 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,124 Anish   Mohile PR
+2020-05-22 22:51:43,721 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:51:43,724 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:51:43,724 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search Results, 6
+2020-05-22 22:58:01,027 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-6] null session
+2020-05-22 22:58:08,817 INFO com.profile.parser.web.LoginController [http-nio-8090-exec-4] Found matching User details for: {}vasavi
+2020-05-22 22:58:17,160 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 22:58:17,164 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 6
+2020-05-22 22:58:17,164 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-22 22:58:17,164 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,6
+2020-05-22 22:58:17,164 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,6
+2020-05-22 22:58:17,167 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-05-22 22:58:17,171 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 22:58:17,173 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,106 Smita   Ture PR
+2020-05-22 22:58:17,176 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,124 Anish   Mohile PR
+2020-05-22 22:58:17,178 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 22:58:17,180 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,112 Abhijit   Pramanik PR
+2020-05-22 22:58:17,180 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 6
+2020-05-22 23:05:43,754 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:05:43,760 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results personal table, 6
+2020-05-22 23:05:43,760 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results profile table, 0
+2020-05-22 23:05:43,760 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size before.. ,6
+2020-05-22 23:05:43,760 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size after.. ,6
+2020-05-22 23:05:43,767 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,94 Aparna   Palekar PR
+2020-05-22 23:05:43,770 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:05:43,773 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,106 Smita   Ture PR
+2020-05-22 23:05:43,775 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,124 Anish   Mohile PR
+2020-05-22 23:05:43,779 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:05:43,781 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:05:43,781 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search Results, 6
+2020-05-22 23:13:03,349 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:13:03,355 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results personal table, 6
+2020-05-22 23:13:03,355 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] Search Results profile table, 0
+2020-05-22 23:13:03,355 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size before.. ,6
+2020-05-22 23:13:03,355 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] List size after.. ,6
+2020-05-22 23:13:03,358 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,94 Aparna   Palekar PR
+2020-05-22 23:13:03,360 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:13:03,362 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,106 Smita   Ture PR
+2020-05-22 23:13:03,365 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,124 Anish   Mohile PR
+2020-05-22 23:13:03,367 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:13:03,370 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:13:03,370 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-3] Search Results, 6
+2020-05-22 23:13:23,644 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:13:23,647 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results personal table, 6
+2020-05-22 23:13:23,647 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] Search Results profile table, 0
+2020-05-22 23:13:23,647 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size before.. ,6
+2020-05-22 23:13:23,647 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] List size after.. ,6
+2020-05-22 23:13:23,651 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,94 Aparna   Palekar PR
+2020-05-22 23:13:23,654 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:13:23,657 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,106 Smita   Ture PR
+2020-05-22 23:13:23,660 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,124 Anish   Mohile PR
+2020-05-22 23:13:23,663 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:13:23,666 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:13:23,666 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-10] Search Results, 6
+2020-05-22 23:15:06,216 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:15:06,219 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 6
+2020-05-22 23:15:06,219 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-22 23:15:06,219 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,6
+2020-05-22 23:15:06,219 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,6
+2020-05-22 23:15:06,222 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-05-22 23:15:06,224 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:15:06,227 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,106 Smita   Ture PR
+2020-05-22 23:15:06,230 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,124 Anish   Mohile PR
+2020-05-22 23:15:06,232 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:15:06,235 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:15:06,235 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 6
+2020-05-22 23:18:57,619 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:18:57,622 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results personal table, 6
+2020-05-22 23:18:57,622 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results profile table, 0
+2020-05-22 23:18:57,622 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size before.. ,6
+2020-05-22 23:18:57,622 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size after.. ,6
+2020-05-22 23:18:57,625 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,94 Aparna   Palekar PR
+2020-05-22 23:18:57,628 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:18:57,630 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,106 Smita   Ture PR
+2020-05-22 23:18:57,633 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,124 Anish   Mohile PR
+2020-05-22 23:18:57,635 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:18:57,637 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:18:57,637 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search Results, 6
+2020-05-22 23:21:00,746 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:21:00,750 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results personal table, 6
+2020-05-22 23:21:00,751 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results profile table, 0
+2020-05-22 23:21:00,751 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size before.. ,6
+2020-05-22 23:21:00,751 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size after.. ,6
+2020-05-22 23:21:00,753 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,94 Aparna   Palekar PR
+2020-05-22 23:21:00,755 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:21:00,758 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,106 Smita   Ture PR
+2020-05-22 23:21:00,760 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,124 Anish   Mohile PR
+2020-05-22 23:21:00,762 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:21:00,764 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:21:00,764 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search Results, 6
+2020-05-22 23:24:13,707 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-22 23:24:13,710 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results personal table, 6
+2020-05-22 23:24:13,710 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results profile table, 0
+2020-05-22 23:24:13,710 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size before.. ,6
+2020-05-22 23:24:13,710 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size after.. ,6
+2020-05-22 23:24:13,713 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,94 Aparna   Palekar PR
+2020-05-22 23:24:13,716 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,98 SUDEEPTA   SINHA PR
+2020-05-22 23:24:13,718 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,106 Smita   Ture PR
+2020-05-22 23:24:13,720 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,124 Anish   Mohile PR
+2020-05-22 23:24:13,722 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-22 23:24:13,724 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,112 Abhijit   Pramanik PR
+2020-05-22 23:24:13,724 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search Results, 6

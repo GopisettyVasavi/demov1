@@ -1,0 +1,407 @@
+2020-05-23 15:15:45,982 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h49m51s245ms6µs600ns).
+2020-05-23 15:35:40,731 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-23 15:35:40,735 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-23 15:45:23,553 INFO com.profile.parser.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 7340 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-23 15:45:23,556 INFO com.profile.parser.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-23 15:45:24,973 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-23 15:45:24,973 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-23 15:45:25,139 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-23 15:45:25,247 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-23 15:45:25,364 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-23 15:45:25,404 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-23 15:45:25,446 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2020-05-23 15:45:25,447 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2020-05-23 15:45:25,543 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-05-23 15:45:25,649 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-23 15:45:25,925 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-23 15:45:25,929 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@c062fa7
+2020-05-23 15:45:26,952 INFO com.profile.parser.DemoApplication [restartedMain] Started DemoApplication in 3.744 seconds (JVM running for 4.682)
+2020-05-23 15:45:26,954 INFO com.profile.parser.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-23 15:51:46,912 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-23 16:03:09,895 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown initiated...
+2020-05-23 16:03:09,896 INFO com.zaxxer.hikari.HikariDataSource [Thread-2] HikariPool-1 - Shutdown completed.
+2020-05-23 16:03:10,214 INFO com.profile.parser.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 7340 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-23 16:03:10,214 INFO com.profile.parser.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-23 16:03:10,665 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-23 16:03:10,665 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-23 16:03:10,694 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-23 16:03:10,731 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2020-05-23 16:03:10,764 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2020-05-23 16:03:10,775 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-23 16:03:10,800 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-23 16:03:11,051 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-23 16:03:11,051 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@c062fa7
+2020-05-23 16:03:11,352 INFO com.profile.parser.DemoApplication [restartedMain] Started DemoApplication in 1.166 seconds (JVM running for 1069.082)
+2020-05-23 16:03:11,353 INFO com.profile.parser.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-23 16:03:30,601 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-23 16:03:30,608 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] INVOKE SERVICE...
+2020-05-23 16:03:30,621 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-1] [THYMELEAF][http-nio-8090-exec-1] Exception processing template "Success": Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-23 16:03:30,623 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-23 16:03:54,322 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] INVOKE SERVICE...
+2020-05-23 16:03:54,323 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-2] [THYMELEAF][http-nio-8090-exec-2] Exception processing template "Success": Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-23 16:03:54,324 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [Success], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-23 16:05:59,030 INFO com.zaxxer.hikari.HikariDataSource [Thread-10] HikariPool-2 - Shutdown initiated...
+2020-05-23 16:05:59,034 INFO com.zaxxer.hikari.HikariDataSource [Thread-10] HikariPool-2 - Shutdown completed.
+2020-05-23 16:05:59,384 INFO com.profile.parser.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 7340 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-23 16:05:59,384 INFO com.profile.parser.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-23 16:05:59,808 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-23 16:05:59,808 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-23 16:05:59,836 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-23 16:05:59,869 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2020-05-23 16:05:59,901 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2020-05-23 16:05:59,912 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-23 16:05:59,938 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-23 16:06:00,192 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-23 16:06:00,192 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@c062fa7
+2020-05-23 16:06:00,500 INFO com.profile.parser.DemoApplication [restartedMain] Started DemoApplication in 1.145 seconds (JVM running for 1238.23)
+2020-05-23 16:06:00,501 INFO com.profile.parser.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-23 16:06:07,159 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-23 16:06:07,165 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] INVOKE SERVICE...
+2020-05-23 16:06:07,171 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] null session
+2020-05-23 16:13:39,176 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-6] INVOKE SERVICE...
+2020-05-23 16:13:39,178 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] null session
+2020-05-23 16:51:21,940 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] INVOKE SERVICE...
+2020-05-23 16:51:21,942 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] null session
+2020-05-23 16:59:48,629 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] INVOKE SERVICE...
+2020-05-23 16:59:48,631 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-9] null session
+2020-05-23 16:59:54,888 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] INVOKE SERVICE...
+2020-05-23 16:59:54,890 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] null session
+2020-05-23 17:02:06,065 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] INVOKE SERVICE...
+2020-05-23 17:02:06,067 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] null session
+2020-05-23 18:38:34,709 INFO com.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Register Employee Mvc Controller invoked
+2020-05-23 18:38:34,748 INFO com.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Register Employee Mvc Controller invoked
+2020-05-23 18:40:25,568 INFO com.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked, ChangePassword
+2020-05-23 18:40:25,581 INFO com.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked, ChangePassword
+2020-05-23 18:41:10,270 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-6] HHH000397: Using ASTQueryTranslatorFactory
+2020-05-23 18:41:10,349 INFO com.profile.parser.web.LoginController [http-nio-8090-exec-6] Found matching User details for: {}vasavi
+2020-05-23 18:41:44,987 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1b271271
+2020-05-23 18:41:46,692 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File original file name::Aparna_CV.docx 
+2020-05-23 18:41:50,242 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was started successfully
+2020-05-23 18:41:50,246 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has started successfully
+2020-05-23 18:41:50,255 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-1-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1590223310007-0\a1993c81-cf1e-472e-ac40-f67451944134\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1590223310007-0\a1993c81-cf1e-472e-ac40-f67451944134\temp2 (application/pdf)
+2020-05-23 18:41:51,702 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] FILE EXISTS....true
+2020-05-23 18:41:51,808 WARN org.apache.tika.parsers.PDFParser [http-nio-8090-exec-2] J2KImageReader not loaded. JPEG2000 files will not be processed.
+See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
+for optional dependencies.
+
+2020-05-23 18:41:51,829 WARN org.apache.tika.parser.SQLite3Parser [http-nio-8090-exec-2] org.xerial's sqlite-jdbc is not loaded.
+Please provide the jar on your classpath to parse sqlite files.
+See tika-parsers/pom.xml for the correct version.
+2020-05-23 18:41:51,973 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was shut down successfully
+2020-05-23 18:41:51,974 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has shut down successfully
+2020-05-23 18:41:51,974 INFO com.profile.parser.util.FileUtils [http-nio-8090-exec-7] Successfully converted document Aparna_CV.docx to Pdf as Aparna_CV.pdf
+2020-05-23 18:42:14,534 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@45d3385c
+2020-05-23 18:42:16,619 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] File original file name::Aparna_CV.docx 
+2020-05-23 18:42:21,628 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] FILE EXISTS....true
+2020-05-23 18:42:34,251 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@16cfb037
+2020-05-23 18:42:37,194 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File original file name::Abhijit Resume.docx 
+2020-05-23 18:42:41,257 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was started successfully
+2020-05-23 18:42:41,257 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has started successfully
+2020-05-23 18:42:41,259 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-3-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1590223359263-0\10f15cea-86b1-49e5-bcef-8ecb24e0bda2\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1590223359263-0\10f15cea-86b1-49e5-bcef-8ecb24e0bda2\temp2 (application/pdf)
+2020-05-23 18:42:42,201 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] FILE EXISTS....false
+2020-05-23 18:42:42,732 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was started successfully
+2020-05-23 18:42:42,732 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has started successfully
+2020-05-23 18:42:42,734 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-5-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1590223362201-0\e0be6520-8865-4591-930f-8d9b8d398a2c\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1590223362201-0\e0be6520-8865-4591-930f-8d9b8d398a2c\temp2 (application/pdf)
+2020-05-23 18:42:43,732 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was shut down successfully
+2020-05-23 18:42:43,732 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has shut down successfully
+2020-05-23 18:42:43,732 INFO com.profile.parser.util.FileUtils [http-nio-8090-exec-8] Successfully converted document Abhijit Resume.docx to Pdf as Abhijit Resume.pdf
+2020-05-23 18:42:44,848 ERROR com.profile.parser.util.FileUtils [http-nio-8090-exec-1] Error occured while converting doc to pdf.Abhijit Resume,{}
+java.lang.Exception: Could not complete conversion
+	at com.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.profile.parser.web.FileuploadMvcController.singleFileUpload(FileuploadMvcController.java:137)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-23 18:42:44,848 INFO com.profile.parser.util.FileUtils [http-nio-8090-exec-1] Successfully converted document Abhijit Resume.docx to Pdf as Abhijit Resume.pdf
+2020-05-23 18:42:44,848 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File before redirecting..null,Abhijit Resume.pdf
+2020-05-23 18:43:06,981 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@36918996
+2020-05-23 18:43:08,743 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File original file name::Abhijit Resume.docx 
+2020-05-23 18:43:13,751 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] FILE EXISTS....true
+2020-05-23 18:48:00,200 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-23 18:48:00,223 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results personal table, 6
+2020-05-23 18:48:00,223 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] Search Results profile table, 0
+2020-05-23 18:48:00,223 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size before.. ,6
+2020-05-23 18:48:00,224 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] List size after.. ,6
+2020-05-23 18:48:00,249 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,94 Aparna   Palekar PR
+2020-05-23 18:48:00,256 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,98 SUDEEPTA   SINHA PR
+2020-05-23 18:48:00,260 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,106 Smita   Ture PR
+2020-05-23 18:48:00,265 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,124 Anish   Mohile PR
+2020-05-23 18:48:00,271 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-23 18:48:00,277 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-7] All details,112 Abhijit   Pramanik PR
+2020-05-23 18:48:00,277 INFO com.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-7] Search Results, 6
+2020-05-23 18:48:43,072 INFO com.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,112 Abhijit   Pramanik PR
+2020-05-23 18:59:02,375 INFO com.profile.parser.web.LogoutController [http-nio-8090-exec-7] Logout invoked...
+2020-05-23 18:59:12,490 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5751b1c
+2020-05-23 18:59:12,490 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] null session
+2020-05-23 18:59:13,519 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a48a68c
+2020-05-23 18:59:13,519 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] null session
+2020-05-23 18:59:21,739 INFO com.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] null session

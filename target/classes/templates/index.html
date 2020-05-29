@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Renaissance</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- header-start -->
+    <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+
+				</a>
+				
+				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+			</div>
+		</div>
+               
+            </div>
+        </header>
+        <!-- header-end -->
+	<!-- bradcam_area  -->
+	<div class="bradcam_area bradcam_bg_1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="bradcam_text">
+						<h3>Index</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ bradcam_area  -->
+<body onload="initialize()">
+
+	<div class="col-lg-12">
+		<form class="form-contact contact_form" id="indexform">
+
+
+			<div class="container">
+
+				<div class="row" id="parserdiv" >
+					<h5>
+						<a href="#" onclick="openProfileParser()"
+							style="text-decoration: underline;"> Profile Parser</a>
+					</h5>
+
+				</div>
+
+				<div class="row" id="contractordiv" >
+					<h5>
+						<a href="#" onclick="openContractorManagement()"
+							style="text-decoration: underline;"> Contractor Management</a>
+					</h5>
+
+				</div>
+				<div class="row" id="bulkfileuploaddiv" >
+					<h5>
+						<a href="#" onclick="openBulkFileUpload()"
+							style="text-decoration: underline;"> Bulk File Upload</a>
+					</h5>
+
+				</div>
+
+			</div>
+
+		</form>
+
+		<div id="feedback"></div>
+	</div>
+
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/ajax-form.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/scrollIt.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/nice-select.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/gijgo.min.js"></script>
+
+	<!--contact js-->
+	<script src="js/contact.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/mail-script.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+	function renderLinksByRole(role){
+		//alert("Role"+role);
+		
+		if(role==""||role=="undefined"){
+			
+			 var json = "<h4>User does not have defined roles. Please check with Administrator.</h4>";
+	         $('#feedback').html(json);
+	         $("#parserdiv").hide();
+	         $("#contractordiv").hide();
+	         $("#bulkfileuploaddiv").hide();
+		}
+		if(role=="Recruiter"){
+						//alert("rec");
+	         $("#parserdiv").show();
+	         $("#contractordiv").hide();
+	         $("#bulkfileuploaddiv").hide();
+		}
+		if(role=="Data Entry Operator"){
+			 $("#parserdiv").hide();
+	         $("#contractordiv").hide();
+	         $("#bulkfileuploaddiv").show();
+		}
+		if(role=="Admin"){
+			 $("#parserdiv").show();
+	         $("#contractordiv").show();
+	         $("#bulkfileuploaddiv").show();
+		}
+	}
+function initialize(){
+	$('#feedback').html("");
+	$("#parserdiv").hide();
+    $("#contractordiv").hide();
+    $("#bulkfileuploaddiv").hide();
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/indexload",
+	         cache: false,
+	        timeout: 600000,
+	        success: function (data) {
+	        	
+	          // window.location='/changepassword'
+	        	renderLinksByRole(data);
+
+	        },
+	        error: function (e) {
+	        	 var json = "<h4>Response Error: Error in redirecting.";
+	             $('#feedback').html(json);
+
+	        }
+	    });
+	//alert(document.getElementById("employeeName").value);
+	
+}
+function openProfileParser(){
+	window.location='/profileparser'
+}
+function openContractorManagement(){
+	window.location='/contractormain'
+}
+function openBulkFileUpload(){
+	window.location='/bulkfileupload'
+}
+ </script>
+<script src="js/idle_timeout.js"></script>
+</body>
+</html>

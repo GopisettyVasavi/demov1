@@ -1,0 +1,217 @@
+2020-05-28 10:46:53,199 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-9 housekeeper] HikariPool-9 - Thread starvation or clock leap detected (housekeeper delta=13h41m27s642ms73µs400ns).
+2020-05-28 10:54:12,715 INFO com.zaxxer.hikari.HikariDataSource [Thread-61] HikariPool-9 - Shutdown initiated...
+2020-05-28 10:54:12,716 INFO com.zaxxer.hikari.HikariDataSource [Thread-61] HikariPool-9 - Shutdown completed.
+2020-05-28 10:54:13,315 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 10:54:13,315 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 10:54:14,889 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 10:54:14,889 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 10:54:14,952 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 10:54:15,049 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-10 - Starting...
+2020-05-28 10:54:15,116 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-10 - Start completed.
+2020-05-28 10:54:15,145 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 10:54:15,206 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 10:54:15,792 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 10:54:15,792 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 10:54:16,523 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 3.26 seconds (JVM running for 50193.138)
+2020-05-28 10:54:16,527 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 10:57:15,421 INFO com.zaxxer.hikari.HikariDataSource [Thread-68] HikariPool-10 - Shutdown initiated...
+2020-05-28 10:57:15,427 INFO com.zaxxer.hikari.HikariDataSource [Thread-68] HikariPool-10 - Shutdown completed.
+2020-05-28 10:57:15,979 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 10:57:15,979 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 10:57:16,518 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 10:57:16,518 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 10:57:16,545 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 10:57:16,585 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-11 - Starting...
+2020-05-28 10:57:16,642 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-11 - Start completed.
+2020-05-28 10:57:16,663 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 10:57:16,697 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 10:57:17,209 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 10:57:17,209 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 10:57:17,564 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.643 seconds (JVM running for 50374.178)
+2020-05-28 10:57:17,565 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 10:58:54,195 INFO com.zaxxer.hikari.HikariDataSource [Thread-75] HikariPool-11 - Shutdown initiated...
+2020-05-28 10:58:54,205 INFO com.zaxxer.hikari.HikariDataSource [Thread-75] HikariPool-11 - Shutdown completed.
+2020-05-28 10:58:54,594 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 10:58:54,594 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 10:58:55,083 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 10:58:55,083 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 10:58:55,110 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 10:58:55,155 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-12 - Starting...
+2020-05-28 10:58:55,221 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-12 - Start completed.
+2020-05-28 10:58:55,247 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 10:58:55,277 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 10:58:55,916 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 10:58:55,916 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 10:58:56,225 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.662 seconds (JVM running for 50472.841)
+2020-05-28 10:58:56,227 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 10:59:17,596 INFO com.zaxxer.hikari.HikariDataSource [Thread-82] HikariPool-12 - Shutdown initiated...
+2020-05-28 10:59:17,603 INFO com.zaxxer.hikari.HikariDataSource [Thread-82] HikariPool-12 - Shutdown completed.
+2020-05-28 10:59:18,140 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 10:59:18,141 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 10:59:19,032 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 10:59:19,032 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 10:59:19,094 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 10:59:19,185 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-13 - Starting...
+2020-05-28 10:59:19,252 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-13 - Start completed.
+2020-05-28 10:59:19,276 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 10:59:19,338 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 10:59:19,925 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 10:59:19,925 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 10:59:20,586 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 2.488 seconds (JVM running for 50497.201)
+2020-05-28 10:59:20,590 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 11:02:27,829 INFO com.zaxxer.hikari.HikariDataSource [Thread-89] HikariPool-13 - Shutdown initiated...
+2020-05-28 11:02:27,841 INFO com.zaxxer.hikari.HikariDataSource [Thread-89] HikariPool-13 - Shutdown completed.
+2020-05-28 11:02:28,257 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 11:02:28,257 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 11:02:28,720 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 11:02:28,720 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 11:02:28,762 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 11:02:28,802 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-14 - Starting...
+2020-05-28 11:02:28,865 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-14 - Start completed.
+2020-05-28 11:02:28,889 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 11:02:28,923 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 11:02:29,520 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 11:02:29,520 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 11:02:29,814 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.584 seconds (JVM running for 50686.429)
+2020-05-28 11:02:29,816 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 11:05:14,505 INFO com.zaxxer.hikari.HikariDataSource [Thread-96] HikariPool-14 - Shutdown initiated...
+2020-05-28 11:05:14,516 INFO com.zaxxer.hikari.HikariDataSource [Thread-96] HikariPool-14 - Shutdown completed.
+2020-05-28 11:05:14,968 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12296 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 11:05:14,968 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 11:05:15,484 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 11:05:15,485 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 11:05:15,519 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 11:05:15,559 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Starting...
+2020-05-28 11:05:15,621 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Start completed.
+2020-05-28 11:05:15,647 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 11:05:15,678 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 11:05:16,155 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 11:05:16,155 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f1d75c2
+2020-05-28 11:05:16,548 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.613 seconds (JVM running for 50853.162)
+2020-05-28 11:05:16,549 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 11:05:28,962 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-15 - Shutdown initiated...
+2020-05-28 11:05:28,966 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-15 - Shutdown completed.
+2020-05-28 12:53:24,564 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 20016 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 12:53:24,566 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 12:53:26,131 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 12:53:26,132 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 12:53:26,322 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 12:53:26,452 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-28 12:53:26,684 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-28 12:53:26,736 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 12:53:26,779 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2020-05-28 12:53:26,780 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2020-05-28 12:53:26,910 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-05-28 12:53:27,033 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 12:53:27,756 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 12:53:27,761 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@22659562
+2020-05-28 12:53:29,238 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 5.131 seconds (JVM running for 8.847)
+2020-05-28 12:53:29,241 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 14:02:52,484 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m55s678ms525µs600ns).
+2020-05-28 14:05:28,856 INFO com.zaxxer.hikari.HikariDataSource [Thread-8] HikariPool-1 - Shutdown initiated...
+2020-05-28 14:05:28,863 INFO com.zaxxer.hikari.HikariDataSource [Thread-8] HikariPool-1 - Shutdown completed.
+2020-05-28 14:05:29,316 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 20016 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 14:05:29,317 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 14:05:29,933 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 14:05:29,934 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 14:05:29,971 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 14:05:30,032 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2020-05-28 14:05:30,097 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2020-05-28 14:05:30,128 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 14:05:30,168 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 14:05:30,727 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 14:05:30,728 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@22659562
+2020-05-28 14:05:31,288 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 2.026 seconds (JVM running for 4330.904)
+2020-05-28 14:05:31,291 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 14:05:43,196 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-2 - Shutdown initiated...
+2020-05-28 14:05:43,204 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-2 - Shutdown completed.
+2020-05-28 14:05:43,661 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 20016 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 14:05:43,661 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 14:05:44,219 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 14:05:44,220 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 14:05:44,269 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 14:05:44,332 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2020-05-28 14:05:44,392 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2020-05-28 14:05:44,415 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 14:05:44,451 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 14:05:45,002 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 14:05:45,002 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@22659562
+2020-05-28 14:05:45,481 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.855 seconds (JVM running for 4345.097)
+2020-05-28 14:05:45,483 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 14:22:09,619 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-28 14:22:18,037 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-7] HHH000397: Using ASTQueryTranslatorFactory
+2020-05-28 14:22:18,219 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-05-28 14:22:18,512 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-28 15:59:04,193 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-28 15:59:09,160 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-28 15:59:19,332 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-05-28 15:59:19,360 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results personal table, 6
+2020-05-28 15:59:19,360 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] Search Results profile table, 0
+2020-05-28 15:59:19,360 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size before.. ,6
+2020-05-28 15:59:19,361 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] List size after.. ,6
+2020-05-28 15:59:19,384 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-05-28 15:59:19,389 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,98 SUDEEPTA   SINHA PR
+2020-05-28 15:59:19,394 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,106 Smita   Ture PR
+2020-05-28 15:59:19,398 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,124 Anish   Mohile PR
+2020-05-28 15:59:19,404 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-05-28 15:59:19,409 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,112 Abhijit   Pramanik PR
+2020-05-28 15:59:19,409 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-2] Search Results, 6
+2020-05-28 15:59:20,662 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,112 Abhijit   Pramanik PR
+2020-05-28 16:02:47,171 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-28 16:05:39,395 INFO com.zaxxer.hikari.HikariDataSource [Thread-19] HikariPool-3 - Shutdown initiated...
+2020-05-28 16:05:39,398 INFO com.zaxxer.hikari.HikariDataSource [Thread-19] HikariPool-3 - Shutdown completed.
+2020-05-28 16:05:39,799 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 20016 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 16:05:39,799 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 16:05:40,222 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 16:05:40,222 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 16:05:40,277 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 16:05:40,317 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-4 - Starting...
+2020-05-28 16:05:40,347 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-4 - Start completed.
+2020-05-28 16:05:40,358 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 16:05:40,384 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 16:05:40,634 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 16:05:40,635 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@22659562
+2020-05-28 16:05:40,985 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.218 seconds (JVM running for 11540.601)
+2020-05-28 16:05:40,986 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 16:06:54,731 INFO com.zaxxer.hikari.HikariDataSource [Thread-27] HikariPool-4 - Shutdown initiated...
+2020-05-28 16:06:54,736 INFO com.zaxxer.hikari.HikariDataSource [Thread-27] HikariPool-4 - Shutdown completed.
+2020-05-28 16:06:55,091 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 20016 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-05-28 16:06:55,091 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-05-28 16:06:55,489 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-05-28 16:06:55,489 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-28 16:06:55,511 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-28 16:06:55,543 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-5 - Starting...
+2020-05-28 16:06:55,581 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-5 - Start completed.
+2020-05-28 16:06:55,593 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-05-28 16:06:55,623 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-05-28 16:06:55,879 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-05-28 16:06:55,879 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@22659562
+2020-05-28 16:06:56,183 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.116 seconds (JVM running for 11615.798)
+2020-05-28 16:06:56,184 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-05-28 16:12:18,502 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-28 17:19:27,129 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-5 housekeeper] HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=46m31s404ms373µs700ns).
+2020-05-28 17:25:14,376 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-7] HHH000397: Using ASTQueryTranslatorFactory
+2020-05-28 17:25:14,384 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-05-28 17:25:14,517 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance

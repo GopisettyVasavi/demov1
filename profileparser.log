@@ -1,0 +1,13 @@
+2020-05-29 10:09:37,747 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-5 housekeeper] HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=15h32m40s494ms790탎100ns).
+2020-05-29 10:13:17,197 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Found matching User details for: {}renaissance
+2020-05-29 10:13:17,445 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-29 11:40:19,055 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] No users found for: {}renaissance
+2020-05-29 11:40:28,815 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-05-29 11:40:29,058 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-29 14:01:13,387 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-5 housekeeper] HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h20m34s551ms688탎400ns).
+2020-05-29 14:19:03,088 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Found matching User details for: {}renaissance
+2020-05-29 14:19:03,276 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-29 16:20:52,080 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-5 housekeeper] HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=24m38s466ms268탎800ns).
+2020-05-29 18:48:16,890 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-5 housekeeper] HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=2h7m24s769ms491탎400ns).
+2020-05-29 18:50:13,296 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Found matching User details for: {}renaissance
+2020-05-29 18:50:13,443 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
