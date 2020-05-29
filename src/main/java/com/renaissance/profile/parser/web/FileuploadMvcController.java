@@ -2,14 +2,9 @@ package com.renaissance.profile.parser.web;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,7 +30,6 @@ import com.renaissance.profile.parser.dto.FileConversionDTO;
 import com.renaissance.profile.parser.service.ProfileParserService;
 import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.FileUtils;
-import com.renaissance.profile.parser.util.GlobalProperties;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 

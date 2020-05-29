@@ -1,16 +1,11 @@
 package com.renaissance.profile.parser.util;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
@@ -19,8 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.renaissance.profile.parser.dto.CandidateDTO;
 /**
  * This class is used to have all the utility methods required by Pprofile Parser.
  * @author Vasavi
