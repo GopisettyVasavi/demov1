@@ -19,6 +19,8 @@ public class ContractorPersonalDetailsDTO {
 	private String state;
 	private BigInteger zipCode;
 	private String country;
+	private String otherState;
+	
 	private String otherCountry;
 	private String visaCategory;
 	private String visaType;
@@ -28,6 +30,7 @@ public class ContractorPersonalDetailsDTO {
 	private String emergencyContactAddress;
 	private String emergencyContactEmail;
 	private String emergencyContactRelation;
+	private String abnHolder;
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -178,6 +181,19 @@ public class ContractorPersonalDetailsDTO {
 	public void setEmergencyContactRelation(String emergencyContactRelation) {
 		this.emergencyContactRelation = emergencyContactRelation;
 	}
+	public String getOtherState() {
+		return otherState;
+	}
+	public void setOtherState(String otherState) {
+		this.otherState = otherState;
+	}
+	
+	public String getAbnHolder() {
+		return abnHolder;
+	}
+	public void setAbnHolder(String abnHolder) {
+		this.abnHolder = abnHolder;
+	}
 	@Override
 	public String toString() {
 		return "ContractorPersonalDetailsDTO [contractorId=" + contractorId + ", firstName=" + firstName
@@ -185,8 +201,8 @@ public class ContractorPersonalDetailsDTO {
 				+ gender + ", personalEmail=" + personalEmail + ", officeEmail=" + officeEmail + ", mobilePhone="
 				+ mobilePhone + ", homePhone=" + homePhone + ", previousName=" + previousName + ", address=" + address
 				+ ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + ", country=" + country
-				+ ", otherCountry=" + otherCountry + ", visaCategory=" + visaCategory + ", visaType=" + visaType
-				+ ", visaValidDate=" + visaValidDate + ", emergencyContactName=" + emergencyContactName
+				+ ", otherCountry=" + otherCountry + ", otherState=" + otherState + ", visaCategory=" + visaCategory + ", visaType=" + visaType
+				+ ", visaValidDate=" + visaValidDate +", abnHolder=" + abnHolder + ", emergencyContactName=" + emergencyContactName
 				+ ", emergencyContactNumber=" + emergencyContactNumber + ", emergencyContactAddress="
 				+ emergencyContactAddress + ", emergencyContactEmail=" + emergencyContactEmail
 				+ ", emergencyContactRelation=" + emergencyContactRelation + "]";

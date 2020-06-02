@@ -12,6 +12,8 @@ public class ContractorEmploymentDetailsDTO {
 	private String workLocationState;
 	private BigInteger workLocationZipCode;
 	private String workLocationCountry;
+	private String wlOtherCountry;
+	private String wlOtherState;
 	private String jobRole;
 	private String employmentType;
 	private String jobStartDate;;
@@ -34,6 +36,18 @@ public class ContractorEmploymentDetailsDTO {
 	}
 	public String getEndClientName() {
 		return endClientName;
+	}
+	public String getWlOtherCountry() {
+		return wlOtherCountry;
+	}
+	public void setWlOtherCountry(String wlOtherCountry) {
+		this.wlOtherCountry = wlOtherCountry;
+	}
+	public String getWlOtherState() {
+		return wlOtherState;
+	}
+	public void setWlOtherState(String wlOtherState) {
+		this.wlOtherState = wlOtherState;
 	}
 	public void setEndClientName(String endClientName) {
 		this.endClientName = endClientName;
@@ -129,11 +143,12 @@ public class ContractorEmploymentDetailsDTO {
 				+ ", endClientName=" + endClientName + ", contractNumber=" + contractNumber + ", workLocationAddress="
 				+ workLocationAddress + ", workLocationCity=" + workLocationCity + ", workLocationState="
 				+ workLocationState + ", workLocationZipCode=" + workLocationZipCode + ", workLocationCountry="
-				+ workLocationCountry + ", jobRole=" + jobRole + ", employmentType=" + employmentType
-				+ ", jobStartDate=" + jobStartDate + ", jobEndDate=" + jobEndDate + ", lastWorkingDate="
-				+ lastWorkingDate + ", finishedClient=" + finishedClient + ", additionalInfo=" + additionalInfo
-				+ ", activeRecord=" + activeRecord + "]";
+				+ workLocationCountry + ", wlOtherCountry=" + wlOtherCountry + ", wlOtherState=" + wlOtherState
+				+ ", jobRole=" + jobRole + ", employmentType=" + employmentType + ", jobStartDate=" + jobStartDate
+				+ ", jobEndDate=" + jobEndDate + ", lastWorkingDate=" + lastWorkingDate + ", finishedClient="
+				+ finishedClient + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord + "]";
 	}
+	
 	
 	
 }

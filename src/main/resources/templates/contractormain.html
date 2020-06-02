@@ -30,7 +30,7 @@
 
 </head>
 
-<body >
+<body onload="initialize()">
 
 <!-- header-start -->
     <header>
@@ -253,6 +253,50 @@
 																			</div>
 																			<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
+								<div class="form-group">
+							<label for="name" style="font-weight:bold">Visa Category</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="visaCategory" onchange="setSelectedVisaCategory()" >
+																								<option value="none"  selected="selected">Select Visa</option>
+																								<option value="PR">PR</option>
+																								<option value="Citizen">Citizen</option>
+																								<option value="Dependent Visa">Dependent Visa</option>
+																								<option value="Temporary graduate visa">Temporary graduate visa</option>
+																								<option value="Work Visa">Work Visa</option>
+																							</select>
+																						</div>
+																					</div>
+																					</div>
+																					</div>
+							<div class="col-sm-4" >
+								<div class="form-group" id="visatype_div" style="display: none">
+									<label for="name" style="font-weight:bold" id="visaType_lbl">Visa Type</label> <input
+																						type="text" placeholder="Visa Type"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Visa Type'"
+																						class="single-input" id="visaType"
+																						name="visatype"  style="display: none">
+								</div>
+							</div>	
+							<div class="col-sm-4" >
+								<div class="form-group"  style="display: none" id="visavalid_div">
+									<label for="name" id="validupto_lbl" style="font-weight:bold">Visa Valid upto</label>
+																						<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Valid upto"
+																						onfocus="this.placeholder = 'Valid upto'"
+																						onblur="this.placeholder = 'Valid upto'"
+																						class="single-input" id="validUpto" 
+																						name="validUpto"  style="display: none">
+								</div>
+							</div>
+																		<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Address Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Address</label> 	
 																					
@@ -340,46 +384,7 @@
 																				</div>
 																			</div>
 																			
-																			<div class="col-sm-4">
-								<div class="form-group">
-							<label for="name" style="font-weight:bold">Visa Category</label>
-																					<div class="input-group-icon">
-																						
-																						<div class="form-select" id="default-select" >
-																							<select id="visaCategory" onchange="setSelectedVisaCategory()" >
-																								<option value="none"  selected="selected">Select Visa</option>
-																								<option value="PR">PR</option>
-																								<option value="Citizen">Citizen</option>
-																								<option value="Dependent Visa">Dependent Visa</option>
-																								<option value="Temporary graduate visa">Temporary graduate visa</option>
-																								<option value="Work Visa">Work Visa</option>
-																							</select>
-																						</div>
-																					</div>
-																					</div>
-																					</div>
-							<div class="col-sm-4" >
-								<div class="form-group" id="visatype_div" style="display: none">
-									<label for="name" style="font-weight:bold" id="visaType_lbl">Visa Type</label> <input
-																						type="text" placeholder="Visa Type"
-																						onfocus="this.placeholder = ''"
-																						onblur="this.placeholder = 'Visa Type'"
-																						class="single-input" id="visaType"
-																						name="visatype"  style="display: none">
-								</div>
-							</div>	
-							<div class="col-sm-4" >
-								<div class="form-group"  style="display: none" id="visavalid_div">
-									<label for="name" id="validupto_lbl" style="font-weight:bold">Visa Valid upto</label>
-																						<input 
-																						data-date-format="dd/MM/yyyy" 
-																						 placeholder="Valid upto"
-																						onfocus="this.placeholder = 'Valid upto'"
-																						onblur="this.placeholder = 'Valid upto'"
-																						class="single-input" id="validUpto" 
-																						name="validUpto"  style="display: none">
-								</div>
-							</div>
+																			
 							
 							<div class="col-sm-4">
 																			<div class="form-group">
@@ -505,6 +510,21 @@
 										class="single-input" id="accountNo" required="required">
 																				</div>
 																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="bankAdditionalInfo"
+																						name="Additional Info"></textarea>
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Superannuation Details</label></div></div>
+							<div class="col-sm-4"></div>
 																		<div class="col-sm-4">
 																				<div class="form-group" id="saFundName_div">
 																				<label id="saFundName_lbl" for="name" style="font-weight:bold">Superannuation Fund Name </label>
@@ -552,7 +572,7 @@
 																						rows="3"
 																						onfocus="this.placeholder = 'Additional Info'"
 																						onblur="this.placeholder = 'Additional Info'"
-																						placeholder="Additional Info" id="bankAdditionalInfo"
+																						placeholder="Additional Info" id="saAdditionalInfo"
 																						name="Additional Info"></textarea>
 																				</div>
 																			</div>
@@ -573,7 +593,7 @@
 																		<a href="#" data-toggle="collapse"
 																			data-target="#collapseThree" aria-expanded="false"
 																			aria-controls="collapseThree"
-																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">ABN Details</a>
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Company Details</a>
 																	</h6></li>
 																<li class="pull-right"><a href="#"
 																	data-toggle="collapse" data-target="#collapseThree"
@@ -620,35 +640,11 @@
 										class="single-input">
 																				</div>
 																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Account Name *</label>
-																					<input type="text" name="name"
-										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
-										onblur="this.placeholder = 'Account Name'" 
-										class="single-input" id="abnAccountName" required pattern=".{4,}" title="Six or more characters">
-																					
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">BSB *</label>
-																					<input type="text" name="bsb"
-										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
-										onblur="this.placeholder = 'Account BSB'" 
-										class="single-input" id="abnAccountBsb" required="required">
-																					
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Account Number *</label>
-																					<input type="text" name="accountNo"
-										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
-										onblur="this.placeholder = 'Account No'" 
-										class="single-input" id="abnBankAccountNo" required="required">
-																				</div>
-																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Company Address Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			
 																	<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Company Name</label>
@@ -709,7 +705,46 @@
 										class="single-input">
 																				</div>
 																			</div>	
+																			
 																			<div class="col-sm-4"></div>
+																			
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" id="abnbank_div">
+									<label for="name" style="font-weight:bold; font-size: 15px">Bank Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Name *</label>
+																					<input type="text" name="name"
+										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
+										onblur="this.placeholder = 'Account Name'" 
+										class="single-input" id="abnAccountName" required pattern=".{4,}" title="Six or more characters">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">BSB *</label>
+																					<input type="text" name="bsb"
+										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
+										onblur="this.placeholder = 'Account BSB'" 
+										class="single-input" id="abnAccountBsb" required="required">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Number *</label>
+																					<input type="text" name="accountNo"
+										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
+										onblur="this.placeholder = 'Account No'" 
+										class="single-input" id="abnBankAccountNo" required="required">
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Insurance Details</label></div></div>
+							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																			<div class="form-group">
 																					<label for="name" style="font-weight:bold">GST Registered</label>
@@ -723,7 +758,7 @@
 																					<label for="name" id="gstCert_lbl" style="display: none;font-weight:bold">GST Certificate</label>	
 																		<input type="file"
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
-											id="gstCertFile" style="display: none">
+											id="gstCertFile" style="display: none" oninput="getFilePath(this,'gstCert')">
 																		</div>
 																		</div>
 																		<div class="col-sm-4"></div>
@@ -735,15 +770,34 @@
 																					
 																			</div>		
 																			</div>
-																			<div class="col-sm-4" >
-																				<div class="form-group" id="pipl_div" style="display: none">
-																					<label for="name" id="pipl_lbl" style="display: none;font-weight:bold">PI/PL Certificates</label>	
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="pipl_div1" style="display: none">
+																					<label for="name" id="pipl_lbl1" style="display: none;font-weight:bold">PI/PL Certificate1</label>	
 																		<input type="file"
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
-											id="piplcertificate" style="display: none" multiple="multiple">
+											id="piplcertificate1" style="display: none"  oninput="getFilePath(this,'pipl1')" />
+											
 																		</div>
 																		</div>
-																		<div class="col-sm-4"></div>
+																		<div class="col-sm-2" >
+																				<div class="form-group" id="pipl_div2" style="display: none">
+																					<label for="name" id="pipl_lbl2" style="display: none;font-weight:bold">PI/PL Certificate2</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="piplcertificate2" style="display: none"  oninput="getFilePath(this,'pipl2')" />
+											
+																		</div>
+																		</div>
+																		<div class="col-sm-2" >
+																				<div class="form-group" id="pipl_div3" style="display: none">
+																					<label for="name" id="pipl_lbl3" style="display: none;font-weight:bold">PI/PL Certificate3</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="piplcertificate3" style="display: none"  oninput="getFilePath(this,'pipl3')" />
+											
+																		</div>
+																		</div>
+																		
 																			<div class="col-sm-4">
 																			<div class="form-group">
 																					<label for="name" style="font-weight:bold">Work Cover</label>
@@ -757,7 +811,7 @@
 																					<label for="name" id="workCover_lbl" style="display: none;font-weight:bold">WorkCover Certificate</label>	
 																		<input type="file"
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
-											id="workCoverFile" style="display: none">
+											id="workCoverFile" style="display: none" oninput="getFilePath(this,'workCover')">
 																		</div>
 																		</div>
 																	<div class="col-sm-4"></div>
@@ -867,7 +921,7 @@
 																							<select id="taxPaymentType"  >
 																								<option value="none"  selected="selected">Are you</option>
 																								<option value="PR">An Australian Resident for tax purposes</option>
-																								<option value="Foreign">Foreign Resident for tax purposes</option>
+																								<option value="Foreign Resident">Foreign Resident for tax purposes</option>
 																								<option value="WorkingHoliday">A Working holiday maker</option>
 																								
 																								</select>
@@ -1034,6 +1088,57 @@
 																						
 																				</div>
 																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Employment Type</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="employmentType"  >
+																								<option value="none"  selected="selected">Select Employment Type</option>
+																								<option value="Full Time">Full Time</option>
+																								<option value="Part Time">Part Time</option>
+																								<option value="Labour Hire">Labour Hire</option>
+																								<option value="Superannuation">Superannuation or Annuity income stream</option>
+																								<option value="Casual">Casual</option>
+																								</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Start Date</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input" id="jobStartDate" 
+																						name="startDate"  >
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">End Date</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input" id="jobEndDate" 
+																						name="endDate"  >
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4">
+							<div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Work Location Address Details</label></div></div>
+							<div class="col-sm-4"></div>
 																		<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Work Location Address</label> 	
@@ -1121,6 +1226,10 @@
 										class="single-input" style="display: none">
 																				</div>
 																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Role Details</label></div></div>
+							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Role</label> 
@@ -1137,32 +1246,29 @@
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Recruiter</label> 
 																					
-																					<div class="input-group-icon">
+																					<div class="input-group-icon" id="select_div">
 																						
-																						<div class="form-select" id="default-select" >
-																							<select id="recruiter"  >
-																								<option value="none"  selected="selected">Select Recruiter</option>
-																								<option value="NSW">Prema</option>
-																								<option value="VIC">Kavitha</option>
-																								<option value="WA">Madhuri</option>
-																								
-																								
-																							</select>
+																						<div class="form-select" id="recruiter-select" >
+																							
 																						</div>
 																					</div>
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Rate Details</label></div></div>
+							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Start Date</label> 
+																					<label for="name" style="font-weight:bold">Rate Start Date</label> 
 																					<input 
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Start Date"
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
-																						class="single-input" id="jobStartDate" 
+																						class="single-input" id="rateStartDate" 
 																						name="startDate"  >
 																					
 																						
@@ -1170,19 +1276,20 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">End Date</label> 
+																					<label for="name" style="font-weight:bold">Rate End Date</label> 
 																					<input 
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="End Date"
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
-																						class="single-input" id="jobEndDate" 
+																						class="single-input" id="rateEndDate" 
 																						name="endDate"  >
 																					
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-4"></div>
+																			
 																			<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Rate(Per day)</label> 
@@ -1324,7 +1431,9 @@
 																			</div>
 																			
 																		</div>
+																		
 																	</form>
+																	
 																</div>
 															</div>
 														</div>
@@ -1393,9 +1502,20 @@
 											</div>
 										</div>
 									</div>
+								
+								
 								</div>
+								<div class="row" style="padding-top: 20px">
+								<div class="col-sm-12">
+								<div class="form-group text-center">
+									<input type="submit"
+										class="button button-contactForm boxed-btn" onclick="clickonsave()" value="Create"/>
+										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" onclick="window.location.reload();" > 
+								</div>
+							</div>
+							</div>
 								<!-- <div th:switch="${profile}">
-									<h2 th:case="null"></h2>
+
 									<div th:case="*">
 										<div class="row">
 											<div class="col-sm-12">
@@ -1647,6 +1767,20 @@
 			}
 		});
 		$('#jobEndDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#rateStartDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#rateEndDate').datepicker({
 			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {

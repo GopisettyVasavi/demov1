@@ -1,5 +1,8 @@
 package com.renaissance.profile.parser.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bouncycastle.openssl.PasswordFinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +53,21 @@ public class UserService {
 		else {
 			throw new Exception();
 		}
+		
+	}
+	
+	public List<User> getRecruitersList(){
+		List<EmployeeEntity> employeeList=employeeRepository.getRecruitersList();
+		List<User> userList= new ArrayList<User>();
+		if (!ProfileParserUtils.isObjectEmpty(employeeList)) {
+			for(EmployeeEntity employee:employeeList) {
+				User user=new User(employee.getEmployeeId(), employee.getEmployeeName());
+				userList.add(user);
+				
+			}
+			
+		}
+		return userList;
 		
 	}
 

@@ -22,6 +22,10 @@ CREATE SCHEMA parse
 
 -- DROP TABLE parse."CANDIDATE_PERSONAL";
 
+-- Table: parse."CANDIDATE_PERSONAL"
+
+-- DROP TABLE parse."CANDIDATE_PERSONAL";
+
 CREATE TABLE parse."CANDIDATE_PERSONAL"
 (
     "CANDIDATE_ID" bigint NOT NULL,
@@ -36,19 +40,19 @@ CREATE TABLE parse."CANDIDATE_PERSONAL"
     "DATE_OF_BIRTH" character varying COLLATE pg_catalog."default",
     "SOCIAL_MEDIA_LINK" character varying COLLATE pg_catalog."default",
     "NATIONALITY" character varying COLLATE pg_catalog."default",
-    "VISA" character varying COLLATE pg_catalog."default",
+    "VISA_TYPE" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_BY_USER" character varying COLLATE pg_catalog."default",
     "WORK_EXPERIENCE" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "VISA_NO" character varying COLLATE pg_catalog."default",
+    "VALID_UPTO" date,
+    "FIRST_NAME" character varying COLLATE pg_catalog."default",
+    "MIDDLE_NAME" character varying COLLATE pg_catalog."default",
+    "LAST_NAME" character varying COLLATE pg_catalog."default",
     CONSTRAINT "CANDIDATE_PERSONAL_pkey" PRIMARY KEY ("CANDIDATE_ID")
 )
 
-TABLESPACE pg_default;
-
-COMMENT ON TABLE parse."CANDIDATE_PERSONAL"
-    IS 'Stores personal data of candidate';
-    
-    -- Table: parse."CANDIDATE_EDUCATION"
+-- Table: parse."CANDIDATE_EDUCATION"
 
 -- DROP TABLE parse."CANDIDATE_EDUCATION";
 
@@ -66,9 +70,6 @@ CREATE TABLE parse."CANDIDATE_EDUCATION"
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
-
-TABLESPACE pg_default;
-
 -- Table: parse."CANDIDATE_PROFILE"
 
 -- DROP TABLE parse."CANDIDATE_PROFILE";
@@ -97,9 +98,6 @@ CREATE TABLE parse."CANDIDATE_PROFILE"
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
-
-TABLESPACE pg_default;
-
 -- Table: parse."CANDIDATE_WORK_HISTORY"
 
 -- DROP TABLE parse."CANDIDATE_WORK_HISTORY";
@@ -120,9 +118,6 @@ CREATE TABLE parse."CANDIDATE_WORK_HISTORY"
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
-
-TABLESPACE pg_default;
-
 -- Table: parse."EMPLOYEE"
 
 -- DROP TABLE parse."EMPLOYEE";
@@ -141,77 +136,323 @@ CREATE TABLE parse."EMPLOYEE"
     "LAST_UPDATED_DATE_TIME" timestamp without time zone,
     "PROFILE_PARSER_APP_PWD" character varying COLLATE pg_catalog."default",
     "PROFILE_PARSER_APP_LOGIN" character varying COLLATE pg_catalog."default",
+    "FIRST_NAME" character varying COLLATE pg_catalog."default",
+    "MIDDLE_NAME" character varying COLLATE pg_catalog."default",
+    "LAST_NAME" character varying COLLATE pg_catalog."default",
+    "VISA_TYPE" character varying COLLATE pg_catalog."default",
+    "VISA_NO" character varying COLLATE pg_catalog."default",
+    "VISA_VALID_DATE" date,
     CONSTRAINT "EMPLOYEE_pkey" PRIMARY KEY ("EMPLOYEE_ID")
 )
+-- Table: parse."CONTRACTOR_PERSONAL_DETAILS"
 
-TABLESPACE pg_default;
+-- DROP TABLE parse."CONTRACTOR_PERSONAL_DETAILS";
 
+CREATE TABLE parse."CONTRACTOR_PERSONAL_DETAILS"
+(
+    "CONTRACTOR_ID" bigint NOT NULL,
+    "FIRST_NAME" character varying COLLATE pg_catalog."default",
+    "MIDDLE_NAME" character varying COLLATE pg_catalog."default",
+    "LAST_NAME" character varying COLLATE pg_catalog."default",
+    "GENDER" character varying COLLATE pg_catalog."default",
+    "PERSONAL_EMAIL" character varying COLLATE pg_catalog."default",
+    "EMAIL2" character varying COLLATE pg_catalog."default",
+    "MOBILE_PHONE" character varying COLLATE pg_catalog."default",
+    "HOME_PHONE" character varying COLLATE pg_catalog."default",
+    "PREVIOUS_NAME" character varying COLLATE pg_catalog."default",
+    "ADDRESS" character varying COLLATE pg_catalog."default",
+    "CITY" character varying COLLATE pg_catalog."default",
+    "STATE" character varying COLLATE pg_catalog."default",
+    "COUNTRY" character varying COLLATE pg_catalog."default",
+    "OTHER_COUNTRY" character varying COLLATE pg_catalog."default",
+    "VISA_CATEGORY" character varying COLLATE pg_catalog."default",
+    "VISA_TYPE" character varying COLLATE pg_catalog."default",
+    "EMERGENCY_CONTACT_NAME" character varying COLLATE pg_catalog."default",
+    "EMERGENCY_CONTACT_NO" character varying COLLATE pg_catalog."default",
+    "EMERGENCY_CONTACT_ADDRESS" character varying COLLATE pg_catalog."default",
+    "EMERGENCY_CONTACT_EMAIL" character varying COLLATE pg_catalog."default",
+    "EMERGENCY_CONTACT_RELATION" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "ZIP_CODE" bigint,
+    "DATE_OF_BIRTH" character varying COLLATE pg_catalog."default",
+    "VISA_VALID_DATE" character varying COLLATE pg_catalog."default",
+    CONSTRAINT "CONTRACTOR_PERSONAL_DETAILS_pkey" PRIMARY KEY ("CONTRACTOR_ID")
+)
+-- Table: parse."CONTRACTOR_ABN_DETAILS"
 
--- SEQUENCE: parse.candidate_education_sequence
+-- DROP TABLE parse."CONTRACTOR_ABN_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_ABN_DETAILS"
+(
+    "ID" bigint NOT NULL,
+    "CONTRACTOR_ID" bigint,
+    "ABN_NUMBER" character varying COLLATE pg_catalog."default",
+    "ACN_NUMBER" character varying COLLATE pg_catalog."default",
+    "COMPANY_NAME" character varying COLLATE pg_catalog."default",
+    "COMPANY_ADDRESS" character varying COLLATE pg_catalog."default",
+    "COMPANY_CITY" character varying COLLATE pg_catalog."default",
+    "COMPANY_STATE" character varying COLLATE pg_catalog."default",
+    "COMPANY_ZIP_CODE" bigint,
+    "ABN_GROUP" character varying COLLATE pg_catalog."default",
+    "GST_REGISTERED" character varying COLLATE pg_catalog."default",
+    "GST_CERTIFICATE_PATH" character varying COLLATE pg_catalog."default",
+    "PI_PL_FLAG" character varying COLLATE pg_catalog."default",
+    "PI_PL_CERT1_PATH" character varying COLLATE pg_catalog."default",
+    "PI_PL_CERT2_PATH" character varying COLLATE pg_catalog."default",
+    "PI_PL_CERT3_PATH" character varying COLLATE pg_catalog."default",
+    "WORK_COVER_FLAG" character varying COLLATE pg_catalog."default",
+    "WORK_COVER_CERT_PATH" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    CONSTRAINT "CONTRACTOR_ABN_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+-- Table: parse."CONTRACTOR_BANK_DETAILS"
+
+-- DROP TABLE parse."CONTRACTOR_BANK_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_BANK_DETAILS"
+(
+    "ID" bigint NOT NULL,
+    "CONTRACTOR_ID" bigint,
+    "ACCOUNT_NAME" character varying COLLATE pg_catalog."default" NOT NULL,
+    "BSB" character varying COLLATE pg_catalog."default" NOT NULL,
+    "ACCOUNT_NUMBER" character varying COLLATE pg_catalog."default" NOT NULL,
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    CONSTRAINT "CONTRACTOR_BANK_DETAILS_pkey" PRIMARY KEY ("ID"),
+    CONSTRAINT "CONTRACTOR_BANK_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+-- Table: parse."CONTRACTOR_EMPLOYMENT_DETAILS"
+
+-- DROP TABLE parse."CONTRACTOR_EMPLOYMENT_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_EMPLOYMENT_DETAILS"
+(
+    "ID" bigint NOT NULL,
+    "CONTRACTOR_ID" bigint,
+    "CLIENT_NAME" character varying COLLATE pg_catalog."default",
+    "END_CLIENT_NAME" character varying COLLATE pg_catalog."default",
+    "CONTRACT_NUMBER" character varying COLLATE pg_catalog."default",
+    "WORK_LOCATION_ADDRESS" character varying COLLATE pg_catalog."default",
+    "WORK_LOCATION_CITY" character varying COLLATE pg_catalog."default",
+    "WORK_LOCATION_STATE" character varying COLLATE pg_catalog."default",
+    "WORK_LOCATION_ZIP_CODE" bigint,
+    "WORK_LOCATION_COUNTRY" character varying COLLATE pg_catalog."default",
+    "EMPLOYMENT_TYPE" character varying COLLATE pg_catalog."default",
+    "JOB_ROLE" character varying COLLATE pg_catalog."default",
+    "JOB_START_DATE" character varying COLLATE pg_catalog."default",
+    "JOB_END_DATE" character varying COLLATE pg_catalog."default",
+    "LAST_WORKING_DATE" character varying COLLATE pg_catalog."default",
+    "FINISHED_CLIENT" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    CONSTRAINT "CONTRACTOR_EMPLOYMENT_DETAILS_pkey" PRIMARY KEY ("ID"),
+    CONSTRAINT "CONTRACTOR_EMPLOYMENT_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+-- Table: parse."CONTRACTOR_RATE_DETAILS"
+
+-- DROP TABLE parse."CONTRACTOR_RATE_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_RATE_DETAILS"
+(
+    "ID" bigint NOT NULL,
+    "CONTRACTOR_ID" bigint,
+    "RATE_PER_DAY" numeric,
+    "RATE_START_DATE" character varying COLLATE pg_catalog."default",
+    "RATE_END_DATE" character varying COLLATE pg_catalog."default",
+    "INCLUDE_SUPER_FLAG" character varying COLLATE pg_catalog."default",
+    "BILL_RATE_PER_DAY" numeric,
+    "RECRUITER_ID" smallint,
+    "RECRUITER_NAME" character varying COLLATE pg_catalog."default",
+    "PAYROLL_TAX_PAYMENT_FLAG" character varying COLLATE pg_catalog."default",
+    "WORK_COVER_FLAG" character varying COLLATE pg_catalog."default",
+    "INSURANCE_PERCENTAGE" numeric,
+    "OTHER_DEDUCTION_PERCENTAGE" numeric,
+    "OTHER_DEDUCTION_AMOUNT" numeric,
+    "NET_MARGIN" numeric,
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    CONSTRAINT "CONTRACTOR_RATE_DETAILS_pkey" PRIMARY KEY ("ID"),
+    CONSTRAINT "CONTRACTOR_RATE_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+-- Table: parse."CONTRACTOR_SUPER_ANNUATION_DETAILS"
+
+-- DROP TABLE parse."CONTRACTOR_SUPER_ANNUATION_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_SUPER_ANNUATION_DETAILS"
+(
+    "CONTRACTOR_ID" bigint,
+    "SUPER_ANNUATION_FUND_NAME" character varying COLLATE pg_catalog."default",
+    "SUPER_ANNUATION_MEMBER_ID" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_SUPER_ANNUATION_CONTRIBUTION_FLAG" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_SUPER_ANNUATION_DETAILS" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "ID" bigint NOT NULL,
+    CONSTRAINT "CONTRACTOR_SUPER_ANNUATION_DETAILS_pkey" PRIMARY KEY ("ID"),
+    CONSTRAINT "CONTRACTOR_SUPER_ANNUATION_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+-- Table: parse."CONTRACTOR_TFN_DETAILS"
+
+-- DROP TABLE parse."CONTRACTOR_TFN_DETAILS";
+
+CREATE TABLE parse."CONTRACTOR_TFN_DETAILS"
+(
+    "ID" bigint NOT NULL,
+    "CONTRACTOR_ID" bigint,
+    "NEW_APPLICATION_FLAG" character varying COLLATE pg_catalog."default",
+    "UNDER_AGE_EXEMPTION_FLAG" character varying COLLATE pg_catalog."default",
+    "PENSION_HOLDER_FLAG" character varying COLLATE pg_catalog."default",
+    "EMPLOYMENT_TYPE" character varying COLLATE pg_catalog."default",
+    "TAX_PAYER_TYPE" character varying COLLATE pg_catalog."default",
+    "TAX_FREE_THRESHOLD_FLAG" character varying COLLATE pg_catalog."default",
+    "LOAN_FLAG" character varying COLLATE pg_catalog."default",
+    "FINANCIAL_SHIPMENT_DEBT_FLAG" character varying COLLATE pg_catalog."default",
+    "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
+    "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
+    "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "TFN_NUMBER" character varying COLLATE pg_catalog."default",
+    CONSTRAINT "CONTRACTOR_TFN_DETAILS_pkey" PRIMARY KEY ("ID"),
+    CONSTRAINT "CONTRACTOR_TFN_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
+        REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
 
 -- DROP SEQUENCE parse.candidate_education_sequence;
 
 CREATE SEQUENCE parse.candidate_education_sequence
     INCREMENT 1
-    START 32
+    START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
--- SEQUENCE: parse.candidate_general_sequence
-
--- DROP SEQUENCE parse.candidate_general_sequence;
+    
+    -- DROP SEQUENCE parse.candidate_general_sequence;
 
 CREATE SEQUENCE parse.candidate_general_sequence
     INCREMENT 1
-    START 29
+    START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
-
-    -- SEQUENCE: parse.candidate_personal_sequence
-
--- DROP SEQUENCE parse.candidate_personal_sequence;
+    
+    -- DROP SEQUENCE parse.candidate_personal_sequence;
 
 CREATE SEQUENCE parse.candidate_personal_sequence
     INCREMENT 1
-    START 60
+    START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
-
-    -- SEQUENCE: parse.candidate_profile_sequence
-
--- DROP SEQUENCE parse.candidate_profile_sequence;
+    
+    -- DROP SEQUENCE parse.candidate_profile_sequence;
 
 CREATE SEQUENCE parse.candidate_profile_sequence
     INCREMENT 5
-    START 1166
+    START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
-
-    -- SEQUENCE: parse.candidate_work_sequence
-
--- DROP SEQUENCE parse.candidate_work_sequence;
+    -- DROP SEQUENCE parse.candidate_work_sequence;
 
 CREATE SEQUENCE parse.candidate_work_sequence
     INCREMENT 1
-    START 32
+    START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
+    -- DROP SEQUENCE parse.contractor_abn_sequence;
 
--- SEQUENCE: parse.employee_id_sequence
+CREATE SEQUENCE parse.contractor_abn_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    
+    -- DROP SEQUENCE parse.contractor_bank_sequence;
 
--- DROP SEQUENCE parse.employee_id_sequence;
+CREATE SEQUENCE parse.contractor_bank_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.contractor_employment_sequence;
+
+CREATE SEQUENCE parse.contractor_employment_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.contractor_personal_sequence;
+
+CREATE SEQUENCE parse.contractor_personal_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.contractor_rate_sequence;
+
+CREATE SEQUENCE parse.contractor_rate_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.contractor_super_annuation_sequence;
+
+CREATE SEQUENCE parse.contractor_super_annuation_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.contractor_tfn_sequence;
+
+CREATE SEQUENCE parse.contractor_tfn_sequence
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    -- DROP SEQUENCE parse.employee_id_sequence;
 
 CREATE SEQUENCE parse.employee_id_sequence
     INCREMENT 5
-    START 1000
+    START 1010
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
-
-
     
     

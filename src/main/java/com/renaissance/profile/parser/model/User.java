@@ -32,6 +32,13 @@ public class User {
 			this.employeeName = employeeName;
 			this.employeeRole = employeeRole;
 		}
+		public User(Integer employeeId, String employeeName ) {
+			super();
+			
+			this.employeeId = employeeId;
+			this.employeeName = employeeName;
+			
+		}
 
 		@Override
 		public String toString() {

@@ -13,7 +13,8 @@
 	...]
 2020-05-27 11:19:38,983 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 2020-05-27 11:19:39,581 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-05-27 11:19:39,581 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1d39db62
+2020-05-27 11:19:39,581 INFO org.hibernate.type.BasicT
+ypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1d39db62
 2020-05-27 11:19:40,008 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.803 seconds (JVM running for 67582.486)
 2020-05-27 11:19:40,010 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
 2020-05-27 11:19:42,498 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-2 - Shutdown initiated...

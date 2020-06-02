@@ -46,4 +46,21 @@ public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 		else return null;
 		
 	}
+	/**
+	 * This method will return list of Recruiters.
+	 */
+public List<EmployeeEntity> getRecruitersList() {
+		
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<EmployeeEntity> query = cb.createQuery(EmployeeEntity.class);
+		Root<EmployeeEntity> employeeEntity = query.from(EmployeeEntity.class);
+		 Predicate[] predicates = new Predicate[1];
+	        predicates[0] = cb.equal(employeeEntity.get("employeeRole"),"Recruiter");
+	        query.select(employeeEntity).where(predicates);
+		List<EmployeeEntity> employees=entityManager.createQuery(query).getResultList();
+		if (!ProfileParserUtils.isObjectEmpty(employees))
+			return employees;
+		else return null;
+		
+	}
 }

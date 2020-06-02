@@ -1,3 +1,36 @@
+
+function initialize(){
+	
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/recruiterList",
+	        cache: false,
+	        timeout: 600000,
+	        success: function (list) {
+	        	var options="";
+	        // alert(list.length);
+	         $('#recruiter-select').html("<select id =\"recruiter\" class=\"form-select\">Select Recruiter</select>");
+	       
+	         options += "<option value=\"none\"  selected=\"selected\">Select Recruiter</option>";
+	        // $('#recruiter-select select').append(options);
+	        for(i in list){
+	        	//alert(list[i].employeeId+" "+list[i].employeeName);
+	        	options += "<option value = "+list[i].employeeId+">"+list[i].employeeName+"</option>";
+	        }
+	        $('#recruiter-select select').append(options);
+	       document.getElementById("recruiter").classList.add('form-select');
+	         //document.getElementById("select_div").className += "input-group-icon";
+	        },
+	        error: function (e) {
+	        	
+	        	alert("Unable to load details");
+
+	        }
+	    });
+}
+
+
 function setSelectedVisaCategory() {
 	var visatype=document.getElementById("visaCategory").value;
 	
@@ -96,13 +129,25 @@ function gstRegisteredCheck(){
 }
 function piPlChecked(){
 	if(document.getElementById("piPlFlag").checked){
-		$("#pipl_div").show();
-		$("#pipl_lbl").show();
-		$("#piplcertificate").show();
+		$("#pipl_div1").show();
+		$("#pipl_lbl1").show();
+		$("#pipl_div2").show();
+		$("#pipl_lbl2").show();
+		$("#pipl_div3").show();
+		$("#pipl_lbl3").show();
+		$("#piplcertificate1").show();
+		$("#piplcertificate2").show();
+		$("#piplcertificate3").show();
 	}else{
-		$("#pipl_div").hide();
-		$("#pipl_lbl").hide();
-		$("#piplcertificate").hide();
+		$("#pipl_div1").hide();
+		$("#pipl_lbl1").hide();
+		$("#pipl_div2").hide();
+		$("#pipl_lbl2").hide();
+		$("#pipl_div3").hide();
+		$("#pipl_lbl3").hide();
+		$("#piplcertificate1").hide();
+		$("#piplcertificate2").hide();
+		$("#piplcertificate3").hide();
 	}
 }
 
@@ -133,6 +178,8 @@ function abnChecked(){
 		$("#tfnAccordian_div").hide();
 		$("#bankAccordian_div").hide();		
 		$("#abnAccordian_div").show();
+		$("#abnbank_div").show();
+		
 		
 		
 	}else{
@@ -148,6 +195,7 @@ function abnChecked(){
 		$("#tfnAccordian_div").show();
 		$("#bankAccordian_div").show();
 		$("#abnAccordian_div").hide();
+		$("#abnbank_div").hide();
 		
 	}
 	
@@ -169,3 +217,256 @@ function additionalSAChecked(){
 function backToIndex(){
 	window.location='/index'
 }
+
+function clickonsave(){
+	event.preventDefault();
+	var abnchecked=document.getElementById("abnCheck").checked;
+	//set Personal details
+	var contractorPersonalDetailsDTO={}	
+	
+	contractorPersonalDetailsDTO["firstName"]=$("#firstName").val();
+	contractorPersonalDetailsDTO["middleName"]=$("#middleName").val();
+	contractorPersonalDetailsDTO["lastName"]=$("#lastName").val();
+	contractorPersonalDetailsDTO["dateOfBirth"]=$("#dateOfBirth").val();
+	if($('input[name="gender"]:checked').val()!=undefined){
+		//alert("setting gender");
+		contractorPersonalDetailsDTO["gender"] =$('input[name="gender"]:checked').val();
+		
+	}
+	
+	contractorPersonalDetailsDTO["personalEmail"]=$("#personalEmail").val();
+	contractorPersonalDetailsDTO["officeEmail"]=$("#officeEmail").val();
+	contractorPersonalDetailsDTO["mobilePhone"]=$("#mobilePhone").val();
+	contractorPersonalDetailsDTO["homePhone"]=$("#homePhone").val();
+	contractorPersonalDetailsDTO["previousName"]=$("#previousFullName").val();
+	contractorPersonalDetailsDTO["address"]=$("#address").val();
+	contractorPersonalDetailsDTO["city"]=$("#city").val();
+	contractorPersonalDetailsDTO["state"]=$("#contractorState").val();
+	contractorPersonalDetailsDTO["zipCode"]=$("#zipCode").val();
+	contractorPersonalDetailsDTO["country"]=$("#countrySelect").val();
+	contractorPersonalDetailsDTO["otherState"]=$("#otherState").val();
+	contractorPersonalDetailsDTO["otherCountry"]=$("#otherCountry").val();
+	
+	if( $("#visaCategory").val()!="none"){
+		//alert("setting visatype");
+		contractorPersonalDetailsDTO["visaCategory"] = $("#visaCategory").val();
+		contractorPersonalDetailsDTO["visaType"] = $("#visaType").val();
+		contractorPersonalDetailsDTO["visaValidDate"] = $("#validUpto").val();
+	}
+	contractorPersonalDetailsDTO["abnHolder"]=abnchecked;
+	contractorPersonalDetailsDTO["emergencyContactName"]=$("#emergencyContactName").val();
+	contractorPersonalDetailsDTO["emergencyContactNumber"]=$("#emergencyContactNumber").val();
+	contractorPersonalDetailsDTO["emergencyContactAddress"]=$("#emergencyContactAddress").val();
+	contractorPersonalDetailsDTO["emergencyContactEmail"]=$("#emergencyContactEmail").val();
+	contractorPersonalDetailsDTO["emergencyContactRelation"]=$("#emergencyContactRelation").val();
+	//contractorPersonalDetailsDTO["firstName"]=$("#firstName").val();
+	
+	//alert("ABN Holder:: "+abnchecked);
+	
+	//Employment Details
+	var employers=[];
+	var contractorEmploymentDetailsDTO= {}
+	
+		contractorEmploymentDetailsDTO["clientName"]=$("#clientName").val();
+		contractorEmploymentDetailsDTO["endClientName"]=$("#endClientName").val();
+		contractorEmploymentDetailsDTO["contractNumber"]=$("#contractNumber").val();
+		contractorEmploymentDetailsDTO["workLocationAddress"]=$("#workLocationAddress").val();
+		contractorEmploymentDetailsDTO["workLocationCity"]=$("#workLocationCity").val();
+		contractorEmploymentDetailsDTO["workLocationState"]=$("#workLocationState").val();
+		contractorEmploymentDetailsDTO["workLocationZipCode"]=$("#workLocationZipCode").val();
+		contractorEmploymentDetailsDTO["workLocationCountry"]=$("#wlCountrySelect").val();
+		contractorEmploymentDetailsDTO["wlOtherState"]=$("#wlotherState").val();
+		contractorEmploymentDetailsDTO["wlOtherCountry"]=$("#wlotherCountry").val();
+		contractorEmploymentDetailsDTO["jobRole"]=$("#role").val();
+		contractorEmploymentDetailsDTO["jobStartDate"]=$("#jobStartDate").val();
+		contractorEmploymentDetailsDTO["jobEndDate"]=$("#jobEndDate").val();
+		contractorEmploymentDetailsDTO["lastWorkingDate"]=$("#lastWorkingDate").val();
+		contractorEmploymentDetailsDTO["finishedClient"]=document.getElementById("finishedClientCheck").checked;
+		contractorEmploymentDetailsDTO["additionalInfo"]=$("#employmentAddnlInfo").val();
+		contractorEmploymentDetailsDTO["employmentType"]=$("#employmentType").val();
+		
+		employers[0]=contractorEmploymentDetailsDTO;
+		//Rate details
+		var contractorRateDetailsDTO={}
+		var rates=[];
+		
+		contractorRateDetailsDTO["ratePerDay"]=$("#ratePerDay").val();
+		contractorRateDetailsDTO["billRatePerDay"]=$("#billRatePerDay").val();
+		contractorRateDetailsDTO["rateStartDate"]=$("#rateStartDate").val();
+		contractorRateDetailsDTO["rateEndDate"]=$("#rateEndDate").val();
+		contractorRateDetailsDTO["includeSuperFlag"]=document.getElementById("superIncludeCheck").checked; 
+		contractorRateDetailsDTO["payrollTaxPaymentFlag"]=document.getElementById("payrollTaxCheck").checked;
+		contractorRateDetailsDTO["workCoverFlag"]=document.getElementById("workCoverCheck").checked;
+		contractorRateDetailsDTO["insurancePercentage"]=$("#insurance").val();
+		contractorRateDetailsDTO["otherDeductionPercentage"]=$("#otherDeduction").val();
+		contractorRateDetailsDTO["netMargin"]=$("#netMargin").val();
+		if($("#recruiter").val()!="none")
+		contractorRateDetailsDTO["recruiterId"]=$("#recruiter").val();
+		else contractorRateDetailsDTO["recruiterId"]=0;
+		contractorRateDetailsDTO["recruiterName"]=$( "#recruiter option:selected" ).text();
+		
+		rates[0]=contractorRateDetailsDTO;
+	var contractorBankDetailsDTO={}
+	var banks=[];
+	var contractorSuperAnnuationDetailsDTO ={}
+	var saList=[];
+	var contractorABNDetailsDTO ={}
+	var abnList=[];
+	var contractorTFNDetailsDTO ={}
+	var tfnList=[];
+			
+	if(abnchecked){
+		//ABN Details
+		contractorBankDetailsDTO["accountName"]=$("#abnAccountName").val();
+		contractorBankDetailsDTO["bsb"]=$("#abnAccountBsb").val();
+		contractorBankDetailsDTO["accountNumber"]=$("#abnBankAccountNo").val();
+		
+		contractorABNDetailsDTO["abnNumber"]=$("#abnNumber").val();
+		contractorABNDetailsDTO["acnNumber"]=$("#acnNumber").val();
+		contractorABNDetailsDTO["abnGroup"]=$("#abnGroup").val();
+		contractorABNDetailsDTO["companyName"]=$("#companyName").val();
+		contractorABNDetailsDTO["companyAddress"]=$("#companyAddress").val();
+		contractorABNDetailsDTO["companyCity"]=$("#companyCity").val();
+		contractorABNDetailsDTO["companyState"]=$("#companyState").val();
+		contractorABNDetailsDTO["companyZipCode"]=$("#companyZipCode").val();
+		contractorABNDetailsDTO["gstRegistered"]=document.getElementById("gstRegistered").checked;
+		contractorABNDetailsDTO["piPlFlag"]=document.getElementById("piPlFlag").checked;
+		contractorABNDetailsDTO["workCoverFlag"]=document.getElementById("workCoverFlag").checked;
+		
+		contractorABNDetailsDTO["additionalInfo"]=$("#abnAdditionalInfo").val();
+		
+		contractorABNDetailsDTO["gstCertPath"]=gstCertPath;
+		contractorABNDetailsDTO["piPlCert1Path"]=piplCertPath1;
+		contractorABNDetailsDTO["piPlCert2Path"]=piplCertPath2;
+		contractorABNDetailsDTO["piPlCert3Path"]=piplCertPath3;
+		contractorABNDetailsDTO["workCoverCertPath"]=workCoverPath;
+		//alert("Path..."+$("#gstCertFile").val());
+		/*if($("#gstCertFile").val()!=""){
+			getFilePath(function (result) {
+			    alert(result);
+				contractorABNDetailsDTO["gstCertPath"]=result;
+			});
+		}*/
+		
+	}else{
+		//Bank details
+	contractorBankDetailsDTO["accountName"]=$("#accountName").val();
+	contractorBankDetailsDTO["bsb"]=$("#accountBsb").val();
+	contractorBankDetailsDTO["accountNumber"]=$("#accountNo").val();	
+	contractorBankDetailsDTO["additionalInfo"]=$("#bankAdditionalInfo").val();
+	
+	//Super annuation details
+	contractorSuperAnnuationDetailsDTO["superAnnuationFundName"]=$("#saFundName").val();
+	contractorSuperAnnuationDetailsDTO["superAnnuationMemberId"]=$("#saMemberId").val();
+	contractorSuperAnnuationDetailsDTO["additionalSuperAnnuationContributionFlag"]=document.getElementById("additionalSACheck").checked;
+	contractorSuperAnnuationDetailsDTO["additionalSuperAnnuationDetails"]=$("#addnlSAInfo").val();
+	contractorSuperAnnuationDetailsDTO["additionalInfo"]=$("#saAdditionalInfo").val();
+	
+	//TFN Details
+	
+	contractorTFNDetailsDTO["tfnNumber"]=$("#tfnNumber").val();
+	contractorTFNDetailsDTO["newApplicationFlag"]=document.getElementById("newApplicationFlag").checked;
+	contractorTFNDetailsDTO["underAgeExemptionFlag"]=document.getElementById("underAgeExempFlag").checked;
+	contractorTFNDetailsDTO["pensionHolderFlag"]=document.getElementById("pensionHolderFlag").checked;
+	contractorTFNDetailsDTO["employmentType"]=$("#tfnEmploymentType").val();
+	contractorTFNDetailsDTO["taxPayerType"]=$("#taxPaymentType").val();
+	
+	if($('input[name="taxFreeThreshold"]:checked').val()!=undefined){
+		//alert("setting taxfree threshold "+$('input[name="taxFreeThreshold"]:checked').val());
+		contractorTFNDetailsDTO["taxFreeThresholdFlag"] =$('input[name="taxFreeThreshold"]:checked').val();
+		
+	}
+	if($('input[name="loan"]:checked').val()!=undefined){
+		//alert("setting loan "+$('input[name="loan"]:checked').val());
+		contractorTFNDetailsDTO["loanFlag"] =$('input[name="loan"]:checked').val();
+		
+	}
+	if($('input[name="financialDebt"]:checked').val()!=undefined){
+		//alert("setting financialDebt "+$('input[name="financialDebt"]:checked').val());
+		contractorTFNDetailsDTO["financialShipmentDebtFlag"] =$('input[name="financialDebt"]:checked').val();
+		
+	}
+	contractorTFNDetailsDTO["additionalInfo"]=$("#tfnAdditionalInfo").val();
+	}
+	//alert(contractorPersonalDetailsDTO);
+	banks[0]=contractorBankDetailsDTO;
+	saList[0]=contractorSuperAnnuationDetailsDTO;
+	abnList[0]=contractorABNDetailsDTO;
+	tfnList[0]=contractorTFNDetailsDTO;
+	
+	
+	var contractorDetailsDTO = {}
+	 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
+	 contractorDetailsDTO["bankList"]=banks;
+	 contractorDetailsDTO["employerList"]=employers;
+	 contractorDetailsDTO["rateList"]=rates;
+	 contractorDetailsDTO["abnList"]=abnList;
+	 contractorDetailsDTO["tfnList"]=tfnList;
+	 contractorDetailsDTO["superAnnuationList"]=saList;
+	 
+	 $.ajax({
+			type : "POST",
+			contentType : "application/json",
+			
+			url : "/createContractor",
+			data : JSON.stringify(contractorDetailsDTO),
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+				//var response = JSON.stringify(data);
+	       	alert("Contractor Registered Successfully...");
+	          
+
+	       },
+	       error: function (e) {
+	    	   //var response = JSON.stringify(e);
+	    	   console.log(e.responseText);
+	    	   alert("error"+e.responseText);
+
+	       }
+	   });
+
+} 
+
+var gstCertPath="";
+var piplCertPath1="";
+var piplCertPath2="";
+var piplCertPath3="";
+var workCoverPath="";
+
+function getFilePath(file, variable){
+	//alert($("#piplcertificate").get(0).files.length);
+	//alert(variable);
+	var formData = new FormData();
+	 formData.append("uploadedCertificate", file.files[0]);
+	 var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "/copyCertificate");
+	    xhr.onload = function() {
+	        console.log(xhr.responseText);
+	        if(variable=="gstCert"){
+	        	gstCertPath=	xhr.responseText;
+	        }
+	        if(variable=="pipl1"){
+	        	piplCertPath1=	xhr.responseText;
+	        }
+	        if(variable=="pipl2"){
+	        	piplCertPath2=	xhr.responseText;
+	        }
+	        if(variable=="pipl3"){
+	        	piplCertPath3=	xhr.responseText;
+	        }
+	        if(variable=="workCover"){
+	        	workCoverPath=	xhr.responseText;
+	        }
+	       
+	      if(xhr.status == 200) {
+	    	  //alert("1: "+piplCertPath1);
+	    	 
+	        } else {
+	          	        }
+	    }
+	    xhr.send(formData);
+	
+}
+
