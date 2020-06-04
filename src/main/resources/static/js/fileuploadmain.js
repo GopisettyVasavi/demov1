@@ -452,3 +452,10 @@ function uploadFiles(files) {
 function backToIndex(){
 	window.location='/index'
 }
+function restSearchForm(){
+	$("#searchProfForm")[0].reset();
+	 event.preventDefault();
+	
+	
+	
+}

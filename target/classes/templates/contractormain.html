@@ -73,7 +73,7 @@
 	<div class="mt-30 mb-30">
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item"><a class="nav-link active"
-				data-toggle="tab" href="#create" style="font-weight:bold">Create</a></li>
+				data-toggle="tab" href="#create_contract" style="font-weight:bold">Create</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab"
 				href="#search" style="font-weight:bold">Search</a></li>
 		</ul>
@@ -152,19 +152,19 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Date of Birth</label>
+																					<label for="name" style="font-weight:bold">Date of Birth *</label>
 																					<input
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Date of Birth"
 																						onfocus="this.placeholder = 'Date of Birth'"
 																						onblur="this.placeholder = 'Date of Birth'"
-																						class="single-input" id="dateOfBirth" name="dateOfBirth">
+																						class="single-input" id="dateOfBirth" name="dateOfBirth" required="required">
 
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																			<div class="form-group">
-																					<label for="name" style="font-weight:bold">Gender</label>
+																					<label for="name" style="font-weight:bold">Gender *</label>
 																					<div class="row">
 																						<div class="col-sm-4">
 																							<!-- Default checked -->
@@ -254,11 +254,11 @@
 																			<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 								<div class="form-group">
-							<label for="name" style="font-weight:bold">Visa Category</label>
+							<label for="name" style="font-weight:bold">Visa Category *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="visaCategory" onchange="setSelectedVisaCategory()" >
+																							<select id="visaCategory" onchange="setSelectedVisaCategory()" required="required">
 																								<option value="none"  selected="selected">Select Visa</option>
 																								<option value="PR">PR</option>
 																								<option value="Citizen">Citizen</option>
@@ -298,13 +298,13 @@
 							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Address</label> 	
+																					<label for="name" style="font-weight:bold">Address *</label> 	
 																					
 																					<input type="text"
 										name="address" placeholder="Address"
 										onfocus="this.placeholder = 'Address'"
 										onblur="this.placeholder = 'Address'" id="address"
-										class="single-input">
+										class="single-input" required="required">
 																					</div>
 																			</div>
 																			
@@ -321,11 +321,11 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">State</label>
+																					<label for="name" style="font-weight:bold">State *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="contractorState"  >
+																							<select id="contractorState" required="required" >
 																								<option value="none"  selected="selected">Select State</option>
 																								<option value="NSW">New South Wales</option>
 																								<option value="VIC">Victoria</option>
@@ -402,52 +402,53 @@
 							
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contact Person</label> <input type="text"
+									<label for="name" style="font-weight:bold">Contact Person *</label> <input type="text"
 										name="contactPerson" placeholder="Emergency Contact Person"
 										onfocus="this.placeholder = 'contactPerson'"
 										onblur="this.placeholder = 'contactPerson'" id="emergencyContactName"
-										class="single-input">
+										class="single-input" required="required">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contact Phone</label> <input type="text"
+									<label for="name" style="font-weight:bold">Contact Phone *</label> <input type="text"
 										name="contactPerson" placeholder="Emergency Contact Phone"
 										onfocus="this.placeholder = 'contactPerson'"
 										onblur="this.placeholder = 'contactPerson'" id="emergencyContactNumber"
-										class="single-input">
+										class="single-input" required="required">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contact Address</label> <input type="text"
+									<label for="name" style="font-weight:bold">Contact Address *</label> <input type="text"
 										name="contactPerson" placeholder="Emergency Contact Address"
 										onfocus="this.placeholder = 'contactAddress'"
 										onblur="this.placeholder = 'contactAddress'" id="emergencyContactAddress"
-										class="single-input">
+										class="single-input" required="required">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Email</label> <input type="text"
+									<label for="name" style="font-weight:bold">Contact Email *</label> <input type="text"
 										name="contactPerson" placeholder="Emergency Contact Email"
 										onfocus="this.placeholder = 'ContactEmail'"
 										onblur="this.placeholder = 'ContactEmail'" id="emergencyContactEmail"
-										class="single-input">
+										class="single-input" required="required">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contact Relation</label> <input type="text"
+									<label for="name" style="font-weight:bold">Contact Relation *</label> <input type="text"
 										name="contactPerson" placeholder="Emergency Contact Relation"
 										onfocus="this.placeholder = 'contactRelation'"
 										onblur="this.placeholder = 'contactRelation'" id="emergencyContactRelation"
-										class="single-input">
+										class="single-input" required="required">
 								</div>
 							</div>
 							
 							
 																		</div>
+																		<div id="personal_feedback"></div>
 																	</form>
 																</div>
 															</div>
@@ -466,7 +467,7 @@
 																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Bank
 																			Details</a>
 																	</h6></li>
-																<li class="pull-right"><a href="#"
+																<li class="pull-right"><a  href="#"
 																	data-toggle="collapse" data-target="#collapseTwo"
 																	aria-expanded="false" aria-controls="collapseTwo"
 																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
@@ -527,7 +528,7 @@
 							<div class="col-sm-4"></div>
 																		<div class="col-sm-4">
 																				<div class="form-group" id="saFundName_div">
-																				<label id="saFundName_lbl" for="name" style="font-weight:bold">Superannuation Fund Name </label>
+																				<label id="saFundName_lbl" for="name" style="font-weight:bold">Superannuation Fund Name *</label>
 																					<input type="text" name="name"
 										placeholder="SA Fund Name" onfocus="this.placeholder = 'SA Fund Name'"
 										onblur="this.placeholder = 'SA Fund Name'" 
@@ -537,7 +538,7 @@
 																			</div>
 																			<div class="col-sm-4" >
 																				<div class="form-group" id="saMemberId_div" >
-																					<label for="name" id="saMemberId_lbl" style="font-weight:bold">Superannuation Member Id</label>
+																					<label for="name" id="saMemberId_lbl" style="font-weight:bold">Superannuation Member Id *</label>
 																					<input type="text" name="saMemberId"
 										placeholder="SA Member Id" onfocus="this.placeholder = 'SA Member Id'"
 										onblur="this.placeholder = 'SA Member Id'" 
@@ -578,6 +579,7 @@
 																			</div>
 																			
 																		</div>
+																		<div id="bank_feedback"> </div>
 																	</form>
 																</div>
 															</div>
@@ -612,22 +614,22 @@
 																		<div class="row">
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">ABN No</label>
+																					<label for="name" style="font-weight:bold">ABN No *</label>
 																					<input type="text"
 										name="abn" placeholder="ABN number"
 										onfocus="this.placeholder = 'ABN number'"
 										onblur="this.placeholder = 'ABN number'" id="abnNumber"
-										class="single-input">
+										class="single-input" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">ACN No</label>
+																					<label for="name" style="font-weight:bold">ACN No *</label>
 																					<input type="text"
 										name="abn" placeholder="ACN number"
 										onfocus="this.placeholder = 'ACN number'"
 										onblur="this.placeholder = 'ACN number'" id="acnNumber"
-										class="single-input">
+										class="single-input" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -647,37 +649,37 @@
 																			
 																	<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Company Name</label>
+																					<label for="name" style="font-weight:bold">Company Name *</label>
 																					<input type="text"
 										name="companyName" placeholder="Company Name"
 										onfocus="this.placeholder = 'Company Name'"
 										onblur="this.placeholder = 'Company Name'" id="companyName"
-										class="single-input">
+										class="single-input" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Company Address</label>
+																					<label for="name" style="font-weight:bold">Company Address *</label>
 																					<input type="text"
 										name="companyAddress" placeholder="Company Address"
 										onfocus="this.placeholder = 'Company Address'"
 										onblur="this.placeholder = 'Company Address'" id="companyAddress"
-										class="single-input">
+										class="single-input" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Company City</label>
+																					<label for="name" style="font-weight:bold">Company City *</label>
 																					<input type="text"
 										name="companyCity" placeholder="Company City"
 										onfocus="this.placeholder = 'Company City'"
 										onblur="this.placeholder = 'Company City'" id="companyCity"
-										class="single-input">
+										class="single-input" required="required">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">State</label>
+																					<label for="name" style="font-weight:bold">State *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -827,6 +829,7 @@
 																				</div>
 																			</div>	
 																		</div>
+																		<div id="abn_feedback"></div>
 																	</form>
 																</div>
 															</div>
@@ -861,7 +864,7 @@
 																		<div class="row">
 																		<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">TFN No</label>
+																					<label for="name" style="font-weight:bold">TFN No *</label>
 																					<input type="text"
 										name="tfn" placeholder="TFN number"
 										onfocus="this.placeholder = 'TFN number'"
@@ -896,7 +899,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Employment Type</label>
+																					<label for="name" style="font-weight:bold">Employment Type *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -914,7 +917,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Taxpayer Type</label>
+																					<label for="name" style="font-weight:bold">Taxpayer Type *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -932,7 +935,7 @@
 																			
 																			<div class="col-sm-4">
 																			<div class="form-group">
-																					<label for="name" style="font-weight:bold">Tax-free threshold</label>
+																					<label for="name" style="font-weight:bold">* Tax-free threshold?</label>
 																					<div class="row">
 																						<div class="col-sm-4">
 																							<!-- Default checked -->
@@ -958,7 +961,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																			<div class="form-group">
-																					<label for="name" style="font-weight:bold">Have any Higher Education Loan/Student Startup Loan/Trade Support Loan?</label>
+																					<label for="name" style="font-weight:bold">* Have any Higher Education Loan/Student Startup Loan/Trade Support Loan?</label>
 																					<div class="row">
 																						<div class="col-sm-4">
 																							<!-- Default checked -->
@@ -985,7 +988,7 @@
 																			
 																			<div class="col-sm-4">
 																			<div class="form-group">
-																					<label for="name" style="font-weight:bold">Have any Financial Supplement debt?</label>
+																					<label for="name" style="font-weight:bold">* Have any Financial Supplement debt?</label>
 																					<div class="row">
 																						<div class="col-sm-4">
 																							<!-- Default checked -->
@@ -1023,6 +1026,7 @@
 																			</div>
 																			
 																		</div>
+																		<div id="tfn_feedback"></div>
 																	</form>
 																</div>
 															</div>
@@ -1058,7 +1062,7 @@
 																		<div class="row">
 																		<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Client Name</label> 
+																					<label for="name" style="font-weight:bold">Client Name *</label> 
 																					<input type="text"
 										name="clientName" placeholder="Client Name"
 										onfocus="this.placeholder = 'Client Name'"
@@ -1090,7 +1094,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Employment Type</label>
+																					<label for="name" style="font-weight:bold">Employment Type *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -1108,7 +1112,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Start Date</label> 
+																					<label for="name" style="font-weight:bold">Start Date *</label> 
 																					<input 
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Start Date"
@@ -1164,7 +1168,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Work Location State</label>
+																					<label for="name" style="font-weight:bold">Work Location State *</label>
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
@@ -1232,7 +1236,7 @@
 							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Role</label> 
+																					<label for="name" style="font-weight:bold">Role *</label> 
 																					
 																					<input type="text"
 										name="role" placeholder="Role"
@@ -1244,7 +1248,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Recruiter</label> 
+																					<label for="name" style="font-weight:bold">Recruiter *</label> 
 																					
 																					<div class="input-group-icon" id="select_div">
 																						
@@ -1262,7 +1266,7 @@
 							<div class="col-sm-4"></div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Rate Start Date</label> 
+																					<label for="name" style="font-weight:bold">Rate Start Date *</label> 
 																					<input 
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Start Date"
@@ -1292,7 +1296,7 @@
 																			
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Rate(Per day)</label> 
+																					<label for="name" style="font-weight:bold">Rate(Per day) *</label> 
 																					
 																					<input type="text"
 										name="ratePerDay" placeholder="Rate Per Day"
@@ -1304,7 +1308,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Bill Rate(Per day)</label> 
+																					<label for="name" style="font-weight:bold">Bill Rate(Per day) *</label> 
 																					
 																					<input type="text"
 										name="billRatePerDay" placeholder="Bill Rate Per Day"
@@ -1431,7 +1435,7 @@
 																			</div>
 																			
 																		</div>
-																		
+																		<div id="emp_feedback"></div>
 																	</form>
 																	
 																</div>
@@ -1452,7 +1456,7 @@
 																	</h6></li>
 																<li class="pull-right"><a href="#"
 																	data-toggle="collapse" data-target="#collapseSix"
-																	aria-expanded="false" aria-controls="collapseSix"
+																	aria-expanded="false" aria-controls="collapseSix"	
 																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
 																		class="fa fa-caret-down"></i> </a></li>
 															</div>
@@ -1510,7 +1514,8 @@
 								<div class="form-group text-center">
 									<input type="submit"
 										class="button button-contactForm boxed-btn" onclick="clickonsave()" value="Create"/>
-										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" onclick="window.location.reload();" > 
+										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" 
+										onclick="window.location.reload();" > 
 								</div>
 							</div>
 							</div>
@@ -1539,142 +1544,117 @@
 				<h3>Search</h3>
 				<div class="col-lg-12">
 					<form class="form-contact contact_form"
-						action="contact_process.php" method="post" id="contactForm"
+						action="contact_process.php" method="post" id="searchForm"
 						novalidate="novalidate">
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Name</label> <input type="text" name="name"
+									<label for="name" style="font-weight:bold">Contractor Name</label> <input type="text" name="name"
 										placeholder="Name" onfocus="this.placeholder = 'Name'"
 										onblur="this.placeholder = 'Name'" 
-										class="single-input" id="candidateName_s">
+										class="single-input" id="contractorName_s">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Email</label> <input type="email"
-										name="EMAIL" placeholder="Email address"
-										onfocus="this.placeholder = 'Email address'"
-										onblur="this.placeholder = 'Email address'" id="primaryEmail_s"
+									<label for="name" style="font-weight:bold">Client Name</label> <input type="text"
+										name="ClientName" placeholder="Client Name"
+										onfocus="this.placeholder = 'Client Name'"
+										onblur="this.placeholder = 'Client Name'" id="clientName_s"
 										class="single-input">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contact number</label> <input type="text"
-										name="contact" placeholder="Contact number"
-										onfocus="this.placeholder = 'Contact number'"
-										onblur="this.placeholder = 'Contact number'" id="primaryContactNo_s"
+									<label for="name" style="font-weight:bold">End Client Name</label> <input type="text"
+										name="EndClientName" placeholder="End Client Name"
+										onfocus="this.placeholder = 'End Client Name'"
+										onblur="this.placeholder = 'End Client Name'" id="endClientName_s"
+										class="single-input">
+								</div>
+							</div>
+							<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location State </label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select"  >
+																							<select id="workLocationState_s"  class="form-select">
+																								<option value="none"  selected="selected">Select State</option>
+																								<option value="NSW">New South Wales</option>
+																								<option value="VIC">Victoria</option>
+																								<option value="WA">Western Australia</option>
+																								<option value="QLD">Queens Land</option>
+																								<option value="TAS">Tasmania</option>
+																								<option value="SA">South Australia</option>
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Role</label> <input type="text"
+										name="role" placeholder="Role"
+										onfocus="this.placeholder = 'Role'"
+										onblur="this.placeholder = 'Role'" id="role_s"
 										class="single-input">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Skills</label> <input type="text"
-										name="Skills" placeholder="Skills"
-										onfocus="this.placeholder = 'Skills'"
-										onblur="this.placeholder = 'Skills'" id="skill_s"
-										class="single-input">
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Location</label> <input type="text"
-										name="Location" placeholder="Location"
-										onfocus="this.placeholder = 'Location'"
-										onblur="this.placeholder = 'Location'" id="currentLocation_s"
-										class="single-input">
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Visa Category</label>
-									<div class="input-group-icon">
-										
-										<div class="form-select" id="default-select">
-											<select id="visatype_s">
-												<option value="none" selected="selected">Select Visa</option>
-												<option value="PR">PR</option>
-												<option value="Citizen">Citizen</option>
-												<option value="Dependent Visa">Dependent Visa</option>
-												<option value="Temporary graduate visa">Temporary graduate visa</option>
-												<option value="Work Visa">Work Visa</option>
-											</select>
+									<label for="name" style="font-weight:bold">Recruiter</label>
+																			
+										<div class="input-group-icon" >
+										<div class="form-select" id="recruiter-select_s" >
 										</div>
-									</div>
+										</div>
+									
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Experience</label> <input type="text"
-										name="Experience" placeholder="Experience"
-										onfocus="this.placeholder = 'Experience'"
-										onblur="this.placeholder = 'Experience'" id="workexperience_s"
-										class="single-input">
+									<label for="name" style="font-weight:bold">Start Date</label> <input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input" id="jobStartDate_s" 
+																						name="startDate"  >
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Certification</label> <input type="text"
-										name="Certification" placeholder="Certification"
-										onfocus="this.placeholder = 'Certification'"
-										onblur="this.placeholder = 'Certification'" id="certification_s"
-										class="single-input">
+									<label for="name" style="font-weight:bold">End Date</label> <input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input" id="jobEndDate_s" 
+																						name="endDate_s"  >
 								</div>
 							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Availability</label> <input type="text"
-										name="Availability" placeholder="Availability"
-										onfocus="this.placeholder = 'Availability'"
-										onblur="this.placeholder = 'Availability'" id="availability_s"
-										class="single-input">
-								</div>
-							</div>
+							
 							<div class="col-sm-12">
 								<div class="form-group text-center">
 									<button type="submit"
-										class="button button-contactForm boxed-btn" onclick="clickonsearch()">Search</button>
+										class="button button-contactForm boxed-btn" onclick="contractorSearch()">Search</button>
+										<button type="submit"
+										class="button button-contactForm boxed-btn" onclick="resetSearch()">Reset</button>
+										
 								</div>
 							</div>
 							</div>
 							<div class="col-sm-12" id="searchresults_div" >
-							<div id="feedback"></div>
-			<!-- <div>
-    Toggle column: <a class="toggle-vis" data-column="0">Name</a>
-     - <a class="toggle-vis" data-column="1">Email</a>
-      - <a class="toggle-vis" data-column=   "2">Contact No</a> 
-      - <a class="toggle-vis" data-column="3">Skill</a>
-       - <a class="toggle-vis" data-column="4">Location</a>
-        - <a class="toggle-vis" data-column= "5">Visa Type</a>
-        - <a class="toggle-vis" data-column= "6">Availability</a>
-        - <a class="toggle-vis" data-column= "7">Assigned To</a>
-</div>				
-		 -->	<table id="paginatedTable" class="display" >
+							<div id="search_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
 			
-			
-<tfoot  style="display: none" hidden="true" id="table_foot">
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Contact No</th>
-                <th>Skill</th>               
-                <th>Location</th>
-                 <th>Visa Category</th>
-                 <th>Visa Type</th>
-                <th>Availability</th>
-                <th>Education</th>
-                <th>Experience</th>
-                <th>Certification</th>
-                <th>Assigned To Emp</th>
-                <th>Assigned Date</th>
-                <th>Employed By Ren</th>
-                <th>Awards</th>
-                <th>Additional Notes</th>
-            </tr>
-        </tfoot>
+	<table id="contractorTable" class="display">
 
 			</table>
+			</div>
 								
 							</div>
 						
@@ -1788,6 +1768,20 @@
 			}
 		});
 		$('#lastWorkingDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#jobStartDate_s').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#jobEndDate_s').datepicker({
 			format: 'dd/mm/yyyy',
 			iconsLibrary : 'fontawesome',
 			icons : {

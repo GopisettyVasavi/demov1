@@ -272,17 +272,11 @@ public class ProfileService {
 			}
 			CandidateProfileEntity profileDetail = candidateProfileRepository
 					.getCandidateProfileByCandidateId(candidateId);
-			// logger.info("DATE IN
-			// SERVICE...,{}",profileDetail.getLastUpdatedByDateTime());
 			if (!ProfileParserUtils.isObjectEmpty(profileDetail)) {
 				BeanUtils.copyProperties(profileDetail, candidateDetailsDto);
 				candidateDetailsDto
 						.setAssignedDate(ProfileParserUtils.parseDateToString(profileDetail.getAssignedDate()));
 			}
-			// ProfileParserUtils.parseDateTime(candidateDetailsDto.getLastUpdatedByDateTime());
-			// candidateDetailsDto.setLastUpdatedByDateTime(ProfileParserUtils.parseDateTime(profileDetail.getLastUpdatedByDateTime()));
-			// logger.info("DATE IN SERVICE
-			// AFTER...,{}",candidateDetailsDto.getLastUpdatedByDateTime());
 			CandidateWorkHistoryEntity workDetail = candidateWorkRepository.getCandidateWorkByCandidateId(candidateId);
 			if (!ProfileParserUtils.isObjectEmpty(workDetail)) {
 				BeanUtils.copyProperties(workDetail, candidateDetailsDto);

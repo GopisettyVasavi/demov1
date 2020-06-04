@@ -102,6 +102,12 @@ public class ContractorPersonalDetailsEntity {
 	@Column(name = "\"ZIP_CODE\"")
 	private BigInteger zipCode;
 
+	@Column(name = "\"CONTRACTOR_FULL_NAME\"")
+	private String fullName;
+	
+	@Column(name = "\"ABN_HOLDER\"")
+	private String abnHolder;
+	
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -318,6 +324,23 @@ public class ContractorPersonalDetailsEntity {
 		this.zipCode = zipCode;
 	}
 
+	
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getAbnHolder() {
+		return abnHolder;
+	}
+
+	public void setAbnHolder(String abnHolder) {
+		this.abnHolder = abnHolder;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorPersonalDetailsEntity [contractorId=" + contractorId + ", firstName=" + firstName
@@ -330,7 +353,10 @@ public class ContractorPersonalDetailsEntity {
 				+ emergencyContactNumber + ", emergencyContactAddress=" + emergencyContactAddress
 				+ ", emergencyContactEmail=" + emergencyContactEmail + ", emergencyContactRelation="
 				+ emergencyContactRelation + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
-				+ lastUpdatedDateTime + ", zipCode=" + zipCode + "]";
+				+ lastUpdatedDateTime + ", zipCode=" + zipCode + ", fullName=" + fullName + ", abnHolder=" + abnHolder
+				+ "]";
 	}
+
+	
 
 }

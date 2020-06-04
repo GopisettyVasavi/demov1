@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "parse.\"CONTRACTOR_EMPLOYMENT_DETAILS\"")
-public class ContractorEploymentDetailsEntity {
+public class ContractorEmploymentDetailsEntity {
 	
 	@Id
 	@GeneratedValue(generator = "parse.contractor_employment_sequence")
@@ -79,6 +79,12 @@ public class ContractorEploymentDetailsEntity {
 
 	@Column(name = "\"LAST_UPDATED_DATE_TIME\"")
 	private LocalDateTime lastUpdatedDateTime;
+	
+	@Column(name = "\"RECRUITER_ID\"")
+	private BigInteger recruiterId;
+	
+	@Column(name = "\"RECRUITER_NAME\"")
+	private String recruiterName;
 
 	public BigInteger getId() {
 		return Id;
@@ -240,9 +246,25 @@ public class ContractorEploymentDetailsEntity {
 		this.employmentType = employmentType;
 	}
 
+	public BigInteger getRecruiterId() {
+		return recruiterId;
+	}
+
+	public void setRecruiterId(BigInteger recruiterId) {
+		this.recruiterId = recruiterId;
+	}
+
+	public String getRecruiterName() {
+		return recruiterName;
+	}
+
+	public void setRecruiterName(String recruiterName) {
+		this.recruiterName = recruiterName;
+	}
+
 	@Override
 	public String toString() {
-		return "ContractorEploymentDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", clientName="
+		return "ContractorEmploymentDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", clientName="
 				+ clientName + ", endClientName=" + endClientName + ", contractNumber=" + contractNumber
 				+ ", workLocationAddress=" + workLocationAddress + ", workLocationCity=" + workLocationCity
 				+ ", workLocationState=" + workLocationState + ", workLocationZipCode=" + workLocationZipCode
@@ -250,8 +272,10 @@ public class ContractorEploymentDetailsEntity {
 				+ jobRole + ", jobStartDate=" + jobStartDate + ", jobEndDate=" + jobEndDate + ", lastWorkingDate="
 				+ lastWorkingDate + ", finishedClient=" + finishedClient + ", additionalInfo=" + additionalInfo
 				+ ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
-				+ lastUpdatedDateTime + "]";
+				+ lastUpdatedDateTime + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + "]";
 	}
+
+	
 
 	
 	

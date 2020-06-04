@@ -759,7 +759,7 @@
 				<h3>Search</h3>
 				<div class="col-lg-12">
 					<form class="form-contact contact_form"
-						action="contact_process.php" method="post" id="contactForm"
+						action="contact_process.php" method="post" id="searchProfForm"
 						novalidate="novalidate">
 						<div class="row">
 							<div class="col-sm-4">
@@ -855,25 +855,20 @@
 								<div class="form-group text-center">
 									<button type="submit"
 										class="button button-contactForm boxed-btn" onclick="clickonsearch()">Search</button>
+										<button type="submit"
+										class="button button-contactForm boxed-btn" onclick="restSearchForm()">Reset</button>
 								</div>
 							</div>
 							</div>
 							<div class="col-sm-12" id="searchresults_div" >
 							<div id="feedback"></div>
-			<!-- <div>
-    Toggle column: <a class="toggle-vis" data-column="0">Name</a>
-     - <a class="toggle-vis" data-column="1">Email</a>
-      - <a class="toggle-vis" data-column=   "2">Contact No</a> 
-      - <a class="toggle-vis" data-column="3">Skill</a>
-       - <a class="toggle-vis" data-column="4">Location</a>
-        - <a class="toggle-vis" data-column= "5">Visa Type</a>
-        - <a class="toggle-vis" data-column= "6">Availability</a>
-        - <a class="toggle-vis" data-column= "7">Assigned To</a>
-</div>				
-		 -->	<table id="paginatedTable" class="display" >
+							
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<table id="paginatedTable" class="display">
+				<!-- <table id="paginatedTable" class="display" style="table-layout: fixed;width: 100%"> -->
 			
 			
-<tfoot  style="display: none" hidden="true" id="table_foot">
+<!-- <tfoot  style="display: none" hidden="true" id="table_foot">
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -892,7 +887,7 @@
                 <th>Awards</th>
                 <th>Additional Notes</th>
             </tr>
-        </tfoot>
+        </tfoot> -->
 
 			</table>
 								

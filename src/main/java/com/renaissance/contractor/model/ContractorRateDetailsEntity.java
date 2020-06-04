@@ -38,13 +38,7 @@ public class ContractorRateDetailsEntity {
 	
 	@Column(name = "\"BILL_RATE_PER_DAY\"")
 	private Double billRatePerDay;
-	
-	@Column(name = "\"RECRUITER_ID\"")
-	private Integer recruiterId;
-	
-	@Column(name = "\"RECRUITER_NAME\"")
-	private String recruiterName;
-	
+			
 	@Column(name = "\"PAYROLL_TAX_PAYMENT_FLAG\"")
 	private String payrollTaxPaymentFlag;
 	
@@ -131,22 +125,6 @@ public class ContractorRateDetailsEntity {
 		this.billRatePerDay = billRatePerDay;
 	}
 
-	public Integer getRecruiterId() {
-		return recruiterId;
-	}
-
-	public void setRecruiterId(Integer recruiterId) {
-		this.recruiterId = recruiterId;
-	}
-
-	public String getRecruiterName() {
-		return recruiterName;
-	}
-
-	public void setRecruiterName(String recruiterName) {
-		this.recruiterName = recruiterName;
-	}
-
 	public String getPayrollTaxPaymentFlag() {
 		return payrollTaxPaymentFlag;
 	}
@@ -231,8 +209,7 @@ public class ContractorRateDetailsEntity {
 	public String toString() {
 		return "ContractorRateDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
 				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
-				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", recruiterId=" + recruiterId
-				+ ", recruiterName=" + recruiterName + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
+				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay  + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
 				+ ", workCoverFlag=" + workCoverFlag + ", insurancePercentage=" + insurancePercentage
 				+ ", otherDeductionPercentage=" + otherDeductionPercentage + ", otherDeductionAmount="
 				+ otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo=" + additionalInfo

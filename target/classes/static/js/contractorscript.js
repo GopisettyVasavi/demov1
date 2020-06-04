@@ -10,16 +10,20 @@ function initialize(){
 	        success: function (list) {
 	        	var options="";
 	        // alert(list.length);
-	         $('#recruiter-select').html("<select id =\"recruiter\" class=\"form-select\">Select Recruiter</select>");
-	       
+	         $('#recruiter-select').html("<select id =\"recruiter\" class=\"nice-select form-select\">Select Recruiter</select>");
+	         $('#recruiter-select_s').html("<select id =\"recruiter_s\" class=\"nice-select form-select\">Select Recruiter</select>");
 	         options += "<option value=\"none\"  selected=\"selected\">Select Recruiter</option>";
+	         
 	        // $('#recruiter-select select').append(options);
 	        for(i in list){
 	        	//alert(list[i].employeeId+" "+list[i].employeeName);
 	        	options += "<option value = "+list[i].employeeId+">"+list[i].employeeName+"</option>";
 	        }
+	        options += "<option value=\"99999999\" >Other</option>";
 	        $('#recruiter-select select').append(options);
+	        $('#recruiter-select_s select').append(options);
 	       document.getElementById("recruiter").classList.add('form-select');
+	       document.getElementById("recruiter_s").classList.add('form-select');
 	         //document.getElementById("select_div").className += "input-group-icon";
 	        },
 	        error: function (e) {
@@ -220,6 +224,61 @@ function backToIndex(){
 
 function clickonsave(){
 	event.preventDefault();
+	
+	var validation=true;
+	if(!document.getElementById("abnCheck").checked){
+		if(!validatePersonalDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validateBankDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validateTfnDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validatePersonalDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validateEmpDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		//validation=validatePersonalDetails()&&validateBankDetails()&&validateTfnDetails()&&validateEmpDetails();
+	}else{
+		//validation=validatePersonalDetails()&&validateEmpDetails()&&validateAbnDetails();
+		if(!validatePersonalDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validateAbnDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		if(!validateEmpDetails()){
+			event.preventDefault();
+			validation=false;
+			return false;
+		}
+		
+	}
+	//alert(validation);
+	if(!validation){
+		event.preventDefault();
+		return false;
+	}
+	else{
+		//alert("entered else");
 	var abnchecked=document.getElementById("abnCheck").checked;
 	//set Personal details
 	var contractorPersonalDetailsDTO={}	
@@ -227,6 +286,7 @@ function clickonsave(){
 	contractorPersonalDetailsDTO["firstName"]=$("#firstName").val();
 	contractorPersonalDetailsDTO["middleName"]=$("#middleName").val();
 	contractorPersonalDetailsDTO["lastName"]=$("#lastName").val();
+	contractorPersonalDetailsDTO["fullName"]=$("#firstName").val()+" "+$("#middleName").val()+" "+$("#lastName").val();
 	contractorPersonalDetailsDTO["dateOfBirth"]=$("#dateOfBirth").val();
 	if($('input[name="gender"]:checked').val()!=undefined){
 		//alert("setting gender");
@@ -284,7 +344,10 @@ function clickonsave(){
 		contractorEmploymentDetailsDTO["finishedClient"]=document.getElementById("finishedClientCheck").checked;
 		contractorEmploymentDetailsDTO["additionalInfo"]=$("#employmentAddnlInfo").val();
 		contractorEmploymentDetailsDTO["employmentType"]=$("#employmentType").val();
-		
+		if($("#recruiter").val()!="none")
+			contractorEmploymentDetailsDTO["recruiterId"]=$("#recruiter").val();
+			else contractorEmploymentDetailsDTO["recruiterId"]=0;
+		contractorEmploymentDetailsDTO["recruiterName"]=$( "#recruiter option:selected" ).text();
 		employers[0]=contractorEmploymentDetailsDTO;
 		//Rate details
 		var contractorRateDetailsDTO={}
@@ -300,11 +363,7 @@ function clickonsave(){
 		contractorRateDetailsDTO["insurancePercentage"]=$("#insurance").val();
 		contractorRateDetailsDTO["otherDeductionPercentage"]=$("#otherDeduction").val();
 		contractorRateDetailsDTO["netMargin"]=$("#netMargin").val();
-		if($("#recruiter").val()!="none")
-		contractorRateDetailsDTO["recruiterId"]=$("#recruiter").val();
-		else contractorRateDetailsDTO["recruiterId"]=0;
-		contractorRateDetailsDTO["recruiterName"]=$( "#recruiter option:selected" ).text();
-		
+				
 		rates[0]=contractorRateDetailsDTO;
 	var contractorBankDetailsDTO={}
 	var banks=[];
@@ -415,20 +474,20 @@ function clickonsave(){
 			timeout : 600000,
 			success : function(data) {
 				//var response = JSON.stringify(data);
-	       	alert("Contractor Registered Successfully...");
+	       	//alert("Contractor Registered Successfully..."+JSON.stringify(data));
 	          
-
+				alert("Contractor Registered Successfully...");
 	       },
 	       error: function (e) {
 	    	   //var response = JSON.stringify(e);
 	    	   console.log(e.responseText);
-	    	   alert("error"+e.responseText);
+	    	   alert("Error "+e.responseText);
 
 	       }
 	   });
 
 } 
-
+}
 var gstCertPath="";
 var piplCertPath1="";
 var piplCertPath2="";
@@ -470,3 +529,226 @@ function getFilePath(file, variable){
 	
 }
 
+function validatePersonalDetails(){
+	$('#personal_feedback').html("");
+	//alert(document.getElementById("contractorState").value);
+	//alert(document.getElementById("dateOfBirth").value);
+	if((document.getElementById("firstName").value).trim()==""||(document.getElementById("lastName").value).trim()==""
+		||(document.getElementById("dateOfBirth").value).trim=="" || (document.getElementById("personalEmail").value).trim()=="" 
+			||(document.getElementById("mobilePhone").value).trim==""|| $('input[name="gender"]:checked').val()==undefined
+			||(document.getElementById("visaCategory").value).trim=="none" ||(document.getElementById("address").value).trim()==""
+				||(document.getElementById("contractorState").value).trim=="none" || (document.getElementById("emergencyContactName").value).trim()==""
+					|| (document.getElementById("emergencyContactNumber").value).trim()=="" || (document.getElementById("emergencyContactAddress").value).trim()==""
+						||(document.getElementById("emergencyContactEmail").value).trim()=="" || (document.getElementById("emergencyContactRelation").value).trim()=="")
+								{
+		document.getElementById("personal_feedback").style.color = "red";
+		$('#personal_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseOne').collapse('show');
+
+		return false;
+	}
+	else return true;
+}
+function validateBankDetails(){
+	if(!document.getElementById("abnCheck").checked){
+	$('#bank_feedback').html("");
+	//alert(document.getElementById("dateOfBirth").value);
+	if((document.getElementById("accountName").value).trim()==""||(document.getElementById("accountBsb").value).trim()==""
+		||(document.getElementById("accountNo").value).trim=="" || (document.getElementById("saFundName").value).trim==""
+			|| (document.getElementById("saMemberId").value).trim==""){
+		
+		document.getElementById("bank_feedback").style.color = "red";
+		$('#bank_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseTwo').collapse('show');
+		return false;
+	}
+	else return true;
+	} else return true;
+}
+function validateTfnDetails(){
+	//alert("tfn");
+	if(!document.getElementById("abnCheck").checked){
+	$('#tfn_feedback').html("");
+	//alert(document.getElementById("dateOfBirth").value);
+	if(((document.getElementById("tfnNumber").value).trim()=="" && (!document.getElementById("newApplicationFlag").checked)
+			&&(!document.getElementById("underAgeExempFlag").checked)&&(!document.getElementById("pensionHolderFlag").checked))){
+		
+		
+		
+		document.getElementById("tfn_feedback").style.color = "red";
+		$('#tfn_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseFour').collapse('show');
+		return false;
+	}
+	if((document.getElementById("tfnEmploymentType").value).trim()=="none" || (document.getElementById("taxPaymentType").value).trim()=="none"
+		|| (document.getElementById("tfnEmploymentType").value).trim()=="none" || $('input[name="taxFreeThreshold"]:checked').val()==undefined
+		|| $('input[name="loan"]:checked').val()==undefined || $('input[name="financialDebt"]:checked').val()==undefined){
+				
+		document.getElementById("tfn_feedback").style.color = "red";
+		$('#tfn_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseFour').collapse('show');
+		return false;
+	}
+	else return true;
+	}
+}
+function validateAbnDetails(){
+	if(document.getElementById("abnCheck").checked){
+	$('#abn_feedback').html("");
+	//alert(document.getElementById("dateOfBirth").value);
+	if(((document.getElementById("abnNumber").value).trim()==""&& (document.getElementById("acnNumber").value).trim()=="")
+			||(document.getElementById("companyName").value).trim()=="" || (document.getElementById("companyAddress").value).trim()==""
+				|| (document.getElementById("companyCity").value).trim()=="" || (document.getElementById("companyState").value).trim()=="none"
+					|| (document.getElementById("abnAccountName").value).trim()=="" || (document.getElementById("abnAccountBsb").value).trim()==""
+						||  (document.getElementById("abnBankAccountNo").value).trim()==""){
+		document.getElementById("abn_feedback").style.color = "red";
+		$('#abn_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseThree').collapse('show');
+		return false;
+	}
+	else return true;
+	}else return true;
+	
+}
+function validateEmpDetails(){
+	$('#emp_feedback').html("");
+	//alert(document.getElementById("dateOfBirth").value);
+	if((document.getElementById("clientName").value).trim()==""||(document.getElementById("employmentType").value).trim()=="none"
+		|| (document.getElementById("jobStartDate").value).trim()=="" || (document.getElementById("workLocationState").value).trim()=="none"
+			|| (document.getElementById("role").value).trim()=="" || (document.getElementById("recruiter").value).trim()=="none"
+				|| (document.getElementById("ratePerDay").value).trim()=="" || (document.getElementById("rateStartDate").value).trim()==""
+					|| (document.getElementById("billRatePerDay").value).trim()==""){
+		document.getElementById("emp_feedback").style.color = "red";
+		$('#emp_feedback').html("Please enter all mandatory fields marked with *");
+		$('#collapseFive').collapse('show');
+		return false;
+	}
+	else return true;
+	
+}
+
+function contractorSearch(){
+	$('#search_feedback').html("");
+	  event.preventDefault();
+	      if($("#contractorName_s").val()=="" && $("#clientName_s").val()==""&& $("#endClientName_s").val()=="" 
+	    	  && $("#workLocationState_s").val() =="none" && $("#role_s").val()=="" && $("#recruiter_s").val()=="none" 
+	        	&&	$("#jobStartDate_s").val() =="" && $("#jobEndDate_s").val()=="" ){
+	    	  document.getElementById("search_feedback").style.color = "red";
+	    	  $('#search_feedback').html("Please enter at least one value to search contractors.");
+	        	//alert("Please enter at least one value to search profiles.");
+	        }
+	        else{
+  var contractorSearchForm = {}
+  contractorSearchForm["contractorName"] = $("#contractorName_s").val();
+  contractorSearchForm["clientName"] = $("#clientName_s").val();
+  contractorSearchForm["endClientName"] = $("#endClientName_s").val(); 
+  contractorSearchForm["role"] = $("#role_s").val();
+  contractorSearchForm["jobStartDate"] = $("#jobStartDate_s").val();
+  contractorSearchForm["jobEndDate"] = $("#jobEndDate_s").val();
+ 
+  if($("#recruiter_s").val()!="none"){
+	  contractorSearchForm["recruiterId"]=$("#recruiter_s").val();
+	  contractorSearchForm["recruiterName"]=$( "#recruiter_s option:selected" ).text();
+  }
+		
+  
+  if($("#workLocationState_s").val()!="none"){
+	  contractorSearchForm["workLocationState"] = $("#workLocationState_s").val();
+	  }
+	        
+  $.ajax({
+		type : "POST",
+		contentType : "application/json",		
+		url : "/searchContractors",
+		data : JSON.stringify(contractorSearchForm),
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+		success : function(data) {	
+			$("#searchresults_div").show();
+			$("#contractorTable").show();
+       /* var response=JSON.stringify(data);
+			alert("Contractor Search done Successfully..."+data.length);
+			$.each(data, function(i, item) {
+		        var $tr = $('<tr>').append(
+		            $('<td>').text(item.fullName),
+		            $('<td>').text(item.contractorId),
+		            $('<td>').text(item.mobilePhone)
+		        ).appendTo('#contractorTable');
+		       // console.log($tr.wrap('<p>').html());
+		    });*/
+			
+			var table=   $('#contractorTable').DataTable( {
+       		 fixedHeader: true,
+       		 responsive: true,
+         	   destroy: true,
+         	  orderCellsTop: true,
+         	autoWidth: false,
+         	/*targets: 'no-sort',
+         	bSort: false,
+         	order: [],*/
+         	 dom: 'Bfrtip',
+            buttons: [
+                'colvis'
+            ],
+            renderer: { "header": "bootstrap" },
+                data: data,
+                
+                columns: [
+             	   { "data": 'fullName', "name" : "fullName", "title" : "Name"  },
+                    { "data": 'mobilePhone', "name" : "mobilePhone" , "title" : "Phone"},
+                    { "data": 'personalEmail', "name" : "personalEmail", "title" : "Email"  },
+                    { "data": 'clientName', "name" : "clientName" , "title" : "Client Name"},
+                    { "data": 'endClientName', "name" : "endClientName" , "title" : "End Client Name"},
+                    { "data": 'workLocationState', "name" : "workLocationState", "title" : "Work Location State"  },
+                    { "data": 'jobRole', "name" : "jobRole" , "title" : "Role"},
+                    { "data": 'recruiterName', "name" : "recruiterName", "title" : "Recruiter"  },
+                    { "data": 'ratePerDay', "name" : "ratePerDay" , "title" : "Rate Per Day"},
+                    { "data": 'billRatePerDay', "name" : "billRatePerDay", "title" : "Bill Rate"  },
+                    { "data": 'jobStartDate', "name" : "jobStartDate" , "title" : "Start Date"},
+                    { "data": 'jobEndDate', "name" : "jobEndDate", "title" : "End Date"  },
+                    { "data": 'abnHolder', "name" : "abnHolder" , "title" : "ABN Holder"}]
+                   
+            } );
+			$('#contractorTable tfoot tr').appendTo('#contractorTable thead');
+    	    
+    	    $("#contractorTable tfoot tr").hide();
+			
+     },
+     error: function (e) {
+     	
+
+         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+             + e.responseText + "</pre>";
+         $('#search_feedback').html(json);
+
+         console.log("ERROR : ", e);
+        // $("#btn-search").prop("disabled", false);
+
+     }
+ });
+	        }
+  
+}
+
+function statechange(){
+	$('.state_id option').each(function() {
+		alert("called "+$(this).val());
+	    if($(this).val() == 'none') {
+	    	alert("set...");
+	        $(this).prop("selected", true);
+	        //$(this).val("none").change();
+	    }
+	});
+}
+function resetSearch(){
+		
+	
+	$("#searchForm")[0].reset();
+	
+	$("#workLocationState_s").val('none');
+	
+	
+	
+	 event.preventDefault();
+}

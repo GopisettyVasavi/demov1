@@ -8,11 +8,9 @@ public class ContractorRateDetailsDTO {
 	private String rateStartDate;
 	private String rateEndDate;
 	private String includeSuperFlag;
-	private Double billRatePerDay;;
-	private Integer recruiterId;
-	private String recruiterName;
+	private Double billRatePerDay;
 	private String payrollTaxPaymentFlag;
-	private String workCoverFlag;;
+	private String workCoverFlag;
 	private Double insurancePercentage;
 	private Double otherDeductionPercentage;
 	private Double otherDeductionAmount;
@@ -23,8 +21,7 @@ public class ContractorRateDetailsDTO {
 	public String toString() {
 		return "ContractorRateDetailsDTO [contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
 				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
-				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", recruiterId=" + recruiterId
-				+ ", recruiterName=" + recruiterName + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
+				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay  + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
 				+ ", workCoverFlag=" + workCoverFlag + ", insurancePercentage=" + insurancePercentage
 				+ ", otherDeductionPercentage=" + otherDeductionPercentage + ", otherDeductionAmount="
 				+ otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo=" + additionalInfo
@@ -65,18 +62,6 @@ public class ContractorRateDetailsDTO {
 	}
 	public void setBillRatePerDay(Double billRatePerDay) {
 		this.billRatePerDay = billRatePerDay;
-	}
-	public Integer getRecruiterId() {
-		return recruiterId;
-	}
-	public void setRecruiterId(Integer recruiterId) {
-		this.recruiterId = recruiterId;
-	}
-	public String getRecruiterName() {
-		return recruiterName;
-	}
-	public void setRecruiterName(String recruiterName) {
-		this.recruiterName = recruiterName;
 	}
 	public String getPayrollTaxPaymentFlag() {
 		return payrollTaxPaymentFlag;

@@ -10,8 +10,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +27,7 @@ import com.renaissance.profile.parser.util.ProfileParserUtils;
 @Repository
 @Transactional(readOnly = true)
 public class CandidatePersonalRespositoryCustomImpl  implements CandidatePersonalRespositoryCustom{
-	private static final Logger logger=LoggerFactory.getLogger(CandidatePersonalRespositoryCustomImpl.class);
+	//private static final Logger logger=LoggerFactory.getLogger(CandidatePersonalRespositoryCustomImpl.class);
 	
 	@PersistenceContext
     private EntityManager entityManager;

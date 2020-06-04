@@ -114,9 +114,9 @@ public class BulkFileUploadMvcController {
 						if (!pdfFile.exists()) {
 							FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile,
 									file.getContentType());
-							filePath="content//" + convertedFile.getConvertedFile().getName();
+							filePath=ProfileParserConstants.DEST_FOLDER + convertedFile.getConvertedFile().getName();
 						} else {
-							filePath="content//" + pdfFile.getName();
+							filePath=ProfileParserConstants.DEST_FOLDER + pdfFile.getName();
 						}
 						
 						candidateDto = profileParserService.parse(pdfFile);
@@ -126,7 +126,7 @@ public class BulkFileUploadMvcController {
 						if (!isChrome) {
 							candidateDto.setFilePath(file.getOriginalFilename());
 						} else {
-							candidateDto.setFilePath("content//" + file.getOriginalFilename());
+							candidateDto.setFilePath(ProfileParserConstants.DEST_FOLDER + file.getOriginalFilename());
 
 						}
 
@@ -178,7 +178,7 @@ public class BulkFileUploadMvcController {
 				ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER + filenameWithoutX + ".pdf");
 		if (!ProfileParserUtils.isObjectEmpty(convFile)) {
 			CandidateDTO candidateDto = profileParserService.parse(convFile);
-			candidateDto.setFilePath("content//" + filenameWithoutX + ".pdf");
+			candidateDto.setFilePath(ProfileParserConstants.DEST_FOLDER + filenameWithoutX + ".pdf");
 			redirectAttributes.addFlashAttribute("profile", candidateDto);
 		}
 		redirectAttributes.addFlashAttribute("Error", "Error in loading profile..");

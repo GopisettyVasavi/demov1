@@ -134,12 +134,12 @@ public class FileuploadMvcController {
 						convertedFile.getConvertedFile().getName());
 
 				redirectAttributes.addFlashAttribute("fileLocation",
-						"content//" + convertedFile.getConvertedFile().getName());
-				filePath="content//" + convertedFile.getConvertedFile().getName();
+						ProfileParserConstants.DEST_FOLDER + convertedFile.getConvertedFile().getName());
+				filePath=ProfileParserConstants.DEST_FOLDER + convertedFile.getConvertedFile().getName();
 				}else {
 					redirectAttributes.addFlashAttribute("fileLocation",
-							"content//" + pdfFile.getName());
-					filePath="content//" + pdfFile.getName();
+							ProfileParserConstants.DEST_FOLDER + pdfFile.getName());
+					filePath=ProfileParserConstants.DEST_FOLDER + pdfFile.getName();
 				}
 				
 				candidateDto = profileParserService.parse(pdfFile);
@@ -153,8 +153,8 @@ public class FileuploadMvcController {
 				} else {
 					logger.info("File for chrome render.. {}", file.getOriginalFilename());
 
-					redirectAttributes.addFlashAttribute("fileLocation", "content//" + file.getOriginalFilename());
-					candidateDto.setFilePath("content//" + file.getOriginalFilename());
+					redirectAttributes.addFlashAttribute("fileLocation", ProfileParserConstants.DEST_FOLDER + file.getOriginalFilename());
+					candidateDto.setFilePath(ProfileParserConstants.DEST_FOLDER + file.getOriginalFilename());
 
 				}
 

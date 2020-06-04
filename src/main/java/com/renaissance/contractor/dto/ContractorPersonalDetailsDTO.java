@@ -31,6 +31,7 @@ public class ContractorPersonalDetailsDTO {
 	private String emergencyContactEmail;
 	private String emergencyContactRelation;
 	private String abnHolder;
+	private String fullName;
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -194,10 +195,17 @@ public class ContractorPersonalDetailsDTO {
 	public void setAbnHolder(String abnHolder) {
 		this.abnHolder = abnHolder;
 	}
+	
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	@Override
 	public String toString() {
 		return "ContractorPersonalDetailsDTO [contractorId=" + contractorId + ", firstName=" + firstName
-				+ ", middleName=" + middleName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + ", gender="
+				+ ", middleName=" + middleName + ", lastName=" + lastName +", fullName=" + fullName + ", dateOfBirth=" + dateOfBirth + ", gender="
 				+ gender + ", personalEmail=" + personalEmail + ", officeEmail=" + officeEmail + ", mobilePhone="
 				+ mobilePhone + ", homePhone=" + homePhone + ", previousName=" + previousName + ", address=" + address
 				+ ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + ", country=" + country

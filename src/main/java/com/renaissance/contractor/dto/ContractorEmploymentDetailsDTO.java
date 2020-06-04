@@ -22,6 +22,8 @@ public class ContractorEmploymentDetailsDTO {
 	private String finishedClient;
 	private String additionalInfo;
 	private String activeRecord;
+	private BigInteger recruiterId;
+	private String recruiterName;
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -137,6 +139,19 @@ public class ContractorEmploymentDetailsDTO {
 	public void setEmploymentType(String employmentType) {
 		this.employmentType = employmentType;
 	}
+	
+	public BigInteger getRecruiterId() {
+		return recruiterId;
+	}
+	public void setRecruiterId(BigInteger recruiterId) {
+		this.recruiterId = recruiterId;
+	}
+	public String getRecruiterName() {
+		return recruiterName;
+	}
+	public void setRecruiterName(String recruiterName) {
+		this.recruiterName = recruiterName;
+	}
 	@Override
 	public String toString() {
 		return "ContractorEmploymentDetailsDTO [contractorId=" + contractorId + ", clientName=" + clientName
@@ -146,8 +161,10 @@ public class ContractorEmploymentDetailsDTO {
 				+ workLocationCountry + ", wlOtherCountry=" + wlOtherCountry + ", wlOtherState=" + wlOtherState
 				+ ", jobRole=" + jobRole + ", employmentType=" + employmentType + ", jobStartDate=" + jobStartDate
 				+ ", jobEndDate=" + jobEndDate + ", lastWorkingDate=" + lastWorkingDate + ", finishedClient="
-				+ finishedClient + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord + "]";
+				+ finishedClient + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord
+				+ ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + "]";
 	}
+	
 	
 	
 	
