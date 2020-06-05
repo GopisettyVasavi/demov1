@@ -52,7 +52,7 @@ public class ContractorABNDetailsEntity {
 	private String gstRegistered;
 	
 	@Column(name = "\"GST_CERTIFICATE_PATH\"")
-	private String gstCertificationPath;
+	private String gstCertPath;
 	
 	@Column(name = "\"PI_PL_FLAG\"")
 	private String piPlFlag;
@@ -172,12 +172,13 @@ public class ContractorABNDetailsEntity {
 		this.gstRegistered = gstRegistered;
 	}
 
-	public String getGstCertificationPath() {
-		return gstCertificationPath;
+	
+	public String getGstCertPath() {
+		return gstCertPath;
 	}
 
-	public void setGstCertificationPath(String gstCertificationPath) {
-		this.gstCertificationPath = gstCertificationPath;
+	public void setGstCertPath(String gstCertPath) {
+		this.gstCertPath = gstCertPath;
 	}
 
 	public String getPiPlFlag() {
@@ -266,7 +267,7 @@ public class ContractorABNDetailsEntity {
 				+ ", acnNumber=" + acnNumber + ", companyName=" + companyName + ", companyAddress=" + companyAddress
 				+ ", companyCity=" + companyCity + ", companyState=" + companyState + ", companyZipCode="
 				+ companyZipCode + ", abnGroup=" + abnGroup + ", gstRegistered=" + gstRegistered
-				+ ", gstCertificationPath=" + gstCertificationPath + ", piPlFlag=" + piPlFlag + ", piPlCert1Path="
+				+ ", gstCertPath=" + gstCertPath + ", piPlFlag=" + piPlFlag + ", piPlCert1Path="
 				+ piPlCert1Path + ", piPlCert2Path=" + piPlCert2Path + ", piPlCert3Path=" + piPlCert3Path
 				+ ", workCoverFlag=" + workCoverFlag + ", workCoverCertPath=" + workCoverCertPath + ", additionalInfo="
 				+ additionalInfo + ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser

@@ -108,6 +108,9 @@ public class ContractorPersonalDetailsEntity {
 	@Column(name = "\"ABN_HOLDER\"")
 	private String abnHolder;
 	
+	@Column(name = "\"OTHER_STATE\"")
+	private String otherState;
+	
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -341,6 +344,14 @@ public class ContractorPersonalDetailsEntity {
 		this.abnHolder = abnHolder;
 	}
 
+	public String getOtherState() {
+		return otherState;
+	}
+
+	public void setOtherState(String otherState) {
+		this.otherState = otherState;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorPersonalDetailsEntity [contractorId=" + contractorId + ", firstName=" + firstName
@@ -353,7 +364,7 @@ public class ContractorPersonalDetailsEntity {
 				+ emergencyContactNumber + ", emergencyContactAddress=" + emergencyContactAddress
 				+ ", emergencyContactEmail=" + emergencyContactEmail + ", emergencyContactRelation="
 				+ emergencyContactRelation + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
-				+ lastUpdatedDateTime + ", zipCode=" + zipCode + ", fullName=" + fullName + ", abnHolder=" + abnHolder
+				+ lastUpdatedDateTime + ", zipCode=" + zipCode + ", fullName=" + fullName + ", otherState=" + otherState + ", abnHolder=" + abnHolder
 				+ "]";
 	}
 

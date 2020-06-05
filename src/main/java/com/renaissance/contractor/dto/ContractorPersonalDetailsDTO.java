@@ -12,7 +12,7 @@ public class ContractorPersonalDetailsDTO {
 	private String personalEmail;
 	private String officeEmail;
 	private String mobilePhone;
-	private String homePhone;;
+	private String homePhone;
 	private String previousName;
 	private String address;
 	private String city;

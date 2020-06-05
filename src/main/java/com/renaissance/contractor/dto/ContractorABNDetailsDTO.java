@@ -12,7 +12,7 @@ public class ContractorABNDetailsDTO {
 	private String companyState;
 	private BigInteger companyZipCode;
 	private String abnGroup;
-	private String gstRegistered;;
+	private String gstRegistered;
 	private String gstCertPath;
 	private String piPlFlag;
 	private String piPlCert1Path;

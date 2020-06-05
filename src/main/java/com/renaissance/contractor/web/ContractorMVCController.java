@@ -50,7 +50,8 @@ public class ContractorMVCController {
 			return "unauthorizedaccess";
 
 	}
-
+	
+	
 	@PostMapping("/createContractor")
 	public ResponseEntity<?> createContractor(@RequestBody ContractorDetailsDTO contractorDto,
 			HttpServletRequest request) {
@@ -134,29 +135,16 @@ public class ContractorMVCController {
 			}
 
 			logger.info("Search details, {}", contractorSearchForm.toString());
-
-			// List<CandidateDTO> candidates=profileService.searchProfiles(searchForm);
-			// logger.info("Search Results, {}", candidates.size());
-			// return new ResponseEntity<>(candidates, HttpStatus.OK);
+			
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
 		List<ContractorSearchResultsForm> contractors = contractorService
 				.getContractorSearchResults(contractorSearchForm);
-		/**
-		 * @TODO remove...
-		 *//*
-			 * ContractorSearchResultsForm obj1= new ContractorSearchResultsForm();
-			 * obj1.setContractorId(new BigInteger("123")); obj1.setFullName("Vasavi G");
-			 * obj1.setClientName("Infosys"); obj1.setRatePerDay(500.00);
-			 * obj1.setMobilePhone("1234567890"); ContractorSearchResultsForm obj2= new
-			 * ContractorSearchResultsForm(); obj2.setContractorId(new BigInteger("456"));
-			 * obj2.setFullName("Thanvi G"); obj2.setClientName("Infosys");
-			 * obj2.setRatePerDay(700.00); obj2.setMobilePhone("1234567890");
-			 * contractors.add(obj1); contractors.add(obj2);
-			 */
+		
 		return new ResponseEntity<>(contractors, HttpStatus.OK);
 	}
 
+	
 }

@@ -747,5 +747,31 @@ function resetSearch(){
 	$("#searchForm")[0].reset();
 	
 	$("#workLocationState_s").val('none');
+	 $("#contractorTable").hide();
+	 $("#searchresults_div").hide();
 	event.preventDefault();
 }
+
+$(document).on("click","#contractorTable tbody tr", function (e)
+
+		{
+	
+	var table = $('#contractorTable').DataTable();
+		   var rowData = table.row( this ).data();
+		  // alert('called'+rowData.contractorId);
+		   $.ajax({
+		        type: "GET",
+		        contentType: "application/json",
+		        url: "/contractordetails",
+		        cache: false,
+		        timeout: 600000,
+		        success: function (data) {
+		        	var win = window.open("/contractordetails/"+rowData.contractorId);
+		      		        },
+		        error: function (e) {
+		        	
+		        	alert("Unable to load details. "+e);
+
+		        }
+		    });
+		});
