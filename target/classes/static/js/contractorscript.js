@@ -747,8 +747,5 @@ function resetSearch(){
 	$("#searchForm")[0].reset();
 	
 	$("#workLocationState_s").val('none');
-	
-	
-	
-	 event.preventDefault();
+	event.preventDefault();
 }
