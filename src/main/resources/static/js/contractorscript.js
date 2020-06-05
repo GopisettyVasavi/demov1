@@ -361,6 +361,7 @@ function clickonsave(){
 		contractorRateDetailsDTO["payrollTaxPaymentFlag"]=document.getElementById("payrollTaxCheck").checked;
 		contractorRateDetailsDTO["workCoverFlag"]=document.getElementById("workCoverCheck").checked;
 		contractorRateDetailsDTO["insurancePercentage"]=$("#insurance").val();
+		contractorRateDetailsDTO["insuranceType"]=$("#insuranceType").val();
 		contractorRateDetailsDTO["otherDeductionPercentage"]=$("#otherDeduction").val();
 		contractorRateDetailsDTO["netMargin"]=$("#netMargin").val();
 				

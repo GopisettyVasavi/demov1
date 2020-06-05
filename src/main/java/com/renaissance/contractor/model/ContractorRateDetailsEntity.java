@@ -69,6 +69,9 @@ public class ContractorRateDetailsEntity {
 	@Column(name = "\"LAST_UPDATED_DATE_TIME\"")
 	private LocalDateTime lastUpdatedDateTime;
 
+	@Column(name = "\"INSURANCE_TYPE\"")
+	private String insuranceType;
+	
 	public BigInteger getId() {
 		return Id;
 	}
@@ -205,16 +208,25 @@ public class ContractorRateDetailsEntity {
 		this.lastUpdatedDateTime = lastUpdatedDateTime;
 	}
 
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorRateDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
 				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
-				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay  + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
-				+ ", workCoverFlag=" + workCoverFlag + ", insurancePercentage=" + insurancePercentage
-				+ ", otherDeductionPercentage=" + otherDeductionPercentage + ", otherDeductionAmount="
-				+ otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo=" + additionalInfo
-				+ ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
-				+ lastUpdatedDateTime + "]";
+				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", payrollTaxPaymentFlag="
+				+ payrollTaxPaymentFlag + ", workCoverFlag=" + workCoverFlag + ", insurancePercentage="
+				+ insurancePercentage + ", otherDeductionPercentage=" + otherDeductionPercentage
+				+ ", otherDeductionAmount=" + otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo="
+				+ additionalInfo + ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser
+				+ ", lastUpdatedDateTime=" + lastUpdatedDateTime + ", insuranceType=" + insuranceType + "]";
 	}
+
 
 }

@@ -11,22 +11,14 @@ public class ContractorRateDetailsDTO {
 	private Double billRatePerDay;
 	private String payrollTaxPaymentFlag;
 	private String workCoverFlag;
+	private String insuranceType;
 	private Double insurancePercentage;
 	private Double otherDeductionPercentage;
 	private Double otherDeductionAmount;
 	private Double netMargin;
 	private String additionalInfo;
 	private String activeRecord;
-	@Override
-	public String toString() {
-		return "ContractorRateDetailsDTO [contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
-				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
-				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay  + ", payrollTaxPaymentFlag=" + payrollTaxPaymentFlag
-				+ ", workCoverFlag=" + workCoverFlag + ", insurancePercentage=" + insurancePercentage
-				+ ", otherDeductionPercentage=" + otherDeductionPercentage + ", otherDeductionAmount="
-				+ otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo=" + additionalInfo
-				+ ", activeRecord=" + activeRecord + "]";
-	}
+	
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -111,5 +103,22 @@ public class ContractorRateDetailsDTO {
 	public void setActiveRecord(String activeRecord) {
 		this.activeRecord = activeRecord;
 	}
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
+	}
+	@Override
+	public String toString() {
+		return "ContractorRateDetailsDTO [contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
+				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
+				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", payrollTaxPaymentFlag="
+				+ payrollTaxPaymentFlag + ", workCoverFlag=" + workCoverFlag + ", insuranceType=" + insuranceType
+				+ ", insurancePercentage=" + insurancePercentage + ", otherDeductionPercentage="
+				+ otherDeductionPercentage + ", otherDeductionAmount=" + otherDeductionAmount + ", netMargin="
+				+ netMargin + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord + "]";
+	}
 
+	
 }

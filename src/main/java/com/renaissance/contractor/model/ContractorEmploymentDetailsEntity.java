@@ -86,6 +86,12 @@ public class ContractorEmploymentDetailsEntity {
 	@Column(name = "\"RECRUITER_NAME\"")
 	private String recruiterName;
 
+	@Column(name = "\"WL_OTHER_STATE\"")
+	private String wlOtherState;
+	
+	@Column(name = "\"WL_OTHER_COUNTRY\"")
+	private String wlOtherCountry;
+	
 	public BigInteger getId() {
 		return Id;
 	}
@@ -262,6 +268,22 @@ public class ContractorEmploymentDetailsEntity {
 		this.recruiterName = recruiterName;
 	}
 
+	public String getWlOtherState() {
+		return wlOtherState;
+	}
+
+	public void setWlOtherState(String wlOtherState) {
+		this.wlOtherState = wlOtherState;
+	}
+
+	public String getWlOtherCountry() {
+		return wlOtherCountry;
+	}
+
+	public void setWlOtherCountry(String wlOtherCountry) {
+		this.wlOtherCountry = wlOtherCountry;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorEmploymentDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", clientName="
@@ -272,8 +294,11 @@ public class ContractorEmploymentDetailsEntity {
 				+ jobRole + ", jobStartDate=" + jobStartDate + ", jobEndDate=" + jobEndDate + ", lastWorkingDate="
 				+ lastWorkingDate + ", finishedClient=" + finishedClient + ", additionalInfo=" + additionalInfo
 				+ ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
-				+ lastUpdatedDateTime + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + "]";
+				+ lastUpdatedDateTime + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName
+				+ ", wlOtherState=" + wlOtherState + ", wlOtherCountry=" + wlOtherCountry + "]";
 	}
+
+	
 
 	
 
