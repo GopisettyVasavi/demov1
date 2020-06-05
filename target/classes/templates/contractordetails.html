@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Contractor Management</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
+<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
+<link href="css/jquery.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link href="css/buttons.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body onload="initialize_details()">
+
+<!-- header-start -->
+    <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
+          
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+
+				</a>
+				<a   href="#" onclick="backToIndex()">Back>></a>
+				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				
+				
+				
+			</div>
+			
+		</div>
+            
+            </div>
+        </header>
+        <!-- header-end -->
+	<!-- bradcam_area  -->
+	<div class="bradcam_area bradcam_bg_1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-12">
+				
+					<div class="bradcam_text">
+					
+						<h3>Update Contractor Details</h3>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ bradcam_area  -->
+	<div class="mt-30 mb-30">
+		
+
+		<!-- Tab panes -->
+		
+					<div class="container-fluid">
+						<div class="row">
+							
+						
+							<div class="col-lg-12">
+								<div class="row">
+									<div class="col-lg-12 mx-auto">
+										
+												<div th:switch="${contractor}">
+											<h2 th:case="null"></h2>
+											<div th:case="*">
+											<div hidden="true">
+													<input type="text"
+														id="contractorId" name="contractorId"
+														th:field="${contractor.personalDetails.contractorId}"/>
+														 <input type="text"
+														id="gender_dtl" name="gender"
+														th:field="${contractor.personalDetails.gender}" />
+														<input type="text"
+														id="abncheck_dtl" name="abnholder"
+														th:field="${contractor.personalDetails.abnHolder}" />
+														<input type="text"
+														id="addnlSaCheck_dtl" name="abnhoaddnlSaCheck_dtllder"
+														th:field="${contractor.superAnnuationList[0].additionalSuperAnnuationContributionFlag}" />
+														<input type="text"
+														id="gstRegistered_dtl" name="gstRegistered_dtl"
+														th:field="${contractor.abnList[0].gstRegistered}" />
+														<input type="text"
+														id="pipl_dtl" name="pipl_dtl"
+														th:field="${contractor.abnList[0].piPlFlag}" />
+														<input type="text"
+														id="wc_dtl" name="wc_dtl"
+														th:field="${contractor.abnList[0].workCoverFlag}" />
+														<input type="text"
+														id="tfn_na_dtl" name="tfn_na_dtl"
+														th:field="${contractor.tfnList[0].newApplicationFlag}" />
+														<input type="text"
+														id="tfn_ua_dtl" name="tfn_ua_dtl"
+														th:field="${contractor.tfnList[0].underAgeExemptionFlag}" />
+														<input type="text"
+														id="tfn_ph_dtl" name="tfn_ph_dtl"
+														th:field="${contractor.tfnList[0].pensionHolderFlag}" />
+														<input type="text"
+														id="tfn_tfthreshold_dtl" name="tfn_na_dtl"
+														th:field="${contractor.tfnList[0].taxFreeThresholdFlag}" />
+														<input type="text"
+														id="tfn_loan_dtl" name="tfn_na_dtl"
+														th:field="${contractor.tfnList[0].loanFlag}" />
+														<input type="text"
+														id="tfn_fd_dtl" name="tfn_na_dtl"
+														th:field="${contractor.tfnList[0].financialShipmentDebtFlag}" />
+														<input type="text"
+														id="fin_client_dtl" name="fin_client_dtl"
+														th:field="${contractor.employerList[0].finishedClient}" />
+														<input type="text"
+														id="super_dtl" name="super_dtl"
+														th:field="${contractor.rateList[0].includeSuperFlag}" />
+														<input type="text"
+														id="payroll_dtl" name="super_dtl"
+														th:field="${contractor.rateList[0].payrollTaxPaymentFlag}" />
+														<input type="text"
+														id="wcflag_dtl" name="super_dtl"
+														th:field="${contractor.rateList[0].workCoverFlag}" />
+														<input type="text"
+														id="recruiterid_dtl" name="super_dtl"
+														th:field="${contractor.employerList[0].recruiterId}" />
+														<input type="text"
+														id="recruitername_dtl" name="super_dtl"
+														th:field="${contractor.employerList[0].recruiterName}" />
+														
+														
+														
+												</div>
+												<!-- Accordion -->
+												<div id="accordionExample" class="accordion shadow">
+
+													<!-- Accordion item 1 -->
+													<div class="card">
+														<div id="headingOne"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseOne" aria-expanded="true"
+																			aria-controls="collapseOne"
+																			class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Personal Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseOne"
+																	aria-expanded="true" aria-controls="collapseOne"
+																	class="d-block position-relative text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseOne" aria-labelledby="headingOne"
+															data-parent="#accordionExample" class="collapse show">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form" method="post"
+																		id="candidateDetails" novalidate="novalidate" >
+																		<div class="row">
+
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">First Name *</label>
+																					<input type="text" name="name"
+										placeholder="First Name" onfocus="this.placeholder = 'FirstName'"
+										onblur="this.placeholder = 'First Name'" 
+										class="single-input" id="firstName" required pattern=".{4,}" title="Six or more characters"
+										th:field="${contractor.personalDetails.firstName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Middle Name</label>
+																					<input type="text" name="name"
+										placeholder="Middle Name" onfocus="this.placeholder = 'Middle Name'"
+										onblur="this.placeholder = 'Middle Name'" 
+										class="single-input" id="middleName" th:field="${contractor.personalDetails.middleName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Last Name *</label> 
+																					 <input type="text" name="name"
+										placeholder="Last Name" onfocus="this.placeholder = 'Last Name'"
+										onblur="this.placeholder = 'Last Name'" 
+										class="single-input" id="lastName" required pattern=".{4,}" title="Six or more characters"
+										th:field="${contractor.personalDetails.lastName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Date of Birth *</label>
+																					<input
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Date of Birth"
+																						onfocus="this.placeholder = 'Date of Birth'"
+																						onblur="this.placeholder = 'Date of Birth'"
+																						class="single-input" id="dateOfBirth" name="dateOfBirth" required="required"
+																						th:field="${contractor.personalDetails.dateOfBirth}">
+
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">Gender *</label>
+																					<div class="row">
+																						<div class="col-sm-4">
+																							<!-- Default checked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="defaultChecked" name="gender" value="male" >
+																								<label class="custom-control-label"
+																									for="defaultChecked" style="font-weight:bold">Male</label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4">
+																							<!-- Default unchecked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="defaultUnchecked"
+																									name="gender" value="female" > <label
+																									class="custom-control-label"
+																									for="defaultUnchecked" style="font-weight:bold">Female</label>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Personal Email*</label> 
+																					<input type="email"
+										name="EMAIL" placeholder="Email address"
+										onfocus="this.placeholder = 'Email address'"
+										onblur="this.placeholder = 'Email address'" id="personalEmail"
+										class="single-input" th:field="${contractor.personalDetails.personalEmail}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group" >
+																					<label for="name" style="font-weight:bold">Office Email</label> 
+																					<input type="email"
+										name="EMAIL" placeholder="Email address"
+										onfocus="this.placeholder = 'Email address'"
+										onblur="this.placeholder = 'Email address'" id="officeEmail"
+										class="single-input" th:field="${contractor.personalDetails.officeEmail}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Mobile Phone Number *</label> 
+																					<input type="text"
+										name="contact" placeholder="Contact number"
+										onfocus="this.placeholder = 'Contact number'"
+										onblur="this.placeholder = 'Contact number'" id="mobilePhone"
+										class="single-input" th:field="${contractor.personalDetails.mobilePhone}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Home Phone Number</label>
+																					<input type="text"
+										name="contact" placeholder="Contact number"
+										onfocus="this.placeholder = 'Contact number'"
+										onblur="this.placeholder = 'Contact number'" id="homePhone"
+										class="single-input" th:field="${contractor.personalDetails.homePhone}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">Have Name Changed?</label>
+																					<input  type="checkbox"  id="nameChanged" name="nameChanged" 
+																					onclick="nameChangeCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4" >
+																				<div class="form-group" id="previousName_div" style="display: none">
+																					<label for="name" id="previousName_lbl" style="display: none;font-weight:bold">Previous Full Name</label>
+																					<input type="text" name="name"
+										placeholder="Full Name" onfocus="this.placeholder = 'Full name'"
+										onblur="this.placeholder = 'Full Name'" 
+										class="single-input" id="previousFullName" required pattern=".{4,}" title="Six or more characters" style="display: none"
+										th:field="${contractor.personalDetails.previousName}">
+																					
+																			</div>	
+																			</div>
+																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+								<div class="form-group">
+							<label for="name" style="font-weight:bold">Visa Category *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="visaCategory" onchange="setSelectedVisaCategory()" 
+																							required="required" th:field="*{contractor.personalDetails.visaCategory}">
+																								<option value="none"  selected="selected">Select Visa</option>
+																								<option value="PR">PR</option>
+																								<option value="Citizen">Citizen</option>
+																								<option value="Dependent Visa">Dependent Visa</option>
+																								<option value="Temporary graduate visa">Temporary graduate visa</option>
+																								<option value="Work Visa">Work Visa</option>
+																							</select>
+																						</div>
+																					</div>
+																					</div>
+																					</div>
+							<div class="col-sm-4" >
+								<div class="form-group" id="visatype_div" style="display: none">
+									<label for="name" style="font-weight:bold" id="visaType_lbl">Visa Type</label> <input
+																						type="text" placeholder="Visa Type"
+																						onfocus="this.placeholder = ''"
+																						onblur="this.placeholder = 'Visa Type'"
+																						class="single-input" id="visaType"
+																						name="visatype"  style="display: none" 
+																						th:field="${contractor.personalDetails.visaType}">
+								</div>
+							</div>	
+							<div class="col-sm-4" >
+								<div class="form-group"  style="display: none" id="visavalid_div">
+									<label for="name" id="validupto_lbl" style="font-weight:bold">Visa Valid upto</label>
+																						<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Valid upto"
+																						onfocus="this.placeholder = 'Valid upto'"
+																						onblur="this.placeholder = 'Valid upto'"
+																						class="single-input" id="validUpto" 
+																						name="validUpto"  style="display: none"
+																						th:field="${contractor.personalDetails.visaValidDate}">
+								</div>
+							</div>
+																		<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Address Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Address *</label> 	
+																					
+																					<input type="text"
+										name="address" placeholder="Address"
+										onfocus="this.placeholder = 'Address'"
+										onblur="this.placeholder = 'Address'" id="address"
+										class="single-input" required="required" th:field="${contractor.personalDetails.address}">
+																					</div>
+																			</div>
+																			
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">City</label>
+																					
+																					<input type="text"
+										name="address" placeholder="City"
+										onfocus="this.placeholder = 'City'"
+										onblur="this.placeholder = 'City'" id="city"
+										class="single-input" th:field="${contractor.personalDetails.city}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">State *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="contractorState" required="required" 
+																							th:field="*{contractor.personalDetails.state}">
+																								<option value="none"  selected="selected">Select State</option>
+																								<option value="NSW">New South Wales</option>
+																								<option value="VIC">Victoria</option>
+																								<option value="WA">Western Australia</option>
+																								<option value="QLD">Queens Land</option>
+																								<option value="TAS">Tasmania</option>
+																								<option value="SA">South Australia</option>
+																								<option value="Other">N/A</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Zip</label>
+																					<input type="text"
+										name="address" placeholder="Zip"
+										onfocus="this.placeholder = 'zip'"
+										onblur="this.placeholder = 'zip'" id="zipCode"
+										class="single-input" th:field="${contractor.personalDetails.zipCode}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Country</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="countrySelect" onchange="otherCountrySelect()"
+																							th:field="*{contractor.personalDetails.country}" >
+																								<option value="Australia" selected="selected">Australia</option>
+																								<option value="Other">Other</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="otherState_div" style="display: none">
+																					<label for="name" id="otherState_lbl" style="display: none;font-weight:bold">Other State</label>
+																					<input type="text"
+										name="address" placeholder="Other State"
+										onfocus="this.placeholder = 'Other State'"
+										onblur="this.placeholder = 'Other State'" id="otherState"
+										class="single-input" style="display: none" th:field="${contractor.personalDetails.otherState}">
+																				</div>
+																			</div>
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="otherCountry_div" style="display: none">
+																					<label for="name" id="otherCountry_lbl" style="display: none;font-weight:bold">Other Country</label>
+																					<input type="text"
+										name="address" placeholder="Other Country"
+										onfocus="this.placeholder = 'Other Country'"
+										onblur="this.placeholder = 'Other Country'" id="otherCountry"
+										class="single-input" style="display: none" th:field="${contractor.personalDetails.otherCountry}">
+																				</div>
+																			</div>
+																			
+																			
+							
+							<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">ABN Holder?</label>
+																					<input  type="checkbox"  id="abnCheck" name="abnCheck" 
+																					onclick="abnChecked()" />
+																					
+																			</div>		
+																			</div>
+							
+							<div class="col-sm-4">
+							<div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Emergency Contact Details</label></div></div>
+							<div class="col-sm-4"></div>
+							
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact Person *</label> <input type="text"
+										name="contactPerson" placeholder="Emergency Contact Person"
+										onfocus="this.placeholder = 'contactPerson'"
+										onblur="this.placeholder = 'contactPerson'" id="emergencyContactName"
+										class="single-input" required="required" th:field="${contractor.personalDetails.emergencyContactName}">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact Phone *</label> <input type="text"
+										name="contactPerson" placeholder="Emergency Contact Phone"
+										onfocus="this.placeholder = 'contactPerson'"
+										onblur="this.placeholder = 'contactPerson'" id="emergencyContactNumber"
+										class="single-input" required="required" th:field="${contractor.personalDetails.emergencyContactNumber}">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact Address *</label> <input type="text"
+										name="contactPerson" placeholder="Emergency Contact Address"
+										onfocus="this.placeholder = 'contactAddress'"
+										onblur="this.placeholder = 'contactAddress'" id="emergencyContactAddress"
+										class="single-input" required="required" th:field="${contractor.personalDetails.emergencyContactAddress}">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact Email *</label> <input type="text"
+										name="conta
+										ctPerson" placeholder="Emergency Contact Email"
+										onfocus="this.placeholder = 'ContactEmail'"
+										onblur="this.placeholder = 'ContactEmail'" id="emergencyContactEmail"
+										class="single-input" required="required" th:field="${contractor.personalDetails.emergencyContactEmail}">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="name" style="font-weight:bold">Contact Relation *</label> <input type="text"
+										name="contactPerson" placeholder="Emergency Contact Relation"
+										onfocus="this.placeholder = 'contactRelation'"
+										onblur="this.placeholder = 'contactRelation'" id="emergencyContactRelation"
+										class="single-input" required="required" th:field="${contractor.personalDetails.emergencyContactRelation}">
+								</div>
+							</div>
+							
+							
+																		</div>
+																		<div id="personal_feedback"></div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 2 -->
+													<div class="card" id="bankAccordian_div">
+														<div id="headingTwo"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseTwo" aria-expanded="false"
+																			aria-controls="collapseTwo"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Bank
+																			Details</a>
+																	</h6></li>
+																<li class="pull-right"><a  href="#"
+																	data-toggle="collapse" data-target="#collapseTwo"
+																	aria-expanded="false" aria-controls="collapseTwo"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseTwo" aria-labelledby="headingTwo"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form" action=""
+																		method="post" id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																		
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Name *</label>
+																					<input type="text" name="name"
+										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
+										onblur="this.placeholder = 'Account Name'" 
+										class="single-input" id="accountName" required pattern=".{4,}" title="Six or more characters"
+										th:field="${contractor.bankList[0].accountName}"> 
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">BSB *</label>
+																					<input type="text" name="bsb"
+										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
+										onblur="this.placeholder = 'Account BSB'" 
+										class="single-input" id="accountBsb" required="required" th:field="${contractor.bankList[0].bsb}">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Number *</label>
+																					<input type="text" name="accountNo"
+										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
+										onblur="this.placeholder = 'Account No'" 
+										class="single-input" id="accountNo" required="required" th:field="${contractor.bankList[0].accountNumber}">
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="bankAdditionalInfo"
+																						name="Additional Info" th:field="${contractor.bankList[0].additionalInfo}">
+																						</textarea>
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Superannuation Details</label></div></div>
+							<div class="col-sm-4"></div>
+																		<div class="col-sm-4">
+																				<div class="form-group" id="saFundName_div">
+																				<label id="saFundName_lbl" for="name" style="font-weight:bold">Superannuation Fund Name *</label>
+																					<input type="text" name="name"
+										placeholder="SA Fund Name" onfocus="this.placeholder = 'SA Fund Name'"
+										onblur="this.placeholder = 'SA Fund Name'" 
+										class="single-input" id="saFundName" th:field="${contractor.superAnnuationList[0].superAnnuationFundName}">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4" >
+																				<div class="form-group" id="saMemberId_div" >
+																					<label for="name" id="saMemberId_lbl" style="font-weight:bold">Superannuation Member Id *</label>
+																					<input type="text" name="saMemberId"
+										placeholder="SA Member Id" onfocus="this.placeholder = 'SA Member Id'"
+										onblur="this.placeholder = 'SA Member Id'" 
+										class="single-input" id="saMemberId" th:field="${contractor.superAnnuationList[0].superAnnuationMemberId}">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																			<div class="form-group"  id="addnlSA_div">
+																					<label for="name" id="addnlSA_lbl" style="font-weight:bold">Additional Super Contribution</label>
+																					<input  type="checkbox"  id="additionalSACheck" name="additionalSACheck" 
+																					onclick="additionalSAChecked()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-8">
+																				<div class="form-group" style="display: none" id="addnlSAInfo_div">
+																					<label for="name" id="addnlSAInfo_lbl" style="display: none;font-weight:bold">Additional Superannuation Details</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional SA Info'"
+																						onblur="this.placeholder = 'Additional SA Info'"
+																						placeholder="Additional SA Info" id="addnlSAInfo"
+																						name="Additional SA Info" style="display: none"
+																						th:field="${contractor.superAnnuationList[0].additionalSuperAnnuationDetails}"></textarea>
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="saAdditionalInfo"
+																						name="Additional Info" 
+																						th:field="${contractor.superAnnuationList[0].additionalInfo}"></textarea>
+																				</div>
+																			</div>
+																			
+																		</div>
+																		<div id="bank_feedback"> </div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 3 -->
+													<div class="card" style="display: none" id="abnAccordian_div">
+														<div id="headingThree"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseThree" aria-expanded="false"
+																			aria-controls="collapseThree"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Company Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseThree"
+																	aria-expanded="false" aria-controls="collapseThree"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseThree" aria-labelledby="headingThree"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">ABN No *</label>
+																					<input type="text"
+										name="abn" placeholder="ABN number"
+										onfocus="this.placeholder = 'ABN number'"
+										onblur="this.placeholder = 'ABN number'" id="abnNumber"
+										class="single-input" required="required" th:field="${contractor.abnList[0].abnNumber}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">ACN No *</label>
+																					<input type="text"
+										name="abn" placeholder="ACN number"
+										onfocus="this.placeholder = 'ACN number'"
+										onblur="this.placeholder = 'ACN number'" id="acnNumber"
+										class="single-input" required="required" th:field="${contractor.abnList[0].acnNumber}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">ABN Group</label>
+																					<input type="text"
+										name="abn" placeholder="ABN Group"
+										onfocus="this.placeholder = 'ABN Group'"
+										onblur="this.placeholder = 'ABN Group'" id="abnGroup"
+										class="single-input" th:field="${contractor.abnList[0].abnGroup}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group">
+									<label for="name" style="font-weight:bold; font-size: 15px">Company Address Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			
+																	<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Company Name *</label>
+																					<input type="text"
+										name="companyName" placeholder="Company Name"
+										onfocus="this.placeholder = 'Company Name'"
+										onblur="this.placeholder = 'Company Name'" id="companyName"
+										class="single-input" required="required" th:field="${contractor.abnList[0].companyName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Company Address *</label>
+																					<input type="text"
+										name="companyAddress" placeholder="Company Address"
+										onfocus="this.placeholder = 'Company Address'"
+										onblur="this.placeholder = 'Company Address'" id="companyAddress"
+										class="single-input" required="required" th:field="${contractor.abnList[0].companyAddress}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Company City *</label>
+																					<input type="text"
+										name="companyCity" placeholder="Company City"
+										onfocus="this.placeholder = 'Company City'"
+										onblur="this.placeholder = 'Company City'" id="companyCity"
+										class="single-input" required="required" th:field="${contractor.abnList[0].companyCity}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">State *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="companyState" th:field="*{contractor.abnList[0].companyState}" >
+																								<option value="none"  selected="selected">Select State</option>
+																								<option value="NSW">New South Wales</option>
+																								<option value="VIC">Victoria</option>
+																								<option value="WA">Western Australia</option>
+																								<option value="QLD">Queens Land</option>
+																								<option value="TAS">Tasmania</option>
+																								<option value="SA">South Australia</option>
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Company Zip</label>
+																					<input type="text"
+										name="companyZip" placeholder="Company Zip"
+										onfocus="this.placeholder = 'Company Zip'"
+										onblur="this.placeholder = 'Company Zip'" id="companyZipCode"
+										class="single-input" th:field="${contractor.abnList[0].companyZipCode}">
+																				</div>
+																			</div>	
+																			
+																			<div class="col-sm-4"></div>
+																			
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" id="abnbank_div">
+									<label for="name" style="font-weight:bold; font-size: 15px">Bank Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Name *</label>
+																					<input type="text" name="name"
+										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
+										onblur="this.placeholder = 'Account Name'" 
+										class="single-input" id="abnAccountName" required pattern=".{4,}" title="Six or more characters"
+										th:field="${contractor.bankList[0].accountName}" >
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">BSB *</label>
+																					<input type="text" name="bsb"
+										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
+										onblur="this.placeholder = 'Account BSB'" 
+										class="single-input" id="abnAccountBsb" required="required" th:field="${contractor.bankList[0].bsb}">
+																					
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Account Number *</label>
+																					<input type="text" name="accountNo"
+										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
+										onblur="this.placeholder = 'Account No'" 
+										class="single-input" id="abnBankAccountNo" required="required" th:field="${contractor.bankList[0].accountName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Insurance Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">GST Registered</label>
+																					<input  type="checkbox"  id="gstRegistered" name="gstRegistered" 
+																					onclick="gstSelection()" />
+																					
+																			</div>		
+																			</div><div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="display: none;font-weight:bold" id="gstpath_dtl"
+																					th:text="${contractor.abnList[0].gstCertPath}"></label>
+																					
+																					
+																			</div>		
+																			</div>
+																			
+																			<div class="col-sm-4" >
+																				<div class="form-group" id="gstCert_div" style="display: none">
+																					<label for="name" id="gstCert_lbl" style="display: none;font-weight:bold">GST Certificate</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="gstCertFile" style="display: none" oninput="getFilePath(this,'gstCert')" >
+																		</div>
+																		</div>
+																		
+																		<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">PI/PL</label>
+																					<input  type="checkbox"  id="piPlFlag" name="piplflag" 
+																					onclick="piplSelection()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label id="piplpath_dtl" for="name" style="font-weight:bold;width: 300px"
+																					th:text="${contractor.abnList[0].piPlCert1Path
+																					+' '+contractor.abnList[0].piPlCert2Path
+																					+' '+contractor.abnList[0].piPlCert3Path}"
+																					></label>
+																					
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="pipl_div1" style="display: none">
+																					<label for="name" id="pipl_lbl1" style="display: none;font-weight:bold">PI/PL Certificate1</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="piplcertificate1" style="display: none"  oninput="getFilePath(this,'pipl1')" />
+											
+																		</div>
+																		</div>
+																		<div class="col-sm-1" >
+																				<div class="form-group" id="pipl_div2" style="display: none">
+																					<label for="name" id="pipl_lbl2" style="display: none;font-weight:bold">PI/PL Certificate2</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="piplcertificate2" style="display: none"  oninput="getFilePath(this,'pipl2')" />
+											
+																		</div>
+																		</div>
+																		<div class="col-sm-1" >
+																				<div class="form-group" id="pipl_div3" style="display: none">
+																					<label for="name" id="pipl_lbl3" style="display: none;font-weight:bold">PI/PL Certificate3</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="piplcertificate3" style="display: none"  oninput="getFilePath(this,'pipl3')" />
+											
+																		</div>
+																		</div>
+																		
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Cover</label>
+																					<input  type="checkbox"  id="workCoverFlag" name="workCoverFlag" 
+																					onclick="workCoverSelection()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="display: none;font-weight:bold" id="wcpath_dtl"
+																					th:text="${contractor.abnList[0].workCoverCertPath}"></label>
+																					
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4" >
+																				<div class="form-group" id="workCover_div" style="display: none">
+																					<label for="name" id="workCover_lbl" style="display: none;font-weight:bold">WorkCover Certificate</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="workCoverFile" style="display: none" oninput="getFilePath(this,'workCover')">
+																		</div>
+																		</div>
+																	
+																	<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="abnAdditionalInfo"
+																						name="Additional Info"
+																						th:field="${contractor.abnList[0].additionalInfo}"></textarea>
+																				</div>
+																			</div>	
+																		</div>
+																		<div id="abn_feedback"></div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!-- Accordion item 4 -->
+													<div class="card" id="tfnAccordian_div">
+														<div id="headingFour"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseFour" aria-expanded="false"
+																			aria-controls="collapseFour"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">TFN Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseFour"
+																	aria-expanded="false" aria-controls="collapseFour"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseFour" aria-labelledby="headingFour"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																		<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">TFN No *</label>
+																					<input type="text"
+										name="tfn" placeholder="TFN number"
+										onfocus="this.placeholder = 'TFN number'"
+										onblur="this.placeholder = 'TFN number'" id="tfnNumber"
+										class="single-input" th:field="${contractor.tfnList[0].tfnNumber}">
+																				</div>
+																			</div>
+																			
+																			<div class="col-sm-2">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">New Application</label>
+																					<input  type="checkbox"  id="newApplicationFlag" name="newApplicationFlag" 
+																					/>
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-2">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">Under Age Exemption</label>
+																					<input  type="checkbox"  id="underAgeExempFlag" name="underAgeExempFlag" 
+																					/>
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-2">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">Pension Holder</label>
+																					<input  type="checkbox"  id="pensionHolderFlag" name="pensionHolderFlag" 
+																					/>
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Employment Type *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="tfnEmploymentType"  th:field="*{contractor.tfnList[0].employmentType}">
+																								<option value="none"  selected="selected">Select Employment Type</option>
+																								<option value="Full Time">Full Time</option>
+																								<option value="Part Time">Part Time</option>
+																								<option value="Labour Hire">Labour Hire</option>
+																								<option value="Superannuation">Superannuation or Annuity income stream</option>
+																								<option value="Casual">Casual</option>
+																								</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Taxpayer Type *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="taxPaymentType"  th:field="*{contractor.tfnList[0].taxPayerType}">
+																								<option value="none"  selected="selected">Are you</option>
+																								<option value="PR">An Australian Resident for tax purposes</option>
+																								<option value="Foreign Resident">Foreign Resident for tax purposes</option>
+																								<option value="WorkingHoliday">A Working holiday maker</option>
+																								
+																								</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">* Tax-free threshold?</label>
+																					<div class="row">
+																						<div class="col-sm-4">
+																							<!-- Default checked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="taxFreeThresholdChecked" name="taxFreeThreshold" value="Yes" >
+																								<label class="custom-control-label"
+																									for="taxFreeThresholdChecked" style="font-weight:bold">Yes</label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4">
+																							<!-- Default unchecked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="taxFreeThresholdUnchecked"
+																									name="taxFreeThreshold" value="no" > <label
+																									class="custom-control-label"
+																									for="taxFreeThresholdUnchecked" style="font-weight:bold">No</label>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">* Have any Higher Education Loan/Student Startup Loan/Trade Support Loan?</label>
+																					<div class="row">
+																						<div class="col-sm-4">
+																							<!-- Default checked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="loanChecked" name="loan" value="Yes" >
+																								<label class="custom-control-label"
+																									for="loanChecked" style="font-weight:bold">Yes</label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4">
+																							<!-- Default unchecked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="loanUnchecked"
+																									name="loan" value="no" > <label
+																									class="custom-control-label"
+																									for="loanUnchecked" style="font-weight:bold">No</label>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">* Have any Financial Supplement debt?</label>
+																					<div class="row">
+																						<div class="col-sm-4">
+																							<!-- Default checked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="financialDebtChecked" name="financialDebt" value="Yes" >
+																								<label class="custom-control-label"
+																									for="financialDebtChecked" style="font-weight:bold">Yes</label>
+																							</div>
+																						</div>
+																						<div class="col-sm-4">
+																							<!-- Default unchecked -->
+																							<div class="custom-control custom-radio">
+																								<input type="radio" class="custom-control-input"
+																									id="financialDebtUnchecked"
+																									name="financialDebt" value="no" > <label
+																									class="custom-control-label"
+																									for="financialDebtUnchecked" style="font-weight:bold">No</label>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																	<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="tfnAdditionalInfo"
+																						name="Additional Info"
+																						th:field="${contractor.tfnList[0].additionalInfo}"></textarea>
+																				</div>
+																			</div>
+																			
+																		</div>
+																		<div id="tfn_feedback"></div>
+																	</form>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+													<!--  Accordian 5 -->
+													<div class="card">
+														<div id="headingFive"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseFive" aria-expanded="false"
+																			aria-controls="collapseFive"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">
+																			Employment Details</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseFive"
+																	aria-expanded="false" aria-controls="collapseFive"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseFive" aria-labelledby="headingFive"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div class="row">
+																		<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Client Name *</label> 
+																					<input type="text"
+										name="clientName" placeholder="Client Name"
+										onfocus="this.placeholder = 'Client Name'"
+										onblur="this.placeholder = 'Client Name'" id="clientName"
+										class="single-input" th:field="${contractor.employerList[0].clientName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">End Client Name</label> 
+																					<input type="text"
+										name="endClientName" placeholder="End Client Name"
+										onfocus="this.placeholder = 'End Client Name'"
+										onblur="this.placeholder = 'End Client Name'" id="endClientName"
+										class="single-input" th:field="${contractor.employerList[0].endClientName}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Contract No</label> 
+																					
+																					<input type="text"
+										name="contractno" placeholder="Contract Number"
+										onfocus="this.placeholder = 'Contract Number'"
+										onblur="this.placeholder = 'Contract Number'" id="contractNumber"
+										class="single-input" th:field="${contractor.employerList[0].contractNumber}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Employment Type *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="employmentType"  th:field="*{contractor.employerList[0].employmentType}">
+																								<option value="none"  selected="selected">Select Employment Type</option>
+																								<option value="Full Time">Full Time</option>
+																								<option value="Part Time">Part Time</option>
+																								<option value="Labour Hire">Labour Hire</option>
+																								<option value="Superannuation">Superannuation or Annuity income stream</option>
+																								<option value="Casual">Casual</option>
+																								</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Start Date *</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input" id="jobStartDate" 
+																						name="startDate"  th:field="${contractor.employerList[0].jobStartDate}">
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">End Date</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input" id="jobEndDate" 
+																						name="endDate" th:field="${contractor.employerList[0].jobEndDate}" >
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4">
+							<div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Work Location Address Details</label></div></div>
+							<div class="col-sm-4"></div>
+																		<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location Address</label> 	
+																					
+																					<input type="text"
+										name="address" placeholder="Address"
+										onfocus="this.placeholder = 'Address'"
+										onblur="this.placeholder = 'Address'" id="workLocationAddress"
+										class="single-input" th:field="${contractor.employerList[0].workLocationAddress}">
+																					</div>
+																			</div>
+																			
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location City</label>
+																					
+																					<input type="text"
+										name="address" placeholder="City"
+										onfocus="this.placeholder = 'City'"
+										onblur="this.placeholder = 'City'" id="workLocationCity"
+										class="single-input" th:field="${contractor.employerList[0].workLocationCity}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location State *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="workLocationState" th:field="*{contractor.employerList[0].workLocationState}" >
+																								<option value="none"  selected="selected">Select State</option>
+																								<option value="NSW">New South Wales</option>
+																								<option value="VIC">Victoria</option>
+																								<option value="WA">Western Australia</option>
+																								<option value="QLD">Queens Land</option>
+																								<option value="TAS">Tasmania</option>
+																								<option value="SA">South Australia</option>
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location Zip</label>
+																					<input type="text"
+										name="address" placeholder="Zip"
+										onfocus="this.placeholder = 'zip'"
+										onblur="this.placeholder = 'zip'" id="workLocationZipCode"
+										class="single-input" th:field="${contractor.employerList[0].workLocationZipCode}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Location Country</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="wlCountrySelect"
+																							th:field="*{contractor.employerList[0].workLocationCountry}" onchange="wlOtherCountrySelect()" >
+																								<option value="Australia" selected="selected">Australia</option>
+																								<option value="Other">Other</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="wlotherState_div" style="display: none">
+																					<label for="name" id="wlotherState_lbl" style="display: none;font-weight:bold">Other State</label>
+																					<input type="text"
+										name="address" placeholder="Other State"
+										onfocus="this.placeholder = 'Other State'"
+										onblur="this.placeholder = 'Other State'" id="wlotherState"
+										class="single-input" style="display: none" th:field="${contractor.employerList[0].wlOtherState}" >
+																				</div>
+																			</div>
+																			<div class="col-sm-2" >
+																				<div class="form-group" id="wlotherCountry_div" style="display: none">
+																					<label for="name" id="wlotherCountry_lbl" style="display: none;font-weight:bold">Other Country</label>
+																					<input type="text"
+										name="address" placeholder="Other Country"
+										onfocus="this.placeholder = 'Other Country'"
+										onblur="this.placeholder = 'Other Country'" id="wlotherCountry"
+										class="single-input" style="display: none" th:field="${contractor.employerList[0].wlOtherCountry}">
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Role Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Role *</label> 
+																					
+																					<input type="text"
+										name="role" placeholder="Role"
+										onfocus="this.placeholder = 'Role'"
+										onblur="this.placeholder = 'Role'" id="role"
+										class="single-input" th:field="${contractor.employerList[0].jobRole}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Recruiter *</label> 
+																					
+																					<div class="input-group-icon" id="select_div">
+																						
+																						<div class="form-select" id="recruiter-select" >
+																							
+																						</div>
+																					</div>
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4"></div>
+							<div class="col-sm-4"><div class="form-group" >
+									<label for="name" style="font-weight:bold; font-size: 15px">Rate Details</label></div></div>
+							<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Rate Start Date *</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input" id="rateStartDate" 
+																						name="startDate"  th:field="${contractor.rateList[0].rateStartDate}">
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Rate End Date</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input" id="rateEndDate" 
+																						name="endDate" th:field="${contractor.rateList[0].rateEndDate}" >
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																			
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Rate(Per day) *</label> 
+																					
+																					<input type="text"
+										name="ratePerDay" placeholder="Rate Per Day"
+										onfocus="this.placeholder = 'Rate Per Day'"
+										onblur="this.placeholder = 'Rate Per Day'" id="ratePerDay"
+										class="single-input" th:field="${contractor.rateList[0].ratePerDay}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Bill Rate(Per day) *</label> 
+																					
+																					<input type="text"
+										name="billRatePerDay" placeholder="Bill Rate Per Day"
+										onfocus="this.placeholder = 'Bill Rate Per Day'"
+										onblur="this.placeholder = 'Bill Rate Per Day'" id="billRatePerDay"
+										class="single-input" th:field="${contractor.rateList[0].billRatePerDay}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4"></div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Include Super</label> 
+																					
+																					<input  type="checkbox"  id="superIncludeCheck" name="superIncludeCheck" />
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Payroll Tax to be paid?</label> 
+																					
+																					<input  type="checkbox"  id="payrollTaxCheck" name="payrollTaxCheck" />
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Work Cover to be paid?</label> 
+																					
+																					<input  type="checkbox"  id="workCoverCheck" name="workCoverCheck" />
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Insurance</label> 
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" id="default-select" >
+																							<select id="insuranceType" th:field="*{contractor.rateList[0].insuranceType}" >
+																								<option value="none"  selected="selected">Select Insurance</option>
+																								<option value="percent">Percentage</option>
+																								<option value="amount">Amount</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																				<label for="name" style="font-weight:bold"></label>
+																			<input type="text"
+										name="Insurance" placeholder="Insurance"
+										onfocus="this.placeholder = 'Insurance'"
+										onblur="this.placeholder = 'Insurance'" id="insurance"
+										class="single-input" th:field="${contractor.rateList[0].insurancePercentage}">
+										</div>
+										</div>
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Other Deduction(%)</label> 
+																					
+																					<input type="text"
+										name="OtherDedcution" placeholder="Other Dedcution(%)"
+										onfocus="this.placeholder = 'Other Dedcution(%)'"
+										onblur="this.placeholder = 'Other Dedcution(%)'" id="otherDeduction"
+										class="single-input" th:field="${contractor.rateList[0].otherDeductionPercentage}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-2">
+																				<div class="form-group" style="padding-top: 25px;">
+																					<label for="name" style="font-weight:bold">&nbsp;</label> 
+																					
+																					<input type="button"  value="Calculate Margin"/>
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Net Margin</label> 
+																					<input type="text"
+										name="Netmargin" placeholder="Net Margin"
+										onfocus="this.placeholder = 'Net Margin'"
+										onblur="this.placeholder = 'Net Margin'" id="netMargin"
+										class="single-input" readonly="readonly">
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Last Working Day</label> 
+																					<input 
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Last Working Date"
+																						onfocus="this.placeholder = 'Last Working Date'"
+																						onblur="this.placeholder = 'Last Working Date'"
+																						class="single-input" id="lastWorkingDate" 
+																						name="lastWorkingDate"  th:field="${contractor.employerList[0].lastWorkingDate}">
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Finished client?</label> 
+																					
+																					<input  type="checkbox"  id="finishedClientCheck" name="finishedClientCheck" />
+																						
+																				</div>
+																			</div>
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Additional Info</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Additional Info'"
+																						onblur="this.placeholder = 'Additional Info'"
+																						placeholder="Additional Info" id="employmentAddnlInfo"
+																						name="Additional Info" th:field="${contractor.employerList[0].additionalInfo}"></textarea>
+																				</div>
+																			</div>
+																			
+																		</div>
+																		<div id="emp_feedback"></div>
+																	</form>
+																	
+																</div>
+															</div>
+														</div>
+													</div>
+													
+												</div><!-- add here two divs end tags -->
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+								
+								</div>
+								<div class="row" style="padding-top: 20px">
+								<div class="col-sm-12">
+								<div class="form-group text-center">
+									<input type="submit"
+										class="button button-contactForm boxed-btn" onclick="clickonsave()" value="Update"/>
+										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" 
+										onclick="clickonreset()" > 
+								</div>
+							</div>
+							</div>
+								
+					</div>
+				
+	</div>
+	<!-- ================ contact section start ================= -->
+
+	<!-- ================ contact section end ================= -->
+
+	<!-- footer start -->
+	<footer class="footer"> </footer>
+	<!--/ footer end  -->
+
+	<!-- JS here -->
+ <script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/searchpanes/1.0.1/js/dataTables.searchPanes.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js" type="text/javascript"></script>
+
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+
+
+<script src="/js/fixedHeadermin.js" ></script>
+	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+       
+        
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+   
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+	
+	
+	<script>
+	
+	$(document).ready(function(){ 
+		$('#dateOfBirth').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#assignedDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+
+		});
+		$('#validUpto').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down" id="validupto_spn"></span>'
+			}
+		});
+		$('#jobStartDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#jobEndDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#rateStartDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#rateEndDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		$('#lastWorkingDate').datepicker({
+			format: 'dd/mm/yyyy',
+			iconsLibrary : 'fontawesome',
+			icons : {
+				rightIcon : '<span class="fa fa-caret-down"></span>'
+			}
+		});
+		
+		
+	});
+		
+	
+	</script>
+	
+	
+	
+	<script src="js/idle_timeout.js"></script>
+	<script src="js/contractorscript.js"></script>
+	<script src="js/editcontractorscript.js"></script>
+	
+	
+	
+</body>
+
+</html>
