@@ -51,6 +51,29 @@ public class ContractorBankDetailsCustomRepositoryImpl implements ContractorBank
 			return new ContractorBankDetailsEntity();
 		
 	}
+	
+	@Override
+	public List<ContractorBankDetailsEntity> getAllBankDetailsByContractorId(BigInteger contractorId) {
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorBankDetailsEntity> query = cb
+				.createQuery(ContractorBankDetailsEntity.class);
+		Root<ContractorBankDetailsEntity> contractBank = query.from(ContractorBankDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId))
+			predicates.add(cb.equal(contractBank.get("contractorId"), contractorId));
+		List<ContractorBankDetailsEntity> contractorBankList = null;
+		if (predicates.size() > 0) {
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(contractBank).where(cb.and(predicates.toArray(predicatesArray)));
+			contractorBankList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(contractorBankList))
+			return contractorBankList;
+
+		else
+			return new ArrayList<ContractorBankDetailsEntity>();
+	}
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 

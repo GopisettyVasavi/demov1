@@ -7,7 +7,7 @@ import com.renaissance.contractor.model.ContractorPersonalDetailsEntity;
 
 public interface ContractorPersonalDetailsCustomRepository {
 	ContractorPersonalDetailsEntity getPersonalDetailsByContractorId(BigInteger contractorId);
-	ContractorPersonalDetailsEntity getContractors(String firstName, String lastName, String dateOfBirth,String personalEmail);
+	List<ContractorPersonalDetailsEntity> getContractors(String firstName, String lastName, String dateOfBirth,String personalEmail);
 	List<ContractorPersonalDetailsEntity> searchContractors(String fullName);
 	
 

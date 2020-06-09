@@ -222,7 +222,9 @@ function backToIndex(){
 	window.location='/index'
 }
 
-function clickonsave(){
+function clickonsave(mode){
+	
+	//alert(mode);
 	event.preventDefault();
 	
 	var validation=true;
@@ -344,6 +346,7 @@ function clickonsave(){
 		contractorEmploymentDetailsDTO["finishedClient"]=document.getElementById("finishedClientCheck").checked;
 		contractorEmploymentDetailsDTO["additionalInfo"]=$("#employmentAddnlInfo").val();
 		contractorEmploymentDetailsDTO["employmentType"]=$("#employmentType").val();
+		//alert($("#recruiter").val()+" "+$("#recruiterId").val()+" "+$("#recruiterName").val())
 		if($("#recruiter").val()!="none")
 			contractorEmploymentDetailsDTO["recruiterId"]=$("#recruiter").val();
 			else contractorEmploymentDetailsDTO["recruiterId"]=0;
@@ -456,14 +459,15 @@ function clickonsave(){
 	
 	
 	var contractorDetailsDTO = {}
-	 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
+	
 	 contractorDetailsDTO["bankList"]=banks;
 	 contractorDetailsDTO["employerList"]=employers;
 	 contractorDetailsDTO["rateList"]=rates;
 	 contractorDetailsDTO["abnList"]=abnList;
 	 contractorDetailsDTO["tfnList"]=tfnList;
 	 contractorDetailsDTO["superAnnuationList"]=saList;
-	 
+	 if(mode=="New"){
+		 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
 	 $.ajax({
 			type : "POST",
 			contentType : "application/json",
@@ -486,6 +490,34 @@ function clickonsave(){
 
 	       }
 	   });
+	 }
+	 else if(mode=='Update'){
+		 contractorPersonalDetailsDTO["contractorId"]=$("#contractorId").val();
+		 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
+		 $.ajax({
+				type : "POST",
+				contentType : "application/json",
+				
+				url : "/updateContractor",
+				data : JSON.stringify(contractorDetailsDTO),
+				dataType : 'json',
+				cache : false,
+				timeout : 600000,
+				success : function(data) {
+					//var response = JSON.stringify(data);
+		       	//alert("Contractor Registered Successfully..."+JSON.stringify(data));
+		          
+					alert("Contractor Updated Successfully...");
+		       },
+		       error: function (e) {
+		    	   //var response = JSON.stringify(e);
+		    	   console.log(e.responseText);
+		    	   alert("Error "+e.responseText);
+
+		       }
+		   });
+		 
+	 }
 
 } 
 }

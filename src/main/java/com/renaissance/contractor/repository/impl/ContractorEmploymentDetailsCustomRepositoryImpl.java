@@ -53,6 +53,32 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 			return new ContractorEmploymentDetailsEntity();
 
 	}
+	
+	@Override
+	public List<ContractorEmploymentDetailsEntity> getAllEmploymentDetailsByContractorId(BigInteger contractorId) {
+
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorEmploymentDetailsEntity> query = cb
+				.createQuery(ContractorEmploymentDetailsEntity.class);
+		Root<ContractorEmploymentDetailsEntity> contractEmp = query.from(ContractorEmploymentDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId))
+			predicates.add(cb.equal(contractEmp.get("contractorId"), contractorId));
+		List<ContractorEmploymentDetailsEntity> contractorEmpList = null;
+		if (predicates.size() > 0) {
+			
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(contractEmp).where(cb.and(predicates.toArray(predicatesArray)));
+			contractorEmpList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(contractorEmpList))
+			return contractorEmpList;
+
+		else
+			return new ArrayList<ContractorEmploymentDetailsEntity>();
+
+	}
 
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {

@@ -48,7 +48,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 	}
 
 	@Override
-	public ContractorPersonalDetailsEntity getContractors(String firstName, String lastName, String dateOfBirth,
+	public List<ContractorPersonalDetailsEntity> getContractors(String firstName, String lastName, String dateOfBirth,
 			String personalEmail) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorPersonalDetailsEntity> query = cb.createQuery(ContractorPersonalDetailsEntity.class);
@@ -69,11 +69,12 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 			query.select(contractorPersonal).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorPersonalList = entityManager.createQuery(query).getResultList();
 		}
-		if (!ProfileParserUtils.isObjectEmpty(contractorPersonalList))
-			return contractorPersonalList.get(0);
-
-		else
-			return new ContractorPersonalDetailsEntity();
+		if (!ProfileParserUtils.isObjectEmpty(contractorPersonalList)) {
+			System.out.println(" Query ..."+contractorPersonalList.size());
+			return contractorPersonalList;
+		}
+		else return new ArrayList<ContractorPersonalDetailsEntity>();
+		
 	}
 
 	public List<ContractorPersonalDetailsEntity> searchContractors(String fullName) {

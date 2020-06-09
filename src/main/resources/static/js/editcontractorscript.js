@@ -40,19 +40,20 @@ function initialize_details(){
 	if($("#tfn_tfthreshold_dtl").val()=="Yes"){
 		$('input:radio[name=taxFreeThreshold]')[0].checked = true;
 		}
-		else if($("#tfn_tfthreshold_dtl").val()=="No"){
+		else if($("#tfn_tfthreshold_dtl").val()=="No" || $("#tfn_tfthreshold_dtl").val()=="no"){
 			$('input:radio[name=taxFreeThreshold]')[1].checked = true;
 	}
+	//alert($("#tfn_tfthreshold_dtl").val());
 	if($("#tfn_loan_dtl").val()=="Yes"){
 		$('input:radio[name=loan]')[0].checked = true;
 		}
-		else if($("#tfn_loan_dtl").val()=="No"){
+		else if($("#tfn_loan_dtl").val()=="No" || $("#tfn_loan_dtl").val()=="no"){
 			$('input:radio[name=loan]')[1].checked = true;
 	}
 	if($("#tfn_fd_dtl").val()=="Yes"){
 		$('input:radio[name=financialDebt]')[0].checked = true;
 		}
-		else if($("#tfn_fd_dtl").val()=="No"){
+		else if($("#tfn_fd_dtl").val()=="No" || $("#tfn_fd_dtl").val()=="no"){
 			$('input:radio[name=financialDebt]')[1].checked = true;
 	}
 	if(document.getElementById("fin_client_dtl").value=="true"){
@@ -105,7 +106,7 @@ function populateRecruiterList(){
 	        	
 	        	var recId=$("#recruiterid_dtl").val();
 	        	//alert(rec);
-	         $('#recruiter-select').html("<select id =\"recruiter_dtl\" class=\"nice-select form-select\">Select Recruiter</select>");
+	         $('#recruiter-select').html("<select id =\"recruiter\" class=\"nice-select form-select\">Select Recruiter</select>");
 	         
 	         
 	         
@@ -113,7 +114,7 @@ function populateRecruiterList(){
 	        for(i in list){
 	        	if(list[i].employeeId==recId){
 	        		//alert("if sel "+ list[i].employeeName);
-	        		options += "<option value = "+list[i].employeeId+"selected=\"selected\">"+list[i].employeeName+"</option>";
+	        		options += "<option value = "+list[i].employeeId+"  selected=\"selected\">"+list[i].employeeName+"</option>";
 	        	}
 	        }
 	        options += "<option value=\"none\"  >Select Recruiter</option>";
@@ -125,7 +126,7 @@ function populateRecruiterList(){
 	        options += "<option value=\"99999999\" >Other</option>";
 	        $('#recruiter-select select').append(options);
 	       
-	       document.getElementById("recruiter_dtl").classList.add('form-select');
+	       document.getElementById("recruiter").classList.add('form-select');
 	       
 	         //document.getElementById("select_div").className += "input-group-icon";
 	        },

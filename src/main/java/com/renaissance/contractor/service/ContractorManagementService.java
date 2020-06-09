@@ -37,6 +37,7 @@ import com.renaissance.contractor.repository.ContractorPersonalDetailsRepository
 import com.renaissance.contractor.repository.ContractorRateDetailsRepository;
 import com.renaissance.contractor.repository.ContractorSuperAnnuationDetailsRepository;
 import com.renaissance.contractor.repository.ContractorTfnDetailsRepository;
+import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
 @Service
@@ -82,6 +83,7 @@ public class ContractorManagementService {
 				ContractorDetailsDTO contractorDto = new ContractorDetailsDTO();
 				ContractorPersonalDetailsDTO personalDto = contractorDetailsDto.getPersonalDetails();
 				// New record
+
 				if (!ProfileParserUtils.isObjectEmpty(personalDto)
 						&& ProfileParserUtils.isObjectEmpty(personalDto.getContractorId())) {
 					boolean abnHolder = false;
@@ -93,8 +95,14 @@ public class ContractorManagementService {
 					ContractorBankDetailsEntity contractorBankVo = new ContractorBankDetailsEntity();
 					ContractorEmploymentDetailsEntity contractorEmploymentVo = new ContractorEmploymentDetailsEntity();
 					// check if contractor details exist for the same combination
-					contractorPersonalVo = contractorPersonal.getContractors(personalDto.getFirstName(),
-							personalDto.getLastName(), personalDto.getDateOfBirth(), personalDto.getPersonalEmail());
+					List<ContractorPersonalDetailsEntity> personalList = contractorPersonal.getContractors(
+							personalDto.getFirstName(), personalDto.getLastName(), personalDto.getDateOfBirth(),
+							personalDto.getPersonalEmail());
+
+					if (!ProfileParserUtils.isObjectEmpty(personalList) && personalList.size() > 0) {
+						// logger.info("Personal list matching records...,{}",personalList.size());
+						contractorPersonalVo = personalList.get(0);
+					}
 					if (!ProfileParserUtils.isObjectEmpty(contractorPersonalVo.getContractorId())) {
 						logger.error("Contractor exists, {}", contractorPersonalVo.getContractorId());
 						throw new Exception(
@@ -112,7 +120,8 @@ public class ContractorManagementService {
 
 							ContractorABNDetailsDTO abnDto = contractorDetailsDto.getAbnList().get(0);
 							abnDto.setContractorId(personalDto.getContractorId());
-							abnDto = populateAndSaveABNDetails(abnDto, contractorAbnVo, lastUpdatedUser);
+							abnDto = populateAndSaveABNDetails(abnDto, contractorAbnVo, lastUpdatedUser,
+									ProfileParserConstants.ACTIVE);
 							List<ContractorABNDetailsDTO> abnList = new ArrayList<ContractorABNDetailsDTO>();
 							abnList.add(abnDto);
 							contractorDto.setAbnList(abnList);
@@ -122,7 +131,8 @@ public class ContractorManagementService {
 						if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getTfnList().get(0))) {
 							ContractorTFNDetailsDTO tfnDto = contractorDetailsDto.getTfnList().get(0);
 							tfnDto.setContractorId(personalDto.getContractorId());
-							tfnDto = populateAndSaveTFNDetails(tfnDto, contractorTfnVo, lastUpdatedUser);
+							tfnDto = populateAndSaveTFNDetails(tfnDto, contractorTfnVo, lastUpdatedUser,
+									ProfileParserConstants.ACTIVE);
 							List<ContractorTFNDetailsDTO> tfnList = new ArrayList<ContractorTFNDetailsDTO>();
 							tfnList.add(tfnDto);
 							contractorDto.setTfnList(tfnList);
@@ -133,7 +143,8 @@ public class ContractorManagementService {
 							ContractorSuperAnnuationDetailsDTO saDto = contractorDetailsDto.getSuperAnnuationList()
 									.get(0);
 							saDto.setContractorId(personalDto.getContractorId());
-							saDto = populateAndSaveSADetails(saDto, contractorSaVo, lastUpdatedUser);
+							saDto = populateAndSaveSADetails(saDto, contractorSaVo, lastUpdatedUser,
+									ProfileParserConstants.ACTIVE);
 							List<ContractorSuperAnnuationDetailsDTO> saList = new ArrayList<ContractorSuperAnnuationDetailsDTO>();
 							saList.add(saDto);
 							contractorDto.setSuperAnnuationList(saList);
@@ -145,7 +156,8 @@ public class ContractorManagementService {
 					if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getBankList().get(0))) {
 						ContractorBankDetailsDTO bankDto = contractorDetailsDto.getBankList().get(0);
 						bankDto.setContractorId(personalDto.getContractorId());
-						bankDto = populateAndSaveBankDetails(bankDto, contractorBankVo, lastUpdatedUser);
+						bankDto = populateAndSaveBankDetails(bankDto, contractorBankVo, lastUpdatedUser,
+								ProfileParserConstants.ACTIVE);
 						List<ContractorBankDetailsDTO> bankList = new ArrayList<ContractorBankDetailsDTO>();
 						bankList.add(bankDto);
 						contractorDto.setBankList(bankList);
@@ -156,7 +168,7 @@ public class ContractorManagementService {
 						ContractorEmploymentDetailsDTO employerDto = contractorDetailsDto.getEmployerList().get(0);
 						employerDto.setContractorId(personalDto.getContractorId());
 						employerDto = populateAndSaveEmploymentDetails(employerDto, contractorEmploymentVo,
-								lastUpdatedUser);
+								lastUpdatedUser, ProfileParserConstants.ACTIVE);
 
 						List<ContractorEmploymentDetailsDTO> empList = new ArrayList<ContractorEmploymentDetailsDTO>();
 						empList.add(employerDto);
@@ -166,7 +178,8 @@ public class ContractorManagementService {
 					if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getRateList().get(0))) {
 						ContractorRateDetailsDTO rateDto = contractorDetailsDto.getRateList().get(0);
 						rateDto.setContractorId(personalDto.getContractorId());
-						rateDto = populateAndSaveRateDetails(rateDto, contractorRateVo, lastUpdatedUser);
+						rateDto = populateAndSaveRateDetails(rateDto, contractorRateVo, lastUpdatedUser,
+								ProfileParserConstants.ACTIVE);
 
 						List<ContractorRateDetailsDTO> rateList = new ArrayList<ContractorRateDetailsDTO>();
 						rateList.add(rateDto);
@@ -209,35 +222,35 @@ public class ContractorManagementService {
 	}
 
 	private ContractorABNDetailsDTO populateAndSaveABNDetails(ContractorABNDetailsDTO abnDto,
-			ContractorABNDetailsEntity contractorAbnVo, String lastUpdatedUser) {
+			ContractorABNDetailsEntity contractorAbnVo, String lastUpdatedUser, String status) {
 
 		BeanUtils.copyProperties(abnDto, contractorAbnVo);
 		contractorAbnVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorAbnVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorAbnVo.setActiveRecord("Active");
+		contractorAbnVo.setActiveRecord(status);
 		contractorAbnVo = contractorAbn.save(contractorAbnVo);
 		BeanUtils.copyProperties(contractorAbnVo, abnDto);
 		return abnDto;
 	}
 
 	private ContractorTFNDetailsDTO populateAndSaveTFNDetails(ContractorTFNDetailsDTO tfnDto,
-			ContractorTFNDetailsEntity contractorTfnVo, String lastUpdatedUser) {
+			ContractorTFNDetailsEntity contractorTfnVo, String lastUpdatedUser, String status) {
 		BeanUtils.copyProperties(tfnDto, contractorTfnVo);
 		contractorTfnVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorTfnVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorTfnVo.setActiveRecord("Active");
+		contractorTfnVo.setActiveRecord(status);
 		contractorTfnVo = contractorTfn.save(contractorTfnVo);
 		BeanUtils.copyProperties(contractorTfnVo, tfnDto);
 		return tfnDto;
 	}
 
 	private ContractorSuperAnnuationDetailsDTO populateAndSaveSADetails(ContractorSuperAnnuationDetailsDTO saDto,
-			ContractorSuperAnnuationDetailsEntity contractorSaVo, String lastUpdatedUser) {
+			ContractorSuperAnnuationDetailsEntity contractorSaVo, String lastUpdatedUser, String status) {
 
 		BeanUtils.copyProperties(saDto, contractorSaVo);
 		contractorSaVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorSaVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorSaVo.setActiveRecord("Active");
+		contractorSaVo.setActiveRecord(status);
 		contractorSaVo = contractorSA.save(contractorSaVo);
 		BeanUtils.copyProperties(contractorSaVo, saDto);
 
@@ -246,22 +259,22 @@ public class ContractorManagementService {
 	}
 
 	private ContractorBankDetailsDTO populateAndSaveBankDetails(ContractorBankDetailsDTO bankDto,
-			ContractorBankDetailsEntity contractorBankVo, String lastUpdatedUser) {
+			ContractorBankDetailsEntity contractorBankVo, String lastUpdatedUser, String status) {
 		BeanUtils.copyProperties(bankDto, contractorBankVo);
 		contractorBankVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorBankVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorBankVo.setActiveRecord("Active");
+		contractorBankVo.setActiveRecord(status);
 		contractorBankVo = contractorBank.save(contractorBankVo);
 		BeanUtils.copyProperties(contractorBankVo, bankDto);
 		return bankDto;
 	}
 
 	private ContractorEmploymentDetailsDTO populateAndSaveEmploymentDetails(ContractorEmploymentDetailsDTO employerDto,
-			ContractorEmploymentDetailsEntity contractorEmploymentVo, String lastUpdatedUser) {
+			ContractorEmploymentDetailsEntity contractorEmploymentVo, String lastUpdatedUser, String status) {
 		BeanUtils.copyProperties(employerDto, contractorEmploymentVo);
 		contractorEmploymentVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorEmploymentVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorEmploymentVo.setActiveRecord("Active");
+		contractorEmploymentVo.setActiveRecord(status);
 		contractorEmploymentVo = contractorEmployment.save(contractorEmploymentVo);
 		BeanUtils.copyProperties(contractorEmploymentVo, employerDto);
 
@@ -269,11 +282,11 @@ public class ContractorManagementService {
 	}
 
 	private ContractorRateDetailsDTO populateAndSaveRateDetails(ContractorRateDetailsDTO rateDto,
-			ContractorRateDetailsEntity contractorRateVo, String lastUpdatedUser) {
+			ContractorRateDetailsEntity contractorRateVo, String lastUpdatedUser, String status) {
 		BeanUtils.copyProperties(rateDto, contractorRateVo);
 		contractorRateVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorRateVo.setLastUpdatedUser(lastUpdatedUser);
-		contractorRateVo.setActiveRecord("Active");
+		contractorRateVo.setActiveRecord(status);
 		contractorRateVo = contractorRate.save(contractorRateVo);
 		BeanUtils.copyProperties(contractorRateVo, rateDto);
 
@@ -346,13 +359,15 @@ public class ContractorManagementService {
 
 	public ContractorDetailsDTO getContractorFullDetails(BigInteger contractorId) {
 		ContractorDetailsDTO contractorDto = new ContractorDetailsDTO();
-
+boolean abnHolder=false;
 		ContractorPersonalDetailsEntity personalEntity = contractorPersonal
 				.getPersonalDetailsByContractorId(contractorId);
 		if (!ProfileParserUtils.isObjectEmpty(personalEntity)) {
 			ContractorPersonalDetailsDTO personalDto = new ContractorPersonalDetailsDTO();
 			BeanUtils.copyProperties(personalEntity, personalDto);
 			contractorDto.setPersonalDetails(personalDto);
+			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase("true"))
+				abnHolder = true;
 
 		}
 		ContractorEmploymentDetailsEntity empEntity = contractorEmployment
@@ -376,24 +391,7 @@ public class ContractorManagementService {
 		List<ContractorBankDetailsDTO> bankList = new ArrayList<ContractorBankDetailsDTO>();
 		bankList.add(bankDto);
 		contractorDto.setBankList(bankList);
-		ContractorABNDetailsEntity abnEntity = contractorAbn.getAbnDetailsByContractorId(contractorId);
-		ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
-		if (!ProfileParserUtils.isObjectEmpty(abnEntity)) {
-			BeanUtils.copyProperties(abnEntity, abnDto);
-		}
-		List<ContractorABNDetailsDTO> abnList = new ArrayList<ContractorABNDetailsDTO>();
-		abnList.add(abnDto);
-		contractorDto.setAbnList(abnList);
-
-		ContractorTFNDetailsEntity tfnEntity = contractorTfn.getTfnDetailsByContractorId(contractorId);
-		ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
-		if (!ProfileParserUtils.isObjectEmpty(tfnEntity)) {
-			BeanUtils.copyProperties(tfnEntity, tfnDto);
-
-		}
-		List<ContractorTFNDetailsDTO> tfnList = new ArrayList<ContractorTFNDetailsDTO>();
-		tfnList.add(tfnDto);
-		contractorDto.setTfnList(tfnList);
+		
 		ContractorRateDetailsEntity rateEntity = contractorRate.getRateDetailsByContractorId(contractorId);
 		ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
 		if (!ProfileParserUtils.isObjectEmpty(rateEntity)) {
@@ -413,7 +411,243 @@ public class ContractorManagementService {
 		List<ContractorSuperAnnuationDetailsDTO> saList = new ArrayList<ContractorSuperAnnuationDetailsDTO>();
 		saList.add(saDto);
 		contractorDto.setSuperAnnuationList(saList);
+		
+		if(abnHolder) {
+		ContractorABNDetailsEntity abnEntity = contractorAbn.getAbnDetailsByContractorId(contractorId);
+		ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
+		if (!ProfileParserUtils.isObjectEmpty(abnEntity)) {
+			BeanUtils.copyProperties(abnEntity, abnDto);
+		}
+		List<ContractorABNDetailsDTO> abnList = new ArrayList<ContractorABNDetailsDTO>();
+		abnList.add(abnDto);
+		contractorDto.setAbnList(abnList);
+		}
+		else {
+		
+		logger.info("Contractor id.. before tfn call..,{}",contractorId);
+		ContractorTFNDetailsEntity tfnEntity = contractorTfn.getAllTfnDetailsByContractorId(contractorId).get(0);
+		ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
+		if (!ProfileParserUtils.isObjectEmpty(tfnEntity)) {
+			BeanUtils.copyProperties(tfnEntity, tfnDto);
+
+		}
+		List<ContractorTFNDetailsDTO> tfnList = new ArrayList<ContractorTFNDetailsDTO>();
+		tfnList.add(tfnDto);
+		contractorDto.setTfnList(tfnList);
+		}
+		
 		return contractorDto;
 
 	}
+
+	@Transactional
+	public ContractorDetailsDTO updateContractorDetails(ContractorDetailsDTO contractorDetailsDto,
+			String lastUpdatedUser) throws Exception {
+
+		// update Personal details
+		ContractorDetailsDTO contractorDto = new ContractorDetailsDTO();
+		ContractorPersonalDetailsDTO personalDto = contractorDetailsDto.getPersonalDetails();
+		if (!ProfileParserUtils.isObjectEmpty(personalDto)
+				&& !ProfileParserUtils.isObjectEmpty(personalDto.getContractorId())) {
+			boolean abnHolder = false;
+			ContractorPersonalDetailsEntity contractorPersonalVo = new ContractorPersonalDetailsEntity();
+
+			// check if contractor details exist for the same combination
+			List<ContractorPersonalDetailsEntity> personalList = contractorPersonal.getContractors(
+					personalDto.getFirstName(), personalDto.getLastName(), personalDto.getDateOfBirth(),
+					personalDto.getPersonalEmail());
+			if (!ProfileParserUtils.isObjectEmpty(personalList) && personalList.size() > 0) {
+				// contractorPersonalVo=personalList.get(0);
+				logger.info("checking Contractor id...,{}", personalDto.getContractorId());
+				for (ContractorPersonalDetailsEntity personalVo : personalList) {
+					logger.info("matching details check...,{}", personalVo.toString());
+					if (!ProfileParserUtils.isObjectEmpty(personalVo.getContractorId())
+							&& !personalVo.getContractorId().equals(personalDto.getContractorId())) {
+						logger.error("Contractor exists, {},  {}", personalVo.getContractorId(),
+								personalDto.getContractorId());
+						throw new Exception(
+								"Contractor details are already exist. Please give unique details to edit.");
+					}
+				}
+			}
+
+			logger.info("No matching details... hence saving..,{}", personalDto.toString());
+			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase("true"))
+				abnHolder = true;
+			personalDto = populateAndSavePersonalDetails(personalDto, contractorPersonalVo, lastUpdatedUser);
+			contractorDto.setPersonalDetails(personalDto);
+			
+			// Update previous dependent records with Active status as "Inactive" and then update this
+			// as new Active record
+			if (abnHolder) {
+				// Update ABN
+				List<ContractorABNDetailsEntity> abnList = contractorAbn
+						.getAllAbnDetailsByContractorId(personalDto.getContractorId());
+				if (!ProfileParserUtils.isObjectEmpty(abnList) && abnList.size() > 0) {
+					for (ContractorABNDetailsEntity abnVo : abnList) {
+						ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
+						BeanUtils.copyProperties(abnVo, abnDto);
+
+						 populateAndSaveABNDetails(abnDto, abnVo, lastUpdatedUser,
+								ProfileParserConstants.INACTIVE);
+
+					}
+
+				}
+				if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getAbnList().get(0))) {
+
+					ContractorABNDetailsDTO contractorAbnDto = contractorDetailsDto.getAbnList().get(0);
+					ContractorABNDetailsEntity contractorAbnVo = new ContractorABNDetailsEntity();
+					contractorAbnDto.setContractorId(personalDto.getContractorId());
+
+					contractorAbnDto = populateAndSaveABNDetails(contractorAbnDto, contractorAbnVo, lastUpdatedUser,
+							ProfileParserConstants.ACTIVE);
+					List<ContractorABNDetailsDTO> abnDtoList = new ArrayList<ContractorABNDetailsDTO>();
+					abnDtoList.add(contractorAbnDto);
+					contractorDto.setAbnList(abnDtoList);
+				}
+
+			} else {
+				// update TFN
+				List<ContractorTFNDetailsEntity> tfnList = contractorTfn
+						.getAllTfnDetailsByContractorId(personalDto.getContractorId());
+				if (!ProfileParserUtils.isObjectEmpty(tfnList) && tfnList.size() > 0) {
+					for (ContractorTFNDetailsEntity tfnVo : tfnList) {
+						ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
+						BeanUtils.copyProperties(tfnVo, tfnDto);
+
+						 populateAndSaveTFNDetails(tfnDto, tfnVo, lastUpdatedUser,
+								ProfileParserConstants.INACTIVE);
+
+					}
+
+				}
+				if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getTfnList().get(0))) {
+
+					ContractorTFNDetailsDTO contractorTfnDto = contractorDetailsDto.getTfnList().get(0);
+					ContractorTFNDetailsEntity contractorTfnVo = new ContractorTFNDetailsEntity();
+					contractorTfnDto.setContractorId(personalDto.getContractorId());
+
+					contractorTfnDto = populateAndSaveTFNDetails(contractorTfnDto, contractorTfnVo, lastUpdatedUser,
+							ProfileParserConstants.ACTIVE);
+					List<ContractorTFNDetailsDTO> tfnDtoList = new ArrayList<ContractorTFNDetailsDTO>();
+					tfnDtoList.add(contractorTfnDto);
+					contractorDto.setTfnList(tfnDtoList);
+				}
+
+				// update SA
+				List<ContractorSuperAnnuationDetailsEntity> saList = contractorSA
+						.getAllSADetailsByContractorId(personalDto.getContractorId());
+				if (!ProfileParserUtils.isObjectEmpty(saList) && saList.size() > 0) {
+					for (ContractorSuperAnnuationDetailsEntity saVo : saList) {
+						ContractorSuperAnnuationDetailsDTO saDto = new ContractorSuperAnnuationDetailsDTO();
+						BeanUtils.copyProperties(saVo, saDto);
+
+						 populateAndSaveSADetails(saDto, saVo, lastUpdatedUser,
+								ProfileParserConstants.INACTIVE);
+
+					}
+
+				}
+				if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getSuperAnnuationList().get(0))) {
+
+					ContractorSuperAnnuationDetailsDTO contractorSaDto = contractorDetailsDto.getSuperAnnuationList().get(0);
+					ContractorSuperAnnuationDetailsEntity contractorSaVo = new ContractorSuperAnnuationDetailsEntity();
+					contractorSaDto.setContractorId(personalDto.getContractorId());
+
+					contractorSaDto = populateAndSaveSADetails(contractorSaDto, contractorSaVo, lastUpdatedUser,
+							ProfileParserConstants.ACTIVE);
+					List<ContractorSuperAnnuationDetailsDTO> saDtoList = new ArrayList<ContractorSuperAnnuationDetailsDTO>();
+					saDtoList.add(contractorSaDto);
+					contractorDto.setSuperAnnuationList(saDtoList);
+				}
+			}
+
+			// update Bank
+			List<ContractorBankDetailsEntity> bankList = contractorBank
+					.getAllBankDetailsByContractorId(personalDto.getContractorId());
+			if (!ProfileParserUtils.isObjectEmpty(bankList) && bankList.size() > 0) {
+				for (ContractorBankDetailsEntity bankVo : bankList) {
+					ContractorBankDetailsDTO bankDto = new ContractorBankDetailsDTO();
+					BeanUtils.copyProperties(bankVo, bankDto);
+
+					 populateAndSaveBankDetails(bankDto, bankVo, lastUpdatedUser,
+							ProfileParserConstants.INACTIVE);
+
+				}
+
+			}
+			if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getBankList().get(0))) {
+
+				ContractorBankDetailsDTO contractorBankDto = contractorDetailsDto.getBankList().get(0);
+				ContractorBankDetailsEntity contractorBankVo = new ContractorBankDetailsEntity();
+				contractorBankDto.setContractorId(personalDto.getContractorId());
+
+				contractorBankDto = populateAndSaveBankDetails(contractorBankDto, contractorBankVo, lastUpdatedUser,
+						ProfileParserConstants.ACTIVE);
+				List<ContractorBankDetailsDTO> bankDtoList = new ArrayList<ContractorBankDetailsDTO>();
+				bankDtoList.add(contractorBankDto);
+				contractorDto.setBankList(bankDtoList);
+			}
+
+			// update Employer
+
+			List<ContractorEmploymentDetailsEntity> empList = contractorEmployment
+					.getAllEmploymentDetailsByContractorId(personalDto.getContractorId());
+			if (!ProfileParserUtils.isObjectEmpty(bankList) && bankList.size() > 0) {
+				for (ContractorEmploymentDetailsEntity empVo : empList) {
+					ContractorEmploymentDetailsDTO empDto = new ContractorEmploymentDetailsDTO();
+					BeanUtils.copyProperties(empVo, empDto);
+
+					 populateAndSaveEmploymentDetails(empDto, empVo, lastUpdatedUser,
+							ProfileParserConstants.INACTIVE);
+
+				}
+
+			}
+			if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getEmployerList().get(0))) {
+
+				ContractorEmploymentDetailsDTO contractorEmpDto = contractorDetailsDto.getEmployerList().get(0);
+				ContractorEmploymentDetailsEntity contractorEmpVo = new ContractorEmploymentDetailsEntity();
+				contractorEmpDto.setContractorId(personalDto.getContractorId());
+
+				contractorEmpDto = populateAndSaveEmploymentDetails(contractorEmpDto, contractorEmpVo, lastUpdatedUser,
+						ProfileParserConstants.ACTIVE);
+				List<ContractorEmploymentDetailsDTO> empDtoList = new ArrayList<ContractorEmploymentDetailsDTO>();
+				empDtoList.add(contractorEmpDto);
+				contractorDto.setEmployerList(empDtoList);
+			}
+			
+			// update Rate
+			
+			List<ContractorRateDetailsEntity> rateList = contractorRate
+					.getAllRateDetailsByContractorId(personalDto.getContractorId());
+			if (!ProfileParserUtils.isObjectEmpty(rateList) && rateList.size() > 0) {
+				for (ContractorRateDetailsEntity rateVo : rateList) {
+					ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
+					BeanUtils.copyProperties(rateVo, rateDto);
+
+					 populateAndSaveRateDetails(rateDto, rateVo, lastUpdatedUser,
+							ProfileParserConstants.INACTIVE);
+
+				}
+
+			}
+			if (!ProfileParserUtils.isObjectEmpty(contractorDetailsDto.getEmployerList().get(0))) {
+
+				ContractorRateDetailsDTO contractorRateDto = contractorDetailsDto.getRateList().get(0);
+				ContractorRateDetailsEntity contractorRateVo = new ContractorRateDetailsEntity();
+				contractorRateDto.setContractorId(personalDto.getContractorId());
+
+				contractorRateDto = populateAndSaveRateDetails(contractorRateDto, contractorRateVo, lastUpdatedUser,
+						ProfileParserConstants.ACTIVE);
+				List<ContractorRateDetailsDTO> rateDtoList = new ArrayList<ContractorRateDetailsDTO>();
+				rateDtoList.add(contractorRateDto);
+				contractorDto.setRateList(rateDtoList);
+			}
+		}
+		
+		return contractorDetailsDto;
+	}
+
 }

@@ -59,5 +59,29 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 		delete.where(cb.equal(contractorAbn.get("contractorId"), contractorId));
 		entityManager.createQuery(delete).executeUpdate();
 	}
+	
+	@Override
+	public List<ContractorABNDetailsEntity> getAllAbnDetailsByContractorId(BigInteger contractorId) {
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorABNDetailsEntity> query = cb
+				.createQuery(ContractorABNDetailsEntity.class);
+		Root<ContractorABNDetailsEntity> contractAbn = query.from(ContractorABNDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId))
+			predicates.add(cb.equal(contractAbn.get("contractorId"), contractorId));
+		List<ContractorABNDetailsEntity> contractorAbnList = null;
+		if (predicates.size() > 0) {
+			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(contractAbn).where(cb.and(predicates.toArray(predicatesArray)));
+			contractorAbnList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(contractorAbnList))
+			return contractorAbnList;
+
+		else
+			return new ArrayList<ContractorABNDetailsEntity>();
+	}
 
 }

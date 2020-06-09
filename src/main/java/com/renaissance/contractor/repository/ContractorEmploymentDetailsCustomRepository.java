@@ -10,5 +10,6 @@ public interface ContractorEmploymentDetailsCustomRepository {
 	ContractorEmploymentDetailsEntity getEmploymentDetailsByContractorId(BigInteger contractorId);
 	void deleteByContractorId(BigInteger contractorId);
 	List<ContractorEmploymentDetailsEntity> searchEmploymentDetails(ContractorSearchForm searchForm);
+	List<ContractorEmploymentDetailsEntity> getAllEmploymentDetailsByContractorId(BigInteger contractorId);
 
 }

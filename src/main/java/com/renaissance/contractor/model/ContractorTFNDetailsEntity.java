@@ -54,14 +54,23 @@ public class ContractorTFNDetailsEntity {
 	@Column(name = "\"ADDITIONAL_INFO\"")
 	private String additionalInfo;
 	
-	@Column(name = "\"ACTIVE_RECORD\"")
-	private String activeRecord;
-	
 	@Column(name = "\"LAST_UPDATED_USER\"")
 	private String lastUpdatedUser;
 
 	@Column(name = "\"LAST_UPDATED_DATE_TIME\"")
 	private LocalDateTime lastUpdatedDateTime;
+	
+	@Column(name = "\"ACTIVE_RECORD\"")
+	private String activeRecord;
+	
+
+	public String getActiveRecord() {
+		return activeRecord;
+	}
+
+	public void setActiveRecord(String activeRecord) {
+		this.activeRecord = activeRecord;
+	}
 
 	public BigInteger getId() {
 		return Id;
@@ -159,13 +168,7 @@ public class ContractorTFNDetailsEntity {
 		this.additionalInfo = additionalInfo;
 	}
 
-	public String getActiveRecord() {
-		return activeRecord;
-	}
-
-	public void setActiveRecord(String activeRecord) {
-		this.activeRecord = activeRecord;
-	}
+	
 
 	public String getLastUpdatedUser() {
 		return lastUpdatedUser;

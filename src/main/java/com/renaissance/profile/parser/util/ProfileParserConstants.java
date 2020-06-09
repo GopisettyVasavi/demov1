@@ -14,6 +14,8 @@ public class ProfileParserConstants {
 	public final static String RECRUITER="Recruiter";
 	public final static String DATA_ENTRY_OPERATOR="Data Entry Operator";
 	public final static String ADMIN="Admin";
+	public final static String ACTIVE="Active";
+	public final static String INACTIVE="InActive";
 	//public final static String PATH_TO_VIEW_FILE = "E:\profileparser\temp\";
 	
 

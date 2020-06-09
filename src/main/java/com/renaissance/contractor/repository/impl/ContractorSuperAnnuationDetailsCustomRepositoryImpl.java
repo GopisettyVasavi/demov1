@@ -49,6 +49,30 @@ public class ContractorSuperAnnuationDetailsCustomRepositoryImpl implements Cont
 		else
 			return new ContractorSuperAnnuationDetailsEntity();
 	}
+	
+	@Override
+	public List<ContractorSuperAnnuationDetailsEntity> getAllSADetailsByContractorId(BigInteger contractorId) {
+		
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorSuperAnnuationDetailsEntity> query = cb
+				.createQuery(ContractorSuperAnnuationDetailsEntity.class);
+		Root<ContractorSuperAnnuationDetailsEntity> contractSA = query.from(ContractorSuperAnnuationDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId))
+			predicates.add(cb.equal(contractSA.get("contractorId"), contractorId));
+		List<ContractorSuperAnnuationDetailsEntity> contractorSAList = null;
+		if (predicates.size() > 0) {
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(contractSA).where(cb.and(predicates.toArray(predicatesArray)));
+			contractorSAList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(contractorSAList))
+			return contractorSAList;
+
+		else
+			return new ArrayList<ContractorSuperAnnuationDetailsEntity>();
+	}
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 
