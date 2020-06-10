@@ -59,10 +59,10 @@ public class ContractorManagementService {
 	@Autowired
 	ContractorEmploymentDetailsRepository contractorEmployment;
 
-	
-	
 	/**
-	 * This method will create contractor along with all other dependent data. If there is any error in saving dependent details, then it deletes all temporary data and throws exception.
+	 * This method will create contractor along with all other dependent data. If
+	 * there is any error in saving dependent details, then it deletes all temporary
+	 * data and throws exception.
 	 * 
 	 * @param contractorDetailsDto
 	 * @param lastUpdatedUser
@@ -72,7 +72,7 @@ public class ContractorManagementService {
 	@Transactional
 	public ContractorDetailsDTO createContractor(ContractorDetailsDTO contractorDetailsDto, String lastUpdatedUser)
 			throws Exception {
-			BigInteger createdId = null;
+		BigInteger createdId = null;
 		try {
 			logger.info("Create Contractor Service..,{}", contractorDetailsDto.getPersonalDetails().toString());
 			logger.info("Create Contractor Service Bank details..,{}", contractorDetailsDto.getBankList().toString());
@@ -121,7 +121,7 @@ public class ContractorManagementService {
 
 							ContractorABNDetailsDTO abnDto = contractorDetailsDto.getAbnList();
 							abnDto.setContractorId(personalDto.getContractorId());
-							abnDto = populateAndSaveABNDetails(abnDto, lastUpdatedUser, ProfileParserConstants.ACTIVE);							
+							abnDto = populateAndSaveABNDetails(abnDto, lastUpdatedUser, ProfileParserConstants.ACTIVE);
 							contractorDto.setAbnList(abnDto);
 						}
 					} else {
@@ -249,7 +249,7 @@ public class ContractorManagementService {
 		contractorTfnVo.setLastUpdatedUser(lastUpdatedUser);
 		contractorTfnVo.setActiveRecord(status);
 		contractorTfnVo = contractorTfn.save(contractorTfnVo);
-		logger.info("TFN Update...,{} ",contractorTfnVo.toString());
+		logger.info("TFN Update...,{} ", contractorTfnVo.toString());
 		BeanUtils.copyProperties(contractorTfnVo, tfnDto);
 		return tfnDto;
 	}
@@ -416,8 +416,8 @@ public class ContractorManagementService {
 	public ContractorDetailsDTO getContractorFullDetails(BigInteger contractorId) {
 		ContractorDetailsDTO contractorDto = new ContractorDetailsDTO();
 		boolean abnHolder = false;
-		
-		//Get personal details
+
+		// Get personal details
 		ContractorPersonalDetailsEntity personalEntity = contractorPersonal
 				.getPersonalDetailsByContractorId(contractorId);
 		if (!ProfileParserUtils.isObjectEmpty(personalEntity)) {
@@ -428,7 +428,7 @@ public class ContractorManagementService {
 				abnHolder = true;
 
 		}
-		//Get Employer details
+		// Get Employer details
 		ContractorEmploymentDetailsEntity empEntity = contractorEmployment
 				.getEmploymentDetailsByContractorId(contractorId);
 		ContractorEmploymentDetailsDTO empDto = new ContractorEmploymentDetailsDTO();
@@ -438,8 +438,8 @@ public class ContractorManagementService {
 
 		}
 		contractorDto.setEmployerList(empDto);
-		
-		//Get Bank details.
+
+		// Get Bank details.
 		ContractorBankDetailsEntity bankEntity = contractorBank.getBankDetailsByContractorId(contractorId);
 		ContractorBankDetailsDTO bankDto = new ContractorBankDetailsDTO();
 		if (!ProfileParserUtils.isObjectEmpty(bankEntity)) {
@@ -449,7 +449,7 @@ public class ContractorManagementService {
 		}
 		contractorDto.setBankList(bankDto);
 
-		//Get Rate Details.
+		// Get Rate Details.
 		ContractorRateDetailsEntity rateEntity = contractorRate.getRateDetailsByContractorId(contractorId);
 		ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
 		if (!ProfileParserUtils.isObjectEmpty(rateEntity)) {
@@ -457,8 +457,8 @@ public class ContractorManagementService {
 
 		}
 		contractorDto.setRateList(rateDto);
-		
-		//Get Superannuation details
+
+		// Get Superannuation details
 		ContractorSuperAnnuationDetailsEntity saEntity = contractorSA.getSADetailsByContractorId(contractorId);
 		ContractorSuperAnnuationDetailsDTO saDto = new ContractorSuperAnnuationDetailsDTO();
 		if (!ProfileParserUtils.isObjectEmpty(saEntity)) {
@@ -468,7 +468,7 @@ public class ContractorManagementService {
 		}
 		contractorDto.setSuperAnnuationList(saDto);
 
-		//If abn holder get ABN details
+		// If abn holder get ABN details
 		if (abnHolder) {
 			ContractorABNDetailsEntity abnEntity = contractorAbn.getAbnDetailsByContractorId(contractorId);
 			ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
@@ -476,12 +476,11 @@ public class ContractorManagementService {
 				BeanUtils.copyProperties(abnEntity, abnDto);
 			}
 			contractorDto.setAbnList(abnDto);
-			
-		} 
-		//If not get TFN details
+
+		}
+		// If not get TFN details
 		else {
-			
-			
+
 			ContractorTFNDetailsEntity tfnEntity = contractorTfn.getActiveTfnByContractorId(contractorId);
 			ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
 			if (!ProfileParserUtils.isObjectEmpty(tfnEntity)) {
@@ -557,7 +556,7 @@ public class ContractorManagementService {
 						abnVo.setActiveRecord(ProfileParserConstants.INACTIVE);
 						abnVo.setLastUpdatedDateTime(LocalDateTime.now());
 						abnVo.setLastUpdatedUser(lastUpdatedUser);
-						contractorAbn.save(abnVo);					
+						contractorAbn.save(abnVo);
 
 					}
 
@@ -593,7 +592,7 @@ public class ContractorManagementService {
 
 					contractorTfnDto = populateAndSaveTFNDetails(contractorTfnDto, lastUpdatedUser,
 							ProfileParserConstants.ACTIVE);
-					
+
 					contractorDto.setTfnList(contractorTfnDto);
 				}
 
@@ -617,7 +616,7 @@ public class ContractorManagementService {
 
 					contractorSaDto = populateAndSaveSADetails(contractorSaDto, lastUpdatedUser,
 							ProfileParserConstants.ACTIVE);
-					
+
 					contractorDto.setSuperAnnuationList(contractorSaDto);
 				}
 			}
@@ -693,9 +692,31 @@ public class ContractorManagementService {
 				contractorDto.setRateList(contractorRateDto);
 			}
 		}
-		
 
 		return contractorDetailsDto;
+	}
+
+	/**
+	 * This method will return the history of all previous bank records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	public List<ContractorBankDetailsDTO> getBankHistoryByContractorId(BigInteger contractorId) {
+
+		List<ContractorBankDetailsDTO> banklist = new ArrayList<ContractorBankDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorBankDetailsEntity> bankVoList = contractorBank.getAllBankDetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(bankVoList) && bankVoList.size() > 0) {
+				for (ContractorBankDetailsEntity bankVo : bankVoList) {
+					ContractorBankDetailsDTO bankDto = new ContractorBankDetailsDTO();
+					BeanUtils.copyProperties(bankVo, bankDto);
+					banklist.add(bankDto);
+				}
+
+			}
+		}
+
+		return banklist;
 	}
 
 }

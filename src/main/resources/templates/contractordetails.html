@@ -645,7 +645,25 @@
 																						th:field="${contractor.superAnnuationList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
-																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View Bank History?</label>
+																					<input  type="checkbox"  id="bankHistory" name="bankHistory" 
+																					onclick="bankHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-12" id="bh_div" >
+							<div id="bh_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="bankHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>
 																		</div>
 																		<div id="bank_feedback"> </div>
 																	</form>

@@ -329,3 +329,80 @@ function clickonreset(){
 	$("#candidateDetails")[0].reset();
 }
 
+function bankHistoryCheck(){
+	if(document.getElementById("bankHistory").checked){
+		document.getElementById("bankHistory").checked=true;
+	}
+	if(document.getElementById("bankHistory").checked){
+	$('#bh_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	 
+	 var url="/bankhistory/"+contractorId;
+	 
+	// alert("ID;;; "+contractorId+" "+url);
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/bankhistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("bankHistory").checked=true;
+				$("#bh_div").show();
+				$("#bankHistorytable").show();
+	       /* var response=JSON.stringify(data);
+				alert("Contractor Search done Successfully..."+data.length);
+				$.each(data, function(i, item) {
+			        var $tr = $('<tr>').append(
+			            $('<td>').text(item.fullName),
+			            $('<td>').text(item.contractorId),
+			            $('<td>').text(item.mobilePhone)
+			        ).appendTo('#contractorTable');
+			       // console.log($tr.wrap('<p>').html());
+			    });*/
+				
+				var table=   $('#bankHistorytable').DataTable( {
+	       		 fixedHeader: true,
+	       		 responsive: true,
+	         	   destroy: true,
+	         	  orderCellsTop: true,
+	         	autoWidth: false,
+	         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'accountName', "name" : "fullName", "title" : "Account Name"  },
+	             	  { "data": 'bsb', "name" : "bsb" , "title" : "BSB"},
+	             	 { "data": 'accountNumber', "name" : "accountNumber" , "title" : "Account No"},
+	             	 { "data": 'additionalInfo', "name" : "additionalInfo" , "title" : "Additional Info"}]
+	                   
+	            } );
+				$('#bankHistorytable tfoot tr').appendTo('#bankHistorytable thead');
+	    	    
+	    	    $("#bankHistorytable tfoot tr").hide();
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#bh_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	}
+	
+	else{
+		$("#bh_feedback").hide();
+		$("#bankHistorytable").hide();		
+		$("#bh_div").hide();
+		document.getElementById("bankHistory").checked=false;
+		
+	}
+}
