@@ -44,7 +44,7 @@ public class ContractorTfnDetailsCustomRespositoryImpl implements ContractorTfnD
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
 			predicates.add(cb.equal(contractTfn.get("contractorId"), contractorId));
-		predicates.add(cb.equal(contractTfn.get("Id"), 33));
+		//predicates.add(cb.equal(contractTfn.get("Id"), 33));
 		predicates.add(cb.equal(cb.upper(contractTfn.get("activeRecord")), "ACTIVE"));
 		List<ContractorTFNDetailsEntity> contractorTfnList = null;
 		if (predicates.size() > 0) {

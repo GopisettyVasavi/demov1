@@ -18,8 +18,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.renaissance.contractor.dto.ContractorABNDetailsDTO;
 import com.renaissance.contractor.dto.ContractorBankDetailsDTO;
 import com.renaissance.contractor.dto.ContractorDetailsDTO;
+import com.renaissance.contractor.dto.ContractorEmploymentDetailsDTO;
+import com.renaissance.contractor.dto.ContractorRateDetailsDTO;
+import com.renaissance.contractor.dto.ContractorSuperAnnuationDetailsDTO;
+import com.renaissance.contractor.dto.ContractorTFNDetailsDTO;
 import com.renaissance.contractor.service.ContractorManagementService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
@@ -108,7 +113,12 @@ public class ContractorDetailsMVCController {
 		return ResponseEntity.ok(contractorDto);
 	}
 	
-	
+	/**
+	 * This method will get all bank history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/bankhistory/{contractorId}")
 	public ResponseEntity<?> loadBankHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -122,6 +132,108 @@ public class ContractorDetailsMVCController {
 
 		return new ResponseEntity<>(bankList, HttpStatus.OK);
 	}
+	
+	/**
+	 * This method will get all ABN history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/abnhistory/{contractorId}")
+	public ResponseEntity<?> loadABNHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		logger.info("Controller invoked, to load abn details...id is, {}", contractorId);
+		List<ContractorABNDetailsDTO> abnList = contractorService.getAbnHistoryByContractorId(contractorId);
+		
+		
 
+		return new ResponseEntity<>(abnList, HttpStatus.OK);
+	}
+	
+	/**
+	 * This method will get all TFN history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/tfnhistory/{contractorId}")
+	public ResponseEntity<?> loadTFNHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		List<ContractorTFNDetailsDTO> tfnList = contractorService.getTfnHistoryByContractorId(contractorId);
+		
+		
+
+		return new ResponseEntity<>(tfnList, HttpStatus.OK);
+	}
+	
+	/**
+	 * This method will get all Rate history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/ratehistory/{contractorId}")
+	public ResponseEntity<?> loadRateHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		List<ContractorRateDetailsDTO> rateList = contractorService.getRateHistoryByContractorId(contractorId);
+		
+		
+
+		return new ResponseEntity<>(rateList, HttpStatus.OK);
+	}
+	
+	
+	/**
+	 * This method will get all Super annuation history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/sahistory/{contractorId}")
+	public ResponseEntity<?> loadSAHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		List<ContractorSuperAnnuationDetailsDTO> saList = contractorService.getSAHistoryByContractorId(contractorId);
+		
+		
+
+		return new ResponseEntity<>(saList, HttpStatus.OK);
+	}
+	
+	/**
+	 * This method will get all Employment history records from service and sends back to UI.
+	 * @param contractorId
+	 * @param request
+	 * @return
+	 */
+	@PostMapping("/emphistory/{contractorId}")
+	public ResponseEntity<?> loadEmployerHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		List<ContractorEmploymentDetailsDTO> empList = contractorService.getEmployerHistoryByContractorId(contractorId);
+		
+		
+
+		return new ResponseEntity<>(empList, HttpStatus.OK);
+	}
+	
+	
 	
 }

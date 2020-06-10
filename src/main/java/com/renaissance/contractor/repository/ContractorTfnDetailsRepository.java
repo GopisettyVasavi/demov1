@@ -12,7 +12,7 @@ import com.renaissance.contractor.model.ContractorTFNDetailsEntity;
 @Repository
 public interface ContractorTfnDetailsRepository extends CrudRepository<ContractorTFNDetailsEntity, BigInteger>, ContractorTfnDetailsCustomRepository {
 	
-	@Query(value="select * from parse.\"CONTRACTOR_TFN_DETAILS\" where \"CONTRACTOR_ID\" = :contractorId AND upper(\"ACTIVE_RECORD\") ='ACTIVE' ", nativeQuery = true)
+	@Query(value="SELECT * FROM parse.\"CONTRACTOR_TFN_DETAILS\" WHERE \"CONTRACTOR_ID\" = :contractorId AND upper(\"ACTIVE_RECORD\") ='ACTIVE' ", nativeQuery = true)
 	ContractorTFNDetailsEntity getActiveTfnByContractorId(@Param("contractorId") BigInteger contractorId);
 
 }

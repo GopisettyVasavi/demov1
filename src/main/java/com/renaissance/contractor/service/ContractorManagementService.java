@@ -718,5 +718,124 @@ public class ContractorManagementService {
 
 		return banklist;
 	}
+	
+	/**
+	 * This method will return the history of all previous ABN records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	
+	public List<ContractorABNDetailsDTO> getAbnHistoryByContractorId(BigInteger contractorId){
+		
+		List<ContractorABNDetailsDTO> abnlist = new ArrayList<ContractorABNDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorABNDetailsEntity> abnVoList = contractorAbn.getAllAbnDetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(abnVoList) && abnVoList.size() > 0) {
+				for (ContractorABNDetailsEntity abnVo : abnVoList) {
+					ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
+					BeanUtils.copyProperties(abnVo, abnDto);
+					abnlist.add(abnDto);
+				}
 
+			}
+		}
+		
+		return abnlist;
+	}
+
+	/**
+	 * This method will return the history of all previous TFN records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	
+	public List<ContractorTFNDetailsDTO> getTfnHistoryByContractorId(BigInteger contractorId){
+		
+		List<ContractorTFNDetailsDTO> tfnlist = new ArrayList<ContractorTFNDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorTFNDetailsEntity> tfnVoList = contractorTfn.getAllTfnDetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(tfnVoList) && tfnVoList.size() > 0) {
+				for (ContractorTFNDetailsEntity tfnVo : tfnVoList) {
+					ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
+					BeanUtils.copyProperties(tfnVo, tfnDto);
+					tfnlist.add(tfnDto);
+				}
+
+			}
+		}
+		
+		return tfnlist;
+	}
+	
+	/**
+	 * This method will return the history of all previous Rate records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	
+	public List<ContractorRateDetailsDTO> getRateHistoryByContractorId(BigInteger contractorId){
+		
+		List<ContractorRateDetailsDTO> ratelist = new ArrayList<ContractorRateDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorRateDetailsEntity> rateVoList = contractorRate.getAllRateDetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(rateVoList) && rateVoList.size() > 0) {
+				for (ContractorRateDetailsEntity rateVo : rateVoList) {
+					ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
+					BeanUtils.copyProperties(rateVo, rateDto);
+					ratelist.add(rateDto);
+				}
+
+			}
+		}
+		
+		return ratelist;
+	}
+	
+	/**
+	 * This method will return the history of all previous Employment records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	
+	public List<ContractorEmploymentDetailsDTO> getEmployerHistoryByContractorId(BigInteger contractorId){
+		
+		List<ContractorEmploymentDetailsDTO> emplist = new ArrayList<ContractorEmploymentDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorEmploymentDetailsEntity> empVoList = contractorEmployment.getAllEmploymentDetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(empVoList) && empVoList.size() > 0) {
+				for (ContractorEmploymentDetailsEntity empVo : empVoList) {
+					ContractorEmploymentDetailsDTO empDto = new ContractorEmploymentDetailsDTO();
+					BeanUtils.copyProperties(empVo, empDto);
+					emplist.add(empDto);
+				}
+
+			}
+		}
+		
+		return emplist;
+	}
+	
+	/**
+	 * This method will return the history of all previous Super annuation records for the given contractor
+	 * @param contractorId
+	 * @return
+	 */
+	
+	public List<ContractorSuperAnnuationDetailsDTO> getSAHistoryByContractorId(BigInteger contractorId){
+		
+		List<ContractorSuperAnnuationDetailsDTO> salist = new ArrayList<ContractorSuperAnnuationDetailsDTO>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId)) {
+			List<ContractorSuperAnnuationDetailsEntity> saVoList = contractorSA.getAllSADetailsByContractorId(contractorId);
+			if (!ProfileParserUtils.isObjectEmpty(saVoList) && saVoList.size() > 0) {
+				for (ContractorSuperAnnuationDetailsEntity saVo : saVoList) {
+					ContractorSuperAnnuationDetailsDTO saDto = new ContractorSuperAnnuationDetailsDTO();
+					BeanUtils.copyProperties(saVo, saDto);
+					salist.add(saDto);
+				}
+
+			}
+		}
+		
+		return salist;
+	}
 }
