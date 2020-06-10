@@ -98,52 +98,52 @@
 														th:field="${contractor.personalDetails.abnHolder}" />
 														<input type="text"
 														id="addnlSaCheck_dtl" name="abnhoaddnlSaCheck_dtllder"
-														th:field="${contractor.superAnnuationList[0].additionalSuperAnnuationContributionFlag}" />
+														th:field="${contractor.superAnnuationList.additionalSuperAnnuationContributionFlag}" />
 														<input type="text"
 														id="gstRegistered_dtl" name="gstRegistered_dtl"
-														th:field="${contractor.abnList[0].gstRegistered}" />
+														th:field="${contractor.abnList.gstRegistered}" />
 														<input type="text"
 														id="pipl_dtl" name="pipl_dtl"
-														th:field="${contractor.abnList[0].piPlFlag}" />
+														th:field="${contractor.abnList.piPlFlag}" />
 														<input type="text"
 														id="wc_dtl" name="wc_dtl"
-														th:field="${contractor.abnList[0].workCoverFlag}" />
+														th:field="${contractor.abnList.workCoverFlag}" />
 														<input type="text"
 														id="tfn_na_dtl" name="tfn_na_dtl"
-														th:field="${contractor.tfnList[0].newApplicationFlag}" />
+														th:field="${contractor.tfnList.newApplicationFlag}" />
 														<input type="text"
 														id="tfn_ua_dtl" name="tfn_ua_dtl"
-														th:field="${contractor.tfnList[0].underAgeExemptionFlag}" />
+														th:field="${contractor.tfnList.underAgeExemptionFlag}" />
 														<input type="text"
 														id="tfn_ph_dtl" name="tfn_ph_dtl"
-														th:field="${contractor.tfnList[0].pensionHolderFlag}" />
+														th:field="${contractor.tfnList.pensionHolderFlag}" />
 														<input type="text"
 														id="tfn_tfthreshold_dtl" name="tfn_na_dtl"
-														th:field="${contractor.tfnList[0].taxFreeThresholdFlag}" />
+														th:field="${contractor.tfnList.taxFreeThresholdFlag}" />
 														<input type="text"
 														id="tfn_loan_dtl" name="tfn_na_dtl"
-														th:field="${contractor.tfnList[0].loanFlag}" />
+														th:field="${contractor.tfnList.loanFlag}" />
 														<input type="text"
 														id="tfn_fd_dtl" name="tfn_na_dtl"
-														th:field="${contractor.tfnList[0].financialShipmentDebtFlag}" />
+														th:field="${contractor.tfnList.financialShipmentDebtFlag}" />
 														<input type="text"
 														id="fin_client_dtl" name="fin_client_dtl"
-														th:field="${contractor.employerList[0].finishedClient}" />
+														th:field="${contractor.employerList.finishedClient}" />
 														<input type="text"
 														id="super_dtl" name="super_dtl"
-														th:field="${contractor.rateList[0].includeSuperFlag}" />
+														th:field="${contractor.rateList.includeSuperFlag}" />
 														<input type="text"
 														id="payroll_dtl" name="super_dtl"
-														th:field="${contractor.rateList[0].payrollTaxPaymentFlag}" />
+														th:field="${contractor.rateList.payrollTaxPaymentFlag}" />
 														<input type="text"
 														id="wcflag_dtl" name="super_dtl"
-														th:field="${contractor.rateList[0].workCoverFlag}" />
+														th:field="${contractor.rateList.workCoverFlag}" />
 														<input type="text"
 														id="recruiterid_dtl" name="super_dtl"
-														th:field="${contractor.employerList[0].recruiterId}" />
+														th:field="${contractor.employerList.recruiterId}" />
 														<input type="text"
 														id="recruitername_dtl" name="super_dtl"
-														th:field="${contractor.employerList[0].recruiterName}" />
+														th:field="${contractor.employerList.recruiterName}" />
 														
 														
 														
@@ -553,7 +553,7 @@
 										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
 										onblur="this.placeholder = 'Account Name'" 
 										class="single-input" id="accountName" required pattern=".{4,}" title="Six or more characters"
-										th:field="${contractor.bankList[0].accountName}"> 
+										th:field="${contractor.bankList.accountName}"> 
 																					
 																				</div>
 																			</div>
@@ -563,7 +563,7 @@
 																					<input type="text" name="bsb"
 										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
 										onblur="this.placeholder = 'Account BSB'" 
-										class="single-input" id="accountBsb" required="required" th:field="${contractor.bankList[0].bsb}">
+										class="single-input" id="accountBsb" required="required" th:field="${contractor.bankList.bsb}">
 																					
 																				</div>
 																			</div>
@@ -573,7 +573,7 @@
 																					<input type="text" name="accountNo"
 										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
 										onblur="this.placeholder = 'Account No'" 
-										class="single-input" id="accountNo" required="required" th:field="${contractor.bankList[0].accountNumber}">
+										class="single-input" id="accountNo" required="required" th:field="${contractor.bankList.accountNumber}">
 																				</div>
 																			</div>
 																			<div class="col-12">
@@ -584,7 +584,7 @@
 																						onfocus="this.placeholder = 'Additional Info'"
 																						onblur="this.placeholder = 'Additional Info'"
 																						placeholder="Additional Info" id="bankAdditionalInfo"
-																						name="Additional Info" th:field="${contractor.bankList[0].additionalInfo}">
+																						name="Additional Info" th:field="${contractor.bankList.additionalInfo}">
 																						</textarea>
 																				</div>
 																			</div>
@@ -598,7 +598,7 @@
 																					<input type="text" name="name"
 										placeholder="SA Fund Name" onfocus="this.placeholder = 'SA Fund Name'"
 										onblur="this.placeholder = 'SA Fund Name'" 
-										class="single-input" id="saFundName" th:field="${contractor.superAnnuationList[0].superAnnuationFundName}">
+										class="single-input" id="saFundName" th:field="${contractor.superAnnuationList.superAnnuationFundName}">
 																					
 																				</div>
 																			</div>
@@ -608,7 +608,7 @@
 																					<input type="text" name="saMemberId"
 										placeholder="SA Member Id" onfocus="this.placeholder = 'SA Member Id'"
 										onblur="this.placeholder = 'SA Member Id'" 
-										class="single-input" id="saMemberId" th:field="${contractor.superAnnuationList[0].superAnnuationMemberId}">
+										class="single-input" id="saMemberId" th:field="${contractor.superAnnuationList.superAnnuationMemberId}">
 																					
 																				</div>
 																			</div>
@@ -630,7 +630,7 @@
 																						onblur="this.placeholder = 'Additional SA Info'"
 																						placeholder="Additional SA Info" id="addnlSAInfo"
 																						name="Additional SA Info" style="display: none"
-																						th:field="${contractor.superAnnuationList[0].additionalSuperAnnuationDetails}"></textarea>
+																						th:field="${contractor.superAnnuationList.additionalSuperAnnuationDetails}"></textarea>
 																				</div>
 																			</div>
 																			<div class="col-12">
@@ -642,7 +642,7 @@
 																						onblur="this.placeholder = 'Additional Info'"
 																						placeholder="Additional Info" id="saAdditionalInfo"
 																						name="Additional Info" 
-																						th:field="${contractor.superAnnuationList[0].additionalInfo}"></textarea>
+																						th:field="${contractor.superAnnuationList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
 																			
@@ -687,7 +687,7 @@
 										name="abn" placeholder="ABN number"
 										onfocus="this.placeholder = 'ABN number'"
 										onblur="this.placeholder = 'ABN number'" id="abnNumber"
-										class="single-input" required="required" th:field="${contractor.abnList[0].abnNumber}">
+										class="single-input" required="required" th:field="${contractor.abnList.abnNumber}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -697,7 +697,7 @@
 										name="abn" placeholder="ACN number"
 										onfocus="this.placeholder = 'ACN number'"
 										onblur="this.placeholder = 'ACN number'" id="acnNumber"
-										class="single-input" required="required" th:field="${contractor.abnList[0].acnNumber}">
+										class="single-input" required="required" th:field="${contractor.abnList.acnNumber}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -707,7 +707,7 @@
 										name="abn" placeholder="ABN Group"
 										onfocus="this.placeholder = 'ABN Group'"
 										onblur="this.placeholder = 'ABN Group'" id="abnGroup"
-										class="single-input" th:field="${contractor.abnList[0].abnGroup}">
+										class="single-input" th:field="${contractor.abnList.abnGroup}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4"></div>
@@ -722,7 +722,7 @@
 										name="companyName" placeholder="Company Name"
 										onfocus="this.placeholder = 'Company Name'"
 										onblur="this.placeholder = 'Company Name'" id="companyName"
-										class="single-input" required="required" th:field="${contractor.abnList[0].companyName}">
+										class="single-input" required="required" th:field="${contractor.abnList.companyName}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -732,7 +732,7 @@
 										name="companyAddress" placeholder="Company Address"
 										onfocus="this.placeholder = 'Company Address'"
 										onblur="this.placeholder = 'Company Address'" id="companyAddress"
-										class="single-input" required="required" th:field="${contractor.abnList[0].companyAddress}">
+										class="single-input" required="required" th:field="${contractor.abnList.companyAddress}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -742,7 +742,7 @@
 										name="companyCity" placeholder="Company City"
 										onfocus="this.placeholder = 'Company City'"
 										onblur="this.placeholder = 'Company City'" id="companyCity"
-										class="single-input" required="required" th:field="${contractor.abnList[0].companyCity}">
+										class="single-input" required="required" th:field="${contractor.abnList.companyCity}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -751,7 +751,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="companyState" th:field="*{contractor.abnList[0].companyState}" >
+																							<select id="companyState" th:field="*{contractor.abnList.companyState}" >
 																								<option value="none"  selected="selected">Select State</option>
 																								<option value="NSW">New South Wales</option>
 																								<option value="VIC">Victoria</option>
@@ -772,7 +772,7 @@
 										name="companyZip" placeholder="Company Zip"
 										onfocus="this.placeholder = 'Company Zip'"
 										onblur="this.placeholder = 'Company Zip'" id="companyZipCode"
-										class="single-input" th:field="${contractor.abnList[0].companyZipCode}">
+										class="single-input" th:field="${contractor.abnList.companyZipCode}">
 																				</div>
 																			</div>	
 																			
@@ -789,7 +789,7 @@
 										placeholder="Account Name" onfocus="this.placeholder = 'Account Name'"
 										onblur="this.placeholder = 'Account Name'" 
 										class="single-input" id="abnAccountName" required pattern=".{4,}" title="Six or more characters"
-										th:field="${contractor.bankList[0].accountName}" >
+										th:field="${contractor.bankList.accountName}" >
 																					
 																				</div>
 																			</div>
@@ -799,7 +799,7 @@
 																					<input type="text" name="bsb"
 										placeholder="Account BSB" onfocus="this.placeholder = 'Account BSB'"
 										onblur="this.placeholder = 'Account BSB'" 
-										class="single-input" id="abnAccountBsb" required="required" th:field="${contractor.bankList[0].bsb}">
+										class="single-input" id="abnAccountBsb" required="required" th:field="${contractor.bankList.bsb}">
 																					
 																				</div>
 																			</div>
@@ -809,7 +809,7 @@
 																					<input type="text" name="accountNo"
 										placeholder="Account No" onfocus="this.placeholder = 'Account No'"
 										onblur="this.placeholder = 'Account No'" 
-										class="single-input" id="abnBankAccountNo" required="required" th:field="${contractor.bankList[0].accountName}">
+										class="single-input" id="abnBankAccountNo" required="required" th:field="${contractor.bankList.accountName}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4"></div>
@@ -826,7 +826,7 @@
 																			</div><div class="col-sm-4">
 																			<div class="form-group">
 																					<label for="name" style="display: none;font-weight:bold" id="gstpath_dtl"
-																					th:text="${contractor.abnList[0].gstCertPath}"></label>
+																					th:text="${contractor.abnList.gstCertPath}"></label>
 																					
 																					
 																			</div>		
@@ -852,9 +852,9 @@
 																			<div class="col-sm-4">
 																			<div class="form-group">
 																					<label id="piplpath_dtl" for="name" style="font-weight:bold;width: 300px"
-																					th:text="${contractor.abnList[0].piPlCert1Path
-																					+' '+contractor.abnList[0].piPlCert2Path
-																					+' '+contractor.abnList[0].piPlCert3Path}"
+																					th:text="${contractor.abnList.piPlCert1Path
+																					+'  '+contractor.abnList.piPlCert2Path
+																					+'  '+contractor.abnList.piPlCert3Path}"
 																					></label>
 																					
 																					
@@ -899,7 +899,7 @@
 																			<div class="col-sm-4">
 																			<div class="form-group">
 																					<label for="name" style="display: none;font-weight:bold" id="wcpath_dtl"
-																					th:text="${contractor.abnList[0].workCoverCertPath}"></label>
+																					th:text="${contractor.abnList.workCoverCertPath}"></label>
 																					
 																					
 																			</div>		
@@ -922,7 +922,7 @@
 																						onblur="this.placeholder = 'Additional Info'"
 																						placeholder="Additional Info" id="abnAdditionalInfo"
 																						name="Additional Info"
-																						th:field="${contractor.abnList[0].additionalInfo}"></textarea>
+																						th:field="${contractor.abnList.additionalInfo}"></textarea>
 																				</div>
 																			</div>	
 																		</div>
@@ -966,7 +966,7 @@
 										name="tfn" placeholder="TFN number"
 										onfocus="this.placeholder = 'TFN number'"
 										onblur="this.placeholder = 'TFN number'" id="tfnNumber"
-										class="single-input" th:field="${contractor.tfnList[0].tfnNumber}">
+										class="single-input" th:field="${contractor.tfnList.tfnNumber}">
 																				</div>
 																			</div>
 																			
@@ -1000,7 +1000,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="tfnEmploymentType"  th:field="*{contractor.tfnList[0].employmentType}">
+																							<select id="tfnEmploymentType"  th:field="*{contractor.tfnList.employmentType}">
 																								<option value="none"  selected="selected">Select Employment Type</option>
 																								<option value="Full Time">Full Time</option>
 																								<option value="Part Time">Part Time</option>
@@ -1018,7 +1018,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="taxPaymentType"  th:field="*{contractor.tfnList[0].taxPayerType}">
+																							<select id="taxPaymentType"  th:field="*{contractor.tfnList.taxPayerType}">
 																								<option value="none"  selected="selected">Are you</option>
 																								<option value="PR">An Australian Resident for tax purposes</option>
 																								<option value="Foreign Resident">Foreign Resident for tax purposes</option>
@@ -1119,7 +1119,7 @@
 																						onblur="this.placeholder = 'Additional Info'"
 																						placeholder="Additional Info" id="tfnAdditionalInfo"
 																						name="Additional Info"
-																						th:field="${contractor.tfnList[0].additionalInfo}"></textarea>
+																						th:field="${contractor.tfnList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
 																			
@@ -1165,7 +1165,7 @@
 										name="clientName" placeholder="Client Name"
 										onfocus="this.placeholder = 'Client Name'"
 										onblur="this.placeholder = 'Client Name'" id="clientName"
-										class="single-input" th:field="${contractor.employerList[0].clientName}">
+										class="single-input" th:field="${contractor.employerList.clientName}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -1175,7 +1175,7 @@
 										name="endClientName" placeholder="End Client Name"
 										onfocus="this.placeholder = 'End Client Name'"
 										onblur="this.placeholder = 'End Client Name'" id="endClientName"
-										class="single-input" th:field="${contractor.employerList[0].endClientName}">
+										class="single-input" th:field="${contractor.employerList.endClientName}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -1186,7 +1186,7 @@
 										name="contractno" placeholder="Contract Number"
 										onfocus="this.placeholder = 'Contract Number'"
 										onblur="this.placeholder = 'Contract Number'" id="contractNumber"
-										class="single-input" th:field="${contractor.employerList[0].contractNumber}">
+										class="single-input" th:field="${contractor.employerList.contractNumber}">
 																						
 																				</div>
 																			</div>
@@ -1196,7 +1196,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="employmentType"  th:field="*{contractor.employerList[0].employmentType}">
+																							<select id="employmentType"  th:field="*{contractor.employerList.employmentType}">
 																								<option value="none"  selected="selected">Select Employment Type</option>
 																								<option value="Full Time">Full Time</option>
 																								<option value="Part Time">Part Time</option>
@@ -1217,7 +1217,7 @@
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
 																						class="single-input" id="jobStartDate" 
-																						name="startDate"  th:field="${contractor.employerList[0].jobStartDate}">
+																						name="startDate"  th:field="${contractor.employerList.jobStartDate}">
 																					
 																						
 																				</div>
@@ -1231,7 +1231,7 @@
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
 																						class="single-input" id="jobEndDate" 
-																						name="endDate" th:field="${contractor.employerList[0].jobEndDate}" >
+																						name="endDate" th:field="${contractor.employerList.jobEndDate}" >
 																					
 																						
 																				</div>
@@ -1249,7 +1249,7 @@
 										name="address" placeholder="Address"
 										onfocus="this.placeholder = 'Address'"
 										onblur="this.placeholder = 'Address'" id="workLocationAddress"
-										class="single-input" th:field="${contractor.employerList[0].workLocationAddress}">
+										class="single-input" th:field="${contractor.employerList.workLocationAddress}">
 																					</div>
 																			</div>
 																			
@@ -1261,7 +1261,7 @@
 										name="address" placeholder="City"
 										onfocus="this.placeholder = 'City'"
 										onblur="this.placeholder = 'City'" id="workLocationCity"
-										class="single-input" th:field="${contractor.employerList[0].workLocationCity}">
+										class="single-input" th:field="${contractor.employerList.workLocationCity}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -1270,7 +1270,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="workLocationState" th:field="*{contractor.employerList[0].workLocationState}" >
+																							<select id="workLocationState" th:field="*{contractor.employerList.workLocationState}" >
 																								<option value="none"  selected="selected">Select State</option>
 																								<option value="NSW">New South Wales</option>
 																								<option value="VIC">Victoria</option>
@@ -1291,7 +1291,7 @@
 										name="address" placeholder="Zip"
 										onfocus="this.placeholder = 'zip'"
 										onblur="this.placeholder = 'zip'" id="workLocationZipCode"
-										class="single-input" th:field="${contractor.employerList[0].workLocationZipCode}">
+										class="single-input" th:field="${contractor.employerList.workLocationZipCode}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
@@ -1301,7 +1301,7 @@
 																						
 																						<div class="form-select" id="default-select" >
 																							<select id="wlCountrySelect"
-																							th:field="*{contractor.employerList[0].workLocationCountry}" onchange="wlOtherCountrySelect()" >
+																							th:field="*{contractor.employerList.workLocationCountry}" onchange="wlOtherCountrySelect()" >
 																								<option value="Australia" selected="selected">Australia</option>
 																								<option value="Other">Other</option>
 																							</select>
@@ -1316,7 +1316,7 @@
 										name="address" placeholder="Other State"
 										onfocus="this.placeholder = 'Other State'"
 										onblur="this.placeholder = 'Other State'" id="wlotherState"
-										class="single-input" style="display: none" th:field="${contractor.employerList[0].wlOtherState}" >
+										class="single-input" style="display: none" th:field="${contractor.employerList.wlOtherState}" >
 																				</div>
 																			</div>
 																			<div class="col-sm-2" >
@@ -1326,7 +1326,7 @@
 										name="address" placeholder="Other Country"
 										onfocus="this.placeholder = 'Other Country'"
 										onblur="this.placeholder = 'Other Country'" id="wlotherCountry"
-										class="single-input" style="display: none" th:field="${contractor.employerList[0].wlOtherCountry}">
+										class="single-input" style="display: none" th:field="${contractor.employerList.wlOtherCountry}">
 																				</div>
 																			</div>
 																			<div class="col-sm-4"></div>
@@ -1341,7 +1341,7 @@
 										name="role" placeholder="Role"
 										onfocus="this.placeholder = 'Role'"
 										onblur="this.placeholder = 'Role'" id="role"
-										class="single-input" th:field="${contractor.employerList[0].jobRole}">
+										class="single-input" th:field="${contractor.employerList.jobRole}">
 																						
 																				</div>
 																			</div>
@@ -1372,7 +1372,7 @@
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
 																						class="single-input" id="rateStartDate" 
-																						name="startDate"  th:field="${contractor.rateList[0].rateStartDate}">
+																						name="startDate"  th:field="${contractor.rateList.rateStartDate}">
 																					
 																						
 																				</div>
@@ -1386,7 +1386,7 @@
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
 																						class="single-input" id="rateEndDate" 
-																						name="endDate" th:field="${contractor.rateList[0].rateEndDate}" >
+																						name="endDate" th:field="${contractor.rateList.rateEndDate}" >
 																					
 																						
 																				</div>
@@ -1401,7 +1401,7 @@
 										name="ratePerDay" placeholder="Rate Per Day"
 										onfocus="this.placeholder = 'Rate Per Day'"
 										onblur="this.placeholder = 'Rate Per Day'" id="ratePerDay"
-										class="single-input" th:field="${contractor.rateList[0].ratePerDay}">
+										class="single-input" th:field="${contractor.rateList.ratePerDay}">
 																						
 																				</div>
 																			</div>
@@ -1413,7 +1413,7 @@
 										name="billRatePerDay" placeholder="Bill Rate Per Day"
 										onfocus="this.placeholder = 'Bill Rate Per Day'"
 										onblur="this.placeholder = 'Bill Rate Per Day'" id="billRatePerDay"
-										class="single-input" th:field="${contractor.rateList[0].billRatePerDay}">
+										class="single-input" th:field="${contractor.rateList.billRatePerDay}">
 																						
 																				</div>
 																			</div>
@@ -1448,7 +1448,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="insuranceType" th:field="*{contractor.rateList[0].insuranceType}" >
+																							<select id="insuranceType" th:field="*{contractor.rateList.insuranceType}" >
 																								<option value="none"  selected="selected">Select Insurance</option>
 																								<option value="percent">Percentage</option>
 																								<option value="amount">Amount</option>
@@ -1464,7 +1464,7 @@
 										name="Insurance" placeholder="Insurance"
 										onfocus="this.placeholder = 'Insurance'"
 										onblur="this.placeholder = 'Insurance'" id="insurance"
-										class="single-input" th:field="${contractor.rateList[0].insurancePercentage}">
+										class="single-input" th:field="${contractor.rateList.insurancePercentage}">
 										</div>
 										</div>
 																			<div class="col-sm-2">
@@ -1475,7 +1475,7 @@
 										name="OtherDedcution" placeholder="Other Dedcution(%)"
 										onfocus="this.placeholder = 'Other Dedcution(%)'"
 										onblur="this.placeholder = 'Other Dedcution(%)'" id="otherDeduction"
-										class="single-input" th:field="${contractor.rateList[0].otherDeductionPercentage}">
+										class="single-input" th:field="${contractor.rateList.otherDeductionPercentage}">
 																						
 																				</div>
 																			</div>
@@ -1508,7 +1508,7 @@
 																						onfocus="this.placeholder = 'Last Working Date'"
 																						onblur="this.placeholder = 'Last Working Date'"
 																						class="single-input" id="lastWorkingDate" 
-																						name="lastWorkingDate"  th:field="${contractor.employerList[0].lastWorkingDate}">
+																						name="lastWorkingDate"  th:field="${contractor.employerList.lastWorkingDate}">
 																					
 																						
 																				</div>
@@ -1529,7 +1529,7 @@
 																						onfocus="this.placeholder = 'Additional Info'"
 																						onblur="this.placeholder = 'Additional Info'"
 																						placeholder="Additional Info" id="employmentAddnlInfo"
-																						name="Additional Info" th:field="${contractor.employerList[0].additionalInfo}"></textarea>
+																						name="Additional Info" th:field="${contractor.employerList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
 																			

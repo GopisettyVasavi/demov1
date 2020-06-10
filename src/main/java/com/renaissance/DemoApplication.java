@@ -18,5 +18,4 @@ public class DemoApplication extends SpringBootServletInitializer {
 		LOGGER.info("Simple log statement with inputs {}, {} and {}", 1,2,3);
 	}
 	
-
 }

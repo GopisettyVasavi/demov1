@@ -24,6 +24,9 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 	@Lazy
 	ContractorPersonalDetailsEntity contractorPersonal;
 
+	/**
+	 * This method will search personal details of selected contractor and return.
+	 */
 	@Override
 	public ContractorPersonalDetailsEntity getPersonalDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -32,8 +35,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
-			predicates.add(
-					cb.equal(contractorPersonal.get("contractorId"),  contractorId ));
+			predicates.add(cb.equal(contractorPersonal.get("contractorId"), contractorId));
 		List<ContractorPersonalDetailsEntity> contractorPersonalList = null;
 		if (predicates.size() > 0) {
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
@@ -47,6 +49,10 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 			return new ContractorPersonalDetailsEntity();
 	}
 
+	/**
+	 * This method will search contractors for the given first, last name, date of
+	 * birth and email combination.
+	 */
 	@Override
 	public List<ContractorPersonalDetailsEntity> getContractors(String firstName, String lastName, String dateOfBirth,
 			String personalEmail) {
@@ -70,12 +76,16 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 			contractorPersonalList = entityManager.createQuery(query).getResultList();
 		}
 		if (!ProfileParserUtils.isObjectEmpty(contractorPersonalList)) {
-			System.out.println(" Query ..."+contractorPersonalList.size());
+			System.out.println(" Query ..." + contractorPersonalList.size());
 			return contractorPersonalList;
-		}
-		else return new ArrayList<ContractorPersonalDetailsEntity>();
-		
+		} else
+			return new ArrayList<ContractorPersonalDetailsEntity>();
+
 	}
+
+	/**
+	 * This method will search contractors for the given full name
+	 */
 
 	public List<ContractorPersonalDetailsEntity> searchContractors(String fullName) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -84,8 +94,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(fullName))
-			predicates.add(
-					cb.like(cb.upper(contractorPersonal.get("fullName")), "%" + fullName.toUpperCase() + "%"));
+			predicates.add(cb.like(cb.upper(contractorPersonal.get("fullName")), "%" + fullName.toUpperCase() + "%"));
 
 		if (predicates.size() > 0) {
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
@@ -93,7 +102,6 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 			return entityManager.createQuery(query).getResultList();
 		} else
 			return new ArrayList<ContractorPersonalDetailsEntity>();
-		// return null;
 	}
 
 }

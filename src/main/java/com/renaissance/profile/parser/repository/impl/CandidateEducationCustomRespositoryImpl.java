@@ -43,13 +43,9 @@ public class CandidateEducationCustomRespositoryImpl implements CandidateEducati
 			Predicate[] predicates = new Predicate[1];
 			predicates[0] = cb.equal(candidateEducation.get("candidateId"), candidateId);
 			cb.max(candidateEducation.get("lastUpdatedByDateTime"));
-
 			query.select(candidateEducation).where(predicates);
 
 		}
-
-		// finalPredicate=cb.createQuery();
-		
 		List<CandidateEducationEntity> candidateEducations = entityManager.createQuery(query).getResultList();
 		if (!ProfileParserUtils.isObjectEmpty(candidateEducations))
 			return candidateEducations.get(0);

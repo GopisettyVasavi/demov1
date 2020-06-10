@@ -19,19 +19,22 @@ import com.renaissance.contractor.model.ContractorBankDetailsEntity;
 import com.renaissance.contractor.repository.ContractorBankDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
-public class ContractorBankDetailsCustomRepositoryImpl implements ContractorBankDetailsCustomRepository{
+public class ContractorBankDetailsCustomRepositoryImpl implements ContractorBankDetailsCustomRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Lazy
 	ContractorBankDetailsEntity contractorBank;
-	
+
+	/**
+	 * This method will search Active Bank details of selected contractor and
+	 * return.
+	 */
 	@Override
 	public ContractorBankDetailsEntity getBankDetailsByContractorId(BigInteger contractorId) {
-		
+
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<ContractorBankDetailsEntity> query = cb
-				.createQuery(ContractorBankDetailsEntity.class);
+		CriteriaQuery<ContractorBankDetailsEntity> query = cb.createQuery(ContractorBankDetailsEntity.class);
 		Root<ContractorBankDetailsEntity> contractBank = query.from(ContractorBankDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
@@ -49,14 +52,16 @@ public class ContractorBankDetailsCustomRepositoryImpl implements ContractorBank
 
 		else
 			return new ContractorBankDetailsEntity();
-		
+
 	}
-	
+
+	/**
+	 * This method will return all Bank details of contractor.
+	 */
 	@Override
 	public List<ContractorBankDetailsEntity> getAllBankDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<ContractorBankDetailsEntity> query = cb
-				.createQuery(ContractorBankDetailsEntity.class);
+		CriteriaQuery<ContractorBankDetailsEntity> query = cb.createQuery(ContractorBankDetailsEntity.class);
 		Root<ContractorBankDetailsEntity> contractBank = query.from(ContractorBankDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
@@ -74,6 +79,10 @@ public class ContractorBankDetailsCustomRepositoryImpl implements ContractorBank
 		else
 			return new ArrayList<ContractorBankDetailsEntity>();
 	}
+
+	/**
+	 * This method will delete Bank details for given contractor
+	 */
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 

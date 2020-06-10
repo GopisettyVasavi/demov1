@@ -1,58 +1,55 @@
 package com.renaissance.contractor.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ContractorDetailsDTO {
 	
-	List<ContractorRateDetailsDTO> rateList=new ArrayList<ContractorRateDetailsDTO>();
-	List<ContractorABNDetailsDTO> abnList= new ArrayList<ContractorABNDetailsDTO>();
-	List<ContractorTFNDetailsDTO> tfnList= new ArrayList<ContractorTFNDetailsDTO>();
-	List<ContractorBankDetailsDTO>bankList= new ArrayList<ContractorBankDetailsDTO>();
-	List <ContractorSuperAnnuationDetailsDTO> superAnnuationList= new ArrayList<ContractorSuperAnnuationDetailsDTO>();
-	List<ContractorEmploymentDetailsDTO>employerList= new ArrayList<ContractorEmploymentDetailsDTO>();
+	ContractorRateDetailsDTO rateList=new ContractorRateDetailsDTO();
+	ContractorABNDetailsDTO abnList= new ContractorABNDetailsDTO();
+	ContractorTFNDetailsDTO  tfnList= new ContractorTFNDetailsDTO();
+	ContractorBankDetailsDTO bankList= new ContractorBankDetailsDTO();
+	ContractorSuperAnnuationDetailsDTO superAnnuationList= new ContractorSuperAnnuationDetailsDTO();
 	ContractorPersonalDetailsDTO personalDetails= new ContractorPersonalDetailsDTO();
-	public List<ContractorRateDetailsDTO> getRateList() {
+	ContractorEmploymentDetailsDTO employerList=new ContractorEmploymentDetailsDTO();
+	public ContractorRateDetailsDTO getRateList() {
 		return rateList;
 	}
-	public void setRateList(List<ContractorRateDetailsDTO> rateList) {
+	public void setRateList(ContractorRateDetailsDTO rateList) {
 		this.rateList = rateList;
 	}
-	public List<ContractorABNDetailsDTO> getAbnList() {
+	public ContractorABNDetailsDTO getAbnList() {
 		return abnList;
 	}
-	public void setAbnList(List<ContractorABNDetailsDTO> abnList) {
+	public void setAbnList(ContractorABNDetailsDTO abnList) {
 		this.abnList = abnList;
 	}
-	public List<ContractorTFNDetailsDTO> getTfnList() {
+	public ContractorTFNDetailsDTO getTfnList() {
 		return tfnList;
 	}
-	public void setTfnList(List<ContractorTFNDetailsDTO> tfnList) {
+	public void setTfnList(ContractorTFNDetailsDTO tfnList) {
 		this.tfnList = tfnList;
 	}
-	public List<ContractorBankDetailsDTO> getBankList() {
+	public ContractorBankDetailsDTO getBankList() {
 		return bankList;
 	}
-	public void setBankList(List<ContractorBankDetailsDTO> bankList) {
+	public void setBankList(ContractorBankDetailsDTO bankList) {
 		this.bankList = bankList;
 	}
-	public List<ContractorSuperAnnuationDetailsDTO> getSuperAnnuationList() {
+	public ContractorSuperAnnuationDetailsDTO getSuperAnnuationList() {
 		return superAnnuationList;
 	}
-	public void setSuperAnnuationList(List<ContractorSuperAnnuationDetailsDTO> superAnnuationList) {
+	public void setSuperAnnuationList(ContractorSuperAnnuationDetailsDTO superAnnuationList) {
 		this.superAnnuationList = superAnnuationList;
-	}
-	public List<ContractorEmploymentDetailsDTO> getEmployerList() {
-		return employerList;
-	}
-	public void setEmployerList(List<ContractorEmploymentDetailsDTO> employerList) {
-		this.employerList = employerList;
 	}
 	public ContractorPersonalDetailsDTO getPersonalDetails() {
 		return personalDetails;
 	}
 	public void setPersonalDetails(ContractorPersonalDetailsDTO personalDetails) {
 		this.personalDetails = personalDetails;
+	}
+	public ContractorEmploymentDetailsDTO getEmployerList() {
+		return employerList;
+	}
+	public void setEmployerList(ContractorEmploymentDetailsDTO employerList) {
+		this.employerList = employerList;
 	}
 	
 

@@ -19,13 +19,17 @@ import com.renaissance.contractor.model.ContractorRateDetailsEntity;
 import com.renaissance.contractor.repository.ContractorRateDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
-public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRateDetailsCustomRepository{
+public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRateDetailsCustomRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Lazy
 	ContractorRateDetailsEntity contractorRate;
-	
+
+	/**
+	 * This method will search Active Rate details of selected contractor and
+	 * return.
+	 */
 	@Override
 	public ContractorRateDetailsEntity getRateDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -34,12 +38,10 @@ public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRate
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
-			predicates.add(
-					cb.equal(contractRate.get("contractorId"),  contractorId ));
+			predicates.add(cb.equal(contractRate.get("contractorId"), contractorId));
 		List<ContractorRateDetailsEntity> contractorRateList = null;
 		if (predicates.size() > 0) {
-			predicates.add(
-					cb.equal(cb.upper(contractRate.get("activeRecord")), "ACTIVE"));
+			predicates.add(cb.equal(cb.upper(contractRate.get("activeRecord")), "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(contractRate).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorRateList = entityManager.createQuery(query).getResultList();
@@ -50,7 +52,10 @@ public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRate
 		else
 			return new ContractorRateDetailsEntity();
 	}
-	
+
+	/**
+	 * This method will return all Rate details of contractor.
+	 */
 	@Override
 	public List<ContractorRateDetailsEntity> getAllRateDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -59,11 +64,10 @@ public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRate
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
-			predicates.add(
-					cb.equal(contractRate.get("contractorId"),  contractorId ));
+			predicates.add(cb.equal(contractRate.get("contractorId"), contractorId));
 		List<ContractorRateDetailsEntity> contractorRateList = null;
 		if (predicates.size() > 0) {
-			
+
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(contractRate).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorRateList = entityManager.createQuery(query).getResultList();
@@ -74,6 +78,10 @@ public class ContractorRateDetailsCustomRepositoryImpl implements ContractorRate
 		else
 			return new ArrayList<ContractorRateDetailsEntity>();
 	}
+
+	/**
+	 * This method will delete Rate details for given contractor
+	 */
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 

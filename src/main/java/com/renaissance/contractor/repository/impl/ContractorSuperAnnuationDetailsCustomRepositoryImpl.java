@@ -19,19 +19,25 @@ import com.renaissance.contractor.model.ContractorSuperAnnuationDetailsEntity;
 import com.renaissance.contractor.repository.ContractorSuperAnnuationDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
-public class ContractorSuperAnnuationDetailsCustomRepositoryImpl implements ContractorSuperAnnuationDetailsCustomRepository{
+public class ContractorSuperAnnuationDetailsCustomRepositoryImpl
+		implements ContractorSuperAnnuationDetailsCustomRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Lazy
 	ContractorSuperAnnuationDetailsEntity contractorSADetails;
+
+	/**
+	 * This method will search Active SA details of selected contractor and return.
+	 */
 	@Override
 	public ContractorSuperAnnuationDetailsEntity getSADetailsByContractorId(BigInteger contractorId) {
-		
+
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorSuperAnnuationDetailsEntity> query = cb
 				.createQuery(ContractorSuperAnnuationDetailsEntity.class);
-		Root<ContractorSuperAnnuationDetailsEntity> contractSA = query.from(ContractorSuperAnnuationDetailsEntity.class);
+		Root<ContractorSuperAnnuationDetailsEntity> contractSA = query
+				.from(ContractorSuperAnnuationDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
@@ -49,14 +55,18 @@ public class ContractorSuperAnnuationDetailsCustomRepositoryImpl implements Cont
 		else
 			return new ContractorSuperAnnuationDetailsEntity();
 	}
-	
+
+	/**
+	 * This method will return all SA details of contractor.
+	 */
 	@Override
 	public List<ContractorSuperAnnuationDetailsEntity> getAllSADetailsByContractorId(BigInteger contractorId) {
-		
+
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorSuperAnnuationDetailsEntity> query = cb
 				.createQuery(ContractorSuperAnnuationDetailsEntity.class);
-		Root<ContractorSuperAnnuationDetailsEntity> contractSA = query.from(ContractorSuperAnnuationDetailsEntity.class);
+		Root<ContractorSuperAnnuationDetailsEntity> contractSA = query
+				.from(ContractorSuperAnnuationDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
@@ -73,15 +83,20 @@ public class ContractorSuperAnnuationDetailsCustomRepositoryImpl implements Cont
 		else
 			return new ArrayList<ContractorSuperAnnuationDetailsEntity>();
 	}
+
+	/**
+	 * This method will delete SA details for given contractor
+	 */
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaDelete<ContractorSuperAnnuationDetailsEntity> delete = cb.createCriteriaDelete(ContractorSuperAnnuationDetailsEntity.class);
-		Root<ContractorSuperAnnuationDetailsEntity> contractorSA = delete.from(ContractorSuperAnnuationDetailsEntity.class);
+		CriteriaDelete<ContractorSuperAnnuationDetailsEntity> delete = cb
+				.createCriteriaDelete(ContractorSuperAnnuationDetailsEntity.class);
+		Root<ContractorSuperAnnuationDetailsEntity> contractorSA = delete
+				.from(ContractorSuperAnnuationDetailsEntity.class);
 		delete.where(cb.equal(contractorSA.get("contractorId"), contractorId));
 		entityManager.createQuery(delete).executeUpdate();
 	}
-	
 
 }

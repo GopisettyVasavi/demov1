@@ -19,57 +19,39 @@ import com.renaissance.contractor.model.ContractorTFNDetailsEntity;
 import com.renaissance.contractor.repository.ContractorTfnDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
-public class ContractorTfnDetailsCustomRespositoryImpl implements ContractorTfnDetailsCustomRepository  {
-	
-	//private static final Logger logger = LoggerFactory.getLogger(ContractorTfnDetailsCustomRespositoryImpl.class);
+public class ContractorTfnDetailsCustomRespositoryImpl implements ContractorTfnDetailsCustomRepository {
+
+	// private static final Logger logger =
+	// LoggerFactory.getLogger(ContractorTfnDetailsCustomRespositoryImpl.class);
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Lazy
 	ContractorTFNDetailsEntity contractorTfn;
+
 	
-	
-	/*
-	 * @Override public ContractorTFNDetailsEntity
-	 * getTfnDetailsByContractorId(BigInteger contractorId) { CriteriaBuilder cb =
-	 * entityManager.getCriteriaBuilder(); CriteriaQuery<ContractorTFNDetailsEntity>
-	 * query = cb .createQuery(ContractorTFNDetailsEntity.class);
-	 * Root<ContractorTFNDetailsEntity> contractTfn =
-	 * query.from(ContractorTFNDetailsEntity.class);
-	 * 
-	 * List<Predicate> predicates = new ArrayList<Predicate>(); if
-	 * (!ProfileParserUtils.isObjectEmpty(contractorId)) predicates.add(
-	 * cb.equal(contractTfn.get("contractorId"), contractorId )); predicates.add(
-	 * cb.equal(cb.upper(contractTfn.get("activeRecord")), "ACTIVE"));
-	 * List<ContractorTFNDetailsEntity> contractorTfnList = null;
-	 * logger.info("PREDICATES... ,{}",predicates.size()); if (predicates.size() >
-	 * 0) { predicates.add( cb.equal(cb.upper(contractTfn.get("activeRecord")),
-	 * "ACTIVE")); Predicate[] predicatesArray = new Predicate[predicates.size()];
-	 * query.select(contractTfn).where(cb.and(predicates.toArray(predicatesArray)));
-	 * //contractorTfnList = entityManager.createQuery(query).getResultList();
-	 * ContractorTFNDetailsEntity
-	 * v=entityManager.createQuery(query).getResultList().get(0); } if
-	 * (!ProfileParserUtils.isObjectEmpty(contractorTfnList)) return
-	 * contractorTfnList.get(0);
-	 * 
-	 * else return new ContractorTFNDetailsEntity(); }
+
+	/**
+	 * This method will search Active TFN details of selected contractor and return.
 	 */
-	
-	
+
 	@Override
 	public ContractorTFNDetailsEntity getTfnDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<ContractorTFNDetailsEntity> query = cb
-				.createQuery(ContractorTFNDetailsEntity.class);
+		CriteriaQuery<ContractorTFNDetailsEntity> query = cb.createQuery(ContractorTFNDetailsEntity.class);
 		Root<ContractorTFNDetailsEntity> contractTfn = query.from(ContractorTFNDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(contractorId))
 			predicates.add(cb.equal(contractTfn.get("contractorId"), contractorId));
+		predicates.add(cb.equal(contractTfn.get("Id"), 33));
+		predicates.add(cb.equal(cb.upper(contractTfn.get("activeRecord")), "ACTIVE"));
 		List<ContractorTFNDetailsEntity> contractorTfnList = null;
 		if (predicates.size() > 0) {
-			predicates.add(
-					cb.equal(cb.upper(contractTfn.get("activeRecord")), "ACTIVE"));
+			/*
+			 * predicates.add( cb.equal(cb.upper(contractTfn.get("activeRecord")),
+			 * "ACTIVE"));
+			 */
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(contractTfn).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorTfnList = entityManager.createQuery(query).getResultList();
@@ -80,12 +62,27 @@ public class ContractorTfnDetailsCustomRespositoryImpl implements ContractorTfnD
 		else
 			return new ContractorTFNDetailsEntity();
 	}
-	
+
+	/**
+	 * This method will delete TFN details for given contractor
+	 */
+	@Transactional
+	public void deleteByContractorId(BigInteger contractorId) {
+
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaDelete<ContractorTFNDetailsEntity> delete = cb.createCriteriaDelete(ContractorTFNDetailsEntity.class);
+		Root<ContractorTFNDetailsEntity> contractorTfn = delete.from(ContractorTFNDetailsEntity.class);
+		delete.where(cb.equal(contractorTfn.get("contractorId"), contractorId));
+		entityManager.createQuery(delete).executeUpdate();
+	}
+
+	/**
+	 * This method will return all TFN details of contractor.
+	 */
 	@Override
 	public List<ContractorTFNDetailsEntity> getAllTfnDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<ContractorTFNDetailsEntity> query = cb
-				.createQuery(ContractorTFNDetailsEntity.class);
+		CriteriaQuery<ContractorTFNDetailsEntity> query = cb.createQuery(ContractorTFNDetailsEntity.class);
 		Root<ContractorTFNDetailsEntity> contractTfn = query.from(ContractorTFNDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
@@ -109,14 +106,5 @@ public class ContractorTfnDetailsCustomRespositoryImpl implements ContractorTfnD
 	}
 	
 	
-	@Transactional
-	public void deleteByContractorId(BigInteger contractorId) {
 
-		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaDelete<ContractorTFNDetailsEntity> delete = cb.createCriteriaDelete(ContractorTFNDetailsEntity.class);
-		Root<ContractorTFNDetailsEntity> contractorTfn = delete.from(ContractorTFNDetailsEntity.class);
-		delete.where(cb.equal(contractorTfn.get("contractorId"), contractorId));
-		entityManager.createQuery(delete).executeUpdate();
-	}
-	
 }

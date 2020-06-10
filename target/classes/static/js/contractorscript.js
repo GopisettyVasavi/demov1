@@ -326,7 +326,7 @@ function clickonsave(mode){
 	//alert("ABN Holder:: "+abnchecked);
 	
 	//Employment Details
-	var employers=[];
+	//var employers=[];
 	var contractorEmploymentDetailsDTO= {}
 	
 		contractorEmploymentDetailsDTO["clientName"]=$("#clientName").val();
@@ -351,10 +351,10 @@ function clickonsave(mode){
 			contractorEmploymentDetailsDTO["recruiterId"]=$("#recruiter").val();
 			else contractorEmploymentDetailsDTO["recruiterId"]=0;
 		contractorEmploymentDetailsDTO["recruiterName"]=$( "#recruiter option:selected" ).text();
-		employers[0]=contractorEmploymentDetailsDTO;
+		//employers[0]=contractorEmploymentDetailsDTO;
 		//Rate details
 		var contractorRateDetailsDTO={}
-		var rates=[];
+		//var rates=[];
 		
 		contractorRateDetailsDTO["ratePerDay"]=$("#ratePerDay").val();
 		contractorRateDetailsDTO["billRatePerDay"]=$("#billRatePerDay").val();
@@ -368,15 +368,15 @@ function clickonsave(mode){
 		contractorRateDetailsDTO["otherDeductionPercentage"]=$("#otherDeduction").val();
 		contractorRateDetailsDTO["netMargin"]=$("#netMargin").val();
 				
-		rates[0]=contractorRateDetailsDTO;
+		//rates[0]=contractorRateDetailsDTO;
 	var contractorBankDetailsDTO={}
-	var banks=[];
+	//var banks=[];
 	var contractorSuperAnnuationDetailsDTO ={}
-	var saList=[];
+	//var saList=[];
 	var contractorABNDetailsDTO ={}
-	var abnList=[];
+	//var abnList=[];
 	var contractorTFNDetailsDTO ={}
-	var tfnList=[];
+	//var tfnList=[];
 			
 	if(abnchecked){
 		//ABN Details
@@ -452,22 +452,22 @@ function clickonsave(mode){
 	contractorTFNDetailsDTO["additionalInfo"]=$("#tfnAdditionalInfo").val();
 	}
 	//alert(contractorPersonalDetailsDTO);
-	banks[0]=contractorBankDetailsDTO;
-	saList[0]=contractorSuperAnnuationDetailsDTO;
-	abnList[0]=contractorABNDetailsDTO;
-	tfnList[0]=contractorTFNDetailsDTO;
+	//banks[0]=contractorBankDetailsDTO;
+	//saList[0]=contractorSuperAnnuationDetailsDTO;
+	//abnList[0]=contractorABNDetailsDTO;
+	//tfnList[0]=contractorTFNDetailsDTO;
 	
 	
 	var contractorDetailsDTO = {}
 	
-	 contractorDetailsDTO["bankList"]=banks;
-	 contractorDetailsDTO["employerList"]=employers;
-	 contractorDetailsDTO["rateList"]=rates;
-	 contractorDetailsDTO["abnList"]=abnList;
-	 contractorDetailsDTO["tfnList"]=tfnList;
-	 contractorDetailsDTO["superAnnuationList"]=saList;
+	 contractorDetailsDTO["bankList"]=contractorBankDetailsDTO;
+	 contractorDetailsDTO["employerList"]=contractorEmploymentDetailsDTO;
+	 contractorDetailsDTO["rateList"]=contractorRateDetailsDTO;	
+	 contractorDetailsDTO["tfnList"]=contractorTFNDetailsDTO;
+	 contractorDetailsDTO["superAnnuationList"]=contractorSuperAnnuationDetailsDTO;
 	 if(mode=="New"){
 		 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
+		 contractorDetailsDTO["abnList"]=contractorABNDetailsDTO;
 	 $.ajax({
 			type : "POST",
 			contentType : "application/json",
@@ -493,6 +493,20 @@ function clickonsave(mode){
 	 }
 	 else if(mode=='Update'){
 		 contractorPersonalDetailsDTO["contractorId"]=$("#contractorId").val();
+		
+		 if(abnchecked){
+		 if(contractorABNDetailsDTO["gstCertPath"].trim()=="")
+			 contractorABNDetailsDTO["gstCertPath"]=$("#gstpath_dtl").text();
+		 
+		 if(contractorABNDetailsDTO["piPlCert1Path"].trim()=="")
+			 contractorABNDetailsDTO["piPlCert1Path"]=$("#piplpath_dtl").text();
+		 
+		 if(contractorABNDetailsDTO["workCoverCertPath"].trim()=="")
+			 contractorABNDetailsDTO["workCoverCertPath"]=$("#wcpath_dtl").text();
+		 
+		
+		 contractorDetailsDTO["abnList"]=contractorABNDetailsDTO;
+		 }
 		 contractorDetailsDTO["personalDetails"] =contractorPersonalDetailsDTO;
 		 $.ajax({
 				type : "POST",

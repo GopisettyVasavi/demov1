@@ -21,6 +21,9 @@ public class ContractorTFNDetailsEntity {
 	@Column(name = "\"ID\"", unique = true)
 	private BigInteger Id;
 	
+	@Column(name = "\"ACTIVE_RECORD\"")
+	private String activeRecord;
+	
 	@Column(name = "\"CONTRACTOR_ID\"")
 	private BigInteger contractorId;
 	
@@ -60,8 +63,7 @@ public class ContractorTFNDetailsEntity {
 	@Column(name = "\"LAST_UPDATED_DATE_TIME\"")
 	private LocalDateTime lastUpdatedDateTime;
 	
-	@Column(name = "\"ACTIVE_RECORD\"")
-	private String activeRecord;
+	
 	
 
 	public String getActiveRecord() {

@@ -28,6 +28,10 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 	@Lazy
 	ContractorEmploymentDetailsEntity contractorEmployment;
 
+	/**
+	 * This method will search Active Employer details of selected contractor and
+	 * return.
+	 */
 	@Override
 	public ContractorEmploymentDetailsEntity getEmploymentDetailsByContractorId(BigInteger contractorId) {
 
@@ -53,7 +57,11 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 			return new ContractorEmploymentDetailsEntity();
 
 	}
-	
+
+	/**
+	 * This method will return all Employer details of contractor.
+	 */
+
 	@Override
 	public List<ContractorEmploymentDetailsEntity> getAllEmploymentDetailsByContractorId(BigInteger contractorId) {
 
@@ -67,7 +75,7 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 			predicates.add(cb.equal(contractEmp.get("contractorId"), contractorId));
 		List<ContractorEmploymentDetailsEntity> contractorEmpList = null;
 		if (predicates.size() > 0) {
-			
+
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(contractEmp).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorEmpList = entityManager.createQuery(query).getResultList();
@@ -80,6 +88,10 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 
 	}
 
+	/**
+	 * This method will delete Employer details for given contractor
+	 */
+
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 
@@ -91,6 +103,9 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 		entityManager.createQuery(delete).executeUpdate();
 	}
 
+	/**
+	 * This method will search employer details for the given search criteria.
+	 */
 	public List<ContractorEmploymentDetailsEntity> searchEmploymentDetails(ContractorSearchForm searchForm) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorEmploymentDetailsEntity> query = cb

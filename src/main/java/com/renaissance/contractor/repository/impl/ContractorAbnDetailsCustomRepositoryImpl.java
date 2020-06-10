@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.renaissance.contractor.model.ContractorABNDetailsEntity;
+import com.renaissance.contractor.model.ContractorTFNDetailsEntity;
 import com.renaissance.contractor.repository.ContractorAbnDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
@@ -26,6 +27,9 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 	@Lazy
 	ContractorABNDetailsEntity contractorAbnDetails;
 
+	/**
+	 * This method will search Active ABN details of selected contractor and return.
+	 */
 	@Override
 	public ContractorABNDetailsEntity getAbnDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -50,6 +54,9 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 			return new ContractorABNDetailsEntity();
 	}
 
+	/**
+	 * This method will delete ABN details for given contractor
+	 */
 	@Transactional
 	public void deleteByContractorId(BigInteger contractorId) {
 
@@ -60,6 +67,9 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 		entityManager.createQuery(delete).executeUpdate();
 	}
 	
+	/**
+	 * This method will return all ABN details of contractor.
+	 */
 	@Override
 	public List<ContractorABNDetailsEntity> getAllAbnDetailsByContractorId(BigInteger contractorId) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -72,7 +82,6 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 			predicates.add(cb.equal(contractAbn.get("contractorId"), contractorId));
 		List<ContractorABNDetailsEntity> contractorAbnList = null;
 		if (predicates.size() > 0) {
-			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(contractAbn).where(cb.and(predicates.toArray(predicatesArray)));
 			contractorAbnList = entityManager.createQuery(query).getResultList();
@@ -82,6 +91,36 @@ public class ContractorAbnDetailsCustomRepositoryImpl implements ContractorAbnDe
 
 		else
 			return new ArrayList<ContractorABNDetailsEntity>();
+	}
+	
+	
+	
+	@Override
+	public List<ContractorTFNDetailsEntity> getTfnByContractorId(BigInteger contractorId) {
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorTFNDetailsEntity> query = cb.createQuery(ContractorTFNDetailsEntity.class);
+		Root<ContractorTFNDetailsEntity> contractTfn = query.from(ContractorTFNDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		if (!ProfileParserUtils.isObjectEmpty(contractorId))
+			predicates.add(cb.equal(contractTfn.get("contractorId"), contractorId));
+		predicates.add(cb.equal(contractTfn.get("Id"), 33));
+		predicates.add(cb.equal(cb.upper(contractTfn.get("activeRecord")), "ACTIVE"));
+		List<ContractorTFNDetailsEntity> contractorTfnList = null;
+		if (predicates.size() > 0) {
+			/*
+			 * predicates.add( cb.equal(cb.upper(contractTfn.get("activeRecord")),
+			 * "ACTIVE"));
+			 */
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(contractTfn).where(cb.and(predicates.toArray(predicatesArray)));
+			contractorTfnList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(contractorTfnList))
+			return contractorTfnList;
+
+		else
+			return new ArrayList<ContractorTFNDetailsEntity>();
 	}
 
 }

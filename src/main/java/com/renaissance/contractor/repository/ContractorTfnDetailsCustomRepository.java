@@ -7,7 +7,7 @@ import com.renaissance.contractor.model.ContractorTFNDetailsEntity;
 
 public interface ContractorTfnDetailsCustomRepository {
 	ContractorTFNDetailsEntity getTfnDetailsByContractorId(BigInteger contractorId);
-	List<ContractorTFNDetailsEntity> getAllTfnDetailsByContractorId(BigInteger contractorId);
 	void deleteByContractorId(BigInteger contractorId);
+	List<ContractorTFNDetailsEntity> getAllTfnDetailsByContractorId(BigInteger contractorId);
 
 }

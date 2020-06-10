@@ -38,7 +38,6 @@ public class ContractorMVCController {
 
 	@GetMapping("/contractormain")
 	public String index(HttpServletRequest request) {
-		// logger.info("Bulk file upload Controller invoked");
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
 			return "redirect:/";
@@ -50,19 +49,27 @@ public class ContractorMVCController {
 			return "unauthorizedaccess";
 
 	}
-	
-	
+
+	/**
+	 * This method will call service method and create new contractor.
+	 * 
+	 * @param contractorDto
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/createContractor")
 	public ResponseEntity<?> createContractor(@RequestBody ContractorDetailsDTO contractorDto,
 			HttpServletRequest request) {
 		try {
 			logger.info("Create Contractor..,{}", contractorDto.getPersonalDetails().toString());
-			logger.info("Create Contractor Bank details..,{}", contractorDto.getBankList().get(0).toString());
-			logger.info("Create Contractor SA details..,{}", contractorDto.getSuperAnnuationList().get(0).toString());
-			logger.info("Create Contractor Employment details..,{}", contractorDto.getEmployerList().get(0).toString());
-			logger.info("Create Contractor Rate details..,{}", contractorDto.getRateList().get(0).toString());
-			logger.info("Create Contractor ABN details..,{}", contractorDto.getAbnList().get(0).toString());
-			logger.info("Create Contractor TFN details..,{}", contractorDto.getTfnList().get(0).toString());
+			logger.info("Create Contractor Bank details..,{}", contractorDto.getBankList().toString());
+			logger.info("Create Contractor SA details..,{}", contractorDto.getSuperAnnuationList().toString());
+			logger.info("Create Contractor Employment details..,{}", contractorDto.getEmployerList().toString());
+			logger.info("Create Contractor Rate details..,{}", contractorDto.getRateList().toString());
+			// logger.info("Create Contractor ABN details..,{}",
+			// contractorDto.getAbnList().toString());
+			// logger.info("Create Contractor TFN details..,{}",
+			// contractorDto.getTfnList().toString());
 
 			contractorDto = contractorService.createContractor(contractorDto,
 					request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME).toString());
@@ -77,6 +84,13 @@ public class ContractorMVCController {
 		return ResponseEntity.ok(contractorDto);
 	}
 
+	/**
+	 * This method will copy the selected file and return the path
+	 * 
+	 * @param file
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = "/copyCertificate", method = RequestMethod.POST)
 	public ResponseEntity<?> copySingleFile(@RequestParam("uploadedCertificate") MultipartFile file,
 			HttpServletRequest request) {
@@ -125,6 +139,14 @@ public class ContractorMVCController {
 		return ResponseEntity.ok(ProfileParserConstants.DEST_FOLDER + file.getOriginalFilename());
 	}
 
+	/**
+	 * This method will search contractor by the given criteria and return matching
+	 * records.
+	 * 
+	 * @param contractorSearchForm
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/searchContractors")
 	public ResponseEntity<?> searchContractors(@RequestBody ContractorSearchForm contractorSearchForm,
 			HttpServletRequest request) {
@@ -135,16 +157,15 @@ public class ContractorMVCController {
 			}
 
 			logger.info("Search details, {}", contractorSearchForm.toString());
-			
+
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
 		List<ContractorSearchResultsForm> contractors = contractorService
 				.getContractorSearchResults(contractorSearchForm);
-		
+
 		return new ResponseEntity<>(contractors, HttpStatus.OK);
 	}
 
-	
 }
