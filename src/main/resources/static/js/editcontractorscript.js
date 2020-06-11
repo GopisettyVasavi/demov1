@@ -352,24 +352,12 @@ function bankHistoryCheck(){
 				document.getElementById("bankHistory").checked=true;
 				$("#bh_div").show();
 				$("#bankHistorytable").show();
-	       /* var response=JSON.stringify(data);
-				alert("Contractor Search done Successfully..."+data.length);
-				$.each(data, function(i, item) {
-			        var $tr = $('<tr>').append(
-			            $('<td>').text(item.fullName),
-			            $('<td>').text(item.contractorId),
-			            $('<td>').text(item.mobilePhone)
-			        ).appendTo('#contractorTable');
-			       // console.log($tr.wrap('<p>').html());
-			    });*/
+	       
 				
 				var table=   $('#bankHistorytable').DataTable( {
-	       		 fixedHeader: true,
-	       		 responsive: true,
-	         	   destroy: true,
-	         	  orderCellsTop: true,
+	       		  destroy: true,	         	 
 	         	autoWidth: false,
-	         	searching: false,
+	         	searching: false,	         	
 	         	data: data,
 	                
 	                columns: [
@@ -379,9 +367,6 @@ function bankHistoryCheck(){
 	             	 { "data": 'additionalInfo', "name" : "additionalInfo" , "title" : "Additional Info"}]
 	                   
 	            } );
-				$('#bankHistorytable tfoot tr').appendTo('#bankHistorytable thead');
-	    	    
-	    	    $("#bankHistorytable tfoot tr").hide();
 				
 	     },
 	     error: function (e) {
@@ -403,6 +388,404 @@ function bankHistoryCheck(){
 		$("#bankHistorytable").hide();		
 		$("#bh_div").hide();
 		document.getElementById("bankHistory").checked=false;
+		
+	}
+}
+
+
+function saHistoryCheck(){
+
+if(document.getElementById("saHistory").checked){
+	document.getElementById("saHistory").checked=true;
+}
+if(document.getElementById("saHistory").checked){
+$('#sa_feedback').html("");
+  event.preventDefault();
+ var contractorId= $("#contractorId").val();
+ 
+ 
+  $.ajax({
+		type : "POST",
+		contentType : "application/json",		
+		url : "/sahistory/"+contractorId,
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+		success : function(data) {	
+			document.getElementById("saHistory").checked=true;
+			$("#sa_div").show();
+			$("#saHistorytable").show();
+     			
+			var table=   $('#saHistorytable').DataTable( {
+				 destroy: true,	         	 
+		         	autoWidth: false,
+		         	searching: false,
+         	data: data,
+                
+                columns: [
+             	   { "data": 'superAnnuationFundName', "name" : "superAnnuationFundName", "title" : "Fund Name"  },
+             	  { "data": 'superAnnuationMemberId', "name" : "superAnnuationMemberId" , "title" : "Member Id"},
+             	 { "data": 'additionalSuperAnnuationContributionFlag', "name" : "additionalSuperAnnuationContributionFlag" , "title" : "Additional Contribution?"},
+             	 { "data": 'additionalSuperAnnuationDetails', "name" : "additionalSuperAnnuationDetails" , "title" : "Details"}]
+                   
+            } );
+			
+			
+     },
+     error: function (e) {
+     	
+
+         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+             + e.responseText + "</pre>";
+         $('#bh_feedback').html(json);
+
+         console.log("ERROR : ", e);
+       
+
+     }
+ });
+}
+
+else{
+	$("#sa_feedback").hide();
+	$("#saHistorytable").hide();		
+	$("#sa_div").hide();
+	document.getElementById("saHistory").checked=false;
+	
+}
+
+}
+
+function abnHistoryCheck(){
+
+	if(document.getElementById("abnHistory").checked){
+		document.getElementById("abnHistory").checked=true;
+	}
+	if(document.getElementById("abnHistory").checked){
+	$('#abn_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	
+	 
+	// alert("ID;;; "+contractorId+" "+url);
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/abnhistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("abnHistory").checked=true;
+				$("#abn_div").show();
+				$("#abnHistorytable").show();	      
+				
+				var table=   $('#abnHistorytable').DataTable( {
+					 destroy: true,	         	 
+			         	autoWidth: false,
+			         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'abnNumber', "name" : "abnNumber", "title" : "ABN No"  },
+	             	  { "data": 'acnNumber', "name" : "acnNumber" , "title" : "ACN No"},
+	             	  { "data": 'abnGroup', "name" : "abnGroup" , "title" : "ABN Group"},
+	             	 { "data": 'companyName', "name" : "companyName" , "title" : "Comp Name"},
+	             	 { "data": 'companyAddress', "name" : "companyAddress" , "title" : "Comp Address"},
+	             	 { "data": 'companyCity', "name" : "companyCity" , "title" : "City"},
+	             	 { "data": 'companyState', "name" : "companyState" , "title" : "State"},
+	             	 { "data": 'gstRegistered', "name" : "gstRegistered" , "title" : "GST Registered?"},
+	             	 { "data": 'piPlFlag', "name" : "piPlFlag" , "title" : "PI/PL?"},
+	             	 { "data": 'workCoverFlag', "name" : "workCoverFlag" , "title" : "Work Cover?"}]
+	                   
+	            } );
+		
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#abn_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	}
+
+	else{
+		$("#abn_feedback").hide();
+		$("#abnHistorytable").hide();		
+		$("#abn_div").hide();
+		document.getElementById("abnHistory").checked=false;
+		
+	}
+
+	}
+
+function abnbankHistoryCheck(){
+	if(document.getElementById("abnbankHistory").checked){
+		document.getElementById("abnbankHistory").checked=true;
+	}
+	if(document.getElementById("abnbankHistory").checked){
+	$('#abnbank_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/bankhistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("abnbankHistory").checked=true;
+				$("#ab_div").show();
+				$("#abnbankHistorytable").show();
+	     
+				
+				var table=   $('#abnbankHistorytable').DataTable( {
+					 destroy: true,	         	 
+			         	autoWidth: false,
+			         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'accountName', "name" : "fullName", "title" : "Account Name"  },
+	             	  { "data": 'bsb', "name" : "bsb" , "title" : "BSB"},
+	             	 { "data": 'accountNumber', "name" : "accountNumber" , "title" : "Account No"},
+	             	 { "data": 'additionalInfo', "name" : "additionalInfo" , "title" : "Additional Info"}]
+	                   
+	            } );
+				
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#abnbank_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+
+	     }
+	 });
+	}
+	
+	else{
+		$("#abnbank_feedback").hide();
+		$("#abnbankHistorytable").hide();		
+		$("#ab_div").hide();
+		document.getElementById("abnbankHistory").checked=false;
+		
+	}
+}
+
+function tfnHistoryCheck(){
+	if(document.getElementById("tfnHistory").checked){
+		document.getElementById("tfnHistory").checked=true;
+	}
+	if(document.getElementById("tfnHistory").checked){
+	$('#th_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/tfnhistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("tfnHistory").checked=true;
+				$("#tfn_div").show();
+				$("#tfnHistorytable").show();
+				
+				var table=   $('#tfnHistorytable').DataTable( {
+					 destroy: true,	         	 
+			         	autoWidth: false,
+			         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'tfnNumber', "name" : "tfnNumber", "title" : "TFN No"  },
+	             	  { "data": 'newApplicationFlag', "name" : "newApplicationFlag" , "title" : "New Appln?"},
+	             	 { "data": 'underAgeExemptionFlag', "name" : "underAgeExemptionFlag" , "title" : "Under Age?"},
+	             	 { "data": 'pensionHolderFlag', "name" : "pensionHolderFlag" , "title" : "Pension Holder?"},
+	             	 { "data": 'employmentType', "name" : "employmentType" , "title" : "Employment Type"},
+	             	 { "data": 'taxPayerType', "name" : "taxPayerType" , "title" : "Tax Payer Type"},
+	             	 { "data": 'taxFreeThresholdFlag', "name" : "taxFreeThresholdFlag" , "title" : "Tax Free Threshold?"},
+	             	 { "data": 'loanFlag', "name" : "loanFlag" , "title" : "Has Loan?"},
+	             	 { "data": 'financialShipmentDebtFlag', "name" : "financialShipmentDebtFlag" , "title" : "Financial Shipment Debt?"},
+	             	 { "data": 'additionalInfo', "name" : "additionalInfo" , "title" : "Additional Info"}]
+	                   
+	            } );
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#th_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	}
+	
+	else{
+		$("#th_feedback").hide();
+		$("#tfnHistorytable").hide();		
+		$("#tfn_div").hide();
+		document.getElementById("tfnHistory").checked=false;
+		
+	}
+}
+
+function empHistoryCheck(){
+	if(document.getElementById("empHistory").checked){
+		document.getElementById("empHistory").checked=true;
+	}
+	if(document.getElementById("empHistory").checked){
+	$('#eh_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/emphistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("empHistory").checked=true;
+				$("#emp_div").show();
+				$("#empHistorytable").show();
+	      
+				
+				var table=   $('#empHistorytable').DataTable( {
+					 destroy: true,	         	 
+			         	autoWidth: false,
+			         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'clientName', "name" : "clientName", "title" : "Client Name"  },
+	             	  { "data": 'endClientName', "name" : "endClientName" , "title" : "End Client Name"},
+	             	 { "data": 'contractNumber', "name" : "contractNumber" , "title" : "Contract No"},
+	             	 { "data": 'workLocationAddress', "name" : "workLocationAddress" , "title" : "Work Location Address"},
+	             	 { "data": 'workLocationCity', "name" : "workLocationCity" , "title" : "City"},
+	             	 { "data": 'workLocationState', "name" : "workLocationState" , "title" : "State"},
+	             	 { "data": 'workLocationCountry', "name" : "workLocationCountry" , "title" : "Country"},
+	             	 { "data": 'jobRole', "name" : "jobRole" , "title" : "Job Role"},
+	             	 { "data": 'employmentType', "name" : "employmentType" , "title" : "Employment Type"},
+	             	 { "data": 'jobStartDate', "name" : "jobStartDate" , "title" : "Work Start Date"},
+	             	 { "data": 'jobEndDate', "name" : "jobEndDate" , "title" : "Work End Date"},
+	             	 { "data": 'lastWorkingDate', "name" : "lastWorkingDate" , "title" : "Last Working Date"},
+	             	 { "data": 'finishedClient', "name" : "finishedClient" , "title" : "Finished Client?"},
+	             	 { "data": 'recruiterName', "name" : "recruiterName" , "title" : "Recruiter Name"}]
+	                   
+	            } );
+			
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#eh_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	}
+	
+	else{
+		$("#eh_feedback").hide();
+		$("#empHistorytable").hide();		
+		$("#emp_div").hide();
+		document.getElementById("empHistory").checked=false;
+		
+	}
+}
+
+function rateHistoryCheck(){
+	
+	//$("#rh").hide();
+	if(document.getElementById("rateHistory").checked){
+		document.getElementById("rateHistory").checked=true;
+	}
+	if(document.getElementById("rateHistory").checked){
+	$('#rh_feedback').html("");
+	  event.preventDefault();
+	 var contractorId= $("#contractorId").val();
+	
+	  $.ajax({
+			type : "POST",
+			contentType : "application/json",		
+			url : "/ratehistory/"+contractorId,
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {	
+				document.getElementById("rateHistory").checked=true;
+				$("#rate_div").show();
+				$("#rateHistorytable").show();
+	      
+				
+				var table=   $('#rateHistorytable').DataTable( {
+	       		
+	         	   destroy: true,	         	 
+	         	autoWidth: false,
+	         	searching: false,
+	         	data: data,
+	                
+	                columns: [
+	             	   { "data": 'ratePerDay', "name" : "ratePerDay", "title" : "Rate Per Day"  },
+	             	  { "data": 'billRatePerDay', "name" : "billRatePerDay" , "title" : "Bill Rate"},
+	             	 { "data": 'rateStartDate', "name" : "rateStartDate" , "title" : "Start Date"},
+	             	 { "data": 'rateEndDate', "name" : "rateEndDate" , "title" : "End Date"},
+	             	 { "data": 'includeSuperFlag', "name" : "includeSuperFlag" , "title" : "Super Included?"},
+	             	 { "data": 'payrollTaxPaymentFlag', "name" : "payrollTaxPaymentFlag" , "title" : "Payroll Tax Paid?"},
+	             	 { "data": 'workCoverFlag', "name" : "workCoverFlag" , "title" : "Work Cover?"},
+	             	 { "data": 'insurancePercentage', "name" : "insurancePercentage" , "title" : "Insurance"},
+	             	 { "data": 'otherDeductionPercentage', "name" : "otherDeductionPercentage" , "title" : "Other Deduction"},
+	             	 { "data": 'netMargin', "name" : "netMargin" , "title" : "Net Margin"}]
+	                   
+	            } );
+			
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "<h4>Response Error:Error occured while searching for contractors.</h4><pre>"
+	             + e.responseText + "</pre>";
+	         $('#rh_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	}
+	
+	else{
+		$("#rh_feedback").hide();
+		$("#rateHistorytable").hide();		
+		$("#rate_div").hide();
+		document.getElementById("rateHistory").checked=false;
 		
 	}
 }

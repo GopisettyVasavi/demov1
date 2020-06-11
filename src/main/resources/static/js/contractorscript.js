@@ -726,10 +726,9 @@ function contractorSearch(){
 		    });*/
 			
 			var table=   $('#contractorTable').DataTable( {
-       		 fixedHeader: true,
-       		 responsive: true,
+       		 
          	   destroy: true,
-         	  orderCellsTop: true,
+         	  
          	autoWidth: false,
          	/*targets: 'no-sort',
          	bSort: false,

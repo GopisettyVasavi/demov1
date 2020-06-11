@@ -8,7 +8,7 @@ public class ContractorEmploymentDetailsDTO {
 	private String endClientName;
 	private String contractNumber;
 	private String workLocationAddress;
-	private String workLocationCity;;
+	private String workLocationCity;
 	private String workLocationState;
 	private BigInteger workLocationZipCode;
 	private String workLocationCountry;

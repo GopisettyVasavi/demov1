@@ -653,12 +653,31 @@
 																					
 																			</div>		
 																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View Super Annuation History?</label>
+																					<input  type="checkbox"  id="saHistory" name="saHistory" 
+																					onclick="saHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
 																			<div class="col-sm-12" id="bh_div" >
 							<div id="bh_feedback"></div>
 			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
 		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
 			
 	<table id="bankHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+							<div class="col-sm-12" id="sa_div" >
+							<div id="sa_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="saHistorytable" class="display">
 
 			</table>
 			</div>
@@ -943,6 +962,51 @@
 																						th:field="${contractor.abnList.additionalInfo}"></textarea>
 																				</div>
 																			</div>	
+																			
+																			<!-- History Start -->
+																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View ABN History?</label>
+																					<input  type="checkbox"  id="abnHistory" name="abnHistory" 
+																					onclick="abnHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View Bank History?</label>
+																					<input  type="checkbox"  id="abnbankHistory" name="abnbankHistory" 
+																					onclick="abnbankHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-12" id="abn_div" >
+							<div id="abn_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="abnHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+							<div class="col-sm-12" id="ab_div" >
+							<div id="abnbank_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="abnbankHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+																			
+																			
+																			<!-- History end -->
+																			
 																		</div>
 																		<div id="abn_feedback"></div>
 																	</form>
@@ -1140,14 +1204,32 @@
 																						th:field="${contractor.tfnList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
-																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View TFN History?</label>
+																					<input  type="checkbox"  id="tfnHistory" name="tfnHistory" 
+																					onclick="tfnHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-12" id="tfn_div" >
+							<div id="th_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="tfnHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>	
 																		</div>
 																		<div id="tfn_feedback"></div>
 																	</form>
 																</div>
 															</div>
 														</div>
-														
+													
 													</div>
 													<!--  Accordian 5 -->
 													<div class="card">
@@ -1550,6 +1632,48 @@
 																						name="Additional Info" th:field="${contractor.employerList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
+																			
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View Employment History?</label>
+																					<input  type="checkbox"  id="empHistory" name="empHistory" 
+																					onclick="empHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-4">
+																			<div class="form-group">
+																					<label for="name" style="font-weight:bold">View Rate History?</label>
+																					<input  type="checkbox"  id="rateHistory" name="rateHistory" 
+																					onclick="rateHistoryCheck()" />
+																					
+																			</div>		
+																			</div>
+																			<div class="col-sm-12" id="emp_div" >
+							<div id="eh_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="empHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>	
+							
+							<div class="col-sm-12" id="rate_div" >
+							<div id="rh_feedback"></div>
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="rateHistorytable" class="display">
+
+			</table>
+			</div>
+								
+							</div>	
+																			
+																			
 																			
 																		</div>
 																		<div id="emp_feedback"></div>

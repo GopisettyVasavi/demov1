@@ -122,32 +122,9 @@ function clickonsearch(){
         cache: false,
         timeout: 600000,
         success: function (data) {
-        	 /*
-            // DataTable
+        	 // DataTable
         	 var table=   $('#paginatedTable').DataTable( {
-            	   destroy: true,
-            	  orderCellsTop: true,
-     	        fixedHeader: true,
-                   data: data,
-                   
-                   columns: [
-                	   { "data": 'candidateName', "name" : "Name", "title" : "Name"  },
-                       { "data": 'primaryEmail', "name" : "Email" , "title" : "Email"},
-                       { "data": 'primaryPhone', "name" : "ContactNo" , "title" : "ContactNo"},
-                       { "data": 'skills', "name" : "Skill" , "title" : "Skill"},
-                       { "data": 'availability', "name" : "availability" , "title" : "Availability"},
-                       { "data": 'assignedToEmployeeName', "name" : "AssignedTo" , "title" : "Assigned To"}]
-                      
-               } );*/
-        	
-        	 $('#paginatedTable tfoot th').each( function () {
-        	        var title = $(this).text();
-        	        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-        	    } );
-        
-        	    // DataTable
-        	 var table=   $('#paginatedTable').DataTable( {
-        		 fixedHeader: true,
+        		 
         		 responsive: true,
           	   destroy: true,
           	  orderCellsTop: true,
@@ -195,11 +172,14 @@ function clickonsearch(){
         	        column.visible( ! column.visible() );
         	    } );
         	 */
+        	 $('#paginatedTable tfoot th').each( function () {
+     	        var title = $(this).text();
+     	        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+     	    } );
         	 
         	 
         	 
-        	 
-        	  $("#table_foot").hide();
+        	//  $("#table_foot").hide();
         	    // Apply the search
         	    table.columns().every( function () {
         	        var that = this;

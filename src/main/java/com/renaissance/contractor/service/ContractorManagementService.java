@@ -734,6 +734,19 @@ public class ContractorManagementService {
 				for (ContractorABNDetailsEntity abnVo : abnVoList) {
 					ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
 					BeanUtils.copyProperties(abnVo, abnDto);
+					if(abnDto.getGstRegistered().equalsIgnoreCase("true"))
+						abnDto.setGstRegistered("Yes");
+					if(abnDto.getGstRegistered().equalsIgnoreCase("false"))
+						abnDto.setGstRegistered("No");
+					if(abnDto.getPiPlFlag().equalsIgnoreCase("true"))
+						abnDto.setPiPlFlag("Yes");
+					if(abnDto.getPiPlFlag().equalsIgnoreCase("false"))
+						abnDto.setPiPlFlag("No");
+					if(abnDto.getWorkCoverFlag().equalsIgnoreCase("true"))
+							abnDto.setWorkCoverFlag("Yes");
+						if(abnDto.getWorkCoverFlag().equalsIgnoreCase("false"))
+							abnDto.setWorkCoverFlag("No");
+					
 					abnlist.add(abnDto);
 				}
 
@@ -758,6 +771,28 @@ public class ContractorManagementService {
 				for (ContractorTFNDetailsEntity tfnVo : tfnVoList) {
 					ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
 					BeanUtils.copyProperties(tfnVo, tfnDto);
+					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase("true"))
+						tfnDto.setNewApplicationFlag("Yes");
+					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase("false"))
+						tfnDto.setNewApplicationFlag("No");
+					
+					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase("true"))
+						tfnDto.setUnderAgeExemptionFlag("Yes");
+					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase("false"))
+						tfnDto.setUnderAgeExemptionFlag("No");
+					
+					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase("true"))
+						tfnDto.setPensionHolderFlag("Yes");
+					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase("false"))
+						tfnDto.setPensionHolderFlag("No");
+					
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase("PR"))
+						tfnDto.setTaxPayerType("Australian Resident");
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase("Foreign Resident"))
+						tfnDto.setTaxPayerType("Foreign Resident");
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase("WorkingHoliday"))
+						tfnDto.setTaxPayerType("Working Holiday Maker");
+					
 					tfnlist.add(tfnDto);
 				}
 
@@ -782,6 +817,20 @@ public class ContractorManagementService {
 				for (ContractorRateDetailsEntity rateVo : rateVoList) {
 					ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
 					BeanUtils.copyProperties(rateVo, rateDto);
+					
+					if(rateDto.getIncludeSuperFlag().equalsIgnoreCase("true"))
+						rateDto.setIncludeSuperFlag("Yes");
+					else if(rateDto.getIncludeSuperFlag().equalsIgnoreCase("false"))
+						rateDto.setIncludeSuperFlag("No");
+					if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase("true"))
+						rateDto.setPayrollTaxPaymentFlag("Yes");
+					else if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase("false"))
+						rateDto.setPayrollTaxPaymentFlag("No");
+					if(rateDto.getWorkCoverFlag().equalsIgnoreCase("true"))
+						rateDto.setWorkCoverFlag("Yes");
+					else if(rateDto.getWorkCoverFlag().equalsIgnoreCase("false"))
+						rateDto.setWorkCoverFlag("No");
+					
 					ratelist.add(rateDto);
 				}
 
@@ -806,6 +855,12 @@ public class ContractorManagementService {
 				for (ContractorEmploymentDetailsEntity empVo : empVoList) {
 					ContractorEmploymentDetailsDTO empDto = new ContractorEmploymentDetailsDTO();
 					BeanUtils.copyProperties(empVo, empDto);
+					if(empDto.getFinishedClient().equalsIgnoreCase("true"))
+						empDto.setFinishedClient("Yes");
+					else if(empDto.getFinishedClient().equalsIgnoreCase("false"))
+						empDto.setFinishedClient("No");
+					if(empDto.getWorkLocationCountry().equalsIgnoreCase("Other"))
+						empDto.setWorkLocationCountry(empDto.getWlOtherCountry());
 					emplist.add(empDto);
 				}
 
@@ -814,6 +869,7 @@ public class ContractorManagementService {
 		
 		return emplist;
 	}
+	
 	
 	/**
 	 * This method will return the history of all previous Super annuation records for the given contractor
@@ -830,6 +886,10 @@ public class ContractorManagementService {
 				for (ContractorSuperAnnuationDetailsEntity saVo : saVoList) {
 					ContractorSuperAnnuationDetailsDTO saDto = new ContractorSuperAnnuationDetailsDTO();
 					BeanUtils.copyProperties(saVo, saDto);
+					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase("true"))
+						saDto.setAdditionalSuperAnnuationContributionFlag("Yes");
+					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase("false"))
+						saDto.setAdditionalSuperAnnuationContributionFlag("No");
 					salist.add(saDto);
 				}
 
