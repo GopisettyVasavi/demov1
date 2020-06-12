@@ -13,6 +13,7 @@ public class ContractorSearchForm {
 	String recruiterName;
 	String jobStartDate;
 	String jobEndDate;
+	String abnHolder;
 	public String getContractorName() {
 		return contractorName;
 	}
@@ -67,11 +68,18 @@ public class ContractorSearchForm {
 	public void setJobEndDate(String jobEndDate) {
 		this.jobEndDate = jobEndDate;
 	}
+	
+	public String getAbnHolder() {
+		return abnHolder;
+	}
+	public void setAbnHolder(String abnHolder) {
+		this.abnHolder = abnHolder;
+	}
 	@Override
 	public String toString() {
 		return "ContractorSearchForm [contractorName=" + contractorName + ", clientName=" + clientName
 				+ ", endClientName=" + endClientName + ", workLocationState=" + workLocationState + ", role=" + role
-				+ ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + ", jobStartDate=" + jobStartDate
+				+ ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + ", abnHolder=" + abnHolder+ ", jobStartDate=" + jobStartDate
 				+ ", jobEndDate=" + jobEndDate + "]";
 	}
 	

@@ -87,7 +87,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 	 * This method will search contractors for the given full name
 	 */
 
-	public List<ContractorPersonalDetailsEntity> searchContractors(String fullName) {
+	public List<ContractorPersonalDetailsEntity> searchContractors(String fullName, String abnHolder) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorPersonalDetailsEntity> query = cb.createQuery(ContractorPersonalDetailsEntity.class);
 		Root<ContractorPersonalDetailsEntity> contractorPersonal = query.from(ContractorPersonalDetailsEntity.class);
@@ -95,6 +95,8 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(fullName))
 			predicates.add(cb.like(cb.upper(contractorPersonal.get("fullName")), "%" + fullName.toUpperCase() + "%"));
+		if (!ProfileParserUtils.isObjectEmpty(abnHolder))
+			predicates.add(cb.like(cb.upper(contractorPersonal.get("abnHolder")), "%" + abnHolder.substring(4).toUpperCase() + "%"));
 
 		if (predicates.size() > 0) {
 			Predicate[] predicatesArray = new Predicate[predicates.size()];

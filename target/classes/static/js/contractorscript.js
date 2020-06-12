@@ -679,7 +679,7 @@ function contractorSearch(){
 	  event.preventDefault();
 	      if($("#contractorName_s").val()=="" && $("#clientName_s").val()==""&& $("#endClientName_s").val()=="" 
 	    	  && $("#workLocationState_s").val() =="none" && $("#role_s").val()=="" && $("#recruiter_s").val()=="none" 
-	        	&&	$("#jobStartDate_s").val() =="" && $("#jobEndDate_s").val()=="" ){
+	        	&&	$("#jobStartDate_s").val() =="" && $("#jobEndDate_s").val()=="" && $("#abnholder_s").val()=="none"){
 	    	  document.getElementById("search_feedback").style.color = "red";
 	    	  $('#search_feedback').html("Please enter at least one value to search contractors.");
 	        	//alert("Please enter at least one value to search profiles.");
@@ -702,7 +702,10 @@ function contractorSearch(){
   if($("#workLocationState_s").val()!="none"){
 	  contractorSearchForm["workLocationState"] = $("#workLocationState_s").val();
 	  }
-	        
+  if($("#abnholder_s").val()!="none"){
+	  contractorSearchForm["abnHolder"] = $("#abnholder_s").val();
+	  }
+	     
   $.ajax({
 		type : "POST",
 		contentType : "application/json",		

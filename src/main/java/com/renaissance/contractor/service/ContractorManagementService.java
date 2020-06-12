@@ -351,7 +351,7 @@ public class ContractorManagementService {
 	public List<ContractorSearchResultsForm> getContractorSearchResults(ContractorSearchForm searchForm) {
 
 		List<ContractorPersonalDetailsEntity> personalDetails = contractorPersonal
-				.searchContractors(searchForm.getContractorName());
+				.searchContractors(searchForm.getContractorName(), searchForm.getAbnHolder());
 		logger.info("Search Results personal table, {}", personalDetails.size());
 		List<BigInteger> contractorIdList = new ArrayList<BigInteger>();
 		List<ContractorSearchResultsForm> contractorSearchResults = new ArrayList<ContractorSearchResultsForm>();
