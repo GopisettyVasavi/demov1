@@ -84,7 +84,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 	}
 
 	/**
-	 * This method will search contractors for the given full name
+	 * This method will search contractors for the given full name and abn holder status
 	 */
 
 	public List<ContractorPersonalDetailsEntity> searchContractors(String fullName, String abnHolder) {
@@ -95,6 +95,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (!ProfileParserUtils.isObjectEmpty(fullName))
 			predicates.add(cb.like(cb.upper(contractorPersonal.get("fullName")), "%" + fullName.toUpperCase() + "%"));
+		
 		if (!ProfileParserUtils.isObjectEmpty(abnHolder))
 			predicates.add(cb.like(cb.upper(contractorPersonal.get("abnHolder")), "%" + abnHolder.substring(4).toUpperCase() + "%"));
 

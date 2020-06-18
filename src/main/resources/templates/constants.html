@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Renaissance</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- header-start -->
+<header>
+	<div class="header-area ">
+		<div class="col-xl-3 col-lg-2">
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+
+				</a> <a style="text-align: right; padding-left: 1250px;" href="logout"
+					onclick="cleardata()">Logout</a>
+			</div>
+		</div>
+
+	</div>
+</header>
+<!-- header-end -->
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="bradcam_text">
+					<h3>Meta data</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ bradcam_area  -->
+<body >
+
+	<div class="col-lg-12">
+		<form class="form-contact contact_form" id="indexform">
+
+
+			<div class="container">
+
+				<div class="row">
+					
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">New South
+								Wales *</label> <input type="text" name="name"
+								placeholder="New South Wales"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="nsw" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Victoria *</label> <input type="text" name="name"
+								placeholder="Victoria"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="vic" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Western Australia *</label> <input type="text" name="name"
+								placeholder="Western Australia"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="wa" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Queens Land *</label> <input type="text" name="name"
+								placeholder="Queens Land"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="qld" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div><div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Tasmania *</label> <input type="text" name="name"
+								placeholder="Western Australia"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="tas" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">South Australia *</label> <input type="text" name="name"
+								placeholder="Western Australia"
+								onfocus="this.placeholder = 'FirstName'"
+								onblur="this.placeholder = 'First Name'" class="single-input"
+								id="sa" required 
+								title="Six or more characters"
+								>
+						</div>
+					</div>
+
+<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+<div class="form-group" >
+                
+                    <button type="submit" id="btn-login"
+                            class="button button-contactForm boxed-btn" onclick="clickonsave()">Save
+                    </button>
+                </div>
+            </div>
+</div>
+				</div>
+				</div>
+				
+
+
+			</div>
+
+		</form>
+
+		<div id="feedback"></div>
+	</div>
+
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/ajax-form.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/scrollIt.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/nice-select.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/gijgo.min.js"></script>
+
+	<!--contact js-->
+	<script src="js/contact.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/mail-script.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+	function clickonsave(){
+		event.preventDefault();
+		var constantsDTO={}
+		constantsDTO["nsw"]=$("#nsw").val();
+		constantsDTO["vic"]=$("#vic").val();
+		constantsDTO["sa"]=$("#sa").val();
+		constantsDTO["wa"]=$("#wa").val();
+		constantsDTO["tas"]=$("#tas").val();
+		constantsDTO["qld"]=$("#qld").val();
+		alert(constantsDTO);
+		 $.ajax({
+				type : "POST",
+				contentType : "application/json",		
+				url : "/updateconstants",
+				data : JSON.stringify(constantsDTO),
+				dataType : 'json',
+				cache : false,
+				timeout : 600000,
+				success : function(data) {						
+		      alert("Constants updated Successfully.");
+		     },
+		     error: function (e) {
+		     	
+
+		         var json = "<h4>Response Error:Error occured while updating.</h4><pre>"
+		             + e.responseText + "</pre>";
+		         $('#feedback').html(json);
+
+		         console.log("ERROR : ", e);
+		        // $("#btn-search").prop("disabled", false);
+
+		     }
+		 });
+		}
+		
+	
+	function initialize(){
+		
+	}
+/* function initialize(){
+	$('#feedback').html("");
+	$("#parserdiv").hide();
+    $("#contractordiv").hide();
+    $("#bulkfileuploaddiv").hide();
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/indexload",
+	         cache: false,
+	        timeout: 600000,
+	        success: function (data) {
+	        	
+	          // window.location='/changepassword'
+	        	renderLinksByRole(data);
+
+	        },
+	        error: function (e) {
+	        	 var json = "<h4>Response Error: Error in redirecting.";
+	             $('#feedback').html(json);
+
+	        }
+	    }); 
+	//alert(document.getElementById("employeeName").value);
+	
+}*/
+
+ </script>
+	<script src="js/idle_timeout.js"></script>
+</body>
+</html>

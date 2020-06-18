@@ -83,7 +83,13 @@
 					</h5>
 
 				</div>
+				<div class="row" id="constantsdiv" >
+					<h5>
+						<a href="#" onclick="openConstantsDef()"
+							style="text-decoration: underline;"> Constants</a>
+					</h5>
 
+				</div>
 			</div>
 
 		</form>
@@ -130,22 +136,26 @@
 	         $("#parserdiv").hide();
 	         $("#contractordiv").hide();
 	         $("#bulkfileuploaddiv").hide();
+	         $("#constantsdiv").hide();
 		}
 		if(role=="Recruiter"){
 						//alert("rec");
 	         $("#parserdiv").show();
 	         $("#contractordiv").hide();
 	         $("#bulkfileuploaddiv").hide();
+	         $("#constantsdiv").hide();
 		}
 		if(role=="Data Entry Operator"){
 			 $("#parserdiv").hide();
 	         $("#contractordiv").hide();
+	         $("#constantsdiv").hide();
 	         $("#bulkfileuploaddiv").show();
 		}
 		if(role=="Admin"){
 			 $("#parserdiv").show();
 	         $("#contractordiv").show();
 	         $("#bulkfileuploaddiv").show();
+	         $("#constantsdiv").show();
 		}
 	}
 function initialize(){
@@ -153,6 +163,7 @@ function initialize(){
 	$("#parserdiv").hide();
     $("#contractordiv").hide();
     $("#bulkfileuploaddiv").hide();
+    $("#constantsdiv").hide();
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
@@ -182,6 +193,9 @@ function openContractorManagement(){
 }
 function openBulkFileUpload(){
 	window.location='/bulkfileupload'
+}
+function openConstantsDef(){
+	window.location='/constantsdef'
 }
  </script>
 <script src="js/idle_timeout.js"></script>
