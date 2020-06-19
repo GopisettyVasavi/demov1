@@ -16,6 +16,12 @@ public class ProfileParserConstants {
 	public final static String ADMIN="Admin";
 	public final static String ACTIVE="Active";
 	public final static String INACTIVE="InActive";
+	public final static String NSW="NSW";
+	public final static String QLD="QLD";
+	public final static String SA="SA";
+	public final static String WA="WA";
+	public final static String TAS="TAS";
+	public final static String VIC="VIC";
 	//public final static String PATH_TO_VIEW_FILE = "E:\profileparser\temp\";
 	
 

@@ -44,7 +44,7 @@ public class ConstantsMVCController {
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
-					.body(" An issue in creating contract. Please try again. \n" + e.getMessage());
+					.body(" An issue in creating constants. Please try again. \n" + e.getMessage());
 		}
 		
 		return new ResponseEntity<>(constantsDto, HttpStatus.OK);
@@ -57,10 +57,10 @@ public class ConstantsMVCController {
 		try {
 			
 			 constantsDto=constantsService.getConstants();
-			
+			logger.info("Constants values from DB,{} ",constantsDto.toString());
 			// contractorDto.getPersonalDetails().setL
 		} catch (Exception e) {
-			logger.error("Error in Creating constants,{}", e.getMessage());
+			logger.error("Error in loading constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
 					.body(" An issue in creating contract. Please try again. \n" + e.getMessage());
 		}

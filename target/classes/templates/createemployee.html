@@ -198,14 +198,14 @@
 						
 								</div>
 							</div>
-							
+							<div class="col-sm-12" style="padding-top: 10px"></div>
 							<div class="col-sm-12">
 								<div class="form-group text-center">
 									<input type="submit"
 										class="button button-contactForm boxed-btn" onclick="clickonsave()" value="Register"/>
 										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" > 
 										<button type="submit"
-										class="button button-contactForm boxed-btn" onclick="javascript:history.go(-1);return false;">Back</button>
+										class="button button-contactForm boxed-btn" onclick="window.location = '/' ">Back</button>
 										
 								</div>
 							</div>
@@ -213,7 +213,9 @@
 							
 						
 					</form>
-					<div id="feedback"></div>
+					<div class="col-sm-12" style="padding-top: 10px"></div>
+					
+					<div id="feedback" style="padding-left: 400px; color: red"></div>
 				</div>
 
  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -285,7 +287,7 @@ $(document).ready(function(){
 	 if($("#employeeName").val().length==0||$("#applogin").val().length==0||$("#apppassword").val().length==0 |$("#role").val()=='none'){
 		// alert("Validation error"+$("#role").val());
 		// var json = "<h4>Validation error: Please input manadatory fields.</h4>";
-         $('#feedback').html("<h4>Validation error: Please input manadatory fields.</h4>");
+		 $('#feedback').html("Validation error: Please input manadatory fields.");
          event.preventDefault();
          return false;
 	 }

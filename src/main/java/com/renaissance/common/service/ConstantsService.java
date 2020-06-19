@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.model.AppConstantsEntity;
 import com.renaissance.common.repository.AppConstantsRepository;
+import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
 @Service
@@ -20,27 +21,27 @@ public ConstantsDTO saveConstants(ConstantsDTO constants) {
 		if(!ProfileParserUtils.isObjectEmpty(entities)) {
 			for(AppConstantsEntity constant: entities) {
 				if(!ProfileParserUtils.isObjectEmpty(constant)) {
-					if(constant.getConstantName().equalsIgnoreCase("NSW")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.NSW)) {
 						constant.setConstantValue(constants.getNsw());
 						constantsRepository.save(constant);
 					}
-					if(constant.getConstantName().equalsIgnoreCase("WA")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.WA)) {
 						constant.setConstantValue(constants.getWa());
 						constantsRepository.save(constant);
 					}
-					if(constant.getConstantName().equalsIgnoreCase("SA")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SA)) {
 						constant.setConstantValue(constants.getSa());
 						constantsRepository.save(constant);
 					}
-					if(constant.getConstantName().equalsIgnoreCase("TAS")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.TAS)) {
 						constant.setConstantValue(constants.getTas());
 						constantsRepository.save(constant);
 					}
-					if(constant.getConstantName().equalsIgnoreCase("QLD")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.QLD)) {
 						constant.setConstantValue(constants.getQld());
 						constantsRepository.save(constant);
 					}
-					if(constant.getConstantName().equalsIgnoreCase("VIC")) {
+					if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.VIC)) {
 						constant.setConstantValue(constants.getVic());
 						constantsRepository.save(constant);
 					}
@@ -70,6 +71,32 @@ public ConstantsDTO saveConstants(ConstantsDTO constants) {
 }
 
 public ConstantsDTO getConstants() {
-	return null;
+	ConstantsDTO constantsDto= new ConstantsDTO();
+	Iterable<AppConstantsEntity> entities =constantsRepository.findAll();
+	if(!ProfileParserUtils.isObjectEmpty(entities)) {
+		for(AppConstantsEntity constant: entities) {
+			if(!ProfileParserUtils.isObjectEmpty(constant)) {
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.NSW)) {
+					constantsDto.setNsw(constant.getConstantValue());
+				}
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.WA)) {
+					constantsDto.setWa(constant.getConstantValue());
+				}
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.QLD)) {
+					constantsDto.setQld(constant.getConstantValue());
+				}
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.VIC)) {
+					constantsDto.setVic(constant.getConstantValue());
+				}
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SA)) {
+					constantsDto.setSa(constant.getConstantValue());
+				}
+				if(constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.TAS)) {
+					constantsDto.setTas(constant.getConstantValue());
+				}
+			}
+		}
+	}
+	return constantsDto;
 }
 }
