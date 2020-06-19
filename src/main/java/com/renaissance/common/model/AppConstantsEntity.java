@@ -1,7 +1,5 @@
 package com.renaissance.common.model;
 
-import java.math.BigInteger;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +22,7 @@ public class AppConstantsEntity {
 	private String constantName;
 	
 	@Column(name = "\"CONSTANT_VALUE\"")
-	private BigInteger constantValue;
+	private Double constantValue;
 
 	public Integer getId() {
 		return Id;
@@ -42,11 +40,11 @@ public class AppConstantsEntity {
 		this.constantName = constantName;
 	}
 
-	public BigInteger getConstantValue() {
+	public Double getConstantValue() {
 		return constantValue;
 	}
 
-	public void setConstantValue(BigInteger constantValue) {
+	public void setConstantValue(Double constantValue) {
 		this.constantValue = constantValue;
 	}
 

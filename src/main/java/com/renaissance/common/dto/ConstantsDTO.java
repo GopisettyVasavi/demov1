@@ -1,49 +1,48 @@
 package com.renaissance.common.dto;
 
-import java.math.BigInteger;
 
 public class ConstantsDTO {
 	
-	private BigInteger nsw;
-	private BigInteger vic;
-	private BigInteger sa;
-	private BigInteger wa;
-	private BigInteger tas;
-	private BigInteger qld;
-	public BigInteger getNsw() {
+	private Double nsw;
+	private Double vic;
+	private Double sa;
+	private Double wa;
+	private Double tas;
+	private Double qld;
+	public Double getNsw() {
 		return nsw;
 	}
-	public void setNsw(BigInteger nsw) {
+	public void setNsw(Double nsw) {
 		this.nsw = nsw;
 	}
-	public BigInteger getVic() {
+	public Double getVic() {
 		return vic;
 	}
-	public void setVic(BigInteger vic) {
+	public void setVic(Double vic) {
 		this.vic = vic;
 	}
-	public BigInteger getSa() {
+	public Double getSa() {
 		return sa;
 	}
-	public void setSa(BigInteger sa) {
+	public void setSa(Double sa) {
 		this.sa = sa;
 	}
-	public BigInteger getWa() {
+	public Double getWa() {
 		return wa;
 	}
-	public void setWa(BigInteger wa) {
+	public void setWa(Double wa) {
 		this.wa = wa;
 	}
-	public BigInteger getTas() {
+	public Double getTas() {
 		return tas;
 	}
-	public void setTas(BigInteger tas) {
+	public void setTas(Double tas) {
 		this.tas = tas;
 	}
-	public BigInteger getQld() {
+	public Double getQld() {
 		return qld;
 	}
-	public void setQld(BigInteger qld) {
+	public void setQld(Double qld) {
 		this.qld = qld;
 	}
 	@Override

@@ -121,9 +121,12 @@
 					<div class="col-sm-4">
 						<div class="form-group">
 
-							<button type="submit" id="btn-login"
+							<button type="submit" id="btn-save"
 								class="button button-contactForm boxed-btn"
 								onclick="clickonsave()">Save</button>
+								<a href="#" type="submit" id="btn-back"
+								class="button button-contactForm boxed-btn"
+								onclick="goBack()" style="padding-left: 5px; padding-right: 5px;padding-top: 1px;padding-bottom: 1px">Back</a>
 						</div>
 					</div>
 				</div>
@@ -170,6 +173,11 @@
 	<script src="js/main.js"></script>
 
 	<script type="text/javascript">
+	function goBack(){
+		//alert('test');
+		window.location='/index'
+
+	}
 		function clickonsave() {
 			$('#feedback').html("");
 			
