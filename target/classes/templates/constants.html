@@ -73,7 +73,7 @@
 							<label for="name" style="font-weight: bold">New South
 								Wales *</label> <input type="text" name="name"
 								placeholder="New South Wales" class="single-input" id="nsw"
-								required title="Six or more characters">
+								required  >
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -81,7 +81,7 @@
 							<label for="name" style="font-weight: bold">Victoria *</label> <input
 								type="text" name="name" placeholder="Victoria"
 								class="single-input" id="vic" required
-								title="Six or more characters">
+								 >
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -89,7 +89,7 @@
 							<label for="name" style="font-weight: bold">Western
 								Australia *</label> <input type="text" name="name"
 								placeholder="Western Australia" class="single-input" id="wa"
-								required title="Six or more characters">
+								required  >
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -97,7 +97,7 @@
 							<label for="name" style="font-weight: bold">Queens Land *</label>
 							<input type="text" name="name" placeholder="Queens Land"
 								class="single-input" id="qld" required
-								title="Six or more characters">
+								 >
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -105,7 +105,7 @@
 							<label for="name" style="font-weight: bold">Tasmania *</label> <input
 								type="text" name="name" placeholder="Western Australia"
 								class="single-input" id="tas" required
-								title="Six or more characters">
+								 >
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -113,7 +113,25 @@
 							<label for="name" style="font-weight: bold">South
 								Australia *</label> <input type="text" name="name"
 								placeholder="Western Australia" class="single-input" id="sa"
-								required title="Six or more characters">
+								required  >
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Super Annuation *</label> <input type="text" name="name"
+								placeholder="Super %" class="single-input" id="superannuation"
+								required  >
+						</div>
+					</div><div class="col-sm-4">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Insurance *</label> <input type="text" name="name"
+								placeholder="Insurance %" class="single-input" id="insurance"
+								required  >
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">*All values are in %</label> 
 						</div>
 					</div>
 <div class="col-sm-12" style="padding-top: 10px"></div>
@@ -183,7 +201,7 @@
 			
 			event.preventDefault();
 			if($("#nsw").val()=="" || $("#vic").val()=="" || $("#sa").val()==""
-					|| $("#wa").val()=="" || $("#tas").val()=="" || $("#qld").val()==""){
+					|| $("#wa").val()=="" || $("#tas").val()=="" || $("#qld").val()==""|| $("#superannuation").val()==""|| $("#insurance").val()==""){
 				document.getElementById("feedback").style.color = "red";
 				$('#feedback').html("Validation error: Please enter values for all fields.");
 				return false;
@@ -195,6 +213,8 @@
 			constantsDTO["wa"] = $("#wa").val();
 			constantsDTO["tas"] = $("#tas").val();
 			constantsDTO["qld"] = $("#qld").val();
+			constantsDTO["superannuation"] = $("#superannuation").val();
+			constantsDTO["insurance"] = $("#insurance").val();
 			$.ajax({
 						type : "POST",
 						contentType : "application/json",
@@ -233,6 +253,8 @@
 							$("#wa").val(data.wa);
 							$("#tas").val(data.tas);
 							$("#qld").val(data.qld);
+							$("#superannuation").val(data.superannuation);
+							$("#insurance").val(data.insurance);
 						},
 						error : function(e) {
 

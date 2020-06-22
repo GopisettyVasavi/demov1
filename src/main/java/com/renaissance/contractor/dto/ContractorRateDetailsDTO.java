@@ -10,7 +10,7 @@ public class ContractorRateDetailsDTO {
 	private String includeSuperFlag;
 	private Double billRatePerDay;
 	private String payrollTaxPaymentFlag;
-	private String workCoverFlag;
+	private String insurancePaymentFlag;
 	private String insuranceType;
 	private Double insurancePercentage;
 	private Double otherDeductionPercentage;
@@ -18,6 +18,9 @@ public class ContractorRateDetailsDTO {
 	private Double netMargin;
 	private String additionalInfo;
 	private String activeRecord;
+	private String referralCommissionType;
+	private Double referralCommissionValue;
+	private Double grossMargin;
 	
 	public BigInteger getContractorId() {
 		return contractorId;
@@ -61,12 +64,6 @@ public class ContractorRateDetailsDTO {
 	public void setPayrollTaxPaymentFlag(String payrollTaxPaymentFlag) {
 		this.payrollTaxPaymentFlag = payrollTaxPaymentFlag;
 	}
-	public String getWorkCoverFlag() {
-		return workCoverFlag;
-	}
-	public void setWorkCoverFlag(String workCoverFlag) {
-		this.workCoverFlag = workCoverFlag;
-	}
 	public Double getInsurancePercentage() {
 		return insurancePercentage;
 	}
@@ -109,16 +106,44 @@ public class ContractorRateDetailsDTO {
 	public void setInsuranceType(String insuranceType) {
 		this.insuranceType = insuranceType;
 	}
+	
+	public String getInsurancePaymentFlag() {
+		return insurancePaymentFlag;
+	}
+	public void setInsurancePaymentFlag(String insurancePaymentFlag) {
+		this.insurancePaymentFlag = insurancePaymentFlag;
+	}
+	public String getReferralCommissionType() {
+		return referralCommissionType;
+	}
+	public void setReferralCommissionType(String referralCommissionType) {
+		this.referralCommissionType = referralCommissionType;
+	}
+	public Double getReferralCommissionValue() {
+		return referralCommissionValue;
+	}
+	public void setReferralCommissionValue(Double referralCommissionValue) {
+		this.referralCommissionValue = referralCommissionValue;
+	}
+	public Double getGrossMargin() {
+		return grossMargin;
+	}
+	public void setGrossMargin(Double grossMargin) {
+		this.grossMargin = grossMargin;
+	}
 	@Override
 	public String toString() {
 		return "ContractorRateDetailsDTO [contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
 				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
 				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", payrollTaxPaymentFlag="
-				+ payrollTaxPaymentFlag + ", workCoverFlag=" + workCoverFlag + ", insuranceType=" + insuranceType
-				+ ", insurancePercentage=" + insurancePercentage + ", otherDeductionPercentage="
+				+ payrollTaxPaymentFlag + ", insurancePaymentFlag=" + insurancePaymentFlag + ", insuranceType="
+				+ insuranceType + ", insurancePercentage=" + insurancePercentage + ", otherDeductionPercentage="
 				+ otherDeductionPercentage + ", otherDeductionAmount=" + otherDeductionAmount + ", netMargin="
-				+ netMargin + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord + "]";
+				+ netMargin + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord
+				+ ", referralCommissionType=" + referralCommissionType + ", referralCommissionValue="
+				+ referralCommissionValue + ", grossMargin=" + grossMargin + "]";
 	}
+	
 
 	
 }

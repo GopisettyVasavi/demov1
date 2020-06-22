@@ -19,6 +19,8 @@ import org.slf4j.LoggerFactory;
  * @author Vasavi
  *
  */
+
+import com.renaissance.contractor.dto.MarginDTO;
 public class ProfileParserUtils {
 	private static final Logger logger=LoggerFactory.getLogger(ProfileParserUtils.class);
 	
@@ -129,5 +131,47 @@ public static List<String> processSearchStringWithNOT(String searchString){
 public static long getDays(LocalDate from, LocalDate to) {
 	return  ChronoUnit.DAYS.between(from, to);
 	
+}
+
+public static MarginDTO calculateMargin(MarginDTO marginDto) {
+	//Gross Margin  = 750 – (500 + 24.25 + 15 + 100)
+	//Gross Margin = Bill Rate – (Candidate Rate + Payroll Tax based on State + Insurance Cost + Referral Commission)
+	Double grossMargin=0.0;
+	Double payrollTax=calculatePercentage(marginDto.getContractorRate(),marginDto.getPayrollTax());
+	Double insuranceCost=calculatePercentage(marginDto.getContractorRate(),marginDto.getInsurancePercentage());
+	Double referralCommission=0.0;
+	//Double superannuation=calculatePercentage(marginDto.getContractorRate(),marginDto.getSuperannuation());
+	if(!isObjectEmpty(marginDto.getReferralCommissionType())) {
+		if(marginDto.getReferralCommissionType().equalsIgnoreCase(ProfileParserConstants.AMOUNT)&&!isObjectEmpty(marginDto.getReferralCommissionValue())) {
+			referralCommission=marginDto.getReferralCommissionValue();
+			marginDto.setReferralValue(referralCommission);
+		}
+		else if(marginDto.getReferralCommissionType().equalsIgnoreCase(ProfileParserConstants.PERCENT)&&!isObjectEmpty(marginDto.getReferralCommissionValue())) {
+			referralCommission=calculatePercentage(marginDto.getContractorRate(),marginDto.getReferralCommissionValue());
+			marginDto.setReferralValue(referralCommission);
+		}
+	}
+	logger.info("Values...,{},{},{},{},{},{}",marginDto.getBillRate(),marginDto.getContractorRate(),payrollTax+insuranceCost,referralCommission);
+	marginDto.setPayrollTaxValue(payrollTax);
+	marginDto.setInsuranceValue(insuranceCost);
+	grossMargin=marginDto.getBillRate()-(marginDto.getContractorRate()+payrollTax+insuranceCost+referralCommission);
+		
+	
+	marginDto.setGrossMargin(grossMargin);
+	/*
+	 * Net Margin = Gross Margin – (Additional Cost + Recruiter Commission)
+
+ 
+
+Additional Cost = $ (This is Referral Commission based on gross margin %)
+
+Recruiter Commission = Value entered in %.
+	 */
+	return marginDto;
+}
+private static Double calculatePercentage(Double amount,Double percentage) {
+	if(!isObjectEmpty(amount)&&!isObjectEmpty(percentage)&& amount!=0.0 && percentage!=0.0)
+	return amount*percentage/100;
+	else return 0.0;
 }
 }

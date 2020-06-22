@@ -59,16 +59,16 @@ function initialize_details(){
 	if(document.getElementById("fin_client_dtl").value=="true"){
 		document.getElementById("finishedClientCheck").checked=true;
 	}
-	if(document.getElementById("super_dtl").value=="true"){
+	/*if(document.getElementById("super_dtl").value=="true"){
 		document.getElementById("superIncludeCheck").checked=true;
-	}
+	}*/
 	
 	if(document.getElementById("payroll_dtl").value=="true"){
 		document.getElementById("payrollTaxCheck").checked=true;
 	}
 		
 	if(document.getElementById("wcflag_dtl").value=="true"){
-		document.getElementById("workCoverCheck").checked=true;
+		document.getElementById("insurancePaymentCheck").checked=true;
 	}
 	
 	
@@ -758,10 +758,10 @@ function rateHistoryCheck(){
 	             	 { "data": 'rateEndDate', "name" : "rateEndDate" , "title" : "End Date"},
 	             	 { "data": 'includeSuperFlag', "name" : "includeSuperFlag" , "title" : "Super Included?"},
 	             	 { "data": 'payrollTaxPaymentFlag', "name" : "payrollTaxPaymentFlag" , "title" : "Payroll Tax Paid?"},
-	             	 { "data": 'workCoverFlag', "name" : "workCoverFlag" , "title" : "Work Cover?"},
-	             	 { "data": 'insurancePercentage', "name" : "insurancePercentage" , "title" : "Insurance"},
+	             	 { "data": 'insurancePaymentFlag', "name" : "insurancePaymentFlag" , "title" : "Insurance Paid?"},
+	             	 { "data": 'referralCommissionValue', "name" : "referralCommissionValue" , "title" : "Referral Commission"},
 	             	 { "data": 'otherDeductionPercentage', "name" : "otherDeductionPercentage" , "title" : "Other Deduction"},
-	             	 { "data": 'netMargin', "name" : "netMargin" , "title" : "Net Margin"}]
+	             	 { "data": 'grossMargin', "name" : "grossMargin" , "title" : "Margin"}]
 	                   
 	            } );
 			

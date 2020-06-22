@@ -393,18 +393,22 @@ function clickonsave(mode) {
 		contractorRateDetailsDTO["billRatePerDay"] = $("#billRatePerDay").val();
 		contractorRateDetailsDTO["rateStartDate"] = $("#rateStartDate").val();
 		contractorRateDetailsDTO["rateEndDate"] = $("#rateEndDate").val();
-		contractorRateDetailsDTO["includeSuperFlag"] = document
-				.getElementById("superIncludeCheck").checked;
+		/*contractorRateDetailsDTO["includeSuperFlag"] = document
+				.getElementById("superIncludeCheck").checked;*/
 		contractorRateDetailsDTO["payrollTaxPaymentFlag"] = document
 				.getElementById("payrollTaxCheck").checked;
-		contractorRateDetailsDTO["workCoverFlag"] = document
-				.getElementById("workCoverCheck").checked;
-		contractorRateDetailsDTO["insurancePercentage"] = $("#insurance").val();
-		contractorRateDetailsDTO["insuranceType"] = $("#insuranceType").val();
+		contractorRateDetailsDTO["insurancePaymentFlag"] = document
+				.getElementById("insurancePaymentCheck").checked;
+		contractorRateDetailsDTO["referralCommissionValue"] = $("#referralCommissionValue").val();
+		contractorRateDetailsDTO["referralCommissionType"] = $("#referralCommissionType").val();
 		contractorRateDetailsDTO["otherDeductionPercentage"] = $(
 				"#otherDeduction").val();
-		contractorRateDetailsDTO["netMargin"] = $("#netMargin").val();
-
+		if(margin==0)
+		calculateMargin();
+		//alert(margin);
+		contractorRateDetailsDTO["grossMargin"] =margin;
+		$("#grossMargin").val(margin);
+		
 		// rates[0]=contractorRateDetailsDTO;
 		var contractorBankDetailsDTO = {}
 		// var banks=[];
@@ -527,6 +531,7 @@ function clickonsave(mode) {
 		if (mode == "New") {
 			contractorDetailsDTO["personalDetails"] = contractorPersonalDetailsDTO;
 			contractorDetailsDTO["abnList"] = contractorABNDetailsDTO;
+			
 			$.ajax({
 				type : "POST",
 				contentType : "application/json",
@@ -570,6 +575,7 @@ function clickonsave(mode) {
 				contractorDetailsDTO["abnList"] = contractorABNDetailsDTO;
 			}
 			contractorDetailsDTO["personalDetails"] = contractorPersonalDetailsDTO;
+			//alert( $("#margin").val());
 			$.ajax({
 				type : "POST",
 				contentType : "application/json",
@@ -963,3 +969,61 @@ $(document).on(
 				}
 			});
 		});
+
+var margin=0;
+function calculateMargin(){
+	var marginDTO={}
+	marginDTO["contractorRate"] = $("#ratePerDay").val();
+	marginDTO["billRate"] = $("#billRatePerDay").val();
+	//marginDTO["superIncludeCheck"] = document.getElementById("superIncludeCheck").checked;
+	marginDTO["payrollTaxCheck"] = document.getElementById("payrollTaxCheck").checked;
+	marginDTO["insurancePaymentFlag"] =  document.getElementById("insurancePaymentCheck").checked;
+	marginDTO["workLocationState"] = $("#workLocationState").val();
+	marginDTO["referralCommissionType"] = $("#referralCommissionType").val();
+	marginDTO["referralCommissionValue"] = $("#referralCommissionValue").val();
+	//marginDTO["additionalCost"] = $("#otherDeduction").val();
+	
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/calculatemargin",
+		data : JSON.stringify(marginDTO),
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+			success : function(data) {	
+				//alert(data.grossMargin);
+				$("#margin").val(data.grossMargin);
+				margin=data.grossMargin;
+				if($("#referralCommissionValue").val()!=""){
+				$("#referralvalue_lbl").text("Referral Commission: "+data.referralValue);}
+				$("#insurancevalue_lbl").text("Insurance: "+data.insuranceValue);
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: "+data.payrollTaxValue);
+				
+				
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "Response Error:Error occured while calculating margin. Please check whether all values are entered correctly."
+	             + e.responseText ;
+	         $('#emp_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
+	
+}
+/*
+function calculatetax(){
+	if($("#ratePerDay").val()!=""){
+		var rate=$("#ratePerDay").val();
+	if(document.getElementById("payrollTaxCheck").checked == "true"){
+		$("#ratePerDay").val()*
+	}
+	}
+	
+}*/

@@ -76,7 +76,7 @@ public static boolean  isFileTypePdf(String name) {
 	if (name.lastIndexOf(".") != -1 && name.lastIndexOf(".") != 0)
 		 extension= name.substring(name.lastIndexOf(".") + 1);
 	
-	if(extension.equalsIgnoreCase("pdf"))
+	if(extension.equalsIgnoreCase(ProfileParserConstants.PDF))
 		return true;
 	else return false;
 }

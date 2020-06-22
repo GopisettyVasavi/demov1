@@ -137,7 +137,7 @@
 														th:field="${contractor.rateList.payrollTaxPaymentFlag}" />
 														<input type="text"
 														id="wcflag_dtl" name="super_dtl"
-														th:field="${contractor.rateList.workCoverFlag}" />
+														th:field="${contractor.rateList.insurancePaymentFlag}" />
 														<input type="text"
 														id="recruiterid_dtl" name="super_dtl"
 														th:field="${contractor.employerList.recruiterId}" />
@@ -1491,20 +1491,29 @@
 																						
 																				</div>
 																			</div>
-																			<div class="col-sm-4"></div>
+																			
 																			
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Rate(Per day) *</label> 
+																					<label for="name" style="font-weight:bold">Rate(Per day)Including Super *</label> 
 																					
 																					<input type="text"
 										name="ratePerDay" placeholder="Rate Per Day"
 										onfocus="this.placeholder = 'Rate Per Day'"
 										onblur="this.placeholder = 'Rate Per Day'" id="ratePerDay"
-										class="single-input" th:field="${contractor.rateList.ratePerDay}">
+										class="single-input" th:field="${contractor.rateList.ratePerDay}" >
 																						
 																				</div>
-																			</div>
+																				</div>
+																				<!-- <div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold; padding-top: 25px;">Include Super</label> 
+																					
+																					<input  type="checkbox"  id="superIncludeCheck" name="superIncludeCheck" />
+																						
+																				</div>
+																			
+																			</div> -->
 																			<div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Bill Rate(Per day) *</label> 
@@ -1517,38 +1526,46 @@
 																						
 																				</div>
 																			</div>
-																			<div class="col-sm-4"></div>
-																			<div class="col-sm-4">
+																			
+																			
+																			<div class="col-sm-2">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Include Super</label> 
-																					
-																					<input  type="checkbox"  id="superIncludeCheck" name="superIncludeCheck" />
-																						
-																				</div>
-																			</div>
-																			<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Payroll Tax to be paid?</label> 
+																					<label for="name" style="font-weight:bold;padding-top: 25px;">Payroll Tax to be paid?</label> 
 																					
 																					<input  type="checkbox"  id="payrollTaxCheck" name="payrollTaxCheck" />
 																						
 																				</div>
 																			</div>
-																			<div class="col-sm-4">
+																			<div class="col-sm-2">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Work Cover to be paid?</label> 
-																					
-																					<input  type="checkbox"  id="workCoverCheck" name="workCoverCheck" />
+																					<label for="name" style="font-weight:bold;padding-top: 25px;"
+																					 id="payrolltaxvalue_lbl"></label> 
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-2">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Insurance</label> 
+																					<label for="name" style="font-weight:bold;padding-top: 25px;">Insurance to be paid?</label> 
+																					
+																					<input  type="checkbox"  id="insurancePaymentCheck" name="insurancePaymentCheck" />
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold;padding-top: 25px;"
+																					 id="insurancevalue_lbl"></label> 
+																						
+																				</div>
+																			</div>
+																			
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Referral Commission</label> 
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="insuranceType" th:field="*{contractor.rateList.insuranceType}" >
+																							<select id="referralCommissionType" th:field="*{contractor.rateList.referralCommissionType}" >
 																								<option value="none"  selected="selected">Select Insurance</option>
 																								<option value="percent">Percentage</option>
 																								<option value="amount">Amount</option>
@@ -1561,13 +1578,13 @@
 																				<div class="form-group">
 																				<label for="name" style="font-weight:bold"></label>
 																			<input type="text"
-										name="Insurance" placeholder="Insurance"
-										onfocus="this.placeholder = 'Insurance'"
-										onblur="this.placeholder = 'Insurance'" id="insurance"
-										class="single-input" th:field="${contractor.rateList.insurancePercentage}">
+										name="referralCommission" placeholder="Referral Commission"
+										onfocus="this.placeholder = 'Referral Commission Value'"
+										onblur="this.placeholder = 'Referral Commission Value'" id="referralCommissionValue"
+										class="single-input" th:field="${contractor.rateList.referralCommissionValue}">
 										</div>
 										</div>
-																			<div class="col-sm-2">
+																			<!-- <div class="col-sm-2">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Other Deduction(%)</label> 
 																					
@@ -1578,23 +1595,30 @@
 										class="single-input" th:field="${contractor.rateList.otherDeductionPercentage}">
 																						
 																				</div>
+																			</div> -->
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold;padding-top: 25px;"
+																					 id="referralvalue_lbl"></label> 
+																						
+																				</div>
 																			</div>
 																			<div class="col-sm-2">
 																				<div class="form-group" style="padding-top: 25px;">
 																					<label for="name" style="font-weight:bold">&nbsp;</label> 
 																					
-																					<input type="button"  value="Calculate Margin"/>
+																					<input type="button"  value="Calculate Margin" onclick="calculateMargin()"/>
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Net Margin</label> 
+																					<label for="name" style="font-weight:bold">Margin</label> 
 																					<input type="text"
-										name="Netmargin" placeholder="Net Margin"
-										onfocus="this.placeholder = 'Net Margin'"
-										onblur="this.placeholder = 'Net Margin'" id="netMargin"
-										class="single-input" readonly="readonly">
+										name="margin" placeholder="Margin"
+										onfocus="this.placeholder = 'Margin'"
+										onblur="this.placeholder = 'Margin'" id="margin"
+										class="single-input" readonly="readonly" th:field="${contractor.rateList.grossMargin}">
 																					
 																						
 																				</div>

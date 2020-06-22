@@ -9,6 +9,8 @@ public class ConstantsDTO {
 	private Double wa;
 	private Double tas;
 	private Double qld;
+	private Double superannuation;
+	private Double insurance;
 	public Double getNsw() {
 		return nsw;
 	}
@@ -45,10 +47,25 @@ public class ConstantsDTO {
 	public void setQld(Double qld) {
 		this.qld = qld;
 	}
+	
+	public Double getSuperannuation() {
+		return superannuation;
+	}
+	public void setSuperannuation(Double superannuation) {
+		this.superannuation = superannuation;
+	}
+	public Double getInsurance() {
+		return insurance;
+	}
+	public void setInsurance(Double insurance) {
+		this.insurance = insurance;
+	}
 	@Override
 	public String toString() {
 		return "ConstantsDTO [nsw=" + nsw + ", vic=" + vic + ", sa=" + sa + ", wa=" + wa + ", tas=" + tas + ", qld="
-				+ qld + "]";
+				+ qld + ", superannuation=" + superannuation + ", insurance=" + insurance + "]";
 	}
+	
+	
 	
 }

@@ -113,7 +113,7 @@ public class ContractorManagementService {
 					personalDto = populateAndSavePersonalDetails(personalDto, lastUpdatedUser);
 					createdId = personalDto.getContractorId();
 
-					if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase("true"))
+					if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase(ProfileParserConstants.TRUE))
 						abnHolder = true;
 
 					if (abnHolder) {
@@ -379,10 +379,10 @@ public class ContractorManagementService {
 			if (!ProfileParserUtils.isObjectEmpty(personalEntity)) {
 				BeanUtils.copyProperties(personalEntity, resultForm);
 				if (!ProfileParserUtils.isObjectEmpty(resultForm.getAbnHolder())) {
-					if (resultForm.getAbnHolder().equalsIgnoreCase("true"))
-						resultForm.setAbnHolder("Yes");
+					if (resultForm.getAbnHolder().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						resultForm.setAbnHolder(ProfileParserConstants.YES);
 					else
-						resultForm.setAbnHolder("No");
+						resultForm.setAbnHolder(ProfileParserConstants.NO);
 				}
 
 			}
@@ -424,7 +424,7 @@ public class ContractorManagementService {
 			ContractorPersonalDetailsDTO personalDto = new ContractorPersonalDetailsDTO();
 			BeanUtils.copyProperties(personalEntity, personalDto);
 			contractorDto.setPersonalDetails(personalDto);
-			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase("true"))
+			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase(ProfileParserConstants.TRUE))
 				abnHolder = true;
 
 		}
@@ -539,7 +539,7 @@ public class ContractorManagementService {
 			}
 
 			logger.info("No matching details... hence saving..,{}", personalDto.toString());
-			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase("true"))
+			if (personalDto.getAbnHolder() != null && personalDto.getAbnHolder().equalsIgnoreCase(ProfileParserConstants.TRUE))
 				abnHolder = true;
 			personalDto = populateAndSavePersonalDetails(personalDto, lastUpdatedUser);
 			contractorDto.setPersonalDetails(personalDto);
@@ -689,6 +689,7 @@ public class ContractorManagementService {
 
 				contractorRateDto = populateAndSaveRateDetails(contractorRateDto, lastUpdatedUser,
 						ProfileParserConstants.ACTIVE);
+				logger.info("SAving rate...{},",contractorRateDto.toString());
 				contractorDto.setRateList(contractorRateDto);
 			}
 		}
@@ -734,18 +735,18 @@ public class ContractorManagementService {
 				for (ContractorABNDetailsEntity abnVo : abnVoList) {
 					ContractorABNDetailsDTO abnDto = new ContractorABNDetailsDTO();
 					BeanUtils.copyProperties(abnVo, abnDto);
-					if(abnDto.getGstRegistered().equalsIgnoreCase("true"))
-						abnDto.setGstRegistered("Yes");
-					if(abnDto.getGstRegistered().equalsIgnoreCase("false"))
-						abnDto.setGstRegistered("No");
-					if(abnDto.getPiPlFlag().equalsIgnoreCase("true"))
-						abnDto.setPiPlFlag("Yes");
-					if(abnDto.getPiPlFlag().equalsIgnoreCase("false"))
-						abnDto.setPiPlFlag("No");
-					if(abnDto.getWorkCoverFlag().equalsIgnoreCase("true"))
-							abnDto.setWorkCoverFlag("Yes");
-						if(abnDto.getWorkCoverFlag().equalsIgnoreCase("false"))
-							abnDto.setWorkCoverFlag("No");
+					if(abnDto.getGstRegistered().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						abnDto.setGstRegistered(ProfileParserConstants.YES);
+					if(abnDto.getGstRegistered().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						abnDto.setGstRegistered(ProfileParserConstants.NO);
+					if(abnDto.getPiPlFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						abnDto.setPiPlFlag(ProfileParserConstants.YES);
+					if(abnDto.getPiPlFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						abnDto.setPiPlFlag(ProfileParserConstants.NO);
+					if(abnDto.getWorkCoverFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+							abnDto.setWorkCoverFlag(ProfileParserConstants.YES);
+						if(abnDto.getWorkCoverFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+							abnDto.setWorkCoverFlag(ProfileParserConstants.NO);
 					
 					abnlist.add(abnDto);
 				}
@@ -771,27 +772,27 @@ public class ContractorManagementService {
 				for (ContractorTFNDetailsEntity tfnVo : tfnVoList) {
 					ContractorTFNDetailsDTO tfnDto = new ContractorTFNDetailsDTO();
 					BeanUtils.copyProperties(tfnVo, tfnDto);
-					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase("true"))
-						tfnDto.setNewApplicationFlag("Yes");
-					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase("false"))
-						tfnDto.setNewApplicationFlag("No");
+					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						tfnDto.setNewApplicationFlag(ProfileParserConstants.YES);
+					if(tfnDto.getNewApplicationFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						tfnDto.setNewApplicationFlag(ProfileParserConstants.NO);
 					
-					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase("true"))
-						tfnDto.setUnderAgeExemptionFlag("Yes");
-					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase("false"))
-						tfnDto.setUnderAgeExemptionFlag("No");
+					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						tfnDto.setUnderAgeExemptionFlag(ProfileParserConstants.YES);
+					if(tfnDto.getUnderAgeExemptionFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						tfnDto.setUnderAgeExemptionFlag(ProfileParserConstants.NO);
 					
-					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase("true"))
-						tfnDto.setPensionHolderFlag("Yes");
-					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase("false"))
-						tfnDto.setPensionHolderFlag("No");
+					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						tfnDto.setPensionHolderFlag(ProfileParserConstants.YES);
+					if(tfnDto.getPensionHolderFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						tfnDto.setPensionHolderFlag(ProfileParserConstants.NO);
 					
-					if(tfnDto.getTaxPayerType().equalsIgnoreCase("PR"))
-						tfnDto.setTaxPayerType("Australian Resident");
-					if(tfnDto.getTaxPayerType().equalsIgnoreCase("Foreign Resident"))
-						tfnDto.setTaxPayerType("Foreign Resident");
-					if(tfnDto.getTaxPayerType().equalsIgnoreCase("WorkingHoliday"))
-						tfnDto.setTaxPayerType("Working Holiday Maker");
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase(ProfileParserConstants.PR))
+						tfnDto.setTaxPayerType(ProfileParserConstants.AUSTRALIAN_RESIDENT);
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase(ProfileParserConstants.FOREIGN_RESIDENT))
+						tfnDto.setTaxPayerType(ProfileParserConstants.FOREIGN_RESIDENT);
+					if(tfnDto.getTaxPayerType().equalsIgnoreCase(ProfileParserConstants.WORKING_HOLIDAY))
+						tfnDto.setTaxPayerType(ProfileParserConstants.WORKING_HOLIDAY_MAKER);
 					
 					tfnlist.add(tfnDto);
 				}
@@ -818,18 +819,18 @@ public class ContractorManagementService {
 					ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
 					BeanUtils.copyProperties(rateVo, rateDto);
 					
-					if(rateDto.getIncludeSuperFlag().equalsIgnoreCase("true"))
-						rateDto.setIncludeSuperFlag("Yes");
-					else if(rateDto.getIncludeSuperFlag().equalsIgnoreCase("false"))
-						rateDto.setIncludeSuperFlag("No");
-					if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase("true"))
-						rateDto.setPayrollTaxPaymentFlag("Yes");
-					else if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase("false"))
-						rateDto.setPayrollTaxPaymentFlag("No");
-					if(rateDto.getWorkCoverFlag().equalsIgnoreCase("true"))
-						rateDto.setWorkCoverFlag("Yes");
-					else if(rateDto.getWorkCoverFlag().equalsIgnoreCase("false"))
-						rateDto.setWorkCoverFlag("No");
+					if(rateDto.getIncludeSuperFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						rateDto.setIncludeSuperFlag(ProfileParserConstants.YES);
+					else if(rateDto.getIncludeSuperFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						rateDto.setIncludeSuperFlag(ProfileParserConstants.NO);
+					if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						rateDto.setPayrollTaxPaymentFlag(ProfileParserConstants.YES);
+					else if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						rateDto.setPayrollTaxPaymentFlag(ProfileParserConstants.NO);
+					if(rateDto.getInsurancePaymentFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						rateDto.setInsurancePaymentFlag(ProfileParserConstants.YES);
+					else if(rateDto.getInsurancePaymentFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						rateDto.setInsurancePaymentFlag(ProfileParserConstants.NO);
 					
 					ratelist.add(rateDto);
 				}
@@ -855,11 +856,11 @@ public class ContractorManagementService {
 				for (ContractorEmploymentDetailsEntity empVo : empVoList) {
 					ContractorEmploymentDetailsDTO empDto = new ContractorEmploymentDetailsDTO();
 					BeanUtils.copyProperties(empVo, empDto);
-					if(empDto.getFinishedClient().equalsIgnoreCase("true"))
-						empDto.setFinishedClient("Yes");
-					else if(empDto.getFinishedClient().equalsIgnoreCase("false"))
-						empDto.setFinishedClient("No");
-					if(empDto.getWorkLocationCountry().equalsIgnoreCase("Other"))
+					if(empDto.getFinishedClient().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						empDto.setFinishedClient(ProfileParserConstants.YES);
+					else if(empDto.getFinishedClient().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						empDto.setFinishedClient(ProfileParserConstants.NO);
+					if(empDto.getWorkLocationCountry().equalsIgnoreCase(ProfileParserConstants.OTHER))
 						empDto.setWorkLocationCountry(empDto.getWlOtherCountry());
 					emplist.add(empDto);
 				}
@@ -886,10 +887,10 @@ public class ContractorManagementService {
 				for (ContractorSuperAnnuationDetailsEntity saVo : saVoList) {
 					ContractorSuperAnnuationDetailsDTO saDto = new ContractorSuperAnnuationDetailsDTO();
 					BeanUtils.copyProperties(saVo, saDto);
-					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase("true"))
-						saDto.setAdditionalSuperAnnuationContributionFlag("Yes");
-					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase("false"))
-						saDto.setAdditionalSuperAnnuationContributionFlag("No");
+					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
+						saDto.setAdditionalSuperAnnuationContributionFlag(ProfileParserConstants.YES);
+					if(saDto.getAdditionalSuperAnnuationContributionFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
+						saDto.setAdditionalSuperAnnuationContributionFlag(ProfileParserConstants.NO);
 					salist.add(saDto);
 				}
 

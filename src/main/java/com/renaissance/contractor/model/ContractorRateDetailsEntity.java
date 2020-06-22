@@ -42,8 +42,8 @@ public class ContractorRateDetailsEntity {
 	@Column(name = "\"PAYROLL_TAX_PAYMENT_FLAG\"")
 	private String payrollTaxPaymentFlag;
 	
-	@Column(name = "\"WORK_COVER_FLAG\"")
-	private String workCoverFlag;
+	@Column(name = "\"INSURANCE_PAYMENT_FLAG\"")
+	private String insurancePaymentFlag;
 	
 	@Column(name = "\"INSURANCE_PERCENTAGE\"")
 	private Double insurancePercentage;
@@ -71,6 +71,15 @@ public class ContractorRateDetailsEntity {
 
 	@Column(name = "\"INSURANCE_TYPE\"")
 	private String insuranceType;
+	
+	@Column(name = "\"REFERRAL_COMM_TYPE\"")
+	private String referralCommissionType;
+	
+	@Column(name = "\"REFERRAL_COMM_VALUE\"")
+	private Double referralCommissionValue;
+	
+	@Column(name = "\"GROSS_MARGIN\"")
+	private Double grossMargin;
 	
 	public BigInteger getId() {
 		return Id;
@@ -136,12 +145,12 @@ public class ContractorRateDetailsEntity {
 		this.payrollTaxPaymentFlag = payrollTaxPaymentFlag;
 	}
 
-	public String getWorkCoverFlag() {
-		return workCoverFlag;
+	public String getInsurancePaymentFlag() {
+		return insurancePaymentFlag;
 	}
 
-	public void setWorkCoverFlag(String workCoverFlag) {
-		this.workCoverFlag = workCoverFlag;
+	public void setInsurancePaymentFlag(String insurancePaymentFlag) {
+		this.insurancePaymentFlag = insurancePaymentFlag;
 	}
 
 	public Double getInsurancePercentage() {
@@ -216,17 +225,45 @@ public class ContractorRateDetailsEntity {
 		this.insuranceType = insuranceType;
 	}
 
+	public String getReferralCommissionType() {
+		return referralCommissionType;
+	}
+
+	public void setReferralCommissionType(String referralCommissionType) {
+		this.referralCommissionType = referralCommissionType;
+	}
+
+	public Double getReferralCommissionValue() {
+		return referralCommissionValue;
+	}
+
+	public void setReferralCommissionValue(Double referralCommissionValue) {
+		this.referralCommissionValue = referralCommissionValue;
+	}
+
+	public Double getGrossMargin() {
+		return grossMargin;
+	}
+
+	public void setGrossMargin(Double grossMargin) {
+		this.grossMargin = grossMargin;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorRateDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
 				+ ", rateStartDate=" + rateStartDate + ", rateEndDate=" + rateEndDate + ", includeSuperFlag="
 				+ includeSuperFlag + ", billRatePerDay=" + billRatePerDay + ", payrollTaxPaymentFlag="
-				+ payrollTaxPaymentFlag + ", workCoverFlag=" + workCoverFlag + ", insurancePercentage="
+				+ payrollTaxPaymentFlag + ", insurancePaymentFlag=" + insurancePaymentFlag + ", insurancePercentage="
 				+ insurancePercentage + ", otherDeductionPercentage=" + otherDeductionPercentage
 				+ ", otherDeductionAmount=" + otherDeductionAmount + ", netMargin=" + netMargin + ", additionalInfo="
 				+ additionalInfo + ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser
-				+ ", lastUpdatedDateTime=" + lastUpdatedDateTime + ", insuranceType=" + insuranceType + "]";
+				+ ", lastUpdatedDateTime=" + lastUpdatedDateTime + ", insuranceType=" + insuranceType
+				+ ", referralCommissionType=" + referralCommissionType + ", referralCommissionValue="
+				+ referralCommissionValue + ", grossMargin=" + grossMargin + "]";
 	}
+
+	
 
 
 }

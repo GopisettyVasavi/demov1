@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.google.common.io.Files;
+import com.renaissance.common.service.ConstantsService;
 import com.renaissance.contractor.dto.ContractorDetailsDTO;
+import com.renaissance.contractor.dto.MarginDTO;
 import com.renaissance.contractor.model.ContractorSearchForm;
 import com.renaissance.contractor.model.ContractorSearchResultsForm;
 import com.renaissance.contractor.service.ContractorManagementService;
@@ -36,6 +38,8 @@ public class ContractorMVCController {
 	@Autowired
 	ContractorManagementService contractorService;
 
+	@Autowired
+	ConstantsService constantsService;
 	@GetMapping("/contractormain")
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -167,5 +171,39 @@ public class ContractorMVCController {
 
 		return new ResponseEntity<>(contractors, HttpStatus.OK);
 	}
+	
+	
+	@PostMapping("/calculatemargin")
+	public ResponseEntity<?> calculateMargin(@RequestBody MarginDTO marginDto, HttpServletRequest request) {
+		if (!ProfileParserUtils.isSessionAlive(request)) {
+			logger.info("null session");
+			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
+		}
+		
+		//List<ContractorABNDetailsDTO> abnList = contractorService.getAbnHistoryByContractorId(contractorId);
+		Double payrollTax=0.0;
+		Double superannuation=0.0;
+		Double insurance=0.0;
+		if(!ProfileParserUtils.isObjectEmpty(marginDto)&&!ProfileParserUtils.isObjectEmpty(marginDto.getWorkLocationState())
+				&& marginDto.getPayrollTaxCheck().equalsIgnoreCase(ProfileParserConstants.TRUE)) {
+			payrollTax=constantsService.getConstantValue(marginDto.getWorkLocationState());
+			marginDto.setPayrollTax(payrollTax);
+		}
+		if(!ProfileParserUtils.isObjectEmpty(marginDto)&&!ProfileParserUtils.isObjectEmpty(marginDto.getSuperIncludeCheck())
+				&& marginDto.getSuperIncludeCheck().equalsIgnoreCase(ProfileParserConstants.TRUE)) {
+			superannuation=constantsService.getConstantValue(ProfileParserConstants.SUPER_ANNUATION);
+			marginDto.setSuperannuation(superannuation);
+		}
+		if(!ProfileParserUtils.isObjectEmpty(marginDto)&&!ProfileParserUtils.isObjectEmpty(marginDto.getInsurancePaymentFlag())
+				&& marginDto.getInsurancePaymentFlag().equalsIgnoreCase(ProfileParserConstants.TRUE)) {
+			insurance=constantsService.getConstantValue(ProfileParserConstants.INSURANCE);
+			marginDto.setInsurancePercentage(insurance);
+		}
+		marginDto=ProfileParserUtils.calculateMargin(marginDto);
+		logger.info("Controller invoked, to calculateMargin... {}", marginDto.toString());
+
+		return new ResponseEntity<>(marginDto, HttpStatus.OK);
+	}
+	
 
 }
