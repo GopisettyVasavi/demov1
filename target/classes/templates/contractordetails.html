@@ -1502,7 +1502,7 @@
 										name="ratePerDay" placeholder="Rate Per Day"
 										onfocus="this.placeholder = 'Rate Per Day'"
 										onblur="this.placeholder = 'Rate Per Day'" id="ratePerDay"
-										class="single-input" th:field="${contractor.rateList.ratePerDay}" >
+										class="single-input" th:field="${contractor.rateList.ratePerDay}" onchange="calcPercentages()">
 																						
 																				</div>
 																				</div>
@@ -1546,7 +1546,7 @@
 										name="payrollTaxPercent" placeholder="Payroll Tax Percent"
 										onfocus="this.placeholder = 'Payroll Tax Percent'"
 										onblur="this.placeholder = 'Payroll Tax Percent'" id="payrollTaxPercent"
-										class="single-input" th:field="${contractor.rateList.payrollTaxPercentage}">
+										class="single-input" th:field="${contractor.rateList.payrollTaxPercentage}" onchange="calcPercentages()">
 																						
 																				</div>
 																			</div>
@@ -1574,7 +1574,7 @@
 										name="insurancePercent" placeholder="Insurance %"
 										onfocus="this.placeholder = 'Insurance %'"
 										onblur="this.placeholder = 'Insurance %'" id="insurancePercent"
-										class="single-input" th:field="${contractor.rateList.insurancePercentage}">
+										class="single-input" th:field="${contractor.rateList.insurancePercentage}" onchange="calcPercentages()">
 										</div></div>
 																			<div class="col-sm-2">
 																				<div class="form-group">
@@ -1590,7 +1590,8 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="referralCommissionType" th:field="*{contractor.rateList.referralCommissionType}" >
+																							<select id="referralCommissionType" onchange="calcPercentages()" 
+																							th:field="*{contractor.rateList.referralCommissionType}" >
 																								<option value="none"  selected="selected">Select Insurance</option>
 																								<option value="percent">Percentage</option>
 																								<option value="amount">Amount</option>
@@ -1606,7 +1607,7 @@
 										name="referralCommission" placeholder="Referral Commission"
 										onfocus="this.placeholder = 'Referral Commission Value'"
 										onblur="this.placeholder = 'Referral Commission Value'" id="referralCommissionValue"
-										class="single-input" th:field="${contractor.rateList.referralCommissionValue}">
+										class="single-input" th:field="${contractor.rateList.referralCommissionValue}" onchange="calcPercentages()">
 										</div>
 										</div>
 																			<!-- <div class="col-sm-2">

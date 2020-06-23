@@ -1303,7 +1303,7 @@
 										name="ratePerDay" placeholder="Rate Per Day"
 										onfocus="this.placeholder = 'Rate Per Day'"
 										onblur="this.placeholder = 'Rate Per Day'" id="ratePerDay"
-										class="single-input">
+										class="single-input" onchange="calcPercentages()">
 																						
 																				</div>
 																			</div>
@@ -1346,7 +1346,7 @@
 										name="payrollTaxPercent" placeholder="Payroll Tax Percent"
 										onfocus="this.placeholder = 'Payroll Tax Percent'"
 										onblur="this.placeholder = 'Payroll Tax Percent'" id="payrollTaxPercent"
-										class="single-input">
+										class="single-input" onchange="calcPercentages()">
 																						
 																				</div>
 																			</div>
@@ -1362,7 +1362,7 @@
 																					<label for="name" style="font-weight:bold;padding-top: 25px;">Insurance to be paid?</label> 
 																					
 																					<input  type="checkbox"  id="insurancePaymentCheck" name="insurancePaymentCheck" 
-																					checked="checked" onclick="retrieveInsurancePercent()"/>
+																					checked="checked" onclick="retrieveInsurancePercent()" />
 																						
 																				</div>
 																			</div>
@@ -1374,7 +1374,7 @@
 										name="insurancePercent" placeholder="Insurance %"
 										onfocus="this.placeholder = 'Insurance %'"
 										onblur="this.placeholder = 'Insurance %'" id="insurancePercent"
-										class="single-input">
+										class="single-input" onchange="calcPercentages()">
 																						
 																				</div>
 																			</div>
@@ -1391,7 +1391,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="referralCommissionType"  >
+																							<select id="referralCommissionType"  onchange="calcPercentages()">
 																								<option value="none"  selected="selected">Referral Commission Type</option>
 																								<option value="percent">Percentage</option>
 																								<option value="amount">Amount</option>
@@ -1407,7 +1407,7 @@
 										name="referralCommissionValue" placeholder="Referral Commission Value"
 										onfocus="this.placeholder = 'Referral Commission Value'"
 										onblur="this.placeholder = 'Referral Commission Value'" id="referralCommissionValue"
-										class="single-input">
+										class="single-input" onchange="calcPercentages()">
 										</div>
 										</div>
 																			<!-- <div class="col-sm-2">

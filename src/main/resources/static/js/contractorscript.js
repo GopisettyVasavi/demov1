@@ -1038,6 +1038,11 @@ function retrievePayrollTax(){
 			success : function(data) {
 				//alert(data);
 				$("#payrollTaxPercent").val(data);
+				if($("#ratePerDay").val()!=0 && $("#ratePerDay").val()!="" && data!=0){
+					var payrolltaxval=$("#ratePerDay").val()*data/100;
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltaxval);
+				
+				}
 				
 			},
 			error : function(e) {
@@ -1047,7 +1052,13 @@ function retrievePayrollTax(){
 			}
 		});
 		
+	}else{
+		$("#payrollTaxPercent").val(0);
+		
+		$("#payrolltaxvalue_lbl").text("");
 	}
+	
+	calcPercentages();
 }
 function retrieveInsurancePercent(){
 	
@@ -1062,6 +1073,10 @@ function retrieveInsurancePercent(){
 			success : function(data) {
 				//alert(data);
 				$("#insurancePercent").val(data);
+				if($("#ratePerDay").val()!=0 && $("#ratePerDay").val()!=""){
+					var insurance=$("#ratePerDay").val() * data/100;
+					$("#insurancevalue_lbl").text("Insurance: $  "+insurance);
+				}
 			},
 			error : function(e) {
 
@@ -1070,5 +1085,36 @@ function retrieveInsurancePercent(){
 			}
 		});
 		
+	}else  {$("#insurancePercent").val(0);
+	$("#insurancevalue_lbl").text("");}
+	calcPercentages();
+	
+}
+
+function calcPercentages(){
+	if($("#ratePerDay").val()!=0 && $("#ratePerDay").val()!="")
+		{
+		if( $("#insurancePercent").val()!="" && $("#insurancePercent").val()!=0){
+		var insurance=$("#ratePerDay").val() * $("#insurancePercent").val()/100;
+		$("#insurancevalue_lbl").text("Insurance: $  "+insurance);
+		}
+		
+		if($("#workLocationState").val()!="" && $("#workLocationState").val()!="none"
+			&& $("#payrollTaxPercent").val()!="" && $("#payrollTaxPercent").val()!=0){
+		var payrolltaxval=$("#ratePerDay").val()*$("#payrollTaxPercent").val()/100;
+		$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltaxval);
+		}
+		if($("#referralCommissionType").val()!="none" && $("#referralCommissionType").val()!="" && 
+				 $("#referralCommissionValue").val()!="" && $("#referralCommissionValue").val()!=0){
+			if($("#referralCommissionType").val()=="percent" ){
+				var referralValue=$("#ratePerDay").val()*$("#referralCommissionValue").val()/100;
+				$("#referralvalue_lbl").text("Referral Commission: $ "+referralValue);
+			}
+			if($("#referralCommissionType").val()=="amount" ){
+			
+				$("#referralvalue_lbl").text("Referral Commission: $ "+$("#referralCommissionValue").val());
+			}
+			
+		}else $("#referralvalue_lbl").text("");
 	}
 }
