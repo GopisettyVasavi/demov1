@@ -1,4 +1,5 @@
 function initialize_details(){
+	//calculateMargin();
 	populateRecruiterList();
 	//alert($("#gender_dtl").val());
 	if($("#gender_dtl").val()=="male"){
@@ -92,6 +93,52 @@ function initialize_details(){
 		  }                        
 		});*/
 	//alert($("#previousFullName").val());
+	
+	var marginDTO={}
+	marginDTO["contractorRate"] = $("#ratePerDay").val();
+	marginDTO["billRate"] = $("#billRatePerDay").val();
+	//marginDTO["superIncludeCheck"] = document.getElementById("superIncludeCheck").checked;
+	marginDTO["payrollTaxCheck"] = document.getElementById("payrollTaxCheck").checked;
+	marginDTO["insurancePaymentFlag"] =  document.getElementById("insurancePaymentCheck").checked;
+	marginDTO["workLocationState"] = $("#workLocationState").val();
+	marginDTO["referralCommissionType"] = $("#referralCommissionType").val();
+	marginDTO["referralCommissionValue"] = $("#referralCommissionValue").val();
+	marginDTO["payrollTax"] = $("#payrollTaxPercent").val();
+	marginDTO["insurancePercentage"] = $("#insurancePercent").val();
+	//marginDTO["additionalCost"] = $("#otherDeduction").val();
+	
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : "/calculatemargin",
+		data : JSON.stringify(marginDTO),
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+			success : function(data) {	
+				//alert(data.payrollTax);
+				$("#margin").val(data.grossMargin);
+				margin=data.grossMargin;
+				if($("#referralCommissionValue").val()!=""){
+				$("#referralvalue_lbl").text("Referral Commission: $ "+data.referralValue);}
+				$("#insurancevalue_lbl").text("Insurance: $  "+data.insuranceValue);
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+data.payrollTaxValue);
+				
+				
+				
+	     },
+	     error: function (e) {
+	     	
+
+	         var json = "Response Error:Error occured while calculating margin. Please check whether all values are entered correctly."
+	             + e.responseText ;
+	         $('#emp_feedback').html(json);
+
+	         console.log("ERROR : ", e);
+	        // $("#btn-search").prop("disabled", false);
+
+	     }
+	 });
 }
 
 function populateRecruiterList(){
@@ -756,11 +803,11 @@ function rateHistoryCheck(){
 	             	  { "data": 'billRatePerDay', "name" : "billRatePerDay" , "title" : "Bill Rate"},
 	             	 { "data": 'rateStartDate', "name" : "rateStartDate" , "title" : "Start Date"},
 	             	 { "data": 'rateEndDate', "name" : "rateEndDate" , "title" : "End Date"},
-	             	 { "data": 'includeSuperFlag', "name" : "includeSuperFlag" , "title" : "Super Included?"},
 	             	 { "data": 'payrollTaxPaymentFlag', "name" : "payrollTaxPaymentFlag" , "title" : "Payroll Tax Paid?"},
+	             	 { "data": 'payrollTaxPercentage', "name" : "payrollTaxPercentage" , "title" : "Payroll Tax %?"},
 	             	 { "data": 'insurancePaymentFlag', "name" : "insurancePaymentFlag" , "title" : "Insurance Paid?"},
+	             	 { "data": 'insurancePercentage', "name" : "insurancePercentage" , "title" : "Insurance %?"},
 	             	 { "data": 'referralCommissionValue', "name" : "referralCommissionValue" , "title" : "Referral Commission"},
-	             	 { "data": 'otherDeductionPercentage', "name" : "otherDeductionPercentage" , "title" : "Other Deduction"},
 	             	 { "data": 'grossMargin', "name" : "grossMargin" , "title" : "Margin"}]
 	                   
 	            } );

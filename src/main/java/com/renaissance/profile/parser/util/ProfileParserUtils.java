@@ -1,5 +1,7 @@
 package com.renaissance.profile.parser.util;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -137,27 +139,35 @@ public static MarginDTO calculateMargin(MarginDTO marginDto) {
 	//Gross Margin  = 750 – (500 + 24.25 + 15 + 100)
 	//Gross Margin = Bill Rate – (Candidate Rate + Payroll Tax based on State + Insurance Cost + Referral Commission)
 	Double grossMargin=0.0;
-	Double payrollTax=calculatePercentage(marginDto.getContractorRate(),marginDto.getPayrollTax());
-	Double insuranceCost=calculatePercentage(marginDto.getContractorRate(),marginDto.getInsurancePercentage());
+	Double payrollTax=0.0;
+	Double insuranceCost=0.0;
+	if(!ProfileParserUtils.isObjectEmpty(marginDto)&& !ProfileParserUtils.isObjectEmpty(marginDto.getContractorRate())) {
+	 payrollTax=calculatePercentage(marginDto.getContractorRate(),marginDto.getPayrollTax());
+	 insuranceCost=calculatePercentage(marginDto.getContractorRate(),marginDto.getInsurancePercentage());
+	}
 	Double referralCommission=0.0;
 	//Double superannuation=calculatePercentage(marginDto.getContractorRate(),marginDto.getSuperannuation());
 	if(!isObjectEmpty(marginDto.getReferralCommissionType())) {
 		if(marginDto.getReferralCommissionType().equalsIgnoreCase(ProfileParserConstants.AMOUNT)&&!isObjectEmpty(marginDto.getReferralCommissionValue())) {
 			referralCommission=marginDto.getReferralCommissionValue();
-			marginDto.setReferralValue(referralCommission);
+			
 		}
-		else if(marginDto.getReferralCommissionType().equalsIgnoreCase(ProfileParserConstants.PERCENT)&&!isObjectEmpty(marginDto.getReferralCommissionValue())) {
+		else if(marginDto.getReferralCommissionType().equalsIgnoreCase(ProfileParserConstants.PERCENT)&&!isObjectEmpty(marginDto.getReferralCommissionValue())
+				&& !isObjectEmpty(marginDto.getContractorRate())) {
 			referralCommission=calculatePercentage(marginDto.getContractorRate(),marginDto.getReferralCommissionValue());
-			marginDto.setReferralValue(referralCommission);
-		}
+					}
 	}
 	logger.info("Values...,{},{},{},{},{},{}",marginDto.getBillRate(),marginDto.getContractorRate(),payrollTax+insuranceCost,referralCommission);
 	marginDto.setPayrollTaxValue(payrollTax);
 	marginDto.setInsuranceValue(insuranceCost);
-	grossMargin=marginDto.getBillRate()-(marginDto.getContractorRate()+payrollTax+insuranceCost+referralCommission);
+	marginDto.setReferralValue(referralCommission);
+	if(!ProfileParserUtils.isObjectEmpty(marginDto)&& !ProfileParserUtils.isObjectEmpty(marginDto.getContractorRate())
+			&& !ProfileParserUtils.isObjectEmpty(marginDto.getBillRate())) {
+	grossMargin=roundValue(marginDto.getBillRate()-(marginDto.getContractorRate()+payrollTax+insuranceCost+referralCommission));
 		
 	
 	marginDto.setGrossMargin(grossMargin);
+	}
 	/*
 	 * Net Margin = Gross Margin – (Additional Cost + Recruiter Commission)
 
@@ -170,8 +180,17 @@ Recruiter Commission = Value entered in %.
 	return marginDto;
 }
 private static Double calculatePercentage(Double amount,Double percentage) {
-	if(!isObjectEmpty(amount)&&!isObjectEmpty(percentage)&& amount!=0.0 && percentage!=0.0)
-	return amount*percentage/100;
+	if(!isObjectEmpty(amount)&&!isObjectEmpty(percentage)&& amount!=0.0 && percentage!=0.0) {
+	//return new Double(Math.ceil(amount*percentage/100)).doubleValue();
+		
+		return roundValue(amount*percentage/100);
+		}
 	else return 0.0;
+}
+private static Double roundValue(Double amount) {
+	BigDecimal bd = BigDecimal.valueOf(amount.doubleValue());
+    bd = bd.setScale(2, RoundingMode.HALF_UP);
+	return bd.doubleValue();
+	
 }
 }

@@ -40,6 +40,8 @@ function initialize() {
 
 				}
 			});
+	
+	retrieveInsurancePercent();
 }
 
 function setSelectedVisaCategory() {
@@ -401,8 +403,8 @@ function clickonsave(mode) {
 				.getElementById("insurancePaymentCheck").checked;
 		contractorRateDetailsDTO["referralCommissionValue"] = $("#referralCommissionValue").val();
 		contractorRateDetailsDTO["referralCommissionType"] = $("#referralCommissionType").val();
-		contractorRateDetailsDTO["otherDeductionPercentage"] = $(
-				"#otherDeduction").val();
+		contractorRateDetailsDTO["payrollTaxPercentage"] = $("#payrollTaxPercent").val();
+		contractorRateDetailsDTO["insurancePercentage"] = $("#insurancePercent").val();
 		if(margin==0)
 		calculateMargin();
 		//alert(margin);
@@ -971,6 +973,7 @@ $(document).on(
 		});
 
 var margin=0;
+
 function calculateMargin(){
 	var marginDTO={}
 	marginDTO["contractorRate"] = $("#ratePerDay").val();
@@ -981,6 +984,8 @@ function calculateMargin(){
 	marginDTO["workLocationState"] = $("#workLocationState").val();
 	marginDTO["referralCommissionType"] = $("#referralCommissionType").val();
 	marginDTO["referralCommissionValue"] = $("#referralCommissionValue").val();
+	marginDTO["payrollTax"] = $("#payrollTaxPercent").val();
+	marginDTO["insurancePercentage"] = $("#insurancePercent").val();
 	//marginDTO["additionalCost"] = $("#otherDeduction").val();
 	
 	$.ajax({
@@ -992,15 +997,16 @@ function calculateMargin(){
 		cache : false,
 		timeout : 600000,
 			success : function(data) {	
-				//alert(data.grossMargin);
+				//alert(data.payrollTax);
 				$("#margin").val(data.grossMargin);
 				margin=data.grossMargin;
 				if($("#referralCommissionValue").val()!=""){
-				$("#referralvalue_lbl").text("Referral Commission: "+data.referralValue);}
-				$("#insurancevalue_lbl").text("Insurance: "+data.insuranceValue);
-				$("#payrolltaxvalue_lbl").text("Payroll Tax: "+data.payrollTaxValue);
+				$("#referralvalue_lbl").text("Referral Commission: $ "+data.referralValue);}
+				$("#insurancevalue_lbl").text("Insurance: $  "+data.insuranceValue);
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+data.payrollTaxValue);
 				
-				
+				payrollTaxPercent=data.payrollTax;
+				insurancePercent=data.insurancePercentage;
 				
 	     },
 	     error: function (e) {
@@ -1017,13 +1023,52 @@ function calculateMargin(){
 	 });
 	
 }
-/*
-function calculatetax(){
-	if($("#ratePerDay").val()!=""){
-		var rate=$("#ratePerDay").val();
-	if(document.getElementById("payrollTaxCheck").checked == "true"){
-		$("#ratePerDay").val()*
-	}
-	}
+
+function retrievePayrollTax(){
 	
-}*/
+	if($("#workLocationState").val()!="" && $("#workLocationState").val()!="none"
+		&& document.getElementById("payrollTaxCheck").checked){
+		
+		$.ajax({
+			type : "GET",
+			contentType : "application/json",
+			url : "/payrolltax/"+$("#workLocationState").val(),
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+				//alert(data);
+				$("#payrollTaxPercent").val(data);
+				
+			},
+			error : function(e) {
+
+				alert("Unable to load details. " + e);
+
+			}
+		});
+		
+	}
+}
+function retrieveInsurancePercent(){
+	
+	if( document.getElementById("insurancePaymentCheck").checked){
+		
+		$.ajax({
+			type : "GET",
+			contentType : "application/json",
+			url : "/insurancePercent",
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+				//alert(data);
+				$("#insurancePercent").val(data);
+			},
+			error : function(e) {
+
+				alert("Unable to load details. " + e);
+
+			}
+		});
+		
+	}
+}

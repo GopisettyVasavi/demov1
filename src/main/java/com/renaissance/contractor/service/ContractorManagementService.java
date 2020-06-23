@@ -819,10 +819,7 @@ public class ContractorManagementService {
 					ContractorRateDetailsDTO rateDto = new ContractorRateDetailsDTO();
 					BeanUtils.copyProperties(rateVo, rateDto);
 					
-					if(rateDto.getIncludeSuperFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
-						rateDto.setIncludeSuperFlag(ProfileParserConstants.YES);
-					else if(rateDto.getIncludeSuperFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))
-						rateDto.setIncludeSuperFlag(ProfileParserConstants.NO);
+					
 					if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase(ProfileParserConstants.TRUE))
 						rateDto.setPayrollTaxPaymentFlag(ProfileParserConstants.YES);
 					else if(rateDto.getPayrollTaxPaymentFlag().equalsIgnoreCase(ProfileParserConstants.FALSE))

@@ -21,7 +21,7 @@ public class ContractorRateDetailsDTO {
 	private String referralCommissionType;
 	private Double referralCommissionValue;
 	private Double grossMargin;
-	
+	private Double payrollTaxPercentage;
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -131,6 +131,13 @@ public class ContractorRateDetailsDTO {
 	public void setGrossMargin(Double grossMargin) {
 		this.grossMargin = grossMargin;
 	}
+	
+	public Double getPayrollTaxPercentage() {
+		return payrollTaxPercentage;
+	}
+	public void setPayrollTaxPercentage(Double payrollTaxPercentage) {
+		this.payrollTaxPercentage = payrollTaxPercentage;
+	}
 	@Override
 	public String toString() {
 		return "ContractorRateDetailsDTO [contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
@@ -141,7 +148,8 @@ public class ContractorRateDetailsDTO {
 				+ otherDeductionPercentage + ", otherDeductionAmount=" + otherDeductionAmount + ", netMargin="
 				+ netMargin + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord
 				+ ", referralCommissionType=" + referralCommissionType + ", referralCommissionValue="
-				+ referralCommissionValue + ", grossMargin=" + grossMargin + "]";
+				+ referralCommissionValue + ", payrollTaxPercentage="
+						+ payrollTaxPercentage + ", grossMargin=" + grossMargin + "]";
 	}
 	
 

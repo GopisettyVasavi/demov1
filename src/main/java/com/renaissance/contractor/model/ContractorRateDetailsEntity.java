@@ -81,6 +81,10 @@ public class ContractorRateDetailsEntity {
 	@Column(name = "\"GROSS_MARGIN\"")
 	private Double grossMargin;
 	
+	@Column(name = "\"PAYROLL_TAX_PERCENTAGE\"")
+	private Double payrollTaxPercentage;
+	
+	
 	public BigInteger getId() {
 		return Id;
 	}
@@ -249,6 +253,14 @@ public class ContractorRateDetailsEntity {
 		this.grossMargin = grossMargin;
 	}
 
+	public Double getPayrollTaxPercentage() {
+		return payrollTaxPercentage;
+	}
+
+	public void setPayrollTaxPercentage(Double payrollTaxPercentage) {
+		this.payrollTaxPercentage = payrollTaxPercentage;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorRateDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", ratePerDay=" + ratePerDay
@@ -260,8 +272,11 @@ public class ContractorRateDetailsEntity {
 				+ additionalInfo + ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser
 				+ ", lastUpdatedDateTime=" + lastUpdatedDateTime + ", insuranceType=" + insuranceType
 				+ ", referralCommissionType=" + referralCommissionType + ", referralCommissionValue="
-				+ referralCommissionValue + ", grossMargin=" + grossMargin + "]";
+				+ referralCommissionValue + ", grossMargin=" + grossMargin + ", payrollTaxPercentage="
+				+ payrollTaxPercentage + "]";
 	}
+
+	
 
 	
 

@@ -1172,7 +1172,7 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select" id="default-select" >
-																							<select id="workLocationState"  >
+																							<select id="workLocationState"  onchange="retrievePayrollTax()">
 																								<option value="none"  selected="selected">Select State</option>
 																								<option value="NSW">New South Wales</option>
 																								<option value="VIC">Victoria</option>
@@ -1329,32 +1329,58 @@
 																			</div>
 																			
 																			
-																			<div class="col-sm-2">
+																			<div class="col-sm-1">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold;padding-top: 25px;">Payroll Tax to be paid?</label> 
 																					
-																					<input  type="checkbox"  id="payrollTaxCheck" name="payrollTaxCheck" checked="checked"/>
+																					<input  type="checkbox"  id="payrollTaxCheck" name="payrollTaxCheck" checked="checked"
+																					onclick="retrievePayrollTax()"/>
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-1">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold;padding-top: 25px;">Payroll Tax%</label> 
+																					
+																					<input type="text"
+										name="payrollTaxPercent" placeholder="Payroll Tax Percent"
+										onfocus="this.placeholder = 'Payroll Tax Percent'"
+										onblur="this.placeholder = 'Payroll Tax Percent'" id="payrollTaxPercent"
+										class="single-input">
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-2">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold;padding-top: 25px;"
+																					<label for="name" style="font-weight:bold;padding-top: 50px;"
 																					 id="payrolltaxvalue_lbl"></label> 
 																						
 																				</div>
 																			</div>
-																			<div class="col-sm-2">
+																			<div class="col-sm-1">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold;padding-top: 25px;">Insurance to be paid?</label> 
 																					
-																					<input  type="checkbox"  id="insurancePaymentCheck" name="insurancePaymentCheck" checked="checked"/>
+																					<input  type="checkbox"  id="insurancePaymentCheck" name="insurancePaymentCheck" 
+																					checked="checked" onclick="retrieveInsurancePercent()"/>
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-1">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold;padding-top: 25px;">Insurance%</label> 
+																					
+																					<input type="text"
+										name="insurancePercent" placeholder="Insurance %"
+										onfocus="this.placeholder = 'Insurance %'"
+										onblur="this.placeholder = 'Insurance %'" id="insurancePercent"
+										class="single-input">
 																						
 																				</div>
 																			</div>
 																			<div class="col-sm-2">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold;padding-top: 25px;"
+																					<label for="name" style="font-weight:bold;padding-top: 50px;"
 																					 id="insurancevalue_lbl"></label> 
 																						
 																				</div>
@@ -1413,7 +1439,7 @@
 																			</div>
 																			<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Margin</label> 
+																					<label for="name" style="font-weight:bold">Margin($)</label> 
 																					<input type="text"
 										name="margin" placeholder="Margin"
 										onfocus="this.placeholder = 'Margin'"
