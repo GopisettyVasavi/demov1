@@ -176,6 +176,14 @@ public class ContractorMVCController {
 		return new ResponseEntity<>(contractors, HttpStatus.OK);
 	}
 
+	/**
+	 * This method will calculate Margin
+	 * 
+	 * @param marginDto
+	 * @param request
+	 * @return
+	 */
+
 	@PostMapping("/calculatemargin")
 	public ResponseEntity<?> calculateMargin(@RequestBody MarginDTO marginDto, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -185,11 +193,9 @@ public class ContractorMVCController {
 
 		// List<ContractorABNDetailsDTO> abnList =
 		// contractorService.getAbnHistoryByContractorId(contractorId);
-		
+
 		/*
-		 * Double payrollTax = 0.0;
-		Double superannuation = 0.0;
-		Double insurance = 0.0;
+		 * Double payrollTax = 0.0; Double superannuation = 0.0; Double insurance = 0.0;
 		 * if (!ProfileParserUtils.isObjectEmpty(marginDto) &&
 		 * !ProfileParserUtils.isObjectEmpty(marginDto.getWorkLocationState()) &&
 		 * marginDto.getPayrollTaxCheck().equalsIgnoreCase(ProfileParserConstants.TRUE))
@@ -217,6 +223,15 @@ public class ContractorMVCController {
 		return new ResponseEntity<>(marginDto, HttpStatus.OK);
 	}
 
+	/**
+	 * This method will return payroll Tax% for the given state
+	 * 
+	 * @param state
+	 * @param redirectAttributes
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/payrolltax/{state}")
 	public ResponseEntity<?> loadContractorDetails(@PathVariable String state, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
@@ -232,16 +247,23 @@ public class ContractorMVCController {
 
 		return new ResponseEntity<>(payrollTax, HttpStatus.OK);
 	}
+
+	/**
+	 * This method will return insurance%
+	 * 
+	 * @param redirectAttributes
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/insurancePercent")
-	public ResponseEntity<?> getInsurancePercent(RedirectAttributes redirectAttributes,
-			Model model, HttpServletRequest request) {
+	public ResponseEntity<?> getInsurancePercent(RedirectAttributes redirectAttributes, Model model,
+			HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		Double insurancePercent= constantsService.getConstantValue(ProfileParserConstants.INSURANCE);
-
-		
+		Double insurancePercent = constantsService.getConstantValue(ProfileParserConstants.INSURANCE);
 
 		return new ResponseEntity<>(insurancePercent, HttpStatus.OK);
 	}

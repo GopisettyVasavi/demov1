@@ -1523,7 +1523,7 @@
 										name="billRatePerDay" placeholder="Bill Rate Per Day"
 										onfocus="this.placeholder = 'Bill Rate Per Day'"
 										onblur="this.placeholder = 'Bill Rate Per Day'" id="billRatePerDay"
-										class="single-input" th:field="${contractor.rateList.billRatePerDay}">
+										class="single-input" th:field="${contractor.rateList.billRatePerDay}" onchange="calcPercentages()">
 																						
 																				</div>
 																			</div>
@@ -1592,7 +1592,7 @@
 																						<div class="form-select" id="default-select" >
 																							<select id="referralCommissionType" onchange="calcPercentages()" 
 																							th:field="*{contractor.rateList.referralCommissionType}" >
-																								<option value="none"  selected="selected">Select Insurance</option>
+																								<option value="none"  selected="selected">Referral Commission Type</option>
 																								<option value="percent">Percentage</option>
 																								<option value="amount">Amount</option>
 																							</select>

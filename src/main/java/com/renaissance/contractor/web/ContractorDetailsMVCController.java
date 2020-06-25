@@ -127,8 +127,6 @@ public class ContractorDetailsMVCController {
 		}
 		logger.info("Controller invoked, to load bank details...id is, {}", contractorId);
 		List<ContractorBankDetailsDTO> bankList = contractorService.getBankHistoryByContractorId(contractorId);
-		
-		
 
 		return new ResponseEntity<>(bankList, HttpStatus.OK);
 	}
@@ -167,8 +165,6 @@ public class ContractorDetailsMVCController {
 		}
 		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
 		List<ContractorTFNDetailsDTO> tfnList = contractorService.getTfnHistoryByContractorId(contractorId);
-		
-		
 
 		return new ResponseEntity<>(tfnList, HttpStatus.OK);
 	}
@@ -208,8 +204,6 @@ public class ContractorDetailsMVCController {
 		}
 		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
 		List<ContractorSuperAnnuationDetailsDTO> saList = contractorService.getSAHistoryByContractorId(contractorId);
-		
-		
 
 		return new ResponseEntity<>(saList, HttpStatus.OK);
 	}
@@ -229,8 +223,6 @@ public class ContractorDetailsMVCController {
 		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
 		List<ContractorEmploymentDetailsDTO> empList = contractorService.getEmployerHistoryByContractorId(contractorId);
 		
-		
-
 		return new ResponseEntity<>(empList, HttpStatus.OK);
 	}
 	

@@ -32,7 +32,12 @@ public class ConstantsMVCController {
 		
         return "constants";
     }
-	
+	/**
+	 * 
+	 * @param constantsDto
+	 * @param request
+	 * @return
+	 */
 	@PostMapping("/updateconstants")
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto,
 			HttpServletRequest request) {
@@ -49,7 +54,11 @@ public class ConstantsMVCController {
 		
 		return new ResponseEntity<>(constantsDto, HttpStatus.OK);
 	}
-	
+	/**
+	 * 
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/getconstants")
 	public ResponseEntity<?> getConstants(
 			HttpServletRequest request) {

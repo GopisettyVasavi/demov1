@@ -284,7 +284,7 @@ public class FileuploadMvcController {
 			String filenameWithoutX=FilenameUtils.removeExtension(file.getOriginalFilename());
 			File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
 			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())&&!pdfFile.exists()) {
-				FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
+				//FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
 				Thread.sleep(5000);
 
 			}

@@ -998,12 +998,25 @@ function calculateMargin(){
 		timeout : 600000,
 			success : function(data) {	
 				//alert(data.payrollTax);
-				$("#margin").val(data.grossMargin);
+				var margin=data.grossMargin+"";
+				if(margin.indexOf('.')==-1)
+					margin=margin+".00";
+				$("#margin").val(margin);
 				margin=data.grossMargin;
 				if($("#referralCommissionValue").val()!=""){
-				$("#referralvalue_lbl").text("Referral Commission: $ "+data.referralValue);}
-				$("#insurancevalue_lbl").text("Insurance: $  "+data.insuranceValue);
-				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+data.payrollTaxValue);
+					var referralVal=data.referralValue+"";
+					if(referralVal.indexOf('.')==-1)
+						referralVal=referralVal+".00";
+				$("#referralvalue_lbl").text("Referral Commission: $ "+referralVal);
+				}
+				var insuranceVal=data.insuranceValue+"";
+				if(insuranceVal.indexOf('.')==-1)
+					insuranceVal=insuranceVal+".00";
+				$("#insurancevalue_lbl").text("Insurance: $  "+insuranceVal);
+				var payrolltax=data.payrollTaxValue+"";
+				if(payrolltax.indexOf('.')==-1)
+					payrolltax=payrolltax+".00";
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltax);
 				
 				payrollTaxPercent=data.payrollTax;
 				insurancePercent=data.insurancePercentage;
@@ -1044,6 +1057,8 @@ function retrievePayrollTax(){
 				
 				}
 				
+				calcPercentages();
+				
 			},
 			error : function(e) {
 
@@ -1058,7 +1073,7 @@ function retrievePayrollTax(){
 		$("#payrolltaxvalue_lbl").text("");
 	}
 	
-	calcPercentages();
+	
 }
 function retrieveInsurancePercent(){
 	
@@ -1094,27 +1109,50 @@ function retrieveInsurancePercent(){
 function calcPercentages(){
 	if($("#ratePerDay").val()!=0 && $("#ratePerDay").val()!="")
 		{
+		var insurance=0.0;
+		var payrolltaxval=0.0;
+		var referralValue=0.0;
+		var margin=0.0;
 		if( $("#insurancePercent").val()!="" && $("#insurancePercent").val()!=0){
-		var insurance=$("#ratePerDay").val() * $("#insurancePercent").val()/100;
+		 insurance=$("#ratePerDay").val() * $("#insurancePercent").val()/100;
+		insurance=insurance.toFixed(2);
 		$("#insurancevalue_lbl").text("Insurance: $  "+insurance);
 		}
 		
 		if($("#workLocationState").val()!="" && $("#workLocationState").val()!="none"
 			&& $("#payrollTaxPercent").val()!="" && $("#payrollTaxPercent").val()!=0){
-		var payrolltaxval=$("#ratePerDay").val()*$("#payrollTaxPercent").val()/100;
+		 payrolltaxval=$("#ratePerDay").val()*$("#payrollTaxPercent").val()/100;
+		 payrolltaxval=payrolltaxval.toFixed(2);
+		$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltaxval);
+		}
+		if( $("#payrollTaxPercent").val()!="" && $("#payrollTaxPercent").val()!=0){
+		 payrolltaxval=$("#ratePerDay").val()*$("#payrollTaxPercent").val()/100;
+		 payrolltaxval=payrolltaxval.toFixed(2);
 		$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltaxval);
 		}
 		if($("#referralCommissionType").val()!="none" && $("#referralCommissionType").val()!="" && 
 				 $("#referralCommissionValue").val()!="" && $("#referralCommissionValue").val()!=0){
 			if($("#referralCommissionType").val()=="percent" ){
-				var referralValue=$("#ratePerDay").val()*$("#referralCommissionValue").val()/100;
+				 referralValue=$("#ratePerDay").val()*$("#referralCommissionValue").val()/100;
+				 referralValue=referralValue.toFixed(2);
 				$("#referralvalue_lbl").text("Referral Commission: $ "+referralValue);
 			}
 			if($("#referralCommissionType").val()=="amount" ){
-			
+				referralValue=$("#referralCommissionValue").val();
 				$("#referralvalue_lbl").text("Referral Commission: $ "+$("#referralCommissionValue").val());
 			}
 			
 		}else $("#referralvalue_lbl").text("");
+		//alert("call 1");
+		if($("#billRatePerDay").val()!=0 && $("#billRatePerDay").val()!=""){
+			//alert("call 2");
+			var billrate=Number($("#billRatePerDay").val());
+			var contractorRate=Number($("#ratePerDay").val());
+			//alert(billrate+" "+contractorRate+" "+insurance+" "+payrolltaxval+" "+referralValue);
+			margin=(billrate-(Number(contractorRate)+Number(insurance)+Number(payrolltaxval)+Number(referralValue))).toFixed(2);
+			$("#margin").val(margin);
+			
+		}
+		else $("#margin").val("");
 	}
 }

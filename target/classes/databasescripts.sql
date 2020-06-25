@@ -177,6 +177,9 @@ CREATE TABLE parse."CONTRACTOR_PERSONAL_DETAILS"
     "ZIP_CODE" bigint,
     "DATE_OF_BIRTH" character varying COLLATE pg_catalog."default",
     "VISA_VALID_DATE" character varying COLLATE pg_catalog."default",
+    "CONTRACTOR_FULL_NAME" character varying COLLATE pg_catalog."default",
+    "ABN_HOLDER" character varying COLLATE pg_catalog."default",
+    "OTHER_STATE" character varying COLLATE pg_catalog."default",
     CONSTRAINT "CONTRACTOR_PERSONAL_DETAILS_pkey" PRIMARY KEY ("CONTRACTOR_ID")
 )
 -- Table: parse."CONTRACTOR_ABN_DETAILS"
@@ -259,6 +262,10 @@ CREATE TABLE parse."CONTRACTOR_EMPLOYMENT_DETAILS"
     "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "RECRUITER_ID" bigint,
+    "RECRUITER_NAME" character varying COLLATE pg_catalog."default",
+    "WL_OTHER_STATE" character varying COLLATE pg_catalog."default",
+    "WL_OTHER_COUNTRY" character varying COLLATE pg_catalog."default",
     CONSTRAINT "CONTRACTOR_EMPLOYMENT_DETAILS_pkey" PRIMARY KEY ("ID"),
     CONSTRAINT "CONTRACTOR_EMPLOYMENT_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
         REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
@@ -273,29 +280,33 @@ CREATE TABLE parse."CONTRACTOR_RATE_DETAILS"
 (
     "ID" bigint NOT NULL,
     "CONTRACTOR_ID" bigint,
-    "RATE_PER_DAY" numeric,
+    "RATE_PER_DAY" double precision,
     "RATE_START_DATE" character varying COLLATE pg_catalog."default",
     "RATE_END_DATE" character varying COLLATE pg_catalog."default",
     "INCLUDE_SUPER_FLAG" character varying COLLATE pg_catalog."default",
-    "BILL_RATE_PER_DAY" numeric,
-    "RECRUITER_ID" smallint,
-    "RECRUITER_NAME" character varying COLLATE pg_catalog."default",
+    "BILL_RATE_PER_DAY" double precision,
     "PAYROLL_TAX_PAYMENT_FLAG" character varying COLLATE pg_catalog."default",
-    "WORK_COVER_FLAG" character varying COLLATE pg_catalog."default",
-    "INSURANCE_PERCENTAGE" numeric,
-    "OTHER_DEDUCTION_PERCENTAGE" numeric,
-    "OTHER_DEDUCTION_AMOUNT" numeric,
-    "NET_MARGIN" numeric,
+    "INSURANCE_PAYMENT_FLAG" character varying COLLATE pg_catalog."default",
+    "INSURANCE_PERCENTAGE" double precision,
+    "OTHER_DEDUCTION_PERCENTAGE" double precision,
+    "OTHER_DEDUCTION_AMOUNT" double precision,
+    "NET_MARGIN" double precision,
     "ACTIVE_RECORD" character varying COLLATE pg_catalog."default",
     "ADDITIONAL_INFO" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_USER" character varying COLLATE pg_catalog."default",
     "LAST_UPDATED_DATE_TIME" timestamp without time zone,
+    "INSURANCE_TYPE" character varying COLLATE pg_catalog."default",
+    "REFERRAL_COMM_TYPE" character varying COLLATE pg_catalog."default",
+    "REFERRAL_COMM_VALUE" double precision,
+    "GROSS_MARGIN" double precision,
+    "PAYROLL_TAX_PERCENTAGE" double precision,
     CONSTRAINT "CONTRACTOR_RATE_DETAILS_pkey" PRIMARY KEY ("ID"),
     CONSTRAINT "CONTRACTOR_RATE_FKEY" FOREIGN KEY ("CONTRACTOR_ID")
         REFERENCES parse."CONTRACTOR_PERSONAL_DETAILS" ("CONTRACTOR_ID") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
+
 -- Table: parse."CONTRACTOR_SUPER_ANNUATION_DETAILS"
 
 -- DROP TABLE parse."CONTRACTOR_SUPER_ANNUATION_DETAILS";
@@ -318,10 +329,12 @@ CREATE TABLE parse."CONTRACTOR_SUPER_ANNUATION_DETAILS"
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
+
 -- Table: parse."CONTRACTOR_TFN_DETAILS"
 
 -- DROP TABLE parse."CONTRACTOR_TFN_DETAILS";
 
+)
 CREATE TABLE parse."CONTRACTOR_TFN_DETAILS"
 (
     "ID" bigint NOT NULL,
@@ -345,6 +358,23 @@ CREATE TABLE parse."CONTRACTOR_TFN_DETAILS"
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
+
+CREATE TABLE parse."APP_CONSTANTS"
+(
+    "ID" smallint NOT NULL,
+    "CONSTANT_NAME" character varying COLLATE pg_catalog."default" NOT NULL,
+    "CONSTANT_VALUE" double precision NOT NULL,
+    CONSTRAINT "APP_CONSTANTS_pkey" PRIMARY KEY ("ID")
+)
+
+-- DROP SEQUENCE parse.app_constants_sequence;
+
+CREATE SEQUENCE parse.app_constants_sequence
+    INCREMENT 5
+    START 86
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
 
 -- DROP SEQUENCE parse.candidate_education_sequence;
 
