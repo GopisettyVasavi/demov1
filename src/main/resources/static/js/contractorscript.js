@@ -1137,10 +1137,7 @@ function calcPercentages(){
 				 referralValue=referralValue.toFixed(2);
 				$("#referralvalue_lbl").text("Referral Commission: $ "+referralValue);
 			}
-			if($("#referralCommissionType").val()=="amount" ){
-				referralValue=$("#referralCommissionValue").val();
-				$("#referralvalue_lbl").text("Referral Commission: $ "+$("#referralCommissionValue").val());
-			}
+			
 			
 		}else $("#referralvalue_lbl").text("");
 		//alert("call 1");
@@ -1154,5 +1151,17 @@ function calcPercentages(){
 			
 		}
 		else $("#margin").val("");
+	}
+	else {
+		if($("#referralCommissionType").val()=="percent" ){
+		$("#referralvalue_lbl").text("");}
+		$("#margin").val("");
+		$("#payrolltaxvalue_lbl").text("");
+		$("#insurancevalue_lbl").text("");
+	}
+	if($("#referralCommissionType").val()=="amount" &&  $("#referralCommissionValue").val()!="" && $("#referralCommissionValue").val()!=0){
+		referralValue=$("#referralCommissionValue").val()+".00";
+		//referralValue=referralValue.toFixed(2);
+		$("#referralvalue_lbl").text("Referral Commission: $ "+referralValue);
 	}
 }

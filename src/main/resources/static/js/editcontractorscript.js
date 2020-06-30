@@ -117,14 +117,28 @@ function initialize_details(){
 		timeout : 600000,
 			success : function(data) {	
 				//alert(data.payrollTax);
-				$("#margin").val(data.grossMargin);
+				var margin=data.grossMargin+"";
+				if(margin.indexOf('.')==-1)
+					margin=margin+".00";
+				$("#margin").val(margin);
 				margin=data.grossMargin;
 				if($("#referralCommissionValue").val()!=""){
-				$("#referralvalue_lbl").text("Referral Commission: $ "+data.referralValue);}
-				$("#insurancevalue_lbl").text("Insurance: $  "+data.insuranceValue);
-				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+data.payrollTaxValue);
+					var referralVal=data.referralValue+"";
+					if(referralVal.indexOf('.')==-1)
+						referralVal=referralVal+".00";
+				$("#referralvalue_lbl").text("Referral Commission: $ "+referralVal);
+				}
+				var insuranceVal=data.insuranceValue+"";
+				if(insuranceVal.indexOf('.')==-1)
+					insuranceVal=insuranceVal+".00";
+				$("#insurancevalue_lbl").text("Insurance: $  "+insuranceVal);
+				var payrolltax=data.payrollTaxValue+"";
+				if(payrolltax.indexOf('.')==-1)
+					payrolltax=payrolltax+".00";
+				$("#payrolltaxvalue_lbl").text("Payroll Tax: $  "+payrolltax);
 				
-				
+				payrollTaxPercent=data.payrollTax;
+				insurancePercent=data.insurancePercentage;
 				
 	     },
 	     error: function (e) {
@@ -139,6 +153,11 @@ function initialize_details(){
 
 	     }
 	 });
+	/*if( $("#payrollTaxPercent").val()=="" || $("#payrollTaxPercent").val()==0){
+	{retrievePayrollTax();}
+	if( $("#insurancePercent").val()=="" || $("#insurancePercent").val()==0){
+	retrieveInsurancePercent();}
+	calcPercentages();*/
 }
 
 function populateRecruiterList(){
@@ -154,8 +173,6 @@ function populateRecruiterList(){
 	        	var recId=$("#recruiterid_dtl").val();
 	        	//alert(rec);
 	         $('#recruiter-select').html("<select id =\"recruiter\" class=\"nice-select form-select\">Select Recruiter</select>");
-	         
-	         
 	         
 	        // $('#recruiter-select select').append(options);
 	        for(i in list){
