@@ -18,6 +18,7 @@ import com.renaissance.profile.parser.dto.CandidateDTO;
 import com.renaissance.profile.parser.model.ProfileSearchForm;
 import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ProfileSearchMvcController {
@@ -25,11 +26,11 @@ public class ProfileSearchMvcController {
 	@Autowired
 	ProfileService profileService;
 	
-	@GetMapping("/profilesearch")
+	@GetMapping(PROFILE_SEARCH)
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		return "profilesearch";
 	}
@@ -39,7 +40,7 @@ public class ProfileSearchMvcController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/searchcandidates") 
+	@PostMapping(SEARCH_CANDIDATES) 
 	public  ResponseEntity<?> getSearchResults(@RequestBody ProfileSearchForm searchForm,  HttpServletRequest request) {
 		
 		if (!ProfileParserUtils.isSessionAlive(request)) {

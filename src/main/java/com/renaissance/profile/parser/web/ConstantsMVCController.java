@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ConstantsMVCController {
@@ -23,11 +24,11 @@ public class ConstantsMVCController {
 	@Autowired
 	ConstantsService constantsService;
 	
-	@GetMapping("/constantsdef")
+	@GetMapping(CONSTANTS_DEF)
     public String indexForm(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		
         return "constants";
@@ -38,7 +39,7 @@ public class ConstantsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/updateconstants")
+	@PostMapping(UPDATE_CONSTANTS)
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto,
 			HttpServletRequest request) {
 		try {
@@ -59,7 +60,7 @@ public class ConstantsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@GetMapping("/getconstants")
+	@GetMapping(GET_CONSTANTS)
 	public ResponseEntity<?> getConstants(
 			HttpServletRequest request) {
 		ConstantsDTO constantsDto=null;

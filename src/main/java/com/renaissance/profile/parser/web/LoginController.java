@@ -23,6 +23,8 @@ import com.renaissance.profile.parser.model.User;
 import com.renaissance.profile.parser.service.UserService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
+
 
 @Controller
 public class LoginController {
@@ -43,7 +45,7 @@ public class LoginController {
  * @param request
  * @return
  */
-		@PostMapping("/login")
+		@PostMapping(LOGIN)
 	    public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody LoginForm loginForm, Errors errors, RedirectAttributes redirectAttributes, HttpServletRequest request) {
 			    AjaxResponseBody result = new AjaxResponseBody();
 
@@ -77,7 +79,7 @@ public class LoginController {
 
 	    }
 		
-		@GetMapping("/index")
+		@GetMapping(INDEX)
 	    public String indexForm(HttpServletRequest request) {
 			if (!ProfileParserUtils.isSessionAlive(request)) {
 				logger.info("null session");
@@ -87,7 +89,7 @@ public class LoginController {
 	        return "index";
 	    }
 		
-		@GetMapping("/indexload")
+		@GetMapping(INDEX_LOAD)
 	    public ResponseEntity<?> indexLoad(RedirectAttributes redirectAttributes,
 				Model model, HttpServletRequest request) {
 			if (!ProfileParserUtils.isSessionAlive(request)) {

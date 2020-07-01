@@ -28,6 +28,7 @@ import com.renaissance.contractor.dto.ContractorTFNDetailsDTO;
 import com.renaissance.contractor.service.ContractorManagementService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ContractorDetailsMVCController {
@@ -36,11 +37,11 @@ public class ContractorDetailsMVCController {
 	@Autowired
 	ContractorManagementService contractorService;
 
-	@GetMapping("/contractordetails")
+	@GetMapping(CONTRACTOR_DETAILS)
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		return "contractordetails";
 	}
@@ -55,12 +56,12 @@ public class ContractorDetailsMVCController {
 	 * @return
 	 */
 
-	@GetMapping("/contractordetails/{contractorId}")
+	@GetMapping(CONTRACTOR_DETAILS_CONTRACTORID)
 	public String loadContractorDetails(@PathVariable BigInteger contractorId, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		logger.info("Controller invoked, to load details...id is, {}", contractorId);
 		ContractorDetailsDTO contractorDto = contractorService.getContractorFullDetails(contractorId);
@@ -74,7 +75,7 @@ public class ContractorDetailsMVCController {
 		redirectAttributes.addFlashAttribute("contractor", contractorDto);
 		model.addAttribute("contractor", contractorDto);
 
-		return "redirect:/contractordetails";
+		return REDIRECT_CONTRACTOR_DETAILS;
 	}
 
 	/**
@@ -84,7 +85,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/updateContractor")
+	@PostMapping(UPDATE_CONTRACTOR)
 	public ResponseEntity<?> updateContractor(@RequestBody ContractorDetailsDTO contractorDto,
 			HttpServletRequest request) {
 		try {
@@ -119,7 +120,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/bankhistory/{contractorId}")
+	@PostMapping(BANK_HISTORY)
 	public ResponseEntity<?> loadBankHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -137,7 +138,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/abnhistory/{contractorId}")
+	@PostMapping(ABN_HISTORY)
 	public ResponseEntity<?> loadABNHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -157,7 +158,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/tfnhistory/{contractorId}")
+	@PostMapping(TFN_HISTORY)
 	public ResponseEntity<?> loadTFNHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -175,7 +176,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/ratehistory/{contractorId}")
+	@PostMapping(RATE_HISTORY)
 	public ResponseEntity<?> loadRateHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -196,7 +197,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/sahistory/{contractorId}")
+	@PostMapping(SA_HISTORY)
 	public ResponseEntity<?> loadSAHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -214,7 +215,7 @@ public class ContractorDetailsMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/emphistory/{contractorId}")
+	@PostMapping(EMP_HISTORY)
 	public ResponseEntity<?> loadEmployerHistoryDetails(@PathVariable BigInteger contractorId, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");

@@ -1090,7 +1090,7 @@ function retrieveInsurancePercent(){
 				$("#insurancePercent").val(data);
 				if($("#ratePerDay").val()!=0 && $("#ratePerDay").val()!=""){
 					var insurance=$("#ratePerDay").val() * data/100;
-					$("#insurancevalue_lbl").text("Insurance: $  "+insurance);
+					$("#insurancevalue_lbl").text("Insurance: $  "+insurance+".00");
 				}
 			},
 			error : function(e) {

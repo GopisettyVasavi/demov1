@@ -33,6 +33,7 @@ import com.renaissance.contractor.model.ContractorSearchResultsForm;
 import com.renaissance.contractor.service.ContractorManagementService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ContractorMVCController {
@@ -44,11 +45,11 @@ public class ContractorMVCController {
 	@Autowired
 	ConstantsService constantsService;
 
-	@GetMapping("/contractormain")
+	@GetMapping(CONTRACTOR_MAIN)
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		if (ProfileParserConstants.ADMIN
 				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
@@ -65,7 +66,7 @@ public class ContractorMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/createContractor")
+	@PostMapping(CREATE_CONTRACTOR)
 	public ResponseEntity<?> createContractor(@RequestBody ContractorDetailsDTO contractorDto,
 			HttpServletRequest request) {
 		try {
@@ -155,7 +156,7 @@ public class ContractorMVCController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/searchContractors")
+	@PostMapping(SEARCH_CONTRACTORS)
 	public ResponseEntity<?> searchContractors(@RequestBody ContractorSearchForm contractorSearchForm,
 			HttpServletRequest request) {
 		try {
@@ -184,7 +185,7 @@ public class ContractorMVCController {
 	 * @return
 	 */
 
-	@PostMapping("/calculatemargin")
+	@PostMapping(CALCULATE_MARGIN)
 	public ResponseEntity<?> calculateMargin(@RequestBody MarginDTO marginDto, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -232,7 +233,7 @@ public class ContractorMVCController {
 	 * @param request
 	 * @return
 	 */
-	@GetMapping("/payrolltax/{state}")
+	@GetMapping(STATE_PAYROLL_TAX)
 	public ResponseEntity<?> loadContractorDetails(@PathVariable String state, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -256,7 +257,7 @@ public class ContractorMVCController {
 	 * @param request
 	 * @return
 	 */
-	@GetMapping("/insurancePercent")
+	@GetMapping(INSURANCE_PERCENT)
 	public ResponseEntity<?> getInsurancePercent(RedirectAttributes redirectAttributes, Model model,
 			HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {

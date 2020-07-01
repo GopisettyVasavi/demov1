@@ -23,6 +23,8 @@ import com.renaissance.profile.parser.model.User;
 import com.renaissance.profile.parser.service.EmployeeService;
 import com.renaissance.profile.parser.service.UserService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
+
 
 @Controller
 public class RegisterEmployeeMvcController {
@@ -33,21 +35,21 @@ public class RegisterEmployeeMvcController {
 	@Autowired
 	UserService userService;
 
-	@GetMapping("/registeremployee")
+	@GetMapping(REGISTER_EMPLOYEE)
 	public String index(HttpServletRequest request) {
 		logger.info("Register Employee Mvc Controller invoked");
 		
 		return "createemployee";
 	}
 
-	@GetMapping("/changepassword")
+	@GetMapping(CHANGE_PASSWORD)
 	public String changePassword(HttpServletRequest request) {
 		logger.info("Register Employee Mvc Controller invoked, ChangePassword");
 		
 		return "changepassword";
 	}
 
-	@PostMapping("/saveemployee")
+	@PostMapping(SAVE_EMPLOYEE)
 	public ResponseEntity<?> saveEmployee(@RequestBody EmployeeForm employeeForm, HttpServletRequest request) {
 		AjaxResponseBody result = new AjaxResponseBody();
 		EmployeeForm employee=null;
@@ -69,7 +71,7 @@ public class RegisterEmployeeMvcController {
 
 	}
 
-	@PostMapping("/passwordchange")
+	@PostMapping(PASSWORD_CHANGE)
 	public ResponseEntity<?> passwordChange(@RequestBody PasswordChangeForm passwordChangeForm, HttpServletRequest request) {
 		AjaxResponseBody result = new AjaxResponseBody();
 
@@ -88,7 +90,7 @@ public class RegisterEmployeeMvcController {
 
 	}
 	
-	@GetMapping("/recruiterList")
+	@GetMapping(RECRUITER_LIST)
     public ResponseEntity<?> loadCandidateDetails( RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
 	 if (!ProfileParserUtils.isSessionAlive(request)) {

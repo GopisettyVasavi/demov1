@@ -16,6 +16,7 @@ import com.renaissance.profile.parser.dto.CandidateDTO;
 import com.renaissance.profile.parser.service.ProfileParserService;
 import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 /**
  * This class will load the details of the candidate on click of
  *  table row in search results screen.
@@ -30,17 +31,17 @@ public class CandidateDetailsMvcController {
 	@Autowired
 	ProfileParserService profileparserService;
 	
-	 @GetMapping("/candidatedetails")
+	 @GetMapping(CANDIDATE_DETAILS)
 	    public String index( HttpServletRequest request) {
 		// logger.info("Controller invoked");
 		 if (!ProfileParserUtils.isSessionAlive(request)) {
 				logger.info("null session");
-				return "redirect:/";
+				return EMPTY_REDIRECT;
 			}
 	        return "candidatedetails";
 	    }
 	 
-	 @GetMapping("/candidatedetails/{candidateId}")
+	 @GetMapping(CANDIDATE_DETAILS_CANDIDATE_ID)
 	    public String loadCandidateDetails(@PathVariable BigInteger candidateId, RedirectAttributes redirectAttributes,
 				Model model, HttpServletRequest request) {
 		 if (!ProfileParserUtils.isSessionAlive(request)) {

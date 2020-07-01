@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import static com.renaissance.util.APIConstants.*;
+
 /**
  * this controllerr class will be invoked to logout the user
  * @author Vasavi
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LogoutController {
 	private static final Logger logger=LoggerFactory.getLogger(LogoutController.class);
-	 @GetMapping("/logout")
+	 @GetMapping(LOGOUT)
 	    public String index() {
 	        return "logout";
 	    }
@@ -25,7 +27,7 @@ public class LogoutController {
  * @param request
  * @return
  */
-	 @GetMapping("/logoutuser")
+	 @GetMapping(LOGOUT_USER)
 		public String logout(HttpServletRequest request){
 			try {
 				logger.info("Logout invoked...");

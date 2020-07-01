@@ -32,6 +32,7 @@ import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.FileUtils;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class FileuploadMvcController {
@@ -44,11 +45,11 @@ public class FileuploadMvcController {
 	@Autowired
 	ProfileService profileService;
 	
-	@GetMapping("/profileparser")
+	@GetMapping(PROFILE_PARSER)
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		//logger.info("USER ROLE",request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString());
 		if(ProfileParserConstants.RECRUITER.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()) ||
@@ -68,13 +69,13 @@ public class FileuploadMvcController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/upload") // //new annotation since 4.3
+	@PostMapping(UPLOAD) // //new annotation since 4.3
 	public String singleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
 
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		if (file.isEmpty()) {
 			redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
@@ -182,7 +183,7 @@ public class FileuploadMvcController {
 		// return response;
 	}
 
-	@GetMapping("/uploadStatus")
+	@GetMapping(UPLOAD_STATUS)
 	public String uploadStatus() {
 		return "uploadStatus";
 	}
@@ -195,7 +196,7 @@ public class FileuploadMvcController {
 	 * @param request
 	 * @return
 	 */
-	@PostMapping("/createProfile")
+	@PostMapping(CREATE_PROFILE)
 	public ResponseEntity<?> createProfile(@RequestBody CandidateDTO profile, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("Session has expired.");
@@ -236,7 +237,7 @@ public class FileuploadMvcController {
  * @param request
  * @return
  */
-	@RequestMapping(value = "/copyFile", method = RequestMethod.POST)
+	@RequestMapping(value = COPY_FILE, method = RequestMethod.POST)
 	public ResponseEntity<?> copySingleFile(@RequestParam("selFile") MultipartFile file, HttpServletRequest request) {
 		logger.info("File selected... {}", file);
 		if (!ProfileParserUtils.isSessionAlive(request)) {

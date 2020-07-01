@@ -33,6 +33,7 @@ import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.FileUtils;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class BulkFileUploadMvcController {
@@ -43,12 +44,12 @@ public class BulkFileUploadMvcController {
 	@Autowired
 	ProfileService profileService;
 
-	@GetMapping("/bulkfileupload")
+	@GetMapping(BULK_FILE_UPLOAD)
 	public String index(HttpServletRequest request) {
 	//	logger.info("Bulk file upload Controller invoked");
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
-			return "redirect:/";
+			return EMPTY_REDIRECT;
 		}
 		if(ProfileParserConstants.DATA_ENTRY_OPERATOR.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())||
 				ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
@@ -58,7 +59,7 @@ public class BulkFileUploadMvcController {
 		
 	}
 
-	@PostMapping("/bulkupload") // //new annotation since 4.3
+	@PostMapping(BULK_UPLOAD) // //new annotation since 4.3
 	public ResponseEntity<?> bulkFileUpload(@RequestParam("files") MultipartFile[] files, HttpServletRequest request) {
 
 		BulkUploadResponse response = new BulkUploadResponse();
@@ -164,7 +165,7 @@ public class BulkFileUploadMvcController {
 		// return response;
 	}
 
-	@GetMapping("/failedcandidatedetails/{fileName}")
+	@GetMapping(FAILED_CANDIDATE_DETAILS)
 	public String loadFailedCandidateDetails(@PathVariable String fileName, RedirectAttributes redirectAttributes,
 			Model model, HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
