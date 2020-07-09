@@ -46,6 +46,7 @@ public class APIConstants {
 	public static final String SAVE_EMPLOYEE="/saveemployee";
 	public static final String PASSWORD_CHANGE="/passwordchange";
 	public static final String RECRUITER_LIST="/recruiterList";
+	public static final String COMMISSION_MAIN="/commissionmain";
 	
 
 }

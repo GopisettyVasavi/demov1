@@ -45,6 +45,11 @@ public class ContractorMVCController {
 	@Autowired
 	ConstantsService constantsService;
 
+	/**
+	 * This method is invoked to load contractor main page.
+	 * @param request
+	 * @return
+	 */
 	@GetMapping(CONTRACTOR_MAIN)
 	public String index(HttpServletRequest request) {
 		if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -75,11 +80,6 @@ public class ContractorMVCController {
 			logger.info("Create Contractor SA details..,{}", contractorDto.getSuperAnnuationList().toString());
 			logger.info("Create Contractor Employment details..,{}", contractorDto.getEmployerList().toString());
 			logger.info("Create Contractor Rate details..,{}", contractorDto.getRateList().toString());
-			// logger.info("Create Contractor ABN details..,{}",
-			// contractorDto.getAbnList().toString());
-			// logger.info("Create Contractor TFN details..,{}",
-			// contractorDto.getTfnList().toString());
-
 			contractorDto = contractorService.createContractor(contractorDto,
 					request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME).toString());
 

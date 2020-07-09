@@ -279,7 +279,7 @@ public class ContractorManagementService {
 	}
 
 	/**
-	 * This method will populate Bank details from to DTO to VO and save to DB.
+	 * This method will populate Bank details from DTO to VO and save to DB.
 	 * 
 	 * @param bankDto
 	 * @param lastUpdatedUser
