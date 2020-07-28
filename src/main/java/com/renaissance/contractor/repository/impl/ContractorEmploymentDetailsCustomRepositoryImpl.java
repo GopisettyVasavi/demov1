@@ -147,4 +147,33 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 		// return null;
 	}
 
+	public List<ContractorEmploymentDetailsEntity> getCandidatesForCommission(String monthAndYear){
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<ContractorEmploymentDetailsEntity> query = criteriaBuilder
+				.createQuery(ContractorEmploymentDetailsEntity.class);
+		Root<ContractorEmploymentDetailsEntity> contractorEmp = query.from(ContractorEmploymentDetailsEntity.class);
+
+		Predicate predicateEndDate
+				  = criteriaBuilder.like(contractorEmp.get("jobEndDate"),
+							"%" + monthAndYear + "%");
+				Predicate predicateEmptyEndDate
+				  = criteriaBuilder.equal(contractorEmp.get("jobEndDate"), "");
+				Predicate predicateJobEndDate
+				  = criteriaBuilder.or(predicateEndDate, predicateEmptyEndDate);
+			
+				
+
+			Predicate predicateActive
+			  = criteriaBuilder.equal(criteriaBuilder.upper(contractorEmp.get("activeRecord")), "ACTIVE");
+
+			Predicate finalPredicate
+			  = criteriaBuilder.and(predicateJobEndDate, predicateActive);
+			query.select(contractorEmp).where(finalPredicate);
+			List<ContractorEmploymentDetailsEntity> result=entityManager.createQuery(query).getResultList();
+		if(!ProfileParserUtils.isObjectEmpty(result)) {
+			return result;
+		} else
+			return new ArrayList<ContractorEmploymentDetailsEntity>();
+		
+	}
 }

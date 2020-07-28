@@ -1,5 +1,13 @@
 package com.renaissance.contractor.web;
 
+import static com.renaissance.util.APIConstants.CALCULATE_MARGIN;
+import static com.renaissance.util.APIConstants.CONTRACTOR_MAIN;
+import static com.renaissance.util.APIConstants.CREATE_CONTRACTOR;
+import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
+import static com.renaissance.util.APIConstants.INSURANCE_PERCENT;
+import static com.renaissance.util.APIConstants.SEARCH_CONTRACTORS;
+import static com.renaissance.util.APIConstants.STATE_PAYROLL_TAX;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,7 +41,6 @@ import com.renaissance.contractor.model.ContractorSearchResultsForm;
 import com.renaissance.contractor.service.ContractorManagementService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
-import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ContractorMVCController {
@@ -44,6 +51,8 @@ public class ContractorMVCController {
 
 	@Autowired
 	ConstantsService constantsService;
+	
+	
 
 	/**
 	 * This method is invoked to load contractor main page.
@@ -268,4 +277,6 @@ public class ContractorMVCController {
 
 		return new ResponseEntity<>(insurancePercent, HttpStatus.OK);
 	}
+	
+	
 }

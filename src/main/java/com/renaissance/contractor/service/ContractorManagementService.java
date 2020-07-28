@@ -361,6 +361,7 @@ public class ContractorManagementService {
 
 			}
 		}
+		//logger.info("END DATE, {}", searchForm.getJobEndDate().substring(2));
 		List<ContractorEmploymentDetailsEntity> empDetails = contractorEmployment.searchEmploymentDetails(searchForm);
 		logger.info("Search Results EMP table, {}", empDetails.size());
 		if (!ProfileParserUtils.isObjectEmpty(empDetails)) {

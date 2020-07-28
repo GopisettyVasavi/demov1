@@ -11,5 +11,6 @@ public interface ContractorEmploymentDetailsCustomRepository {
 	void deleteByContractorId(BigInteger contractorId);
 	List<ContractorEmploymentDetailsEntity> searchEmploymentDetails(ContractorSearchForm searchForm);
 	List<ContractorEmploymentDetailsEntity> getAllEmploymentDetailsByContractorId(BigInteger contractorId);
+	List<ContractorEmploymentDetailsEntity> getCandidatesForCommission(String monthAndYear);
 
 }

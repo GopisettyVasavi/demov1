@@ -1138,7 +1138,10 @@ function calcPercentages(){
 				$("#referralvalue_lbl").text("Referral Commission: $ "+referralValue);
 			}
 			
-			
+			if($("#referralCommissionType").val()=="amount" ){
+				referralValue=$("#referralCommissionValue").val();
+				
+			}
 		}else $("#referralvalue_lbl").text("");
 		//alert("call 1");
 		if($("#billRatePerDay").val()!=0 && $("#billRatePerDay").val()!=""){
@@ -1154,7 +1157,8 @@ function calcPercentages(){
 	}
 	else {
 		if($("#referralCommissionType").val()=="percent" ){
-		$("#referralvalue_lbl").text("");}
+		$("#referralvalue_lbl").text("");
+		}
 		$("#margin").val("");
 		$("#payrolltaxvalue_lbl").text("");
 		$("#insurancevalue_lbl").text("");
