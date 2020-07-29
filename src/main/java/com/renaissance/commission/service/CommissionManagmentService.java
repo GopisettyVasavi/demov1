@@ -39,12 +39,13 @@ public class CommissionManagmentService {
 		if (!ProfileParserUtils.isObjectEmpty(empDetails)) {
 			int i=1;
 			for (ContractorEmploymentDetailsEntity empEntity : empDetails) {
-				logger.info("Result records...,{}", empEntity.toString());
+				//logger.info("Result records...,{}", empEntity.toString());
 				
 				CommissionDTO commissionDto= new CommissionDTO();
 				commissionDto.setId(i);
 				commissionDto.setRecruiterId(empEntity.getRecruiterId());
 				commissionDto.setRecruiterName(empEntity.getRecruiterName());
+				commissionDto.setJobStartDate(empEntity.getJobStartDate());
 				ContractorPersonalDetailsEntity personalEntity = contractorPersonal
 						.getPersonalDetailsByContractorId(empEntity.getContractorId());
 				if (!ProfileParserUtils.isObjectEmpty(personalEntity)) {
@@ -58,6 +59,8 @@ public class CommissionManagmentService {
 				ContractorRateDetailsEntity rateEntity = contractorRate.getRateDetailsByContractorId(empEntity.getContractorId());
 				if (!ProfileParserUtils.isObjectEmpty(rateEntity)) {
 					commissionDto.setRatePerDay(rateEntity.getRatePerDay());
+					commissionDto.setBillRatePerDay(rateEntity.getBillRatePerDay());
+					commissionDto.setGrossMargin(rateEntity.getGrossMargin());
 				}
 				commissionList.add(commissionDto);
 

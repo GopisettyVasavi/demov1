@@ -1,6 +1,7 @@
 package com.renaissance.commission.dto;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 
 public class CommissionDTO {
 
@@ -13,7 +14,13 @@ public class CommissionDTO {
 	private BigInteger recruiterId;
 	private String recruiterName;	
 	private Double ratePerDay;
+	private Double billRatePerDay;
+	private Double grossMargin;
 	private Integer noOfDaysWorked;
+	private String jobStartDate;
+	private LocalDate parsedDate;
+	private Double commission;
+	private Double commissionForCandidate;
 	
 	public Integer getId() {
 		return id;
@@ -77,11 +84,54 @@ public class CommissionDTO {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+	
+	public String getJobStartDate() {
+		return jobStartDate;
+	}
+	public void setJobStartDate(String jobStartDate) {
+		this.jobStartDate = jobStartDate;
+	}
+	
+	public Double getBillRatePerDay() {
+		return billRatePerDay;
+	}
+	public void setBillRatePerDay(Double billRatePerDay) {
+		this.billRatePerDay = billRatePerDay;
+	}
+	public Double getGrossMargin() {
+		return grossMargin;
+	}
+	public void setGrossMargin(Double grossMargin) {
+		this.grossMargin = grossMargin;
+	}
+	
+	public LocalDate getParsedDate() {
+		return parsedDate;
+	}
+	public void setParsedDate(LocalDate parsedDate) {
+		this.parsedDate = parsedDate;
+	}
+	
+	public Double getCommission() {
+		return commission;
+	}
+	public void setCommission(Double commission) {
+		this.commission = commission;
+	}
+	public Double getCommissionForCandidate() {
+		return commissionForCandidate;
+	}
+	public void setCommissionForCandidate(Double commissionForCandidate) {
+		this.commissionForCandidate = commissionForCandidate;
+	}
 	@Override
 	public String toString() {
-		return "CommissionDTO [Id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
-				+ lastName + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + ", ratePerDay="
-				+ ratePerDay + ", noOfDaysWorked=" + noOfDaysWorked + "]";
+		return "CommissionDTO [id=" + id + ", contractorId=" + contractorId + ", firstName=" + firstName
+				+ ", middleName=" + middleName + ", lastName=" + lastName + ", fullName=" + fullName + ", recruiterId="
+				+ recruiterId + ", recruiterName=" + recruiterName + ", ratePerDay=" + ratePerDay + ", billRatePerDay="
+				+ billRatePerDay + ", grossMargin=" + grossMargin + ", noOfDaysWorked=" + noOfDaysWorked
+				+ ", jobStartDate=" + jobStartDate + "]";
 	}
+	
 	
 }

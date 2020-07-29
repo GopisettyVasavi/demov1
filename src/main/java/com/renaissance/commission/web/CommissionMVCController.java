@@ -1,11 +1,16 @@
 package com.renaissance.commission.web;
 
+import static com.renaissance.util.APIConstants.CALCULATE_COMMISSION;
 import static com.renaissance.util.APIConstants.COMMISSION_MAIN;
 import static com.renaissance.util.APIConstants.CREATE_COMMISSION_RUN;
 import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,6 +23,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.renaissance.commission.dto.CommissionDTO;
@@ -78,8 +85,67 @@ public class CommissionMVCController {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
-
+		//commissionList.get(3).setNoOfDaysWorked(10);
 		return new ResponseEntity<>(commissionList, HttpStatus.OK);
+	}
+	
+	@PostMapping(CALCULATE_COMMISSION)
+	public ResponseEntity<?> calculateCommission(@RequestBody List<CommissionDTO> commissionDtoList,
+			HttpServletRequest request) {
+		Map<String,List<CommissionDTO>> recruiterMap=new HashMap<String,List<CommissionDTO>>();;
+		try {
+			logger.info("Commission List..,{}", commissionDtoList.size());
+			if(!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
+			for(CommissionDTO commissionDto:commissionDtoList) {
+				if(!ProfileParserUtils.isObjectEmpty(commissionDto.getJobStartDate())) {
+					commissionDto.setParsedDate(ProfileParserUtils.parseStringDate(commissionDto.getJobStartDate()));
+				}
+				//logger.info("Commission details: {}", commissionDto.getParsedDate());
+				if(null==commissionDto.getRecruiterName() || commissionDto.getRecruiterName().equalsIgnoreCase("")) {
+					commissionDto.setRecruiterName("NA");
+				}
+				
+			}
+			commissionDtoList.sort(
+				      Comparator.comparing(CommissionDTO::getParsedDate));
+				/*
+				 * for(CommissionDTO commissionDto:commissionDtoList) {
+				 * logger.info("After sort Commission details: {}",
+				 * commissionDto.getParsedDate()); }
+				 */
+			recruiterMap=populateCommissionObjects(commissionDtoList);
+			}
+			
+		} catch (Exception e) {
+			logger.error("Error in calculating commission,{}", e.getMessage());
+			e.printStackTrace();
+			return ResponseEntity.badRequest()
+					.body(" An issue in calculating commission. Please try again. \n" + e.getMessage());
+		}
+		return ResponseEntity.ok(recruiterMap);
+	}
+	
+	private Map<String,List<CommissionDTO>> populateCommissionObjects(List<CommissionDTO> commissionDtoList) {
+		Map<String,List<CommissionDTO>> recruiterMap=new HashMap<String,List<CommissionDTO>>();
+		
+		recruiterMap=commissionDtoList.stream()
+	      .collect(Collectors.groupingBy(CommissionDTO::getRecruiterName, HashMap::new, Collectors.toCollection(ArrayList::new)));
+		
+		logger.info("Recruiters:: ,{}", recruiterMap.keySet());
+		
+		/*
+		 * for (Map.Entry<String, List<CommissionDTO>> entry : recruiterMap.entrySet())
+		 * { List<CommissionDTO> values=entry.getValue(); for(CommissionDTO value:values
+		 * ) { logger.info("contractor, recruiter, doj:: ,{},{},{}",
+		 * value.getFullName(), value.getRecruiterName(), value.getJobStartDate()); } //
+		 * System.out.println(entry.getKey() + ":" +
+		 * (CommissionDTO)entry.getValue().get); }
+		 */
+		
+		return recruiterMap;
+		
 	}
 
 }
+
+

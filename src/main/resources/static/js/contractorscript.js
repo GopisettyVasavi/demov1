@@ -407,9 +407,10 @@ function clickonsave(mode) {
 		contractorRateDetailsDTO["insurancePercentage"] = $("#insurancePercent").val();
 		if(margin==0)
 		calculateMargin();
-		//alert(margin);
-		contractorRateDetailsDTO["grossMargin"] =margin;
-		$("#grossMargin").val(margin);
+		//alert($("#margin").val());
+		//contractorRateDetailsDTO["grossMargin"] =margin;
+		//$("#margin").val(margin);
+		contractorRateDetailsDTO["grossMargin"] =$("#margin").val();
 		
 		// rates[0]=contractorRateDetailsDTO;
 		var contractorBankDetailsDTO = {}
