@@ -43,7 +43,9 @@ function createCommission(){
 					buttons : [ 'colvis' ],
 					renderer : {
 						"header" : "bootstrap"
-					},
+					}, 
+					"order": [[ 1, "asc" ]],
+					
 					data : data,
 
 					columns : [
@@ -277,7 +279,7 @@ function invokeMarginCalc(commissionList){
 							"header" : "bootstrap"
 						},
 						data : value,
-
+						"order": [[ 1, "asc" ]],
 						columns : [
 							{
 								"data" : 'contractorId',

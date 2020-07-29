@@ -29,6 +29,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.renaissance.commission.dto.CommissionDTO;
 import com.renaissance.commission.service.CommissionManagmentService;
+import com.renaissance.common.model.CommissionsLookupEntity;
+import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
@@ -38,6 +40,10 @@ public class CommissionMVCController {
 
 	@Autowired
 	CommissionManagmentService commissionService;
+	
+	@Autowired
+	ConstantsService constantsService;
+
 
 	/**
 	 * This method is invoked to load contractor main page.
@@ -133,17 +139,64 @@ public class CommissionMVCController {
 		
 		logger.info("Recruiters:: ,{}", recruiterMap.keySet());
 		
-		/*
-		 * for (Map.Entry<String, List<CommissionDTO>> entry : recruiterMap.entrySet())
-		 * { List<CommissionDTO> values=entry.getValue(); for(CommissionDTO value:values
-		 * ) { logger.info("contractor, recruiter, doj:: ,{},{},{}",
-		 * value.getFullName(), value.getRecruiterName(), value.getJobStartDate()); } //
-		 * System.out.println(entry.getKey() + ":" +
-		 * (CommissionDTO)entry.getValue().get); }
-		 */
 		
-		return recruiterMap;
+		Map<String,List<CommissionDTO>> processedMap=new HashMap<String,List<CommissionDTO>>();
+		for(String key: recruiterMap.keySet()) {
+			//logger.info("Processing for,{}",key);
+			List<CommissionDTO> contractorList=recruiterMap.get(key);
+			//logger.info("contractorList.size,{}",contractorList.size());
+			List<CommissionDTO> processedCommissions=	processCommissionsForRecruiter(contractorList);
+			/*
+			 * List<CommissionDTO> sortedList = processedCommissions.stream()
+			 * .sorted(Comparator.comparingInt(CommissionDTO::getId))
+			 * .collect(Collectors.toList());
+			 * //logger.info("processedCommissions.size,{}",processedCommissions.size());
+			 */			processedMap.put(key, processedCommissions);
+		}
+		return processedMap;
 		
+	}
+	
+	private List<CommissionDTO> processCommissionsForRecruiter(List<CommissionDTO> commissionsList){
+		
+		List<CommissionsLookupEntity> commissionsLookup =constantsService.getCommissions();
+		//Double recruiterCommission=0.0;
+		int i=1;
+		for(CommissionDTO commissionDto:commissionsList) {
+			commissionDto.setId(i);
+			Double lookupCommission=0.0;
+			if(!ProfileParserUtils.isObjectEmpty(commissionsLookup)) {
+			for(CommissionsLookupEntity commissionLookup:commissionsLookup) {
+				if(!ProfileParserUtils.isObjectEmpty(commissionLookup)) {
+			String commissionsRange[]=commissionLookup.getRange().split("-");
+			//logger.info("Commission Range,{}", commissionsRange.length);
+			if(!ProfileParserUtils.isObjectEmpty(commissionsRange) && commissionsRange.length>=2) {
+				int totalContractors=commissionsList.size();
+				int minRange=Integer.parseInt(commissionsRange[0]);
+				int maxRange=Integer.parseInt(commissionsRange[1]);
+				//logger.info("Total contractor, min range, max range,{}, {}, {}",totalContractors,minRange,maxRange);
+				if(totalContractors>=minRange && totalContractors<=maxRange ) {
+					//logger.info("Entered if");
+					lookupCommission=commissionLookup.getPercentage();
+					//logger.info("Entered if, {}, {}",lookupCommission,commissionDto.getFullName());
+					break;
+				}
+				//if()
+			}
+				}
+			}
+			commissionDto.setCommission(lookupCommission);
+			int workedDays=0;
+			if(!ProfileParserUtils.isObjectEmpty(commissionDto.getNoOfDaysWorked()) )
+				workedDays=commissionDto.getNoOfDaysWorked();
+			Double margin=0.0;
+			if(!ProfileParserUtils.isObjectEmpty(commissionDto.getGrossMargin()))
+				margin=commissionDto.getGrossMargin();
+			commissionDto.setCommissionForCandidate(workedDays*margin*lookupCommission);
+			i++;
+			}
+		}
+		return commissionsList;
 	}
 
 }

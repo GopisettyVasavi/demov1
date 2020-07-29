@@ -1,11 +1,16 @@
 package com.renaissance.common.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.model.AppConstantsEntity;
+import com.renaissance.common.model.CommissionsLookupEntity;
 import com.renaissance.common.repository.AppConstantsRepository;
+import com.renaissance.common.repository.CommissionsLookupRepository;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
@@ -15,6 +20,8 @@ public class ConstantsService {
 	@Autowired
 	AppConstantsRepository constantsRepository;
 
+	@Autowired
+	CommissionsLookupRepository commissionsLookup;
 	/**
 	 * This method will save all constant values.
 	 * 
@@ -126,5 +133,20 @@ public class ConstantsService {
 			}
 		}
 		return 0.0;
+	}
+
+	/** 
+	 * This method will get all the commissions list from lookup table and return.
+	 * @return
+	 */
+	public List<CommissionsLookupEntity> getCommissions() {
+		Iterable<CommissionsLookupEntity> commissions = commissionsLookup.findAll();
+		List<CommissionsLookupEntity> commissionsList= new ArrayList<CommissionsLookupEntity>();
+		if (!ProfileParserUtils.isObjectEmpty(commissions)) {
+			for (CommissionsLookupEntity commission : commissions) {
+				commissionsList.add(commission);
+			}
+		}
+		return commissionsList;
 	}
 }

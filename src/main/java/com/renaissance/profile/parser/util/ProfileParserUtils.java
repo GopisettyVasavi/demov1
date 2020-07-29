@@ -101,7 +101,7 @@ public class ProfileParserUtils {
 	
 	public static LocalDate parseStringDate(String date) {
 		if(!isObjectEmpty(date)) {
-			logger.info("DATE for parsing...,{}",date);
+			//logger.info("DATE for parsing...,{}",date);
 			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			 return LocalDate.parse(date, formatter);
 		}
