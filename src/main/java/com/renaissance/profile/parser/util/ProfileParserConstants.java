@@ -37,6 +37,7 @@ public class ProfileParserConstants {
 	public final static String AMOUNT="amount";
 	public final static String SUPER_ANNUATION="SUPERANNUATION";
 	public final static String INSURANCE="INSURANCE";
+	public final static String TEMPORARY="TEMPORARY";
 	//public final static String PATH_TO_VIEW_FILE = "E:\profileparser\temp\";
 	
 

@@ -21,6 +21,8 @@ public class CommissionDTO {
 	private LocalDate parsedDate;
 	private Double commission;
 	private Double commissionForCandidate;
+	private String status;
+	private String monthYear;
 	
 	public Integer getId() {
 		return id;
@@ -124,14 +126,31 @@ public class CommissionDTO {
 	public void setCommissionForCandidate(Double commissionForCandidate) {
 		this.commissionForCandidate = commissionForCandidate;
 	}
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	public String getMonthYear() {
+		return monthYear;
+	}
+	public void setMonthYear(String monthYear) {
+		this.monthYear = monthYear;
+	}
 	@Override
 	public String toString() {
 		return "CommissionDTO [id=" + id + ", contractorId=" + contractorId + ", firstName=" + firstName
 				+ ", middleName=" + middleName + ", lastName=" + lastName + ", fullName=" + fullName + ", recruiterId="
 				+ recruiterId + ", recruiterName=" + recruiterName + ", ratePerDay=" + ratePerDay + ", billRatePerDay="
 				+ billRatePerDay + ", grossMargin=" + grossMargin + ", noOfDaysWorked=" + noOfDaysWorked
-				+ ", jobStartDate=" + jobStartDate + "]";
+				+ ", jobStartDate=" + jobStartDate + ", parsedDate=" + parsedDate + ", commission=" + commission
+				+ ", commissionForCandidate=" + commissionForCandidate + ", status=" + status + ", monthYear="
+				+ monthYear + "]";
 	}
+	
 	
 	
 }

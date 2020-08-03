@@ -187,7 +187,7 @@ private static Double calculatePercentage(Double amount,Double percentage) {
 		}
 	else return 0.0;
 }
-private static Double roundValue(Double amount) {
+public static Double roundValue(Double amount) {
 	BigDecimal bd = BigDecimal.valueOf(amount.doubleValue());
     bd = bd.setScale(2, RoundingMode.HALF_UP);
 	return bd.doubleValue();

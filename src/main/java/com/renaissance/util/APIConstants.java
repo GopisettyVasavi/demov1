@@ -20,6 +20,7 @@ public class APIConstants {
 	public static final String CALCULATE_MARGIN="/calculatemargin";
 	public static final String STATE_PAYROLL_TAX="/payrolltax/{state}";
 	public static final String INSURANCE_PERCENT="/insurancePercent";
+	public static final String SUPER_PERCENT="/superPercent";
 	public static final String CONSTANTS_DEF="/constantsdef";
 	public static final String UPDATE_CONSTANTS="/updateconstants";
 	public static final String GET_CONSTANTS="/getconstants";
@@ -49,6 +50,8 @@ public class APIConstants {
 	public static final String COMMISSION_MAIN="/commissionmain";
 	public static final String CREATE_COMMISSION_RUN="/createcommission/{monthyear}";
 	public static final String CALCULATE_COMMISSION="/calculatecommission";
+	public static final String SAVE_COMMISSION="/savecommission";
+	public static final String FINAL_SAVE_COMMISSION="/finalsavecommission";
 	
 
 }
