@@ -3,7 +3,7 @@ package com.renaissance.commission.repository;
 import java.math.BigInteger;
 import java.util.List;
 
-import com.renaissance.commission.entity.RecruiterCommissionsEntity;
+import com.renaissance.commission.model.RecruiterCommissionsEntity;
 
 public interface RecruiterCommissionsCustomRepository {
 	

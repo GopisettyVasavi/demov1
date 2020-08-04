@@ -171,120 +171,71 @@
 				<br>
 				<h3>Search</h3>
 				<div class="col-lg-12">
-					<!-- <form class="form-contact contact_form"
+					<form class="form-contact contact_form"
 						action="contact_process.php" method="post" id="searchForm"
 						novalidate="novalidate">
 						<div class="row">
 							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Contractor Name</label> <input type="text" name="name"
-										placeholder="Name" onfocus="this.placeholder = 'Name'"
-										onblur="this.placeholder = 'Name'" 
-										class="single-input" id="contractorName_s">
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Client Name</label> <input type="text"
-										name="ClientName" placeholder="Client Name"
-										onfocus="this.placeholder = 'Client Name'"
-										onblur="this.placeholder = 'Client Name'" id="clientName_s"
-										class="single-input">
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">End Client Name</label> <input type="text"
-										name="EndClientName" placeholder="End Client Name"
-										onfocus="this.placeholder = 'End Client Name'"
-										onblur="this.placeholder = 'End Client Name'" id="endClientName_s"
-										class="single-input">
-								</div>
-							</div>
-							<div class="col-sm-4">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Work Location State </label>
+																					<label for="name" style="font-weight:bold">Period</label>
 																					<div class="input-group-icon">
 																						
-																						<div class="form-select"  >
-																							<select id="workLocationState_s"  class="form-select">
-																								<option value="none"  selected="selected">Select State</option>
-																								<option value="NSW">New South Wales</option>
-																								<option value="VIC">Victoria</option>
-																								<option value="WA">Western Australia</option>
-																								<option value="QLD">Queens Land</option>
-																								<option value="TAS">Tasmania</option>
-																								<option value="SA">South Australia</option>
+																						<div class="form-select"  id="default-select">
+																							<select id="period_s"  name="period_s" onchange="showdatefields()">
+																								<option value="none"  selected="selected">Select Period</option>
+																								<option value="CurrentFY">This Financial Year</option>
+																								<option value="PreviousFY">Last Financial Year</option>
+																								<option value="LastMonth">Last Month</option>
+																								<option value="DateRange">Date Range</option>
 																								
 																							</select>
 																						</div>
 																					</div>
 																				</div>
 																			</div>
+							
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="name" style="font-weight:bold">Role</label> <input type="text"
-										name="role" placeholder="Role"
-										onfocus="this.placeholder = 'Role'"
-										onblur="this.placeholder = 'Role'" id="role_s"
+									<label for="Recruiter" style="font-weight:bold">Recruiter Name</label> <input type="text"
+										name="recruiterName_s" placeholder="Recruiter Name"
+										onfocus="this.placeholder = 'Recruiter Name'"
+										onblur="this.placeholder = 'Recruiter Name'" id="recruiterName_s"
 										class="single-input">
 								</div>
 							</div>
+							
 							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Recruiter</label>
-																			
-										<div class="input-group-icon" >
-										<div class="form-select" id="recruiter-select_s" >
-										</div>
-										</div>
-									
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">Start Date</label> <input 
-																						data-date-format="dd/MM/yyyy" 
-																						 placeholder="Start Date"
-																						onfocus="this.placeholder = 'Start Date'"
-																						onblur="this.placeholder = 'Start Date'"
-																						class="single-input" id="jobStartDate_s" 
-																						name="startDate"  >
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="name" style="font-weight:bold">End Date</label> <input 
-																						data-date-format="dd/MM/yyyy" 
-																						 placeholder="End Date"
-																						onfocus="this.placeholder = 'End Date'"
-																						onblur="this.placeholder = 'End Date'"
-																						class="single-input" id="jobEndDate_s" 
-																						name="endDate_s"  >
-								</div>
-							</div>
-							<div class="col-sm-4">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Abn Holder? </label>
-																					<div class="input-group-icon">
-																						
-																						<div class="form-select"  >
-																							<select id="abnholder_s"  class="form-select">
-																								<option value="none"  selected="selected">Select Abn Holder Status</option>
-																								<option value="val_true">Yes</option>
-																								<option value="val_false">No</option>
-																								
-																							</select>
-																						</div>
-																					</div>
-																				</div>
 																			</div>
-							<div class="col-sm-12">
+							
+							<div class="col-sm-4" id="fromdate_div" style="display: none">
+								<div class="form-group">
+									<label for="fromDate_s" style="font-weight:bold">From Date</label> <input 
+																						data-date-format="MMM-yyyy" 
+																						 placeholder="From Date"
+																						onfocus="this.placeholder = 'From Date'"
+																						onblur="this.placeholder = 'From Date'"
+																						class="single-input" id="fromDate_s" 
+																						name="fromDate_s"  >
+								</div>
+							</div>
+							<div class="col-sm-4" id="todate_div" style="display: none">
+								<div class="form-group">
+									<label for="toDate_s" style="font-weight:bold">To Date</label> <input 
+																						data-date-format="MMM-yyyy" 
+																						 placeholder="To Date"
+																						onfocus="this.placeholder = 'To Date'"
+																						onblur="this.placeholder = 'To Date'"
+																						class="single-input" id="toDate_s" 
+																						name="toDate_s"  >
+								</div>
+							</div>
+							
+							<div class="col-sm-12" style="padding-top: 20px">
 								<div class="form-group text-center">
 									<button type="submit"
-										class="button button-contactForm boxed-btn" onclick="contractorSearch()">Search</button>
+										class="button button-contactForm boxed-btn" onclick="searchcommissions()">Search</button>
 										<button type="submit"
-										class="button button-contactForm boxed-btn" onclick="resetSearch()">Reset</button>
+										class="button button-contactForm boxed-btn" onclick="resetcommissions()">Reset</button>
 										
 								</div>
 							</div>
@@ -292,16 +243,16 @@
 							<div class="col-sm-12" id="searchresults_div" >
 							<div id="search_feedback"></div>
 			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
-		 	<table id="contractorTable" class="display" style="table-layout: fixed;width: 100%">
+		 	
 			
-	<table id="contractorTable" class="display">
+	<table id="commissionsearch_tbl" class="display">
 
 			</table>
 			</div>
 								
 							</div>
 						
-					</form> -->
+					</form>
 				</div>
 			</div>
 		</div>
@@ -360,7 +311,20 @@
 
     	
     	 <script type="text/javascript">
-    	
+    	 $('#fromDate_s').datepicker({
+ 			format: 'mmm-yyyy',
+ 			iconsLibrary : 'fontawesome',
+ 			icons : {
+ 				rightIcon : '<span class="fa fa-caret-down"></span>'
+ 			}
+ 		});
+ 		$('#toDate_s').datepicker({
+ 			format: 'mmm-yyyy',
+ 			iconsLibrary : 'fontawesome',
+ 			icons : {
+ 				rightIcon : '<span class="fa fa-caret-down"></span>'
+ 			}
+ 		});
     </script>
 	
 	

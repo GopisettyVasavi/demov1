@@ -107,7 +107,14 @@ public class ProfileParserUtils {
 		}
 		return null;
 	}
-	
+	public static LocalDate parseMonthStringDate(String date) {
+		if(!isObjectEmpty(date)) {
+			//logger.info("DATE for parsing...,{}",date);
+			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy");
+			 return LocalDate.parse(date, formatter);
+		}
+		return null;
+	}
 	public static String parseDateToString(LocalDate date) {
 		if(!isObjectEmpty(date)) {
 			return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));

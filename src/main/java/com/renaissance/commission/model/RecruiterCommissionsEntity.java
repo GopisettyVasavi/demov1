@@ -1,4 +1,4 @@
-package com.renaissance.commission.entity;
+package com.renaissance.commission.model;
 
 import java.math.BigInteger;
 import java.time.LocalDate;

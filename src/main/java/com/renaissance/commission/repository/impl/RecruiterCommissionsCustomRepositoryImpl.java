@@ -13,7 +13,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.context.annotation.Lazy;
 
-import com.renaissance.commission.entity.RecruiterCommissionsEntity;
+import com.renaissance.commission.model.RecruiterCommissionsEntity;
 import com.renaissance.commission.repository.RecruiterCommissionsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 

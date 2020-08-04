@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.renaissance.commission.dto.CommissionDTO;
-import com.renaissance.commission.entity.RecruiterCommissionsEntity;
+import com.renaissance.commission.model.RecruiterCommissionsEntity;
 import com.renaissance.commission.repository.RecruiterCommissionRepository;
 import com.renaissance.contractor.model.ContractorEmploymentDetailsEntity;
 import com.renaissance.contractor.model.ContractorPersonalDetailsEntity;
@@ -117,6 +117,7 @@ public class CommissionManagmentService {
 				RecruiterCommissionsEntity commissionEntity=new RecruiterCommissionsEntity();
 				CommissionDTO savedcommission= new CommissionDTO();
 				BeanUtils.copyProperties(commission, commissionEntity);
+				commissionEntity.setMonthYearDate(ProfileParserUtils.parseStringDate("01/"+commission.getMonthYear()));
 				//logger.info("VO....{}",commissionEntity.toString());
 				RecruiterCommissionsEntity previousCommission=recruiterCommission.getCommissionByContractorMonthYear(commission.getContractorId(),
 						commission.getMonthYear(), commission.getRatePerDay(), commission.getJobStartDate());

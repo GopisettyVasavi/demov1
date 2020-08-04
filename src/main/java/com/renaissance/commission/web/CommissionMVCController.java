@@ -1,9 +1,19 @@
 package com.renaissance.commission.web;
 
-import static com.renaissance.util.APIConstants.*;
+import static com.renaissance.util.APIConstants.CALCULATE_COMMISSION;
+import static com.renaissance.util.APIConstants.COMMISSION_MAIN;
+import static com.renaissance.util.APIConstants.CREATE_COMMISSION_RUN;
+import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
+import static com.renaissance.util.APIConstants.FINAL_SAVE_COMMISSION;
+import static com.renaissance.util.APIConstants.SAVE_COMMISSION;
+import static com.renaissance.util.APIConstants.SEARCH_COMMISSIONS;
+import static com.renaissance.util.APIConstants.SUPER_PERCENT;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Comparator;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.renaissance.commission.dto.CommissionDTO;
+import com.renaissance.commission.model.SearchCommissionForm;
 import com.renaissance.commission.service.CommissionManagmentService;
 import com.renaissance.common.model.CommissionsLookupEntity;
 import com.renaissance.common.service.ConstantsService;
@@ -61,36 +72,49 @@ public class CommissionMVCController {
 
 	}
 
+	/**
+	 * This method will fetch commissions for the selected given month and year.
+	 * 
+	 * @param monthyear
+	 * @param redirectAttributes
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping(CREATE_COMMISSION_RUN)
-	public ResponseEntity<?> commissionRun(@PathVariable String monthyear, RedirectAttributes redirectAttributes,
-			Model model, HttpServletRequest request) {
+	public ResponseEntity<?> commissionRun(@PathVariable String monthyear, HttpServletRequest request) {
 		List<CommissionDTO> commissionList = new ArrayList<CommissionDTO>();
 		try {
 			if (!ProfileParserUtils.isSessionAlive(request)) {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
-
-			// logger.info("mONTH yEAR SELECTED, {}", monthyear);
-			//logger.info("Selected month & Year,{}", monthyear);
 			if (!ProfileParserUtils.isObjectEmpty(monthyear) && monthyear.indexOf("-") != -1) {
 				String[] mmyy = monthyear.split("-");
 				if (mmyy.length > 1) {
 					String commissionMonthYear = mmyy[1] + "/" + mmyy[0];
-
-					//logger.info("Selected month & Year,{}", commissionMonthYear);
 					commissionList = commissionService.getCommissions(commissionMonthYear);
 				}
 			}
 
 		} catch (Exception e) {
-			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
+			logger.error("There is an issue in fetching commissions...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
-		// commissionList.get(3).setNoOfDaysWorked(10);
 		return new ResponseEntity<>(commissionList, HttpStatus.OK);
 	}
 
+	/**
+	 * This method is used to iterate through the list of commissions and group them
+	 * by the recruiter order by joining date. Then it will fetch the commission for
+	 * the recruiter from commission lookup table and calculate commission for each
+	 * row. Formula used is: (Margin * Commission Percentage * Days Worked for the
+	 * month).
+	 * 
+	 * @param commissionDtoList
+	 * @param request
+	 * @return
+	 */
 	@PostMapping(CALCULATE_COMMISSION)
 	public ResponseEntity<?> calculateCommission(@RequestBody List<CommissionDTO> commissionDtoList,
 			HttpServletRequest request) {
@@ -112,11 +136,7 @@ public class CommissionMVCController {
 
 				}
 				commissionDtoList.sort(Comparator.comparing(CommissionDTO::getParsedDate));
-				/*
-				 * for(CommissionDTO commissionDto:commissionDtoList) {
-				 * logger.info("After sort Commission details: {}",
-				 * commissionDto.getParsedDate()); }
-				 */
+
 				recruiterMap = populateCommissionObjects(commissionDtoList);
 			}
 
@@ -129,31 +149,35 @@ public class CommissionMVCController {
 		return ResponseEntity.ok(recruiterMap);
 	}
 
+	/**
+	 * This private method is used to populate commission list for each recruiter
+	 * and put it in the map.
+	 * 
+	 * @param commissionDtoList
+	 * @return
+	 */
 	private Map<String, List<CommissionDTO>> populateCommissionObjects(List<CommissionDTO> commissionDtoList) {
 		Map<String, List<CommissionDTO>> recruiterMap = new HashMap<String, List<CommissionDTO>>();
 
 		recruiterMap = commissionDtoList.stream().collect(Collectors.groupingBy(CommissionDTO::getRecruiterName,
 				HashMap::new, Collectors.toCollection(ArrayList::new)));
 
-		logger.info("Recruiters:: ,{}", recruiterMap.keySet());
-
 		Map<String, List<CommissionDTO>> processedMap = new HashMap<String, List<CommissionDTO>>();
 		for (String key : recruiterMap.keySet()) {
-			// logger.info("Processing for,{}",key);
 			List<CommissionDTO> contractorList = recruiterMap.get(key);
-			// logger.info("contractorList.size,{}",contractorList.size());
 			List<CommissionDTO> processedCommissions = processCommissionsForRecruiter(contractorList);
-			/*
-			 * List<CommissionDTO> sortedList = processedCommissions.stream()
-			 * .sorted(Comparator.comparingInt(CommissionDTO::getId))
-			 * .collect(Collectors.toList());
-			 * //logger.info("processedCommissions.size,{}",processedCommissions.size());
-			 */ processedMap.put(key, processedCommissions);
+			processedMap.put(key, processedCommissions);
 		}
 		return processedMap;
 
 	}
 
+	/**
+	 * This method will calculate commission for for record in commission list.
+	 * 
+	 * @param commissionsList
+	 * @return
+	 */
 	private List<CommissionDTO> processCommissionsForRecruiter(List<CommissionDTO> commissionsList) {
 
 		List<CommissionsLookupEntity> commissionsLookup = constantsService.getCommissions();
@@ -166,21 +190,14 @@ public class CommissionMVCController {
 				for (CommissionsLookupEntity commissionLookup : commissionsLookup) {
 					if (!ProfileParserUtils.isObjectEmpty(commissionLookup)) {
 						String commissionsRange[] = commissionLookup.getRange().split("-");
-						// logger.info("Commission Range,{}", commissionsRange.length);
 						if (!ProfileParserUtils.isObjectEmpty(commissionsRange) && commissionsRange.length >= 2) {
 							int totalContractors = commissionDto.getId();
 							int minRange = Integer.parseInt(commissionsRange[0]);
 							int maxRange = Integer.parseInt(commissionsRange[1]);
-							// logger.info("Total contractor, min range, max range,{}, {},
-							// {}",totalContractors,minRange,maxRange);
 							if (totalContractors >= minRange && totalContractors <= maxRange) {
-								// logger.info("Entered if");
 								lookupCommission = commissionLookup.getPercentage();
-								// logger.info("Entered if, {},
-								// {}",lookupCommission,commissionDto.getFullName());
 								break;
 							}
-							// if()
 						}
 					}
 				}
@@ -217,11 +234,12 @@ public class CommissionMVCController {
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
 		Double superPercent = constantsService.getConstantValue(ProfileParserConstants.SUPER_ANNUATION);
-		logger.info("Super %" + superPercent);
+		// logger.info("Super %" + superPercent);
 		return new ResponseEntity<>(superPercent, HttpStatus.OK);
 	}
 
 	/**
+	 * This method will be invoked by the UI to save commissions temporarily.
 	 * 
 	 * @param commissionDtoList
 	 * @param request
@@ -230,55 +248,163 @@ public class CommissionMVCController {
 	@PostMapping(SAVE_COMMISSION)
 	public ResponseEntity<?> saveCommissions(@RequestBody List<CommissionDTO> commissionDtoList,
 			HttpServletRequest request) {
-		List<CommissionDTO> savedCommissions=null;
+		List<CommissionDTO> savedCommissions = null;
 		try {
 			logger.info("Commission List for save..,{}", commissionDtoList.size());
 			if (!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
 				for (CommissionDTO commissionDto : commissionDtoList) {
-					
+
 					// logger.info("Commission details: {}", commissionDto.getParsedDate());
 					if (null == commissionDto.getRecruiterName()
 							|| commissionDto.getRecruiterName().equalsIgnoreCase("")) {
 						commissionDto.setRecruiterName("Renaissance");
 					}
 					commissionDto.setStatus(ProfileParserConstants.TEMPORARY);
-					logger.info("Commission Dto before save,{}", commissionDto.toString());
+					//commissionDto
+					// logger.info("Commission Dto before save,{}", commissionDto.toString());
 				}
-				
-			 savedCommissions=	commissionService.saveCommissionsTemporary(commissionDtoList);
+
+				savedCommissions = commissionService.saveCommissionsTemporary(commissionDtoList);
 			}
 
 		} catch (Exception e) {
-			logger.error("Error in calculating commission,{}", e.getMessage());
+			logger.error("Error in saving commission,{}", e.getMessage());
 			e.printStackTrace();
 			return ResponseEntity.badRequest()
-					.body(" An issue in calculating commission. Please try again. \n" + e.getMessage());
+					.body(" An issue in saving commission. Please try again. \n" + e.getMessage());
 		}
 		return new ResponseEntity<>(savedCommissions, HttpStatus.OK);
 	}
+
 	/**
+	 * This method will be invoked by UI to finalize the commissions for that
+	 * particular month.
 	 * 
 	 * @param commissionDtoList
 	 * @param request
 	 * @return
 	 */
 	@PostMapping(FINAL_SAVE_COMMISSION)
-	public ResponseEntity<?> finalSaveCommissions(@RequestBody List<CommissionDTO> commissionDtoList,
-			HttpServletRequest request) {
-		List<CommissionDTO> savedCommissions=null;
+	public ResponseEntity<?> finalSaveCommissions(@RequestBody List<CommissionDTO> commissionDtoList,HttpServletRequest request) {
+		List<CommissionDTO> savedCommissions = null;
 		try {
 			logger.info("Commission List for save..,{}", commissionDtoList.size());
 			if (!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
-				
-				   savedCommissions=	commissionService.saveCommissionsTemporary(commissionDtoList);
+
+				savedCommissions = commissionService.saveCommissionsTemporary(commissionDtoList);
 			}
 
 		} catch (Exception e) {
-			logger.error("Error in calculating commission,{}", e.getMessage());
+			logger.error("Error in saving commission,{}", e.getMessage());
 			e.printStackTrace();
 			return ResponseEntity.badRequest()
-					.body(" An issue in calculating commission. Please try again. \n" + e.getMessage());
+					.body(" An issue in saving commission. Please try again. \n" + e.getMessage());
 		}
 		return new ResponseEntity<>(savedCommissions, HttpStatus.OK);
+	}
+	
+	
+	/**
+	 * This method will get search inputs from UI and process them to form date ranges. Then it will invoke service method and return search results.
+	 * @param searchCommissionForm
+	 * @param request
+	 * @return
+	 */
+	@PostMapping(SEARCH_COMMISSIONS)
+	public ResponseEntity<?> searchContractors(@RequestBody SearchCommissionForm searchCommissionForm,
+			HttpServletRequest request) {
+		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
+
+			logger.info("Search details, {}", searchCommissionForm.toString());
+
+		} catch (Exception e) {
+			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
+			e.printStackTrace();
+		}
+		Date date = new Date();
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		int year = calendar.get(Calendar.YEAR);
+		//Add one to month {0 - 11}
+		int month = calendar.get(Calendar.MONTH) + 1;
+		
+		String period=searchCommissionForm.getPeriod();
+		if(!ProfileParserUtils.isObjectEmpty(period)) {
+			String fromDate="";
+			String toDate="";
+			if(period.equalsIgnoreCase("CurrentFY")) {
+				if(month<=5) {// means june month, so financial year has to be from june to previous july
+					toDate="30/"+"06/"+year;
+					year=year-1;
+					fromDate="01/"+"07/"+year;
+				}
+				else {
+					 fromDate="01/"+"07/"+year;
+						year=year+1;
+						 toDate="30/"+"06/"+year;
+				}
+				
+				
+				
+				searchCommissionForm.setStartDate(ProfileParserUtils.parseStringDate(fromDate));
+				searchCommissionForm.setEndDate(ProfileParserUtils.parseStringDate(toDate));
+			}
+if(period.equalsIgnoreCase("PreviousFY")) {
+	
+	if(month<=5) {// current date= marc 20, pre fy= july-18 to june- 19
+		year=year-2;
+		fromDate="01/"+"07/"+year;
+		year=year+1;
+		toDate="30/"+"06/"+year;
+	}else {// current date= july 20, pre fy= july-19 to june- 20
+		toDate="30/"+"06/"+year;
+		year=year-1;
+		fromDate="01/"+"07/"+year;
+	}
+	
+	searchCommissionForm.setStartDate(ProfileParserUtils.parseStringDate(fromDate));
+	searchCommissionForm.setEndDate(ProfileParserUtils.parseStringDate(toDate));
+	
+			}
+if(period.equalsIgnoreCase("LastMonth")) {
+	//month=month
+	//String 
+	month=month-1;
+	String sMonth="0";
+	if(month<10) {
+		 sMonth="0"+month;
+	}else {
+		sMonth=""+month;
+	}
+		 toDate="27/"+sMonth+"/"+year;
+		
+		 fromDate="01/"+sMonth+"/"+year;
+	
+	
+	searchCommissionForm.setStartDate(ProfileParserUtils.parseStringDate(fromDate));
+	searchCommissionForm.setEndDate(ProfileParserUtils.parseStringDate(toDate));
+	
+}
+if(period.equalsIgnoreCase("DateRange")) {
+	String fDate=searchCommissionForm.getFromDate();
+	String tDate=searchCommissionForm.getToDate();
+	if(null!=fDate && fDate.indexOf("-")!=-1) {
+		fDate=	fDate.replace("-", "/")	;
+	}
+	if(null!=tDate && tDate.indexOf("-")!=-1) {
+		tDate=	tDate.replace("-", "/")	;
+	}
+	fromDate="01/"+fDate;
+	toDate="27/"+tDate;
+	searchCommissionForm.setStartDate(ProfileParserUtils.parseMonthStringDate(fromDate));
+	searchCommissionForm.setEndDate(ProfileParserUtils.parseMonthStringDate(toDate));
+}
+		}
+		logger.info("Search details, {}", searchCommissionForm.toString());
+		return new ResponseEntity<>(searchCommissionForm, HttpStatus.OK);
 	}
 }

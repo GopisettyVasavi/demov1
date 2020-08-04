@@ -714,3 +714,107 @@ function save(commissionList){
 		}
 	});
 }
+
+
+function searchcommissions(){
+	event.preventDefault();
+	var isValid=validateSearchFields();
+  if(isValid){
+	  console.log("validated");
+
+		var searchCommissionForm = {}
+		
+		searchCommissionForm["fromDate"] = $("#fromDate_s").val();
+		searchCommissionForm["toDate"] = $("#toDate_s").val();
+		searchCommissionForm["recruiterName"] = $("#recruiterName_s").val();
+
+		
+
+		if ($("#period_s").val() != "none") {
+			searchCommissionForm["period"] = $(
+					"#period_s").val();
+		}
+		
+
+		$.ajax({
+					type : "POST",
+					contentType : "application/json",
+					url : "/searchcommissions",
+					data : JSON.stringify(searchCommissionForm),
+					dataType : 'json',
+					cache : false,
+					timeout : 600000,
+					success : function(data) {
+						$("#searchresults_div").show();
+						$("#commissionsearch_tbl").show();
+						alert("Search complete");
+					}
+						
+				});
+	
+	  
+  }
+  else{
+	  console.log("Not validated");
+  }
+}
+function resetcommissions(){
+	event.preventDefault();
+	$("#searchForm")[0].reset();
+
+	//$("#period_s").val('none');
+	$("#recruiterName_s").val("");
+	$('#search_feedback').html("");
+	document.getElementById("searchForm").reset();
+	$("#searchresults_div").hide();
+	$("#commissionsearch_tbl").hide();
+	$("#fromdate_div").hide();
+	$("#todate_div").hide();
+}
+
+function validateSearchFields(){
+	var isvalid=true;
+	$('#search_feedback').html("");
+	var fromDate = $("#fromDate_s").val();
+	   var toDate =  $("#toDate_s").val();
+	   
+	   if((document.getElementById("period_s").value).trim() == "none" &&
+			   fromDate=='' &&   toDate=='' && (document.getElementById("recruiterName_s").value).trim() == ''){
+		   document.getElementById("search_feedback").style.color = "red";
+			$('#search_feedback').html(
+					"Please enter at least one field as search criteria.");
+			 isvalid= false;
+	   }
+	   if((document.getElementById("period_s").value).trim() == "DateRange" && fromDate=='' && toDate==''){
+		   document.getElementById("search_feedback").style.color = "red";
+			$('#search_feedback').html(
+					"Please enter Date ranges.");
+			   isvalid= false;
+			  } 
+	   if((document.getElementById("period_s").value).trim() == "DateRange" && fromDate!='' && toDate!=''){
+		   if((new Date(fromDate).getTime() <= new Date(toDate).getTime())){
+			   isvalid= true;
+			  } 
+		   else if((new Date(fromDate).getTime() > new Date(toDate).getTime())){
+			   document.getElementById("search_feedback").style.color = "red";
+				$('#search_feedback').html(
+						"From Date cannot be greater than To Date.");
+				 isvalid= false;
+		   }
+	   }
+	   
+	   return isvalid;
+}
+
+function showdatefields(){
+	if((document.getElementById("period_s").value).trim() != "none" && (document.getElementById("period_s").value).trim() == "DateRange"){
+		
+		$("#fromdate_div").show();
+		$("#todate_div").show();
+		
+	}
+	else{
+		$("#fromdate_div").hide();
+		$("#todate_div").hide();
+	}
+}
