@@ -35,6 +35,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.renaissance.commission.dto.CommissionDTO;
+import com.renaissance.commission.dto.FinalCommissionsDTO;
+import com.renaissance.commission.dto.RecruiterCommissionsDTO;
 import com.renaissance.commission.model.SearchCommissionForm;
 import com.renaissance.commission.service.CommissionManagmentService;
 import com.renaissance.common.model.CommissionsLookupEntity;
@@ -285,13 +287,14 @@ public class CommissionMVCController {
 	 * @return
 	 */
 	@PostMapping(FINAL_SAVE_COMMISSION)
-	public ResponseEntity<?> finalSaveCommissions(@RequestBody List<CommissionDTO> commissionDtoList,HttpServletRequest request) {
-		List<CommissionDTO> savedCommissions = null;
+	public ResponseEntity<?> finalSaveCommissions(@RequestBody FinalCommissionsDTO finalCommissions,HttpServletRequest request) {
+		FinalCommissionsDTO savedCommissions = null;
 		try {
-			logger.info("Commission List for save..,{}", commissionDtoList.size());
-			if (!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
+			logger.info("Invoked final save..{}",finalCommissions.toString());
+			//logger.info("Commission List for save..Final Save..,{}", commissionDtoList.size());
+			if (!ProfileParserUtils.isObjectEmpty(finalCommissions)) {
 
-				savedCommissions = commissionService.saveCommissionsTemporary(commissionDtoList);
+				savedCommissions = commissionService.finalizeCommissions(finalCommissions);
 			}
 
 		} catch (Exception e) {
@@ -405,6 +408,15 @@ if(period.equalsIgnoreCase("DateRange")) {
 }
 		}
 		logger.info("Search details, {}", searchCommissionForm.toString());
-		return new ResponseEntity<>(searchCommissionForm, HttpStatus.OK);
+		List<RecruiterCommissionsDTO> searchResults=commissionService.searchCommissions(searchCommissionForm);
+		if(!ProfileParserUtils.isObjectEmpty(searchResults)) {
+			for(RecruiterCommissionsDTO recruiterCommissionDto:searchResults) {
+				
+				recruiterCommissionDto.setMonthYearUI(ProfileParserUtils.formatStringDate(recruiterCommissionDto.getMonthYear().toString()));
+				//logger.info("Date {}", ProfileParserUtils.formatStringDate(recruiterCommissionDto.getMonthYear().toString()));
+			}
+			searchResults.sort(Comparator.comparing(RecruiterCommissionsDTO::getOrderDate));
+		}
+		return new ResponseEntity<>(searchResults, HttpStatus.OK);
 	}
 }

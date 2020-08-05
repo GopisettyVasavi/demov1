@@ -2,11 +2,14 @@ package com.renaissance.profile.parser.util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
@@ -115,12 +118,38 @@ public class ProfileParserUtils {
 		}
 		return null;
 	}
+	
+	
 	public static String parseDateToString(LocalDate date) {
 		if(!isObjectEmpty(date)) {
 			return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		}
 		return null;
 	}
+	
+	public static String parseMonthDateToString(LocalDate date) {
+		if(!isObjectEmpty(date)) {
+			return date.format(DateTimeFormatter.ofPattern("dd/MMM/yyyy"));
+		}
+		return null;
+	}
+	public static String formatStringDate(String sDate) {
+		if(!isObjectEmpty(sDate)) {
+			try {
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat format2 = new SimpleDateFormat("MMM-yyyy");
+		Date date;
+		
+			date = format1.parse(sDate);
+		
+		return format2.format(date);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
 public static List<String> processSearchStringWithAND(String searchString){
 	return Collections.list(new StringTokenizer(searchString, "&&")).stream()
 		      .map(token -> (String) token)

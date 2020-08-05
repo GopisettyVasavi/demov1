@@ -11,8 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.renaissance.commission.dto.CommissionDTO;
+import com.renaissance.commission.dto.FinalCommissionsDTO;
+import com.renaissance.commission.dto.RecruiterCommissionsDTO;
+import com.renaissance.commission.model.CommissionsDetailsEntity;
 import com.renaissance.commission.model.RecruiterCommissionsEntity;
-import com.renaissance.commission.repository.RecruiterCommissionRepository;
+import com.renaissance.commission.model.SearchCommissionForm;
+import com.renaissance.commission.repository.CommissionsDetailsRepository;
+import com.renaissance.commission.repository.RecruiterCommissionsRepository;
 import com.renaissance.contractor.model.ContractorEmploymentDetailsEntity;
 import com.renaissance.contractor.model.ContractorPersonalDetailsEntity;
 import com.renaissance.contractor.model.ContractorRateDetailsEntity;
@@ -36,7 +41,10 @@ public class CommissionManagmentService {
 	ContractorEmploymentDetailsRepository contractorEmployment;
 	
 	@Autowired
-	RecruiterCommissionRepository recruiterCommission;
+	CommissionsDetailsRepository commissionsDetails;
+	
+	@Autowired
+	RecruiterCommissionsRepository recruiterCommissions;
 	/**
 	 * This method will check first any temporary or final commissions exist for the given month and year. If so, those commissions will be returned or
 	 * else it will create commissions for that month.
@@ -47,11 +55,11 @@ public class CommissionManagmentService {
 		List<CommissionDTO> commissionList= new ArrayList<CommissionDTO>();
 		boolean commissionsExist=false;
 		if(!ProfileParserUtils.isObjectEmpty(monthAndYear)) {
-			List<RecruiterCommissionsEntity> commissionsEntity=recruiterCommission.getCommissionsForSelectedMonthAndYear(monthAndYear);
+			List<CommissionsDetailsEntity> commissionsEntity=commissionsDetails.getCommissionsForSelectedMonthAndYear(monthAndYear);
 			if(!ProfileParserUtils.isObjectEmpty(commissionsEntity)) {
 				commissionsExist=true;
 				logger.info("Commissions exist....");
-				for(RecruiterCommissionsEntity commissionEntity:commissionsEntity) {
+				for(CommissionsDetailsEntity commissionEntity:commissionsEntity) {
 					CommissionDTO commissionDto= new CommissionDTO();
 					BeanUtils.copyProperties(commissionEntity, commissionDto);
 					commissionList.add(commissionDto);
@@ -114,16 +122,16 @@ public class CommissionManagmentService {
 			for(CommissionDTO commission:commissionDtoList) {
 				if(!ProfileParserUtils.isObjectEmpty(commission)) {
 				//logger.info("DTO....{}",commission.toString());
-				RecruiterCommissionsEntity commissionEntity=new RecruiterCommissionsEntity();
+				CommissionsDetailsEntity commissionEntity=new CommissionsDetailsEntity();
 				CommissionDTO savedcommission= new CommissionDTO();
 				BeanUtils.copyProperties(commission, commissionEntity);
 				commissionEntity.setMonthYearDate(ProfileParserUtils.parseStringDate("01/"+commission.getMonthYear()));
 				//logger.info("VO....{}",commissionEntity.toString());
-				RecruiterCommissionsEntity previousCommission=recruiterCommission.getCommissionByContractorMonthYear(commission.getContractorId(),
+				CommissionsDetailsEntity previousCommission=commissionsDetails.getCommissionByContractorMonthYear(commission.getContractorId(),
 						commission.getMonthYear(), commission.getRatePerDay(), commission.getJobStartDate());
 				//logger.info("Existing record..{}",previousCommission.toString());
-				recruiterCommission.delete(previousCommission);
-				commissionEntity=	recruiterCommission.save(commissionEntity);
+				commissionsDetails.delete(previousCommission);
+				commissionEntity=	commissionsDetails.save(commissionEntity);
 				BeanUtils.copyProperties(commissionEntity, savedcommission);
 				savedList.add(savedcommission);
 			}
@@ -132,5 +140,81 @@ public class CommissionManagmentService {
 		
 		return savedList;
 		
+	}
+	
+	public FinalCommissionsDTO finalizeCommissions(FinalCommissionsDTO finalCommissions) {
+		List<CommissionDTO> savedCommissionsList= new ArrayList<CommissionDTO>();
+		List<RecruiterCommissionsDTO> savedRecruiterCommissionsList= new ArrayList<RecruiterCommissionsDTO>();
+		FinalCommissionsDTO finalCommission = new FinalCommissionsDTO();
+		if(!ProfileParserUtils.isObjectEmpty(finalCommissions)) {
+			List<CommissionDTO> commissions= finalCommissions.getCommissionsList();
+			if(!ProfileParserUtils.isObjectEmpty(commissions)) {
+				for(CommissionDTO commission:commissions) {
+					if(!ProfileParserUtils.isObjectEmpty(commission)) {
+					//logger.info("DTO....{}",commission.toString());
+					CommissionsDetailsEntity commissionEntity=new CommissionsDetailsEntity();
+					CommissionDTO savedcommission= new CommissionDTO();
+					BeanUtils.copyProperties(commission, commissionEntity);
+					
+					//logger.info("VO....{}",commissionEntity.toString());
+					CommissionsDetailsEntity previousCommission=commissionsDetails.getCommissionByContractorMonthYear(commission.getContractorId(),
+							commission.getMonthYear(), commission.getRatePerDay(), commission.getJobStartDate());
+					//logger.info("Existing record..{}",previousCommission.toString());
+					commissionsDetails.delete(previousCommission);
+					commissionEntity=	commissionsDetails.save(commissionEntity);
+					BeanUtils.copyProperties(commissionEntity, savedcommission);
+					savedCommissionsList.add(savedcommission);
+				}
+				}
+			}
+			
+			List<RecruiterCommissionsDTO> recruiterCommissionsList=finalCommissions.getRecruiterCommissionsList();
+			if(!ProfileParserUtils.isObjectEmpty(recruiterCommissionsList)) {
+				for(RecruiterCommissionsDTO recruiterCommissionDto:recruiterCommissionsList) {
+					RecruiterCommissionsEntity rcCommission= new RecruiterCommissionsEntity();
+					RecruiterCommissionsDTO savedRecruiterComm= new RecruiterCommissionsDTO();
+					/*
+					 * String monthYear=recruiterCommissionDto.getMonthYear();
+					 * monthYear=monthYear.replace("-", "/");
+					 * recruiterCommissionDto.setMonthYear("01/"+monthYear);
+					 */
+					RecruiterCommissionsEntity previousCommission=recruiterCommissions.getRecruiterCommissionByMonthYearAndRecruiter(
+							ProfileParserUtils.parseStringDate(recruiterCommissionDto.getMonthYear()),
+							recruiterCommissionDto.getRecruiterName());
+					recruiterCommissions.delete(previousCommission);
+					
+					//BeanUtils.copyProperties(recruiterCommissionDto, rcCommission);
+					rcCommission.setRecruiterName(recruiterCommissionDto.getRecruiterName());
+					rcCommission.setContractCommissionTotal(recruiterCommissionDto.getContractCommissionTotal());
+					rcCommission.setContractCommissionTotalSuper(recruiterCommissionDto.getContractCommissionTotalSuper());
+					rcCommission.setMonthYear(ProfileParserUtils.parseStringDate(recruiterCommissionDto.getMonthYear()));
+					rcCommission= recruiterCommissions.save(rcCommission);
+					//BeanUtils.copyProperties(rcCommission, savedRecruiterComm);
+					savedRecruiterCommissionsList.add(savedRecruiterComm);
+				}
+			}
+		}
+		finalCommission.setCommissionsList(savedCommissionsList);
+		finalCommission.setRecruiterCommissionsList(savedRecruiterCommissionsList);
+		return finalCommission;
+	}
+	public List<RecruiterCommissionsDTO> searchCommissions(SearchCommissionForm searchForm){
+		List<RecruiterCommissionsEntity> commissions=recruiterCommissions.searchCommissions(searchForm);
+		List<RecruiterCommissionsDTO> recruiterCommissions= new ArrayList<RecruiterCommissionsDTO>();
+		if(!ProfileParserUtils.isObjectEmpty(commissions)) {
+			//commissions.sort(Comparator.comparing(RecruiterCommissionsEntity::getMonthYear));
+			for(RecruiterCommissionsEntity commissionEntity:commissions) {
+			RecruiterCommissionsDTO recruiterCommission= new RecruiterCommissionsDTO();
+			BeanUtils.copyProperties(commissionEntity, recruiterCommission);
+			recruiterCommission.setMonthYear(commissionEntity.getMonthYear().toString());
+			recruiterCommission.setOrderDate(commissionEntity.getMonthYear());
+			recruiterCommissions.add(recruiterCommission);
+			logger.info("Processed search result...,{}", recruiterCommission.toString());
+			}
+			
+			
+
+		}
+		return recruiterCommissions;
 	}
 }

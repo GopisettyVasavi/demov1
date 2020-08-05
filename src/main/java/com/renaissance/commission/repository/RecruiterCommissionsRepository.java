@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.renaissance.commission.model.RecruiterCommissionsEntity;
 
 @Repository
-public interface RecruiterCommissionRepository extends CrudRepository<RecruiterCommissionsEntity, BigInteger>, RecruiterCommissionsCustomRepository{
+public interface RecruiterCommissionsRepository extends CrudRepository<RecruiterCommissionsEntity, BigInteger>, RecruiterCommissionsCustomRepository {
 
 }

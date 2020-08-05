@@ -211,6 +211,7 @@ function calculateCommission(){
 	 
 }
 var recruiters=[];
+var recruiterCommissionsDTO=[];
 
 function invokeMarginCalc(commissionList){
 	
@@ -429,7 +430,10 @@ function calculateRecruiterTotal(){
 	//alert(recruiters.length);
 	
 	for(var i=0; i<recruiters.length;i++){
+		var recruiterCommissionsObj={}
 		var tableid="#"+"recruiter_"+recruiters[i];
+		recruiterCommissionsObj["recruiterName"]=recruiters[i];
+		
 		var table = $(tableid).DataTable();
 		var j=1;
 		var rcCommission=0.0;
@@ -464,6 +468,7 @@ function calculateRecruiterTotal(){
 		    rcCommission=(Number(rcCommission)+Number(days)*Number(commission)/100*Number(margin)).toFixed(2);
 		   j++;
 		   
+		   recruiterCommissionsObj["monthYear"]="01/"+d.monthYear;
 		} );
 		//alert("Total: "+rcCommission);
 		
@@ -481,6 +486,9 @@ function calculateRecruiterTotal(){
 		var totalLabel = "#label"+recruiters[i];
 		//console.log(totalLabel);
 		$(totalLabel).html('Total Commission (Including Super):'+rcCommission+' <br/>'+'Commission (Without Super):        '+commWithoutSuper);
+		recruiterCommissionsObj["contractCommissionTotalSuper"]=rcCommission;
+		recruiterCommissionsObj["contractCommissionTotal"]=commWithoutSuper;
+		recruiterCommissionsDTO[i]=recruiterCommissionsObj;
 		//totalLabel.innerHtml="Total Commission:"+rcCommission;
 	}
 }
@@ -692,14 +700,21 @@ function populateAndSave(){
 function save(commissionList){
 	console.log("list size::"+commissionList.length);
 	for(i=0;i<commissionList.length;i++){
-		console.log("name:: "+commissionList);
+		console.log("commissionList:: "+commissionList);
 	}
+	for(j=0;j<recruiterCommissionsDTO.length;j++){
+		console.log("recruiterCommissionsDTO :: "+recruiterCommissionsDTO);
+	}
+	
+	var finalCommissionsDTO={}
+	finalCommissionsDTO["commissionsList"]=commissionList;
+	finalCommissionsDTO["recruiterCommissionsList"]=recruiterCommissionsDTO;
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
 
 		url : "/finalsavecommission",
-		data : JSON.stringify(commissionList),
+		data : JSON.stringify(finalCommissionsDTO),
 		dataType : 'json',
 		cache : false,
 		timeout : 600000,
@@ -710,6 +725,7 @@ function save(commissionList){
 		error : function(e) {
 
 			alert("Unable to load details. " + e);
+			console.log(e);
 
 		}
 	});
@@ -747,7 +763,62 @@ function searchcommissions(){
 					success : function(data) {
 						$("#searchresults_div").show();
 						$("#commissionsearch_tbl").show();
-						alert("Search complete");
+						var table = $('#commissionsearch_tbl').DataTable({
+
+							destroy : true,
+
+							autoWidth : false,
+							/*
+							 * targets: 'no-sort', bSort: false, order: [],
+							 */
+
+							buttons : [ 'colvis' ],
+							renderer : {
+								"header" : "bootstrap"
+							},
+							data : data,
+							"order": [[ 1, "asc" ]],
+							columns : [ 
+								 {
+										"data" : 'monthYearUI',
+										"name" : "monthYearUI",
+										"title" : "Month-Year"
+									},
+									{
+								"data" : 'orderDate',
+								"name" : "orderDate",
+								"title" : "orderDate",
+								"visible": false
+							}, {
+								"data" : 'recruiterName',
+								"name" : "recruiterName",
+								"title" : "Recruiter"
+							}, {
+								"data" : 'contractCommissionTotal',
+								"name" : "contractCommissionTotal",
+								"title" : "Total Contract Placement commission (without Super)"
+							}, {
+								"data" : 'contractCommissionTotalSuper',
+								"name" : "contractCommissionTotalSuper",
+								"title" : "Total Contract Placement Commission (With Super)"
+							} ]
+
+						});
+						$('#commissionsearch_tbl tfoot tr').appendTo(
+								'#commissionsearch_tbl thead');
+
+						$("#commissionsearch_tbl tfoot tr").hide();
+
+					},
+					error : function(e) {
+
+						var json = "<h4>Response Error:Error occured while searching for commissions.</h4><pre>"
+								+ e.responseText + "</pre>";
+						$('#search_feedback').html(json);
+
+						console.log("ERROR : ", e);
+						// $("#btn-search").prop("disabled", false);
+
 					}
 						
 				});
