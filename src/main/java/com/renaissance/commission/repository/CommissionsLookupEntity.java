@@ -1,4 +1,4 @@
-package com.renaissance.common.model;
+package com.renaissance.commission.repository;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

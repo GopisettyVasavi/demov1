@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Commissions Lookup</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
+<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
+<link href="css/jquery.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link href="css/buttons.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- header-start -->
+ <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
+          
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+
+				</a>
+				<a   href="#" onclick="window.location = '/index' ">Back>></a>
+				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				
+				
+				
+			</div>
+			
+		</div>
+            
+            </div>
+        </header>
+<!-- header-end -->
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="bradcam_text">
+					<h3>Commissions Lookup</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ bradcam_area  -->
+<body onload="initialize()">
+
+	<div class="col-lg-12">
+		<form class="form-contact contact_form" id="indexform">
+<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	
+			
+	<table id="commissionslookup_tbl" class="display">
+
+			</table>
+			</div>
+			<div class="col-sm-12" style="padding-top: 10px"></div>
+			<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4" >
+						<div class="form-group">
+
+							<button type="submit" id="btn-save"
+								class="button button-contactForm boxed-btn"
+								onclick="addnewLookup()" >Add New Lookup</button>
+								
+						</div>
+					</div>
+					</div>
+					<div id="hidden" style="display: none">
+					<input
+								type="text" name="name" placeholder="Min Range"
+								class="single-input" id="id" required
+								 >
+					</div>
+<div id="addlookup_div" style="display: none">
+			 <div class="container">
+
+				<div class="row">
+<div class="col-sm-3">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Min Range *</label> <input
+								type="text" name="name" placeholder="Min Range"
+								class="single-input" id="minRange" required
+								 >
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Max Range *</label> <input
+								type="text" name="name" placeholder="Max Range"
+								class="single-input" id="maxRange" required
+								 >
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+							<label for="name" style="font-weight: bold">Percentage *</label> <input
+								type="text" name="name" placeholder="Percentage"
+								class="single-input" id="percentage" required
+								 >
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="form-group">
+																					<label for="name" style="font-weight:bold">Type *</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select"  id="default-select">
+																							<select id="comm_type"  name="name" >
+																								<option value="none"  selected="selected">Select Commission Type</option>
+																								<option value="CONTRACT">Contract</option>
+																								<option value="PERMANENT">Permanent</option>
+																								
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+					</div>
+					
+		<div class="col-sm-12" style="padding-top: 10px"></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						<div class="form-group">
+
+							<button type="submit" id="btn-save"
+								class="button button-contactForm boxed-btn"
+								onclick="clickonsave()">Save</button>
+								<a href="#" type="submit" id="btn-back"
+								class="button button-contactForm boxed-btn"
+								onclick="goBack()" style="padding-left: 5px; padding-right: 5px;padding-top: 1px;padding-bottom: 1px">Back</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	</div>
+
+	</form> 
+
+	<div class="col-sm-12" style="padding-top: 10px"></div>
+					
+					<div id="feedback" style="padding-left: 400px; color: red"></div>
+	</div>
+
+<!-- JS here -->
+ <script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/searchpanes/1.0.1/js/dataTables.searchPanes.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js" type="text/javascript"></script>
+
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+
+
+<script src="/js/fixedHeadermin.js" ></script>
+	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	 <script src="js/vendor/sweetalert2.js"></script>
+       
+        
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+   
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+
+	<script type="text/javascript">
+	function goBack(){
+		//alert('test');
+		window.location='/index'
+
+	}
+		function clickonsave() {
+			$('#feedback').html("");
+			
+			event.preventDefault();
+			if($("#minRange").val()=="" || $("#maxRange").val()=="" || $("#percentage").val()==""
+					|| $("#comm_type").val()=="none" ){
+				document.getElementById("feedback").style.color = "red";
+				$('#feedback').html("Validation error: Please enter values for all fields.");
+				return false;
+			}
+			var commissionsLookupDTO = {}
+			commissionsLookupDTO["range"] = $("#minRange").val()+"-"+$("#maxRange").val();
+			commissionsLookupDTO["percentage"] = Number($("#percentage").val());
+			commissionsLookupDTO["commissionType"] = $("#comm_type").val();
+			commissionsLookupDTO["id"] = $("#id").val();
+			
+			$.ajax({
+						type : "POST",
+						contentType : "application/json",
+						url : "/savecommissionslookup",
+						data : JSON.stringify(commissionsLookupDTO),
+						dataType : 'json',
+						cache : false,
+						timeout : 600000,
+						success : function(data) {
+							alert("Commission Lookup saved Successfully.");
+							initialize();
+						},
+						error : function(e) {
+
+							var json = "Response Error:Error occured while updating.<pre>"
+									+ e.responseText + "</pre>";
+							$('#feedback').html(json);
+
+							console.log("ERROR : ", e);
+						}
+					});
+		}
+
+		function initialize() {
+			$("#addlookup_div").hide();
+			 $("#id").val("");
+			
+						$.ajax({
+						type : "GET",
+						contentType : "application/json",
+						url : "/loadcommissionslookup",
+						dataType : 'json',
+						cache : false,
+						timeout : 600000,
+						success : function(data) {
+							//var json=data
+							var table = $('#commissionslookup_tbl').DataTable({
+
+								destroy : true,
+								searching: false,
+								autoWidth : false,
+								/*
+								 * targets: 'no-sort', bSort: false, order: [],
+								 */
+
+								buttons : [ 'colvis' ],
+								renderer : {
+									"header" : "bootstrap"
+								},
+								data : data,
+								
+								columns : [ 
+									 {
+											"data" : 'range',
+											"name" : "range",
+											"title" : "Range"
+										},
+										
+										 {
+									"data" : 'percentage',
+									"name" : "percentage",
+									"title" : "Percentage"
+								},
+								
+								
+								 {
+							"data" : 'id',
+							"name" : "id",
+							"title" : "id",
+							"visible": false
+						},{
+									"data" : 'commissionType',
+									"name" : "commissionType",
+									"title" : "Commission Type"
+								} ]
+
+							});
+							$('#commissionslookup_tbl tfoot tr').appendTo(
+									'#commissionslookup_tbl thead');
+
+							$("#commissionslookup_tbl tfoot tr").hide();
+						},
+						error : function(e) {
+
+							var json = "<h4>Response Error:Error occured while loading commissions lookup values.</h4><pre>"
+									+ e.responseText + "</pre>";
+							$('#feedback').html(json);
+
+							console.log("ERROR : ", e);
+							
+
+						}
+					});
+
+		}
+		function addnewLookup(){
+			event.preventDefault();
+			$("#addlookup_div").show();
+			$("#minRange").val("");
+			$("#maxRange").val("");
+			$("#comm_type").val("none");
+			$("#percentage").val("");
+			
+			$("#id").val("");
+		}
+
+		
+		$(document).on(
+				"click",
+				"#commissionslookup_tbl tbody tr",
+				function(e)
+
+				{
+
+					var table = $('#commissionslookup_tbl').DataTable();
+					var rowData = table.row(this).data();
+					// alert('called'+rowData.contractorId);
+					$("#addlookup_div").show();
+					var range= rowData.range.split("-");
+					$("#minRange").val(range[0]);
+					$("#maxRange").val(range[1]);
+					$("#comm_type").val(rowData.commissionType);
+					$("#percentage").val(rowData.percentage);
+					
+					$("#id").val(rowData.id);
+					console.log(rowData);
+				});		
+	</script>
+	<script src="js/idle_timeout.js"></script>
+</body>
+</html>

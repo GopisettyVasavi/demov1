@@ -1,201 +1,477 @@
-2020-08-05 16:00:49,257 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
-2020-08-05 16:00:49,258 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=2019-07-01, endDate=2020-06-30]
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=524.5, contractCommissionTotalSuper=515.0, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Date Jan-2020
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Date Jan-2020
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Date Jun-2020
-2020-08-05 16:00:49,259 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Date Jun-2020
-2020-08-05 16:01:46,246 INFO com.zaxxer.hikari.HikariDataSource [Thread-403] HikariPool-60 - Shutdown initiated...
-2020-08-05 16:01:46,248 INFO com.zaxxer.hikari.HikariDataSource [Thread-403] HikariPool-60 - Shutdown completed.
-2020-08-05 16:01:46,578 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:01:46,578 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:01:46,999 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:01:46,999 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:01:47,029 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:01:47,070 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-61 - Starting...
-2020-08-05 16:01:47,104 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-61 - Start completed.
-2020-08-05 16:01:47,121 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 17:39:02,601 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-05 17:39:04,032 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-3] [THYMELEAF][http-nio-8090-exec-3] Exception processing template "commissionslookup": An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 54 common frames omitted
+2020-08-05 17:39:04,032 ERROR org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-05 17:40:42,412 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-1] [THYMELEAF][http-nio-8090-exec-1] Exception processing template "commissionslookup": An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 54 common frames omitted
+2020-08-05 17:40:42,412 ERROR org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-05 17:40:50,401 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:45:04,775 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:47:07,755 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:48:53,326 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:49:34,732 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-6] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:49:44,764 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:50:25,472 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:55:11,929 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:55:52,088 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:56:50,691 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:57:14,711 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:58:23,159 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:12,225 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:13,779 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:16,156 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:00:55,992 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:00:57,479 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:03,869 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:05,493 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:06,628 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:37,413 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-1] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:44,939 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-05 18:02:46,828 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:03:51,201 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:04:39,956 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:05:25,365 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:06:41,739 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:07:24,395 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:12:07,035 INFO com.zaxxer.hikari.HikariDataSource [Thread-565] HikariPool-83 - Shutdown initiated...
+2020-08-05 18:12:07,037 INFO com.zaxxer.hikari.HikariDataSource [Thread-565] HikariPool-83 - Shutdown completed.
+2020-08-05 18:12:07,421 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:07,421 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:07,878 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:07,879 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:07,908 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:07,948 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-84 - Starting...
+2020-08-05 18:12:07,979 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-84 - Start completed.
+2020-08-05 18:12:08,000 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:01:47,152 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:01:47,413 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:01:47,413 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:01:47,817 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.261 seconds (JVM running for 9243.723)
-2020-08-05 16:01:47,819 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:06:07,162 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-05 16:06:07,412 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-6] HHH000397: Using ASTQueryTranslatorFactory
-2020-08-05 16:06:12,568 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
-2020-08-05 16:06:12,569 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=2019-07-01, endDate=2020-06-30]
-2020-08-05 16:06:12,580 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:06:12,580 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:06:12,580 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=524.5, contractCommissionTotalSuper=515.0, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:06:12,580 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:06:28,184 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Search details, SearchCommissionForm [period=LastMonth, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
-2020-08-05 16:06:28,185 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Search details, SearchCommissionForm [period=LastMonth, fromDate=, recruiterName=, toDate=, startDate=2020-07-01, endDate=2020-07-27]
-2020-08-05 16:06:28,187 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=266.78, contractCommissionTotalSuper=257.28, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:06:28,187 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:06:33,960 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Search details, SearchCommissionForm [period=CurrentFY, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
-2020-08-05 16:06:33,960 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Search details, SearchCommissionForm [period=CurrentFY, fromDate=, recruiterName=, toDate=, startDate=2020-07-01, endDate=2021-06-30]
-2020-08-05 16:06:33,962 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=266.78, contractCommissionTotalSuper=257.28, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:06:33,962 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:06:33,962 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:06:33,962 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:07:11,349 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Search details, SearchCommissionForm [period=DateRange, fromDate=Jan-2019, recruiterName=, toDate=Nov-2020, startDate=null, endDate=null]
-2020-08-05 16:07:11,349 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Search details, SearchCommissionForm [period=DateRange, fromDate=Jan-2019, recruiterName=, toDate=Nov-2020, startDate=2019-01-01, endDate=2020-11-27]
-2020-08-05 16:07:11,351 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=266.78, contractCommissionTotalSuper=257.28, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:07:11,351 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:07:11,351 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:07:11,351 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:07:11,351 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=524.5, contractCommissionTotalSuper=515.0, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:07:11,352 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:07:11,352 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:07:11,352 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:07:11,352 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:07:11,352 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:07:52,457 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:07:52,457 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:07:52,458 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:07:52,459 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:07:52,459 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:07:52,459 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:07:52,459 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:09:28,956 INFO com.zaxxer.hikari.HikariDataSource [Thread-410] HikariPool-61 - Shutdown initiated...
-2020-08-05 16:09:28,959 INFO com.zaxxer.hikari.HikariDataSource [Thread-410] HikariPool-61 - Shutdown completed.
-2020-08-05 16:09:29,363 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:09:29,363 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:09:29,791 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:09:29,791 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:09:29,821 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:09:29,858 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-62 - Starting...
-2020-08-05 16:09:29,888 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-62 - Start completed.
-2020-08-05 16:09:29,904 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:12:08,031 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:08,280 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:08,280 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:08,707 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.313 seconds (JVM running for 17064.613)
+2020-08-05 18:12:08,709 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:12:41,847 INFO com.zaxxer.hikari.HikariDataSource [Thread-574] HikariPool-84 - Shutdown initiated...
+2020-08-05 18:12:41,850 INFO com.zaxxer.hikari.HikariDataSource [Thread-574] HikariPool-84 - Shutdown completed.
+2020-08-05 18:12:42,218 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:42,218 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:42,654 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:42,654 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:42,676 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:42,713 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-85 - Starting...
+2020-08-05 18:12:42,743 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-85 - Start completed.
+2020-08-05 18:12:42,760 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:09:29,934 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:09:30,185 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:09:30,185 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:09:30,595 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.255 seconds (JVM running for 9706.501)
-2020-08-05 16:09:30,597 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:09:37,243 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-05 16:09:37,423 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-4] HHH000397: Using ASTQueryTranslatorFactory
-2020-08-05 16:09:45,103 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:09:45,103 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:09:45,111 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-3] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:09:45,111 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-3] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:09:45,111 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-3] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:09:45,111 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-3] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:09:45,111 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-3] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:10:38,660 INFO com.zaxxer.hikari.HikariDataSource [Thread-417] HikariPool-62 - Shutdown initiated...
-2020-08-05 16:10:38,663 INFO com.zaxxer.hikari.HikariDataSource [Thread-417] HikariPool-62 - Shutdown completed.
-2020-08-05 16:10:39,081 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:10:39,082 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:10:39,515 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:10:39,515 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:10:39,543 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:10:39,580 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-63 - Starting...
-2020-08-05 16:10:39,612 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-63 - Start completed.
-2020-08-05 16:10:39,627 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:12:42,791 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:43,043 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:43,043 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:43,468 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.273 seconds (JVM running for 17099.375)
+2020-08-05 18:12:43,470 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:12:50,020 INFO com.zaxxer.hikari.HikariDataSource [Thread-581] HikariPool-85 - Shutdown initiated...
+2020-08-05 18:12:50,024 INFO com.zaxxer.hikari.HikariDataSource [Thread-581] HikariPool-85 - Shutdown completed.
+2020-08-05 18:12:50,393 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:50,393 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:50,822 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:50,822 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:50,843 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:50,879 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-86 - Starting...
+2020-08-05 18:12:50,909 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-86 - Start completed.
+2020-08-05 18:12:50,925 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:10:39,658 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:10:39,913 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:10:39,913 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:10:40,322 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.263 seconds (JVM running for 9776.228)
-2020-08-05 16:10:40,324 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:10:57,768 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-05 16:10:57,938 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-2] HHH000397: Using ASTQueryTranslatorFactory
-2020-08-05 16:11:09,210 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:11:09,211 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=Kavitha, toDate=, startDate=2019-07-01, endDate=2020-06-30]
-2020-08-05 16:11:09,219 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:11:09,219 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:11:21,893 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:11:21,893 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:11:21,896 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:11:21,896 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:11:21,896 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:11:21,896 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:11:21,896 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:11:36,990 INFO com.zaxxer.hikari.HikariDataSource [Thread-424] HikariPool-63 - Shutdown initiated...
-2020-08-05 16:11:36,993 INFO com.zaxxer.hikari.HikariDataSource [Thread-424] HikariPool-63 - Shutdown completed.
-2020-08-05 16:11:37,435 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:11:37,435 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:11:37,866 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:11:37,866 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:11:37,895 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:11:37,934 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-64 - Starting...
-2020-08-05 16:11:37,965 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-64 - Start completed.
-2020-08-05 16:11:37,983 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:12:50,960 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:51,208 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:51,208 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:51,591 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.222 seconds (JVM running for 17107.497)
+2020-08-05 18:12:51,592 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:13:17,577 INFO com.zaxxer.hikari.HikariDataSource [Thread-588] HikariPool-86 - Shutdown initiated...
+2020-08-05 18:13:17,581 INFO com.zaxxer.hikari.HikariDataSource [Thread-588] HikariPool-86 - Shutdown completed.
+2020-08-05 18:13:17,935 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:13:17,935 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:13:18,364 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:13:18,364 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:13:18,395 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:13:18,431 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-87 - Starting...
+2020-08-05 18:13:18,463 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-87 - Start completed.
+2020-08-05 18:13:18,479 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:11:38,026 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:11:38,279 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:11:38,279 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:11:38,689 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.279 seconds (JVM running for 9834.594)
-2020-08-05 16:11:38,690 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:12:52,820 INFO com.zaxxer.hikari.HikariDataSource [Thread-431] HikariPool-64 - Shutdown initiated...
-2020-08-05 16:12:52,825 INFO com.zaxxer.hikari.HikariDataSource [Thread-431] HikariPool-64 - Shutdown completed.
-2020-08-05 16:12:53,203 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:12:53,203 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:12:53,652 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:12:53,652 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:12:53,682 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:12:53,721 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-65 - Starting...
-2020-08-05 16:12:53,756 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-65 - Start completed.
-2020-08-05 16:12:53,773 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:13:18,511 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:13:18,765 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:13:18,765 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:13:19,142 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.231 seconds (JVM running for 17135.048)
+2020-08-05 18:13:19,143 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:13:33,904 INFO com.zaxxer.hikari.HikariDataSource [Thread-595] HikariPool-87 - Shutdown initiated...
+2020-08-05 18:13:33,908 INFO com.zaxxer.hikari.HikariDataSource [Thread-595] HikariPool-87 - Shutdown completed.
+2020-08-05 18:13:34,281 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:13:34,281 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:13:34,705 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:13:34,705 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:13:34,727 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:13:34,761 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-88 - Starting...
+2020-08-05 18:13:34,791 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-88 - Start completed.
+2020-08-05 18:13:34,806 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:12:53,805 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:12:54,057 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:12:54,057 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:12:54,487 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.306 seconds (JVM running for 9910.393)
-2020-08-05 16:12:54,489 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:12:54,510 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-08-05 16:12:54,674 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-10] HHH000397: Using ASTQueryTranslatorFactory
-2020-08-05 16:13:00,274 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:13:00,274 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Search details, SearchCommissionForm [period=null, fromDate=, recruiterName=Kavitha, toDate=, startDate=null, endDate=null]
-2020-08-05 16:13:00,281 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2019-06-01, monthYearUI=null]
-2020-08-05 16:13:00,281 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-01-01, monthYearUI=null]
-2020-08-05 16:13:00,281 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=845.02, contractCommissionTotalSuper=835.52, monthYear=2020-06-01, monthYearUI=null]
-2020-08-05 16:13:00,281 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null]
-2020-08-05 16:13:00,281 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null]
-2020-08-05 16:15:12,965 INFO com.zaxxer.hikari.HikariDataSource [Thread-438] HikariPool-65 - Shutdown initiated...
-2020-08-05 16:15:12,968 INFO com.zaxxer.hikari.HikariDataSource [Thread-438] HikariPool-65 - Shutdown completed.
-2020-08-05 16:15:13,398 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:15:13,398 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:15:13,848 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:15:13,848 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:15:13,879 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:15:13,924 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-66 - Starting...
-2020-08-05 16:15:13,953 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-66 - Start completed.
-2020-08-05 16:15:13,969 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:13:34,837 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:13:35,085 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:13:35,085 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:13:35,497 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.238 seconds (JVM running for 17151.404)
+2020-08-05 18:13:35,499 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:18:13,716 INFO com.zaxxer.hikari.HikariDataSource [Thread-602] HikariPool-88 - Shutdown initiated...
+2020-08-05 18:18:13,721 INFO com.zaxxer.hikari.HikariDataSource [Thread-602] HikariPool-88 - Shutdown completed.
+2020-08-05 18:18:14,053 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:18:14,054 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:18:14,493 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:18:14,493 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:18:14,515 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:18:14,548 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-89 - Starting...
+2020-08-05 18:18:14,581 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-89 - Start completed.
+2020-08-05 18:18:14,596 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:15:14,001 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:15:14,254 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:15:14,254 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:15:14,660 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.285 seconds (JVM running for 10050.567)
-2020-08-05 16:15:14,662 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:15:36,544 INFO com.zaxxer.hikari.HikariDataSource [Thread-445] HikariPool-66 - Shutdown initiated...
-2020-08-05 16:15:36,549 INFO com.zaxxer.hikari.HikariDataSource [Thread-445] HikariPool-66 - Shutdown completed.
-2020-08-05 16:15:36,961 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:15:36,961 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-08-05 16:15:37,390 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-08-05 16:15:37,391 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-08-05 16:15:37,421 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-08-05 16:15:37,455 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Starting...
-2020-08-05 16:15:37,487 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Start completed.
-2020-08-05 16:15:37,502 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+2020-08-05 18:18:14,625 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:18:14,873 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:18:14,874 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:18:15,279 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.251 seconds (JVM running for 17431.185)
+2020-08-05 18:18:15,282 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:19:33,455 INFO com.zaxxer.hikari.HikariDataSource [Thread-609] HikariPool-89 - Shutdown initiated...
+2020-08-05 18:19:33,459 INFO com.zaxxer.hikari.HikariDataSource [Thread-609] HikariPool-89 - Shutdown completed.
+2020-08-05 18:19:33,784 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:19:33,784 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:19:34,222 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:19:34,222 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:19:34,249 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:19:34,286 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-90 - Starting...
+2020-08-05 18:19:34,315 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-90 - Start completed.
+2020-08-05 18:19:34,331 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2020-08-05 16:15:37,532 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-08-05 16:15:37,781 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-08-05 16:15:37,781 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
-2020-08-05 16:15:38,193 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.253 seconds (JVM running for 10074.099)
-2020-08-05 16:15:38,195 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-08-05 16:16:00,087 INFO com.zaxxer.hikari.HikariDataSource [Thread-452] HikariPool-67 - Shutdown initiated...
-2020-08-05 16:16:00,093 INFO com.zaxxer.hikari.HikariDataSource [Thread-452] HikariPool-67 - Shutdown completed.
-2020-08-05 16:16:00,537 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-08-05 16:16:00,537 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:19:34,362 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:19:34,613 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:19:34,613 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:19:34,996 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.234 seconds (JVM running for 17510.902)
+2020-08-05 18:19:34,997 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:19:39,507 INFO com.zaxxer.hikari.HikariDataSource [Thread-616] HikariPool-90 - Shutdown initiated...
+2020-08-05 18:19:39,512 INFO com.zaxxer.hikari.HikariDataSource [Thread-616] HikariPool-90 - Shutdown completed.
+2020-08-05 18:19:39,863 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:19:39,863 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:19:40,306 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:19:40,307 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:19:40,328 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:19:40,362 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-91 - Starting...
+2020-08-05 18:19:40,391 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-91 - Start completed.
+2020-08-05 18:19:40,407 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:19:40,438 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:19:40,684 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:19:40,684 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:19:41,084 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.243 seconds (JVM running for 17516.99)
+2020-08-05 18:19:41,086 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3

@@ -72,7 +72,7 @@ public class ConstantsMVCController {
 		} catch (Exception e) {
 			logger.error("Error in loading constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
-					.body(" An issue in creating contract. Please try again. \n" + e.getMessage());
+					.body(" An issue in loading constant. Please try again. \n" + e.getMessage());
 		}
 		
 		return new ResponseEntity<>(constantsDto, HttpStatus.OK);

@@ -53,6 +53,10 @@ public class APIConstants {
 	public static final String SAVE_COMMISSION="/savecommission";
 	public static final String FINAL_SAVE_COMMISSION="/finalsavecommission";
 	public static final String SEARCH_COMMISSIONS="/searchcommissions";
+	public static final String COMMISSIONS_LOOKUP="/commissionslookup";
+	public static final String LOAD_COMMISSIONS_LOOKUP="/loadcommissionslookup";
+	public static final String SAVE_COMMISSION_LOOKUP="/savecommissionslookup";
+	
 	
 
 }

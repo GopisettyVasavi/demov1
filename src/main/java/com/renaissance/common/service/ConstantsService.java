@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.renaissance.commission.repository.CommissionsLookupEntity;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.model.AppConstantsEntity;
-import com.renaissance.common.model.CommissionsLookupEntity;
 import com.renaissance.common.repository.AppConstantsRepository;
 import com.renaissance.common.repository.CommissionsLookupRepository;
 import com.renaissance.profile.parser.util.ProfileParserConstants;

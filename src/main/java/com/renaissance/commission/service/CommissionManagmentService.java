@@ -11,13 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.renaissance.commission.dto.CommissionDTO;
+import com.renaissance.commission.dto.CommissionsLookupDTO;
 import com.renaissance.commission.dto.FinalCommissionsDTO;
 import com.renaissance.commission.dto.RecruiterCommissionsDTO;
 import com.renaissance.commission.model.CommissionsDetailsEntity;
 import com.renaissance.commission.model.RecruiterCommissionsEntity;
 import com.renaissance.commission.model.SearchCommissionForm;
 import com.renaissance.commission.repository.CommissionsDetailsRepository;
+import com.renaissance.commission.repository.CommissionsLookupEntity;
 import com.renaissance.commission.repository.RecruiterCommissionsRepository;
+import com.renaissance.common.repository.CommissionsLookupRepository;
 import com.renaissance.contractor.model.ContractorEmploymentDetailsEntity;
 import com.renaissance.contractor.model.ContractorPersonalDetailsEntity;
 import com.renaissance.contractor.model.ContractorRateDetailsEntity;
@@ -45,6 +48,9 @@ public class CommissionManagmentService {
 	
 	@Autowired
 	RecruiterCommissionsRepository recruiterCommissions;
+	
+	@Autowired
+	CommissionsLookupRepository commissionsLookup;
 	/**
 	 * This method will check first any temporary or final commissions exist for the given month and year. If so, those commissions will be returned or
 	 * else it will create commissions for that month.
@@ -216,5 +222,37 @@ public class CommissionManagmentService {
 
 		}
 		return recruiterCommissions;
+	}
+	
+	/**
+	 * This method will load all commission lookup entries from database and return the list.
+	 * @return
+	 */
+	public List<CommissionsLookupDTO> loadAllCommissionsLookupValues(){
+		List<CommissionsLookupDTO> lookupDtoList= new ArrayList<CommissionsLookupDTO>();
+		Iterable<CommissionsLookupEntity> entities=commissionsLookup.findAll();
+		if(!ProfileParserUtils.isObjectEmpty(entities)) {
+			for (CommissionsLookupEntity commissionObj : entities) {
+				if(!ProfileParserUtils.isObjectEmpty(commissionObj)) {
+					CommissionsLookupDTO dto= new CommissionsLookupDTO();
+					BeanUtils.copyProperties(commissionObj, dto);
+					lookupDtoList.add(dto);
+					
+				}
+				
+			}
+		}
+		
+		return lookupDtoList;
+		
+	}
+	
+	public CommissionsLookupDTO saveCommissionLookup(CommissionsLookupDTO lookupObj) {
+		if(!ProfileParserUtils.isObjectEmpty(lookupObj)) {
+			CommissionsLookupEntity lookupEntity= new CommissionsLookupEntity();
+			BeanUtils.copyProperties(lookupObj, lookupEntity);
+			lookupEntity=commissionsLookup.save(lookupEntity);
+		}
+		return lookupObj;
 	}
 }
