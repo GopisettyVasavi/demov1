@@ -1,6 +1,7 @@
 package com.renaissance.contractor.model;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -91,6 +92,12 @@ public class ContractorEmploymentDetailsEntity {
 	
 	@Column(name = "\"WL_OTHER_COUNTRY\"")
 	private String wlOtherCountry;
+	
+	@Column(name = "\"DATE_JOB_START_DATE\"")
+	private LocalDate dateJobStartDate;
+	
+	@Column(name = "\"DATE_JOB_END_DATE\"")
+	private LocalDate dateJobEndDate;
 	
 	public BigInteger getId() {
 		return Id;
@@ -283,6 +290,24 @@ public class ContractorEmploymentDetailsEntity {
 	public void setWlOtherCountry(String wlOtherCountry) {
 		this.wlOtherCountry = wlOtherCountry;
 	}
+	
+	
+
+	public LocalDate getDateJobStartDate() {
+		return dateJobStartDate;
+	}
+
+	public void setDateJobStartDate(LocalDate dateJobStartDate) {
+		this.dateJobStartDate = dateJobStartDate;
+	}
+
+	public LocalDate getDateJobEndDate() {
+		return dateJobEndDate;
+	}
+
+	public void setDateJobEndDate(LocalDate dateJobEndDate) {
+		this.dateJobEndDate = dateJobEndDate;
+	}
 
 	@Override
 	public String toString() {
@@ -295,14 +320,9 @@ public class ContractorEmploymentDetailsEntity {
 				+ lastWorkingDate + ", finishedClient=" + finishedClient + ", additionalInfo=" + additionalInfo
 				+ ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
 				+ lastUpdatedDateTime + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName
-				+ ", wlOtherState=" + wlOtherState + ", wlOtherCountry=" + wlOtherCountry + "]";
+				+ ", wlOtherState=" + wlOtherState + ", wlOtherCountry=" + wlOtherCountry + ", dateJobStartDate="
+				+ dateJobStartDate + ", dateJobEndDate=" + dateJobEndDate + "]";
 	}
 
-	
-
-	
-
-	
-	
-	
+		
 }

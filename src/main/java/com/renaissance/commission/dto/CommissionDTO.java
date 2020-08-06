@@ -23,6 +23,7 @@ public class CommissionDTO {
 	private Double commissionForCandidate;
 	private String status;
 	private String monthYear;
+	private String employmentType;
 	
 	public Integer getId() {
 		return id;
@@ -140,6 +141,12 @@ public class CommissionDTO {
 	public void setMonthYear(String monthYear) {
 		this.monthYear = monthYear;
 	}
+	public String getEmploymentType() {
+		return employmentType;
+	}
+	public void setEmploymentType(String employmentType) {
+		this.employmentType = employmentType;
+	}
 	@Override
 	public String toString() {
 		return "CommissionDTO [id=" + id + ", contractorId=" + contractorId + ", firstName=" + firstName
@@ -148,8 +155,9 @@ public class CommissionDTO {
 				+ billRatePerDay + ", grossMargin=" + grossMargin + ", noOfDaysWorked=" + noOfDaysWorked
 				+ ", jobStartDate=" + jobStartDate + ", parsedDate=" + parsedDate + ", commission=" + commission
 				+ ", commissionForCandidate=" + commissionForCandidate + ", status=" + status + ", monthYear="
-				+ monthYear + "]";
+				+ monthYear + ", employmentType=" + employmentType + "]";
 	}
+	
 	
 	
 	

@@ -1,0 +1,64 @@
+2020-07-31 17:24:18,604 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 17:24:18,781 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-9] HHH000397: Using ASTQueryTranslatorFactory
+2020-07-31 17:24:18,786 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Super %9.5
+2020-07-31 17:24:23,394 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,2020-07
+2020-07-31 17:24:23,394 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,07/2020
+2020-07-31 17:24:23,402 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Search Results EMP table, 18
+2020-07-31 17:24:28,309 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Commission List for save..,18
+2020-07-31 17:29:08,848 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Commission List..,18
+2020-07-31 17:29:08,851 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:30:40,876 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Commission List for save..,18
+2020-07-31 17:32:51,156 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-31 17:32:54,984 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,2020-07
+2020-07-31 17:32:54,984 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,07/2020
+2020-07-31 17:32:54,989 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-8] Search Results EMP table, 18
+2020-07-31 17:33:01,244 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Commission List..,18
+2020-07-31 17:33:01,245 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:33:30,971 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Commission List..,18
+2020-07-31 17:33:30,972 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:33:35,153 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Commission List for save..,18
+2020-07-31 17:34:32,676 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-31 17:34:39,257 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Selected month & Year,2020-07
+2020-07-31 17:34:39,257 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Selected month & Year,07/2020
+2020-07-31 17:34:39,260 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Search Results EMP table, 18
+2020-07-31 17:34:43,697 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Commission List for save..,18
+2020-07-31 17:34:50,962 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,2020-07
+2020-07-31 17:34:50,963 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,07/2020
+2020-07-31 17:34:50,966 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Search Results EMP table, 18
+2020-07-31 17:35:15,158 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Commission List..,18
+2020-07-31 17:35:15,159 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:36:38,272 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Super %9.5
+2020-07-31 17:36:44,609 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,2020-07
+2020-07-31 17:36:44,609 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,07/2020
+2020-07-31 17:36:44,612 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Search Results EMP table, 18
+2020-07-31 17:36:52,933 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Commission List..,18
+2020-07-31 17:36:52,934 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:38:43,695 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-31 17:38:47,626 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Selected month & Year,2020-07
+2020-07-31 17:38:47,626 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Selected month & Year,07/2020
+2020-07-31 17:38:47,630 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Search Results EMP table, 18
+2020-07-31 17:38:51,426 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Commission List..,18
+2020-07-31 17:38:51,427 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:39:43,712 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Super %9.5
+2020-07-31 17:39:48,253 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Selected month & Year,2020-07
+2020-07-31 17:39:48,254 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Selected month & Year,07/2020
+2020-07-31 17:39:48,256 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-2] Search Results EMP table, 18
+2020-07-31 17:39:53,240 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Commission List..,18
+2020-07-31 17:39:53,241 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Recruiters:: ,[Renaissance, vasavi, Kavitha]
+2020-07-31 17:53:16,759 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-2 - Shutdown initiated...
+2020-07-31 17:53:16,763 INFO com.zaxxer.hikari.HikariDataSource [Thread-12] HikariPool-2 - Shutdown completed.
+2020-07-31 17:53:17,108 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 21856 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-07-31 17:53:17,108 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-07-31 17:53:17,551 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-07-31 17:53:17,551 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-07-31 17:53:17,573 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-07-31 17:53:17,612 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2020-07-31 17:53:17,645 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2020-07-31 17:53:17,663 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-31 17:53:17,702 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-31 17:53:17,952 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-07-31 17:53:17,953 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4f0d8f67
+2020-07-31 17:53:18,436 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.355 seconds (JVM running for 2169.175)
+2020-07-31 17:53:18,438 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3

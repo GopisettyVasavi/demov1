@@ -61,7 +61,7 @@ public class CommissionManagmentService {
 		List<CommissionDTO> commissionList= new ArrayList<CommissionDTO>();
 		boolean commissionsExist=false;
 		if(!ProfileParserUtils.isObjectEmpty(monthAndYear)) {
-			List<CommissionsDetailsEntity> commissionsEntity=commissionsDetails.getCommissionsForSelectedMonthAndYear(monthAndYear);
+			List<CommissionsDetailsEntity> commissionsEntity=commissionsDetails.getCommissionsForSelectedMonthAndYear(monthAndYear,null);
 			if(!ProfileParserUtils.isObjectEmpty(commissionsEntity)) {
 				commissionsExist=true;
 				logger.info("Commissions exist....");
@@ -76,7 +76,8 @@ public class CommissionManagmentService {
 		
 		if(!commissionsExist) {
 			logger.info("Commissions do not exist....");
-		List<ContractorEmploymentDetailsEntity> empDetails = contractorEmployment.getCandidatesForCommission(monthAndYear);
+		List<ContractorEmploymentDetailsEntity> empDetails = contractorEmployment.getCandidatesForCommission
+				(ProfileParserUtils.parseStringDate("01/"+monthAndYear));
 		//logger.info("Search Results EMP table, {}", empDetails.size());
 		if (!ProfileParserUtils.isObjectEmpty(empDetails)) {
 			//int i=1;
@@ -89,6 +90,7 @@ public class CommissionManagmentService {
 				commissionDto.setRecruiterName(empEntity.getRecruiterName());
 				commissionDto.setJobStartDate(empEntity.getJobStartDate());
 				commissionDto.setMonthYear(monthAndYear);
+				commissionDto.setEmploymentType(empEntity.getEmploymentType());
 				ContractorPersonalDetailsEntity personalEntity = contractorPersonal
 						.getPersonalDetailsByContractorId(empEntity.getContractorId());
 				if (!ProfileParserUtils.isObjectEmpty(personalEntity)) {
@@ -161,7 +163,8 @@ public class CommissionManagmentService {
 					CommissionsDetailsEntity commissionEntity=new CommissionsDetailsEntity();
 					CommissionDTO savedcommission= new CommissionDTO();
 					BeanUtils.copyProperties(commission, commissionEntity);
-					
+					commissionEntity.setMonthYearDate(ProfileParserUtils.parseStringDate("01/"+commission.getMonthYear()));
+
 					//logger.info("VO....{}",commissionEntity.toString());
 					CommissionsDetailsEntity previousCommission=commissionsDetails.getCommissionByContractorMonthYear(commission.getContractorId(),
 							commission.getMonthYear(), commission.getRatePerDay(), commission.getJobStartDate());
@@ -254,5 +257,27 @@ public class CommissionManagmentService {
 			lookupEntity=commissionsLookup.save(lookupEntity);
 		}
 		return lookupObj;
+	}
+	
+	/**
+	 * This method will load List of commissions for the selected month year and recruiter name.
+	 * @param monthAndYear
+	 * @param recruiterName
+	 * @return
+	 */
+	public List<CommissionDTO> loadCommissionDetails(String monthAndYear,String recruiterName){
+		List<CommissionDTO> commissionsList=new ArrayList<CommissionDTO>();
+		if(!ProfileParserUtils.isObjectEmpty(monthAndYear)&& !ProfileParserUtils.isObjectEmpty(recruiterName)) {
+			List<CommissionsDetailsEntity> commissionsEntity=commissionsDetails.getCommissionsForSelectedMonthAndYear(monthAndYear,recruiterName);
+			if(!ProfileParserUtils.isObjectEmpty(commissionsEntity)) {
+				logger.info("Commissions exist....");
+				for(CommissionsDetailsEntity commissionEntity:commissionsEntity) {
+					CommissionDTO commissionDto= new CommissionDTO();
+					BeanUtils.copyProperties(commissionEntity, commissionDto);
+					commissionsList.add(commissionDto);
+				}
+			}
+		}
+		return commissionsList;
 	}
 }

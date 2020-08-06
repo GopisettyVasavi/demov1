@@ -1,0 +1,95 @@
+2020-07-30 14:50:41,231 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Super %9.5
+2020-07-30 14:50:41,233 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Super %9.5
+2020-07-30 14:50:41,237 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Super %9.5
+2020-07-30 14:50:44,898 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-30 14:50:44,900 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Super %9.5
+2020-07-30 14:50:44,947 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Super %9.5
+2020-07-30 14:50:45,620 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 14:50:45,622 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-30 14:50:45,626 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Super %9.5
+2020-07-30 14:50:46,139 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Super %9.5
+2020-07-30 14:50:46,142 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Super %9.5
+2020-07-30 14:50:46,146 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Super %9.5
+2020-07-30 14:50:46,353 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Super %9.5
+2020-07-30 14:50:46,355 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-30 14:50:46,358 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Super %9.5
+2020-07-30 14:50:47,877 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Super %9.5
+2020-07-30 14:50:47,880 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 14:50:47,884 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-30 14:50:59,639 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Super %9.5
+2020-07-30 14:50:59,642 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-30 14:50:59,646 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Super %9.5
+2020-07-30 14:51:11,340 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,2020-07
+2020-07-30 14:51:11,340 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,07/2020
+2020-07-30 14:51:11,342 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Search Results EMP table, 18
+2020-07-30 14:51:16,086 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Commission List..,18
+2020-07-30 14:51:16,086 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 14:51:21,227 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Super %9.5
+2020-07-30 14:51:21,230 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Super %9.5
+2020-07-30 14:51:21,234 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 14:51:31,110 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-30 14:51:31,111 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Super %9.5
+2020-07-30 14:51:31,114 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-30 14:51:43,972 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Super %9.5
+2020-07-30 14:51:43,974 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Super %9.5
+2020-07-30 14:51:43,977 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Super %9.5
+2020-07-30 14:53:08,042 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,2020-07
+2020-07-30 14:53:08,042 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,07/2020
+2020-07-30 14:53:08,044 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Search Results EMP table, 18
+2020-07-30 14:53:12,508 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Commission List..,18
+2020-07-30 14:53:12,508 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 14:53:29,856 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 14:53:46,585 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-30 14:54:57,083 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Super %9.5
+2020-07-30 14:55:01,459 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,2020-07
+2020-07-30 14:55:01,459 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Selected month & Year,07/2020
+2020-07-30 14:55:01,461 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-9] Search Results EMP table, 18
+2020-07-30 14:55:05,709 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Commission List..,18
+2020-07-30 14:55:05,709 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 14:55:26,880 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 14:55:29,906 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,2020-07
+2020-07-30 14:55:29,906 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Selected month & Year,07/2020
+2020-07-30 14:55:29,907 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Search Results EMP table, 18
+2020-07-30 14:55:45,584 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Commission List..,18
+2020-07-30 14:55:45,585 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 14:57:38,372 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Super %9.5
+2020-07-30 14:57:42,468 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,2020-07
+2020-07-30 14:57:42,469 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,07/2020
+2020-07-30 14:57:42,470 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-8] Search Results EMP table, 18
+2020-07-30 14:57:46,536 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Commission List..,18
+2020-07-30 14:57:46,537 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 15:01:58,449 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Commission List..,18
+2020-07-30 15:01:58,449 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 15:03:31,997 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-3] Super %9.5
+2020-07-30 15:03:35,696 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Selected month & Year,2020-07
+2020-07-30 15:03:35,696 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Selected month & Year,07/2020
+2020-07-30 15:03:35,698 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Search Results EMP table, 18
+2020-07-30 15:03:43,468 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Commission List..,18
+2020-07-30 15:03:43,468 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Recruiters:: ,[NA, vasavi, Kavitha]
+2020-07-30 15:46:36,331 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Found matching User details for: {}renaissance
+2020-07-30 15:46:36,473 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-30 15:46:40,651 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Controller invoked to retrieve recruiter list 
+2020-07-30 15:46:40,657 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Recruiter list size...,2 
+2020-07-30 15:48:24,858 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-1] Search details, ContractorSearchForm [contractorName=mar, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-07-30 15:48:24,864 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results personal table, 3
+2020-07-30 15:48:24,865 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results EMP table, 0
+2020-07-30 15:48:26,906 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Controller invoked, to load details...id is, 47
+2020-07-30 15:48:26,934 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorPersonalDetailsDTO [contractorId=47, firstName=margin 2, middleName=, lastName=test, fullName=margin 2  test, dateOfBirth=06/07/2020, gender=male, personalEmail=personal@gmail.com, officeEmail=personal@gmail.com, mobilePhone=1234567890, homePhone=, previousName=, address=3204, city=, state=NSW, zipCode=null, country=Australia, otherCountry=, otherState=, visaCategory=Citizen, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=contact personal, emergencyContactNumber=asdads, emergencyContactAddress=asdads, emergencyContactEmail=sdasd, emergencyContactRelation=asdads] 
+2020-07-30 15:48:26,934 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorBankDetailsDTO [contractorId=47, accountName=a1, bsb=bsb, accountNumber=a1, additionalInfo=null, activeRecord=Active] 
+2020-07-30 15:48:26,934 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorSuperAnnuationDetailsDTO [contractorId=null, superAnnuationFundName=null, superAnnuationMemberId=null, additionalSuperAnnuationContributionFlag=null, additionalSuperAnnuationDetails=null, additionalInfo=null, activeRecord=null] 
+2020-07-30 15:48:26,934 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorEmploymentDetailsDTO [contractorId=47, clientName=ren, endClientName=, contractNumber=, workLocationAddress=, workLocationCity=, workLocationState=VIC, workLocationZipCode=null, workLocationCountry=Australia, wlOtherCountry=, wlOtherState=, jobRole=developer, employmentType=Part Time, jobStartDate=01/07/2020, jobEndDate=, lastWorkingDate=, finishedClient=false, additionalInfo=, activeRecord=Active, recruiterId=1000, recruiterName=Kavitha] 
+2020-07-30 15:48:26,934 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorRateDetailsDTO [contractorId=47, ratePerDay=700.0, rateStartDate=21/07/2020, rateEndDate=, includeSuperFlag=null, billRatePerDay=1200.0, payrollTaxPaymentFlag=true, insurancePaymentFlag=true, insuranceType=null, insurancePercentage=3.0, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=Active, referralCommissionType=percent, referralCommissionValue=10.0, payrollTaxPercentage=4.85, grossMargin=375.05] 
+2020-07-30 15:48:27,128 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Controller invoked to retrieve recruiter list 
+2020-07-30 15:48:27,129 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Recruiter list size...,2 
+2020-07-30 15:48:27,137 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-4] Values...,1200.0,700.0,54.95,70.0,{},{}
+2020-07-30 15:48:27,137 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-4] Controller invoked, to calculateMargin... MarginDTO [grossMargin=375.05, netMargin=null, contractorRate=700.0, billRate=1200.0, payrollTax=4.85, workLocationState=VIC, insuranceCost=null, additionalCost=null, recruiterCommission=null, superIncludeCheck=null, payrollTaxCheck=true, insurancePaymentFlag=true, insuranceType=null, superannuation=null, referralCommissionType=percent, referralCommissionValue=10.0, insurancePercentage=3.0, insuranceValue=21.0, payrollTaxValue=33.95, referralValue=70.0]
+2020-07-30 15:48:33,044 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-7] Controller invoked, to load tfn details...id is, 47
+2020-07-30 15:48:52,890 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-10] Controller invoked, to load tfn details...id is, 47
+2020-07-30 16:02:17,349 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-30 16:02:18,937 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-07-30 16:02:30,891 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,2020-07
+2020-07-30 16:02:30,891 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Selected month & Year,07/2020
+2020-07-30 16:02:30,892 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-8] Search Results EMP table, 18
+2020-07-30 17:17:50,797 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-79 housekeeper] HikariPool-79 - Thread starvation or clock leap detected (housekeeper delta=10m26s469ms190µs200ns).
+2020-07-30 19:42:15,487 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-79 housekeeper] HikariPool-79 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s635ms339µs900ns).
+2020-07-30 21:53:09,589 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-79 housekeeper] HikariPool-79 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s81ms86µs).

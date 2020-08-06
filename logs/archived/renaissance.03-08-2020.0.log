@@ -1,0 +1,52 @@
+2020-08-03 18:33:31,301 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] mONTH yEAR SELECTED, 2020-06
+2020-08-03 18:33:31,301 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Selected month & Year,2020-06
+2020-08-03 18:33:31,301 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Selected month & Year,06/2020
+2020-08-03 18:33:31,302 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-2] Commissions exist....
+2020-08-03 18:33:53,296 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] mONTH yEAR SELECTED, 2020-07
+2020-08-03 18:33:53,296 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Selected month & Year,2020-07
+2020-08-03 18:33:53,296 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Selected month & Year,07/2020
+2020-08-03 18:33:53,297 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Commissions exist....
+2020-08-03 18:36:22,301 INFO com.zaxxer.hikari.HikariDataSource [Thread-323] HikariPool-48 - Shutdown initiated...
+2020-08-03 18:36:22,304 INFO com.zaxxer.hikari.HikariDataSource [Thread-323] HikariPool-48 - Shutdown completed.
+2020-08-03 18:36:22,657 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 21856 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-03 18:36:22,657 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-03 18:36:23,129 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-03 18:36:23,130 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-03 18:36:23,155 INFO org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-03 18:36:23,194 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-49 - Starting...
+2020-08-03 18:36:23,224 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-49 - Start completed.
+2020-08-03 18:36:23,240 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-03 18:36:23,277 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-03 18:36:23,544 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-03 18:36:23,544 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4f0d8f67
+2020-08-03 18:36:23,938 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.305 seconds (JVM running for 263961.447)
+2020-08-03 18:36:23,940 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-03 18:36:24,021 INFO org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-03 18:36:24,253 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-5] HHH000397: Using ASTQueryTranslatorFactory
+2020-08-03 18:36:24,257 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Super %9.5
+2020-08-03 18:36:28,324 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Commissions exist....
+2020-08-03 18:36:28,337 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Commission List..,12
+2020-08-03 18:36:28,338 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-2] Recruiters:: ,[vasavi, Kavitha]
+2020-08-03 18:37:03,024 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-6] Commissions exist....
+2020-08-03 18:37:03,036 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Commission List..,20
+2020-08-03 18:37:03,036 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-4] Recruiters:: ,[vasavi, Kavitha]
+2020-08-03 18:41:18,287 INFO com.zaxxer.hikari.HikariDataSource [Thread-330] HikariPool-49 - Shutdown initiated...
+2020-08-03 18:41:18,288 INFO com.zaxxer.hikari.HikariDataSource [Thread-330] HikariPool-49 - Shutdown completed.
+2020-08-03 18:41:18,626 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 21856 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-03 18:41:18,626 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-03 18:41:19,076 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-03 18:41:19,076 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-03 18:41:19,098 INFO org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-03 18:41:19,140 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-50 - Starting...
+2020-08-03 18:41:19,172 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-50 - Start completed.
+2020-08-03 18:41:19,186 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-03 18:41:19,222 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-03 18:41:19,469 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-03 18:41:19,469 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4f0d8f67
+2020-08-03 18:41:19,879 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.276 seconds (JVM running for 264257.387)
+2020-08-03 18:41:19,880 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-03 19:06:54,607 INFO org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'

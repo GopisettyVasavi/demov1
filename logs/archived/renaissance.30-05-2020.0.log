@@ -1,0 +1,7 @@
+2020-05-30 15:18:57,902 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-7 housekeeper] HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=19h28m44s487ms859탎500ns).
+2020-05-30 15:19:53,465 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] No users found for: {}renaissance
+2020-05-30 15:20:34,170 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Found matching User details for: {}renaissance
+2020-05-30 15:20:34,531 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-05-30 18:54:53,145 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-7 housekeeper] HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=2h1m25s88ms604탎300ns).
+2020-05-30 21:06:16,886 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-7 housekeeper] HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=2h1m23s654ms361탎100ns).
+2020-05-30 23:17:42,456 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-7 housekeeper] HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=2h1m25s552ms267탎700ns).

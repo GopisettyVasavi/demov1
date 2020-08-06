@@ -1,0 +1,120 @@
+2020-06-12 14:06:29,920 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-1] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:06:29,920 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results personal table, 0
+2020-06-12 14:06:29,920 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results EMP table, 0
+2020-06-12 14:06:31,426 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-3] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:06:31,427 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results personal table, 0
+2020-06-12 14:06:31,427 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results EMP table, 0
+2020-06-12 14:07:39,024 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Controller invoked to retrieve recruiter list 
+2020-06-12 14:07:39,025 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-6] HHH000397: Using ASTQueryTranslatorFactory
+2020-06-12 14:07:39,030 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Recruiter list size...,2 
+2020-06-12 14:07:46,365 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-1] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:07:46,365 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results personal table, 0
+2020-06-12 14:07:46,366 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results EMP table, 0
+2020-06-12 14:09:09,312 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Controller invoked to retrieve recruiter list 
+2020-06-12 14:09:09,314 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Recruiter list size...,2 
+2020-06-12 14:09:24,283 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-7] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:09:24,283 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results personal table, 0
+2020-06-12 14:09:24,283 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results EMP table, 0
+2020-06-12 14:09:29,342 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-10] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:09:29,343 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-10] Search Results personal table, 0
+2020-06-12 14:09:29,343 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-10] Search Results EMP table, 0
+2020-06-12 14:10:05,856 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Controller invoked to retrieve recruiter list 
+2020-06-12 14:10:05,857 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Recruiter list size...,2 
+2020-06-12 14:10:18,199 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-8] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=null, jobStartDate=, jobEndDate=]
+2020-06-12 14:10:18,199 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-8] Search Results personal table, 0
+2020-06-12 14:10:18,200 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-8] Search Results EMP table, 0
+2020-06-12 14:10:41,908 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Controller invoked to retrieve recruiter list 
+2020-06-12 14:10:41,909 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Recruiter list size...,2 
+2020-06-12 14:10:48,363 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-7] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=yes, jobStartDate=, jobEndDate=]
+2020-06-12 14:10:48,369 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results personal table, 0
+2020-06-12 14:10:48,369 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results EMP table, 0
+2020-06-12 14:11:34,609 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Controller invoked to retrieve recruiter list 
+2020-06-12 14:11:34,611 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Recruiter list size...,2 
+2020-06-12 14:11:40,697 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-9] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:11:40,699 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-9] Search Results personal table, 0
+2020-06-12 14:11:40,699 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-9] Search Results EMP table, 0
+2020-06-12 14:12:19,625 INFO com.zaxxer.hikari.HikariDataSource [Thread-130] HikariPool-17 - Shutdown initiated...
+2020-06-12 14:12:19,628 INFO com.zaxxer.hikari.HikariDataSource [Thread-130] HikariPool-17 - Shutdown completed.
+2020-06-12 14:12:19,946 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 3352 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-12 14:12:19,946 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-12 14:12:20,373 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-12 14:12:20,373 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-12 14:12:20,396 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-12 14:12:20,436 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-18 - Starting...
+2020-06-12 14:12:20,466 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-18 - Start completed.
+2020-06-12 14:12:20,480 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 14:12:20,507 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-12 14:12:20,754 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-12 14:12:20,754 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1af5484c
+2020-06-12 14:12:21,092 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.168 seconds (JVM running for 108473.606)
+2020-06-12 14:12:21,094 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-12 14:12:21,428 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-12 14:12:21,729 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-06-12 14:12:21,730 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-2] HHH000397: Using ASTQueryTranslatorFactory
+2020-06-12 14:12:21,736 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 
+2020-06-12 14:12:27,987 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-6] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:12:28,000 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-6] Search Results personal table, 0
+2020-06-12 14:12:28,003 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-6] Search Results EMP table, 0
+2020-06-12 14:12:40,912 INFO com.zaxxer.hikari.HikariDataSource [Thread-137] HikariPool-18 - Shutdown initiated...
+2020-06-12 14:12:40,916 INFO com.zaxxer.hikari.HikariDataSource [Thread-137] HikariPool-18 - Shutdown completed.
+2020-06-12 14:12:41,259 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 3352 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-12 14:12:41,259 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-12 14:12:41,652 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-12 14:12:41,652 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-12 14:12:41,674 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-12 14:12:41,712 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-19 - Starting...
+2020-06-12 14:12:41,741 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-19 - Start completed.
+2020-06-12 14:12:41,754 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 14:12:41,780 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-12 14:12:42,028 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-12 14:12:42,028 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1af5484c
+2020-06-12 14:12:42,363 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.128 seconds (JVM running for 108494.876)
+2020-06-12 14:12:42,364 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-12 14:12:45,135 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-12 14:12:45,436 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Controller invoked to retrieve recruiter list 
+2020-06-12 14:12:45,437 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-3] HHH000397: Using ASTQueryTranslatorFactory
+2020-06-12 14:12:45,442 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Recruiter list size...,2 
+2020-06-12 14:12:52,193 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-10] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:12:52,204 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-10] Search Results personal table, 5
+2020-06-12 14:12:52,208 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-10] Search Results EMP table, 0
+2020-06-12 14:13:09,503 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-9] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_false, jobStartDate=, jobEndDate=]
+2020-06-12 14:13:09,505 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-9] Search Results personal table, 7
+2020-06-12 14:13:09,505 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-9] Search Results EMP table, 0
+2020-06-12 14:18:37,789 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-3] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:18:37,792 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results personal table, 5
+2020-06-12 14:18:37,793 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results EMP table, 0
+2020-06-12 14:21:06,036 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Controller invoked, to load details...id is, 41
+2020-06-12 14:21:06,065 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorPersonalDetailsDTO [contractorId=41, firstName=Abn test, middleName=m, lastName=Last, fullName=Abn test m Last, dateOfBirth=23/06/2020, gender=male, personalEmail=personal34998@gmail.com, officeEmail=personal@gmail.com, mobilePhone=898989, homePhone=8989889, previousName=, address=3204, city=melb, state=NSW, zipCode=3204, country=Australia, otherCountry=, otherState=, visaCategory=PR, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=asdads, emergencyContactNumber=asdads, emergencyContactAddress=asdads, emergencyContactEmail=asdads, emergencyContactRelation=asdads] 
+2020-06-12 14:21:06,065 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorBankDetailsDTO [contractorId=41, accountName=bank1, bsb=bsb1, accountNumber=bbb, additionalInfo=null, activeRecord=Active] 
+2020-06-12 14:21:06,065 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorSuperAnnuationDetailsDTO [contractorId=null, superAnnuationFundName=null, superAnnuationMemberId=null, additionalSuperAnnuationContributionFlag=null, additionalSuperAnnuationDetails=null, additionalInfo=null, activeRecord=null] 
+2020-06-12 14:21:06,065 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorEmploymentDetailsDTO [contractorId=41, clientName=ren, endClientName=anz, contractNumber=, workLocationAddress=, workLocationCity=, workLocationState=WA, workLocationZipCode=null, workLocationCountry=Australia, wlOtherCountry=, wlOtherState=, jobRole=developer, employmentType=Part Time, jobStartDate=23/06/2020, jobEndDate=, lastWorkingDate=, finishedClient=false, additionalInfo=, activeRecord=Active, recruiterId=1000, recruiterName=Kavitha] 
+2020-06-12 14:21:06,065 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Details...,ContractorRateDetailsDTO [contractorId=41, ratePerDay=500.0, rateStartDate=18/06/2020, rateEndDate=, includeSuperFlag=false, billRatePerDay=800.0, payrollTaxPaymentFlag=false, workCoverFlag=false, insuranceType=none, insurancePercentage=null, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=Active] 
+2020-06-12 14:21:06,271 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Controller invoked to retrieve recruiter list 
+2020-06-12 14:21:06,272 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Recruiter list size...,2 
+2020-06-12 14:21:11,088 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Controller invoked, to load abn details...id is, 41
+2020-06-12 14:22:27,294 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Controller invoked to retrieve recruiter list 
+2020-06-12 14:22:27,295 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Recruiter list size...,2 
+2020-06-12 14:22:39,093 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-7] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:22:39,094 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results personal table, 5
+2020-06-12 14:22:39,095 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-7] Search Results EMP table, 0
+2020-06-12 14:22:45,356 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-12 14:22:54,237 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Dependent Visa, workExperience=, certification=]
+2020-06-12 14:22:54,244 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results personal table, 3
+2020-06-12 14:22:54,244 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Search Results profile table, 0
+2020-06-12 14:22:54,244 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size before.. ,3
+2020-06-12 14:22:54,244 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] List size after.. ,3
+2020-06-12 14:22:54,259 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,60 Arti Yadav Dependent Visa
+2020-06-12 14:22:54,262 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,70 Ashish Sharma Dependent Visa
+2020-06-12 14:22:54,265 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] All details,114 Prasad age1| 4 Dependent Visa
+2020-06-12 14:22:54,265 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-9] Search Results, 3
+2020-06-12 14:30:57,898 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Found matching User details for: {}renaissance
+2020-06-12 14:30:58,040 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-12 14:31:05,713 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Controller invoked to retrieve recruiter list 
+2020-06-12 14:31:05,714 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Recruiter list size...,2 
+2020-06-12 14:31:55,852 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-1] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-12 14:31:55,853 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results personal table, 5
+2020-06-12 14:31:55,854 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-1] Search Results EMP table, 0

@@ -1,5 +1,7 @@
 package com.renaissance.common.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +26,9 @@ public class AppConstantsEntity {
 	@Column(name = "\"CONSTANT_VALUE\"")
 	private Double constantValue;
 
+	@Column(name = "\"EFFECTIVE_FROM\"")
+	private LocalDate effectiveFrom;
+	
 	public Integer getId() {
 		return Id;
 	}
@@ -48,10 +53,20 @@ public class AppConstantsEntity {
 		this.constantValue = constantValue;
 	}
 
+	public LocalDate getEffectiveFrom() {
+		return effectiveFrom;
+	}
+
+	public void setEffectiveFrom(LocalDate effectiveFrom) {
+		this.effectiveFrom = effectiveFrom;
+	}
+
 	@Override
 	public String toString() {
 		return "AppConstantsEntity [Id=" + Id + ", constantName=" + constantName + ", constantValue=" + constantValue
-				+ "]";
+				+ ", effectiveFrom=" + effectiveFrom + "]";
 	}
+
+	
 	
 }

@@ -40,7 +40,7 @@ public class CommissionsDetailsEntity {
 	@Column(name = "\"NO_OF_DAYS_WORKED\"")
 	private Integer noOfDaysWorked;
 	
-	@Column(name = "\"COMMISSION\"")
+	@Column(name = "\"COMMISSION_PERCENTAGE\"")
 	private Double commission;
 	
 	@Column(name = "\"COMMISSION_FOR_CANDIDATE\"")
@@ -60,6 +60,10 @@ public class CommissionsDetailsEntity {
 	
 	@Column(name = "\"STATUS\"")
 	private String status;
+	
+	@Column(name = "\"EMPLOYMENT_TYPE\"")
+	private String employmentType;
+	
 
 	public BigInteger getId() {
 		return Id;
@@ -173,14 +177,26 @@ public class CommissionsDetailsEntity {
 		this.status = status;
 	}
 
+	
+	public String getEmploymentType() {
+		return employmentType;
+	}
+
+	public void setEmploymentType(String employmentType) {
+		this.employmentType = employmentType;
+	}
+
 	@Override
 	public String toString() {
-		return "RecruiterCommissionsEntity [Id=" + Id + ", contractorId=" + contractorId + ", fullName=" + fullName
+		return "CommissionsDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", fullName=" + fullName
 				+ ", recruiterName=" + recruiterName + ", monthYear=" + monthYear + ", monthYearDate=" + monthYearDate
 				+ ", noOfDaysWorked=" + noOfDaysWorked + ", commission=" + commission + ", commissionForCandidate="
 				+ commissionForCandidate + ", ratePerDay=" + ratePerDay + ", billRatePerDay=" + billRatePerDay
-				+ ", grossMargin=" + grossMargin + ", jobStartDate=" + jobStartDate + ", status=" + status + "]";
+				+ ", grossMargin=" + grossMargin + ", jobStartDate=" + jobStartDate + ", status=" + status
+				+ ", employmentType=" + employmentType + "]";
 	}
+
+	
 	
 	
 }

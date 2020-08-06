@@ -1,0 +1,522 @@
+2020-08-05 17:39:02,601 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-05 17:39:04,032 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-3] [THYMELEAF][http-nio-8090-exec-3] Exception processing template "commissionslookup": An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 54 common frames omitted
+2020-08-05 17:39:04,032 ERROR org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 1, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-05 17:40:42,412 ERROR org.thymeleaf.TemplateEngine [http-nio-8090-exec-1] [THYMELEAF][http-nio-8090-exec-1] Exception processing template "commissionslookup": An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 54 common frames omitted
+2020-08-05 17:40:42,412 ERROR org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/].[dispatcherServlet] [http-nio-8090-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/commissionslookup.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: " 2, "asc" " (template: "commissionslookup" - line 292, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220)
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.performInlining(OutputExpressionInlinePreProcessorHandler.java:440)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleText(OutputExpressionInlinePreProcessorHandler.java:146)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleText(InlinedOutputExpressionMarkupHandler.java:80)
+	at org.attoparser.HtmlMarkupHandler.handleText(HtmlMarkupHandler.java:208)
+	at org.attoparser.AbstractChainedMarkupHandler.handleText(AbstractChainedMarkupHandler.java:203)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:557)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-05 17:40:50,401 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:45:04,775 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:47:07,755 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:48:53,326 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:49:34,732 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-6] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:49:44,764 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:50:25,472 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:55:11,929 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:55:52,088 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:56:50,691 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:57:14,711 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:58:23,159 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:12,225 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:13,779 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 17:59:16,156 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:00:55,992 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:00:57,479 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:03,869 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:05,493 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:06,628 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:37,413 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-1] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:02:44,939 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-05 18:02:46,828 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:03:51,201 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:04:39,956 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:05:25,365 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:06:41,739 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:07:24,395 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:12:07,035 INFO com.zaxxer.hikari.HikariDataSource [Thread-565] HikariPool-83 - Shutdown initiated...
+2020-08-05 18:12:07,037 INFO com.zaxxer.hikari.HikariDataSource [Thread-565] HikariPool-83 - Shutdown completed.
+2020-08-05 18:12:07,421 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:07,421 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:07,878 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:07,879 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:07,908 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:07,948 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-84 - Starting...
+2020-08-05 18:12:07,979 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-84 - Start completed.
+2020-08-05 18:12:08,000 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:12:08,031 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:08,280 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:08,280 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:08,707 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.313 seconds (JVM running for 17064.613)
+2020-08-05 18:12:08,709 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:12:41,847 INFO com.zaxxer.hikari.HikariDataSource [Thread-574] HikariPool-84 - Shutdown initiated...
+2020-08-05 18:12:41,850 INFO com.zaxxer.hikari.HikariDataSource [Thread-574] HikariPool-84 - Shutdown completed.
+2020-08-05 18:12:42,218 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:42,218 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:42,654 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:42,654 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:42,676 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:42,713 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-85 - Starting...
+2020-08-05 18:12:42,743 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-85 - Start completed.
+2020-08-05 18:12:42,760 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:12:42,791 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:43,043 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:43,043 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:43,468 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.273 seconds (JVM running for 17099.375)
+2020-08-05 18:12:43,470 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:12:50,020 INFO com.zaxxer.hikari.HikariDataSource [Thread-581] HikariPool-85 - Shutdown initiated...
+2020-08-05 18:12:50,024 INFO com.zaxxer.hikari.HikariDataSource [Thread-581] HikariPool-85 - Shutdown completed.
+2020-08-05 18:12:50,393 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:12:50,393 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:12:50,822 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:12:50,822 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:12:50,843 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:12:50,879 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-86 - Starting...
+2020-08-05 18:12:50,909 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-86 - Start completed.
+2020-08-05 18:12:50,925 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:12:50,960 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:12:51,208 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:12:51,208 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:12:51,591 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.222 seconds (JVM running for 17107.497)
+2020-08-05 18:12:51,592 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:13:17,577 INFO com.zaxxer.hikari.HikariDataSource [Thread-588] HikariPool-86 - Shutdown initiated...
+2020-08-05 18:13:17,581 INFO com.zaxxer.hikari.HikariDataSource [Thread-588] HikariPool-86 - Shutdown completed.
+2020-08-05 18:13:17,935 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:13:17,935 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:13:18,364 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:13:18,364 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:13:18,395 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:13:18,431 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-87 - Starting...
+2020-08-05 18:13:18,463 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-87 - Start completed.
+2020-08-05 18:13:18,479 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:13:18,511 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:13:18,765 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:13:18,765 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:13:19,142 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.231 seconds (JVM running for 17135.048)
+2020-08-05 18:13:19,143 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:13:33,904 INFO com.zaxxer.hikari.HikariDataSource [Thread-595] HikariPool-87 - Shutdown initiated...
+2020-08-05 18:13:33,908 INFO com.zaxxer.hikari.HikariDataSource [Thread-595] HikariPool-87 - Shutdown completed.
+2020-08-05 18:13:34,281 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:13:34,281 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:13:34,705 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:13:34,705 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:13:34,727 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:13:34,761 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-88 - Starting...
+2020-08-05 18:13:34,791 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-88 - Start completed.
+2020-08-05 18:13:34,806 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:13:34,837 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:13:35,085 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:13:35,085 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:13:35,497 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.238 seconds (JVM running for 17151.404)
+2020-08-05 18:13:35,499 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:18:13,716 INFO com.zaxxer.hikari.HikariDataSource [Thread-602] HikariPool-88 - Shutdown initiated...
+2020-08-05 18:18:13,721 INFO com.zaxxer.hikari.HikariDataSource [Thread-602] HikariPool-88 - Shutdown completed.
+2020-08-05 18:18:14,053 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:18:14,054 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:18:14,493 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:18:14,493 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:18:14,515 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:18:14,548 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-89 - Starting...
+2020-08-05 18:18:14,581 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-89 - Start completed.
+2020-08-05 18:18:14,596 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:18:14,625 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:18:14,873 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:18:14,874 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:18:15,279 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.251 seconds (JVM running for 17431.185)
+2020-08-05 18:18:15,282 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:19:33,455 INFO com.zaxxer.hikari.HikariDataSource [Thread-609] HikariPool-89 - Shutdown initiated...
+2020-08-05 18:19:33,459 INFO com.zaxxer.hikari.HikariDataSource [Thread-609] HikariPool-89 - Shutdown completed.
+2020-08-05 18:19:33,784 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:19:33,784 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:19:34,222 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:19:34,222 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:19:34,249 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:19:34,286 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-90 - Starting...
+2020-08-05 18:19:34,315 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-90 - Start completed.
+2020-08-05 18:19:34,331 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:19:34,362 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:19:34,613 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:19:34,613 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:19:34,996 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.234 seconds (JVM running for 17510.902)
+2020-08-05 18:19:34,997 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:19:39,507 INFO com.zaxxer.hikari.HikariDataSource [Thread-616] HikariPool-90 - Shutdown initiated...
+2020-08-05 18:19:39,512 INFO com.zaxxer.hikari.HikariDataSource [Thread-616] HikariPool-90 - Shutdown completed.
+2020-08-05 18:19:39,863 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 33388 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-08-05 18:19:39,863 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-08-05 18:19:40,306 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-08-05 18:19:40,307 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-08-05 18:19:40,328 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-05 18:19:40,362 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-91 - Starting...
+2020-08-05 18:19:40,391 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-91 - Start completed.
+2020-08-05 18:19:40,407 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-05 18:19:40,438 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-08-05 18:19:40,684 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-08-05 18:19:40,684 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@601e6409
+2020-08-05 18:19:41,084 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.243 seconds (JVM running for 17516.99)
+2020-08-05 18:19:41,086 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-08-05 18:20:16,684 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-05 18:20:16,910 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-4] HHH000397: Using ASTQueryTranslatorFactory
+2020-08-05 18:20:16,917 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:20:53,473 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null]] 
+2020-08-05 18:21:46,484 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-3] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null]] 
+2020-08-05 18:22:02,356 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:25:04,093 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-6] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:26:23,751 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-3] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:26:39,490 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:29:01,038 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:29:49,019 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:30:28,600 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:33:51,920 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:34:05,924 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=11.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:34:33,559 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=4.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:34:48,439 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-7] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=3.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:35:06,420 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-8] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=5.0, commissionType=Contract, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:35:26,899 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-1] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=4.0, commissionType=null, minRange=null, maxRange=null]] 
+2020-08-05 18:35:45,831 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-10] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-100, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=4.0, commissionType=null, minRange=null, maxRange=null]] 
+2020-08-05 18:36:26,414 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-8] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:36:55,795 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:37:10,486 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-3] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:37:23,900 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-6] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:37:41,224 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-5] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:39:21,404 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-3] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:39:35,737 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-8] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:39:45,375 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-2] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:39:55,791 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-9] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:40:27,361 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-4] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-05 18:44:26,675 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-05 18:44:36,523 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-4] Commissions do not exist....
+2020-08-05 18:44:42,335 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-6] Commission List..,12
+2020-08-05 18:45:36,600 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-9] Invoked final save..FinalCommissionsDTO [commissionsList=[CommissionDTO [id=1, contractorId=18, firstName=null, middleName=null, lastName=null, fullName=Test789  test, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=07/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=2, contractorId=19, firstName=null, middleName=null, lastName=null, fullName=Test7890  test, recruiterId=null, recruiterName=vasavi, ratePerDay=600.0, billRatePerDay=800.0, grossMargin=100.0, noOfDaysWorked=13, jobStartDate=07/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=130.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=3, contractorId=44, firstName=null, middleName=null, lastName=null, fullName=vinuthna v g, recruiterId=null, recruiterName=vasavi, ratePerDay=600.0, billRatePerDay=800.0, grossMargin=107.0, noOfDaysWorked=15, jobStartDate=15/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=160.5, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=4, contractorId=33, firstName=null, middleName=null, lastName=null, fullName=Thanvi  Gopisetty, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=800.0, grossMargin=33.5, noOfDaysWorked=16, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=53.6, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=5, contractorId=34, firstName=null, middleName=null, lastName=null, fullName=Vasavi  Gopisetty, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=17, jobStartDate=21/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=170.0, status=FINAL SAVE, monthYear=11/2020], null, CommissionDTO [id=1, contractorId=31, firstName=null, middleName=null, lastName=null, fullName=test323hjkjunk344343  del678junketejkjjunk, recruiterId=null, recruiterName=Kavitha, ratePerDay=600.0, billRatePerDay=700.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=10/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=2, contractorId=32, firstName=null, middleName=null, lastName=null, fullName=Thanvi123  Gopisetty, recruiterId=null, recruiterName=Kavitha, ratePerDay=500.0, billRatePerDay=700.0, grossMargin=100.0, noOfDaysWorked=13, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=130.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=3, contractorId=45, firstName=null, middleName=null, lastName=null, fullName=percent t test, recruiterId=null, recruiterName=Kavitha, ratePerDay=900.0, billRatePerDay=1200.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=4, contractorId=41, firstName=null, middleName=null, lastName=null, fullName=Abn test m Last, recruiterId=null, recruiterName=Kavitha, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=23/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=5, contractorId=47, firstName=null, middleName=null, lastName=null, fullName=margin 2  test, recruiterId=null, recruiterName=Kavitha, ratePerDay=700.0, billRatePerDay=1200.0, grossMargin=375.05, noOfDaysWorked=11, jobStartDate=01/07/2020, parsedDate=null, commission=10.0, commissionForCandidate=412.56, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=6, contractorId=48, firstName=null, middleName=null, lastName=null, fullName=margin 3  test, recruiterId=null, recruiterName=Kavitha, ratePerDay=800.0, billRatePerDay=1300.0, grossMargin=357.2, noOfDaysWorked=11, jobStartDate=21/07/2020, parsedDate=null, commission=8.0, commissionForCandidate=314.34, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=7, contractorId=46, firstName=null, middleName=null, lastName=null, fullName=margin  test 29-jul, recruiterId=null, recruiterName=Kavitha, ratePerDay=650.0, billRatePerDay=900.0, grossMargin=162.58, noOfDaysWorked=11, jobStartDate=29/07/2020, parsedDate=null, commission=8.0, commissionForCandidate=143.07, status=FINAL SAVE, monthYear=11/2020]], recruiterCommissionsList=[RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=01/11/2020, monthYearUI=null, orderDate=null], RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=01/11/2020, monthYearUI=null, orderDate=null]]]
+2020-08-05 18:45:58,116 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Invoked final save..FinalCommissionsDTO [commissionsList=[CommissionDTO [id=1, contractorId=18, firstName=null, middleName=null, lastName=null, fullName=Test789  test, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=07/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=2, contractorId=19, firstName=null, middleName=null, lastName=null, fullName=Test7890  test, recruiterId=null, recruiterName=vasavi, ratePerDay=600.0, billRatePerDay=800.0, grossMargin=100.0, noOfDaysWorked=13, jobStartDate=07/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=130.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=3, contractorId=44, firstName=null, middleName=null, lastName=null, fullName=vinuthna v g, recruiterId=null, recruiterName=vasavi, ratePerDay=600.0, billRatePerDay=800.0, grossMargin=107.0, noOfDaysWorked=15, jobStartDate=15/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=160.5, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=4, contractorId=33, firstName=null, middleName=null, lastName=null, fullName=Thanvi  Gopisetty, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=800.0, grossMargin=33.5, noOfDaysWorked=16, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=53.6, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=5, contractorId=34, firstName=null, middleName=null, lastName=null, fullName=Vasavi  Gopisetty, recruiterId=null, recruiterName=vasavi, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=17, jobStartDate=21/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=170.0, status=FINAL SAVE, monthYear=11/2020], null, CommissionDTO [id=1, contractorId=31, firstName=null, middleName=null, lastName=null, fullName=test323hjkjunk344343  del678junketejkjjunk, recruiterId=null, recruiterName=Kavitha, ratePerDay=600.0, billRatePerDay=700.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=10/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=2, contractorId=32, firstName=null, middleName=null, lastName=null, fullName=Thanvi123  Gopisetty, recruiterId=null, recruiterName=Kavitha, ratePerDay=500.0, billRatePerDay=700.0, grossMargin=100.0, noOfDaysWorked=13, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=130.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=3, contractorId=45, firstName=null, middleName=null, lastName=null, fullName=percent t test, recruiterId=null, recruiterName=Kavitha, ratePerDay=900.0, billRatePerDay=1200.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=16/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=4, contractorId=41, firstName=null, middleName=null, lastName=null, fullName=Abn test m Last, recruiterId=null, recruiterName=Kavitha, ratePerDay=700.0, billRatePerDay=900.0, grossMargin=100.0, noOfDaysWorked=11, jobStartDate=23/06/2020, parsedDate=null, commission=10.0, commissionForCandidate=110.0, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=5, contractorId=47, firstName=null, middleName=null, lastName=null, fullName=margin 2  test, recruiterId=null, recruiterName=Kavitha, ratePerDay=700.0, billRatePerDay=1200.0, grossMargin=375.05, noOfDaysWorked=11, jobStartDate=01/07/2020, parsedDate=null, commission=10.0, commissionForCandidate=412.56, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=6, contractorId=48, firstName=null, middleName=null, lastName=null, fullName=margin 3  test, recruiterId=null, recruiterName=Kavitha, ratePerDay=800.0, billRatePerDay=1300.0, grossMargin=357.2, noOfDaysWorked=11, jobStartDate=21/07/2020, parsedDate=null, commission=8.0, commissionForCandidate=314.34, status=FINAL SAVE, monthYear=11/2020], CommissionDTO [id=7, contractorId=46, firstName=null, middleName=null, lastName=null, fullName=margin  test 29-jul, recruiterId=null, recruiterName=Kavitha, ratePerDay=650.0, billRatePerDay=900.0, grossMargin=162.58, noOfDaysWorked=11, jobStartDate=29/07/2020, parsedDate=null, commission=8.0, commissionForCandidate=143.07, status=FINAL SAVE, monthYear=11/2020]], recruiterCommissionsList=[RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=633.6, contractCommissionTotalSuper=624.1, monthYear=01/11/2020, monthYearUI=null, orderDate=null], RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=1339.47, contractCommissionTotalSuper=1329.97, monthYear=01/11/2020, monthYearUI=null, orderDate=null]]]
+2020-08-05 18:46:09,549 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Search details, SearchCommissionForm [period=CurrentFY, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
+2020-08-05 18:46:09,549 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-10] Search details, SearchCommissionForm [period=CurrentFY, fromDate=, recruiterName=, toDate=, startDate=2020-07-01, endDate=2021-06-30]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=266.78, contractCommissionTotalSuper=257.28, monthYear=2020-07-01, monthYearUI=null, orderDate=2020-07-01]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=828.81, contractCommissionTotalSuper=819.31, monthYear=2020-07-01, monthYearUI=null, orderDate=2020-07-01]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null, orderDate=2020-09-01]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=0.0, contractCommissionTotalSuper=0.0, monthYear=2020-09-01, monthYearUI=null, orderDate=2020-09-01]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=633.6, contractCommissionTotalSuper=624.1, monthYear=2020-11-01, monthYearUI=null, orderDate=2020-11-01]
+2020-08-05 18:46:09,554 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-10] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=1339.47, contractCommissionTotalSuper=1329.97, monthYear=2020-11-01, monthYearUI=null, orderDate=2020-11-01]
+2020-08-05 19:20:37,100 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-91 housekeeper] HikariPool-91 - Thread starvation or clock leap detected (housekeeper delta=31m26s566ms34µs700ns).
+2020-08-05 21:08:01,459 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-91 housekeeper] HikariPool-91 - Thread starvation or clock leap detected (housekeeper delta=1h36m54s340ms37µs800ns).
+2020-08-05 23:21:26,625 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-91 housekeeper] HikariPool-91 - Thread starvation or clock leap detected (housekeeper delta=2h1m25s148ms70µs).

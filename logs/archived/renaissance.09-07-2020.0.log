@@ -1,0 +1,19 @@
+2020-07-09 01:36:24,181 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-67 housekeeper] HikariPool-67 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s725ms967µs300ns).
+2020-07-09 16:27:41,784 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-67 housekeeper] HikariPool-67 - Thread starvation or clock leap detected (housekeeper delta=14h15m58s53ms164µs300ns).
+2020-07-09 16:50:08,831 INFO com.zaxxer.hikari.HikariDataSource [Thread-473] HikariPool-67 - Shutdown initiated...
+2020-07-09 16:50:08,831 INFO com.zaxxer.hikari.HikariDataSource [Thread-473] HikariPool-67 - Shutdown completed.
+2020-07-09 16:50:09,269 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13684 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-07-09 16:50:09,270 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-07-09 16:50:10,281 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-07-09 16:50:10,281 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-07-09 16:50:10,304 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-07-09 16:50:10,341 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-68 - Starting...
+2020-07-09 16:50:10,372 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-68 - Start completed.
+2020-07-09 16:50:10,391 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-09 16:50:10,421 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-09 16:50:10,704 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-07-09 16:50:10,704 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@49c7b83f
+2020-07-09 16:50:11,122 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.882 seconds (JVM running for 703642.138)
+2020-07-09 16:50:11,123 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3

@@ -1,13 +1,6 @@
 package com.renaissance.commission.web;
 
-import static com.renaissance.util.APIConstants.CALCULATE_COMMISSION;
-import static com.renaissance.util.APIConstants.COMMISSION_MAIN;
-import static com.renaissance.util.APIConstants.CREATE_COMMISSION_RUN;
-import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
-import static com.renaissance.util.APIConstants.FINAL_SAVE_COMMISSION;
-import static com.renaissance.util.APIConstants.SAVE_COMMISSION;
-import static com.renaissance.util.APIConstants.SEARCH_COMMISSIONS;
-import static com.renaissance.util.APIConstants.SUPER_PERCENT;
+import static com.renaissance.util.APIConstants.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -417,6 +410,31 @@ if(period.equalsIgnoreCase("DateRange")) {
 			}
 			searchResults.sort(Comparator.comparing(RecruiterCommissionsDTO::getOrderDate));
 		}
+		return new ResponseEntity<>(searchResults, HttpStatus.OK);
+	}
+	
+	
+	@PostMapping(COMMISSION_DETAILS_RECRUITER)
+	public ResponseEntity<?>loadContractorDetails(@PathVariable String monthyear,@PathVariable String recruiter,  HttpServletRequest request) {
+		List<CommissionDTO> searchResults = new ArrayList<CommissionDTO>();
+		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
+
+			logger.info("Controller invoked, to load details...id is, {}, {}", monthyear,recruiter);
+			
+			String formattedDate=ProfileParserUtils.formatStringDateToString(monthyear);
+			logger.info("Controller invoked, after format ...id is, {}", formattedDate);
+			 searchResults=commissionService.loadCommissionDetails(formattedDate,recruiter);
+
+		} catch (Exception e) {
+			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
+			e.printStackTrace();
+		}
+		
+
 		return new ResponseEntity<>(searchResults, HttpStatus.OK);
 	}
 }

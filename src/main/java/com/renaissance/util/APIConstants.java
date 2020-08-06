@@ -48,6 +48,7 @@ public class APIConstants {
 	public static final String PASSWORD_CHANGE="/passwordchange";
 	public static final String RECRUITER_LIST="/recruiterList";
 	public static final String COMMISSION_MAIN="/commissionmain";
+	public static final String COMMISSION_DETAILS_RECRUITER="/commissiondetails/{monthyear}/{recruiter}";
 	public static final String CREATE_COMMISSION_RUN="/createcommission/{monthyear}";
 	public static final String CALCULATE_COMMISSION="/calculatecommission";
 	public static final String SAVE_COMMISSION="/savecommission";

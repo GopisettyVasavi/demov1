@@ -1,0 +1,7 @@
+2020-07-02 14:12:48,939 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-57 housekeeper] HikariPool-57 - Thread starvation or clock leap detected (housekeeper delta=14h11m16s540ms406µs400ns).
+2020-07-02 14:46:11,020 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-57 housekeeper] HikariPool-57 - Thread starvation or clock leap detected (housekeeper delta=13m22s45ms194µs100ns).
+2020-07-02 16:33:23,722 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-07-02 16:33:23,939 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-02 16:33:27,614 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Controller invoked to retrieve recruiter list 
+2020-07-02 16:33:27,619 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Recruiter list size...,2 
+2020-07-02 21:42:52,620 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-57 housekeeper] HikariPool-57 - Thread starvation or clock leap detected (housekeeper delta=4h49m41s383ms550µs500ns).

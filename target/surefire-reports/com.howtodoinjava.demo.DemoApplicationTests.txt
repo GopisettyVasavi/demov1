@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.howtodoinjava.demo.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.212 s <<< FAILURE! - in com.howtodoinjava.demo.DemoApplicationTests
+initializationError(com.howtodoinjava.demo.DemoApplicationTests)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/springframework/core/annotation/MergedAnnotations$SearchStrategy
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.annotation.MergedAnnotations$SearchStrategy
+

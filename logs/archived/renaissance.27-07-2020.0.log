@@ -1,0 +1,47 @@
+2020-07-27 15:04:37,091 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 12308 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-07-27 15:04:37,097 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-07-27 15:04:39,459 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-07-27 15:04:39,459 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-07-27 15:04:39,711 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-07-27 15:04:39,997 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-07-27 15:04:40,139 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-07-27 15:04:40,235 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-27 15:04:40,340 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2020-07-27 15:04:40,342 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2020-07-27 15:04:40,563 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-27 15:04:40,775 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-27 15:04:41,405 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-07-27 15:04:41,417 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@11f0ce68
+2020-07-27 15:04:43,598 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 8.015 seconds (JVM running for 9.635)
+2020-07-27 15:04:43,601 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-07-27 15:04:55,520 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-27 15:05:05,791 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-9] HHH000397: Using ASTQueryTranslatorFactory
+2020-07-27 15:05:05,997 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Found matching User details for: {}renaissance
+2020-07-27 15:05:06,515 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 15:05:11,366 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Controller invoked to retrieve recruiter list 
+2020-07-27 15:05:11,374 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Recruiter list size...,2 
+2020-07-27 15:23:37,979 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 15:23:40,558 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Controller invoked to retrieve recruiter list 
+2020-07-27 15:23:40,664 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Recruiter list size...,2 
+2020-07-27 15:32:24,431 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 15:32:26,344 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Controller invoked to retrieve recruiter list 
+2020-07-27 15:32:26,352 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Recruiter list size...,2 
+2020-07-27 15:50:50,666 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m10s352ms46탎800ns).
+2020-07-27 16:41:10,401 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Found matching User details for: {}renaissance
+2020-07-27 16:41:10,595 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 16:41:14,587 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75, superannuation=9.5, insurance=3.0] 
+2020-07-27 17:17:28,450 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Found matching User details for: {}renaissance
+2020-07-27 17:17:28,586 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 17:17:32,075 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-1] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75, superannuation=9.5, insurance=3.0] 
+2020-07-27 17:28:26,893 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 17:28:29,470 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-07-27 17:28:29,476 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 
+2020-07-27 17:58:41,495 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] Found matching User details for: {}renaissance
+2020-07-27 17:58:41,627 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 18:00:22,454 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
+2020-07-27 18:00:24,475 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75, superannuation=9.5, insurance=3.0] 
+2020-07-27 18:47:47,510 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m56s551ms941탎700ns).
+2020-07-27 20:49:41,508 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s2ms851탎100ns).
+2020-07-27 23:01:05,834 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s310ms756탎600ns).

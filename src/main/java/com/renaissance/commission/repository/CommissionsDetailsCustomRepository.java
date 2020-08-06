@@ -8,5 +8,6 @@ import com.renaissance.commission.model.CommissionsDetailsEntity;
 public interface CommissionsDetailsCustomRepository {
 	
 	CommissionsDetailsEntity getCommissionByContractorMonthYear(BigInteger contractorId, String monthYear, Double ratePerDay, String jobStartDate);
-	List<CommissionsDetailsEntity> getCommissionsForSelectedMonthAndYear(String monthYear);
+	List<CommissionsDetailsEntity> getCommissionsForSelectedMonthAndYear(String monthYear,String recruiterName);
+	//List<CommissionsDetailsEntity>
 }

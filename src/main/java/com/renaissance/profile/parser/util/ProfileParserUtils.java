@@ -149,6 +149,22 @@ public class ProfileParserUtils {
 		}
 		return null;
 	}
+	public static String formatStringDateToString(String sDate) {
+		if(!isObjectEmpty(sDate)) {
+			try {
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat format2 = new SimpleDateFormat("MM/yyyy");
+		Date date;
+		
+			date = format1.parse(sDate);
+		
+		return format2.format(date);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
 	
 public static List<String> processSearchStringWithAND(String searchString){
 	return Collections.list(new StringTokenizer(searchString, "&&")).stream()

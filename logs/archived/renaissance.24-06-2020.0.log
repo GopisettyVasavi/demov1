@@ -1,0 +1,1494 @@
+2020-06-24 08:49:10,036 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-66 housekeeper] HikariPool-66 - Thread starvation or clock leap detected (housekeeper delta=8h39m24s79ms410탎300ns).
+2020-06-24 10:26:09,255 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-66 housekeeper] HikariPool-66 - Thread starvation or clock leap detected (housekeeper delta=1h36m29s222ms443탎600ns).
+2020-06-24 10:42:16,055 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Found matching User details for: {}renaissance
+2020-06-24 10:42:16,620 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-24 10:42:20,388 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Controller invoked to retrieve recruiter list 
+2020-06-24 10:42:20,393 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Recruiter list size...,2 
+2020-06-24 10:42:49,791 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-7] Values...,1200.0,800.0,62.8,40.0,{},{}
+2020-06-24 10:42:49,791 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-7] Controller invoked, to calculateMargin... MarginDTO [grossMargin=297.2, netMargin=null, contractorRate=800.0, billRate=1200.0, payrollTax=4.85, workLocationState=VIC, insuranceCost=null, additionalCost=null, recruiterCommission=null, superIncludeCheck=null, payrollTaxCheck=true, insurancePaymentFlag=true, insuranceType=null, superannuation=null, referralCommissionType=percent, referralCommissionValue=5.0, insurancePercentage=3.0, insuranceValue=24.0, payrollTaxValue=38.8, referralValue=40.0]
+2020-06-24 10:43:10,832 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-3] Search details, ContractorSearchForm [contractorName=, clientName=, endClientName=, workLocationState=null, role=, recruiterId=null, recruiterName=null, abnHolder=val_true, jobStartDate=, jobEndDate=]
+2020-06-24 10:43:10,837 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results personal table, 6
+2020-06-24 10:43:10,837 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-3] Search Results EMP table, 0
+2020-06-24 10:43:15,377 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Controller invoked, to load details...id is, 33
+2020-06-24 10:43:15,389 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Details...,ContractorPersonalDetailsDTO [contractorId=33, firstName=Thanvi, middleName=, lastName=Gopisetty, fullName=Thanvi  Gopisetty, dateOfBirth=22/06/2020, gender=female, personalEmail=thanvi@gmail.com, officeEmail=, mobilePhone=234234234, homePhone=, previousName=Thanvi G, address=melb, city=, state=VIC, zipCode=null, country=Australia, otherCountry=, otherState=, visaCategory=Dependent Visa, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=contact personal, emergencyContactNumber=contact personal, emergencyContactAddress=contact personal, emergencyContactEmail=contact personal, emergencyContactRelation=contact personal] 
+2020-06-24 10:43:15,389 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Details...,ContractorBankDetailsDTO [contractorId=33, accountName=test12345, bsb=bsb12345, accountNumber=test12345, additionalInfo=null, activeRecord=Active] 
+2020-06-24 10:43:15,389 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Details...,ContractorSuperAnnuationDetailsDTO [contractorId=null, superAnnuationFundName=null, superAnnuationMemberId=null, additionalSuperAnnuationContributionFlag=null, additionalSuperAnnuationDetails=null, additionalInfo=null, activeRecord=null] 
+2020-06-24 10:43:15,389 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Details...,ContractorEmploymentDetailsDTO [contractorId=33, clientName=infosys, endClientName=westpac, contractNumber=, workLocationAddress=melb, workLocationCity=, workLocationState=WA, workLocationZipCode=null, workLocationCountry=Australia, wlOtherCountry=, wlOtherState=, jobRole=developer, employmentType=Full Time, jobStartDate=16/06/2020, jobEndDate=, lastWorkingDate=, finishedClient=false, additionalInfo=, activeRecord=Active, recruiterId=111, recruiterName=vasavi] 
+2020-06-24 10:43:15,389 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-1] Details...,ContractorRateDetailsDTO [contractorId=33, ratePerDay=700.0, rateStartDate=29/06/2020, rateEndDate=, includeSuperFlag=false, billRatePerDay=800.0, payrollTaxPaymentFlag=false, insurancePaymentFlag=false, insuranceType=none, insurancePercentage=null, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=Active, referralCommissionType=null, referralCommissionValue=null, payrollTaxPercentage=null, grossMargin=null] 
+2020-06-24 10:43:15,611 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Controller invoked to retrieve recruiter list 
+2020-06-24 10:43:15,612 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Recruiter list size...,2 
+2020-06-24 10:43:15,624 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-4] Values...,800.0,700.0,0.0,0.0,{},{}
+2020-06-24 10:43:15,624 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-4] Controller invoked, to calculateMargin... MarginDTO [grossMargin=100.0, netMargin=null, contractorRate=700.0, billRate=800.0, payrollTax=null, workLocationState=WA, insuranceCost=null, additionalCost=null, recruiterCommission=null, superIncludeCheck=null, payrollTaxCheck=false, insurancePaymentFlag=false, insuranceType=null, superannuation=null, referralCommissionType=none, referralCommissionValue=null, insurancePercentage=null, insuranceValue=0.0, payrollTaxValue=0.0, referralValue=0.0]
+2020-06-24 10:45:38,684 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Controller invoked, to load details...id is, 44
+2020-06-24 10:45:38,695 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Details...,ContractorPersonalDetailsDTO [contractorId=44, firstName=vinuthna, middleName=v, lastName=g, fullName=vinuthna v g, dateOfBirth=09/06/2020, gender=female, personalEmail=vinuthna@gmail.com, officeEmail=vinuthna@office.com, mobilePhone=123123123, homePhone=456456456, previousName=, address=3204, city=melb, state=NSW, zipCode=3204, country=Australia, otherCountry=, otherState=, visaCategory=Citizen, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=contact personal, emergencyContactNumber=contact personal, emergencyContactAddress=contact personal, emergencyContactEmail=contact personal, emergencyContactRelation=contact personal] 
+2020-06-24 10:45:38,695 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Details...,ContractorBankDetailsDTO [contractorId=44, accountName=v123, bsb=123446, accountNumber=v123, additionalInfo=null, activeRecord=Active] 
+2020-06-24 10:45:38,695 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Details...,ContractorSuperAnnuationDetailsDTO [contractorId=null, superAnnuationFundName=null, superAnnuationMemberId=null, additionalSuperAnnuationContributionFlag=null, additionalSuperAnnuationDetails=null, additionalInfo=null, activeRecord=null] 
+2020-06-24 10:45:38,695 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Details...,ContractorEmploymentDetailsDTO [contractorId=44, clientName=ren, endClientName=ren, contractNumber=, workLocationAddress=, workLocationCity=, workLocationState=WA, workLocationZipCode=null, workLocationCountry=Australia, wlOtherCountry=, wlOtherState=, jobRole=developer, employmentType=Full Time, jobStartDate=15/06/2020, jobEndDate=, lastWorkingDate=, finishedClient=false, additionalInfo=, activeRecord=Active, recruiterId=111, recruiterName=vasavi] 
+2020-06-24 10:45:38,695 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Details...,ContractorRateDetailsDTO [contractorId=44, ratePerDay=600.0, rateStartDate=09/06/2020, rateEndDate=24/06/2020, includeSuperFlag=null, billRatePerDay=800.0, payrollTaxPaymentFlag=true, insurancePaymentFlag=true, insuranceType=null, insurancePercentage=3.0, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=Active, referralCommissionType=percent, referralCommissionValue=6.0, payrollTaxPercentage=6.5, grossMargin=107.0] 
+2020-06-24 10:45:38,949 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Controller invoked to retrieve recruiter list 
+2020-06-24 10:45:38,950 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Recruiter list size...,2 
+2020-06-24 10:45:38,959 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-10] Values...,800.0,600.0,57.0,36.0,{},{}
+2020-06-24 10:45:38,959 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-10] Controller invoked, to calculateMargin... MarginDTO [grossMargin=107.0, netMargin=null, contractorRate=600.0, billRate=800.0, payrollTax=6.5, workLocationState=WA, insuranceCost=null, additionalCost=null, recruiterCommission=null, superIncludeCheck=null, payrollTaxCheck=true, insurancePaymentFlag=true, insuranceType=null, superannuation=null, referralCommissionType=percent, referralCommissionValue=6.0, insurancePercentage=3.0, insuranceValue=18.0, payrollTaxValue=39.0, referralValue=36.0]
+2020-06-24 10:45:47,048 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-5] Values...,800.0,700.0,66.5,0.0,{},{}
+2020-06-24 10:45:47,048 INFO com.renaissance.contractor.web.ContractorMVCController [http-nio-8090-exec-5] Controller invoked, to calculateMargin... MarginDTO [grossMargin=33.5, netMargin=null, contractorRate=700.0, billRate=800.0, payrollTax=6.5, workLocationState=WA, insuranceCost=null, additionalCost=null, recruiterCommission=null, superIncludeCheck=null, payrollTaxCheck=true, insurancePaymentFlag=true, insuranceType=null, superannuation=null, referralCommissionType=none, referralCommissionValue=null, insurancePercentage=3.0, insuranceValue=21.0, payrollTaxValue=45.5, referralValue=0.0]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update Contractor..,ContractorPersonalDetailsDTO [contractorId=33, firstName=Thanvi, middleName=, lastName=Gopisetty, fullName=Thanvi  Gopisetty, dateOfBirth=22/06/2020, gender=female, personalEmail=thanvi@gmail.com, officeEmail=, mobilePhone=234234234, homePhone=, previousName=Thanvi G, address=melb, city=, state=VIC, zipCode=null, country=Australia, otherCountry=, otherState=, visaCategory=Dependent Visa, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=contact personal, emergencyContactNumber=contact personal, emergencyContactAddress=contact personal, emergencyContactEmail=contact personal, emergencyContactRelation=contact personal]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update Contractor Bank details..,ContractorBankDetailsDTO [contractorId=null, accountName=test12345, bsb=bsb12345, accountNumber=test12345, additionalInfo=null, activeRecord=null]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update Contractor SA details..,ContractorSuperAnnuationDetailsDTO [contractorId=null, superAnnuationFundName=null, superAnnuationMemberId=null, additionalSuperAnnuationContributionFlag=null, additionalSuperAnnuationDetails=null, additionalInfo=null, activeRecord=null]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update Contractor Employment details..,ContractorEmploymentDetailsDTO [contractorId=null, clientName=infosys, endClientName=westpac, contractNumber=, workLocationAddress=melb, workLocationCity=, workLocationState=WA, workLocationZipCode=null, workLocationCountry=Australia, wlOtherCountry=, wlOtherState=, jobRole=developer, employmentType=Full Time, jobStartDate=16/06/2020, jobEndDate=, lastWorkingDate=, finishedClient=false, additionalInfo=, activeRecord=null, recruiterId=111, recruiterName=vasavi]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update Contractor Rate details..,ContractorRateDetailsDTO [contractorId=null, ratePerDay=700.0, rateStartDate=29/06/2020, rateEndDate=, includeSuperFlag=null, billRatePerDay=800.0, payrollTaxPaymentFlag=true, insurancePaymentFlag=true, insuranceType=null, insurancePercentage=3.0, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=null, referralCommissionType=none, referralCommissionValue=null, payrollTaxPercentage=6.5, grossMargin=33.5]
+2020-06-24 10:45:49,961 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Service call
+2020-06-24 10:45:49,964 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-6] No matching details... hence saving..,ContractorPersonalDetailsDTO [contractorId=33, firstName=Thanvi, middleName=, lastName=Gopisetty, fullName=Thanvi  Gopisetty, dateOfBirth=22/06/2020, gender=female, personalEmail=thanvi@gmail.com, officeEmail=, mobilePhone=234234234, homePhone=, previousName=Thanvi G, address=melb, city=, state=VIC, zipCode=null, country=Australia, otherCountry=, otherState=, visaCategory=Dependent Visa, visaType=, visaValidDate=, abnHolder=true, emergencyContactName=contact personal, emergencyContactNumber=contact personal, emergencyContactAddress=contact personal, emergencyContactEmail=contact personal, emergencyContactRelation=contact personal]
+2020-06-24 10:45:49,974 INFO com.renaissance.contractor.service.ContractorManagementService [http-nio-8090-exec-6] SAving rate...ContractorRateDetailsDTO [contractorId=33, ratePerDay=700.0, rateStartDate=29/06/2020, rateEndDate=, includeSuperFlag=null, billRatePerDay=800.0, payrollTaxPaymentFlag=true, insurancePaymentFlag=true, insuranceType=null, insurancePercentage=3.0, otherDeductionPercentage=null, otherDeductionAmount=null, netMargin=null, additionalInfo=null, activeRecord=Active, referralCommissionType=none, referralCommissionValue=null, payrollTaxPercentage=6.5, grossMargin=33.5],
+2020-06-24 10:45:49,993 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Update contractor ID...,33
+2020-06-24 10:45:53,518 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Controller invoked, to load tfn details...id is, 33
+2020-06-24 10:46:09,933 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-2] Controller invoked, to load tfn details...id is, 44
+2020-06-24 10:47:45,921 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-5] Controller invoked, to load tfn details...id is, 33
+2020-06-24 10:47:55,673 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-6] Controller invoked, to load tfn details...id is, 33
+2020-06-24 10:48:05,553 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-4] Controller invoked, to load abn details...id is, 33
+2020-06-24 10:48:07,886 INFO com.renaissance.contractor.web.ContractorDetailsMVCController [http-nio-8090-exec-2] Controller invoked, to load bank details...id is, 33
+2020-06-24 10:48:44,976 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-24 11:03:41,316 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=PR, workExperience=, certification=]
+2020-06-24 11:03:41,326 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results personal table, 6
+2020-06-24 11:03:41,326 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] Search Results profile table, 0
+2020-06-24 11:03:41,326 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size before.. ,6
+2020-06-24 11:03:41,335 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] List size after.. ,6
+2020-06-24 11:03:41,362 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,94 Aparna   Palekar PR
+2020-06-24 11:03:41,365 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,98 SUDEEPTA   SINHA PR
+2020-06-24 11:03:41,370 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,106 Smita   Ture PR
+2020-06-24 11:03:41,373 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,124 Anish   Mohile PR
+2020-06-24 11:03:41,377 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,154 Weng Yew Toh/Malaysia/IBM PR
+2020-06-24 11:03:41,381 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-1] All details,112 Abhijit   Pramanik PR
+2020-06-24 11:03:41,381 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-1] Search Results, 6
+2020-06-24 11:03:42,821 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,112 Abhijit   Pramanik PR
+2020-06-24 11:08:49,357 INFO com.zaxxer.hikari.HikariDataSource [Thread-469] HikariPool-66 - Shutdown initiated...
+2020-06-24 11:08:49,361 INFO com.zaxxer.hikari.HikariDataSource [Thread-469] HikariPool-66 - Shutdown completed.
+2020-06-24 11:08:49,793 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13908 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-24 11:08:49,793 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-24 11:08:50,594 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-24 11:08:50,594 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-24 11:08:50,621 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-24 11:08:50,662 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Starting...
+2020-06-24 11:08:50,696 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Start completed.
+2020-06-24 11:08:50,715 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-24 11:08:50,741 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-24 11:08:50,994 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-24 11:08:50,994 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@481bbacb
+2020-06-24 11:08:51,415 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.649 seconds (JVM running for 175385.477)
+2020-06-24 11:08:51,416 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-24 11:09:10,197 INFO com.zaxxer.hikari.HikariDataSource [Thread-480] HikariPool-67 - Shutdown initiated...
+2020-06-24 11:09:10,201 INFO com.zaxxer.hikari.HikariDataSource [Thread-480] HikariPool-67 - Shutdown completed.
+2020-06-24 11:09:10,576 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13908 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-24 11:09:10,576 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-24 11:09:10,978 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-24 11:09:10,979 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-24 11:09:11,001 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-24 11:09:11,038 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-68 - Starting...
+2020-06-24 11:09:11,066 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-68 - Start completed.
+2020-06-24 11:09:11,084 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-24 11:09:11,110 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-24 11:09:11,354 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-24 11:09:11,354 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@481bbacb
+2020-06-24 11:09:11,700 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.145 seconds (JVM running for 175405.762)
+2020-06-24 11:09:11,701 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-24 11:14:04,792 INFO com.zaxxer.hikari.HikariDataSource [Thread-487] HikariPool-68 - Shutdown initiated...
+2020-06-24 11:14:04,794 INFO com.zaxxer.hikari.HikariDataSource [Thread-487] HikariPool-68 - Shutdown completed.
+2020-06-24 11:14:05,107 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13908 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-24 11:14:05,107 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-24 11:14:05,548 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-24 11:14:05,548 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-24 11:14:05,576 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-24 11:14:05,613 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-69 - Starting...
+2020-06-24 11:14:05,644 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-69 - Start completed.
+2020-06-24 11:14:05,659 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-24 11:14:05,689 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-24 11:14:05,950 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-24 11:14:05,950 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@481bbacb
+2020-06-24 11:14:06,339 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.254 seconds (JVM running for 175700.402)
+2020-06-24 11:14:06,341 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-24 11:14:06,951 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-24 11:25:03,365 INFO com.zaxxer.hikari.HikariDataSource [Thread-494] HikariPool-69 - Shutdown initiated...
+2020-06-24 11:25:03,368 INFO com.zaxxer.hikari.HikariDataSource [Thread-494] HikariPool-69 - Shutdown completed.
+2020-06-24 11:25:03,685 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13908 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-24 11:25:03,685 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-24 11:25:04,093 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-24 11:25:04,093 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-24 11:25:04,115 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-24 11:25:04,152 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-70 - Starting...
+2020-06-24 11:25:04,182 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-70 - Start completed.
+2020-06-24 11:25:04,195 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-24 11:25:04,222 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-24 11:25:04,473 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-24 11:25:04,473 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@481bbacb
+2020-06-24 11:25:04,833 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.17 seconds (JVM running for 176358.895)
+2020-06-24 11:25:04,834 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-24 11:30:00,002 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time START- Wed Jun 24 11:30:00 AEST 2020
+2020-06-24 11:30:00,003 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... START
+2020-06-24 11:30:00,028 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... END
+2020-06-24 11:30:00,028 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time END- Wed Jun 24 11:30:00 AEST 2020
+2020-06-24 11:46:30,313 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-24 11:46:30,318 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-24 11:46:30,334 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-24 11:46:34,315 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Register Employee Mvc Controller invoked
+2020-06-24 11:46:34,325 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Register Employee Mvc Controller invoked
+2020-06-24 11:46:40,992 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Register Employee Mvc Controller invoked
+2020-06-24 11:46:41,005 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked
+2020-06-24 11:46:45,111 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-24 11:46:45,121 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-24 11:46:55,662 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-4] HHH000397: Using ASTQueryTranslatorFactory
+2020-06-24 11:46:55,668 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Found matching User details for: {}sangeetha
+2020-06-24 11:46:55,792 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. sangeetha
+2020-06-24 11:47:11,212 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3084626a
+2020-06-24 11:47:11,212 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-6] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6312fd93
+2020-06-24 11:47:11,212 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@b05183d
+2020-06-24 11:47:11,212 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7df2d82c
+2020-06-24 11:47:11,212 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@10e825a2
+2020-06-24 11:47:11,223 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@391855c2
+2020-06-24 11:47:18,395 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:18,402 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has started successfully
+2020-06-24 11:47:18,417 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-2-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-0\e9481a25-0f08-495a-a05b-f373a7e6f4cf\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-0\e9481a25-0f08-495a-a05b-f373a7e6f4cf\temp2 (application/pdf)
+2020-06-24 11:47:18,546 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:18,546 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has started successfully
+2020-06-24 11:47:18,548 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-4-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-1\8121570f-684b-4350-93e3-7070fe4dd3a0\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-1\8121570f-684b-4350-93e3-7070fe4dd3a0\temp2 (application/pdf)
+2020-06-24 11:47:18,900 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-6] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:18,900 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-6] The documents4j local converter has started successfully
+2020-06-24 11:47:18,902 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-6-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-5\a8703942-3bd6-43dc-b6b6-c1af5863c278\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-5\a8703942-3bd6-43dc-b6b6-c1af5863c278\temp2 (application/pdf)
+2020-06-24 11:47:20,068 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:20,068 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:47:20,069 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-8-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-2\d051a9a4-a294-4f7e-92af-f0c98c5631d4\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-2\d051a9a4-a294-4f7e-92af-f0c98c5631d4\temp2 (application/pdf)
+2020-06-24 11:47:20,755 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-3] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:20,755 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-3] The documents4j local converter has started successfully
+2020-06-24 11:47:20,757 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-10-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-3\18d19a8d-4214-4428-8dc0-41c16ae54977\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-3\18d19a8d-4214-4428-8dc0-41c16ae54977\temp2 (application/pdf)
+2020-06-24 11:47:21,620 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:21,620 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has started successfully
+2020-06-24 11:47:21,622 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-12-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-4\18e194d3-a367-4007-a35f-e65dadcccf1c\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963236247-4\18e194d3-a367-4007-a35f-e65dadcccf1c\temp2 (application/pdf)
+2020-06-24 11:47:22,587 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:22,587 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has shut down successfully
+2020-06-24 11:47:22,587 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-8] Successfully converted document 682858 - Kabila.DOC to Pdf as 682858 - Kabila.pdf
+2020-06-24 11:47:22,721 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:22,721 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has shut down successfully
+2020-06-24 11:47:22,721 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-1] Successfully converted document 675310 - Nagaraj_Java_TechM.DOC to Pdf as 675310 - Nagaraj_Java_TechM.pdf
+2020-06-24 11:47:22,852 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:22,853 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:47:22,853 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document Abhijit Resume.docx to Pdf as Abhijit Resume.pdf
+2020-06-24 11:47:22,984 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-6] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:22,985 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-6] The documents4j local converter has shut down successfully
+2020-06-24 11:47:22,985 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-6] Successfully converted document 665594 - Jampala Ramesh_Java.DOC to Pdf as 665594 - Jampala Ramesh_Java.pdf
+2020-06-24 11:47:24,219 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-2] Error occured while converting doc to pdf.AnishMohileAU (1),{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:47:24,219 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-3] Error occured while converting doc to pdf.674963,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:47:24,219 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-2] Successfully converted document AnishMohileAU (1).docx to Pdf as AnishMohileAU (1).pdf
+2020-06-24 11:47:24,219 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-3] Successfully converted document 674963.DOC to Pdf as 674963.pdf
+2020-06-24 11:47:27,643 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@429058e6
+2020-06-24 11:47:27,725 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-9] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@70b15a18
+2020-06-24 11:47:27,859 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-5] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7ee678e9
+2020-06-24 11:47:27,991 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2062120b
+2020-06-24 11:47:29,283 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@21cb5839
+2020-06-24 11:47:29,283 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3fcd1b40
+2020-06-24 11:47:34,614 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:34,614 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has started successfully
+2020-06-24 11:47:34,615 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-14-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963252654-0\711a5496-e712-465d-b97e-1f75eb3d05ba\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963252654-0\711a5496-e712-465d-b97e-1f75eb3d05ba\temp2 (application/pdf)
+2020-06-24 11:47:34,769 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:34,769 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has started successfully
+2020-06-24 11:47:34,770 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-16-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963254296-1\bb7707a0-ee8e-4be1-8644-6164f034c8cd\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963254296-1\bb7707a0-ee8e-4be1-8644-6164f034c8cd\temp2 (application/pdf)
+2020-06-24 11:47:35,114 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:35,114 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has started successfully
+2020-06-24 11:47:35,115 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-18-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963254296-0\39c471dd-27af-43a7-8bdd-314093ec6cd5\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963254296-0\39c471dd-27af-43a7-8bdd-314093ec6cd5\temp2 (application/pdf)
+2020-06-24 11:47:36,004 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-10] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:36,004 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-10] The documents4j local converter has started successfully
+2020-06-24 11:47:36,005 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-20-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963253000-0\70a3bf5b-f598-4f6a-b6b1-84cad1d3d7cc\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963253000-0\70a3bf5b-f598-4f6a-b6b1-84cad1d3d7cc\temp2 (application/pdf)
+2020-06-24 11:47:36,221 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-5] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:36,221 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-5] The documents4j local converter has started successfully
+2020-06-24 11:47:36,222 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-22-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963252869-0\e772f697-4747-4fb3-9455-267694dd2a35\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963252869-0\e772f697-4747-4fb3-9455-267694dd2a35\temp2 (application/pdf)
+2020-06-24 11:47:37,859 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:37,859 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:47:37,860 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-24-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963252736-0\c7f4e04c-b015-4c7d-9ca9-22b17d67a1bf\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963252736-0\c7f4e04c-b015-4c7d-9ca9-22b17d67a1bf\temp2 (application/pdf)
+2020-06-24 11:47:39,996 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:39,997 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has shut down successfully
+2020-06-24 11:47:39,997 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-7] Successfully converted document Anitha_Resume.docx to Pdf as Anitha_Resume.pdf
+2020-06-24 11:47:40,139 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:40,139 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has shut down successfully
+2020-06-24 11:47:40,139 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-1] Successfully converted document Durgesh_Gopisetty_Profile_365277.docx to Pdf as Durgesh_Gopisetty_Profile_365277.pdf
+2020-06-24 11:47:40,271 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:40,272 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has shut down successfully
+2020-06-24 11:47:40,272 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-8] Successfully converted document Durgesh_Gopisetty_Profile.docx to Pdf as Durgesh_Gopisetty_Profile.pdf
+2020-06-24 11:47:41,119 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-10] Error occured while converting doc to pdf.CV_Sudeepta Sinha,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:47:41,119 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-10] Successfully converted document CV_Sudeepta Sinha.doc to Pdf as CV_Sudeepta Sinha.pdf
+2020-06-24 11:47:41,119 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Error occured while converting doc to pdf.Aparna_CV - Copy,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:47:41,119 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-06-24 11:47:41,119 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Error occured while converting doc to pdf.Aparna_CV,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:47:41,119 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Successfully converted document Aparna_CV.docx to Pdf as Aparna_CV.pdf
+2020-06-24 11:47:45,037 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-4] Bulk upload START::: ,Wed Jun 24 11:47:45 AEST 2020
+2020-06-24 11:47:45,037 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-4] List of uploaded files...12
+2020-06-24 11:47:45,183 WARN org.apache.tika.parsers.PDFParser [http-nio-8090-exec-4] J2KImageReader not loaded. JPEG2000 files will not be processed.
+See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
+for optional dependencies.
+
+2020-06-24 11:47:45,216 WARN org.apache.tika.parser.SQLite3Parser [http-nio-8090-exec-4] org.xerial's sqlite-jdbc is not loaded.
+Please provide the jar on your classpath to parse sqlite files.
+See tika-parsers/pom.xml for the correct version.
+2020-06-24 11:47:45,925 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:45,925 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:45,930 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,116,Tech   Mahindra,JR00665594@TechMahindra.com,91 9167094
+2020-06-24 11:47:45,930 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 116 : Tech   Mahindra : JR00665594@TechMahindra.com : 91 9167094
+2020-06-24 11:47:45,936 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 116
+2020-06-24 11:47:47,940 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:47,940 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:47:47,941 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-26-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963265960-0\75a7e7a5-cecf-42c9-a680-b15625955baf\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963265960-0\75a7e7a5-cecf-42c9-a680-b15625955baf\temp2 (application/pdf)
+2020-06-24 11:47:49,437 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:49,437 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:47:49,437 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document 674963.DOC to Pdf as 674963.pdf
+2020-06-24 11:47:49,551 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:49,551 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:49,553 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,118,Tech   Mahindra,RA00674963@TechMahindra.com,91 9791063
+2020-06-24 11:47:49,553 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 118 : Tech   Mahindra : RA00674963@TechMahindra.com : 91 9791063
+2020-06-24 11:47:49,554 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 118
+2020-06-24 11:47:49,642 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:49,642 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:49,643 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,120,Tech   Mahindra,NG00675310@techmahindra.com,91 9677675
+2020-06-24 11:47:49,643 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 120 : Tech   Mahindra : NG00675310@techmahindra.com : 91 9677675
+2020-06-24 11:47:49,644 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 120
+2020-06-24 11:47:49,723 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:49,723 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:49,724 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,122,Tech   Mahindra,KS00682858@TechMahindra.com,91 9965899
+2020-06-24 11:47:49,725 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 122 : Tech   Mahindra : KS00682858@TechMahindra.com : 91 9965899
+2020-06-24 11:47:49,725 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 122
+2020-06-24 11:47:49,891 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:49,891 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:49,893 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,112,Abhijit   Pramanik,abhijit158@yahoo.com,+61 045215260
+2020-06-24 11:47:49,893 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 112 : Abhijit   Pramanik : abhijit158@yahoo.com : +61 045215260
+2020-06-24 11:47:49,894 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 112
+2020-06-24 11:47:51,829 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:51,829 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:47:51,830 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-28-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963269910-0\43de3751-afd0-40f2-99a1-9902a194931f\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963269910-0\43de3751-afd0-40f2-99a1-9902a194931f\temp2 (application/pdf)
+2020-06-24 11:47:53,083 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:53,084 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:47:53,084 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document AnishMohileAU (1).docx to Pdf as AnishMohileAU (1).pdf
+2020-06-24 11:47:53,158 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:53,158 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:53,159 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,124,Anish   Mohile,anishsmohile@gmail.com,61 (0) 405 026 383 
+
+2020-06-24 11:47:53,159 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 124 : Anish   Mohile : anishsmohile@gmail.com : 61 (0) 405 026 383 
+
+2020-06-24 11:47:53,162 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 124
+2020-06-24 11:47:53,209 WARN org.apache.fontbox.ttf.CmapSubtable [http-nio-8090-exec-4] Format 14 cmap table is not supported and will be ignored
+2020-06-24 11:47:53,218 WARN org.apache.fontbox.ttf.CmapSubtable [http-nio-8090-exec-4] Format 14 cmap table is not supported and will be ignored
+2020-06-24 11:47:53,272 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:53,272 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:53,273 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,92,Anitha Singegowda Ramu,mail2anitharavi@gmail.com,+61-480248482
+2020-06-24 11:47:53,273 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 92 : Anitha Singegowda Ramu : mail2anitharavi@gmail.com : +61-480248482
+2020-06-24 11:47:53,275 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 92
+2020-06-24 11:47:55,209 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:55,209 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:47:55,209 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-30-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963273290-0\89194db3-be15-46b2-8570-d629415d2be5\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963273290-0\89194db3-be15-46b2-8570-d629415d2be5\temp2 (application/pdf)
+2020-06-24 11:47:56,718 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:47:56,718 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:47:56,718 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-06-24 11:47:56,807 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:47:56,807 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:47:56,809 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,94,Aparna   Palekar,aparnapalekar11@gmail.com,+61481742819
+2020-06-24 11:47:56,809 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 94 : Aparna   Palekar : aparnapalekar11@gmail.com : +61481742819
+2020-06-24 11:47:56,818 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 94
+2020-06-24 11:47:58,748 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:47:58,749 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:47:58,749 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-32-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963276833-0\90db2646-763a-4c2b-b8f0-2f6742a58696\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963276833-0\90db2646-763a-4c2b-b8f0-2f6742a58696\temp2 (application/pdf)
+2020-06-24 11:48:00,236 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:48:00,237 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:48:00,237 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document Aparna_CV.docx to Pdf as Aparna_CV.pdf
+2020-06-24 11:48:00,324 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:48:00,324 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:48:00,326 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,94,Aparna   Palekar,aparnapalekar11@gmail.com,+61481742819
+2020-06-24 11:48:00,326 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 94 : Aparna   Palekar : aparnapalekar11@gmail.com : +61481742819
+2020-06-24 11:48:00,327 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 94
+2020-06-24 11:48:02,272 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:48:02,272 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:48:02,273 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-34-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963280338-0\8f2732a4-68f7-42c4-ba4a-ded2f7741116\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963280338-0\8f2732a4-68f7-42c4-ba4a-ded2f7741116\temp2 (application/pdf)
+2020-06-24 11:48:03,360 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:48:03,361 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:48:03,361 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document CV_Sudeepta Sinha.doc to Pdf as CV_Sudeepta Sinha.pdf
+2020-06-24 11:48:03,451 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:48:03,452 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:48:03,453 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,98,SUDEEPTA   SINHA,sudeepta.s11@gmail.com, 047057469
+2020-06-24 11:48:03,453 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 98 : SUDEEPTA   SINHA : sudeepta.s11@gmail.com :  047057469
+2020-06-24 11:48:03,461 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 98
+2020-06-24 11:48:03,737 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:48:03,737 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:48:03,738 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,126,Durgesh   Gopisetty,durgesh.gopisetty@gmail.com,+61 04 14 89 48 3
+2020-06-24 11:48:03,738 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 126 : Durgesh   Gopisetty : durgesh.gopisetty@gmail.com : +61 04 14 89 48 3
+2020-06-24 11:48:03,748 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 126
+2020-06-24 11:48:04,155 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Candidate id:: null
+2020-06-24 11:48:04,155 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] NO Candidate ID, but details may exist...
+2020-06-24 11:48:04,156 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] PROFILE EXISTED....,126,Durgesh   Gopisetty,durgesh.gopisetty@gmail.com,+61 04 14 89 48 3
+2020-06-24 11:48:04,156 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updating existing Profile... 126 : Durgesh   Gopisetty : durgesh.gopisetty@gmail.com : +61 04 14 89 48 3
+2020-06-24 11:48:04,165 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-4] Updated ID:: 126
+2020-06-24 11:48:04,171 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-4] Bulk upload END::: ,Wed Jun 24 11:48:04 AEST 2020
+2020-06-24 11:48:17,035 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,94 Aparna   Palekar PR
+2020-06-24 11:48:23,064 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-2] All details,94 Aparna   Palekar PR
+2020-06-24 11:48:47,297 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,112 Abhijit   Pramanik PR
+2020-06-24 11:55:10,031 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3bf5a39f
+2020-06-24 11:55:10,031 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1b28b14f
+2020-06-24 11:55:10,032 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3a7023a6
+2020-06-24 11:55:10,033 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-5] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3dbb148a
+2020-06-24 11:55:10,034 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@53a032c2
+2020-06-24 11:55:10,039 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@653086bf
+2020-06-24 11:55:17,062 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:17,062 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has started successfully
+2020-06-24 11:55:17,063 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-36-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-2\46b5a060-0423-4951-85c2-ac79675e3245\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-2\46b5a060-0423-4951-85c2-ac79675e3245\temp2 (application/pdf)
+2020-06-24 11:55:17,213 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:17,213 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:55:17,215 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-38-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715054-0\24f5e60e-e789-4e38-9fdf-4fba55c2377b\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715054-0\24f5e60e-e789-4e38-9fdf-4fba55c2377b\temp2 (application/pdf)
+2020-06-24 11:55:17,483 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:17,483 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has started successfully
+2020-06-24 11:55:17,484 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-40-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-1\4e31121d-29c3-44a2-952e-1256241f206e\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-1\4e31121d-29c3-44a2-952e-1256241f206e\temp2 (application/pdf)
+2020-06-24 11:55:18,802 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:18,802 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has started successfully
+2020-06-24 11:55:18,804 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-42-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-0\4230acbd-f297-41be-b4c9-b35126237cad\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715047-0\4230acbd-f297-41be-b4c9-b35126237cad\temp2 (application/pdf)
+2020-06-24 11:55:19,423 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-10] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:19,423 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-10] The documents4j local converter has started successfully
+2020-06-24 11:55:19,424 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-44-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715048-1\e221e170-e59a-415c-ab5c-f80896dc4aa7\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715048-1\e221e170-e59a-415c-ab5c-f80896dc4aa7\temp2 (application/pdf)
+2020-06-24 11:55:20,112 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-5] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:20,112 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-5] The documents4j local converter has started successfully
+2020-06-24 11:55:20,113 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-46-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963715048-0\1ba7cde7-a48e-4451-b6f8-16670ad099bc\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963715048-0\1ba7cde7-a48e-4451-b6f8-16670ad099bc\temp2 (application/pdf)
+2020-06-24 11:55:21,570 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:21,571 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:55:21,571 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document AnishMohileAU (1).docx to Pdf as AnishMohileAU (1).pdf
+2020-06-24 11:55:21,713 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:21,713 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has shut down successfully
+2020-06-24 11:55:21,713 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-2] Successfully converted document 665594 - Jampala Ramesh_Java.DOC to Pdf as 665594 - Jampala Ramesh_Java.pdf
+2020-06-24 11:55:21,854 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-1] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:21,854 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-1] The documents4j local converter has shut down successfully
+2020-06-24 11:55:21,855 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-1] Successfully converted document 682858 - Kabila.DOC to Pdf as 682858 - Kabila.pdf
+2020-06-24 11:55:21,991 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:21,992 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has shut down successfully
+2020-06-24 11:55:21,992 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-7] Successfully converted document 674963.DOC to Pdf as 674963.pdf
+2020-06-24 11:55:22,788 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Error occured while converting doc to pdf.675310 - Nagaraj_Java_TechM,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:22,788 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Successfully converted document 675310 - Nagaraj_Java_TechM.DOC to Pdf as 675310 - Nagaraj_Java_TechM.pdf
+2020-06-24 11:55:22,788 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-10] Error occured while converting doc to pdf.Abhijit Resume,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:22,788 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-10] Successfully converted document Abhijit Resume.docx to Pdf as Abhijit Resume.pdf
+2020-06-24 11:55:26,578 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-9] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4176a00f
+2020-06-24 11:55:26,716 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-8] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7cb0128e
+2020-06-24 11:55:26,861 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-6] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1270f5a1
+2020-06-24 11:55:26,998 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@73af8536
+2020-06-24 11:55:27,797 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-2] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@28b9cabf
+2020-06-24 11:55:27,797 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-4] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1aa7a75e
+2020-06-24 11:55:33,539 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:33,539 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:55:33,541 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-48-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963731591-0\43298976-c8e2-4771-918b-66919bc329d7\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963731591-0\43298976-c8e2-4771-918b-66919bc329d7\temp2 (application/pdf)
+2020-06-24 11:55:33,702 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:33,702 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has started successfully
+2020-06-24 11:55:33,703 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-50-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963732810-1\ac5298ae-69e2-492a-aa39-3dd4a13cfe18\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963732810-1\ac5298ae-69e2-492a-aa39-3dd4a13cfe18\temp2 (application/pdf)
+2020-06-24 11:55:34,037 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:34,037 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has started successfully
+2020-06-24 11:55:34,038 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-52-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963732810-0\a629200a-c085-4412-b054-a10c051ded01\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963732810-0\a629200a-c085-4412-b054-a10c051ded01\temp2 (application/pdf)
+2020-06-24 11:55:34,920 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-3] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:34,920 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-3] The documents4j local converter has started successfully
+2020-06-24 11:55:34,921 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-54-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963732009-0\f181090f-f099-483c-9ff5-b4a1dc683001\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963732009-0\f181090f-f099-483c-9ff5-b4a1dc683001\temp2 (application/pdf)
+2020-06-24 11:55:35,142 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-6] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:35,142 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-6] The documents4j local converter has started successfully
+2020-06-24 11:55:35,143 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-56-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963731872-0\fdaba8c9-d6a8-4d5f-bac7-35799cff7962\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963731872-0\fdaba8c9-d6a8-4d5f-bac7-35799cff7962\temp2 (application/pdf)
+2020-06-24 11:55:36,676 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-8] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:36,676 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-8] The documents4j local converter has started successfully
+2020-06-24 11:55:36,677 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-58-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963731728-0\f3a8dcbf-da2b-48f8-8532-148de8ef724c\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963731728-0\f3a8dcbf-da2b-48f8-8532-148de8ef724c\temp2 (application/pdf)
+2020-06-24 11:55:38,337 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:38,337 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:55:38,337 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Anitha_Resume.docx to Pdf as Anitha_Resume.pdf
+2020-06-24 11:55:38,470 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-4] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:38,470 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-4] The documents4j local converter has shut down successfully
+2020-06-24 11:55:38,470 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-4] Successfully converted document Durgesh_Gopisetty_Profile_365277.docx to Pdf as Durgesh_Gopisetty_Profile_365277.pdf
+2020-06-24 11:55:38,603 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-2] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:38,603 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-2] The documents4j local converter has shut down successfully
+2020-06-24 11:55:38,603 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-2] Successfully converted document Durgesh_Gopisetty_Profile.docx to Pdf as Durgesh_Gopisetty_Profile.pdf
+2020-06-24 11:55:39,452 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-3] Error occured while converting doc to pdf.CV_Sudeepta Sinha,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.GeneratedMethodAccessor2725.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:39,452 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-3] Successfully converted document CV_Sudeepta Sinha.doc to Pdf as CV_Sudeepta Sinha.pdf
+2020-06-24 11:55:39,452 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-8] Error occured while converting doc to pdf.Aparna_CV - Copy,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.GeneratedMethodAccessor2725.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:39,452 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-8] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-06-24 11:55:39,452 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-6] Error occured while converting doc to pdf.Aparna_CV,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.GeneratedMethodAccessor2725.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:39,452 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-6] Successfully converted document Aparna_CV.docx to Pdf as Aparna_CV.pdf
+2020-06-24 11:55:43,344 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-1] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1453fce3
+2020-06-24 11:55:43,478 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7a2a52f0
+2020-06-24 11:55:43,693 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-5] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@546459bb
+2020-06-24 11:55:44,465 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-10] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a15d5f4
+2020-06-24 11:55:44,502 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] Bulk upload START::: ,Wed Jun 24 11:55:44 AEST 2020
+2020-06-24 11:55:44,502 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] List of uploaded files...16
+2020-06-24 11:55:44,618 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:44,618 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:44,622 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,116,Tech   Mahindra,JR00665594@TechMahindra.com,91 9167094
+2020-06-24 11:55:44,622 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 116 : Tech   Mahindra : JR00665594@TechMahindra.com : 91 9167094
+2020-06-24 11:55:44,624 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 116
+2020-06-24 11:55:44,715 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:44,715 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:44,716 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,118,Tech   Mahindra,RA00674963@TechMahindra.com,91 9791063
+2020-06-24 11:55:44,716 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 118 : Tech   Mahindra : RA00674963@TechMahindra.com : 91 9791063
+2020-06-24 11:55:44,718 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 118
+2020-06-24 11:55:46,691 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:46,691 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:55:46,692 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-60-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963744730-0\eefeadd1-c746-4eb8-9d04-f4982dcfdc29\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963744730-0\eefeadd1-c746-4eb8-9d04-f4982dcfdc29\temp2 (application/pdf)
+2020-06-24 11:55:48,154 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:48,155 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:55:48,155 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document 675310 - Nagaraj_Java_TechM.DOC to Pdf as 675310 - Nagaraj_Java_TechM.pdf
+2020-06-24 11:55:48,230 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:48,231 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:48,232 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,120,Tech   Mahindra,NG00675310@techmahindra.com,91 9677675
+2020-06-24 11:55:48,232 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 120 : Tech   Mahindra : NG00675310@techmahindra.com : 91 9677675
+2020-06-24 11:55:48,240 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 120
+2020-06-24 11:55:48,329 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:48,329 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:48,331 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,122,Tech   Mahindra,KS00682858@TechMahindra.com,91 9965899
+2020-06-24 11:55:48,331 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 122 : Tech   Mahindra : KS00682858@TechMahindra.com : 91 9965899
+2020-06-24 11:55:48,333 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 122
+2020-06-24 11:55:50,275 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:50,275 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:55:50,276 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-62-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963748349-0\267438ed-6da9-4d97-a490-e02ce330cb47\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963748349-0\267438ed-6da9-4d97-a490-e02ce330cb47\temp2 (application/pdf)
+2020-06-24 11:55:50,431 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-10] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:50,431 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-10] The documents4j local converter has started successfully
+2020-06-24 11:55:50,432 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-64-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963749477-0\90e829c0-d941-446c-91ac-4f0e976701a5\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963749477-0\90e829c0-d941-446c-91ac-4f0e976701a5\temp2 (application/pdf)
+2020-06-24 11:55:50,716 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-5] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:50,716 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-5] The documents4j local converter has started successfully
+2020-06-24 11:55:50,717 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-66-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963748705-0\61f811b3-5d73-4e76-88f9-fedaa54b63a4\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963748705-0\61f811b3-5d73-4e76-88f9-fedaa54b63a4\temp2 (application/pdf)
+2020-06-24 11:55:51,591 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-7] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:51,591 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-7] The documents4j local converter has started successfully
+2020-06-24 11:55:51,593 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-68-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963748487-0\7ea9b7fa-bb68-41b2-ba36-4f23efd678d2\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963748487-0\7ea9b7fa-bb68-41b2-ba36-4f23efd678d2\temp2 (application/pdf)
+2020-06-24 11:55:52,925 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:52,925 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:55:52,925 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Abhijit Resume.docx to Pdf as Abhijit Resume.pdf
+2020-06-24 11:55:53,072 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-10] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:53,073 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-10] The documents4j local converter has shut down successfully
+2020-06-24 11:55:53,073 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-10] Successfully converted document PROFESSIONAL PROFILE- Dharminder Dhanda (1) (2).docx to Pdf as PROFESSIONAL PROFILE- Dharminder Dhanda (1) (2).pdf
+2020-06-24 11:55:53,076 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:53,076 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:53,077 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,112,Abhijit   Pramanik,abhijit158@yahoo.com,+61 045215260
+2020-06-24 11:55:53,077 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 112 : Abhijit   Pramanik : abhijit158@yahoo.com : +61 045215260
+2020-06-24 11:55:53,086 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 112
+2020-06-24 11:55:53,171 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:53,171 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:53,173 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,124,Anish   Mohile,anishsmohile@gmail.com,61 (0) 405 026 383 
+
+2020-06-24 11:55:53,173 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 124 : Anish   Mohile : anishsmohile@gmail.com : 61 (0) 405 026 383 
+
+2020-06-24 11:55:53,175 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 124
+2020-06-24 11:55:53,220 WARN org.apache.fontbox.ttf.CmapSubtable [http-nio-8090-exec-9] Format 14 cmap table is not supported and will be ignored
+2020-06-24 11:55:53,225 WARN org.apache.fontbox.ttf.CmapSubtable [http-nio-8090-exec-9] Format 14 cmap table is not supported and will be ignored
+2020-06-24 11:55:53,256 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:53,256 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:53,257 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,92,Anitha Singegowda Ramu,mail2anitharavi@gmail.com,+61-480248482
+2020-06-24 11:55:53,257 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 92 : Anitha Singegowda Ramu : mail2anitharavi@gmail.com : +61-480248482
+2020-06-24 11:55:53,259 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 92
+2020-06-24 11:55:54,259 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Error occured while converting doc to pdf.PROFESSIONAL PROFILE- Dharminder Dhanda (1) (1),{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.GeneratedMethodAccessor2725.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:54,259 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-5] Successfully converted document PROFESSIONAL PROFILE- Dharminder Dhanda (1) (1).docx to Pdf as PROFESSIONAL PROFILE- Dharminder Dhanda (1) (1).pdf
+2020-06-24 11:55:54,259 ERROR com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-7] Error occured while converting doc to pdf.Madhuri_Performance Architect_Resume,{}
+java.lang.Exception: Could not complete conversion
+	at com.renaissance.profile.parser.util.FileUtils.convertDoctoPdf(FileUtils.java:59)
+	at com.renaissance.profile.parser.web.FileuploadMvcController.copySingleFile(FileuploadMvcController.java:287)
+	at sun.reflect.GeneratedMethodAccessor2725.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-06-24 11:55:54,259 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-7] Successfully converted document Madhuri_Performance Architect_Resume.doc to Pdf as Madhuri_Performance Architect_Resume.pdf
+2020-06-24 11:55:55,197 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:55,198 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:55:55,199 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-70-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963753273-0\fc602d7e-ac1d-4236-9cc7-cdaabed0ac53\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963753273-0\fc602d7e-ac1d-4236-9cc7-cdaabed0ac53\temp2 (application/pdf)
+2020-06-24 11:55:56,720 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:55:56,721 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:55:56,721 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Aparna_CV - Copy.docx to Pdf as Aparna_CV - Copy.pdf
+2020-06-24 11:55:56,810 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:55:56,810 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:55:56,811 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,94,Aparna   Palekar,aparnapalekar11@gmail.com,+61481742819
+2020-06-24 11:55:56,811 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 94 : Aparna   Palekar : aparnapalekar11@gmail.com : +61481742819
+2020-06-24 11:55:56,812 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 94
+2020-06-24 11:55:58,740 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:55:58,740 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:55:58,740 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-72-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963756826-0\c520963e-379e-4a4e-a157-72e859daf6f7\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963756826-0\c520963e-379e-4a4e-a157-72e859daf6f7\temp2 (application/pdf)
+2020-06-24 11:56:00,225 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:56:00,225 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:56:00,225 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Aparna_CV.docx to Pdf as Aparna_CV.pdf
+2020-06-24 11:56:00,318 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:00,318 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:00,320 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,94,Aparna   Palekar,aparnapalekar11@gmail.com,+61481742819
+2020-06-24 11:56:00,320 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 94 : Aparna   Palekar : aparnapalekar11@gmail.com : +61481742819
+2020-06-24 11:56:00,322 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 94
+2020-06-24 11:56:02,251 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:56:02,251 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:56:02,252 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-74-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963760334-0\01ff9fd5-4f44-421c-a3d4-4756cc365663\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963760334-0\01ff9fd5-4f44-421c-a3d4-4756cc365663\temp2 (application/pdf)
+2020-06-24 11:56:03,336 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:56:03,337 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:56:03,337 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document CV_Sudeepta Sinha.doc to Pdf as CV_Sudeepta Sinha.pdf
+2020-06-24 11:56:03,421 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:03,421 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:03,422 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,98,SUDEEPTA   SINHA,sudeepta.s11@gmail.com, 047057469
+2020-06-24 11:56:03,422 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 98 : SUDEEPTA   SINHA : sudeepta.s11@gmail.com :  047057469
+2020-06-24 11:56:03,423 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 98
+2020-06-24 11:56:03,688 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:03,688 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:03,690 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,126,Durgesh   Gopisetty,durgesh.gopisetty@gmail.com,+61 04 14 89 48 3
+2020-06-24 11:56:03,690 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 126 : Durgesh   Gopisetty : durgesh.gopisetty@gmail.com : +61 04 14 89 48 3
+2020-06-24 11:56:03,699 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 126
+2020-06-24 11:56:03,972 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:03,972 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:03,978 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,126,Durgesh   Gopisetty,durgesh.gopisetty@gmail.com,+61 04 14 89 48 3
+2020-06-24 11:56:03,978 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 126 : Durgesh   Gopisetty : durgesh.gopisetty@gmail.com : +61 04 14 89 48 3
+2020-06-24 11:56:03,987 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 126
+2020-06-24 11:56:04,067 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:04,067 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:04,068 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,128,PROFILE    ,ledigitale@gmail.com,0404 310 613
+2020-06-24 11:56:04,068 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 128 : PROFILE     : ledigitale@gmail.com : 0404 310 613
+2020-06-24 11:56:04,069 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 128
+2020-06-24 11:56:06,007 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:56:06,007 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:56:06,008 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-76-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963764082-0\874a688b-2984-4c54-b3e4-e80a02a1d4f5\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963764082-0\874a688b-2984-4c54-b3e4-e80a02a1d4f5\temp2 (application/pdf)
+2020-06-24 11:56:07,851 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:56:07,851 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:56:07,851 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document Madhuri_Performance Architect_Resume.doc to Pdf as Madhuri_Performance Architect_Resume.pdf
+2020-06-24 11:56:08,030 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:08,030 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:08,031 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] PROFILE EXISTED....,100,Madhuri   Karepe,batte.madhuri@gmail.com,+61452339642
+2020-06-24 11:56:08,032 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updating existing Profile... 100 : Madhuri   Karepe : batte.madhuri@gmail.com : +61452339642
+2020-06-24 11:56:08,040 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Updated ID:: 100
+2020-06-24 11:56:10,002 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was started successfully
+2020-06-24 11:56:10,003 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has started successfully
+2020-06-24 11:56:10,004 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [pool-78-thread-1] Requested conversion from C:\Users\RENAIS~1\AppData\Local\Temp\1592963768057-0\981eee79-bfd9-4162-9784-e4b53c21760c\temp1 (application/vnd.com.documents4j.any-msword) to C:\Users\RENAIS~1\AppData\Local\Temp\1592963768057-0\981eee79-bfd9-4162-9784-e4b53c21760c\temp2 (application/pdf)
+2020-06-24 11:56:11,787 INFO com.documents4j.conversion.msoffice.MicrosoftWordBridge [http-nio-8090-exec-9] From-Microsoft-Word-Converter was shut down successfully
+2020-06-24 11:56:11,787 INFO com.documents4j.job.LocalConverter [http-nio-8090-exec-9] The documents4j local converter has shut down successfully
+2020-06-24 11:56:11,787 INFO com.renaissance.profile.parser.util.FileUtils [http-nio-8090-exec-9] Successfully converted document PROFESSIONAL PROFILE- Dharminder Dhanda (1) (1).docx to Pdf as PROFESSIONAL PROFILE- Dharminder Dhanda (1) (1).pdf
+2020-06-24 11:56:11,875 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:11,875 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:11,879 ERROR com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] Error Message:: {}
+java.lang.Exception: java.lang.NullPointerException
+	at com.renaissance.profile.parser.web.BulkFileUploadMvcController.bulkFileUpload(BulkFileUploadMvcController.java:146)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException: null
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:166)
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:115)
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:105)
+	at org.hibernate.query.criteria.internal.QueryStructure.render(QueryStructure.java:248)
+	at org.hibernate.query.criteria.internal.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:292)
+	at org.hibernate.query.criteria.internal.compile.CriteriaCompiler.compile(CriteriaCompiler.java:149)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:3707)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:208)
+	at sun.reflect.GeneratedMethodAccessor2690.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:350)
+	at com.sun.proxy.$Proxy1287.createQuery(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor2690.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:308)
+	at com.sun.proxy.$Proxy1287.createQuery(Unknown Source)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl.getCandidates(CandidatePersonalRespositoryCustomImpl.java:77)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl$$FastClassBySpringCGLIB$$bd927fb0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl$$EnhancerBySpringCGLIB$$3c830a82.getCandidates(<generated>)
+	at sun.reflect.GeneratedMethodAccessor2730.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy1298.getCandidates(Unknown Source)
+	at com.renaissance.profile.parser.service.ProfileService.updateCandidateDetails(ProfileService.java:141)
+	at com.renaissance.profile.parser.service.ProfileService.createProfile(ProfileService.java:72)
+	at com.renaissance.profile.parser.web.BulkFileUploadMvcController.bulkFileUpload(BulkFileUploadMvcController.java:141)
+	... 54 common frames omitted
+2020-06-24 11:56:11,879 ERROR com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] There is an issue in uploading  profile, null, null, {}Dharminder   Dhanda
+2020-06-24 11:56:11,971 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] Candidate id:: null
+2020-06-24 11:56:11,971 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-9] NO Candidate ID, but details may exist...
+2020-06-24 11:56:11,972 ERROR com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] Error Message:: {}
+java.lang.Exception: java.lang.NullPointerException
+	at com.renaissance.profile.parser.web.BulkFileUploadMvcController.bulkFileUpload(BulkFileUploadMvcController.java:146)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException: null
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:166)
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:115)
+	at org.hibernate.query.criteria.internal.predicate.CompoundPredicate.render(CompoundPredicate.java:105)
+	at org.hibernate.query.criteria.internal.QueryStructure.render(QueryStructure.java:248)
+	at org.hibernate.query.criteria.internal.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:292)
+	at org.hibernate.query.criteria.internal.compile.CriteriaCompiler.compile(CriteriaCompiler.java:149)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:3707)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:208)
+	at sun.reflect.GeneratedMethodAccessor2690.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:350)
+	at com.sun.proxy.$Proxy1287.createQuery(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor2690.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:308)
+	at com.sun.proxy.$Proxy1287.createQuery(Unknown Source)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl.getCandidates(CandidatePersonalRespositoryCustomImpl.java:77)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl$$FastClassBySpringCGLIB$$bd927fb0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.renaissance.profile.parser.repository.impl.CandidatePersonalRespositoryCustomImpl$$EnhancerBySpringCGLIB$$3c830a82.getCandidates(<generated>)
+	at sun.reflect.GeneratedMethodAccessor2730.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy1298.getCandidates(Unknown Source)
+	at com.renaissance.profile.parser.service.ProfileService.updateCandidateDetails(ProfileService.java:141)
+	at com.renaissance.profile.parser.service.ProfileService.createProfile(ProfileService.java:72)
+	at com.renaissance.profile.parser.web.BulkFileUploadMvcController.bulkFileUpload(BulkFileUploadMvcController.java:141)
+	... 54 common frames omitted
+2020-06-24 11:56:11,972 ERROR com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] There is an issue in uploading  profile, null, null, {}Dharminder   Dhanda
+2020-06-24 11:56:11,973 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] Bulk upload END::: ,Wed Jun 24 11:56:11 AEST 2020
+2020-06-24 11:57:16,052 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,100 Madhuri   Karepe null
+2020-06-24 11:58:08,499 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-8] All details,100 Madhuri   Karepe null
+2020-06-24 12:00:08,572 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-10] All details,98 SUDEEPTA   SINHA PR
+2020-06-24 13:42:21,180 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-70 housekeeper] HikariPool-70 - Thread starvation or clock leap detected (housekeeper delta=1h13m16s792ms660탎600ns).
+2020-06-24 13:53:09,663 INFO com.zaxxer.hikari.HikariDataSource [Thread-501] HikariPool-70 - Shutdown initiated...
+2020-06-24 13:53:09,666 INFO com.zaxxer.hikari.HikariDataSource [Thread-501] HikariPool-70 - Shutdown completed.
+2020-06-24 13:53:10,180 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13908 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-24 13:53:10,181 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-24 13:53:10,609 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-24 13:53:10,609 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-24 13:53:10,630 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-24 13:53:10,664 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-71 - Starting...
+2020-06-24 13:53:10,695 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-71 - Start completed.
+2020-06-24 13:53:10,710 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-24 13:53:10,738 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-24 13:53:10,987 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-24 13:53:10,988 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@481bbacb
+2020-06-24 13:53:11,360 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.207 seconds (JVM running for 185245.43)
+2020-06-24 13:53:11,362 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-24 16:42:24,554 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-71 housekeeper] HikariPool-71 - Thread starvation or clock leap detected (housekeeper delta=2h28m43s726ms389탎).

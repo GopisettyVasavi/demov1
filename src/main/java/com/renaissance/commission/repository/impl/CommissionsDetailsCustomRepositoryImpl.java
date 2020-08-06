@@ -55,7 +55,7 @@ public class CommissionsDetailsCustomRepositoryImpl implements CommissionsDetail
 	}
 	
 	@Override
-	public List<CommissionsDetailsEntity> getCommissionsForSelectedMonthAndYear(String monthYear){
+	public List<CommissionsDetailsEntity> getCommissionsForSelectedMonthAndYear(String monthYear, String recruiterName){
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CommissionsDetailsEntity> query = cb
 				.createQuery(CommissionsDetailsEntity.class);
@@ -65,6 +65,9 @@ public class CommissionsDetailsCustomRepositoryImpl implements CommissionsDetail
 		
 		if (!ProfileParserUtils.isObjectEmpty(monthYear))
 			predicates.add(cb.equal(rcCommission.get("monthYear"), monthYear));
+		
+		if (!ProfileParserUtils.isObjectEmpty(recruiterName))
+			predicates.add(cb.equal(rcCommission.get("recruiterName"), recruiterName));
 		
 		List<CommissionsDetailsEntity> commissionList = null;
 		if (predicates.size() > 0) {

@@ -11,6 +11,14 @@ public class ConstantsDTO {
 	private Double qld;
 	private Double superannuation;
 	private Double insurance;
+	private String nswEffectiveFrom;
+	private String vicEffectiveFrom;
+	private String saEffectiveFrom;
+	private String waEffectiveFrom;
+	private String tasEffectiveFrom;
+	private String qldEffectiveFrom;
+	private String superEffectiveFrom;
+	private String insEffectiveFrom;
 	public Double getNsw() {
 		return nsw;
 	}
@@ -60,11 +68,66 @@ public class ConstantsDTO {
 	public void setInsurance(Double insurance) {
 		this.insurance = insurance;
 	}
+	public String getNswEffectiveFrom() {
+		return nswEffectiveFrom;
+	}
+	public void setNswEffectiveFrom(String nswEffectiveFrom) {
+		this.nswEffectiveFrom = nswEffectiveFrom;
+	}
+	public String getVicEffectiveFrom() {
+		return vicEffectiveFrom;
+	}
+	public void setVicEffectiveFrom(String vicEffectiveFrom) {
+		this.vicEffectiveFrom = vicEffectiveFrom;
+	}
+	public String getSaEffectiveFrom() {
+		return saEffectiveFrom;
+	}
+	public void setSaEffectiveFrom(String saEffectiveFrom) {
+		this.saEffectiveFrom = saEffectiveFrom;
+	}
+	public String getWaEffectiveFrom() {
+		return waEffectiveFrom;
+	}
+	public void setWaEffectiveFrom(String waEffectiveFrom) {
+		this.waEffectiveFrom = waEffectiveFrom;
+	}
+	public String getTasEffectiveFrom() {
+		return tasEffectiveFrom;
+	}
+	public void setTasEffectiveFrom(String tasEffectiveFrom) {
+		this.tasEffectiveFrom = tasEffectiveFrom;
+	}
+	public String getQldEffectiveFrom() {
+		return qldEffectiveFrom;
+	}
+	public void setQldEffectiveFrom(String qldEffectiveFrom) {
+		this.qldEffectiveFrom = qldEffectiveFrom;
+	}
+	public String getSuperEffectiveFrom() {
+		return superEffectiveFrom;
+	}
+	public void setSuperEffectiveFrom(String superEffectiveFrom) {
+		this.superEffectiveFrom = superEffectiveFrom;
+	}
+	public String getInsEffectiveFrom() {
+		return insEffectiveFrom;
+	}
+	public void setInsEffectiveFrom(String insEffectiveFrom) {
+		this.insEffectiveFrom = insEffectiveFrom;
+	}
 	@Override
 	public String toString() {
 		return "ConstantsDTO [nsw=" + nsw + ", vic=" + vic + ", sa=" + sa + ", wa=" + wa + ", tas=" + tas + ", qld="
-				+ qld + ", superannuation=" + superannuation + ", insurance=" + insurance + "]";
+				+ qld + ", superannuation=" + superannuation + ", insurance=" + insurance + ", nswEffectiveFrom="
+				+ nswEffectiveFrom + ", vicEffectiveFrom=" + vicEffectiveFrom + ", saEffectiveFrom=" + saEffectiveFrom
+				+ ", waEffectiveFrom=" + waEffectiveFrom + ", tasEffectiveFrom=" + tasEffectiveFrom
+				+ ", qldEffectiveFrom=" + qldEffectiveFrom + ", superEffectiveFrom=" + superEffectiveFrom
+				+ ", insEffectiveFrom=" + insEffectiveFrom + "]";
 	}
+	
+	
+	
 	
 	
 	

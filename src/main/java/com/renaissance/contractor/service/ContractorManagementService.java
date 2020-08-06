@@ -313,6 +313,8 @@ public class ContractorManagementService {
 		contractorEmploymentVo.setLastUpdatedDateTime(LocalDateTime.now());
 		contractorEmploymentVo.setLastUpdatedUser(lastUpdatedUser);
 		contractorEmploymentVo.setActiveRecord(status);
+		contractorEmploymentVo.setDateJobStartDate(ProfileParserUtils.parseStringDate(contractorEmploymentVo.getJobStartDate()));
+		contractorEmploymentVo.setDateJobEndDate(ProfileParserUtils.parseStringDate(contractorEmploymentVo.getJobEndDate()));
 		contractorEmploymentVo = contractorEmployment.save(contractorEmploymentVo);
 		BeanUtils.copyProperties(contractorEmploymentVo, employerDto);
 
@@ -654,6 +656,8 @@ public class ContractorManagementService {
 					empVo.setActiveRecord(ProfileParserConstants.INACTIVE);
 					empVo.setLastUpdatedDateTime(LocalDateTime.now());
 					empVo.setLastUpdatedUser(lastUpdatedUser);
+					empVo.setDateJobStartDate(ProfileParserUtils.parseStringDate(empVo.getJobStartDate()));
+					empVo.setDateJobEndDate(ProfileParserUtils.parseStringDate(empVo.getJobEndDate()));
 					contractorEmployment.save(empVo);
 
 				}

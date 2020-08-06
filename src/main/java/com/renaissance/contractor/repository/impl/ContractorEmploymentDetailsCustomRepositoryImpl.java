@@ -1,6 +1,7 @@
     package com.renaissance.contractor.repository.impl;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,27 +148,27 @@ public class ContractorEmploymentDetailsCustomRepositoryImpl implements Contract
 		// return null;
 	}
 
-	public List<ContractorEmploymentDetailsEntity> getCandidatesForCommission(String monthAndYear){
+	public List<ContractorEmploymentDetailsEntity> getCandidatesForCommission(LocalDate monthAndYear){
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<ContractorEmploymentDetailsEntity> query = criteriaBuilder
 				.createQuery(ContractorEmploymentDetailsEntity.class);
 		Root<ContractorEmploymentDetailsEntity> contractorEmp = query.from(ContractorEmploymentDetailsEntity.class);
 
 		Predicate predicateEndDate
-				  = criteriaBuilder.like(contractorEmp.get("jobEndDate"),
-							"%" + monthAndYear + "%");
+				  = criteriaBuilder.greaterThanOrEqualTo(contractorEmp.get("dateJobEndDate"), monthAndYear);
 				Predicate predicateEmptyEndDate
-				  = criteriaBuilder.equal(contractorEmp.get("jobEndDate"), "");
+				  = criteriaBuilder.isNull(contractorEmp.get("dateJobEndDate"));
 				Predicate predicateJobEndDate
 				  = criteriaBuilder.or(predicateEndDate, predicateEmptyEndDate);
 			
-				
+		Predicate predicateStartDate
+				  = criteriaBuilder.lessThanOrEqualTo(contractorEmp.get("dateJobStartDate"), monthAndYear);		
 
 			Predicate predicateActive
 			  = criteriaBuilder.equal(criteriaBuilder.upper(contractorEmp.get("activeRecord")), "ACTIVE");
 
 			Predicate finalPredicate
-			  = criteriaBuilder.and(predicateJobEndDate, predicateActive);
+			  = criteriaBuilder.and(predicateJobEndDate, predicateActive,predicateStartDate);
 			query.select(contractorEmp).where(finalPredicate);
 			List<ContractorEmploymentDetailsEntity> result=entityManager.createQuery(query).getResultList();
 		if(!ProfileParserUtils.isObjectEmpty(result)) {

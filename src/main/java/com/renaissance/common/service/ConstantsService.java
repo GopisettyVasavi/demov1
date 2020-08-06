@@ -36,34 +36,42 @@ public class ConstantsService {
 					if (!ProfileParserUtils.isObjectEmpty(constant)) {
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.NSW)) {
 							constant.setConstantValue(constants.getNsw());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getNswEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.WA)) {
 							constant.setConstantValue(constants.getWa());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getWaEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SA)) {
 							constant.setConstantValue(constants.getSa());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getSaEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.TAS)) {
 							constant.setConstantValue(constants.getTas());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getTasEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.QLD)) {
 							constant.setConstantValue(constants.getQld());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getQldEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.VIC)) {
 							constant.setConstantValue(constants.getVic());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getVicEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SUPER_ANNUATION)) {
 							constant.setConstantValue(constants.getSuperannuation());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getSuperEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 						if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.INSURANCE)) {
 							constant.setConstantValue(constants.getInsurance());
+							constant.setEffectiveFrom(ProfileParserUtils.parseStringDate(constants.getInsEffectiveFrom()));
 							constantsRepository.save(constant);
 						}
 					}
@@ -88,27 +96,35 @@ public class ConstantsService {
 			for (AppConstantsEntity constant : entities) {
 				if (!ProfileParserUtils.isObjectEmpty(constant)) {
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.NSW)) {
+						constantsDto.setNswEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setNsw(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.WA)) {
+						constantsDto.setWaEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setWa(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.QLD)) {
+						constantsDto.setQldEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setQld(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.VIC)) {
+						constantsDto.setVicEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setVic(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SA)) {
+						constantsDto.setSaEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setSa(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.TAS)) {
+						constantsDto.setTasEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setTas(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.SUPER_ANNUATION)) {
+						constantsDto.setSuperEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setSuperannuation(constant.getConstantValue());
 					}
 					if (constant.getConstantName().equalsIgnoreCase(ProfileParserConstants.INSURANCE)) {
+						constantsDto.setInsEffectiveFrom(ProfileParserUtils.parseDateToString(constant.getEffectiveFrom()));
 						constantsDto.setInsurance(constant.getConstantValue());
 					}
 				}

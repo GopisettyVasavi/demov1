@@ -1,0 +1,8 @@
+2020-07-05 04:03:13,701 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time START- Sun Jul 05 04:03:13 AEST 2020
+2020-07-05 04:03:13,704 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... START
+2020-07-05 04:03:13,774 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... END
+2020-07-05 04:03:13,774 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time END- Sun Jul 05 04:03:13 AEST 2020
+2020-07-05 11:30:00,001 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time START- Sun Jul 05 11:30:00 AEST 2020
+2020-07-05 11:30:00,003 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... START
+2020-07-05 11:30:00,010 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] CALLING UPDATE FIELDS.... END
+2020-07-05 11:30:00,010 INFO com.renaissance.profile.parser.web.JobSchedulerController [scheduling-1] Cron Task :: Execution Time END- Sun Jul 05 11:30:00 AEST 2020

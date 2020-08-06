@@ -1,0 +1,20 @@
+2020-07-08 15:56:45,754 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-66 housekeeper] HikariPool-66 - Thread starvation or clock leap detected (housekeeper delta=1d56m55s30ms657µs901ns).
+2020-07-08 17:52:36,423 INFO com.zaxxer.hikari.HikariDataSource [Thread-465] HikariPool-66 - Shutdown initiated...
+2020-07-08 17:52:36,427 INFO com.zaxxer.hikari.HikariDataSource [Thread-465] HikariPool-66 - Shutdown completed.
+2020-07-08 17:52:37,231 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 13684 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-07-08 17:52:37,231 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-07-08 17:52:38,958 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-07-08 17:52:38,959 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-07-08 17:52:38,996 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-07-08 17:52:39,049 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Starting...
+2020-07-08 17:52:39,108 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-67 - Start completed.
+2020-07-08 17:52:39,156 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-08 17:52:39,203 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-08 17:52:39,805 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-07-08 17:52:39,806 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@49c7b83f
+2020-07-08 17:52:40,455 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 3.269 seconds (JVM running for 620980.935)
+2020-07-08 17:52:40,457 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-07-08 20:15:03,679 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-67 housekeeper] HikariPool-67 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s440ms164µs800ns).
+2020-07-08 22:38:59,367 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-67 housekeeper] HikariPool-67 - Thread starvation or clock leap detected (housekeeper delta=2h1m25s657ms74µs400ns).

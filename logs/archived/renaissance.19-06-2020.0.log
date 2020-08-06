@@ -1,0 +1,99 @@
+2020-06-19 14:53:50,736 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-9] Constants values from DB,ConstantsDTO [nsw=5, vic=5, sa=7, wa=3, tas=6, qld=6] 
+2020-06-19 14:54:02,085 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5, vic=5, sa=7, wa=3, tas=6, qld=6] 
+2020-06-19 14:58:24,175 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-2] Constants values from DB,ConstantsDTO [nsw=5, vic=5, sa=5, wa=7, tas=4, qld=5] 
+2020-06-19 14:58:28,111 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 14:58:29,587 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5, vic=5, sa=5, wa=7, tas=4, qld=5] 
+2020-06-19 15:00:41,151 INFO com.zaxxer.hikari.HikariDataSource [Thread-427] HikariPool-59 - Shutdown initiated...
+2020-06-19 15:00:41,153 INFO com.zaxxer.hikari.HikariDataSource [Thread-427] HikariPool-59 - Shutdown completed.
+2020-06-19 15:00:41,565 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 3352 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-19 15:00:41,565 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-19 15:00:42,327 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-19 15:00:42,327 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-19 15:00:42,351 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-19 15:00:42,391 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-60 - Starting...
+2020-06-19 15:00:42,420 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-60 - Start completed.
+2020-06-19 15:00:42,441 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-19 15:00:42,469 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-19 15:00:42,714 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-19 15:00:42,714 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1af5484c
+2020-06-19 15:00:43,108 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.571 seconds (JVM running for 716185.463)
+2020-06-19 15:00:43,109 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-19 15:01:08,032 INFO com.zaxxer.hikari.HikariDataSource [Thread-436] HikariPool-60 - Shutdown initiated...
+2020-06-19 15:01:08,036 INFO com.zaxxer.hikari.HikariDataSource [Thread-436] HikariPool-60 - Shutdown completed.
+2020-06-19 15:01:08,321 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 3352 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-06-19 15:01:08,321 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-06-19 15:01:08,731 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-06-19 15:01:08,731 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-06-19 15:01:08,753 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-06-19 15:01:08,788 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-61 - Starting...
+2020-06-19 15:01:08,818 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-61 - Start completed.
+2020-06-19 15:01:08,832 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-19 15:01:08,860 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-06-19 15:01:09,113 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-06-19 15:01:09,113 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1af5484c
+2020-06-19 15:01:09,479 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.18 seconds (JVM running for 716211.835)
+2020-06-19 15:01:09,480 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-06-19 15:02:54,374 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 15:02:54,513 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-1] HHH000397: Using ASTQueryTranslatorFactory
+2020-06-19 15:02:54,517 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-1] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:08,390 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:10,148 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:41,919 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:42,252 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-7] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:43,927 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-1] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:44,816 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-7] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:06:45,714 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-5] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:09:11,669 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:09:38,651 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-19 15:09:38,662 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked, ChangePassword
+2020-06-19 15:10:01,451 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-06-19 15:10:01,581 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 15:10:05,655 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-2] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:07,451 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:08,374 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:09,142 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-9] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:16,086 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 15:10:17,770 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-2] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:19,731 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:42,258 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-9] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:43,989 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:10:45,022 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:11:37,144 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:11:38,924 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:11:46,014 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:11:47,623 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:12:19,343 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:12:20,676 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:12:21,781 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:12:36,212 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:12:38,920 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:13:21,776 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:13:24,838 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:13:50,014 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-4] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:13:51,600 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-6] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:13:52,619 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-1] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:15:08,704 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-5] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:15:10,316 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:15:11,193 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:15:42,371 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:15:44,149 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 15:15:46,375 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-1] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:16:28,111 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-3] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:16:44,982 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:16:59,824 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-9] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:17:22,529 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-2] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:17:55,019 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:18:11,663 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-2] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:18:37,596 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-10] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 15:20:38,350 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 15:20:40,180 INFO com.renaissance.profile.parser.web.ConstantsMVCController [http-nio-8090-exec-8] Constants values from DB,ConstantsDTO [nsw=5.45, vic=4.85, sa=4.95, wa=6.5, tas=4.0, qld=4.75] 
+2020-06-19 16:39:56,367 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-61 housekeeper] HikariPool-61 - Thread starvation or clock leap detected (housekeeper delta=53m47s372ms266µs300ns).
+2020-06-19 18:56:53,254 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-61 housekeeper] HikariPool-61 - Thread starvation or clock leap detected (housekeeper delta=1h56m56s862ms217µs).
+2020-06-19 19:00:04,731 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Found matching User details for: {}renaissance
+2020-06-19 19:00:04,862 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-06-19 19:00:08,736 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-06-19 19:00:08,740 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 

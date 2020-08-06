@@ -5,6 +5,19 @@ function initialize(){
 	$("#buttons_div").hide();
 	$("#recruiters_div").hide();
 	$("#totalcomm_div").hide();
+
+	$("#recruiterName_s").val("");
+	$('#search_feedback').html("");
+	document.getElementById("searchForm").reset();
+	$("#searchresults_div").hide();
+	$("#commissionsearch_tbl").hide();
+	$("#fromdate_div").hide();
+	$("#todate_div").hide();
+	$("#commissiondetails_div").hide();
+	$("#commissiondetail_div").hide();
+	$("#commissiondetails_tbl").hide();
+	$("#comdet_lbl").hide();
+	document.getElementById('comdet_lbl').innerHTML = '';
 	getSuperPercent();
 	
 }
@@ -29,14 +42,15 @@ function createCommission(){
 			success : function(data) {
 				//alert(data);
 				//alert("success");
-				//console.log(data);
+				if(data.length>0){
+					$('#monthyear_feedback').html("");
 				$("#commissions_div").show();
 				$("#commissiontable").show();
 				$("#buttons_div").show();
 				document.getElementById("tempSave_btn").disabled = false;
 				
 				var i=-1;
-				console.log("status: "+data[0].status);
+				//console.log("status: "+data[0].status);
 				if(data[0].status=='TEMPORARY' || data[0].status=='FINAL SAVE'){
 					invokeMarginCalc(data);
 					//calculateRecruiterTotal();
@@ -81,7 +95,7 @@ function createCommission(){
 					}, {
 						"data" : 'ratePerDay',
 						"name" : "ratePerDay",
-						"title" : "Rate Per Day"
+						"title" : "Daily Rate"
 					},
 					{
 						"data" : 'jobStartDate',
@@ -113,6 +127,12 @@ function createCommission(){
 						"visible":false
 					},
 					{
+						"data" : 'employmentType',
+						"name" : "employmentType",
+						"title" : "employmentType",
+						"visible":false
+					},
+					{
 						"data" : 'noOfDaysWorked',
 						render: function (data, type, row ) {
 		                    if ( type === 'display' ) {
@@ -139,7 +159,15 @@ function createCommission(){
 
 				$("#commissiontable tfoot tr").hide();
 				
-				
+				}	
+				else{
+					document.getElementById("monthyear_feedback").style.color = "red";
+					$('#monthyear_feedback').html("There are no contractors to run commissions for the selected month.");
+					$("#commissions_div").hide();
+					$("#commissiontable").hide();
+					$("#buttons_div").hide();
+					
+				}
 			},
 			error : function(e) {
 
@@ -316,12 +344,12 @@ function populateRecruitersCommissions(data){
 				{
 					"data" : 'ratePerDay',
 					"name" : "ratePerDay",
-					"title" : "Rate Per Day"
+					"title" : "Daily Rate"
 				},
 				{
 					"data" : 'billRatePerDay',
 					"name" : "billRatePerDay",
-					"title" : "Bill Rate Per Day"
+					"title" : "Bill Rate"
 				},
 				{
 					"data" : 'grossMargin',
@@ -358,7 +386,7 @@ function populateRecruitersCommissions(data){
 	                },
 	               
 	               
-	                "title" : "No.Of Days"
+	                "title" : "No.Of Days Worked"
 				},
 				{
 					"data" : 'commission',
@@ -375,7 +403,7 @@ function populateRecruitersCommissions(data){
 	                },
 	               
 	               
-	                "title" : "Commission"
+	                "title" : "Commission%"
 	            
 				},
 				{
@@ -392,7 +420,7 @@ function populateRecruitersCommissions(data){
 	                },
 	               
 	               
-	                "title" : "Commission For the Candidate"
+	                "title" : "Commission Amount"
 	            
 				},
 				]
@@ -766,7 +794,7 @@ function searchcommissions(){
 						var table = $('#commissionsearch_tbl').DataTable({
 
 							destroy : true,
-
+							searching:false,
 							autoWidth : false,
 							/*
 							 * targets: 'no-sort', bSort: false, order: [],
@@ -783,6 +811,12 @@ function searchcommissions(){
 										"data" : 'monthYearUI',
 										"name" : "monthYearUI",
 										"title" : "Month-Year"
+									},
+									{
+										"data" : 'monthYear',
+										"name" : "monthYear",
+										"title" : "Month-Year",
+										"visible": false
 									},
 									{
 								"data" : 'orderDate',
@@ -841,6 +875,12 @@ function resetcommissions(){
 	$("#commissionsearch_tbl").hide();
 	$("#fromdate_div").hide();
 	$("#todate_div").hide();
+	$("#commissiondetails_div").hide();
+	$("#commissiondetail_div").hide();
+	$("#commissiondetails_tbl").hide();
+	$("#comdet_lbl").hide();
+	document.getElementById('comdet_lbl').innerHTML = '';
+	
 }
 
 function validateSearchFields(){
@@ -889,3 +929,109 @@ function showdatefields(){
 		$("#todate_div").hide();
 	}
 }
+
+
+$(document).on(
+		"click",
+		"#commissionsearch_tbl tbody tr",
+		function(e)
+
+		{
+
+			var table = $('#commissionsearch_tbl').DataTable();
+			var rowData = table.row(this).data();
+			// alert('called'+rowData.contractorId);
+			
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/commissiondetails/"+rowData.monthYear+"/"+ rowData.recruiterName,
+				dataType : 'json',
+				cache : false,
+				timeout : 600000,
+				success : function(data) {
+			
+					if(data.length>0){
+						$("#commissiondetails_div").show();
+						$("#commissiondetail_div").hide();
+						$("#comdetails_feedback").html("");
+						$("#commissiondetails_tbl").show();
+						$("#comdet_lbl").show();
+						document.getElementById('comdet_lbl').innerHTML = 'Commission Details For Recruiter: '+rowData.recruiterName+' , For the month of '+rowData.monthYearUI;
+						var table = $('#commissiondetails_tbl').DataTable({
+
+							destroy : true,
+							searching: false,
+							autoWidth : false,
+							/*
+							 * targets: 'no-sort', bSort: false, order: [],
+							 */
+
+							buttons : [ 'colvis' ],
+							renderer : {
+								"header" : "bootstrap"
+							},
+							data : data,
+							"order": [[ 1, "asc" ]],
+							columns : [ 
+								 {
+										"data" : 'fullName',
+										"name" : "fullName",
+										"title" : "Contractor Name"
+									},
+									 {
+								"data" : 'recruiterName',
+								"name" : "recruiterName",
+								"title" : "Recruiter"
+							}, {
+								"data" : 'ratePerDay',
+								"name" : "ratePerDay",
+								"title" : "Daily Rate"
+							}, {
+								"data" : 'billRatePerDay',
+								"name" : "billRatePerDay",
+								"title" : "Bill Rate"
+							}, {
+								"data" : 'grossMargin',
+								"name" : "grossMargin",
+								"title" : "Margin"
+							}, {
+								"data" : 'noOfDaysWorked',
+								"name" : "noOfDaysWorked",
+								"title" : "No.Of Days Worked"
+							}, {
+								"data" : 'commission',
+								"name" : "commission",
+								"title" : "Commission Percentage"
+							}, {
+								"data" : 'commissionForCandidate',
+								"name" : "commissionForCandidate",
+								"title" : "Commission Amount"
+							} ]
+
+						});
+						$('#commissiondetails_tbl tfoot tr').appendTo(
+								'#commissiondetails_tbl thead');
+
+						$("#commissiondetails_tbl tfoot tr").hide();
+						
+					}
+					else{
+							document.getElementById("comdetails_feedback").style.color = "red";
+							$('#comdetails_feedback').html("Unable to load details for the selected row. Please try again.");
+							$("#commissiondetails_div").hide();
+							$("#commissiondetail_div").show();
+							//$("#comdetails_feedback").html("");
+							$("#commissiondetails_tbl").hide();
+							$("#comdet_lbl").hide();
+							document.getElementById('comdet_lbl').innerHTML = '';
+						}
+					
+				},
+				error : function(e) {
+
+					alert("Unable to load details. " + e);
+
+				}
+			});
+		});
