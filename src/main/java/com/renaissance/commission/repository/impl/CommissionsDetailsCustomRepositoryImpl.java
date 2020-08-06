@@ -66,9 +66,12 @@ public class CommissionsDetailsCustomRepositoryImpl implements CommissionsDetail
 		if (!ProfileParserUtils.isObjectEmpty(monthYear))
 			predicates.add(cb.equal(rcCommission.get("monthYear"), monthYear));
 		
-		if (!ProfileParserUtils.isObjectEmpty(recruiterName))
-			predicates.add(cb.equal(rcCommission.get("recruiterName"), recruiterName));
-		
+		if (!ProfileParserUtils.isObjectEmpty(recruiterName)) {
+			predicates.add(cb.like(cb.upper(rcCommission.get("recruiterName")),
+					"%" + recruiterName.toUpperCase() + "%"));
+		}
+			//predicates.add(cb.like(cb.upper(rcCommission.get("recruiterName")), "%" +recruiterName.toUpperCase()+"%" ));
+		//criteriaBuilder.equal(criteriaBuilder.upper(contractorEmp.get("activeRecord")), "ACTIVE");
 		List<CommissionsDetailsEntity> commissionList = null;
 		if (predicates.size() > 0) {
 			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));

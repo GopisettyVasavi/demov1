@@ -37,7 +37,7 @@ public class RecruiterCommissionsCustomRepositoryImpl implements RecruiterCommis
 			}
 			if(!ProfileParserUtils.isObjectEmpty(searchCommissionForm.getRecruiterName())){
 				
-				predicates.add(cb.equal(cb.upper(rcCommission.get("recruiterName")), searchCommissionForm.getRecruiterName().toUpperCase()));
+				predicates.add(cb.like(cb.upper(rcCommission.get("recruiterName")), "%"+searchCommissionForm.getRecruiterName().toUpperCase()+"%"));
 			}
 		}
 		
