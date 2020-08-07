@@ -762,6 +762,8 @@ function save(commissionList){
 
 function searchcommissions(){
 	event.preventDefault();
+	$("#search_feedback").show();
+	
 	var isValid=validateSearchFields();
   if(isValid){
 	  console.log("validated");
@@ -886,6 +888,7 @@ function resetcommissions(){
 function validateSearchFields(){
 	var isvalid=true;
 	$('#search_feedback').html("");
+	$('#search_feedback').show();
 	var fromDate = $("#fromDate_s").val();
 	   var toDate =  $("#toDate_s").val();
 	   
@@ -896,16 +899,19 @@ function validateSearchFields(){
 					"Please enter at least one field as search criteria.");
 			 isvalid= false;
 	   }
-	   if((document.getElementById("period_s").value).trim() == "DateRange" && fromDate=='' && toDate==''){
+	   if((document.getElementById("period_s").value).trim() == "DateRange" ){
+		   if (fromDate=='' || toDate==''){
 		   document.getElementById("search_feedback").style.color = "red";
 			$('#search_feedback').html(
-					"Please enter Date ranges.");
+					"Please enter both From and To Date ranges.");
 			   isvalid= false;
 			  } 
+	   }
 	   if((document.getElementById("period_s").value).trim() == "DateRange" && fromDate!='' && toDate!=''){
 		   if((new Date(fromDate).getTime() <= new Date(toDate).getTime())){
 			   isvalid= true;
 			  } 
+		   
 		   else if((new Date(fromDate).getTime() > new Date(toDate).getTime())){
 			   document.getElementById("search_feedback").style.color = "red";
 				$('#search_feedback').html(
@@ -972,13 +978,14 @@ $(document).on(
 								"header" : "bootstrap"
 							},
 							data : data,
-							"order": [[ 1, "asc" ]],
+							"order": [[ 0, "asc" ]],
 							columns : [ 
 								 {
 										"data" : 'fullName',
 										"name" : "fullName",
 										"title" : "Contractor Name"
 									},
+									 
 									 {
 								"data" : 'recruiterName',
 								"name" : "recruiterName",

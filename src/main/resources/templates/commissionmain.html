@@ -97,7 +97,7 @@
 																			<label for="name" style="font-weight:bold">Select Month & Year</label> 
 																			<input type="month"
 																			class="single-input" id="commissionMonth" 
-																			data-date-format="MM/yyyy"/>	
+																			data-date-format="MM/yyyy"   autocomplete="off"/>	
 																		</div>
 																	</div>
 																</div>
@@ -175,7 +175,19 @@
 						action="contact_process.php" method="post" id="searchForm"
 						novalidate="novalidate">
 						<div class="row">
-							<div class="col-sm-4">
+						<div class="col-sm-3">
+								<div class="form-group">
+									<label for="Recruiter" style="font-weight:bold">Recruiter Name</label> <input type="text"
+										name="recruiterName_s" placeholder="Recruiter Name"
+										onfocus="this.placeholder = 'Recruiter Name'"
+										onblur="this.placeholder = 'Recruiter Name'" id="recruiterName_s"
+										class="single-input">
+								</div>
+							</div>
+							
+							<div class="col-sm-4"></div>
+							<div class="col-sm-4"></div>												
+							<div class="col-sm-3">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Period</label>
 																					<div class="input-group-icon">
@@ -194,20 +206,9 @@
 																				</div>
 																			</div>
 							
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="Recruiter" style="font-weight:bold">Recruiter Name</label> <input type="text"
-										name="recruiterName_s" placeholder="Recruiter Name"
-										onfocus="this.placeholder = 'Recruiter Name'"
-										onblur="this.placeholder = 'Recruiter Name'" id="recruiterName_s"
-										class="single-input">
-								</div>
-							</div>
 							
-							<div class="col-sm-4">
-																			</div>
 							
-							<div class="col-sm-4" id="fromdate_div" style="display: none">
+							<div class="col-sm-3" id="fromdate_div" style="display: none">
 								<div class="form-group">
 									<label for="fromDate_s" style="font-weight:bold">From Date</label> <input 
 																						data-date-format="MMM-yyyy" 
@@ -215,10 +216,10 @@
 																						onfocus="this.placeholder = 'From Date'"
 																						onblur="this.placeholder = 'From Date'"
 																						class="single-input" id="fromDate_s" 
-																						 >
+																						autocomplete="off" >
 								</div>
 							</div>
-							<div class="col-sm-4" id="todate_div" style="display: none">
+							<div class="col-sm-3" id="todate_div" style="display: none">
 								<div class="form-group">
 									<label for="toDate_s" style="font-weight:bold">To Date</label> <input 
 																						data-date-format="MMM-yyyy" 
@@ -226,7 +227,7 @@
 																						onfocus="this.placeholder = 'To Date'"
 																						onblur="this.placeholder = 'To Date'"
 																						class="single-input" id="toDate_s" 
-																						  >
+																						 autocomplete="off" >
 								</div>
 							</div>
 							
@@ -238,10 +239,11 @@
 										class="button button-contactForm boxed-btn" onclick="resetcommissions()">Reset</button>
 										
 								</div>
+								<div id="search_feedback"></div>
 							</div>
 							</div>
 							<div class="col-sm-12" id="searchresults_div" >
-							<div id="search_feedback"></div>
+							
 			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
 		 	
 			

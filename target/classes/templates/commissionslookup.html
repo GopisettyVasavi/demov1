@@ -129,10 +129,10 @@
 																					<div class="input-group-icon">
 																						
 																						<div class="form-select"  id="default-select">
-																							<select id="comm_type"  name="name" >
+																							<select id="comm_type"  name="comm_type" >
 																								<option value="none"  selected="selected">Select Commission Type</option>
-																								<option value="CONTRACT">Contract</option>
-																								<option value="PERMANENT">Permanent</option>
+																								<option value="CONTRACT">CONTRACT</option>
+																								<option value="PERMANENT">PERMANENT</option>
 																								
 																								
 																							</select>
@@ -356,7 +356,23 @@
 					var range= rowData.range.split("-");
 					$("#minRange").val(range[0]);
 					$("#maxRange").val(range[1]);
-					$("#comm_type").val(rowData.commissionType);
+					if(rowData.commissionType!='' && rowData.commissionType=='CONTRACT')
+						
+					{
+						$('#comm_type').val("CONTRACT").attr("selecte","selected");
+						console.log("rowData.commissionType: "+rowData.commissionType);
+						$('#comm_type').trigger('chosen:updated');
+						 $("#comm_type option[value='CONTRACT']").attr('selected', 'selected'); 
+						//$("#select option[value='CONTRACT']").attr('selected', 'selected'); 
+						//  $('#comm_type option:selected').attr("selected",null);
+						//$('CONTRACT[name^="comm_type"] option:selected').attr("selected",null);
+						//$('CONTRACT[name^="comm_type"] option[value="CONTRACT"]').attr("selected","selected");
+						//$("#comm_type").val("CONTRACT"); 
+						}
+					else if(rowData.commissionType!='' && rowData.commissionType=='PERMANENT'){
+						$("#comm_type").val('PERMANENT');
+					}
+					console.log("rowData.commissionType: "+rowData.commissionType)
 					$("#percentage").val(rowData.percentage);
 					
 					$("#id").val(rowData.id);

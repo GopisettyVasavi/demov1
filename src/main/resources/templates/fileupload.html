@@ -309,7 +309,7 @@
 																						onfocus="this.placeholder = 'Date of Birth'"
 																						onblur="this.placeholder = 'Date of Birth'"
 																						class="single-input" id="dateOfBirth" name="dateOfBirth"
-																						th:field="${profile.dateOfBirth}" >
+																						th:field="${profile.dateOfBirth}"  autocomplete="off">
 
 																				</div>
 																			</div>
@@ -390,7 +390,8 @@
 																						onfocus="this.placeholder = 'Valid upto'"
 																						onblur="this.placeholder = 'Valid upto'"
 																						class="single-input" id="validUpto" 
-																						name="validUpto" th:field="${profile.validUpto}" style="display: none">
+																						name="validUpto" th:field="${profile.validUpto}" style="display: none"
+																						 autocomplete="off">
 																						
 																					</div>
 																				</div>
@@ -603,7 +604,8 @@
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
 																						class="single-input" id="workStartDate" 
-																						name="workStartDate" th:field="${profile.workStartDate}">
+																						name="workStartDate" th:field="${profile.workStartDate}"
+																						 autocomplete="off">
 																					
 																						
 																				</div>
@@ -617,7 +619,8 @@
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
 																						class="single-input" id="workEndDate" 
-																						name="workEndDate" th:field="${profile.workEndDate}">
+																						name="workEndDate" th:field="${profile.workEndDate}"
+																						 autocomplete="off">
 																					
 																				</div>
 																			</div>
@@ -674,7 +677,8 @@
 																						onfocus="this.placeholder = 'Assigned Date'"
 																						onblur="this.placeholder = 'Assigned Date'"
 																						class="single-input" id="assignedDate" 
-																						name="assignedDate" th:field="${profile.assignedDate}">
+																						name="assignedDate" th:field="${profile.assignedDate}"
+																						 autocomplete="off">
 																					<!-- <input type="text" name="mobile_number" placeholder="Mobile number"
                                                                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile number'"
                                                                                 required class="single-input"> -->

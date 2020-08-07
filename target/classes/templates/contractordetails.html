@@ -215,7 +215,8 @@
 																						onfocus="this.placeholder = 'Date of Birth'"
 																						onblur="this.placeholder = 'Date of Birth'"
 																						class="single-input" id="dateOfBirth" name="dateOfBirth" required="required"
-																						th:field="${contractor.personalDetails.dateOfBirth}">
+																						th:field="${contractor.personalDetails.dateOfBirth}"
+																						 autocomplete="off">
 
 																				</div>
 																			</div>
@@ -350,7 +351,8 @@
 																						onblur="this.placeholder = 'Valid upto'"
 																						class="single-input" id="validUpto" 
 																						name="validUpto"  style="display: none"
-																						th:field="${contractor.personalDetails.visaValidDate}">
+																						th:field="${contractor.personalDetails.visaValidDate}"
+																						 autocomplete="off">
 								</div>
 							</div>
 																		<div class="col-sm-4"></div>
@@ -1317,7 +1319,8 @@
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
 																						class="single-input" id="jobStartDate" 
-																						name="startDate"  th:field="${contractor.employerList.jobStartDate}">
+																						name="startDate"  th:field="${contractor.employerList.jobStartDate}"
+																						 autocomplete="off">
 																					
 																						
 																				</div>
@@ -1331,7 +1334,8 @@
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
 																						class="single-input" id="jobEndDate" 
-																						name="endDate" th:field="${contractor.employerList.jobEndDate}" >
+																						name="endDate" th:field="${contractor.employerList.jobEndDate}" 
+																						 autocomplete="off">
 																					
 																						
 																				</div>
@@ -1473,7 +1477,7 @@
 																						onfocus="this.placeholder = 'Start Date'"
 																						onblur="this.placeholder = 'Start Date'"
 																						class="single-input" id="rateStartDate" 
-																						name="startDate"  th:field="${contractor.rateList.rateStartDate}">
+																						name="startDate"  autocomplete="off" th:field="${contractor.rateList.rateStartDate}">
 																					
 																						
 																				</div>
@@ -1487,7 +1491,7 @@
 																						onfocus="this.placeholder = 'End Date'"
 																						onblur="this.placeholder = 'End Date'"
 																						class="single-input" id="rateEndDate" 
-																						name="endDate" th:field="${contractor.rateList.rateEndDate}" >
+																						name="endDate"    autocomplete="off" th:field="${contractor.rateList.rateEndDate}" >
 																					
 																						
 																				</div>
@@ -1658,7 +1662,7 @@
 																						onfocus="this.placeholder = 'Last Working Date'"
 																						onblur="this.placeholder = 'Last Working Date'"
 																						class="single-input" id="lastWorkingDate" 
-																						name="lastWorkingDate"  th:field="${contractor.employerList.lastWorkingDate}">
+																						name="lastWorkingDate"   autocomplete="off"   th:field="${contractor.employerList.lastWorkingDate}">
 																					
 																						
 																				</div>
