@@ -18,7 +18,7 @@ public class AppConstantsEntity {
 
 	)
 	@Column(name = "\"ID\"", unique = true)
-	private Integer Id;
+	private Integer id;
 	
 	@Column(name = "\"CONSTANT_NAME\"")
 	private String constantName;
@@ -29,12 +29,15 @@ public class AppConstantsEntity {
 	@Column(name = "\"EFFECTIVE_FROM\"")
 	private LocalDate effectiveFrom;
 	
+	@Column(name = "\"EFFECTIVE_TO\"")
+	private LocalDate effectiveTill;
+	
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getConstantName() {
@@ -61,12 +64,22 @@ public class AppConstantsEntity {
 		this.effectiveFrom = effectiveFrom;
 	}
 
+	public LocalDate getEffectiveTill() {
+		return effectiveTill;
+	}
+
+	public void setEffectiveTill(LocalDate effectiveTill) {
+		this.effectiveTill = effectiveTill;
+	}
+
 	@Override
 	public String toString() {
-		return "AppConstantsEntity [Id=" + Id + ", constantName=" + constantName + ", constantValue=" + constantValue
-				+ ", effectiveFrom=" + effectiveFrom + "]";
+		return "AppConstantsEntity [Id=" + id + ", constantName=" + constantName + ", constantValue=" + constantValue
+				+ ", effectiveFrom=" + effectiveFrom + ", effectiveTill=" + effectiveTill + "]";
 	}
 
 	
+
+		
 	
 }

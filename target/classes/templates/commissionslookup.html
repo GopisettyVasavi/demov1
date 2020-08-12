@@ -27,7 +27,21 @@
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/slicknav.css">
 <link rel="stylesheet" href="css/style.css">
-
+<style>
+.dropdown {
+  display: block;
+    width: 100%;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    background: #fcfcff;
+    padding: 0 10px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+</style>
 </head>
 
 <!-- header-start -->
@@ -126,10 +140,11 @@
 					<div class="col-sm-3">
 						<div class="form-group">
 																					<label for="name" style="font-weight:bold">Type *</label>
-																					<div class="input-group-icon">
+																					<div class="input-group-icon" >
 																						
-																						<div class="form-select"  id="default-select">
-																							<select id="comm_type"  name="comm_type" >
+																						<div class="form-select"  >
+																							<select id="comm_type"  name="comm_type" class="dropdown"
+																							 >
 																								<option value="none"  selected="selected">Select Commission Type</option>
 																								<option value="CONTRACT">CONTRACT</option>
 																								<option value="PERMANENT">PERMANENT</option>

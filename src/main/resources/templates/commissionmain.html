@@ -27,7 +27,21 @@
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/slicknav.css">
 <link rel="stylesheet" href="css/style.css">
- 
+ <style>
+.dropdown {
+  display: block;
+    width: 100%;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    background: #fcfcff;
+    padding: 0 10px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+</style>
 </head>
 
 <body onload="initialize()">
@@ -192,8 +206,8 @@
 																					<label for="name" style="font-weight:bold">Period</label>
 																					<div class="input-group-icon">
 																						
-																						<div class="form-select"  id="default-select">
-																							<select id="period_s"  name="period_s" onchange="showdatefields()">
+																						<div class="form-select" >
+																							<select id="period_s" class="dropdown" name="period_s" onchange="showdatefields()">
 																								<option value="none"  selected="selected">Select Period</option>
 																								<option value="CurrentFY">This Financial Year</option>
 																								<option value="PreviousFY">Last Financial Year</option>

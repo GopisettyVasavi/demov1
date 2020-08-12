@@ -1,5 +1,13 @@
 package com.renaissance.profile.parser.web;
 
+import static com.renaissance.util.APIConstants.CONSTANTS_DEF;
+import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
+import static com.renaissance.util.APIConstants.GET_CONSTANTS;
+import static com.renaissance.util.APIConstants.UPDATE_CONSTANTS;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -15,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
-import static com.renaissance.util.APIConstants.*;
 
 @Controller
 public class ConstantsMVCController {
@@ -43,10 +50,7 @@ public class ConstantsMVCController {
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto,
 			HttpServletRequest request) {
 		try {
-			
-			constantsDto=constantsService.saveConstants(constantsDto);
-			
-			// contractorDto.getPersonalDetails().setL
+			constantsDto=constantsService.saveConstant(constantsDto);
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
@@ -63,19 +67,17 @@ public class ConstantsMVCController {
 	@GetMapping(GET_CONSTANTS)
 	public ResponseEntity<?> getConstants(
 			HttpServletRequest request) {
-		ConstantsDTO constantsDto=null;
+		List<ConstantsDTO> constantsList=new ArrayList<ConstantsDTO>();
 		try {
 			
-			 constantsDto=constantsService.getConstants();
-			logger.info("Constants values from DB,{} ",constantsDto.toString());
-			// contractorDto.getPersonalDetails().setL
+			constantsList=constantsService.getConstants();
 		} catch (Exception e) {
 			logger.error("Error in loading constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
 					.body(" An issue in loading constant. Please try again. \n" + e.getMessage());
 		}
 		
-		return new ResponseEntity<>(constantsDto, HttpStatus.OK);
+		return new ResponseEntity<>(constantsList, HttpStatus.OK);
 	}
 
 }
