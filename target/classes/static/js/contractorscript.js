@@ -1073,7 +1073,8 @@ function retrievePayrollTax(){
 		
 		$("#payrolltaxvalue_lbl").text("");
 	}
-	
+	calcPercentages();
+
 	
 }
 function retrieveInsurancePercent(){
@@ -1093,6 +1094,7 @@ function retrieveInsurancePercent(){
 					var insurance=$("#ratePerDay").val() * data/100;
 					$("#insurancevalue_lbl").text("Insurance: $  "+insurance+".00");
 				}
+				calcPercentages();
 			},
 			error : function(e) {
 
@@ -1101,8 +1103,10 @@ function retrieveInsurancePercent(){
 			}
 		});
 		
-	}else  {$("#insurancePercent").val(0);
-	$("#insurancevalue_lbl").text("");}
+	}else  {
+		$("#insurancePercent").val(0);
+	$("#insurancevalue_lbl").text("");
+	}
 	calcPercentages();
 	
 }
@@ -1114,8 +1118,10 @@ function calcPercentages(){
 		var payrolltaxval=0.0;
 		var referralValue=0.0;
 		var margin=0.0;
+		
 		if( $("#insurancePercent").val()!="" && $("#insurancePercent").val()!=0){
 		 insurance=$("#ratePerDay").val() * $("#insurancePercent").val()/100;
+		 //console.log("insurance "+insurance);
 		insurance=insurance.toFixed(2);
 		$("#insurancevalue_lbl").text("Insurance: $  "+insurance);
 		}
@@ -1150,6 +1156,7 @@ function calcPercentages(){
 			var billrate=Number($("#billRatePerDay").val());
 			var contractorRate=Number($("#ratePerDay").val());
 			//alert(billrate+" "+contractorRate+" "+insurance+" "+payrolltaxval+" "+referralValue);
+			//console.log("insurance "+insurance+" payrolltaxval "+payrolltaxval);
 			margin=(billrate-(Number(contractorRate)+Number(insurance)+Number(payrolltaxval)+Number(referralValue))).toFixed(2);
 			$("#margin").val(margin);
 			

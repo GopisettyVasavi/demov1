@@ -175,6 +175,9 @@ function createCommission(){
 				//console.log(e.responseText);
 			}
 		});
+	}else{
+		document.getElementById("monthyear_feedback").style.color = "red";
+		$('#monthyear_feedback').html("Please select a month and year to run commissions.");
 	}
 	//return false;
 }
@@ -183,7 +186,7 @@ function createCommission(){
 function checkdayscount(count){
 	 var txt="#txtName"+count;
 	 if($(txt).val()!='' && $(txt).val()>31){
-		 alert("Total No. Of Days worked should be less than or equal to 31." );
+		 alert("Total Worked No. Of Days worked should be less than or equal to 31." );
 		 document.getElementById("txtName"+count).focus();
 		return false; 
 	 }
@@ -226,7 +229,7 @@ function calculateCommission(){
 	
 	 if(emptyRows!=""){
 		// alert("No.of Days is not entered for the rows: "+emptyRows);
-		 if (confirm("No.of Days is not entered for the rows: "+emptyRows)) {
+		 if (confirm("Worked No.of Days is not entered for the rows: "+emptyRows)) {
 			 invokeMarginCalc(commissionList);
 			} else {
 			 return false;

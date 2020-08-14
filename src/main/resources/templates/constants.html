@@ -255,16 +255,62 @@
 		window.location='/index'
 
 	}
-		function clickonsave() {
-			$('#feedback').html("");
+	
+	function processValidation(){
+		var constantsList=[];
+		var table = $('#constants_tbl').DataTable();
+		table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+			var d = this.data();
 			
-			event.preventDefault();
-			if($("#constantName").val()=="" || $("#constantValue").val()=="" || $("#effectiveFrom").val()==""
-					|| $("#effectiveTill").val()=="none" ){
-				document.getElementById("feedback").style.color = "red";
-				$('#feedback').html("Validation error: Please enter values for all fields.");
+			if($("#constantName").val()==d.constantName){
+				console.log("Matching contant exists..");
+				if((Number($("#constantValue").val())==Number(d.constantValue)) &&
+						$("#effectiveFrom").val()==d.effectiveFrom  &&  $("#effectiveTill").val()==d.effectiveTill)
+					$('#feedback').html("Warning: Same data for this constant is already existing. Please enter different values and save.");
 				return false;
 			}
+		    /* var d = this.data();
+		    var constantsDTO = {}
+		    constantsDTO["constantName"] =d.constantName;
+			constantsDTO["constantValue"] = d.constantValue;
+			constantsDTO["effectiveFrom"] = d.effectiveFrom;
+			constantsDTO["effectiveTill"] = d.effectiveTill;
+		   //console.log(commissionDTO);
+		   constantsList[i]=constantsDTO;
+		   i++; */
+		   
+		} );
+		return true;
+	}
+		function clickonsave() {
+			$('#feedback').html("");
+			var isValid=true;
+			event.preventDefault();
+			if($("#constantName").val()=="" || $("#constantValue").val()=="" || $("#effectiveFrom").val()==""
+					|| $("#effectiveTill").val()=="" ){
+				document.getElementById("feedback").style.color = "red";
+				$('#feedback').html("Validation error: Please enter values for all fields.");
+				isValid=false;
+				return false;
+			}
+			var table = $('#constants_tbl').DataTable();
+			table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+				var d = this.data();
+				
+				if($("#constantName").val()==d.constantName){
+					console.log("Matching contant exists..");
+					if((Number($("#constantValue").val())==Number(d.constantValue)) &&
+							$("#effectiveFrom").val()==d.effectiveFrom  &&  $("#effectiveTill").val()==d.effectiveTill){
+						$('#feedback').html("Warning: Same data for this constant is already existing. Please enter different values and save.");
+					//break;
+					isValid=false;
+					return false;
+					}
+				}
+			    
+			   
+			} );
+if(isValid){
 			var constantsDTO = {}
 			constantsDTO["constantName"] = $("#constantName").val();
 			constantsDTO["constantValue"] = Number($("#constantValue").val());
@@ -293,6 +339,7 @@
 							console.log("ERROR : ", e);
 						}
 					});
+}
 		}
 
 		function initialize() {
@@ -388,7 +435,7 @@
 				function(e)
 
 				{
-
+					$('#feedback').html("");
 					var table = $('#constants_tbl').DataTable();
 					var rowData = table.row(this).data();
 					// alert('called'+rowData.contractorId);
