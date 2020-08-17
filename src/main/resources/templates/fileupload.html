@@ -114,6 +114,8 @@
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
 											id="selectFileId" oninput="copyFile()">
 									</div>
+																<div id="file_feedback"></div>
+									
 									<div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert" id="divUploadSuccess"></div>
 									<!-- <div th:if="${fileLocation}" th:text="${fileLocation}" class="alert alert-success" role="alert" id="divUploadSuccess"></div> -->
 									<div class="col-md-12">
@@ -265,7 +267,7 @@
 																			</div>
 																			<div class="col-sm-6">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Secondary Contact Number</label>
+																					<label for="secondaryPhone" style="font-weight:bold">Secondary Contact Number</label>
 																					<input type="text"
 																						placeholder="Secondary Contact number"
 																						onfocus="this.placeholder = ''"
@@ -383,7 +385,7 @@
 																				</div>
 																				<div class="col-sm-6" id="valid_div" style="display: none">
 																				<div class="form-group">
-																						<label for="name" id="validupto_lbl" style="font-weight:bold" >Valid upto</label>
+																						<label for="Valid upto" id="validupto_lbl" style="font-weight:bold" >Valid upto</label>
 																						<input 
 																						data-date-format="dd/MM/yyyy" 
 																						 placeholder="Valid upto"
@@ -396,6 +398,8 @@
 																					</div>
 																				</div>
 																		</div>
+																	<div id="personal_feedback"></div>
+																		
 																	</form>
 																</div>
 															</div>

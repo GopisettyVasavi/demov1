@@ -927,9 +927,9 @@ function contractorSearch() {
 
 function statechange() {
 	$('.state_id option').each(function() {
-		alert("called " + $(this).val());
+		//alert("called " + $(this).val());
 		if ($(this).val() == 'none') {
-			alert("set...");
+			//alert("set...");
 			$(this).prop("selected", true);
 			// $(this).val("none").change();
 		}

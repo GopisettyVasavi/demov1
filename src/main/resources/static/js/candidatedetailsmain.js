@@ -60,6 +60,7 @@ function updateProfile() {
 	//alert( $("#validUpto_dtl").val());
 	var url = "/createProfile";
 	event.preventDefault();
+	 $('#personal_feedback').html("");
 	//alert($("#lastupdateddatetime_dtl").val());
 	var firstName = document.getElementById("firstName_dtl").value;
 	var lastName = document.getElementById("lastName_dtl").value;
@@ -69,13 +70,15 @@ function updateProfile() {
 	//alert($("#visatype").val())
 	if (firstName.trim() == "" || primaryEmail.trim() == ""
 			|| primaryPhone.trim() == ""|| lastName.trim() == "") {
+		document.getElementById("personal_feedback").style.color = "red";
 
-		alert("Name, Primary Email and Primary Contact No fields cannot be blank.");
+	  	  $('#personal_feedback').html("Name, Primary Email and Primary Contact No fields cannot be blank.");
+		//alert("Name, Primary Email and Primary Contact No fields cannot be blank.");
 	} else {
 		/*var d=$("#validUpto_dtl").datepicker.parseDate("dd/mm/yy", "22/04/2009");
 		
 alert(d);*/
-		alert("Middle "+$("#middleName_dtl").val());
+		//alert("Middle "+$("#middleName_dtl").val());
 		var candidateDto = {}
 		candidateDto["candidateId"] = $("#candidateId_dtl").val();
 		candidateDto["candidateName"] = $("#firstName_dtl").val()+" "+$("#middleName_dtl").val()+" "+$("#lastName_dtl").val();

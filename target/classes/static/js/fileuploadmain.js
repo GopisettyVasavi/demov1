@@ -1,11 +1,14 @@
 
 function checkFileSelected(event) {
 
-	
+	$('#file_feedback').html("");
 	var selectedFile = document.getElementById("selectFileId").value;
 	if (null == selectedFile || selectedFile == '') {
 		event.preventDefault();
-		alert("Please select a profile to upload.");
+		document.getElementById("file_feedback").style.color = "red";
+
+  	  $('#file_feedback').html("Please select a profile to upload.");
+		//alert("Please select a profile to upload.");
 		return false;
 	} else{
 		 $("#singlefileupload_btn").val("Processing ...").button("refresh");
@@ -35,7 +38,7 @@ function copyFile(){
 function createProfile() {
 	var url = "/createProfile";
 	event.preventDefault();
-	
+	$('#personal_feedback').html("");
 	var firstName = document.getElementById("firstName").value;
 	var middleName = document.getElementById("middleName").value;
 	var lastName = document.getElementById("lastName").value;
@@ -44,8 +47,11 @@ function createProfile() {
 	//alert($("#visatype").val())
 	if (firstName.trim() == "" || primaryEmail.trim() == ""
 			|| primaryPhone.trim() == ""|| lastName.trim() == "") {
+		document.getElementById("personal_feedback").style.color = "red";
 
-		alert("Name, Primary Email and Primary Contact No fields cannot be blank.");
+  	  $('#personal_feedback').html("Name, Primary Email and Primary Contact No fields cannot be blank.");
+
+		//alert("Name, Primary Email and Primary Contact No fields cannot be blank.");
 	} else {
 		/*var d=$("#workStartDate_dtl").datepicker.parseDate("dd/mm/yy", "22/04/2009");
 		
@@ -358,7 +364,7 @@ $.upload = function(url, form, _callback) {
         contentType: false,
         success:function(data) {
 			
-			alert("Profile loaded.."+data);
+			//alert("Profile loaded.."+data);
 			
 
 		},

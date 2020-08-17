@@ -96,7 +96,8 @@ function clickonsearch(){
 	    	  && $("#skill_s").val() =="" && $("#availability_s").val()=="" && $("#currentLocation_s").val()=="" 
 	        	&&	$("#workexperience_s").val() =="" && $("#certification_s").val()=="" &&
 	        	( $("#visatype_s").val()=="" || $("#visatype_s").val()==null|| $("#visatype_s").val()=="null"||$("#visatype_s").val()=="none")){
-	        	
+	  		document.getElementById("feedback").style.color = "red";
+
 	    	  $('#feedback').html("Please enter at least one value to search profiles.");
 	        	//alert("Please enter at least one value to search profiles.");
 	        }

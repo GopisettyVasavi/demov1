@@ -630,7 +630,7 @@ var commissionList=[];
 		cache : false,
 		timeout : 600000,
 		success : function(data) {
-			alert("data saved");
+			alert("Commissions details data saved.");
 			document.getElementById("tempSave_btn").disabled = true;
 		},
 		error : function(e) {
@@ -750,7 +750,7 @@ function save(commissionList){
 		cache : false,
 		timeout : 600000,
 		success : function(data) {
-			alert("data saved");
+			alert("Commissions details data saved.");
 			//document.getElementById("tempSave_btn").disabled = true;
 		},
 		error : function(e) {
