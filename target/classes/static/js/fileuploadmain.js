@@ -1,4 +1,8 @@
-
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+	document.getElementById("selectFileId").focus();
+	document.getElementById("candidateName_s").focus();
+    //alert('TAB CHANGED');
+});
 function checkFileSelected(event) {
 
 	$('#file_feedback').html("");
@@ -234,6 +238,7 @@ function setSelectedVisaType() {
 }
 
 function renderfile(){
+	document.getElementById("selectFileId").focus();
 	if(document.getElementById("embedId")!=null){
 		 $("#singlefileupload_btn").val("Upload").button("refresh");
 		var val=doesFileExist(document.getElementById("embedId").src);

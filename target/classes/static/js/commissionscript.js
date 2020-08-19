@@ -1,4 +1,11 @@
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+	document.getElementById("commissionMonth").focus();
+	document.getElementById("recruiterName_s").focus();
+    //alert('TAB CHANGED');
+});
+
 function initialize(){
+	document.getElementById("commissionMonth").focus();
 	$("#commissions_feedback").hide();
 	$("#commissions_div").hide();
 	$("#commissiontable").hide();

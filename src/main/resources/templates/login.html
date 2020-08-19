@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-<body>
+<body onload="init()">
 
 <div class="container" style="min-height: 500px">
 
@@ -95,6 +95,9 @@
         src="webjars/jquery/2.2.4/jquery.min.js"></script>
 
 <script type="text/javascript">
+function init(){
+	document.getElementById("username").focus();
+}
 function register(){
 	 $.ajax({
 	        type: "GET",

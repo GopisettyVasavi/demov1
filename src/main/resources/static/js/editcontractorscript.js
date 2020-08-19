@@ -1,5 +1,14 @@
+function disableF5(e) { if ((e.which || e.keyCode) == 116) e.preventDefault();
+else if ((e.which || e.keyCode) == 154) e.preventDefault();}
+function disableRefresh(){
+	$(document).bind("keydown", disableF5);
+	/* OR jQuery >= 1.7 */
+	$(document).on("keydown", disableF5);
+}
 function initialize_details(){
 	//calculateMargin();
+	document.getElementById("firstName").focus();
+disableRefresh();
 	populateRecruiterList();
 	//alert($("#gender_dtl").val());
 	if($("#gender_dtl").val()=="male"){

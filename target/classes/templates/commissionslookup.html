@@ -274,6 +274,7 @@
 		}
 
 		function initialize() {
+			document.getElementById("minRange").focus();
 			$("#addlookup_div").hide();
 			 $("#id").val("");
 			
@@ -346,7 +347,9 @@
 
 		}
 		function addnewLookup(){
+			document.getElementById("minRange").focus();
 			event.preventDefault();
+			
 			$("#addlookup_div").show();
 			$("#minRange").val("");
 			$("#maxRange").val("");
@@ -354,6 +357,7 @@
 			$("#percentage").val("");
 			
 			$("#id").val("");
+			document.getElementById("minRange").focus();
 		}
 
 		
@@ -363,6 +367,7 @@
 				function(e)
 
 				{
+					document.getElementById("minRange").focus();
 					$('#feedback').html("");
 					var table = $('#commissionslookup_tbl').DataTable();
 					var rowData = table.row(this).data();

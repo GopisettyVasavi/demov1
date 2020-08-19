@@ -32,7 +32,7 @@
 
 </head>
 
-<body >
+<body onload="init()">
 
 <!-- header-start -->
     <header>
@@ -170,7 +170,10 @@
 	
 	
 	<script>
-	
+	function init(){
+		document.getElementById("selectFileId").focus();
+
+	}
 	$(document).ready(function(){ 
 		$('#dateOfBirth').datepicker({
 			iconsLibrary : 'fontawesome',

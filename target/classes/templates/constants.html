@@ -344,6 +344,7 @@ if(isValid){
 
 		function initialize() {
 			$("#addlookup_div").hide();
+			document.getElementById("constantName").focus();
 			 $("#id").val("");
 			
 						$.ajax({
@@ -419,6 +420,8 @@ if(isValid){
 		}
 		function addnewLookup(){
 			event.preventDefault();
+			document.getElementById("constantName").focus();
+
 			$("#addlookup_div").show();
 			$("#constantName").val("");
 			$("#constantValue").val("");
@@ -435,6 +438,7 @@ if(isValid){
 				function(e)
 
 				{
+					document.getElementById("constantName").focus();
 					$('#feedback').html("");
 					var table = $('#constants_tbl').DataTable();
 					var rowData = table.row(this).data();

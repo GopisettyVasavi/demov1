@@ -2,9 +2,17 @@ function windowClose() {
 		window.open('','_parent','');
 		window.close();
 		}
-
+function disableF5(e) { if ((e.which || e.keyCode) == 116) e.preventDefault();
+else if ((e.which || e.keyCode) == 154) e.preventDefault();}
+function disableRefresh(){
+	$(document).bind("keydown", disableF5);
+	/* OR jQuery >= 1.7 */
+	$(document).on("keydown", disableF5);
+}
 function initialize(){
 //alert($("#lastupdateddatetime_dtl").val());
+	document.getElementById("firstName_dtl").focus();
+	disableRefresh();
 	if(document.getElementById("filePath_dtl").value!=null){
 		//alert(document.getElementById("embedId").src);
 		document.getElementById("objid_dtl").src=document.getElementById("filePath_dtl").value;

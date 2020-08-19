@@ -75,7 +75,7 @@ $(document).on("click","#paginatedTable tbody tr", function (e)
 		        	
 		           //alert("pageloaded"+rowData.candidateId);
 		          // alert("page loaded.."+data[0]);
-		          var win = window.open("/candidatedetails/"+rowData.candidateId);
+		          var win = window.open("/candidatedetails/"+rowData.candidateId,"candidatedetails","status=1,toolbar=0");
 		        	// var win = window.open("/profileparser");
 		           win.focus();
 		            

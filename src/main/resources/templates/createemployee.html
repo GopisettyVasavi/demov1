@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-<body>
+<body onload="init()">
 
 <div class="col-lg-12">
 					<form class="form-contact contact_form"
@@ -248,7 +248,10 @@
         <script src="js/main.js"></script>
 
 <script type="text/javascript">
+function init(){
+	document.getElementById("firstName").focus();
 
+}
 function reset() {
 	//window.open('','_parent','');
 	event.preventDefault();

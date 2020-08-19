@@ -1,4 +1,13 @@
+
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+	document.getElementById("contractorName_s").focus();
+	document.getElementById("firstName").focus();
+    //alert('TAB CHANGED');
+});
 function initialize() {
+	
+	
+	document.getElementById("firstName").focus();
 
 	$
 			.ajax({
@@ -962,8 +971,9 @@ $(document).on(
 				cache : false,
 				timeout : 600000,
 				success : function(data) {
+					
 					var win = window.open("/contractordetails/"
-							+ rowData.contractorId);
+							+ rowData.contractorId, "mywindow","status=1,toolbar=0");
 				},
 				error : function(e) {
 
