@@ -1,53 +1,39 @@
-2020-08-19 01:31:26,628 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s555ms303탎400ns).
-2020-08-19 03:43:21,422 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s777ms810탎199ns).
-2020-08-19 05:54:47,472 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m26s30ms173탎600ns).
-2020-08-19 08:06:12,275 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s791ms186탎100ns).
-2020-08-19 10:17:36,438 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m24s148ms549탎).
-2020-08-19 12:29:01,537 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h1m25s90ms808탎500ns).
-2020-08-19 13:24:46,547 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m44s996ms815탎300ns).
-2020-08-19 14:16:01,824 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m15s196ms441탎900ns).
-2020-08-19 14:31:52,337 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m50s515ms377탎200ns).
-2020-08-19 14:33:31,050 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Found matching User details for: {}renaissance
-2020-08-19 14:33:31,296 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Logged in user name before rendering page, pageload.. Renaissance
-2020-08-19 14:37:01,628 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-6] Search details, ProfileSearchForm [candidateName=, primaryEmail=, primaryContactNo=, skill=, currentLocation=, availability=, visaType=Dependent Visa, workExperience=, certification=]
-2020-08-19 14:37:01,673 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] Search Results personal table, 3
-2020-08-19 14:37:01,674 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] Search Results profile table, 0
-2020-08-19 14:37:01,674 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] List size before.. ,3
-2020-08-19 14:37:01,677 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] List size after.. ,3
-2020-08-19 14:37:01,714 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] All details,60 Arti Yadav Dependent Visa
-2020-08-19 14:37:01,721 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] All details,70 Ashish Sharma Dependent Visa
-2020-08-19 14:37:01,727 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-6] All details,114 Prasad age1| 4 Dependent Visa
-2020-08-19 14:37:01,727 INFO com.renaissance.profile.parser.web.ProfileSearchMvcController [http-nio-8090-exec-6] Search Results, 3
-2020-08-19 14:37:40,210 INFO com.renaissance.profile.parser.service.ProfileService [http-nio-8090-exec-3] All details,60 Arti Yadav Dependent Visa
-2020-08-19 14:37:55,952 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-9] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@cfc0034
-2020-08-19 14:37:57,920 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] File original file name::GOPISEV 2014.pdf 
-2020-08-19 14:37:58,071 WARN org.apache.tika.parsers.PDFParser [http-nio-8090-exec-3] J2KImageReader not loaded. JPEG2000 files will not be processed.
-See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
-for optional dependencies.
-
-2020-08-19 14:37:58,099 WARN org.apache.tika.parser.SQLite3Parser [http-nio-8090-exec-3] org.xerial's sqlite-jdbc is not loaded.
-Please provide the jar on your classpath to parse sqlite files.
-See tika-parsers/pom.xml for the correct version.
-2020-08-19 14:37:58,869 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-3] File for chrome render.. GOPISEV 2014.pdf
-2020-08-19 14:38:07,540 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
-2020-08-19 14:38:14,544 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Register Employee Mvc Controller invoked
-2020-08-19 14:38:14,590 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Register Employee Mvc Controller invoked
-2020-08-19 14:38:25,631 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-7] Register Employee Mvc Controller invoked
-2020-08-19 14:38:28,184 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Register Employee Mvc Controller invoked
-2020-08-19 14:38:29,581 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked
-2020-08-19 14:38:36,657 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:38:36,678 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:38:49,528 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-3] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:41:22,980 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Found matching User details for: {}renaissance
-2020-08-19 14:41:23,131 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
-2020-08-19 14:41:32,519 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-10] Register Employee Mvc Controller invoked
-2020-08-19 14:41:32,530 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked
-2020-08-19 14:43:31,203 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked
-2020-08-19 14:43:35,386 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:43:35,395 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-9] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:44:22,591 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Register Employee Mvc Controller invoked, ChangePassword
-2020-08-19 14:44:40,521 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-8] Found matching User details for: {}renaissance
-2020-08-19 14:44:40,649 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Logged in user name before rendering page, pageload.. Renaissance
-2020-08-19 14:44:46,897 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Controller invoked to retrieve recruiter list 
-2020-08-19 14:44:46,903 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Recruiter list size...,2 
-2020-08-19 14:45:36,379 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-6]
+2020-08-25 12:45:57,730 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4d19h25m788ms885탎800ns).
+2020-08-25 13:46:50,432 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Found matching User details for: {}renaissance
+2020-08-25 13:46:50,640 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-25 13:49:28,147 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-25 13:49:30,013 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-3] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=26-30, percentage=5.0, commissionType=PERMANENT, minRange=null, maxRange=null], CommissionsLookupDTO [range=31-35, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=36-40, percentage=1.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-08-25 13:49:42,372 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-25 13:50:00,915 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=null, endDate=null]
+2020-08-25 13:50:00,916 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-7] Search details, SearchCommissionForm [period=PreviousFY, fromDate=, recruiterName=, toDate=, startDate=2019-07-01, endDate=2020-06-30]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=190.3, contractCommissionTotalSuper=180.8, monthYear=2020-06-01, monthYearUI=null, orderDate=2020-06-01]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=350.26, contractCommissionTotalSuper=340.76, monthYear=2020-06-01, monthYearUI=null, orderDate=2020-06-01]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=185.7, contractCommissionTotalSuper=176.2, monthYear=2020-01-01, monthYearUI=null, orderDate=2020-01-01]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=485.85, contractCommissionTotalSuper=476.35, monthYear=2020-01-01, monthYearUI=null, orderDate=2020-01-01]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=vasavi, contractCommissionTotal=764.6, contractCommissionTotalSuper=755.1, monthYear=2019-10-01, monthYearUI=null, orderDate=2019-10-01]
+2020-08-25 13:50:00,929 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-7] Processed search result...,RecruiterCommissionsDTO [recruiterName=Kavitha, contractCommissionTotal=2439.42, contractCommissionTotalSuper=2429.92, monthYear=2019-10-01, monthYearUI=null, orderDate=2019-10-01]
+2020-08-25 13:50:06,057 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Controller invoked, to load details...id is, 2020-01-01, vasavi
+2020-08-25 13:50:06,057 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-5] Controller invoked, after format ...id is, 01/2020
+2020-08-25 13:50:06,076 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-5] Commissions exist....
+2020-08-25 13:50:22,016 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Controller invoked, to load details...id is, 2020-01-01, vasavi
+2020-08-25 13:50:22,017 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-1] Controller invoked, after format ...id is, 01/2020
+2020-08-25 13:50:22,020 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-1] Commissions exist....
+2020-08-25 13:50:25,066 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Controller invoked, to load details...id is, 2019-10-01, Kavitha
+2020-08-25 13:50:25,066 INFO com.renaissance.commission.web.CommissionMVCController [http-nio-8090-exec-8] Controller invoked, after format ...id is, 10/2019
+2020-08-25 13:50:25,069 INFO com.renaissance.commission.service.CommissionManagmentService [http-nio-8090-exec-8] Commissions exist....
+2020-08-25 13:50:37,819 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Register Employee Mvc Controller invoked
+2020-08-25 13:50:37,845 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked
+2020-08-25 13:50:45,353 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked, ChangePassword
+2020-08-25 13:50:45,373 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Register Employee Mvc Controller invoked, ChangePassword
+2020-08-25 13:50:51,920 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Register Employee Mvc Controller invoked, ChangePassword
+2020-08-25 13:59:13,967 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] No users found for: {}renaissance
+2020-08-25 13:59:53,985 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Found matching User details for: {}renaissance
+2020-08-25 13:59:54,151 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-25 14:00:06,310 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] No users found for: {}renaissance
+2020-08-25 14:02:39,344 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-3] No users found for: {}renaissance
+2020-08-25 14:03:29,102 ERROR com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] No users found for: {}renaissance
+2020-08-25 14:03:36,480 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Found matching User details for: {}renaissance
+2020-08-25 14:03:36,647 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] Logged in user name before rendering page, pageload.. Renaissance
+2020-08-25 14:06:36,900 INFO com.renaissance.profile.parser.web.FileuploadMvcController [http-nio-8090-exec-7] File selected... org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@55cf207
+2020-08-25 14:06:38,624 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcController [http-nio-8090-exec-9] Bulk upload START::: ,Tue Aug 25 14:06:38 AEST 2020
+2020-08-25 14:06:38,624 INFO com.renaissance.profile.parser.web.BulkFileUploadMvcControl

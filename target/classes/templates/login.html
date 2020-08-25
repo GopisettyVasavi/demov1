@@ -86,7 +86,7 @@
 <a href="#" onclick="changepassword()" style="text-decoration:underline;"> click here.</a></h6>
  
 </div>
-	<div id="feedback"></div>
+	<div id="feedback" style="color: red"></div>
     </div>
 
 </div>
@@ -136,6 +136,7 @@ function changepassword(){
 	        },
 	        error: function (e) {
 	        	 var json = "<h4>Response Error: Error in redirecting.";
+	        	// document.getElementById("feedback").style.color = "red";
 	             $('#feedback').html(json);
 
 	        }
@@ -144,7 +145,11 @@ function changepassword(){
 }
 function clickonlogin(){
 	  event.preventDefault();
-
+if($("#username").val()=='' || $("#password").val()==''){
+	document.getElementById("feedback").style.color = "red";
+    $('#feedback').html("Validation Error: User name and Password can not be empty!");
+    return false;
+}
     var loginForm = {}
     loginForm["username"] = $("#username").val();
     loginForm["password"] = $("#password").val();
@@ -160,21 +165,19 @@ function clickonlogin(){
         cache: false,
         timeout: 600000,
         success: function (data) {
-        	//alert(data.result.employeeRole);
-        	//alert()
-           /* if(data.result.employeeRole==""|| data.result.employeeRole=="undefined"||data.result.employeeRole=="Recruiter"){
-            window.location='/profileparser';}
-            else{
-            	window.location='/bulkfileupload';} */
+        	
             	
         	window.location='/index';
         },
         error: function (e) {
         	
-
+        	/*  document.getElementById("feedback").style.color = "red";
             var json = "<h4>Response Error: Incorrect credentials.</h4><pre>"
                 + e.responseText + "</pre>";
-            $('#feedback').html(json);
+               
+            $('#feedback').html(json); */
+            document.getElementById("feedback").style.color = "red";
+            $('#feedback').html("Response Error: Incorrect credentials.");
 
             console.log("ERROR : ", e);
             $("#btn-login").prop("disabled", false);

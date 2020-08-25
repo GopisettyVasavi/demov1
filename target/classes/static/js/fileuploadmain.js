@@ -6,6 +6,7 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 function checkFileSelected(event) {
 
 	$('#file_feedback').html("");
+	$('#divUploadSuccess').html("");
 	var selectedFile = document.getElementById("selectFileId").value;
 	if (null == selectedFile || selectedFile == '') {
 		event.preventDefault();
@@ -15,6 +16,8 @@ function checkFileSelected(event) {
 		//alert("Please select a profile to upload.");
 		return false;
 	} else{
+		$('#divUploadSuccess').html("");
+		
 		 $("#singlefileupload_btn").val("Processing ...").button("refresh");
 		return true;
 	}
@@ -384,18 +387,22 @@ $.upload = function(url, form, _callback) {
 function uploadmultiplefiles(){
 	 multipleFileUploadSuccess.innerHTML="";
 	 multipleFileUploadError.innerHTML="";
-	 
+	 event.preventDefault();
+	 $('#feedback').html("");
 	 //$("#upload_btn").val('Processing...').button("refresh").trigger("blur");
-	 $("#upload_btn").val("Processing ...").button("refresh");
+	
 	// $('#upload_btn').prev().text('Uploading...');
 	// upload_btn.innerHTML = "Uploading...";
 	 var files = selectFileId.files;
 	    if(files.length === 0) {
-	        alert("Please select at least one file");
+	    	 document.getElementById("feedback").style.color = "red";
+	            $('#feedback').html("Response Error: Please select at least one file to upload.");
+
 	        return false;
 	    }
+	    $("#upload_btn").val("Processing ...").button("refresh");
 	   uploadFiles(files);
-	    event.preventDefault();
+	    
 	
 	
 	
@@ -403,6 +410,8 @@ function uploadmultiplefiles(){
 
 
 function uploadFiles(files) {
+	 $('#feedback').html("");
+
     var formData = new FormData();
     for(var index = 0; index < files.length; index++) {
         formData.append("files", files[index]);
