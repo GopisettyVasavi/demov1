@@ -429,6 +429,8 @@ if(isValid){
 			$("#effectiveTill").val("");
 			
 			$("#id").val("");
+			document.getElementById("constantName").focus();
+
 		}
 
 		
@@ -452,6 +454,8 @@ if(isValid){
 					
 					$("#id").val(rowData.id);
 					console.log(rowData);
+					document.getElementById("constantName").focus();
+
 				});		
 	</script>
 	<script src="js/idle_timeout.js"></script>

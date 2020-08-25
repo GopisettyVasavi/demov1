@@ -148,8 +148,6 @@
 																								<option value="none"  selected="selected">Select Commission Type</option>
 																								<option value="CONTRACT">CONTRACT</option>
 																								<option value="PERMANENT">PERMANENT</option>
-																								
-																								
 																							</select>
 																						</div>
 																					</div>
@@ -173,8 +171,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 	</div>
 
@@ -292,10 +288,7 @@
 								destroy : true,
 								searching: false,
 								autoWidth : false,
-								/*
-								 * targets: 'no-sort', bSort: false, order: [],
-								 */
-
+								paging:false,
 								buttons : [ 'colvis' ],
 								renderer : {
 									"header" : "bootstrap"
@@ -367,7 +360,6 @@
 				function(e)
 
 				{
-					document.getElementById("minRange").focus();
 					$('#feedback').html("");
 					var table = $('#commissionslookup_tbl').DataTable();
 					var rowData = table.row(this).data();
@@ -379,7 +371,7 @@
 					if(rowData.commissionType!='' && rowData.commissionType=='CONTRACT')
 						
 					{
-						$('#comm_type').val("CONTRACT").attr("selecte","selected");
+						$('#comm_type').val("CONTRACT").attr("selected","selected");
 						console.log("rowData.commissionType: "+rowData.commissionType);
 						$('#comm_type').trigger('chosen:updated');
 						 $("#comm_type option[value='CONTRACT']").attr('selected', 'selected'); 
@@ -396,8 +388,12 @@
 					$("#percentage").val(rowData.percentage);
 					
 					$("#id").val(rowData.id);
-					console.log(rowData);
-				});		
+					//console.log(rowData);
+					document.getElementById("minRange").focus();
+
+				});	
+		
+		
 	</script>
 	<script src="js/idle_timeout.js"></script>
 </body>
