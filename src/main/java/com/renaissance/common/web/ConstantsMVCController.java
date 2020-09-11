@@ -1,4 +1,4 @@
-package com.renaissance.profile.parser.web;
+package com.renaissance.common.web;
 
 import static com.renaissance.util.APIConstants.CONSTANTS_DEF;
 import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import com.renaissance.profile.parser.util.XWPFTest;
 
 @Controller
 public class ConstantsMVCController {
@@ -47,10 +49,18 @@ public class ConstantsMVCController {
 	 * @return
 	 */
 	@PostMapping(UPDATE_CONSTANTS)
+	//@Produces(MediaType.APPLICATION_XML_VALUE)
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto,
-			HttpServletRequest request) {
+			HttpServletRequest request, HttpServletResponse response) {
 		try {
-			constantsDto=constantsService.saveConstant(constantsDto);
+			//constantsDto=constantsService.saveConstant(constantsDto);
+			//WordUtils.downloadBigActivity(response);
+			//WordUtils.doxtest();
+			//XWPFTest.test("LukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukas");
+			XWPFTest.test("Vasavi");
+			XWPFTest.test("TestVasavi");
+
+
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
@@ -60,7 +70,7 @@ public class ConstantsMVCController {
 		return new ResponseEntity<>(constantsDto, HttpStatus.OK);
 	}
 	/**
-	 * 
+	 * This method will load available constants.
 	 * @param request
 	 * @return
 	 */

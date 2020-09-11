@@ -83,6 +83,13 @@
 					</h5>
 
 				</div>
+				<div class="row" id="invoicediv" >
+					<h5>
+						<a href="#" onclick="openInvoiceManagement()"
+							style="text-decoration: underline;"> Invoice Management</a>
+					</h5>
+
+				</div>
 				<div class="row" id="bulkfileuploaddiv" >
 					<h5>
 						<a href="#" onclick="openBulkFileUpload()"
@@ -101,6 +108,13 @@
 					<h5>
 						<a href="#" onclick="opencommissionsLookup()"
 							style="text-decoration: underline;"> Commissions Lookup</a>
+					</h5>
+
+				</div>
+				<div class="row" id="clientlookupdiv" >
+					<h5>
+						<a href="#" onclick="openclientlookup()"
+							style="text-decoration: underline;"> Client Company Details</a>
 					</h5>
 
 				</div>
@@ -153,20 +167,30 @@
 	         $("#constantsdiv").hide();
 	         $("#commissiondiv").hide();
 	         $("#commissionslookupdiv").hide();
+	         $("#invoicediv").hide();
+	         $("#clientlookupdiv").hide();
 	         
 		}
 		if(role=="Recruiter"){
 						//alert("rec");
-	         $("#parserdiv").show();
+			$("#parserdiv").show();
 	         $("#contractordiv").hide();
 	         $("#bulkfileuploaddiv").hide();
 	         $("#constantsdiv").hide();
+	         $("#commissiondiv").hide();
+	         $("#commissionslookupdiv").hide();
+	         $("#invoicediv").hide();
+	         $("#clientlookupdiv").hide();
 		}
 		if(role=="Data Entry Operator"){
-			 $("#parserdiv").hide();
+			$("#parserdiv").hide();
 	         $("#contractordiv").hide();
-	         $("#constantsdiv").hide();
 	         $("#bulkfileuploaddiv").show();
+	         $("#constantsdiv").hide();
+	         $("#commissiondiv").hide();
+	         $("#commissionslookupdiv").hide();
+	         $("#invoicediv").hide();
+	         $("#clientlookupdiv").hide();
 		}
 		if(role=="Admin"){
 			 $("#parserdiv").show();
@@ -175,6 +199,8 @@
 	         $("#constantsdiv").show();
 	         $("#commissiondiv").show();
 	         $("#commissionslookupdiv").show();
+	         $("#invoicediv").show();
+	         $("#clientlookupdiv").show();
 	         
 	         
 		}
@@ -187,6 +213,8 @@ function initialize(){
     $("#constantsdiv").hide();
     $("#commissiondiv").hide();
     $("#commissionslookupdiv").hide();
+    $("#invoicediv").hide();
+    $("#clientlookupdiv").hide();
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
@@ -225,6 +253,12 @@ function openCommissionManagement(){
 }
 function opencommissionsLookup(){
 	window.location='/commissionslookup'
+}
+function openInvoiceManagement(){
+	window.location='/invoicemain'
+}
+function openclientlookup(){
+	window.location='/clientlookup'
 }
  </script>
 <script src="js/idle_timeout.js"></script>

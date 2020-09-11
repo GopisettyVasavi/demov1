@@ -24,6 +24,8 @@ public class ContractorEmploymentDetailsDTO {
 	private String activeRecord;
 	private BigInteger recruiterId;
 	private String recruiterName;
+	private String poNumber;
+	private String invoiceNotes;
 	public BigInteger getContractorId() {
 		return contractorId;
 	}
@@ -152,6 +154,18 @@ public class ContractorEmploymentDetailsDTO {
 	public void setRecruiterName(String recruiterName) {
 		this.recruiterName = recruiterName;
 	}
+	public String getPoNumber() {
+		return poNumber;
+	}
+	public void setPoNumber(String poNumber) {
+		this.poNumber = poNumber;
+	}
+	public String getInvoiceNotes() {
+		return invoiceNotes;
+	}
+	public void setInvoiceNotes(String invoiceNotes) {
+		this.invoiceNotes = invoiceNotes;
+	}
 	@Override
 	public String toString() {
 		return "ContractorEmploymentDetailsDTO [contractorId=" + contractorId + ", clientName=" + clientName
@@ -162,8 +176,11 @@ public class ContractorEmploymentDetailsDTO {
 				+ ", jobRole=" + jobRole + ", employmentType=" + employmentType + ", jobStartDate=" + jobStartDate
 				+ ", jobEndDate=" + jobEndDate + ", lastWorkingDate=" + lastWorkingDate + ", finishedClient="
 				+ finishedClient + ", additionalInfo=" + additionalInfo + ", activeRecord=" + activeRecord
-				+ ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + "]";
+				+ ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName + ", poNumber=" + poNumber
+				+ ", invoiceNotes=" + invoiceNotes + "]";
 	}
+	
+	
 	
 	
 	

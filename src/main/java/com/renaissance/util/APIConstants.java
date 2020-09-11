@@ -57,6 +57,10 @@ public class APIConstants {
 	public static final String COMMISSIONS_LOOKUP="/commissionslookup";
 	public static final String LOAD_COMMISSIONS_LOOKUP="/loadcommissionslookup";
 	public static final String SAVE_COMMISSION_LOOKUP="/savecommissionslookup";
+	public static final String CLIENT_LOOKUP="/clientlookup";
+	public static final String GET_CLIENT_COMPANIES="/getclientcompanies";
+	public static final String UPDATE_CLIENT_COMPANY="/updateclientcompanies";
+
 	
 	
 

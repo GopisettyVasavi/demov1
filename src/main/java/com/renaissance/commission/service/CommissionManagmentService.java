@@ -78,6 +78,7 @@ public class CommissionManagmentService {
 			logger.info("Commissions do not exist....");
 		List<ContractorEmploymentDetailsEntity> empDetails = contractorEmployment.getCandidatesForCommission
 				(ProfileParserUtils.parseStringDate("01/"+monthAndYear));
+		logger.info("date.. ,{},",ProfileParserUtils.parseStringDate("01/"+monthAndYear));
 		//logger.info("Search Results EMP table, {}", empDetails.size());
 		if (!ProfileParserUtils.isObjectEmpty(empDetails)) {
 			//int i=1;

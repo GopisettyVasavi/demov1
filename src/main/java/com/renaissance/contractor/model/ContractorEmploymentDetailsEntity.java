@@ -99,6 +99,12 @@ public class ContractorEmploymentDetailsEntity {
 	@Column(name = "\"DATE_JOB_END_DATE\"")
 	private LocalDate dateJobEndDate;
 	
+	@Column(name = "\"PO_NUMBER\"")
+	private String poNumber;;
+	
+	@Column(name = "\"INVOICE_NOTES\"")
+	private String invoiceNotes;
+	
 	public BigInteger getId() {
 		return Id;
 	}
@@ -309,6 +315,22 @@ public class ContractorEmploymentDetailsEntity {
 		this.dateJobEndDate = dateJobEndDate;
 	}
 
+	public String getPoNumber() {
+		return poNumber;
+	}
+
+	public void setPoNumber(String poNumber) {
+		this.poNumber = poNumber;
+	}
+
+	public String getInvoiceNotes() {
+		return invoiceNotes;
+	}
+
+	public void setInvoiceNotes(String invoiceNotes) {
+		this.invoiceNotes = invoiceNotes;
+	}
+
 	@Override
 	public String toString() {
 		return "ContractorEmploymentDetailsEntity [Id=" + Id + ", contractorId=" + contractorId + ", clientName="
@@ -321,8 +343,11 @@ public class ContractorEmploymentDetailsEntity {
 				+ ", activeRecord=" + activeRecord + ", lastUpdatedUser=" + lastUpdatedUser + ", lastUpdatedDateTime="
 				+ lastUpdatedDateTime + ", recruiterId=" + recruiterId + ", recruiterName=" + recruiterName
 				+ ", wlOtherState=" + wlOtherState + ", wlOtherCountry=" + wlOtherCountry + ", dateJobStartDate="
-				+ dateJobStartDate + ", dateJobEndDate=" + dateJobEndDate + "]";
+				+ dateJobStartDate + ", dateJobEndDate=" + dateJobEndDate + ", poNumber=" + poNumber + ", invoiceNotes="
+				+ invoiceNotes + "]";
 	}
+
+	
 
 		
 }

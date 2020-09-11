@@ -386,6 +386,10 @@ function clickonsave(mode) {
 				"#employmentAddnlInfo").val();
 		contractorEmploymentDetailsDTO["employmentType"] = $("#employmentType")
 				.val();
+		contractorEmploymentDetailsDTO["invoiceNotes"] = $("#invoiceNotes").val();
+		contractorEmploymentDetailsDTO["poNumber"] = $("#poNumber").val();
+		
+		
 		// alert($("#recruiter").val()+" "+$("#recruiterId").val()+"
 		// "+$("#recruiterName").val())
 		if ($("#recruiter").val() != "none")

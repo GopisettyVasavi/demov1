@@ -1280,7 +1280,7 @@
 										class="single-input" th:field="${contractor.employerList.endClientName}">
 																				</div>
 																			</div>
-																			<div class="col-sm-4">
+																			<div class="col-sm-2">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Contract No</label> 
 																					
@@ -1289,6 +1289,18 @@
 										onfocus="this.placeholder = 'Contract Number'"
 										onblur="this.placeholder = 'Contract Number'" id="contractNumber"
 										class="single-input" th:field="${contractor.employerList.contractNumber}">
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-2">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Purchase Order No</label> 
+																					
+																					<input type="text"
+										name="poNumber" placeholder="Purchase Order Number"
+										onfocus="this.placeholder = 'Purchase Order Number'"
+										onblur="this.placeholder = 'Purchase Order Number'" id="poNumber"
+										class="single-input" th:field="${contractor.employerList.poNumber}">
 																						
 																				</div>
 																			</div>
@@ -1686,7 +1698,17 @@
 																						name="Additional Info" th:field="${contractor.employerList.additionalInfo}"></textarea>
 																				</div>
 																			</div>
-																			
+																			<div class="col-12">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Notes For Invoicing</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Invoice Notes'"
+																						onblur="this.placeholder = 'Invoice Notes'"
+																						placeholder="Invoice Notes" id="invoiceNotes"
+																						name="Invoice Notes" th:field="${contractor.employerList.invoiceNotes}"></textarea>
+																				</div>
+																			</div>
 																			<div class="col-sm-4">
 																			<div class="form-group">
 																					<label for="name" style="font-weight:bold">View Employment History?</label>

@@ -651,7 +651,7 @@ public class ContractorManagementService {
 
 			List<ContractorEmploymentDetailsEntity> empList = contractorEmployment
 					.getAllEmploymentDetailsByContractorId(personalDto.getContractorId());
-			if (!ProfileParserUtils.isObjectEmpty(bankList) && bankList.size() > 0) {
+			if (!ProfileParserUtils.isObjectEmpty(empList) && empList.size() > 0) {
 				for (ContractorEmploymentDetailsEntity empVo : empList) {
 					empVo.setActiveRecord(ProfileParserConstants.INACTIVE);
 					empVo.setLastUpdatedDateTime(LocalDateTime.now());

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Metadata</title>
+<title>Client Company</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
@@ -72,7 +72,7 @@
 		<div class="row">
 			<div class="col-xl-12">
 				<div class="bradcam_text">
-					<h3>Metadata</h3>
+					<h3>Client Company Details</h3>
 				</div>
 			</div>
 		</div>
@@ -82,11 +82,11 @@
 <body onload="initialize()">
 
 	<div class="col-lg-12">
-		<form class="form-contact contact_form" id="indexform">
+		<form class="form-contact contact_form" id="clientlookupform">
 <div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
 		 	
 			
-	<table id="constants_tbl" class="display">
+	<table id="company_tbl" class="display">
 
 			</table>
 			</div>
@@ -98,14 +98,14 @@
 
 							<button type="submit" id="btn-save"
 								class="button button-contactForm boxed-btn"
-								onclick="addnewLookup()"  >Add New Constant</button>
+								onclick="addnewClient()"  >Add New Client</button>
 								
 						</div>
 					</div>
 					</div>
 					<div id="hidden" style="display: none">
 					<input
-								type="text" name="name" placeholder="Min Range"
+								type="text" name="name" placeholder="id"
 								class="single-input" id="id" required
 								 >
 					</div>
@@ -115,45 +115,48 @@
 				<div class="row">
 <div class="col-sm-3">
 						<div class="form-group">
-							<label for="name" style="font-weight: bold">Constant Name *</label> <input
+							<label for="name" style="font-weight: bold">Company Name *</label> <input
 								type="text" name="name" placeholder="Constant Name"
-								class="single-input" id="constantName" required
+								class="single-input" id="companyname" required
 								 >
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-9">
 						<div class="form-group">
-							<label for="name" style="font-weight: bold">Constant Value *</label> <input
-								type="text" name="name" placeholder="Constant Value"
-								class="single-input" id="constantValue" required
-								 >
+							<label for="name" style="font-weight: bold">Address *</label> 
+							<textarea class="form-control w-100" cols="30"
+																						rows="2"
+																						onfocus="this.placeholder = 'Address'"
+																						onblur="this.placeholder = 'Address'"
+																						placeholder="Address" id="address"
+																						name="Address" ></textarea>
+							
+							
 						</div>
 					</div>
 					<div class="col-sm-3">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Effective From *</label>
-																					<input
-																						data-date-format="dd/MM/yyyy" 
-																						 placeholder="Effective From"
-																						onfocus="this.placeholder = 'Effective From'"
-																						onblur="this.placeholder = 'Effective From'"
-																						class="single-input"   autocomplete="off"   
-																						id="effectiveFrom" name="effectiveFrom" required="required">
-
-																				</div>
+							<label for="name" style="font-weight: bold">Vendor Id *</label> <input
+								type="text" name="vendorid" placeholder="vendor Id"
+								class="single-input" id="vendorid" required
+								 >
+						</div>
 																			</div>
 																			<div class="col-sm-3">
 																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Effective Till *</label>
-																					<input
-																						data-date-format="dd/MM/yyyy" 
-																						 placeholder="Effective Till"
-																						onfocus="this.placeholder = 'Effective Till'"
-																						onblur="this.placeholder = 'Effective Till'"
-																						class="single-input"   autocomplete="off"   
-																						id="effectiveTill" name="effectiveTill" required="required">
-
-																				</div>
+							<label for="name" style="font-weight: bold">ABN No *</label> <input
+								type="text" name="abnno" placeholder="ABN No"
+								class="single-input" id="abnno" required
+								 >
+						</div>
+																			</div>
+																			<div class="col-sm-3">
+																				<div class="form-group">
+							<label for="name" style="font-weight: bold">Payment Terms *</label> <input
+								type="text" name="paymentterm" placeholder="Payment Terms"
+								class="single-input" id="paymentterm" required
+								 >
+						</div>
 																			</div>
 					
 					
@@ -232,24 +235,7 @@
 	<script type="text/javascript">
 	
 	
-	$(document).ready(function(){ 
-		$('#effectiveFrom').datepicker({
-			format: 'dd/mm/yyyy',
-			iconsLibrary : 'fontawesome',
-			icons : {
-				rightIcon : '<span class="fa fa-caret-down"></span>'
-			}
-		});
-		$('#effectiveTill').datepicker({
-			format: 'dd/mm/yyyy',
-			iconsLibrary : 'fontawesome',
-			icons : {
-				rightIcon : '<span class="fa fa-caret-down"></span>'
-			}
-
-		});
-		
-	});
+	
 	function goBack(){
 		//alert('test');
 		window.location='/index'
@@ -258,15 +244,16 @@
 	
 	function processValidation(){
 		var constantsList=[];
-		var table = $('#constants_tbl').DataTable();
+		var table = $('#company_tbl').DataTable();
 		table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
 			var d = this.data();
 			
-			if($("#constantName").val()==d.constantName){
+			if($("#companyname").val()==d.clientName){
 				console.log("Matching contant exists..");
-				if((Number($("#constantValue").val())==Number(d.constantValue)) &&
-						$("#effectiveFrom").val()==d.effectiveFrom  &&  $("#effectiveTill").val()==d.effectiveTill)
-					$('#feedback').html("Warning: Same data for this constant is already existing. Please enter different values and save.");
+				if(($("#paymentterm").val()==d.paymentTerms) &&
+						$("#abnno").val()==d.clientAbnNo  &&  $("#address").val()==d.address
+						&&  $("#vendorid").val()==d.vendorId )
+					$('#feedback').html("Warning: Same data for this Company is already existing. Please enter different values and save.");
 				return false;
 			}
 		    /* var d = this.data();
@@ -286,21 +273,22 @@
 			$('#feedback').html("");
 			var isValid=true;
 			event.preventDefault();
-			if($("#constantName").val()=="" || $("#constantValue").val()=="" || $("#effectiveFrom").val()==""
-					|| $("#effectiveTill").val()=="" ){
+			if($("#companyname").val()=="" || $("#paymentterm").val()=="" || $("#abnno").val()==""
+					|| $("#address").val()=="" ||$("#vendorid").val()==""){
 				document.getElementById("feedback").style.color = "red";
 				$('#feedback').html("Validation error: Please enter values for all fields.");
 				isValid=false;
 				return false;
 			}
-			var table = $('#constants_tbl').DataTable();
+			var table = $('#company_tbl').DataTable();
 			table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
 				var d = this.data();
 				
-				if($("#constantName").val()==d.constantName){
+				if($("#companyname").val()==d.companyname){
 					console.log("Matching contant exists..");
-					if((Number($("#constantValue").val())==Number(d.constantValue)) &&
-							$("#effectiveFrom").val()==d.effectiveFrom  &&  $("#effectiveTill").val()==d.effectiveTill){
+					if(($("#paymentterm").val()==d.paymentTerms) &&
+							$("#abnno").val()==d.clientAbnNo  &&  $("#address").val()==d.address
+							&&  $("#vendorid").val()==d.vendorId ){
 						$('#feedback').html("Warning: Same data for this constant is already existing. Please enter different values and save.");
 					//break;
 					isValid=false;
@@ -317,23 +305,24 @@
 			   
 			} );
 if(isValid){
-			var constantsDTO = {}
-			constantsDTO["constantName"] = $("#constantName").val();
-			constantsDTO["constantValue"] = Number($("#constantValue").val());
-			constantsDTO["effectiveFrom"] = $("#effectiveFrom").val();
-			constantsDTO["effectiveTill"] = $("#effectiveTill").val();
-			constantsDTO["id"] = $("#id").val();
+			var clientCompanyDTO = {}
+			clientCompanyDTO["clientName"] = $("#companyname").val();
+			clientCompanyDTO["address"] = $("#address").val();
+			clientCompanyDTO["paymentTerms"] = $("#paymentterm").val();
+			clientCompanyDTO["clientAbnNo"] = $("#abnno").val();
+			clientCompanyDTO["vendorId"] = $("#vendorid").val();
+			clientCompanyDTO["clientId"] = $("#id").val();
 			
 			$.ajax({
 						type : "POST",
 						contentType : "application/json",
-						url : "/updateconstants",
-						data : JSON.stringify(constantsDTO),
+						url : "/updateclientcompanies",
+						data : JSON.stringify(clientCompanyDTO),
 						dataType : 'json',
 						cache : false,
 						timeout : 600000,
 						success : function(data) {
-							alert("Constants value saved Successfully.");
+							alert("Company Details saved Successfully.");
 							initialize();
 						},
 						error : function(e) {
@@ -350,19 +339,19 @@ if(isValid){
 
 		function initialize() {
 			$("#addlookup_div").hide();
-			document.getElementById("constantName").focus();
+			document.getElementById("companyname").focus();
 			 $("#id").val("");
 			
 						$.ajax({
 						type : "GET",
 						contentType : "application/json",
-						url : "/getconstants",
+						url : "/getclientcompanies",
 						dataType : 'json',
 						cache : false,
 						timeout : 600000,
 						success : function(data) {
 							//var json=data
-							var table = $('#constants_tbl').DataTable({
+							var table = $('#company_tbl').DataTable({
 
 								destroy : true,
 								searching: false,
@@ -379,41 +368,46 @@ if(isValid){
 									 
 										
 										 {
-									"data" : 'constantName',
-									"name" : "constantName",
-									"title" : "Constant Name"
+									"data" : 'clientName',
+									"name" : "clientName",
+									"title" : "Company Name"
 								},
 								{
-									"data" : 'constantValue',
-									"name" : "constantValue",
-									"title" : "Constant Value"
+									"data" : 'address',
+									"name" : "address",
+									"title" : "Address"
 								},
 								{
-									"data" : 'effectiveFrom',
-									"name" : "effectiveFrom",
-									"title" : "Effective From"
+									"data" : 'clientAbnNo',
+									"name" : "clientAbnNo",
+									"title" : "ABN No"
 								},
 								{
-									"data" : 'effectiveTill',
-									"name" : "effectiveTill",
-									"title" : "Effective Till"
+									"data" : 'paymentTerms',
+									"name" : "paymentTerms",
+									"title" : "Payment Terms"
 								},
 								{
-									"data" : 'id',
-									"name" : "id",
-									"title" : "id",
+									"data" : 'vendorId',
+									"name" : "vendorId",
+									"title" : "Vendor Id"
+								},
+								{
+									"data" : 'clientId',
+									"name" : "clientId",
+									"title" : "clientId",
 									"visible":false
 								}]
 
 							});
-							$('#constants_tbl tfoot tr').appendTo(
-									'#constants_tbl thead');
+							$('#company_tbl tfoot tr').appendTo(
+									'#company_tbl thead');
 
-							$("#constants_tbl tfoot tr").hide();
+							$("#company_tbl tfoot tr").hide();
 						},
 						error : function(e) {
 
-							var json = "<h4>Response Error:Error occured while loading commissions lookup values.</h4><pre>"
+							var json = "<h4>Response Error:Error occured while loading Company details.</h4><pre>"
 									+ e.responseText + "</pre>";
 							$('#feedback').html(json);
 
@@ -424,43 +418,44 @@ if(isValid){
 					});
 
 		}
-		function addnewLookup(){
+		function addnewClient(){
 			event.preventDefault();
-			document.getElementById("constantName").focus();
+			document.getElementById("companyname").focus();
 
 			$("#addlookup_div").show();
-			$("#constantName").val("");
-			$("#constantValue").val("");
-			$("#effectiveFrom").val("");
-			$("#effectiveTill").val("");
-			
+			$("#companyname").val("");
+			$("#abnno").val("");
+			$("#paymentterm").val("");
+			$("#vendorid").val("");
+			$("#address").val("");
 			$("#id").val("");
-			document.getElementById("constantName").focus();
+			document.getElementById("companyname").focus();
 
 		}
 
 		
 		$(document).on(
 				"click",
-				"#constants_tbl tbody tr",
+				"#company_tbl tbody tr",
 				function(e)
 
 				{
-					document.getElementById("constantName").focus();
+					document.getElementById("companyname").focus();
 					$('#feedback').html("");
-					var table = $('#constants_tbl').DataTable();
+					var table = $('#company_tbl').DataTable();
 					var rowData = table.row(this).data();
 					// alert('called'+rowData.contractorId);
 					$("#addlookup_div").show();
 					//var range= rowData.range.split("-");
-					$("#constantName").val(rowData.constantName);
-					$("#constantValue").val(rowData.constantValue);
-					$("#effectiveFrom").val(rowData.effectiveFrom);
-					$("#effectiveTill").val(rowData.effectiveTill);
+					$("#companyname").val(rowData.clientName);
+					$("#address").val(rowData.address);
+					$("#vendorid").val(rowData.vendorId);
+					$("#abnno").val(rowData.clientAbnNo);
+					$("#paymentterm").val(rowData.paymentTerms);
 					
-					$("#id").val(rowData.id);
+					$("#id").val(rowData.clientId);
 					console.log(rowData);
-					document.getElementById("constantName").focus();
+					document.getElementById("companyname").focus();
 
 				});		
 	</script>
