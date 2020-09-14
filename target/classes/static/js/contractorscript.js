@@ -9,8 +9,7 @@ function initialize() {
 	
 	document.getElementById("firstName").focus();
 
-	$
-			.ajax({
+	$.ajax({
 				type : "GET",
 				contentType : "application/json",
 				url : "/recruiterList",
@@ -51,6 +50,49 @@ function initialize() {
 			});
 	
 	retrieveInsurancePercent();
+	retrieveClients();
+}
+
+function retrieveClients(){
+	$.ajax({
+		type : "GET",
+		contentType : "application/json",
+		url : "/getclientcompanies",
+		cache : false,
+		timeout : 600000,
+		success : function(list) {
+			var options = "";
+			// alert(list.length);
+			$('#clientName')
+					.html(
+							"<select id =\"client\" class=\"nice-select form-select\">Select Client</select>");
+			/*$('#recruiter-select_s')
+					.html(
+							"<select id =\"recruiter_s\" class=\"nice-select form-select\">Select Recruiter</select>");*/
+			options += "<option value=\"none\"  selected=\"selected\">Select Client</option>";
+
+			// $('#recruiter-select select').append(options);
+			for (i in list) {
+				// alert(list[i].employeeId+" "+list[i].employeeName);
+				options += "<option value = " + list[i].clientId
+						+ ">" + list[i].clientName + "</option>";
+			}
+			//options += "<option value=\"99999999\" >Other</option>";
+			$('#clientName select').append(options);
+			//$('#recruiter-select_s select').append(options);
+			document.getElementById("client").classList
+					.add('form-select');
+			//document.getElementById("recruiter_s").classList.add('form-select');
+			// document.getElementById("select_div").className +=
+			// "input-group-icon";
+		},
+		error : function(e) {
+
+			alert("Unable to load details");
+
+		}
+	});
+	
 }
 
 function setSelectedVisaCategory() {
@@ -355,7 +397,13 @@ function clickonsave(mode) {
 		// var employers=[];
 		var contractorEmploymentDetailsDTO = {}
 
-		contractorEmploymentDetailsDTO["clientName"] = $("#clientName").val();
+		//contractorEmploymentDetailsDTO["clientName"] = $("#clientName").val();
+		
+		if ($("#client").val() != "none"){
+			
+		contractorEmploymentDetailsDTO["clientName"] = $(
+				"#client option:selected").text();
+		}
 		contractorEmploymentDetailsDTO["endClientName"] = $("#endClientName")
 				.val();
 		contractorEmploymentDetailsDTO["contractNumber"] = $("#contractNumber")
@@ -769,7 +817,7 @@ function validateAbnDetails() {
 function validateEmpDetails() {
 	$('#emp_feedback').html("");
 	// alert(document.getElementById("dateOfBirth").value);
-	if ((document.getElementById("clientName").value).trim() == ""
+	if ((document.getElementById("client").value).trim() == "none"
 			|| (document.getElementById("employmentType").value).trim() == "none"
 			|| (document.getElementById("jobStartDate").value).trim() == ""
 			|| (document.getElementById("workLocationState").value).trim() == "none"

@@ -144,6 +144,9 @@
 														<input type="text"
 														id="recruitername_dtl" name="super_dtl"
 														th:field="${contractor.employerList.recruiterName}" />
+														<input type="text"
+														id="clientname_dtl" name="super_dtl"
+														th:field="${contractor.employerList.clientName}" />
 														
 														
 														
@@ -1260,7 +1263,7 @@
 																		action="contact_process.php" method="post"
 																		id="contactForm" novalidate="novalidate">
 																		<div class="row">
-																		<div class="col-sm-4">
+																		<!-- <div class="col-sm-4">
 																				<div class="form-group">
 																					<label for="name" style="font-weight:bold">Client Name *</label> 
 																					<input type="text"
@@ -1268,6 +1271,19 @@
 										onfocus="this.placeholder = 'Client Name'"
 										onblur="this.placeholder = 'Client Name'" id="clientName"
 										class="single-input" th:field="${contractor.employerList.clientName}">
+																				</div>
+																			</div> -->
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Client Name *</label> 
+																					
+																					<div class="input-group-icon" id="clientName_div">
+																						
+																						<div class="form-select" id="clientName" >
+																							
+																						</div>
+																					</div>
+																						
 																				</div>
 																			</div>
 																			<div class="col-sm-4">

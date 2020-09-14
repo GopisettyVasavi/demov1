@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
-import com.renaissance.profile.parser.util.XWPFTest;
 
 @Controller
 public class ConstantsMVCController {

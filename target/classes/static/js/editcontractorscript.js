@@ -10,6 +10,7 @@ function initialize_details(){
 	document.getElementById("firstName").focus();
 disableRefresh();
 	populateRecruiterList();
+	populateClientList();
 	//alert($("#gender_dtl").val());
 	if($("#gender_dtl").val()=="male"){
 		$('input:radio[name=gender]')[0].checked = true;
@@ -200,6 +201,50 @@ function populateRecruiterList(){
 	        $('#recruiter-select select').append(options);
 	       
 	       document.getElementById("recruiter").classList.add('form-select');
+	       
+	         //document.getElementById("select_div").className += "input-group-icon";
+	        },
+	        error: function (e) {
+	        	
+	        	alert("Unable to load details");
+
+	        }
+	    });
+	
+}
+
+function populateClientList(){
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/getclientcompanies",
+	        cache: false,
+	        timeout: 600000,
+	        success: function (list) {
+	        	var options="";
+	        	
+	        	var clientCompName=$("#clientname_dtl").val();
+	        	console.log("Client name: "+clientCompName);
+	        	//alert(rec);
+	         $('#clientName').html("<select id =\"client\" class=\"nice-select form-select\">Select Client</select>");
+	         
+	        // $('#recruiter-select select').append(options);
+	        for(i in list){
+	        	if(list[i].clientName==clientCompName){
+	        		//alert("if sel "+ list[i].employeeName);
+	        		options += "<option value = "+list[i].clientId+"  selected=\"selected\">"+list[i].clientName+"</option>";
+	        	}
+	        }
+	        options += "<option value=\"none\"  >Select Client</option>";
+	        for(j in list){
+	        	if(list[j].clientName!=clientCompName){
+	        	options += "<option value = "+list[j].clientId+">"+list[j].clientName+"</option>";
+	        	}
+	        	}
+	       // options += "<option value=\"99999999\" >Other</option>";
+	       // $('#client-select select').append(options);
+	        $('#clientName select').append(options);
+	       document.getElementById("client").classList.add('form-select');
 	       
 	         //document.getElementById("select_div").className += "input-group-icon";
 	        },
