@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Invoice Management</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<!-- CSS here -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
+<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
+<link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
+<link href="css/jquery.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link href="css/buttons.dataTables.min.css" rel="stylesheet" media="screen" />	
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/themify-icons.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/gijgo.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slicknav.css">
+<link rel="stylesheet" href="css/style.css">
+ <style>
+.dropdown {
+  display: block;
+    width: 100%;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    background: #fcfcff;
+    padding: 0 10px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+</style>
+</head>
+
+<body onload="initialize()">
+
+<!-- header-start -->
+    <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
+          
+			<div class="logo">
+				<a href="https://reninfo.com.au/"> <img
+					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+
+				</a>
+				<a   href="#" onclick="backToIndex()">Back>></a>
+				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				
+				
+				
+			</div>
+			
+		</div>
+            
+            </div>
+        </header>
+        <!-- header-end -->
+	<!-- bradcam_area  -->
+	<div class="bradcam_area bradcam_bg_1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-12">
+				
+					<div class="bradcam_text">
+					
+						<h3>Invoice Management</h3>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ bradcam_area  -->
+	
+	<div class="mt-30 mb-30">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item"><a class="nav-link active"
+				data-toggle="tab" href="create_invoice" style="font-weight:bold">New Invoice</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#search" style="font-weight:bold">Search</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div id="create_invoice" class="tab-pane active">
+				<br>
+				<section class="contact-section">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-12">
+								
+								<form class="form-contact contact_form" method="post"
+																		id="invoicecreation" novalidate="novalidate" >
+																<div class="row">
+
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label for="name" style="font-weight:bold">Select Month & Year</label> 
+																			<input type="month"
+																			class="single-input" id="invoicemonth" 
+																			data-date-format="MM/yyyy"   autocomplete="off"/>	
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Start Date *</label> 
+																					<input 
+																						data-date-format="dd-MM-yyyy" 
+																						 placeholder="Start Date"
+																						onfocus="this.placeholder = 'Start Date'"
+																						onblur="this.placeholder = 'Start Date'"
+																						class="single-input" id="startDate" 
+																						 autocomplete="off"
+																						name="startDate"  >
+																					
+																						
+																				</div>
+																			</div>
+																			<div class="col-sm-3">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">End Date *</label> 
+																					<input 
+																						data-date-format="dd-MM-yyyy" 
+																						 placeholder="End Date"
+																						onfocus="this.placeholder = 'End Date'"
+																						onblur="this.placeholder = 'End Date'"
+																						class="single-input" id="endDate" 
+																						 autocomplete="off"
+																						name="startDate"  >
+																					
+																						
+																				</div>
+																			</div>
+																</div>
+																
+																	
+										
+									</div>
+								
+								</div>
+								<div class="row" style="padding-top: 20px">
+								<div class="col-sm-12">
+								
+								<div class="form-group text-center">
+									<input type="submit"
+										class="button button-contactForm boxed-btn" onclick="createinvoice()" value="Create"/>
+										 
+								</div>
+							</div>
+							</div>
+							<div id="monthyear_feedback"></div>
+							<div class="col-sm-12" id="invoices_div" >
+							
+      
+							<div id="invoices_feedback"></div>
+			<div class="container-fluid" style= "border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	<!-- <table id="contractorTable" class="display" style="table-layout: fixed;width: 100%"> -->
+			
+	<table id="invoicetable" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+							
+								
+							
+							
+							</form>	
+					</div>
+				</section>
+
+			</div>
+			
+			<div id="search" class="tab-pane fade">
+				<br>
+				<h3>Search</h3>
+				<div class="col-lg-12">
+					<form class="form-contact contact_form"
+						action="contact_process.php" method="post" id="searchForm"
+						novalidate="novalidate">
+						<div class="row">
+						<div class="col-sm-3">
+								<div class="form-group">
+									<label for="Recruiter" style="font-weight:bold">Recruiter Name</label> <input type="text"
+										name="recruiterName_s" placeholder="Recruiter Name"
+										onfocus="this.placeholder = 'Recruiter Name'"
+										onblur="this.placeholder = 'Recruiter Name'" id="recruiterName_s"
+										class="single-input">
+								</div>
+							</div>
+							
+							<div class="col-sm-4"></div>
+							<div class="col-sm-4"></div>												
+							<div class="col-sm-3">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Period</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select" >
+																							<select id="period_s" class="dropdown" name="period_s" onchange="showdatefields()">
+																								<option value="none"  selected="selected">Select Period</option>
+																								<option value="CurrentFY">This Financial Year</option>
+																								<option value="PreviousFY">Last Financial Year</option>
+																								<option value="LastMonth">Last Month</option>
+																								<option value="DateRange">Date Range</option>
+																								
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+							
+							
+							
+							<div class="col-sm-3" id="fromdate_div" style="display: none">
+								<div class="form-group">
+									<label for="fromDate_s" style="font-weight:bold">From Date</label> <input 
+																						data-date-format="MMM-yyyy" 
+																						 placeholder="From Date"
+																						onfocus="this.placeholder = 'From Date'"
+																						onblur="this.placeholder = 'From Date'"
+																						class="single-input" id="fromDate_s" 
+																						autocomplete="off" >
+								</div>
+							</div>
+							<div class="col-sm-3" id="todate_div" style="display: none">
+								<div class="form-group">
+									<label for="toDate_s" style="font-weight:bold">To Date</label> <input 
+																						data-date-format="MMM-yyyy" 
+																						 placeholder="To Date"
+																						onfocus="this.placeholder = 'To Date'"
+																						onblur="this.placeholder = 'To Date'"
+																						class="single-input" id="toDate_s" 
+																						 autocomplete="off" >
+								</div>
+							</div>
+							
+							<div class="col-sm-12" style="padding-top: 20px">
+								<div class="form-group text-center">
+									<button type="submit"
+										class="button button-contactForm boxed-btn" onclick="searchinvoices()">Search</button>
+										<button type="submit"
+										class="button button-contactForm boxed-btn" onclick="resetinvoices()">Reset</button>
+										
+								</div>
+								<div id="search_feedback"></div>
+							</div>
+							</div>
+							<div class="col-sm-12" id="searchresults_div" >
+							
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	
+			
+	<table id="invoicesearch_tbl" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+							<div class="col-sm-12" id="invoicedetail_div" >
+							<div id="invdetails_feedback"></div>
+							</div>
+							<div class="col-sm-12" id="invoicedetails_div" >
+							<div class="col-sm-6">
+	<div class="form-group" style="padding-top: 10px">
+<label for="name" id="invdet_lbl" style=" font-size: 16px; font-weight:bold; display: none"></label> 
+																				
+																		</div>
+																	</div>
+							
+			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
+		 	
+			
+	<table id="invoicedetails_tbl" class="display">
+
+			</table>
+			</div>
+								
+							</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ================ contact section start ================= -->
+
+	<!-- ================ contact section end ================= -->
+
+	<!-- footer start -->
+	<footer class="footer"> </footer>
+	<!--/ footer end  -->
+
+	<!-- JS here -->
+ <script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.20/api/fnFilterClear.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/searchpanes/1.0.1/js/dataTables.searchPanes.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js" type="text/javascript"></script>
+
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+
+
+<script src="/js/fixedHeadermin.js" ></script>
+	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	 <script src="js/vendor/sweetalert2.js"></script>
+       
+        
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+   
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+	
+
+    	
+    	 <script type="text/javascript">
+    	 $('#startDate').datepicker({
+  			format: 'dd-mm-yyyy',
+  			iconsLibrary : 'fontawesome',
+  			icons : {
+  				rightIcon : '<span class="fa fa-caret-down"></span>'
+  			}
+  		});
+    	 $('#endDate').datepicker({
+  			format: 'dd-mm-yyyy',
+  			iconsLibrary : 'fontawesome',
+  			icons : {
+  				rightIcon : '<span class="fa fa-caret-down"></span>'
+  			}
+  		});
+    	 $('#fromDate_s').datepicker({
+ 			format: 'mmm-yyyy',
+ 			iconsLibrary : 'fontawesome',
+ 			icons : {
+ 				rightIcon : '<span class="fa fa-caret-down"></span>'
+ 			}
+ 		});
+ 		$('#toDate_s').datepicker({
+ 			format: 'mmm-yyyy',
+ 			iconsLibrary : 'fontawesome',
+ 			icons : {
+ 				rightIcon : '<span class="fa fa-caret-down"></span>'
+ 			}
+ 		});
+    </script>
+	
+	
+	
+	<script src="js/idle_timeout.js"></script>
+	<script src="js/invoicescript.js"></script>
+	
+	<style>
+    .ui-datepicker-calendar {
+        display: none;
+        }
+    </style>
+	
+	
+</body>
+
+</html>
