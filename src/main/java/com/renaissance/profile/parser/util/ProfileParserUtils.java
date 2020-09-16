@@ -1,7 +1,9 @@
 package com.renaissance.profile.parser.util;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -11,6 +13,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
@@ -26,6 +29,12 @@ import org.slf4j.LoggerFactory;
  */
 
 import com.renaissance.contractor.dto.MarginDTO;
+import com.renaissance.invoice.dto.InvoiceDTO;
+
+import pl.jsolve.templ4docx.core.Docx;
+import pl.jsolve.templ4docx.core.VariablePattern;
+import pl.jsolve.templ4docx.variable.TextVariable;
+import pl.jsolve.templ4docx.variable.Variables;
 public class ProfileParserUtils {
 	private static final Logger logger=LoggerFactory.getLogger(ProfileParserUtils.class);
 	
@@ -244,5 +253,61 @@ public static Double roundValue(Double amount) {
     bd = bd.setScale(2, RoundingMode.HALF_UP);
 	return bd.doubleValue();
 	
+}
+
+public static void generateInvoice(InvoiceDTO invoiceDto,String filePath) {
+	try {
+	Docx docx = new Docx("D:\\template.docx"); 
+	docx.setVariablePattern(new VariablePattern("#{", "}"));
+	
+	 
+	  
+	  // preparing variables
+	Variables variables = new Variables();
+	  variables.addTextVariable(new TextVariable("#{name}", invoiceDto.getContractorName()));
+	  variables.addTextVariable(new TextVariable("#{client_name}", invoiceDto.getClientName()));
+	  variables.addTextVariable(new TextVariable("#{client_address}", invoiceDto.getAddress()));
+	  variables.addTextVariable(new TextVariable("#{end_client_name}", invoiceDto.getEndClientName()));
+	  variables.addTextVariable(new TextVariable("#{start_date}", invoiceDto.getStartDate()));
+	  variables.addTextVariable(new TextVariable("#{end_date}", invoiceDto.getEndDate()));
+	  variables.addTextVariable(new TextVariable("#{invoice_number}", invoiceDto.getInvoiceNo()+""));
+	  variables.addTextVariable(new TextVariable("#{po_number}", invoiceDto.getPoNumber()));
+	  variables.addTextVariable(new TextVariable("#{invoice_date}", ProfileParserUtils.parseDateToString(LocalDate.now())));
+	  variables.addTextVariable(new TextVariable("#{payment_terms}", invoiceDto.getPaymentTerms()));
+	  variables.addTextVariable(new TextVariable("#{vendor_number}", invoiceDto.getVendorId()));
+	  variables.addTextVariable(new TextVariable("#{unit_price}", formatAmount(invoiceDto.getBillRatePerDay())));
+	  variables.addTextVariable(new TextVariable("#{no_of_units}", invoiceDto.getNoOfDaysWorked()+".00"));
+	  variables.addTextVariable(new TextVariable("#{amount}", "$"+invoiceDto.getTotalAmount()));
+	  variables.addTextVariable(new TextVariable("#{total_amount}", formatAmount(invoiceDto.getTotalAmount())));
+	  variables.addTextVariable(new TextVariable("#{gst}", formatAmount(invoiceDto.getGst())));
+	  variables.addTextVariable(new TextVariable("#{total_amount_gst}", formatAmount(invoiceDto.getTotalAmountWithGst())));
+	  // fill template 
+	  docx.fillTemplate(variables);
+	  File fileLoc= new File(filePath);
+		if(fileLoc.exists()) {
+			logger.info("Valid path");
+			 docx.save(filePath+"\\"+invoiceDto.getContractorName()+".docx");
+		}else {
+			docx.save("D:\\invoices\\"+invoiceDto.getContractorName()+".docx");		}
+	  // save filled .docx file 
+	 
+	}catch(Exception e) {
+		
+	}
+}
+
+private static String formatAmount(Double amount) {
+	if(!isObjectEmpty(amount)) {
+	NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	String moneyString = formatter.format(amount);
+	return moneyString;
+	}
+	else
+		return "$0.00";
+}
+
+public static Integer getRandomNumber() {
+	Random random = new Random(System.nanoTime());
+	return random.nextInt() & Integer.MAX_VALUE;
 }
 }

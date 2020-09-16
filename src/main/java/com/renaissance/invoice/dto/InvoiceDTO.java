@@ -21,7 +21,7 @@ public class InvoiceDTO {
 	private Double billRatePerDay;
 	private Double totalAmount;
 	private Double gst;
-	private Double tatoalAmountWithGst;
+	private Double totalAmountWithGst;
 	private String inclGst;
 	private Integer noOfDaysWorked;
 	private LocalDate invoiceGeneratedDate;
@@ -30,6 +30,10 @@ public class InvoiceDTO {
 	private String monthYear;
 	private String contractorInvoiceNotes;
 	private String description;
+	private String generateInvoice;
+	private String filePath;
+	private String poNumber;
+	private Double gstPercent;
 	public Integer getId() {
 		return id;
 	}
@@ -132,11 +136,12 @@ public class InvoiceDTO {
 	public void setGst(Double gst) {
 		this.gst = gst;
 	}
-	public Double getTatoalAmountWithGst() {
-		return tatoalAmountWithGst;
+	
+	public Double getTotalAmountWithGst() {
+		return totalAmountWithGst;
 	}
-	public void setTatoalAmountWithGst(Double tatoalAmountWithGst) {
-		this.tatoalAmountWithGst = tatoalAmountWithGst;
+	public void setTotalAmountWithGst(Double totalAmountWithGst) {
+		this.totalAmountWithGst = totalAmountWithGst;
 	}
 	public String getInclGst() {
 		return inclGst;
@@ -186,6 +191,37 @@ public class InvoiceDTO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+	public String getGenerateInvoice() {
+		return generateInvoice;
+	}
+	public void setGenerateInvoice(String generateInvoice) {
+		this.generateInvoice = generateInvoice;
+	}
+	
+	
+	public String getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	
+	public String getPoNumber() {
+		return poNumber;
+	}
+	public void setPoNumber(String poNumber) {
+		this.poNumber = poNumber;
+	}
+	
+	
+	public Double getGstPercent() {
+		return gstPercent;
+	}
+	public void setGstPercent(Double gstPercent) {
+		this.gstPercent = gstPercent;
+	}
 	@Override
 	public String toString() {
 		return "InvoiceDTO [id=" + id + ", invoiceNo=" + invoiceNo + ", contractorId=" + contractorId
@@ -193,12 +229,13 @@ public class InvoiceDTO {
 				+ ", endClientName=" + endClientName + ", address=" + address + ", vendorId=" + vendorId
 				+ ", paymentTerms=" + paymentTerms + ", clientAbnNo=" + clientAbnNo + ", startDate=" + startDate
 				+ ", endDate=" + endDate + ", ratePerDay=" + ratePerDay + ", billRatePerDay=" + billRatePerDay
-				+ ", totalAmount=" + totalAmount + ", gst=" + gst + ", tatoalAmountWithGst=" + tatoalAmountWithGst
+				+ ", totalAmount=" + totalAmount + ", gst=" + gst + ", totalAmountWithGst=" + totalAmountWithGst
 				+ ", inclGst=" + inclGst + ", noOfDaysWorked=" + noOfDaysWorked + ", invoiceGeneratedDate="
 				+ invoiceGeneratedDate + ", invoiceCreatedDate=" + invoiceCreatedDate + ", status=" + status
 				+ ", monthYear=" + monthYear + ", contractorInvoiceNotes=" + contractorInvoiceNotes + ", description="
-				+ description + "]";
+				+ description + ", generateInvoice=" + generateInvoice + "]";
 	}
+	
 	
 	
 	

@@ -23,6 +23,7 @@ public class ProfileParserConstants {
 	public final static String WA="WA";
 	public final static String TAS="TAS";
 	public final static String VIC="VIC";
+	public final static String GST="GST";
 	public final static String TRUE="true";
 	public final static String FALSE="false";
 	public final static String YES="Yes";
