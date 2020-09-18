@@ -114,40 +114,7 @@
 																			data-date-format="MM/yyyy"   autocomplete="off"/>	
 																		</div>
 																	</div>
-																	<div class="col-sm-3">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">Start Date *</label> 
-																					<input 
-																						data-date-format="dd-MM-yyyy" 
-																						 placeholder="Start Date"
-																						onfocus="this.placeholder = 'Start Date'"
-																						onblur="this.placeholder = 'Start Date'"
-																						class="single-input" id="startDate" 
-																						 autocomplete="off"
-																						name="startDate"  >
-																					
-																						
-																				</div>
-																			</div>
-																			<div class="col-sm-3">
-																				<div class="form-group">
-																					<label for="name" style="font-weight:bold">End Date *</label> 
-																					<input 
-																						data-date-format="dd-MM-yyyy" 
-																						 placeholder="End Date"
-																						onfocus="this.placeholder = 'End Date'"
-																						onblur="this.placeholder = 'End Date'"
-																						class="single-input" id="endDate" 
-																						 autocomplete="off"
-																						name="startDate"  >
-																					
-																						
-																				</div>
-																			</div>
 																</div>
-																
-																	
-										
 									</div>
 								
 								</div>
@@ -179,14 +146,13 @@
 								
 							<div class="form-group text-center">
 							<input type="submit"
-										class="button button-contactForm boxed-btn" onclick="temporarySave()" value="Save" id="tempSave_btn"/>
+										class="button button-contactForm boxed-btn" onclick="temporarySave()" value="Save Invoices" id="tempSave_btn"/>
 									<input type="submit"
-										class="button button-contactForm boxed-btn" onclick="generateInvoice()" value="Generate Invoices"/>
-										<input type="submit"
-										class="button button-contactForm boxed-btn" onclick="saveText()" value="document"/>
+										class="button button-contactForm boxed-btn" onclick="generateInvoice()" value="SAve & Generate Invoices"/>
 										
 								</div>
-								</div>		
+								</div>	
+								<div id="invoices_generated_mesg" style="font-size: 15px; font-style:bold; "></div>	
 								</div>		
 							</div>
 							

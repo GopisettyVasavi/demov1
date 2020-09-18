@@ -16,6 +16,8 @@ function initialize(){
 	$("#buttons_div").hide();
 	
 	$('#search_feedback').html("");
+	$('#invoices_generated_mesg').html("");
+	
 	document.getElementById("searchForm").reset();
 	$("#searchresults_div").hide();
 	
@@ -24,344 +26,24 @@ function initialize(){
 
 function createinvoice(){
 	event.preventDefault();
-	if($("#invoicemonth").val()!='' && $("#startDate").val()!='' && $("#endDate").val()!='' ){
+	$('#invoices_generated_mesg').html("");
+	if($("#invoicemonth").val()!='' ){
 		
 		
 		
 		var monthyear=$("#invoicemonth").val();
-		var startdate=$("#startDate").val();
-		var endDate=$("#endDate").val();
-		console.log("Dates::"+startdate +" "+endDate);
+		
 		$.ajax({
 			type : "GET",
 			contentType : "application/json",
-			url : "/createinvoice/"+monthyear+"/"+ startdate+"/"+endDate,
+			url : "/createinvoice/"+monthyear,
 			cache : false,
 			timeout : 600000,
 			success : function(data) {
 				//alert(data);
 				//alert("success");
 				if(data.length>0){
-					$('#monthyear_feedback').html("");
-				$("#invoices_div").show();
-				$("#invoicetable").show();
-				$("#buttons_div").show();
-				//$("#buttons_div").show();
-				//document.getElementById("tempSave_btn").disabled = false;
-				
-				var i=0;
-				var j=0;
-				var k=0;
-				var l=0;
-				var n=0;
-				var p=0;
-				var q=0;
-				//console.log("status: "+data[0].status);
-				
-				var table = $('#invoicetable').DataTable({
-
-					destroy : true,
-					searching: false,
-					autoWidth : false,
-					paging:false,
-					/*
-					 * targets: 'no-sort', bSort: false, order: [],
-					 */
-
-					buttons : [ 'colvis' ],
-					renderer : {
-						"header" : "bootstrap"
-					}, 
-					"order": [[ 1, "asc" ]],
-					/*
-	private Integer invoiceNo;
-	private Double totalAmount;
-	private Double gst;
-	private Double tatoalAmountWithGst;
-	private String inclGst;
-	private Integer noOfDaysWorked;
-	private LocalDate invoiceGeneratedDate;
-	private String invoiceCreatedDate;
-	private String status;
-	private String contractorInvoiceNotes;
-	private String description;
-					 */
-					data : data,
-
-					columns : [
-						{
-							"data" : 'contractorId',
-							"name" : "contractorId",
-							"title" : "contractorId",
-							"visible":false
-						},
-						{
-							"data" : 'clientId',
-							"name" : "clientId",
-							"title" : "clientId",
-							"visible":false
-						},{
-						"data" : 'id',
-						"name" : "S.No",
-						"title" : "S.No"
-					}, {
-						"data" : 'contractorName',
-						"name" : "contractorName",
-						"title" : "Candidate Name"
-					}, {
-						"data" : 'clientName',
-						"name" : "clientName",
-						"title" : "Client Name"
-					},
-					{
-						"data" : 'endClientName',
-						"name" : "endClientName",
-						"title" : "End Client Name"
-					},
-					 {
-						"data" : 'vendorId',
-						"name" : "vendorId",
-						"title" : "Vendor Number"
-					},
-					{
-						"data" : 'paymentTerms',
-						"name" : "paymentTerms",
-						"title" : "Payment Terms"
-					},
-					 {
-						"data" : 'clientAbnNo',
-						"name" : "clientAbnNo",
-						"title" : "Client Abn No"
-					},
-					 
-					
-					{
-						"data" : 'address',
-						"name" : "address",
-						"title" : "Client Address"
-					},
-					{
-						"data" : 'poNumber',
-						"name" : "poNumber",
-						"title" : "PO Number"
-					},
-					{
-						"data" : 'ratePerDay',
-						"name" : "ratePerDay",
-						"title" : "Daily Rate"
-					},
-					{
-						"data" : 'billRatePerDay',
-						"name" : "billRatePerDay",
-						"title" : "Bill Rate Per Day"
-					},
-					{
-						"data" : 'startDate',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	i++;
-		                        return '<input type="text"  value="'+val+'"  class="editor-active" id="startDate' + i+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "Start Date"
-		            
-					},
-					{
-						"data" : 'endDate',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	j++;
-		                        return '<input type="text"  value="'+val+'"  class="editor-active" id="endDate' + j+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "End Date"
-		            
-					},
-					{
-						"data" : 'noOfDaysWorked',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	k++;
-		                    	//console.log("k value in days: "+k);
-		                        return '<input type="text" onchange="daysWorked( '+row.billRatePerDay+',  '+k+ ',  '+row.gstPercent+ '   )"  value="'+val+'"  class="editor-active" id="noOfDaysWorked' + k+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		               
-		                "title" : "No.Of Days Worked"
-		            
-					},
-					{
-						"data" : 'totalAmount',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: inclGst"+i);
-		                    	//q++;
-		                    	
-		                    	return '<label  style="font-weight:bold;" class="editor-active" id="totalAmount' + k+'" >'
-		                    	+'$'+val +'.00' + '</label>';
-		                    }
-		                    return ''; 
-		                },
-						"title" : "Total Amount(Excl GST)"
-					},
-					{
-						"data" : 'gst',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: inclGst"+i);
-		                    	//q++;
-		                    	 return '<label style="font-weight:bold;"  class="editor-active" id="gst' + k+'" >'
-		                    	 +'$'+val +'.00' + '</label>';
-		                    }
-		                    return ''; 
-		                },
-						"title" : "GST"
-					},
-					{
-						"data" : 'totalAmountWithGst',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: inclGst"+i);
-		                    	//q++;
-		                    	 return '<label  style="font-weight:bold;" class="editor-active" id="totalAmountWithGst' + k+'" >'
-		                    	 +'$'+val +'.00' +'</label>';
-		                    }
-		                    return ''; 
-		                },
-						"title" : "Total Amount With Gst"
-					},
-					
-					{
-						"data" : 'monthYear',
-						"name" : "monthYear",
-						"title" : "Month And Year",
-						"visible":false
-					},{
-						"data" : 'gstPercent',
-						"name" : "gstPercent",
-						"title" : "gstPercent",
-						"visible":false
-					},
-					
-					{
-						"data" : 'status',
-						"name" : "status",
-						"title" : "status",
-						"visible":false
-					},
-					{
-						"data" : 'invoiceNo',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: inclGst"+i);
-		                    	q++;
-		                    	 return '<input type="textbox"  value="'+val+'"  class="editor-active" id="invoiceNo' + q+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "Invoice No."
-		            
-					},
-					
-					
-					{
-						"data" : 'contractorInvoiceNotes',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: "+val);
-		                    	l++;
-		                        return '<textarea rows="3" cols="15" onchange="invoiceNotes('+i+' )" value="'+val+'"  class="editor-active" id="contractorInvoiceNotes' + l+'" >' 
-		                        +val +'</textarea>';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "Invoice Notes"
-		            
-					},
-					{
-						"data" : 'inclGst',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: inclGst"+i);
-		                    	//n++;
-		                    	 return '<input type="checkbox" checked onchange="daysWorked( '+row.billRatePerDay+',  '+k+ ',  '+row.gstPercent+ '   )" value="'+val+'"  class="editor-active" id="inclGst' + k+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "Incl. GST?"
-		            
-					},
-					{
-						"data" : 'generateInvoice',
-						render: function (data, type, row ) {
-		                    if ( type === 'display' ) {
-		                    	var val="";
-		                    	if(data !=null)
-		                    		val=data;
-		                    	//console.log("data: generateInvoice"+i);
-		                    	p++;
-		                    	 return '<input type="checkbox"  value="'+val+'"  class="editor-active" id="generateInvoice' + p+'" >';
-		                    }
-		                    return ''; 
-		                },
-		               
-		               
-		                "title" : "Generate Invoice?"
-		            
-					},]
-
-				});
-				//i++;
-				
-				
-				$('#invoicetable tfoot tr').appendTo(
-						'#invoicetable thead');
-
-				$("#invoicetable tfoot tr").hide();
-				
+					populateInvoiceTable(data);
 				}	
 				else{
 					document.getElementById("monthyear_feedback").style.color = "red";
@@ -384,16 +66,371 @@ function createinvoice(){
 	}
 }
 
+function populateInvoiceTable(data){
+
+	$('#monthyear_feedback').html("");
+$("#invoices_div").show();
+$("#invoicetable").show();
+$("#buttons_div").show();
+$('#invoices_generated_mesg').html("");
+//$("#buttons_div").show();
+//document.getElementById("tempSave_btn").disabled = false;
+
+var i=0;
+var j=0;
+var k=0;
+var l=0;
+var n=0;
+var p=0;
+var q=0;
+//console.log("status: "+data[0].status);
+
+var table = $('#invoicetable').DataTable({
+
+	destroy : true,
+	searching: false,
+	autoWidth : false,
+	paging:false,
+	/*
+	 * targets: 'no-sort', bSort: false, order: [],
+	 */
+
+	buttons : [ 'colvis' ],
+	renderer : {
+		"header" : "bootstrap"
+	}, 
+	"order": [[ 1, "asc" ]],
+	
+	data : data,
+
+	columns : [
+		
+		{
+			"data" : 'contractorId',
+			"name" : "contractorId",
+			"title" : "contractorId",
+			"visible":false
+		},
+		{
+			"data" : 'id',
+			"name" : "S.No",
+			"title" : "S.No"
+		},
+		{
+			"data" : 'clientId',
+			"name" : "clientId",
+			"title" : "clientId",
+			"visible":false
+		}, {
+		"data" : 'contractorName',
+		"name" : "contractorName",
+		"title" : "Candidate Name"
+	}, {
+		"data" : 'clientName',
+		"name" : "clientName",
+		"title" : "Client Name"
+	},
+	{
+		"data" : 'endClientName',
+		"name" : "endClientName",
+		"title" : "End Client Name"
+	},
+	 {
+		"data" : 'vendorId',
+		"name" : "vendorId",
+		"title" : "Vendor Number",
+		"visible":false
+	},
+	{
+		"data" : 'paymentTerms',
+		"name" : "paymentTerms",
+		"title" : "Payment Terms",
+		"visible":false
+	},
+	 {
+		"data" : 'clientAbnNo',
+		"name" : "clientAbnNo",
+		"title" : "Client Abn No",
+		"visible":false
+	},
+	 
+	
+	{
+		"data" : 'address',
+		"name" : "address",
+		"title" : "Client Address",
+		"visible":false
+	},
+	{
+		"data" : 'poNumber',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	i++;
+                return '<input type="text"  value="'+val+'"  class="editor-active" id="poNumber' + i+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "PO Number"
+    
+	},
+	
+	{
+		"data" : 'ratePerDay',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null )
+            		data="$"+data+".00";
+            	return data;
+            	//i++;
+               // return '<input type="text"  value="'+val+'"  class="editor-active" id="poNumber' + i+'" >';
+            }
+            return ''; 
+        },
+		"title" : "Daily Rate"
+	},
+	
+	{
+		"data" : 'startDate',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//i++;
+                return '<input type="text"  value="'+val+'"  class="editor-active" id="startDate' + i+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Invoice Period Start Date"
+    
+	},
+	{
+		"data" : 'endDate',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	j++;
+                return '<input type="text"  value="'+val+'"  class="editor-active" id="endDate' + j+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Invoice Period End Date"
+    
+	},
+	{
+		"data" : 'noOfDaysWorked',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	k++;
+            	//console.log("k value in days: "+k);
+                return '<input type="text" onchange="daysWorked( '+row.billRatePerDay+',  '+k+ ',  '+row.gstPercent+ '   )"  value="'+val+'"  class="editor-active" id="noOfDaysWorked' + k+'" >';
+            }
+            return ''; 
+        },
+       
+       
+       
+        "title" : "No.Of Days Worked"
+    
+	},
+	{
+		"data" : 'billRatePerDay',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null )
+            		data="$"+data+".00";
+            	return data;
+            	//i++;
+               // return '<input type="text"  value="'+val+'"  class="editor-active" id="poNumber' + i+'" >';
+            }
+            return ''; 
+        },
+		"title" : "Bill Rate Per Day"
+	},
+	{
+		"data" : 'totalAmount',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst"+i);
+            	//q++;
+                return '<input type="text"  value="'+"$"+val +".00"+'"  class="editor-active" id="totalAmount' + k+'" >';
+            }
+            return ''; 
+        },
+		"title" : "Amount"
+	},
+	{
+		"data" : 'inclGst',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst: "+val);
+            	//n++;
+            	if(val=='true' || val==true)
+            	 return '<input type="checkbox" checked onchange="daysWorked( '+row.billRatePerDay+',  '+k+ ',  '+row.gstPercent+ '   )"   class="editor-active" id="inclGst' + k+'" >';
+            	else
+            		return '<input type="checkbox"  onchange="daysWorked( '+row.billRatePerDay+',  '+k+ ',  '+row.gstPercent+ '   )"   class="editor-active" id="inclGst' + k+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Incl. GST?"
+    
+	},
+	{
+		"data" : 'gst',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst"+i);
+            	//q++;
+            	return '<input type="text"  value="'+"$"+val +".00"+'"  class="editor-active" id="gst' + k+'" >';
+            }
+            return ''; 
+        },
+		"title" : "GST"
+	},
+	{
+		"data" : 'totalAmountWithGst',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst"+i);
+            	//q++;
+            	return '<input type="text"  value="'+"$"+val +".00"+'"  class="editor-active" id="totalAmountWithGst' + k+'" >';
+            }
+            return ''; 
+        },
+		"title" : "Total Amount Incl. GST"
+	},
+	
+	{
+		"data" : 'monthYear',
+		"name" : "monthYear",
+		"title" : "Month And Year",
+		"visible":false
+	},{
+		"data" : 'gstPercent',
+		"name" : "gstPercent",
+		"title" : "gstPercent",
+		"visible":false
+	},
+	
+	
+	{
+		"data" : 'invoiceNo',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst"+i);
+            	q++;
+            	 return '<input type="textbox"  value="'+val+'"  class="editor-active" id="invoiceNo' + q+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Invoice No."
+    
+	},
+	
+	
+	{
+		"data" : 'contractorInvoiceNotes',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: "+val);
+            	l++;
+                return '<textarea rows="3" cols="50" onchange="invoiceNotes('+i+' )" value="'+val+'"  class="editor-active" id="contractorInvoiceNotes' + l+'" >' 
+                +val +'</textarea>';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Invoice Notes"
+    
+	},
+	
+	{
+		"data" : 'generateInvoice',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: generateInvoice"+i);
+            	p++;
+            	 return '<input type="checkbox"  value="'+val+'"  class="editor-active" id="generateInvoice' + p+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Generate Invoice?"
+    
+	},
+	{
+		"data" : 'status',
+		"name" : "status",
+		"title" : "status"
+	},
+	]
+
+});
+//i++;
+
+
+$('#invoicetable tfoot tr').appendTo(
+		'#invoicetable thead');
+
+$("#invoicetable tfoot tr").hide();
+
+
+}
+
 function daysWorked( billRate,count, gstPercent){
 	event.preventDefault();
-	//console.log("Row id: "+count+" : "+billRate);
+//console.log("gstPercent : "+gstPercent);
 	var inclGst="inclGst"+count;
 	
 	var noOfDaysWorked="#noOfDaysWorked"+count;
 	var totalAmount=Number($(noOfDaysWorked).val())*Number(billRate);
 	
 	var totalAmountLbl="#totalAmount"+count;
-	$(totalAmountLbl).text("$"+totalAmount+".00");
+	$(totalAmountLbl).val("$"+totalAmount+".00");
 	
 	var gstLbl="#gst"+count;
 	var totalAmountWithGstLbl="#totalAmountWithGst"+count;
@@ -401,15 +438,15 @@ function daysWorked( billRate,count, gstPercent){
 		var gst=Number(gstPercent)/100 * totalAmount;
 		//console.log("GST: "+gst);
 		
-		$(gstLbl).text("$"+gst+".00");
-		$(totalAmountWithGstLbl).text("$"+Number(Number(totalAmount)+Number(gst))+".00");
+		$(gstLbl).val("$"+gst+".00");
+		$(totalAmountWithGstLbl).val("$"+Number(Number(totalAmount)+Number(gst))+".00");
 		
 	}else{
 		var gst=0;
 		//console.log("GST: "+gst);
 		
-		$(gstLbl).text("$"+gst+".00");
-		$(totalAmountWithGstLbl).text("$"+Number(Number(totalAmount)+Number(gst))+".00");
+		$(gstLbl).val("$"+gst+".00");
+		$(totalAmountWithGstLbl).val("$"+Number(Number(totalAmount)+Number(gst))+".00");
 	}
 	
 	
@@ -425,31 +462,42 @@ function invoiceNotes(notes){
 
 function temporarySave(){
 	event.preventDefault();
+var invoiceList=populateList();
+	
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
 
+		url : "/saveinvoice",
+		data : JSON.stringify(invoiceList),
+		dataType : 'json',
+		cache : false,
+		timeout : 600000,
+		success : function(data) {
+			//alert("Invoices Generated details data saved.");
+			//console.log(data.length);
+			if(data.length>0){
+				//populateInvoiceTable(data);
+				document.getElementById("invoices_generated_mesg").style.color = "black";
+			$('#invoices_generated_mesg').html("Invoices saved successfully.");
+			}
+			//document.getElementById("tempSave_btn").disabled = true;
+		},
+		error : function(e) {
+
+			alert("Unable to load details. " + e);
+			console.log(e);
+
+		}
+	});
 	
 }
-function generateInvoice(){
-	event.preventDefault();
-	/*while(!invoiceNo){
-	 var invoiceNo = prompt("Please enter Invoice No.", 
-     ""); 
-	// console.log("invoiceNo: "+invoiceNo);
-	 invoiceNo=invoiceNo--;
-	}*/
-	while(!filePath){
-		 var filePath = prompt("Please enter File path No.", 
-	     ""); 
-		 //console.log("filePath: "+filePath);
-		 filePath= filePath.replace(/\\/g, "SLASH");
-		}
-	 
+
+function populateList(){
 	var invoiceList=[];
-	//var invoiceNoExist=false;
-	var invoiceParam="0000";
 	var table = $('#invoicetable').DataTable();
 	var i=1;
 	table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
-		//console.log("row index:  "+rowIdx);
 	    var d = this.data();
 	    var generateInvoice="generateInvoice"+i;
 	    var startDate="#startDate"+i;
@@ -461,19 +509,15 @@ function generateInvoice(){
 	    var totalAmount="#totalAmount"+i;
 	    var gst="#gst"+i;
 	    var totalAmountWithGst="#totalAmountWithGst"+i;
-	   // if(document.getElementById(generateInvoice).checked==true){
-	    	/*console.log("generateInvoice: : "+generateInvoice);
-	    	console.log("inclGst: : "+inclGst);
-	    	console.log("generateInvoice val: : "+generateInvoice+": "+document.getElementById(generateInvoice).checked);
-	    	console.log("inclGst val: : "+inclGst+" : "+document.getElementById(inclGst).checked);*/
-	    	
-	    	var invoiceDTO={}
-		    invoiceDTO["id"]= d.id;
-		    invoiceDTO["invoiceNo"]=$(invoiceNo).val();
-	    	//invoiceDTO["invoiceNo"]=invoiceNo++;
-	    	
-		    invoiceDTO["contractorId"]=d.contractorId;
-		    invoiceDTO["contractorName"]=d.contractorName;
+	    var poNumber="#poNumber"+i;
+	    var invoiceDTO={}
+	    
+		   invoiceDTO["id"]= d.id;
+		   invoiceDTO["invoiceNo"]=$(invoiceNo).val();
+		   invoiceDTO["poNumber"]=$(poNumber).val();
+		   invoiceDTO["monthYear"]= d.monthYear;
+	       invoiceDTO["contractorId"]=d.contractorId;
+		   invoiceDTO["contractorName"]=d.contractorName;
 		    invoiceDTO["clientId"]=d.clientId;
 		    invoiceDTO["clientName"]=d.clientName;
 		   invoiceDTO["endClientName"]=d.endClientName;
@@ -485,9 +529,8 @@ function generateInvoice(){
 		    invoiceDTO["endDate"]=$(endDate).val();
 		    invoiceDTO["ratePerDay"]=d.ratePerDay;
 		    invoiceDTO["billRatePerDay"]=d.billRatePerDay;
-		    var total=Number($(noOfDaysWorked).val() * Number(d.billRatePerDay));
+		   /* var total=Number($(noOfDaysWorked).val() * Number(d.billRatePerDay));
 		    invoiceDTO["totalAmount"]=Number(total);
-		    //console.log("totalAmount: "+total);
 		    var gstVal=0;
 		   
 		    if(document.getElementById(inclGst).checked){
@@ -498,36 +541,44 @@ function generateInvoice(){
 		    }
 		   var totalValWithGst= Number(Number(gstVal)+Number(total));
 		   invoiceDTO["gst"]=Number(gstVal);
-		  // console.log("gst: "+Number($(gst).text()));
-		   invoiceDTO["totalAmountWithGst"]=totalValWithGst;
-		//   console.log("tatoalAmountWithGst: "+totalValWithGst);
-		  // invoiceDTO["inclGst"]=$(inclGst).val();
-		  // invoiceDTO["totalAmount"]=totalValWithGst;
-		   invoiceDTO["poNumber"]=d.poNumber;
-		   
+		   invoiceDTO["totalAmountWithGst"]=totalValWithGst;*/
+		    
+		    var gstVal=0;
+		    
+		    if(document.getElementById(inclGst).checked){
+		    	gstVal=Number($(gst).val().replace(/[^0-9.-]+/g,""));
+		    	
+		    }else{
+		    	gstVal=0;
+		    }
+		    invoiceDTO["gst"]=Number(gstVal);
+		    invoiceDTO["totalAmount"]=Number($(totalAmount).val().replace(/[^0-9.-]+/g,""));
+		    invoiceDTO["totalAmountWithGst"]=Number($(totalAmountWithGst).val().replace(/[^0-9.-]+/g,""));
 		   invoiceDTO["noOfDaysWorked"]=$(noOfDaysWorked).val();
 		   invoiceDTO["contractorInvoiceNotes"]=$(contractorInvoiceNotes).val();
 		   invoiceDTO["generateInvoice"]=document.getElementById(generateInvoice).checked;
 		   invoiceDTO["inclGst"]=document.getElementById(inclGst).checked;
-		  
-	    /*}else{
-	    	console.log("generateInvoice: false: "+document.getElementById(generateInvoice).checked);
-	    }*/
-	    
-	  
+		   invoiceDTO["status"]=d.status;
+		 
 	    invoiceList[i]=invoiceDTO;
 	   i++;
 	} );
-	/*console.log("invoiceNoExist: "+invoiceNoExist);
-	if(!invoiceNoExist){
-	while(!invoiceNo){
-		 var invoiceNo = prompt("Please enter Invoice No.", 
+	
+	return invoiceList;
+}
+function generateInvoice(){
+	event.preventDefault();
+	$('#invoices_generated_mesg').html("");
+	
+	var invoiceList=populateList();
+	
+	while(!filePath){
+		 var filePath = prompt("Please enter File path No.", 
 	     ""); 
-		 invoiceParam=invoiceNo;
-		// console.log("invoiceNo: "+invoiceNo);
-		// invoiceNo=invoiceNo--;
+		 //console.log("filePath: "+filePath);
+		 filePath= filePath.replace(/\\/g, "SLASH");
 		}
-	}*/
+	 
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
@@ -538,12 +589,19 @@ function generateInvoice(){
 		cache : false,
 		timeout : 600000,
 		success : function(data) {
-			alert("Invoices Generated details data saved.");
+			//alert("Invoices Generated details data saved.");
+			//console.log(data.length);
+			if(data.length>0){
+				populateInvoiceTable(data);
+				document.getElementById("invoices_generated_mesg").style.color = "black";
+			$('#invoices_generated_mesg').html("Invoices are generated successfully and stored at location: "+filePath);
+			}
 			//document.getElementById("tempSave_btn").disabled = true;
 		},
 		error : function(e) {
 
 			alert("Unable to load details. " + e);
+			console.log(e);
 
 		}
 	});

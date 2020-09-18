@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
@@ -255,7 +256,8 @@ public static Double roundValue(Double amount) {
 	
 }
 
-public static void generateInvoice(InvoiceDTO invoiceDto,String filePath) {
+public static String generateInvoice(InvoiceDTO invoiceDto,String filePath) {
+	String generatedFilePath="";
 	try {
 	Docx docx = new Docx("D:\\template.docx"); 
 	docx.setVariablePattern(new VariablePattern("#{", "}"));
@@ -264,36 +266,106 @@ public static void generateInvoice(InvoiceDTO invoiceDto,String filePath) {
 	  
 	  // preparing variables
 	Variables variables = new Variables();
+	if(!isObjectEmpty(invoiceDto.getContractorName()))
 	  variables.addTextVariable(new TextVariable("#{name}", invoiceDto.getContractorName()));
+	else 
+		variables.addTextVariable(new TextVariable("#{name}", "-"));
+	
+	if(!isObjectEmpty(invoiceDto.getClientName()))
 	  variables.addTextVariable(new TextVariable("#{client_name}", invoiceDto.getClientName()));
+	else
+		 variables.addTextVariable(new TextVariable("#{client_name}", "-"));
+	
+	if(!isObjectEmpty(invoiceDto.getAddress()))
 	  variables.addTextVariable(new TextVariable("#{client_address}", invoiceDto.getAddress()));
+	else
+		variables.addTextVariable(new TextVariable("#{client_address}", "-"));
+	
+	  if(!isObjectEmpty(invoiceDto.getEndClientName()))
 	  variables.addTextVariable(new TextVariable("#{end_client_name}", invoiceDto.getEndClientName()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{end_client_name}", "-"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getStartDate()))
 	  variables.addTextVariable(new TextVariable("#{start_date}", invoiceDto.getStartDate()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{start_date}", "-")); 
+	  
+	  if(!isObjectEmpty( invoiceDto.getEndDate()))
 	  variables.addTextVariable(new TextVariable("#{end_date}", invoiceDto.getEndDate()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{end_date}", "-"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getInvoiceNo()))
 	  variables.addTextVariable(new TextVariable("#{invoice_number}", invoiceDto.getInvoiceNo()+""));
+	  else
+		  variables.addTextVariable(new TextVariable("#{invoice_number}", "-"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getPoNumber()))
 	  variables.addTextVariable(new TextVariable("#{po_number}", invoiceDto.getPoNumber()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{po_number}", "-"));
+	  
+	 
 	  variables.addTextVariable(new TextVariable("#{invoice_date}", ProfileParserUtils.parseDateToString(LocalDate.now())));
+	  
+	  if(!isObjectEmpty(invoiceDto.getPaymentTerms()))
 	  variables.addTextVariable(new TextVariable("#{payment_terms}", invoiceDto.getPaymentTerms()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{payment_terms}", "-"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getVendorId()))
 	  variables.addTextVariable(new TextVariable("#{vendor_number}", invoiceDto.getVendorId()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{vendor_number}", "-"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getBillRatePerDay()) && invoiceDto.getBillRatePerDay()>0)
 	  variables.addTextVariable(new TextVariable("#{unit_price}", formatAmount(invoiceDto.getBillRatePerDay())));
+	  else
+		  variables.addTextVariable(new TextVariable("#{unit_price}", "$0.00"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getNoOfDaysWorked()) && invoiceDto.getNoOfDaysWorked()>0)
 	  variables.addTextVariable(new TextVariable("#{no_of_units}", invoiceDto.getNoOfDaysWorked()+".00"));
+	  else
+		  variables.addTextVariable(new TextVariable("#{no_of_units}", "0.00"));  
+	 
+	  if(!isObjectEmpty(invoiceDto.getTotalAmount()) && invoiceDto.getTotalAmount()>0)
 	  variables.addTextVariable(new TextVariable("#{amount}", "$"+invoiceDto.getTotalAmount()));
+	  else
+		  variables.addTextVariable(new TextVariable("#{amount}", "$0.00"));
+	  
+	  if(!isObjectEmpty(invoiceDto.getTotalAmount()) && invoiceDto.getTotalAmount()>0)
 	  variables.addTextVariable(new TextVariable("#{total_amount}", formatAmount(invoiceDto.getTotalAmount())));
+	  else
+		  
+	  variables.addTextVariable(new TextVariable("#{total_amount}", "$0.00"));
+	  if(!isObjectEmpty(invoiceDto.getGst()) && invoiceDto.getGst()>0)
 	  variables.addTextVariable(new TextVariable("#{gst}", formatAmount(invoiceDto.getGst())));
+	  else
+		  variables.addTextVariable(new TextVariable("#{gst}", "$0.00"));
+	  if(!isObjectEmpty(invoiceDto.getTotalAmountWithGst()) && invoiceDto.getTotalAmountWithGst()>0)
 	  variables.addTextVariable(new TextVariable("#{total_amount_gst}", formatAmount(invoiceDto.getTotalAmountWithGst())));
+	  else
+		  variables.addTextVariable(new TextVariable("#{total_amount_gst}", "$0.00"));
 	  // fill template 
 	  docx.fillTemplate(variables);
 	  File fileLoc= new File(filePath);
 		if(fileLoc.exists()) {
 			logger.info("Valid path");
+			 generatedFilePath=filePath;
 			 docx.save(filePath+"\\"+invoiceDto.getContractorName()+".docx");
+			
 		}else {
-			docx.save("D:\\invoices\\"+invoiceDto.getContractorName()+".docx");		}
+			generatedFilePath="D:\\invoices\\";
+			docx.save("D:\\invoices\\"+invoiceDto.getContractorName()+".docx");	
+			
+			}
 	  // save filled .docx file 
 	 
 	}catch(Exception e) {
-		
+		logger.error("Error in generating invoices..{}",e.getMessage());
 	}
+	return generatedFilePath;
 }
 
 private static String formatAmount(Double amount) {
@@ -309,5 +381,14 @@ private static String formatAmount(Double amount) {
 public static Integer getRandomNumber() {
 	Random random = new Random(System.nanoTime());
 	return random.nextInt() & Integer.MAX_VALUE;
+}
+
+private static final String DATE_PATTERN = "MM/yyyy";
+
+public static int getLastDayOfMonth(String dateString) {
+    DateTimeFormatter pattern = DateTimeFormatter.ofPattern(DATE_PATTERN);
+    YearMonth yearMonth = YearMonth.parse(dateString, pattern);
+    LocalDate date = yearMonth.atEndOfMonth();
+    return date.lengthOfMonth();
 }
 }

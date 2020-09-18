@@ -50,5 +50,23 @@ public class ClientCompanyDetailsService {
 		return lookupObj;
 	}
 
+	public ClientCompanyDTO getCompanyDetails(String clientName){
+		Iterable<ClientCompanyDetailsEntity> entities=clientCompanyRepo.findAll();
+		if(!ProfileParserUtils.isObjectEmpty(entities)) {
+			for (ClientCompanyDetailsEntity companyObj : entities) {
+				if(!ProfileParserUtils.isObjectEmpty(companyObj) &&
+						!ProfileParserUtils.isObjectEmpty(companyObj.getClientName()) && companyObj.getClientName().trim().equalsIgnoreCase(clientName.trim()) ) {
+					ClientCompanyDTO dto= new ClientCompanyDTO();
+					BeanUtils.copyProperties(companyObj, dto);
+					return dto;
+					
+				}
+				
+			}
+		}
+		
+		return null;
+		
+	}
 	
 }

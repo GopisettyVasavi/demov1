@@ -124,7 +124,11 @@ public class CommissionManagmentService {
 		}
 		return commissionList;
 	}
-	
+	/**
+	 * This method will save commissions temporarily.
+	 * @param commissionDtoList
+	 * @return
+	 */
 	public List<CommissionDTO> saveCommissionsTemporary(List<CommissionDTO> commissionDtoList){
 		List<CommissionDTO> savedList= new ArrayList<CommissionDTO>();
 		if(!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
