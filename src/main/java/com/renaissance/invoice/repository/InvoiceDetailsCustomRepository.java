@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.renaissance.invoice.dto.InvoiceSearchForm;
 import com.renaissance.invoice.model.InvoiceDetailsEntity;
 
 public interface InvoiceDetailsCustomRepository {
@@ -11,5 +12,7 @@ public interface InvoiceDetailsCustomRepository {
 	List<InvoiceDetailsEntity> getInvoicesForSelectedMonthAndYear(LocalDate monthYear);
 	
 	InvoiceDetailsEntity getContractorInvoiceByMonthYearInvoiceNo(BigInteger contractorId, LocalDate monthYear);
+	
+	List<InvoiceDetailsEntity> searchInvoices(InvoiceSearchForm invoiceSearchForm);
 
 }

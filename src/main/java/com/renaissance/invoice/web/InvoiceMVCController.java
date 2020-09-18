@@ -3,8 +3,9 @@ package com.renaissance.invoice.web;
 import static com.renaissance.util.APIConstants.CREATE_INVOICE_RUN;
 import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
 import static com.renaissance.util.APIConstants.GENERATE_INVOICE;
-import static com.renaissance.util.APIConstants.SAVE_INVOICE;
 import static com.renaissance.util.APIConstants.INVOICE_MAIN;
+import static com.renaissance.util.APIConstants.SAVE_INVOICE;
+import static com.renaissance.util.APIConstants.SEARCH_INVOICES;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.invoice.dto.InvoiceDTO;
+import com.renaissance.invoice.dto.InvoiceSearchForm;
 import com.renaissance.invoice.service.InvoiceDetailsService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
@@ -237,6 +239,47 @@ public class InvoiceMVCController {
 			return ResponseEntity.badRequest()
 					.body(" An issue in saving incoices. Please try again. \n" + e.getMessage());
 		}
+		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
+	}
+	
+	/**
+	 * This method will search contractor by the given criteria and return matching
+	 * records.
+	 * 
+	 * @param contractorSearchForm
+	 * @param request
+	 * @return
+	 */
+	@PostMapping(SEARCH_INVOICES)
+	public ResponseEntity<?> searchInvoices(@RequestBody InvoiceSearchForm invoiceSearchForm,
+			HttpServletRequest request) {
+		List<InvoiceDTO> returnInvoiceList=null;
+		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
+			returnInvoiceList=invoiceService.searchInvoices(invoiceSearchForm);
+			
+			if(!ProfileParserUtils.isObjectEmpty(returnInvoiceList)) {
+				returnInvoiceList.sort(Comparator.comparing(InvoiceDTO::getContractorName));
+			int i=1;
+			for(InvoiceDTO invoiceDto:returnInvoiceList) {
+				invoiceDto.setId(i);
+				i++;
+			}
+			}
+			logger.info("Search details, {}", returnInvoiceList.size());
+
+		} catch (Exception e) {
+			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
+			e.printStackTrace();
+		}
+		/*
+		 * List<ContractorSearchResultsForm> contractors = contractorService
+		 * .getContractorSearchResults(contractorSearchForm);
+		 */
+
 		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
 	}
 }

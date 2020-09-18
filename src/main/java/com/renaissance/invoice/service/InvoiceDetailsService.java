@@ -19,6 +19,7 @@ import com.renaissance.contractor.repository.ContractorEmploymentDetailsReposito
 import com.renaissance.contractor.repository.ContractorPersonalDetailsRepository;
 import com.renaissance.contractor.repository.ContractorRateDetailsRepository;
 import com.renaissance.invoice.dto.InvoiceDTO;
+import com.renaissance.invoice.dto.InvoiceSearchForm;
 import com.renaissance.invoice.model.InvoiceDetailsEntity;
 import com.renaissance.invoice.repository.InvoiceDetailsRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
@@ -166,4 +167,26 @@ public class InvoiceDetailsService {
 		
 	}
 
+	public List<InvoiceDTO> searchInvoices(InvoiceSearchForm searchForm){
+		List<InvoiceDTO> searchList= new ArrayList<InvoiceDTO>();
+		if(!ProfileParserUtils.isObjectEmpty(searchForm)) {
+			List<InvoiceDetailsEntity> invoiceEntityList=null;
+			invoiceEntityList=invoiceDetails.searchInvoices(searchForm);
+			if(!ProfileParserUtils.isObjectEmpty(invoiceEntityList)) {
+				for(InvoiceDetailsEntity entity: invoiceEntityList) {
+					InvoiceDTO invoiceDto= new InvoiceDTO();
+					BeanUtils.copyProperties(entity, invoiceDto);
+					invoiceDto.setStartDate(ProfileParserUtils.parseDateToString(entity.getStartDate()));
+					invoiceDto.setEndDate(ProfileParserUtils.parseDateToString(entity.getEndDate()));
+					invoiceDto.setMonthYear(ProfileParserUtils.parseDateToString(entity.getMonthYear()));
+					searchList.add(invoiceDto);
+				}
+			}
+			
+		}
+		
+		return searchList;
+		
+	}
+	
 }

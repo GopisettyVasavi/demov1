@@ -14,6 +14,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.context.annotation.Lazy;
 
+import com.renaissance.invoice.dto.InvoiceSearchForm;
 import com.renaissance.invoice.model.InvoiceDetailsEntity;
 import com.renaissance.invoice.repository.InvoiceDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
@@ -77,6 +78,48 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 
 		else
 			return new InvoiceDetailsEntity();
+	}
+	
+	public List<InvoiceDetailsEntity> searchInvoices(InvoiceSearchForm invoiceSearchForm){
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<InvoiceDetailsEntity> query = cb
+				.createQuery(InvoiceDetailsEntity.class);
+		Root<InvoiceDetailsEntity> rcInvoice = query.from(InvoiceDetailsEntity.class);
+
+		List<Predicate> predicates = new ArrayList<Predicate>();
+		
+		if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm)) {
+			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getInvoiceNo())) {
+			predicates.add(cb.equal(rcInvoice.get("invoiceNo"), invoiceSearchForm.getInvoiceNo()));
+		}
+			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getInvoiceStatus())) {
+				predicates.add(cb.equal(rcInvoice.get("status"), invoiceSearchForm.getInvoiceStatus()));
+			}
+			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getClientName())) {
+				predicates.add(cb.equal(rcInvoice.get("clientName"), invoiceSearchForm.getClientName()));
+			}
+			/*
+			 * if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getStartDate()) &&
+			 * !ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getEndDate())) {
+			 * predicates.add(cb.equal(rcInvoice.get("monthYear"),
+			 * ProfileParserUtils.parseStringDate(invoiceSearchForm.getStartDate()))); }
+			 */
+			
+		}
+		
+		List<InvoiceDetailsEntity> invoiceList = null;
+		if (predicates.size() > 0) {
+			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
+			Predicate[] predicatesArray = new Predicate[predicates.size()];
+			query.select(rcInvoice).where(cb.and(predicates.toArray(predicatesArray)));
+			invoiceList = entityManager.createQuery(query).getResultList();
+		}
+		if (!ProfileParserUtils.isObjectEmpty(invoiceList))
+			return invoiceList;
+
+		else
+			return new  ArrayList<InvoiceDetailsEntity>();
+		
 	}
 	}
 

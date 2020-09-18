@@ -1,7 +1,8 @@
 $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 	document.getElementById("invoicemonth").focus();
-	document.getElementById("recruiterName_s").focus();
+	document.getElementById("invoiceNo_s").focus();
     //alert('TAB CHANGED');
+	
 });
 
 function backToIndex() {
@@ -21,6 +22,8 @@ function initialize(){
 	document.getElementById("searchForm").reset();
 	$("#searchresults_div").hide();
 	
+	$("#invoicesearchtbl").hide();
+	retrieveClients();
 	
 }
 
@@ -405,7 +408,7 @@ var table = $('#invoicetable').DataTable({
 	{
 		"data" : 'status',
 		"name" : "status",
-		"title" : "status"
+		"title" : "Status"
 	},
 	]
 
@@ -607,4 +610,317 @@ function generateInvoice(){
 	});
 	
 	 
+}
+
+
+function retrieveClients(){
+	$.ajax({
+		type : "GET",
+		contentType : "application/json",
+		url : "/getclientcompanies",
+		cache : false,
+		timeout : 600000,
+		success : function(list) {
+			var options = "";
+			// alert(list.length);
+			$('#clientName')
+					.html(
+							"<select id =\"client\" class=\"nice-select form-select\">Select Client</select>");
+			/*$('#recruiter-select_s')
+					.html(
+							"<select id =\"recruiter_s\" class=\"nice-select form-select\">Select Recruiter</select>");*/
+			options += "<option value=\"none\"  selected=\"selected\">Select Client</option>";
+
+			// $('#recruiter-select select').append(options);
+			for (i in list) {
+				// alert(list[i].employeeId+" "+list[i].employeeName);
+				options += "<option value = " + list[i].clientId
+						+ ">" + list[i].clientName + "</option>";
+			}
+			//options += "<option value=\"99999999\" >Other</option>";
+			$('#clientName select').append(options);
+			//$('#recruiter-select_s select').append(options);
+			document.getElementById("client").classList
+					.add('form-select');
+			//document.getElementById("recruiter_s").classList.add('form-select');
+			// document.getElementById("select_div").className +=
+			// "input-group-icon";
+		},
+		error : function(e) {
+
+			alert("Unable to load details");
+
+		}
+	});
+	
+}
+
+function searchinvoices(){
+	event.preventDefault();
+	$('#search_feedback').html("");
+	$("#searchresults_div").hide();
+	$("#invoicesearchtbl").hide();
+	event.preventDefault();
+	if ( $("#startDate_s").val() == "" && $("#invoiceNo_s").val() == ""
+			&& $("#endDate_s").val() == ""
+			&& $("#client").val() == "none"
+			&&  $("#invoiceStatus").val() == "none") {
+		document.getElementById("search_feedback").style.color = "red";
+		$('#search_feedback').html(
+				"Please enter at least one value to search invoices.");
+		// alert("Please enter at least one value to search profiles.");
+	} else {
+		var invoiceSearchForm = {}
+		invoiceSearchForm["invoiceNo"] = $("#invoiceNo_s").val();
+		invoiceSearchForm["startDate"] = $("#startDate_s").val();
+		invoiceSearchForm["endDate"] = $("#endDate_s").val();
+		
+
+		if ($("#client").val() != "none") {
+			
+			invoiceSearchForm["clientName"] = $(
+					"#client option:selected").text();
+		}
+
+		if ($("#invoiceStatus").val() != "none") {
+			invoiceSearchForm["invoiceStatus"] = $(
+					"#invoiceStatus").val();
+		}
+		
+
+		$.ajax({
+					type : "POST",
+					contentType : "application/json",
+					url : "/searchinvoices",
+					data : JSON.stringify(invoiceSearchForm),
+					dataType : 'json',
+					cache : false,
+					timeout : 600000,
+					success : function(data) {
+						$("#searchresults_div").show();
+						$("#invoicesearchtbl").show();
+
+						var table = $('#invoicesearchtbl').DataTable({
+
+							destroy : true,
+
+							autoWidth : false,
+							/*
+							 * targets: 'no-sort', bSort: false, order: [],
+							 */
+
+							buttons : [ 'colvis' ],
+							renderer : {
+								"header" : "bootstrap"
+							}, 
+							"order": [[ 1, "asc" ]],
+							
+							data : data,
+
+							columns : [
+								
+								{
+									"data" : 'contractorId',
+									"name" : "contractorId",
+									"title" : "contractorId",
+									"visible":false
+								},
+								{
+									"data" : 'id',
+									"name" : "S.No",
+									"title" : "S.No"
+								},
+								{
+									"data" : 'clientId',
+									"name" : "clientId",
+									"title" : "clientId",
+									"visible":false
+								}, {
+								"data" : 'contractorName',
+								"name" : "contractorName",
+								"title" : "Candidate Name"
+							}, {
+								"data" : 'clientName',
+								"name" : "clientName",
+								"title" : "Client Name"
+							},
+							{
+								"data" : 'endClientName',
+								"name" : "endClientName",
+								"title" : "End Client Name"
+							},
+							 {
+								"data" : 'vendorId',
+								"name" : "vendorId",
+								"title" : "Vendor Number",
+								"visible":false
+							},
+							{
+								"data" : 'paymentTerms',
+								"name" : "paymentTerms",
+								"title" : "Payment Terms",
+								"visible":false
+							},
+							 {
+								"data" : 'clientAbnNo',
+								"name" : "clientAbnNo",
+								"title" : "Client Abn No",
+								"visible":false
+							},
+							 
+							
+							{
+								"data" : 'address',
+								"name" : "address",
+								"title" : "Client Address",
+								"visible":false
+							},
+							{
+								"data" : 'poNumber',
+								"name" : "poNumber",
+								"title" : "PO Number"
+						    
+							},
+							
+							{
+								"data" : 'ratePerDay',
+								"name" : "ratePerDay",
+								"title" : "Daily Rate"
+							},
+							
+							{
+								"data" : 'startDate',
+								"name" : "startDate",
+								"title" : "Invoice Period Start Date"
+						    
+							},
+							{
+								"data" : 'endDate',
+								"name" : "endDate",
+								"title" : "Invoice Period End Date"
+						    
+							},
+							{
+								"data" : 'noOfDaysWorked',
+								"name" : "noOfDaysWorked",
+								"title" : "No.Of Days Worked"
+						    
+							},
+							{
+								"data" : 'billRatePerDay',
+								"name" : "billRatePerDay",
+								"title" : "Bill Rate Per Day"
+							},
+							{
+								"data" : 'totalAmount',
+								"name" : "totalAmount",
+								"title" : "Amount"
+							},
+							{
+								"data" : 'inclGst',
+								render: function (data, type, row ) {
+						            if ( type === 'display' ) {
+						            	var val="";
+						            	if(data !=null)
+						            		val=data;
+						            	//console.log("data: inclGst: "+val);
+						            	//n++;
+						            	if(val=='true' || val==true)
+						            	 return '<input type="checkbox" checked    class="editor-active"  >';
+						            	else
+						            		return '<input type="checkbox"   class="editor-active"  >';
+						            }
+						            return ''; 
+						        },
+						       
+						       
+						        "title" : "Incl. GST?"
+						    
+							},
+							{
+								"data" : 'gst',
+								"name" : "gst",
+								"title" : "GST"
+							},
+							{
+								"data" : 'totalAmountWithGst',
+								"name" : "totalAmountWithGst",
+								"title" : "Total Amount Incl. GST"
+							},
+							
+							{
+								"data" : 'monthYear',
+								"name" : "monthYear",
+								"title" : "Month And Year",
+								"visible":false
+							},{
+								"data" : 'gstPercent',
+								"name" : "gstPercent",
+								"title" : "gstPercent",
+								"visible":false
+							},
+							
+							
+							{
+								"data" : 'invoiceNo',
+								"name" : "invoiceNo",
+								"title" : "Invoice No."
+						    
+							},
+							
+							
+							{
+								"data" : 'contractorInvoiceNotes',
+								"name" : "contractorInvoiceNotes",
+								"title" : "Invoice Notes"
+							},
+							
+							{
+								"data" : 'status',
+								"name" : "status",
+								"title" : "Status"
+							},
+							]
+
+						});
+						$('#invoicesearchtbl tfoot tr').appendTo(
+								'#invoicesearchtbl thead');
+
+						$("#invoicesearchtbl tfoot tr").hide();
+
+					},
+					error : function(e) {
+
+						var json = "<h4>Response Error:Error occured while searching for Invoices.</h4><pre>"
+								+ e.responseText + "</pre>";
+						$('#search_feedback').html(json);
+
+						console.log("ERROR : ", e);
+						// $("#btn-search").prop("disabled", false);
+
+					}
+				});
+	}
+}
+
+function resetinvoices(){
+	event.preventDefault();
+	$("#searchForm")[0].reset();
+	$('#search_feedback').html("");
+	$("#searchresults_div").hide();
+	$("#invoicesearchtbl").hide();
+/*
+	//$("#period_s").val('none');
+	$("#recruiterName_s").val("");
+	$('#search_feedback').html("");
+	document.getElementById("searchForm").reset();
+	$("#searchresults_div").hide();
+	$("#commissionsearch_tbl").hide();
+	$("#fromdate_div").hide();
+	$("#todate_div").hide();
+	$("#commissiondetails_div").hide();
+	$("#commissiondetail_div").hide();
+	$("#commissiondetails_tbl").hide();
+	$("#comdet_lbl").hide();
+	document.getElementById('comdet_lbl').innerHTML = '';*/
 }

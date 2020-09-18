@@ -64,6 +64,7 @@ public class APIConstants {
 	public static final String CREATE_INVOICE_RUN="/createinvoice/{monthyear}";
 	public static final String GENERATE_INVOICE="/generateinvoice/{filePath}";
 	public static final String SAVE_INVOICE="/saveinvoice";
+	public static final String SEARCH_INVOICES="/searchinvoices";
 	
 
 }
