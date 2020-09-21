@@ -1475,3 +1475,462 @@
 	name: default
 	...]
 2020-09-21 14:57:36,471 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-09-21 14:57:36,735 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-09-21 14:57:36,736 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@748e2288
+2020-09-21 14:57:37,170 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.356 seconds (JVM running for 19624.437)
+2020-09-21 14:57:37,172 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-09-21 14:59:09,400 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-21 14:59:09,412 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-1] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 14:59:09,413 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-1] HHH000397: Using ASTQueryTranslatorFactory
+2020-09-21 14:59:09,425 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] color not changed..
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 14:59:09,426 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] color not changed..
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,431 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 14:59:09,432 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-1] Search details, 32
+2020-09-21 14:59:16,058 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-3] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Submitted, startDate=, endDate=, invoiceDescription=]
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] payment 30 Days
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] days ..30
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] color changed..
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] payment 30 Days
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] days ..30
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] color not changed..
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] payment 30 Days
+2020-09-21 14:59:16,061 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] days ..30
+2020-09-21 14:59:16,062 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] color not changed..
+2020-09-21 14:59:16,062 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] payment null
+2020-09-21 14:59:16,062 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] color not changed..
+2020-09-21 14:59:16,062 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-3] Search details, 4
+2020-09-21 14:59:20,858 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 14:59:20,861 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,862 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-21 14:59:20,863 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Search details, 32
+2020-09-21 14:59:53,329 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-7] EDIT data... InvoiceDTO [id=null, invoiceNo=917086492, contractorId=null, contractorName=null, clientId=null, clientName=Attra Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=0.0, gst=0.0, totalAmountWithGst=0.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/06/2020, status=Submitted, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1711, changeColor=null]
+2020-09-21 14:59:55,142 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-9] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 14:59:55,145 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,146 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] color not changed..
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] color not changed..
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,147 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment null
+2020-09-21 14:59:55,148 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-9] Search details, 31
+2020-09-21 15:00:05,322 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Submitted, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color changed..
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:00:05,324 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color changed..
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:00:05,325 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Search details, 5
+2020-09-21 15:00:25,288 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-6] EDIT data... InvoiceDTO [id=null, invoiceNo=1887238506, contractorId=null, contractorName=null, clientId=null, clientName=Infosys Technologies Limited, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=100.0, gst=1000.0, totalAmountWithGst=1100.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=Payment Received, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1709, changeColor=null]
+2020-09-21 15:00:27,323 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-7] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Submitted, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:00:27,326 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] payment 30 Days
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] days ..30
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] color changed..
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] payment 30 Days
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] days ..30
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] color not changed..
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] payment 30 Days
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] days ..30
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] color not changed..
+2020-09-21 15:00:27,327 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] payment null
+2020-09-21 15:00:27,328 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] color not changed..
+2020-09-21 15:00:27,328 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-7] Search details, 4
+2020-09-21 15:00:32,246 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-9] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Payment Received, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:00:32,248 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 15:00:32,248 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 15:00:32,248 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] color not changed..
+2020-09-21 15:00:32,248 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] payment 30 Days
+2020-09-21 15:00:32,248 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] days ..30
+2020-09-21 15:00:32,249 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] color not changed..
+2020-09-21 15:00:32,249 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-9] Search details, 2
+2020-09-21 15:03:02,474 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-4] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,476 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] color not changed..
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment 30 Days
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] days ..30
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] color not changed..
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,477 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] payment null
+2020-09-21 15:03:02,478 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-4] Search details, 31
+2020-09-21 15:04:26,311 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-4] EDIT data... InvoiceDTO [id=null, invoiceNo=593928886, contractorId=null, contractorName=null, clientId=null, clientName=ANZ Banking Group Ltd (Aust), endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=1100.0, gst=110.0, totalAmountWithGst=1110.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/07/2020, status=New, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1712, changeColor=null]
+2020-09-21 15:04:47,944 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-10] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,947 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] color not changed..
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,948 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment null
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] color not changed..
+2020-09-21 15:04:47,949 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-10] Search details, 31
+2020-09-21 15:06:00,211 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-1] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,212 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] color not changed..
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment null
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] payment 30 Days
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] days ..30
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-1] color not changed..
+2020-09-21 15:06:00,213 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-1] Search details, 31
+2020-09-21 15:06:25,754 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-6] EDIT data... InvoiceDTO [id=null, invoiceNo=1048976009, contractorId=null, contractorName=null, clientId=null, clientName=Capgemini Australia Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=1000.0, gst=110.0, totalAmountWithGst=1110.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/07/2020, status=New, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1737, changeColor=null]
+2020-09-21 15:06:25,772 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:06:25,774 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,774 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,774 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,774 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,775 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:06:25,776 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Search details, 31
+2020-09-21 15:07:29,494 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=New, startDate=, endDate=, invoiceDescription=]
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,496 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,497 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment null
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] color not changed..
+2020-09-21 15:07:29,498 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Search details, 31
+2020-09-21 15:16:43,856 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-6] EDIT data... InvoiceDTO [id=null, invoiceNo=363048076, contractorId=null, contractorName=null, clientId=null, clientName=Cognizant Softvision Australia Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=0.0, gst=0.0, totalAmountWithGst=0.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=New, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1710, changeColor=null]

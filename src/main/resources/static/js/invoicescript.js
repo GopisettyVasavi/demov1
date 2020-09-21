@@ -25,6 +25,7 @@ function initialize(){
 	$("#invoicesearchtbl").hide();
 	$("#editdetails_div").hide();
 	$('#save_feedback').html("");
+	$('#total_div').html("");
 	
 	
 	retrieveClients();
@@ -665,7 +666,7 @@ function searchinvoices(){
 	$("#searchresults_div").hide();
 	$("#invoicesearchtbl").hide();
 	$("#editdetails_div").hide();
-
+	$('#total_div').html("");
 	event.preventDefault();
 	if ( $("#startDate_s").val() == "" && $("#invoiceNo_s").val() == ""
 			&& $("#endDate_s").val() == ""
@@ -715,6 +716,7 @@ function searchinvoices(){
 							destroy : true,
 
 							autoWidth : false,
+							
 							/*
 							 * targets: 'no-sort', bSort: false, order: [],
 							 */
@@ -819,14 +821,16 @@ function searchinvoices(){
 		                            
 
 		                        }
+							
 
 						});
 						$('#invoicesearchtbl tfoot tr').appendTo(
 								'#invoicesearchtbl thead');
-
 						$("#invoicesearchtbl tfoot tr").hide();
 						
 						//changecolor();
+						
+						calculateTotals();
 
 					},
 					error : function(e) {
@@ -843,7 +847,16 @@ function searchinvoices(){
 	}
 }
 
-
+function calculateTotals(){
+	var table = $('#invoicesearchtbl').DataTable();
+	  
+var amount=table.column( 6 ).data().sum();
+var gst=table.column( 7 ).data().sum();
+var totamount=table.column( 8 ).data().sum()
+	  $('#total_div').html("Amount: $"+ amount+".00"
+			  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GST: $"+gst+".00" 
+			  +" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;           Total Amount: $"+totamount+".00"  );
+}
 
 function resetinvoices(){
 	event.preventDefault();
@@ -853,7 +866,7 @@ function resetinvoices(){
 	$("#invoicesearchtbl").hide();
 	$("#editdetails_div").hide();
 	$('#save_feedback').html("");
-
+	$('#total_div').html("");
 }
 
 
@@ -980,4 +993,5 @@ function cancelInvoice(){
 	event.preventDefault();
 	$('#save_feedback').html("");
 	$("#editdetails_div").hide();
+	
 }
