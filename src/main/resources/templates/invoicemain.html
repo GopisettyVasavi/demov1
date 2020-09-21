@@ -42,6 +42,11 @@
     padding-bottom: 6px;
 }
 </style>
+<style type="text/css">
+
+.red {
+  background-color: red !important;
+}</style>
 </head>
 
 <body onload="initialize()">
@@ -242,6 +247,17 @@
 																						 autocomplete="off" >
 								</div>
 							</div>
+							<div class="col-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Invoice Description</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Invoice Notes'"
+																						onblur="this.placeholder = 'Invoice Notes'"
+																						placeholder="Invoice Notes" id="invoiceDescription"
+																						name="Invoice Notes" ></textarea>
+																				</div>
+																			</div>
 							
 							<div class="col-sm-12" style="padding-top: 20px">
 								<div class="form-group text-center">
@@ -265,27 +281,136 @@
 			</div>
 								
 							</div>
-							<div class="col-sm-12" id="invoicedetail_div" >
-							<div id="invdetails_feedback"></div>
-							</div>
-							<div class="col-sm-12" id="invoicedetails_div" >
-							<div class="col-sm-6">
-	<div class="form-group" style="padding-top: 10px">
-<label for="name" id="invdet_lbl" style=" font-size: 16px; font-weight:bold; display: none"></label> 
-																				
-																		</div>
-																	</div>
-							
-			<div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" >
-		 	
-			
-	<table id="invoicedetails_tbl" class="display">
+							<div id="hidden" style="display: none">
+					<input
+								type="text" name="idPkey" placeholder="Min Range"
+								class="single-input" id="idPkey" 
+								 >
+					</div>
+							<div id="editdetails_div" style="display: none">
+			 <div class="container">
 
-			</table>
-			</div>
-			
+				<div class="row">
+				<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Invoice No</label> 
+																					<input type="text"
+										name="invoiceNo" placeholder="Invoice No"
+										onfocus="this.placeholder = 'Invoice No'"
+										onblur="this.placeholder = 'Invoice No'" id="invoiceNodet"
+										class="single-input">
+																				</div>
+																			</div>
+<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Client Name *</label> 
+																					
+																					<div class="input-group-icon" id="clientNamedet_div">
+																						
+																						<div class="form-select" id="clientNamedet" >
+																							
+																						</div>
+																					</div>
+																						
+																				</div>
+																			</div>
+					
+																			
+					<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Invoice Generated Date </label>
+																					<input
+																						data-date-format="dd/MM/yyyy" 
+																						 placeholder="Invoice Generated Date"
+																						onfocus="this.placeholder = 'Invoice Generated Date'"
+																						onblur="this.placeholder = 'Invoice Generated Date'"
+																						class="single-input"   autocomplete="off"   
+																						id="invoiceDatedet" name="InvoiceGeneratedDate" >
+
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Amount</label> 
+																					<input type="text"
+										name="amountdet" placeholder="Amount"
+										onfocus="this.placeholder = 'Amount'"
+										onblur="this.placeholder = 'Amount'" id="amountdet"
+										class="single-input">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">GST</label> 
+																					<input type="text"
+										name="GST" placeholder="GST"
+										onfocus="this.placeholder = 'GST'"
+										onblur="this.placeholder = 'GST'" id="gstdet"
+										class="single-input">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Total Amount</label> 
+																					<input type="text"
+										name="totalamountdet" placeholder="Total Amount"
+										onfocus="this.placeholder = 'Total Amount'"
+										onblur="this.placeholder = 'Amount'" id="totalamountgstdet"
+										class="single-input">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Invoice Status</label>
+																					<div class="input-group-icon">
+																						
+																						<div class="form-select"  >
+																							<select id="invoiceStatusdet"  class="dropdown">
+																								<option value="none"  selected="selected">Select Invoice Status</option>
+																								<option value="Cancelled">Cancelled</option>
+																								<option value="New">New</option>
+																								<option value="Payment Received">Payment Received</option>
+																								<option value="Submitted">Submitted</option>
+																								
+																								</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<div class="col-6">
+																				<div class="form-group">
+																					<label for="name" style="font-weight:bold">Invoice Description</label>
+																					<textarea class="form-control w-100" cols="30"
+																						rows="3"
+																						onfocus="this.placeholder = 'Invoice Notes'"
+																						onblur="this.placeholder = 'Invoice Notes'"
+																						placeholder="Invoice Notes" id="invoiceDescriptiondet"
+																						name="Invoice Notes" ></textarea>
+																				</div>
+																			</div>
+					
+					
+		<div class="col-sm-12" style="padding-top: 10px"></div>
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						<div class="form-group">
+
+							<button type="submit" id="btn-save"
+								class="button button-contactForm boxed-btn"
+								onclick="editInvoice()">Save</button>
+								<button type="submit" id="btn-cancel"
+								class="button button-contactForm boxed-btn"
+								onclick="cancelInvoice()">Cancel</button>
 								
-							</div>
+						</div>
+						<div id="save_feedback"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+							
 						
 					</form>
 				</div>
@@ -361,6 +486,15 @@
  				rightIcon : '<span class="fa fa-caret-down"></span>'
  			}
  		});
+ 		$('#invoiceDatedet').datepicker({
+ 			format: 'dd/mm/yyyy',
+ 			iconsLibrary : 'fontawesome',
+ 			icons : {
+ 				rightIcon : '<span class="fa fa-caret-down"></span>'
+ 			}
+ 		});
+ 		
+ 		
     </script>
 	
 	

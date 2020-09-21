@@ -3,7 +3,9 @@ package com.renaissance.invoice.service;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -63,6 +65,7 @@ public class InvoiceDetailsService {
 					invoiceDto.setStartDate(ProfileParserUtils.parseDateToString(invoiceEntity.getStartDate()));
 					invoiceDto.setEndDate(ProfileParserUtils.parseDateToString(invoiceEntity.getEndDate()));
 					invoiceDto.setMonthYear(ProfileParserUtils.parseDateToString(invoiceEntity.getMonthYear()));
+					invoiceDto.setInvoiceGeneratedDateString(ProfileParserUtils.parseDateToString(invoiceEntity.getInvoiceGeneratedDate()));
 					invoiceList.add(invoiceDto);
 				}
 			}
@@ -146,6 +149,7 @@ public class InvoiceDetailsService {
 				invoiceEntity.setMonthYear(ProfileParserUtils.parseStringDate(invoice.getMonthYear()));
 				invoiceEntity.setStartDate(ProfileParserUtils.parseStringDate(invoice.getStartDate()));
 				invoiceEntity.setEndDate(ProfileParserUtils.parseStringDate(invoice.getEndDate()));
+				
 				//logger.info("VO....{}",invoiceEntity.toString());
 				InvoiceDetailsEntity previousInvoice = invoiceDetails.getContractorInvoiceByMonthYearInvoiceNo(invoice.getContractorId(), 
 						invoiceEntity.getMonthYear());
@@ -158,12 +162,53 @@ public class InvoiceDetailsService {
 				savedInvoice.setStartDate(ProfileParserUtils.parseDateToString(invoiceEntity.getStartDate()));
 				savedInvoice.setEndDate(ProfileParserUtils.parseDateToString(invoiceEntity.getEndDate()));
 				savedInvoice.setMonthYear(ProfileParserUtils.parseDateToString(invoiceEntity.getMonthYear()));
+				savedInvoice.setInvoiceGeneratedDateString(ProfileParserUtils.parseDateToString(invoiceEntity.getInvoiceGeneratedDate()));
 				savedList.add(savedInvoice);
 			}
 			}
 		}
 		
 		return savedList;
+		
+	}
+	
+	
+	
+	
+	/**
+	 * This method will save commissions temporarily.
+	 * @param commissionDtoList
+	 * @return
+	 */
+	public InvoiceDTO editInvoice(InvoiceDTO invoiceDto){
+		InvoiceDTO savedInvoice= new InvoiceDTO();
+		if(!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
+			
+				if(!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
+				
+				Optional<InvoiceDetailsEntity> previousInvoice = invoiceDetails.findById(invoiceDto.getIdPkey());
+				InvoiceDetailsEntity invoiceEntity=previousInvoice.get();
+				invoiceEntity.setInvoiceGeneratedDate(ProfileParserUtils.parseStringDate(invoiceDto.getInvoiceGeneratedDateString()));
+				invoiceEntity.setInvoiceNo(invoiceDto.getInvoiceNo());
+				invoiceEntity.setClientName(invoiceDto.getClientName());
+				invoiceEntity.setContractorInvoiceNotes(invoiceDto.getContractorInvoiceNotes());
+				invoiceEntity.setStatus(invoiceDto.getStatus());
+				invoiceEntity.setTotalAmount(invoiceDto.getTotalAmount());
+				invoiceEntity.setGst(invoiceDto.getGst());
+				invoiceEntity.setTotalAmountWithGst(invoiceDto.getTotalAmountWithGst());
+				
+				invoiceEntity=	invoiceDetails.save(invoiceEntity);
+				BeanUtils.copyProperties(invoiceEntity, savedInvoice);
+				//logger.info("VO....{}",savedInvoice.toString());
+				savedInvoice.setStartDate(ProfileParserUtils.parseDateToString(invoiceEntity.getStartDate()));
+				savedInvoice.setEndDate(ProfileParserUtils.parseDateToString(invoiceEntity.getEndDate()));
+				savedInvoice.setMonthYear(ProfileParserUtils.parseDateToString(invoiceEntity.getMonthYear()));
+				savedInvoice.setInvoiceGeneratedDateString(ProfileParserUtils.parseDateToString(invoiceEntity.getInvoiceGeneratedDate()));
+				//savedList.add(savedInvoice);
+			}
+		}
+		
+		return savedInvoice;
 		
 	}
 
@@ -179,6 +224,29 @@ public class InvoiceDetailsService {
 					invoiceDto.setStartDate(ProfileParserUtils.parseDateToString(entity.getStartDate()));
 					invoiceDto.setEndDate(ProfileParserUtils.parseDateToString(entity.getEndDate()));
 					invoiceDto.setMonthYear(ProfileParserUtils.parseDateToString(entity.getMonthYear()));
+					invoiceDto.setInvoiceGeneratedDateString(ProfileParserUtils.parseDateToString(entity.getInvoiceGeneratedDate()));
+					String payment=invoiceDto.getPaymentTerms();
+					logger.info("payment {}",payment);
+					int days=0;
+					if(!ProfileParserUtils.isObjectEmpty(payment)) {
+						payment=payment.replaceFirst("Days", "");
+						payment=payment.replaceFirst("days", "");
+						days=new Integer(payment.trim());
+						logger.info("days ..{}",days);
+					}
+					if(!ProfileParserUtils.isObjectEmpty(invoiceDto.getInvoiceGeneratedDate())) {
+					 LocalDate invDate = LocalDate.parse(invoiceDto.getInvoiceGeneratedDate().toString()); 
+				        // Parses the second date 
+				        LocalDate currentDate = LocalDate.parse(LocalDate.now().toString());
+					
+					if(currentDate.isAfter(invDate.plusDays(days)) && "Submitted".equalsIgnoreCase(invoiceDto.getStatus())) {
+						invoiceDto.setChangeColor("YES");
+						logger.info("color changed..");
+					}else {
+						invoiceDto.setChangeColor("NO");
+						logger.info("color not changed..");
+					}
+					}
 					searchList.add(invoiceDto);
 				}
 			}

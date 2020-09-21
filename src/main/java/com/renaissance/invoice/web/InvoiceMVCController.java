@@ -1,11 +1,6 @@
 package com.renaissance.invoice.web;
 
-import static com.renaissance.util.APIConstants.CREATE_INVOICE_RUN;
-import static com.renaissance.util.APIConstants.EMPTY_REDIRECT;
-import static com.renaissance.util.APIConstants.GENERATE_INVOICE;
-import static com.renaissance.util.APIConstants.INVOICE_MAIN;
-import static com.renaissance.util.APIConstants.SAVE_INVOICE;
-import static com.renaissance.util.APIConstants.SEARCH_INVOICES;
+import static com.renaissance.util.APIConstants.*;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -98,10 +93,16 @@ public class InvoiceMVCController {
 							if(invoice.getInvoiceNo()==null)
 							invoice.setInvoiceNo(BigInteger.valueOf(ProfileParserUtils.getRandomNumber()));
 							
+							if(invoice.getInclGst()==null || invoice.getInclGst().equalsIgnoreCase("true") )
+							invoice.setInclGst("true");
+							else
+								invoice.setInclGst("false");
+							
 							if (gst != null)
 								invoice.setGstPercent(gst);
 							else
 								invoice.setGstPercent(0.00);
+							
 							if (invoice.getStartDate() == "" || invoice.getStartDate() == null) {
 								invoice.setStartDate("01/" + commissionMonthYear);
 							}
@@ -213,6 +214,79 @@ public class InvoiceMVCController {
 	 * @param request
 	 * @return
 	 */
+	@PostMapping(EDIT_INVOICE)
+	public ResponseEntity<?> editInvoice(@RequestBody InvoiceDTO invoiceDto, 
+			HttpServletRequest request) {
+		
+		try {
+			if (!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
+				logger.info("EDIT data... {}",invoiceDto.toString());
+				invoiceDto=invoiceService.editInvoice(invoiceDto);
+				
+				
+
+				}
+
+		} catch (Exception e) {
+			logger.error("Error in saving invoices,{}", e.getMessage());
+			e.printStackTrace();
+			return ResponseEntity.badRequest()
+					.body(" An issue in saving incoices. Please try again. \n" + e.getMessage());
+		}
+		return new ResponseEntity<>(invoiceDto, HttpStatus.OK);
+	}
+	
+	/**
+	 * This method will search contractor by the given criteria and return matching
+	 * records.
+	 * 
+	 * @param contractorSearchForm
+	 * @param request
+	 * @return
+	 */
+	@PostMapping(SEARCH_INVOICES)
+	public ResponseEntity<?> searchInvoices(@RequestBody InvoiceSearchForm invoiceSearchForm,
+			HttpServletRequest request) {
+		List<InvoiceDTO> returnInvoiceList=null;
+		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
+			logger.info("Invoice Search Criteria, {}",invoiceSearchForm);
+			returnInvoiceList=invoiceService.searchInvoices(invoiceSearchForm);
+			
+			if(!ProfileParserUtils.isObjectEmpty(returnInvoiceList)) {
+				returnInvoiceList.sort(Comparator.comparing(InvoiceDTO::getContractorName));
+			int i=1;
+			for(InvoiceDTO invoiceDto:returnInvoiceList) {
+				invoiceDto.setId(i);
+				i++;
+			}
+			}
+			logger.info("Search details, {}", returnInvoiceList.size());
+
+		} catch (Exception e) {
+			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
+			e.printStackTrace();
+		}
+		/*
+		 * List<ContractorSearchResultsForm> contractors = contractorService
+		 * .getContractorSearchResults(contractorSearchForm);
+		 */
+
+		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
+	}
+	
+	
+	
+	/**
+	 * This method will be invoked by the UI to save commissions temporarily.
+	 * 
+	 * @param commissionDtoList
+	 * @param request
+	 * @return
+	 */
 	@PostMapping(SAVE_INVOICE)
 	public ResponseEntity<?> saveInvoices(@RequestBody List<InvoiceDTO> invoiceList, 
 			HttpServletRequest request) {
@@ -239,47 +313,6 @@ public class InvoiceMVCController {
 			return ResponseEntity.badRequest()
 					.body(" An issue in saving incoices. Please try again. \n" + e.getMessage());
 		}
-		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
-	}
-	
-	/**
-	 * This method will search contractor by the given criteria and return matching
-	 * records.
-	 * 
-	 * @param contractorSearchForm
-	 * @param request
-	 * @return
-	 */
-	@PostMapping(SEARCH_INVOICES)
-	public ResponseEntity<?> searchInvoices(@RequestBody InvoiceSearchForm invoiceSearchForm,
-			HttpServletRequest request) {
-		List<InvoiceDTO> returnInvoiceList=null;
-		try {
-			if (!ProfileParserUtils.isSessionAlive(request)) {
-				logger.info("Session has expired.");
-				return ResponseEntity.badRequest().body("Session Expired. Please Login");
-			}
-			returnInvoiceList=invoiceService.searchInvoices(invoiceSearchForm);
-			
-			if(!ProfileParserUtils.isObjectEmpty(returnInvoiceList)) {
-				returnInvoiceList.sort(Comparator.comparing(InvoiceDTO::getContractorName));
-			int i=1;
-			for(InvoiceDTO invoiceDto:returnInvoiceList) {
-				invoiceDto.setId(i);
-				i++;
-			}
-			}
-			logger.info("Search details, {}", returnInvoiceList.size());
-
-		} catch (Exception e) {
-			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
-			e.printStackTrace();
-		}
-		/*
-		 * List<ContractorSearchResultsForm> contractors = contractorService
-		 * .getContractorSearchResults(contractorSearchForm);
-		 */
-
 		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
 	}
 }

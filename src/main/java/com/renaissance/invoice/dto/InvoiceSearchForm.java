@@ -8,6 +8,7 @@ public class InvoiceSearchForm {
 	private String invoiceStatus;
 	private String startDate;
 	private String endDate;
+	private String invoiceDescription;
 	public BigInteger getInvoiceNo() {
 		return invoiceNo;
 	}
@@ -38,11 +39,20 @@ public class InvoiceSearchForm {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
+	
+	public String getInvoiceDescription() {
+		return invoiceDescription;
+	}
+	public void setInvoiceDescription(String invoiceDescription) {
+		this.invoiceDescription = invoiceDescription;
+	}
 	@Override
 	public String toString() {
 		return "InvoiceSearchForm [invoiceNo=" + invoiceNo + ", clientName=" + clientName + ", invoiceStatus="
-				+ invoiceStatus + ", startDate=" + startDate + ", endDate=" + endDate + "]";
+				+ invoiceStatus + ", startDate=" + startDate + ", endDate=" + endDate + ", invoiceDescription="
+				+ invoiceDescription + "]";
 	}
+	
 	
 	
 

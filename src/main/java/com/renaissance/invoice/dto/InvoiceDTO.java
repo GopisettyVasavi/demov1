@@ -25,6 +25,7 @@ public class InvoiceDTO {
 	private String inclGst;
 	private Integer noOfDaysWorked;
 	private LocalDate invoiceGeneratedDate;
+	private String invoiceGeneratedDateString;
 	private String status;
 	private String monthYear;
 	private String contractorInvoiceNotes;
@@ -33,6 +34,8 @@ public class InvoiceDTO {
 	private String filePath;
 	private String poNumber;
 	private Double gstPercent;
+	private BigInteger idPkey;
+	private String changeColor;
 	public Integer getId() {
 		return id;
 	}
@@ -215,6 +218,30 @@ public class InvoiceDTO {
 	public void setGstPercent(Double gstPercent) {
 		this.gstPercent = gstPercent;
 	}
+	
+	
+	public BigInteger getIdPkey() {
+		return idPkey;
+	}
+	public void setIdPkey(BigInteger idPkey) {
+		this.idPkey = idPkey;
+	}
+	
+	
+	public String getInvoiceGeneratedDateString() {
+		return invoiceGeneratedDateString;
+	}
+	public void setInvoiceGeneratedDateString(String invoiceGeneratedDateString) {
+		this.invoiceGeneratedDateString = invoiceGeneratedDateString;
+	}
+	
+	
+	public String getChangeColor() {
+		return changeColor;
+	}
+	public void setChangeColor(String changeColor) {
+		this.changeColor = changeColor;
+	}
 	@Override
 	public String toString() {
 		return "InvoiceDTO [id=" + id + ", invoiceNo=" + invoiceNo + ", contractorId=" + contractorId
@@ -224,10 +251,14 @@ public class InvoiceDTO {
 				+ ", endDate=" + endDate + ", ratePerDay=" + ratePerDay + ", billRatePerDay=" + billRatePerDay
 				+ ", totalAmount=" + totalAmount + ", gst=" + gst + ", totalAmountWithGst=" + totalAmountWithGst
 				+ ", inclGst=" + inclGst + ", noOfDaysWorked=" + noOfDaysWorked + ", invoiceGeneratedDate="
-				+ invoiceGeneratedDate + ", status=" + status
-				+ ", monthYear=" + monthYear + ", contractorInvoiceNotes=" + contractorInvoiceNotes + ", description="
-				+ description + ", generateInvoice=" + generateInvoice + "]";
+				+ invoiceGeneratedDate + ", invoiceGeneratedDateString=" + invoiceGeneratedDateString + ", status="
+				+ status + ", monthYear=" + monthYear + ", contractorInvoiceNotes=" + contractorInvoiceNotes
+				+ ", description=" + description + ", generateInvoice=" + generateInvoice + ", filePath=" + filePath
+				+ ", poNumber=" + poNumber + ", gstPercent=" + gstPercent + ", idPkey=" + idPkey + ", changeColor="
+				+ changeColor + "]";
 	}
+	
+	
 	
 	
 	

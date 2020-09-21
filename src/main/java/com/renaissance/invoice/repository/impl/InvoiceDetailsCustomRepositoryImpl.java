@@ -20,28 +20,27 @@ import com.renaissance.invoice.repository.InvoiceDetailsCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
 public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomRepository {
-	
+
 	@PersistenceContext
 	private EntityManager entityManager;
 	@Lazy
 	InvoiceDetailsEntity invoice;
-	
-	public List<InvoiceDetailsEntity> getInvoicesForSelectedMonthAndYear(LocalDate monthYear){
-		
+
+	public List<InvoiceDetailsEntity> getInvoicesForSelectedMonthAndYear(LocalDate monthYear) {
+
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<InvoiceDetailsEntity> query = cb
-				.createQuery(InvoiceDetailsEntity.class);
+		CriteriaQuery<InvoiceDetailsEntity> query = cb.createQuery(InvoiceDetailsEntity.class);
 		Root<InvoiceDetailsEntity> rcInvoice = query.from(InvoiceDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
-		
+
 		if (!ProfileParserUtils.isObjectEmpty(monthYear))
 			predicates.add(cb.equal(rcInvoice.get("monthYear"), monthYear));
-		
-		
+
 		List<InvoiceDetailsEntity> invoiceList = null;
 		if (predicates.size() > 0) {
-			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
+			// predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")),
+			// "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(rcInvoice).where(cb.and(predicates.toArray(predicatesArray)));
 			invoiceList = entityManager.createQuery(query).getResultList();
@@ -50,14 +49,13 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 			return invoiceList;
 
 		else
-			return new  ArrayList<InvoiceDetailsEntity>();
+			return new ArrayList<InvoiceDetailsEntity>();
 	}
-	
+
 	public InvoiceDetailsEntity getContractorInvoiceByMonthYearInvoiceNo(BigInteger contractorId, LocalDate monthYear) {
-		
+
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<InvoiceDetailsEntity> query = cb
-				.createQuery(InvoiceDetailsEntity.class);
+		CriteriaQuery<InvoiceDetailsEntity> query = cb.createQuery(InvoiceDetailsEntity.class);
 		Root<InvoiceDetailsEntity> invoice = query.from(InvoiceDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
@@ -65,10 +63,11 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 			predicates.add(cb.equal(invoice.get("contractorId"), contractorId));
 		if (!ProfileParserUtils.isObjectEmpty(monthYear))
 			predicates.add(cb.equal(invoice.get("monthYear"), monthYear));
-				
+
 		List<InvoiceDetailsEntity> invoiceList = null;
 		if (predicates.size() > 0) {
-			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
+			// predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")),
+			// "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(invoice).where(cb.and(predicates.toArray(predicatesArray)));
 			invoiceList = entityManager.createQuery(query).getResultList();
@@ -79,37 +78,44 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 		else
 			return new InvoiceDetailsEntity();
 	}
-	
-	public List<InvoiceDetailsEntity> searchInvoices(InvoiceSearchForm invoiceSearchForm){
+
+	public List<InvoiceDetailsEntity> searchInvoices(InvoiceSearchForm invoiceSearchForm) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<InvoiceDetailsEntity> query = cb
-				.createQuery(InvoiceDetailsEntity.class);
+		CriteriaQuery<InvoiceDetailsEntity> query = cb.createQuery(InvoiceDetailsEntity.class);
 		Root<InvoiceDetailsEntity> rcInvoice = query.from(InvoiceDetailsEntity.class);
 
 		List<Predicate> predicates = new ArrayList<Predicate>();
-		
+
 		if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm)) {
 			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getInvoiceNo())) {
-			predicates.add(cb.equal(rcInvoice.get("invoiceNo"), invoiceSearchForm.getInvoiceNo()));
-		}
+				predicates.add(cb.equal(rcInvoice.get("invoiceNo"), invoiceSearchForm.getInvoiceNo()));
+			}
 			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getInvoiceStatus())) {
 				predicates.add(cb.equal(rcInvoice.get("status"), invoiceSearchForm.getInvoiceStatus()));
 			}
 			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getClientName())) {
 				predicates.add(cb.equal(rcInvoice.get("clientName"), invoiceSearchForm.getClientName()));
 			}
-			/*
-			 * if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getStartDate()) &&
-			 * !ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getEndDate())) {
-			 * predicates.add(cb.equal(rcInvoice.get("monthYear"),
-			 * ProfileParserUtils.parseStringDate(invoiceSearchForm.getStartDate()))); }
-			 */
-			
+
+			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getStartDate())
+					&& !ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getEndDate())) {
+				predicates.add(cb.between(rcInvoice.get("invoiceGeneratedDate"),
+						ProfileParserUtils.parseStringDate(invoiceSearchForm.getStartDate()),
+						ProfileParserUtils.parseStringDate(invoiceSearchForm.getEndDate())));
+			}
+
+			if (!ProfileParserUtils.isObjectEmpty(invoiceSearchForm.getInvoiceDescription())) {
+
+				predicates.add(cb.like(cb.upper(rcInvoice.get("contractorInvoiceNotes")),
+						"%" + invoiceSearchForm.getInvoiceDescription().toUpperCase() + "%"));
+			}
+
 		}
-		
+
 		List<InvoiceDetailsEntity> invoiceList = null;
 		if (predicates.size() > 0) {
-			//predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")), "ACTIVE"));
+			// predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")),
+			// "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(rcInvoice).where(cb.and(predicates.toArray(predicatesArray)));
 			invoiceList = entityManager.createQuery(query).getResultList();
@@ -118,8 +124,7 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 			return invoiceList;
 
 		else
-			return new  ArrayList<InvoiceDetailsEntity>();
-		
-	}
-	}
+			return new ArrayList<InvoiceDetailsEntity>();
 
+	}
+}

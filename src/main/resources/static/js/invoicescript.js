@@ -23,6 +23,10 @@ function initialize(){
 	$("#searchresults_div").hide();
 	
 	$("#invoicesearchtbl").hide();
+	$("#editdetails_div").hide();
+	$('#save_feedback').html("");
+	
+	
 	retrieveClients();
 	
 }
@@ -60,7 +64,7 @@ function createinvoice(){
 			error : function(e) {
 
 				alert("Unable to load details. " + e);
-				//console.log(e.responseText);
+				console.log(e.responseText);
 			}
 		});
 	}else{
@@ -576,7 +580,7 @@ function generateInvoice(){
 	var invoiceList=populateList();
 	
 	while(!filePath){
-		 var filePath = prompt("Please enter File path No.", 
+		 var filePath = prompt("Please enter File path.", 
 	     ""); 
 		 //console.log("filePath: "+filePath);
 		 filePath= filePath.replace(/\\/g, "SLASH");
@@ -660,11 +664,14 @@ function searchinvoices(){
 	$('#search_feedback').html("");
 	$("#searchresults_div").hide();
 	$("#invoicesearchtbl").hide();
+	$("#editdetails_div").hide();
+
 	event.preventDefault();
 	if ( $("#startDate_s").val() == "" && $("#invoiceNo_s").val() == ""
 			&& $("#endDate_s").val() == ""
 			&& $("#client").val() == "none"
-			&&  $("#invoiceStatus").val() == "none") {
+			&&  $("#invoiceStatus").val() == "none"
+				&& $("#invoiceDescription").val() == "") {
 		document.getElementById("search_feedback").style.color = "red";
 		$('#search_feedback').html(
 				"Please enter at least one value to search invoices.");
@@ -674,6 +681,8 @@ function searchinvoices(){
 		invoiceSearchForm["invoiceNo"] = $("#invoiceNo_s").val();
 		invoiceSearchForm["startDate"] = $("#startDate_s").val();
 		invoiceSearchForm["endDate"] = $("#endDate_s").val();
+		invoiceSearchForm["invoiceDescription"] = $("#invoiceDescription").val();
+		
 		
 
 		if ($("#client").val() != "none") {
@@ -699,6 +708,7 @@ function searchinvoices(){
 					success : function(data) {
 						$("#searchresults_div").show();
 						$("#invoicesearchtbl").show();
+						$('#save_feedback').html("");
 
 						var table = $('#invoicesearchtbl').DataTable({
 
@@ -713,16 +723,22 @@ function searchinvoices(){
 							renderer : {
 								"header" : "bootstrap"
 							}, 
-							"order": [[ 1, "asc" ]],
+							"order": [[ 2, "asc" ]],
 							
 							data : data,
 
 							columns : [
 								
 								{
-									"data" : 'contractorId',
-									"name" : "contractorId",
-									"title" : "contractorId",
+									"data" : 'changeColor',
+									"name" : "changeColor",
+									"title" : "changeColor",
+									"visible": false
+								},
+								{
+									"data" : 'idPkey',
+									"name" : "idPkey",
+									"title" : "idPkey",
 									"visible":false
 								},
 								{
@@ -730,12 +746,9 @@ function searchinvoices(){
 									"name" : "S.No",
 									"title" : "S.No"
 								},
+								
+								
 								{
-									"data" : 'clientId',
-									"name" : "clientId",
-									"title" : "clientId",
-									"visible":false
-								}, {
 								"data" : 'contractorName',
 								"name" : "contractorName",
 								"title" : "Candidate Name"
@@ -744,99 +757,22 @@ function searchinvoices(){
 								"name" : "clientName",
 								"title" : "Client Name"
 							},
-							{
-								"data" : 'endClientName',
-								"name" : "endClientName",
-								"title" : "End Client Name"
-							},
-							 {
-								"data" : 'vendorId',
-								"name" : "vendorId",
-								"title" : "Vendor Number",
-								"visible":false
-							},
+							
+							 
 							{
 								"data" : 'paymentTerms',
 								"name" : "paymentTerms",
 								"title" : "Payment Terms",
 								"visible":false
 							},
-							 {
-								"data" : 'clientAbnNo',
-								"name" : "clientAbnNo",
-								"title" : "Client Abn No",
-								"visible":false
-							},
-							 
 							
-							{
-								"data" : 'address',
-								"name" : "address",
-								"title" : "Client Address",
-								"visible":false
-							},
-							{
-								"data" : 'poNumber',
-								"name" : "poNumber",
-								"title" : "PO Number"
-						    
-							},
 							
-							{
-								"data" : 'ratePerDay',
-								"name" : "ratePerDay",
-								"title" : "Daily Rate"
-							},
-							
-							{
-								"data" : 'startDate',
-								"name" : "startDate",
-								"title" : "Invoice Period Start Date"
-						    
-							},
-							{
-								"data" : 'endDate',
-								"name" : "endDate",
-								"title" : "Invoice Period End Date"
-						    
-							},
-							{
-								"data" : 'noOfDaysWorked',
-								"name" : "noOfDaysWorked",
-								"title" : "No.Of Days Worked"
-						    
-							},
-							{
-								"data" : 'billRatePerDay',
-								"name" : "billRatePerDay",
-								"title" : "Bill Rate Per Day"
-							},
 							{
 								"data" : 'totalAmount',
 								"name" : "totalAmount",
 								"title" : "Amount"
 							},
-							{
-								"data" : 'inclGst',
-								render: function (data, type, row ) {
-						            if ( type === 'display' ) {
-						            	var val="";
-						            	if(data !=null)
-						            		val=data;
-						            	//console.log("data: inclGst: "+val);
-						            	//n++;
-						            	if(val=='true' || val==true)
-						            	 return '<input type="checkbox" checked    class="editor-active"  >';
-						            	else
-						            		return '<input type="checkbox"   class="editor-active"  >';
-						            }
-						            return ''; 
-						        },
-						       
-						       
-						        "title" : "Incl. GST?"
-						    
-							},
+							
 							{
 								"data" : 'gst',
 								"name" : "gst",
@@ -847,19 +783,6 @@ function searchinvoices(){
 								"name" : "totalAmountWithGst",
 								"title" : "Total Amount Incl. GST"
 							},
-							
-							{
-								"data" : 'monthYear',
-								"name" : "monthYear",
-								"title" : "Month And Year",
-								"visible":false
-							},{
-								"data" : 'gstPercent',
-								"name" : "gstPercent",
-								"title" : "gstPercent",
-								"visible":false
-							},
-							
 							
 							{
 								"data" : 'invoiceNo',
@@ -880,13 +803,30 @@ function searchinvoices(){
 								"name" : "status",
 								"title" : "Status"
 							},
-							]
+							
+							{
+								"data" : 'invoiceGeneratedDateString',
+								"name" : "invoiceGeneratedDateString",
+								"title" : "Invoice Created Date"
+							},
+							],
+							 "createdRow": function( row, data, dataIndex){
+								// console.log(data.changeColor);
+		                            if( data.changeColor =='YES' ){
+		                            	//console.log(data[11]);
+		                                $(row).css('background-color', '#dc3545');
+		                            }
+		                            
+
+		                        }
 
 						});
 						$('#invoicesearchtbl tfoot tr').appendTo(
 								'#invoicesearchtbl thead');
 
 						$("#invoicesearchtbl tfoot tr").hide();
+						
+						//changecolor();
 
 					},
 					error : function(e) {
@@ -903,24 +843,141 @@ function searchinvoices(){
 	}
 }
 
+
+
 function resetinvoices(){
 	event.preventDefault();
 	$("#searchForm")[0].reset();
 	$('#search_feedback').html("");
 	$("#searchresults_div").hide();
 	$("#invoicesearchtbl").hide();
-/*
-	//$("#period_s").val('none');
-	$("#recruiterName_s").val("");
-	$('#search_feedback').html("");
-	document.getElementById("searchForm").reset();
-	$("#searchresults_div").hide();
-	$("#commissionsearch_tbl").hide();
-	$("#fromdate_div").hide();
-	$("#todate_div").hide();
-	$("#commissiondetails_div").hide();
-	$("#commissiondetail_div").hide();
-	$("#commissiondetails_tbl").hide();
-	$("#comdet_lbl").hide();
-	document.getElementById('comdet_lbl').innerHTML = '';*/
+	$("#editdetails_div").hide();
+	$('#save_feedback').html("");
+
+}
+
+
+$(document).on(
+		"click",
+		"#invoicesearchtbl tbody tr",
+		function(e)
+
+		{
+			document.getElementById("invoiceNodet").focus();
+			$('#save_feedback').html("");
+			//$('#feedback').html("");
+			var table = $('#invoicesearchtbl').DataTable();
+			var rowData = table.row(this).data();
+			// alert('called'+rowData.contractorId);
+			$("#editdetails_div").show();
+			$("#invoiceNodet").val(rowData.invoiceNo);
+			$("#clientNamedet").val(rowData.clientName);
+			$("#invoiceDescriptiondet").val(rowData.contractorInvoiceNotes);
+			$("#invoiceDatedet").val(rowData.invoiceGeneratedDateString);
+			
+			$("#amountdet").val(rowData.totalAmount);
+			$("#gstdet").val(rowData.gst);
+			$("#totalamountgstdet").val(rowData.totalAmountWithGst);
+			$("#invoiceStatusdet").val(rowData.status);
+			
+			$("#idPkey").val(rowData.idPkey);
+			populateClientList(rowData.clientName);
+			//console.log(rowData);
+			document.getElementById("invoiceNodet").focus();
+
+		});	
+
+function populateClientList(clientCompName){
+	 $.ajax({
+	        type: "GET",
+	        contentType: "application/json",
+	        url: "/getclientcompanies",
+	        cache: false,
+	        timeout: 600000,
+	        success: function (list) {
+	        	var options="";
+	        	
+	         $('#clientNamedet').html("<select id =\"clientdet\" class=\"nice-select form-select\">Select Client</select>");
+	         
+	        for(i in list){
+	        	if(list[i].clientName==clientCompName){
+	        		options += "<option value = "+list[i].clientId+"  selected=\"selected\">"+list[i].clientName+"</option>";
+	        	}
+	        }
+	        options += "<option value=\"none\"  >Select Client</option>";
+	        for(j in list){
+	        	if(list[j].clientName!=clientCompName){
+	        	options += "<option value = "+list[j].clientId+">"+list[j].clientName+"</option>";
+	        	}
+	        	}
+	       
+	        $('#clientNamedet select').append(options);
+	       document.getElementById("clientdet").classList.add('form-select');
+	       
+	        },
+	        error: function (e) {
+	        	
+	        	alert("Unable to load details");
+
+	        }
+	    });
+	
+}
+
+function editInvoice(){
+	event.preventDefault();
+	$('#save_feedback').html("");
+	 var invoiceDTO={}
+	
+	   invoiceDTO["invoiceNo"]=$("#invoiceNodet").val();
+	   invoiceDTO["contractorInvoiceNotes"]=$("#invoiceDescriptiondet").val();
+	   invoiceDTO["invoiceGeneratedDateString"]=  $("#invoiceDatedet").val();
+	   invoiceDTO["idPkey"]=  $("#idPkey").val();
+	   invoiceDTO["totalAmount"]=  $("#amountdet").val();
+	   invoiceDTO["gst"]=  $("#gstdet").val();
+	   invoiceDTO["totalAmountWithGst"]=  $("#totalamountgstdet").val();
+		
+
+		if ($("#clientNamedet").val() != "none") {
+			
+			invoiceDTO["clientName"] = $(
+					"#clientNamedet option:selected").text();
+		}
+
+		if ($("#invoiceStatusdet").val() != "none") {
+			invoiceDTO["status"] = $(
+					"#invoiceStatusdet").val();
+		}
+		
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+
+			url : "/editinvoice",
+			data : JSON.stringify(invoiceDTO),
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+				//alert("data saved...")
+				
+				document.getElementById("save_feedback").style.color = "black";
+				$('#save_feedback').html(
+						"Data Saved Successfully.");
+				//searchinvoices();
+			},
+			error : function(e) {
+
+				alert("Unable to load details. " + e);
+				console.log(e);
+
+			}
+		});
+	
+}
+
+function cancelInvoice(){
+	event.preventDefault();
+	$('#save_feedback').html("");
+	$("#editdetails_div").hide();
 }
