@@ -38,7 +38,7 @@ public class InvoiceMVCController {
 	ConstantsService constantsService;
 
 	/**
-	 * This method is invoked to load contractor main page.
+	 * This method is invoked to load Invoice main page.
 	 * 
 	 * @param request
 	 * @return
@@ -58,7 +58,7 @@ public class InvoiceMVCController {
 	}
 
 	/**
-	 * This method will fetch commissions for the selected given month and year.
+	 * This method will fetch invoices for the selected given month and year.
 	 * 
 	 * @param monthyear
 	 * @param redirectAttributes
@@ -68,8 +68,6 @@ public class InvoiceMVCController {
 	 */
 	@GetMapping(CREATE_INVOICE_RUN)
 	public ResponseEntity<?> invoiceRun(@PathVariable String monthyear, HttpServletRequest request) {
-		// logger.info("Parameters..{},{},{}",monthyear,startdate,enddate);
-		// List<CommissionDTO> commissionList = new ArrayList<CommissionDTO>();
 		List<InvoiceDTO> invoiceList = new ArrayList<InvoiceDTO>();
 
 		try {
@@ -85,7 +83,6 @@ public class InvoiceMVCController {
 					if (!ProfileParserUtils.isObjectEmpty(invoiceList)) {
 						Double gst = constantsService.getConstantValue(ProfileParserConstants.GST);
 						for (InvoiceDTO invoice : invoiceList) {
-							//logger.info("Month year: "+commissionMonthYear);
 							invoice.setMonthYear("01/" + commissionMonthYear);
 							if (invoice.getStatus() == null || invoice.getStatus().equalsIgnoreCase(""))
 								invoice.setStatus("New");
@@ -137,14 +134,14 @@ public class InvoiceMVCController {
 			}
 
 		} catch (Exception e) {
-			logger.error("There is an issue in fetching commissions...{}", new Exception(e.getMessage()));
+			logger.error("There is an issue in fetching invoices...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
 		return new ResponseEntity<>(invoiceList, HttpStatus.OK);
 	}
 
 	/**
-	 * This method will be invoked by the UI to save commissions temporarily.
+	 * This method will be invoked to generate invoices
 	 * 
 	 * @param commissionDtoList
 	 * @param request
@@ -153,23 +150,17 @@ public class InvoiceMVCController {
 	@PostMapping(GENERATE_INVOICE)
 	public ResponseEntity<?> generateInvoices(@RequestBody List<InvoiceDTO> invoiceList, @PathVariable String filePath,
 			HttpServletRequest request) {
-		// List<CommissionDTO> savedCommissions = null;
 		String generatedFilePath = "";
 		List<InvoiceDTO> returnInvoiceList = null;
 		try {
-			// logger.info("Invoice List for generation..,{}", invoiceList.size());
-
 			if (!ProfileParserUtils.isObjectEmpty(filePath)) {
 				filePath = filePath.replaceAll("SLASH", "\\\\");
 
 			}
-			// logger.info("filePath NO: {},{}",filePath);
 			if (!ProfileParserUtils.isObjectEmpty(invoiceList)) {
 				returnInvoiceList = new ArrayList<InvoiceDTO>();
 				for (InvoiceDTO invoiceDto : invoiceList) {
 					if (!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
-						// logger.info("Invoice DTO values...{}", invoiceDto.toString());
-						// logger.info("INVOICE no...{}",invoiceDto.getInvoiceNo());
 						if (null != invoiceDto.getGenerateInvoice()
 								&& invoiceDto.getGenerateInvoice().equalsIgnoreCase(ProfileParserConstants.TRUE)) {
 							
@@ -177,11 +168,8 @@ public class InvoiceMVCController {
 							generatedFilePath = ProfileParserUtils.generateInvoice(invoiceDto, filePath);
 							invoiceDto.setFilePath(generatedFilePath);
 							invoiceDto.setStatus("Submitted");
-							//logger.info("Invoices generated path..{}", invoiceDto.toString());
-
-							// invoiceDto.
+							
 						} 
-						//returnInvoiceList.add(invoiceDto);
 						
 					}
 
@@ -208,7 +196,7 @@ public class InvoiceMVCController {
 	}
 	
 	/**
-	 * This method will be invoked by the UI to save commissions temporarily.
+	 * This method will be invoked by the UI to edit invoice.
 	 * 
 	 * @param commissionDtoList
 	 * @param request
@@ -220,7 +208,6 @@ public class InvoiceMVCController {
 		
 		try {
 			if (!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
-				logger.info("EDIT data... {}",invoiceDto.toString());
 				invoiceDto=invoiceService.editInvoice(invoiceDto);
 				
 				
@@ -237,7 +224,7 @@ public class InvoiceMVCController {
 	}
 	
 	/**
-	 * This method will search contractor by the given criteria and return matching
+	 * This method will search invoices by the given criteria and return matching
 	 * records.
 	 * 
 	 * @param contractorSearchForm
@@ -270,10 +257,6 @@ public class InvoiceMVCController {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
-		/*
-		 * List<ContractorSearchResultsForm> contractors = contractorService
-		 * .getContractorSearchResults(contractorSearchForm);
-		 */
 
 		return new ResponseEntity<>(returnInvoiceList, HttpStatus.OK);
 	}
@@ -281,7 +264,7 @@ public class InvoiceMVCController {
 	
 	
 	/**
-	 * This method will be invoked by the UI to save commissions temporarily.
+	 * This method will be invoked by the UI to save invoices.
 	 * 
 	 * @param commissionDtoList
 	 * @param request

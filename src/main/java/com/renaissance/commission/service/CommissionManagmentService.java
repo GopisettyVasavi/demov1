@@ -15,10 +15,10 @@ import com.renaissance.commission.dto.CommissionsLookupDTO;
 import com.renaissance.commission.dto.FinalCommissionsDTO;
 import com.renaissance.commission.dto.RecruiterCommissionsDTO;
 import com.renaissance.commission.model.CommissionsDetailsEntity;
+import com.renaissance.commission.model.CommissionsLookupEntity;
 import com.renaissance.commission.model.RecruiterCommissionsEntity;
 import com.renaissance.commission.model.SearchCommissionForm;
 import com.renaissance.commission.repository.CommissionsDetailsRepository;
-import com.renaissance.commission.repository.CommissionsLookupEntity;
 import com.renaissance.commission.repository.RecruiterCommissionsRepository;
 import com.renaissance.common.repository.CommissionsLookupRepository;
 import com.renaissance.contractor.model.ContractorEmploymentDetailsEntity;
@@ -154,6 +154,11 @@ public class CommissionManagmentService {
 		return savedList;
 		
 	}
+	/**
+	 * This method will be invoked to finalize commissions for the given month.
+	 * @param finalCommissions
+	 * @return
+	 */
 	
 	public FinalCommissionsDTO finalizeCommissions(FinalCommissionsDTO finalCommissions) {
 		List<CommissionDTO> savedCommissionsList= new ArrayList<CommissionDTO>();
@@ -212,6 +217,12 @@ public class CommissionManagmentService {
 		finalCommission.setRecruiterCommissionsList(savedRecruiterCommissionsList);
 		return finalCommission;
 	}
+	
+	/**
+	 * This method will be invoked to search commissions
+	 * @param searchForm
+	 * @return
+	 */
 	public List<RecruiterCommissionsDTO> searchCommissions(SearchCommissionForm searchForm){
 		List<RecruiterCommissionsEntity> commissions=recruiterCommissions.searchCommissions(searchForm);
 		List<RecruiterCommissionsDTO> recruiterCommissions= new ArrayList<RecruiterCommissionsDTO>();
@@ -254,6 +265,11 @@ public class CommissionManagmentService {
 		return lookupDtoList;
 		
 	}
+	/**
+	 * This method will be invoked to save commission lookup details.
+	 * @param lookupObj
+	 * @return
+	 */
 	
 	public CommissionsLookupDTO saveCommissionLookup(CommissionsLookupDTO lookupObj) {
 		if(!ProfileParserUtils.isObjectEmpty(lookupObj)) {

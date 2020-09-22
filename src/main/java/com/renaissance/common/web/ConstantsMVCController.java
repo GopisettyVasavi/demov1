@@ -48,20 +48,11 @@ public class ConstantsMVCController {
 	 * @return
 	 */
 	@PostMapping(UPDATE_CONSTANTS)
-	//@Produces(MediaType.APPLICATION_XML_VALUE)
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto,
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
 			constantsDto=constantsService.saveConstant(constantsDto);
-			/*
-			 * //WordUtils.downloadBigActivity(response); //WordUtils.doxtest();
-			 * //XWPFTest.test(
-			 * "LukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukasLukas"
-			 * ); XWPFTest.test("Vasavi"); XWPFTest.test("TestVasavi");
-			 */
-
-
-		} catch (Exception e) {
+			} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
 					.body(" An issue in creating constants. Please try again. \n" + e.getMessage());

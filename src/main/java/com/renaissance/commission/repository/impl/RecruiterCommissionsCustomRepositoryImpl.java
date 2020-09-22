@@ -20,7 +20,9 @@ public class RecruiterCommissionsCustomRepositoryImpl implements RecruiterCommis
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	
+	/**
+	 * This method is used in search for commissions.
+	 */
 	public List<RecruiterCommissionsEntity> searchCommissions(SearchCommissionForm searchCommissionForm){
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<RecruiterCommissionsEntity> query = cb
@@ -54,7 +56,9 @@ public class RecruiterCommissionsCustomRepositoryImpl implements RecruiterCommis
 		else
 			return new  ArrayList<RecruiterCommissionsEntity>();
 	}
-	
+	/**
+	 * This method will get recruiter commissions for a specific month and year.
+	 */
 	public RecruiterCommissionsEntity getRecruiterCommissionByMonthYearAndRecruiter(LocalDate monthYear, String recruiterName) {
 		
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();

@@ -1,56 +1,73 @@
-2020-09-22 13:11:35,362 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18h26m9s59ms304µs399ns).
-2020-09-22 13:12:08,748 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Found matching User details for: {}renaissance
-2020-09-22 13:12:08,928 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
-2020-09-22 13:12:18,829 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] Invoices do not exist....
-2020-09-22 13:12:18,833 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] date.. ,2020-01-01,
-2020-09-22 13:12:31,974 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] Invoices do not exist....
-2020-09-22 13:12:31,977 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] date.. ,2020-07-01,
-2020-09-22 13:15:02,932 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] Invoices exist....
-2020-09-22 13:21:31,790 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] Invoices exist....
-2020-09-22 13:22:22,923 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] Invoices do not exist....
-2020-09-22 13:22:22,926 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] date.. ,2020-11-01,
-2020-09-22 13:23:02,303 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] Invoices do not exist....
-2020-09-22 13:23:02,306 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] date.. ,2020-11-01,
-2020-09-22 13:23:46,965 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] Invoices do not exist....
-2020-09-22 13:23:46,968 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] date.. ,2020-11-01,
-2020-09-22 13:24:53,989 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] Invoices do not exist....
-2020-09-22 13:24:53,991 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] date.. ,2020-11-01,
-2020-09-22 13:25:23,850 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] Invoices do not exist....
-2020-09-22 13:25:23,852 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] date.. ,2020-11-01,
-2020-09-22 13:29:47,317 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] Invoices do not exist....
-2020-09-22 13:29:47,319 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] date.. ,2020-11-01,
-2020-09-22 13:40:26,100 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-6] Invoices exist....
-2020-09-22 13:41:46,808 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-3] Valid path
-2020-09-22 13:46:18,143 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-6] Invoices exist....
-2020-09-22 13:46:29,155 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-1] Valid path
-2020-09-22 13:46:44,931 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] Invoices exist....
-2020-09-22 13:46:55,524 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-6] Valid path
-2020-09-22 13:47:10,836 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] Invoices exist....
-2020-09-22 13:47:18,598 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-8] Valid path
-2020-09-22 13:47:56,558 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-9] Valid path
-2020-09-22 13:48:10,612 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] Invoices exist....
-2020-09-22 13:48:18,551 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-5] Valid path
-2020-09-22 13:50:02,675 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-9] Invoices exist....
-2020-09-22 13:50:09,753 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-4] Valid path
-2020-09-22 13:51:18,733 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-7] Invoices exist....
-2020-09-22 13:51:34,056 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-4] Valid path
-2020-09-22 13:52:23,213 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Cancelled, startDate=, endDate=, invoiceDescription=]
-2020-09-22 13:52:23,216 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] payment 30 Days
-2020-09-22 13:52:23,216 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-8] days ..30
-2020-09-22 13:52:23,216 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] Search details, 1
-2020-09-22 13:53:41,253 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-3] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Cancelled, startDate=, endDate=, invoiceDescription=]
-2020-09-22 13:53:41,255 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] payment 30 Days
-2020-09-22 13:53:41,256 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-3] days ..30
-2020-09-22 13:53:41,256 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-3] Search details, 1
-2020-09-22 13:58:34,520 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-8] EDIT data... InvoiceDTO [id=null, invoiceNo=1271671736, contractorId=null, contractorName=null, clientId=null, clientName=ANZ Banking Group Ltd (Aust), endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=100.0, gst=100.0, totalAmountWithGst=100.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/09/2020, status=Cancelled, monthYear=null, contractorInvoiceNotes=cancelled, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=1811, changeColor=null]
-2020-09-22 13:58:37,223 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-10] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=Cancelled, startDate=, endDate=, invoiceDescription=]
-2020-09-22 13:58:37,225 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] payment 30 Days
-2020-09-22 13:58:37,225 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] days ..30
-2020-09-22 13:58:37,225 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-10] color not changed..
-2020-09-22 13:58:37,225 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-10] Search details, 1
-2020-09-22 14:00:20,389 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-2] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=null, startDate=01/05/2020, endDate=31/01/2021, invoiceDescription=]
-2020-09-22 14:00:20,390 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] payment 30 Days
-2020-09-22 14:00:20,390 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] days ..30
-2020-09-22 14:00:20,391 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] color not changed..
-2020-09-22 14:00:20,391 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-2] payment null
-2020-09-22 14:00:20,391 INFO com.renaissance.invoice.service.
+2020-09-22 15:07:13,399 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-22 15:07:13,554 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-10] HHH000397: Using ASTQueryTranslatorFactory
+2020-09-22 15:07:17,721 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] Invoices do not exist....
+2020-09-22 15:07:43,439 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-2] Valid path
+2020-09-22 15:07:43,529 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-2] Valid path
+2020-09-22 15:08:01,487 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=null, startDate=01/08/2020, endDate=30/11/2020, invoiceDescription=]
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment    30     Days
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment     30            Days
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-22 15:08:01,490 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Search details, 5
+2020-09-22 15:08:17,472 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-4] EDIT data... InvoiceDTO [id=null, invoiceNo=425852783, contractorId=null, contractorName=null, clientId=null, clientName=Capgemini Australia Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=10800.0, gst=1080.0, totalAmountWithGst=11880.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=Submitted, monthYear=null, contractorInvoiceNotes=Purchase Order No:  4000151508
+Vendor No:
+345672, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=2043, changeColor=null]
+2020-09-22 15:08:27,844 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-2] EDIT data... InvoiceDTO [id=null, invoiceNo=1145330759, contractorId=null, contractorName=null, clientId=null, clientName=HCL Australia Services Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=0.0, gst=0.0, totalAmountWithGst=0.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=Submitted, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=2063, changeColor=null]
+2020-09-22 15:08:29,887 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=null, startDate=01/08/2020, endDate=30/11/2020, invoiceDescription=]
+2020-09-22 15:08:29,889 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
+2020-09-22 15:08:29,889 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment    30     Days
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
+2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment     30            Days
+2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
+2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
+2020-09-22 15:08:29,891 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Search details, 5
+2020-09-22 15:09:20,333 INFO com.zaxxer.hikari.HikariDataSource [Thread-109] HikariPool-14 - Shutdown initiated...
+2020-09-22 15:09:20,338 INFO com.zaxxer.hikari.HikariDataSource [Thread-109] HikariPool-14 - Shutdown completed.
+2020-09-22 15:09:20,845 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 14416 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-09-22 15:09:20,845 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-09-22 15:09:21,337 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-09-22 15:09:21,337 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-09-22 15:09:21,360 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-09-22 15:09:21,397 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Starting...
+2020-09-22 15:09:21,425 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Start completed.
+2020-09-22 15:09:21,442 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-22 15:09:21,496 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-09-22 15:09:21,753 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-09-22 15:09:21,753 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2e3cf216
+2020-09-22 15:09:22,272 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.451 seconds (JVM running for 75488.132)
+2020-09-22 15:09:22,273 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-09-22 15:13:16,207 INFO com.zaxxer.hikari.HikariDataSource [Thread-116] HikariPool-15 - Shutdown initiated...
+2020-09-22 15:13:16,209 INFO com.zaxxer.hikari.HikariDataSource [Thread-116] HikariPool-15 - Shutdown completed.
+2020-09-22 15:13:16,548 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 14416 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
+2020-09-22 15:13:16,548 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
+2020-09-22 15:13:17,025 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-09-22 15:13:17,025 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-09-22 15:13:17,049 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-09-22 15:13:17,090 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-16 - Starting...
+2020-09-22 15:13:17,123 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-16 - Start completed.
+2020-09-22 15:13:17,140 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-22 15:13:17,192 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-09-22 15:13:17,453 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2020-09-22 15:13:17,453 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2e3cf216
+2020-09-22 15:13:17,864 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.34 seconds (JVM running for 75723.724)
+2020-09-22 15:13:17,866 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3

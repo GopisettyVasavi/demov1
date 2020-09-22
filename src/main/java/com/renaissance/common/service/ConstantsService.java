@@ -8,7 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.renaissance.commission.repository.CommissionsLookupEntity;
+import com.renaissance.commission.model.CommissionsLookupEntity;
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.model.AppConstantsEntity;
 import com.renaissance.common.repository.AppConstantsRepository;

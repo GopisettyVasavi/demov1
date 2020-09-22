@@ -76,7 +76,7 @@ public class InvoiceDetailsService {
 			logger.info("Invoices do not exist....");
 		List<ContractorEmploymentDetailsEntity> empDetails = contractorEmployment.getCandidatesForCommission
 				(ProfileParserUtils.parseStringDate("01/"+monthAndYear));
-		logger.info("date.. ,{},",ProfileParserUtils.parseStringDate("01/"+monthAndYear));
+		//logger.info("date.. ,{},",ProfileParserUtils.parseStringDate("01/"+monthAndYear));
 		//logger.info("Search Results EMP table, {}", empDetails.size());
 		if (!ProfileParserUtils.isObjectEmpty(empDetails)) {
 			//int i=1;
@@ -171,13 +171,9 @@ public class InvoiceDetailsService {
 		return savedList;
 		
 	}
-	
-	
-	
-	
 	/**
-	 * This method will save commissions temporarily.
-	 * @param commissionDtoList
+	 * This method will edit Invoice and save it.
+	 * @param invoiceDto
 	 * @return
 	 */
 	public InvoiceDTO editInvoice(InvoiceDTO invoiceDto){
@@ -211,7 +207,11 @@ public class InvoiceDetailsService {
 		return savedInvoice;
 		
 	}
-
+/**
+ * This method will search invoices and return list of invoices matching the search criteria
+ * @param searchForm
+ * @return
+ */
 	public List<InvoiceDTO> searchInvoices(InvoiceSearchForm searchForm){
 		List<InvoiceDTO> searchList= new ArrayList<InvoiceDTO>();
 		if(!ProfileParserUtils.isObjectEmpty(searchForm)) {
@@ -226,13 +226,13 @@ public class InvoiceDetailsService {
 					invoiceDto.setMonthYear(ProfileParserUtils.parseDateToString(entity.getMonthYear()));
 					invoiceDto.setInvoiceGeneratedDateString(ProfileParserUtils.parseDateToString(entity.getInvoiceGeneratedDate()));
 					String payment=invoiceDto.getPaymentTerms();
-					logger.info("payment {}",payment);
+					//logger.info("payment {}",payment);
 					int days=0;
 					if(!ProfileParserUtils.isObjectEmpty(payment)) {
 						payment=payment.replaceFirst("Days", "");
 						payment=payment.replaceFirst("days", "");
 						days=new Integer(payment.trim());
-						logger.info("days ..{}",days);
+						//logger.info("days ..{}",days);
 					}
 					if(!ProfileParserUtils.isObjectEmpty(invoiceDto.getInvoiceGeneratedDate())) {
 					 LocalDate invDate = LocalDate.parse(invoiceDto.getInvoiceGeneratedDate().toString()); 
@@ -241,10 +241,10 @@ public class InvoiceDetailsService {
 					
 					if(currentDate.isAfter(invDate.plusDays(days)) && "Submitted".equalsIgnoreCase(invoiceDto.getStatus())) {
 						invoiceDto.setChangeColor("YES");
-						logger.info("color changed..");
+						//logger.info("color changed..");
 					}else {
 						invoiceDto.setChangeColor("NO");
-						logger.info("color not changed..");
+						//logger.info("color not changed..");
 					}
 					}
 					searchList.add(invoiceDto);

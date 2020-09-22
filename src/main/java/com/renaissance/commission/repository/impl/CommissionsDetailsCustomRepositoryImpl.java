@@ -22,7 +22,9 @@ public class CommissionsDetailsCustomRepositoryImpl implements CommissionsDetail
 	private EntityManager entityManager;
 	@Lazy
 	CommissionsDetailsEntity commission;
-
+/**
+ * This method will get commission details of contractor by given month year and job start date.
+ */
 	@Override
 	public CommissionsDetailsEntity getCommissionByContractorMonthYear(BigInteger contractorId, String monthYear, Double ratePerDay, String jobStartDate) {
 		

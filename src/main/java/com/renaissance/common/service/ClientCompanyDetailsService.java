@@ -40,7 +40,11 @@ public class ClientCompanyDetailsService {
 		return lookupDtoList;
 		
 	}
-	
+	/**
+	 * This method will save client company details
+	 * @param lookupObj
+	 * @return
+	 */
 	public ClientCompanyDTO saveClientCompany(ClientCompanyDTO lookupObj) {
 		if(!ProfileParserUtils.isObjectEmpty(lookupObj)) {
 			ClientCompanyDetailsEntity lookupEntity= new ClientCompanyDetailsEntity();
@@ -49,7 +53,11 @@ public class ClientCompanyDetailsService {
 		}
 		return lookupObj;
 	}
-
+/**
+ * This method will get client company details
+ * @param clientName
+ * @return
+ */
 	public ClientCompanyDTO getCompanyDetails(String clientName){
 		Iterable<ClientCompanyDetailsEntity> entities=clientCompanyRepo.findAll();
 		if(!ProfileParserUtils.isObjectEmpty(entities)) {

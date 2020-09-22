@@ -30,8 +30,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.renaissance.commission.dto.CommissionDTO;
 import com.renaissance.commission.dto.FinalCommissionsDTO;
 import com.renaissance.commission.dto.RecruiterCommissionsDTO;
+import com.renaissance.commission.model.CommissionsLookupEntity;
 import com.renaissance.commission.model.SearchCommissionForm;
-import com.renaissance.commission.repository.CommissionsLookupEntity;
 import com.renaissance.commission.service.CommissionManagmentService;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
@@ -48,7 +48,7 @@ public class CommissionMVCController {
 	ConstantsService constantsService;
 
 	/**
-	 * This method is invoked to load contractor main page.
+	 * This method is invoked to load commission main page.
 	 * 
 	 * @param request
 	 * @return
@@ -413,9 +413,16 @@ if(period.equalsIgnoreCase("DateRange")) {
 		return new ResponseEntity<>(searchResults, HttpStatus.OK);
 	}
 	
+	/**
+	 * This method will load full details of a selected commission
+	 * @param monthyear
+	 * @param recruiter
+	 * @param request
+	 * @return
+	 */
 	
 	@PostMapping(COMMISSION_DETAILS_RECRUITER)
-	public ResponseEntity<?>loadContractorDetails(@PathVariable String monthyear,@PathVariable String recruiter,  HttpServletRequest request) {
+	public ResponseEntity<?>loadCommissionrDetails(@PathVariable String monthyear,@PathVariable String recruiter,  HttpServletRequest request) {
 		List<CommissionDTO> searchResults = new ArrayList<CommissionDTO>();
 		try {
 			if (!ProfileParserUtils.isSessionAlive(request)) {

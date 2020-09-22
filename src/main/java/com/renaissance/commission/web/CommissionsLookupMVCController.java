@@ -40,7 +40,11 @@ public class CommissionsLookupMVCController {
 		
         return "commissionslookup";
     }
-	
+	/**
+	 * This method will load all commissions
+	 * @param request
+	 * @return
+	 */
 	@GetMapping(LOAD_COMMISSIONS_LOOKUP)
 	public ResponseEntity<?> getConstants(
 			HttpServletRequest request) {
@@ -50,13 +54,8 @@ public class CommissionsLookupMVCController {
 			lookupList=commissionService.loadAllCommissionsLookupValues();
 			if(!ProfileParserUtils.isObjectEmpty(lookupList)) {
 			logger.info("Commission lookup values from DB,{} ",lookupList);
-				/*
-				 * for(CommissionsLookupDTO lookupObj:lookupList) { //String[]
-				 * range=lookupObj.getRange().split("-"); }
-				 */
-			
+				
 			}
-			// contractorDto.getPersonalDetails().setL
 		} catch (Exception e) {
 			logger.error("Error in loading constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()
@@ -65,16 +64,19 @@ public class CommissionsLookupMVCController {
 		
 		return new ResponseEntity<>(lookupList, HttpStatus.OK);
 	}
-
+/**
+ * This method will save commission lookup
+ * @param commissionsLookupDTO
+ * @param request
+ * @return
+ */
 	
 	@PostMapping(SAVE_COMMISSION_LOOKUP)
 	public ResponseEntity<?> saveCommissionLookup(@RequestBody CommissionsLookupDTO commissionsLookupDTO,
 			HttpServletRequest request) {
 		try {
 			commissionsLookupDTO=commissionService.saveCommissionLookup(commissionsLookupDTO);
-			//constantsDto=constantsService.saveConstants(constantsDto);
 			
-			// contractorDto.getPersonalDetails().setL
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
 			return ResponseEntity.badRequest()

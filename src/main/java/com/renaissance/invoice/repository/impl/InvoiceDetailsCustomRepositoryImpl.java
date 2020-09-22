@@ -26,6 +26,10 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 	@Lazy
 	InvoiceDetailsEntity invoice;
 
+	/**
+	 * This method will get invoices for the selected month and year.
+	 */
+	@Override
 	public List<InvoiceDetailsEntity> getInvoicesForSelectedMonthAndYear(LocalDate monthYear) {
 
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -39,8 +43,7 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 
 		List<InvoiceDetailsEntity> invoiceList = null;
 		if (predicates.size() > 0) {
-			// predicates.add(cb.equal(cb.upper(contractAbn.get("activeRecord")),
-			// "ACTIVE"));
+			
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(rcInvoice).where(cb.and(predicates.toArray(predicatesArray)));
 			invoiceList = entityManager.createQuery(query).getResultList();
@@ -51,7 +54,9 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 		else
 			return new ArrayList<InvoiceDetailsEntity>();
 	}
-
+/**
+ * This method will get invoice for a contractor for the selected month and year.
+ */
 	public InvoiceDetailsEntity getContractorInvoiceByMonthYearInvoiceNo(BigInteger contractorId, LocalDate monthYear) {
 
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -78,7 +83,9 @@ public class InvoiceDetailsCustomRepositoryImpl implements InvoiceDetailsCustomR
 		else
 			return new InvoiceDetailsEntity();
 	}
-
+/**
+ * This method will search invoices 
+ */
 	public List<InvoiceDetailsEntity> searchInvoices(InvoiceSearchForm invoiceSearchForm) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<InvoiceDetailsEntity> query = cb.createQuery(InvoiceDetailsEntity.class);
