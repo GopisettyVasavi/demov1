@@ -125,6 +125,24 @@ var table = $('#invoicetable').DataTable({
 			"title" : "S.No"
 		},
 		{
+			"data" : 'generateInvoice',
+			render: function (data, type, row ) {
+	            if ( type === 'display' ) {
+	            	var val="";
+	            	if(data !=null)
+	            		val=data;
+	            	//console.log("data: generateInvoice"+i);
+	            	p++;
+	            	 return '<input type="checkbox"  value="'+val+'"  class="editor-active" id="generateInvoice' + p+'" >';
+	            }
+	            return ''; 
+	        },
+	       
+	       
+	        "title" : "Generate Invoice?"
+	    
+		},
+		{
 			"data" : 'clientId',
 			"name" : "clientId",
 			"title" : "clientId",
@@ -200,7 +218,27 @@ var table = $('#invoicetable').DataTable({
             }
             return ''; 
         },
-		"title" : "Daily Rate"
+		"title" : "Candidate Daily Rate"
+	},
+
+	
+	{
+		"data" : 'invoiceNo',
+		render: function (data, type, row ) {
+            if ( type === 'display' ) {
+            	var val="";
+            	if(data !=null)
+            		val=data;
+            	//console.log("data: inclGst"+i);
+            	q++;
+            	 return '<input type="textbox"  value="'+val+'"  class="editor-active" id="invoiceNo' + q+'" >';
+            }
+            return ''; 
+        },
+       
+       
+        "title" : "Invoice No."
+    
 	},
 	
 	{
@@ -351,27 +389,6 @@ var table = $('#invoicetable').DataTable({
 		"visible":false
 	},
 	
-	
-	{
-		"data" : 'invoiceNo',
-		render: function (data, type, row ) {
-            if ( type === 'display' ) {
-            	var val="";
-            	if(data !=null)
-            		val=data;
-            	//console.log("data: inclGst"+i);
-            	q++;
-            	 return '<input type="textbox"  value="'+val+'"  class="editor-active" id="invoiceNo' + q+'" >';
-            }
-            return ''; 
-        },
-       
-       
-        "title" : "Invoice No."
-    
-	},
-	
-	
 	{
 		"data" : 'contractorInvoiceNotes',
 		render: function (data, type, row ) {
@@ -392,24 +409,7 @@ var table = $('#invoicetable').DataTable({
     
 	},
 	
-	{
-		"data" : 'generateInvoice',
-		render: function (data, type, row ) {
-            if ( type === 'display' ) {
-            	var val="";
-            	if(data !=null)
-            		val=data;
-            	//console.log("data: generateInvoice"+i);
-            	p++;
-            	 return '<input type="checkbox"  value="'+val+'"  class="editor-active" id="generateInvoice' + p+'" >';
-            }
-            return ''; 
-        },
-       
-       
-        "title" : "Generate Invoice?"
-    
-	},
+	
 	{
 		"data" : 'status',
 		"name" : "status",
@@ -577,7 +577,21 @@ function populateList(){
 function generateInvoice(){
 	event.preventDefault();
 	$('#invoices_generated_mesg').html("");
-	
+	var table = $('#invoicetable').DataTable();
+	var i=1;
+	var invChecked=false;
+	table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+	    var d = this.data();
+	    var generateInvoice="generateInvoice"+i;
+	   
+	    if(invChecked==false || invChecked=='false'){
+	     invChecked=document.getElementById(generateInvoice).checked;
+	    // console.log("invChecked: inside: "+invChecked);
+	    }
+	    i++;
+	});
+	//console.log("invChecked:after:  "+invChecked);
+	if(invChecked==true || invChecked=='true'){
 	var invoiceList=populateList();
 	
 	while(!filePath){
@@ -601,6 +615,7 @@ function generateInvoice(){
 			//console.log(data.length);
 			if(data.length>0){
 				populateInvoiceTable(data);
+				 filePath= filePath.replaceAll("SLASH", "\\");
 				document.getElementById("invoices_generated_mesg").style.color = "black";
 			$('#invoices_generated_mesg').html("Invoices are generated successfully and stored at location: "+filePath);
 			}
@@ -612,9 +627,14 @@ function generateInvoice(){
 			console.log(e);
 
 		}
+	
 	});
 	
-	 
+	} else{
+		document.getElementById("invoices_generated_mesg").style.color = "red";
+		$('#invoices_generated_mesg').html("Please select at least one record to generate Invoice.");
+		return false;
+	}
 }
 
 
@@ -768,6 +788,23 @@ function searchinvoices(){
 								"visible":false
 							},
 							
+							{
+								"data" : 'invoiceNo',
+								"name" : "invoiceNo",
+								"title" : "Invoice No."
+						    
+							},
+							{
+								"data" : 'invoiceGeneratedDateString',
+								"name" : "invoiceGeneratedDateString",
+								"title" : "Invoice Created Date"
+							},
+							
+							{
+								"data" : 'contractorInvoiceNotes',
+								"name" : "contractorInvoiceNotes",
+								"title" : "Invoice Notes"
+							},
 							
 							{
 								"data" : 'totalAmount',
@@ -785,31 +822,10 @@ function searchinvoices(){
 								"name" : "totalAmountWithGst",
 								"title" : "Total Amount Incl. GST"
 							},
-							
-							{
-								"data" : 'invoiceNo',
-								"name" : "invoiceNo",
-								"title" : "Invoice No."
-						    
-							},
-							
-							
-							{
-								"data" : 'contractorInvoiceNotes',
-								"name" : "contractorInvoiceNotes",
-								"title" : "Invoice Notes"
-							},
-							
 							{
 								"data" : 'status',
 								"name" : "status",
 								"title" : "Status"
-							},
-							
-							{
-								"data" : 'invoiceGeneratedDateString',
-								"name" : "invoiceGeneratedDateString",
-								"title" : "Invoice Created Date"
 							},
 							],
 							 "createdRow": function( row, data, dataIndex){
@@ -850,9 +866,9 @@ function searchinvoices(){
 function calculateTotals(){
 	var table = $('#invoicesearchtbl').DataTable();
 	  
-var amount=table.column( 6 ).data().sum();
-var gst=table.column( 7 ).data().sum();
-var totamount=table.column( 8 ).data().sum()
+var amount=table.column( 9 ).data().sum();
+var gst=table.column( 10 ).data().sum();
+var totamount=table.column( 11 ).data().sum()
 	  $('#total_div').html("Amount: $"+ amount+".00"
 			  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GST: $"+gst+".00" 
 			  +" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;           Total Amount: $"+totamount+".00"  );
