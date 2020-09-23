@@ -186,6 +186,7 @@ public class InvoiceDetailsService {
 				InvoiceDetailsEntity invoiceEntity=previousInvoice.get();
 				invoiceEntity.setInvoiceGeneratedDate(ProfileParserUtils.parseStringDate(invoiceDto.getInvoiceGeneratedDateString()));
 				invoiceEntity.setInvoiceNo(invoiceDto.getInvoiceNo());
+				invoiceEntity.setClientId(invoiceDto.getClientId());
 				invoiceEntity.setClientName(invoiceDto.getClientName());
 				invoiceEntity.setContractorInvoiceNotes(invoiceDto.getContractorInvoiceNotes());
 				invoiceEntity.setStatus(invoiceDto.getStatus());

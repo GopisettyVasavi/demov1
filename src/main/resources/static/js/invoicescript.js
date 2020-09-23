@@ -981,7 +981,8 @@ function editInvoice(){
 		
 
 		if ($("#clientdet").val() != "none") {
-			
+			//console.log($("#clientdet").val());
+			invoiceDTO["clientId"] = $("#clientdet").val();
 			invoiceDTO["clientName"] = $(
 					"#clientNamedet option:selected").text();
 		}
