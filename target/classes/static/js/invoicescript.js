@@ -827,6 +827,11 @@ function searchinvoices(){
 								"name" : "status",
 								"title" : "Status"
 							},
+							{
+								"data" : 'monthYear',
+								"name" : "monthYear",
+								"title" : "Month And Year"
+							},
 							],
 							 "createdRow": function( row, data, dataIndex){
 								// console.log(data.changeColor);
@@ -956,6 +961,14 @@ function populateClientList(clientCompName){
 function editInvoice(){
 	event.preventDefault();
 	$('#save_feedback').html("");
+	
+	//console.log("Client: "+$("#clientdet").val());
+	if($("#invoiceNodet").val() ==''||$("#clientdet").val()=='none'){
+		document.getElementById("save_feedback").style.color = "red";
+		$('#save_feedback').html("Invoice No and Client name can not be blank.");
+		return false;
+	}
+	else{
 	 var invoiceDTO={}
 	
 	   invoiceDTO["invoiceNo"]=$("#invoiceNodet").val();
@@ -967,7 +980,7 @@ function editInvoice(){
 	   invoiceDTO["totalAmountWithGst"]=  $("#totalamountgstdet").val();
 		
 
-		if ($("#clientNamedet").val() != "none") {
+		if ($("#clientdet").val() != "none") {
 			
 			invoiceDTO["clientName"] = $(
 					"#clientNamedet option:selected").text();
@@ -1002,6 +1015,7 @@ function editInvoice(){
 
 			}
 		});
+	}
 	
 }
 
