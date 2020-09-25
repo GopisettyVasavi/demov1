@@ -193,8 +193,8 @@ public class InvoiceDetailsService {
 				invoiceEntity.setTotalAmount(invoiceDto.getTotalAmount());
 				invoiceEntity.setGst(invoiceDto.getGst());
 				invoiceEntity.setTotalAmountWithGst(invoiceDto.getTotalAmountWithGst());
-				
 				invoiceEntity=	invoiceDetails.save(invoiceEntity);
+				
 				BeanUtils.copyProperties(invoiceEntity, savedInvoice);
 				//logger.info("VO....{}",savedInvoice.toString());
 				savedInvoice.setStartDate(ProfileParserUtils.parseDateToString(invoiceEntity.getStartDate()));
