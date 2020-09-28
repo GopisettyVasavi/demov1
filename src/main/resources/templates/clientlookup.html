@@ -123,7 +123,7 @@
 					</div>
 					<div class="col-sm-9">
 						<div class="form-group">
-							<label for="name" style="font-weight: bold">Address *</label> 
+							<label for="name" style="font-weight: bold">Address</label> 
 							<textarea class="form-control w-100" cols="30"
 																						rows="2"
 																						onfocus="this.placeholder = 'Address'"
@@ -136,23 +136,24 @@
 					</div>
 					<div class="col-sm-3">
 																				<div class="form-group">
-							<label for="name" style="font-weight: bold">Vendor Id *</label> <input
-								type="text" name="vendorid" placeholder="vendor Id"
-								class="single-input" id="vendorid" required
-								 >
-						</div>
-																			</div>
-																			<div class="col-sm-3">
-																				<div class="form-group">
-							<label for="name" style="font-weight: bold">ABN No *</label> <input
+							<label for="name" style="font-weight: bold">ABN No</label> <input
 								type="text" name="abnno" placeholder="ABN No"
 								class="single-input" id="abnno" required
 								 >
 						</div>
 																			</div>
+					<div class="col-sm-3">
+																				<div class="form-group">
+							<label for="name" style="font-weight: bold">Vendor Id</label> <input
+								type="text" name="vendorid" placeholder="vendor Id"
+								class="single-input" id="vendorid" required
+								 >
+						</div>
+																			</div>
+																			
 																			<div class="col-sm-3">
 																				<div class="form-group">
-							<label for="name" style="font-weight: bold">Payment Terms *</label> <input
+							<label for="name" style="font-weight: bold">Payment Terms </label> <input
 								type="text" name="paymentterm" placeholder="Payment Terms"
 								class="single-input" id="paymentterm" required
 								 >
@@ -168,6 +169,9 @@
 							<button type="submit" id="btn-save"
 								class="button button-contactForm boxed-btn"
 								onclick="clickonsave()">Save</button>
+								<button type="submit" id="btn-save"
+								class="button button-contactForm boxed-btn"
+								onclick="clickonreset()">Reset</button>
 								<a href="#" type="submit" id="btn-back"
 								class="button button-contactForm boxed-btn"
 								onclick="goBack()" style="padding-left: 5px; padding-right: 5px;padding-top: 1px;padding-bottom: 1px">Back</a>
@@ -249,7 +253,7 @@
 			var d = this.data();
 			
 			if($("#companyname").val()==d.clientName){
-				console.log("Matching contant exists..");
+				console.log("Matching company exists..");
 				if(($("#paymentterm").val()==d.paymentTerms) &&
 						$("#abnno").val()==d.clientAbnNo  &&  $("#address").val()==d.address
 						&&  $("#vendorid").val()==d.vendorId )
@@ -269,14 +273,23 @@
 		} );
 		return true;
 	}
+	
+	function clickonreset(){
+		$("#feedback").html("");
+		$("#companyname").val("");
+		$("#vendorid").val("");
+		$("#abnno").val("");
+		$("#paymentterm").val("");
+		$("#address").val("");
+		$("#id").val("");
+	}
 		function clickonsave() {
 			$('#feedback').html("");
 			var isValid=true;
 			event.preventDefault();
-			if($("#companyname").val()=="" || $("#paymentterm").val()=="" || $("#abnno").val()==""
-					|| $("#address").val()=="" ||$("#vendorid").val()==""){
+			if($("#companyname").val()=="" ){
 				document.getElementById("feedback").style.color = "red";
-				$('#feedback').html("Validation error: Please enter values for all fields.");
+				$('#feedback').html("Validation error: Company name can not be blank.");
 				isValid=false;
 				return false;
 			}
@@ -285,7 +298,7 @@
 				var d = this.data();
 				
 				if($("#companyname").val()==d.companyname){
-					console.log("Matching contant exists..");
+					console.log("Matching Company exists..");
 					if(($("#paymentterm").val()==d.paymentTerms) &&
 							$("#abnno").val()==d.clientAbnNo  &&  $("#address").val()==d.address
 							&&  $("#vendorid").val()==d.vendorId ){

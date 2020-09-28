@@ -230,8 +230,8 @@ public class InvoiceDetailsService {
 					//logger.info("payment {}",payment);
 					int days=0;
 					if(!ProfileParserUtils.isObjectEmpty(payment)) {
-						payment=payment.replaceFirst("Days", "");
-						payment=payment.replaceFirst("days", "");
+						payment=payment.replaceAll("Days", "");
+						payment=payment.replaceAll("days", "");
 						days=new Integer(payment.trim());
 						//logger.info("days ..{}",days);
 					}
