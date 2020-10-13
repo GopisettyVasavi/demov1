@@ -54,8 +54,8 @@ function createinvoice(){
 					populateInvoiceTable(data);
 				}	
 				else{
-					document.getElementById("monthyear_feedback").style.color = "red";
-					$('#monthyear_feedback').html("There are no contractors to generate invoices for the selected month.");
+					document.getElementById("monthyear_feedback").style.color = "green";
+					$('#monthyear_feedback').html("Info: There are no contractors to generate invoices for the selected month.");
 					$("#invoices_div").hide();
 					$("#invoicetable").hide();
 					$("#buttons_div").hide();
