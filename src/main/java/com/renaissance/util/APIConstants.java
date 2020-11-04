@@ -13,7 +13,7 @@ public class APIConstants {
 	public static final String SA_HISTORY="/sahistory/{contractorId}";
 	public static final String EMP_HISTORY="/emphistory/{contractorId}";
 	public static final String CONTRACTOR_MAIN="/contractormain";
-	public static final String MAIN_CONTRACTOR="contractormain";
+	//public static final String MAIN_CONTRACTOR="contractormain";
 	public static final String CREATE_CONTRACTOR="/createContractor";
 	public static final String COPY_CERTIFICATE="/copyCertificate";
 	public static final String SEARCH_CONTRACTORS="/searchContractors";
@@ -66,6 +66,8 @@ public class APIConstants {
 	public static final String SAVE_INVOICE="/saveinvoice";
 	public static final String SEARCH_INVOICES="/searchinvoices";
 	public static final String EDIT_INVOICE="/editinvoice";
+	public static final String REQUIREMENT_MAIN="/requirementmain";
+	public static final String CREATE_REQUIREMENT="/createRequirement";
 	
 
 }

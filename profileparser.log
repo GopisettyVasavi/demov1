@@ -1,73 +1,46 @@
-2020-09-22 15:07:13,399 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-22 15:07:13,554 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8090-exec-10] HHH000397: Using ASTQueryTranslatorFactory
-2020-09-22 15:07:17,721 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-4] Invoices do not exist....
-2020-09-22 15:07:43,439 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-2] Valid path
-2020-09-22 15:07:43,529 INFO com.renaissance.profile.parser.util.ProfileParserUtils [http-nio-8090-exec-2] Valid path
-2020-09-22 15:08:01,487 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=null, startDate=01/08/2020, endDate=30/11/2020, invoiceDescription=]
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment    30     Days
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment     30            Days
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
-2020-09-22 15:08:01,490 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Search details, 5
-2020-09-22 15:08:17,472 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-4] EDIT data... InvoiceDTO [id=null, invoiceNo=425852783, contractorId=null, contractorName=null, clientId=null, clientName=Capgemini Australia Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=10800.0, gst=1080.0, totalAmountWithGst=11880.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=Submitted, monthYear=null, contractorInvoiceNotes=Purchase Order No:  4000151508
-Vendor No:
-345672, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=2043, changeColor=null]
-2020-09-22 15:08:27,844 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-2] EDIT data... InvoiceDTO [id=null, invoiceNo=1145330759, contractorId=null, contractorName=null, clientId=null, clientName=HCL Australia Services Pty Ltd, endClientName=null, address=null, vendorId=null, paymentTerms=null, clientAbnNo=null, startDate=null, endDate=null, ratePerDay=null, billRatePerDay=null, totalAmount=0.0, gst=0.0, totalAmountWithGst=0.0, inclGst=null, noOfDaysWorked=null, invoiceGeneratedDate=null, invoiceGeneratedDateString=01/08/2020, status=Submitted, monthYear=null, contractorInvoiceNotes=, description=null, generateInvoice=null, filePath=null, poNumber=null, gstPercent=null, idPkey=2063, changeColor=null]
-2020-09-22 15:08:29,887 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Invoice Search Criteria, InvoiceSearchForm [invoiceNo=null, clientName=null, invoiceStatus=null, startDate=01/08/2020, endDate=30/11/2020, invoiceDescription=]
-2020-09-22 15:08:29,889 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment 30 Days
-2020-09-22 15:08:29,889 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color not changed..
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment    30     Days
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment null
-2020-09-22 15:08:29,890 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] payment     30            Days
-2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] days ..30
-2020-09-22 15:08:29,891 INFO com.renaissance.invoice.service.InvoiceDetailsService [http-nio-8090-exec-5] color changed..
-2020-09-22 15:08:29,891 INFO com.renaissance.invoice.web.InvoiceMVCController [http-nio-8090-exec-5] Search details, 5
-2020-09-22 15:09:20,333 INFO com.zaxxer.hikari.HikariDataSource [Thread-109] HikariPool-14 - Shutdown initiated...
-2020-09-22 15:09:20,338 INFO com.zaxxer.hikari.HikariDataSource [Thread-109] HikariPool-14 - Shutdown completed.
-2020-09-22 15:09:20,845 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 14416 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-09-22 15:09:20,845 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-09-22 15:09:21,337 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-09-22 15:09:21,337 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-09-22 15:09:21,360 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-09-22 15:09:21,397 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Starting...
-2020-09-22 15:09:21,425 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-15 - Start completed.
-2020-09-22 15:09:21,442 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-22 15:09:21,496 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-09-22 15:09:21,753 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-09-22 15:09:21,753 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2e3cf216
-2020-09-22 15:09:22,272 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.451 seconds (JVM running for 75488.132)
-2020-09-22 15:09:22,273 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
-2020-09-22 15:13:16,207 INFO com.zaxxer.hikari.HikariDataSource [Thread-116] HikariPool-15 - Shutdown initiated...
-2020-09-22 15:13:16,209 INFO com.zaxxer.hikari.HikariDataSource [Thread-116] HikariPool-15 - Shutdown completed.
-2020-09-22 15:13:16,548 INFO com.renaissance.DemoApplication [restartedMain] Starting DemoApplication on LAPTOP-5REF1QFU with PID 14416 (D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf\target\classes started by Renaissance in D:\EclipseWorkspace\spring-boot-hibernate-thymeleaf)
-2020-09-22 15:13:16,548 INFO com.renaissance.DemoApplication [restartedMain] The following profiles are active: prod
-2020-09-22 15:13:17,025 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2020-09-22 15:13:17,025 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.19]
-2020-09-22 15:13:17,049 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2020-09-22 15:13:17,090 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-16 - Starting...
-2020-09-22 15:13:17,123 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-16 - Start completed.
-2020-09-22 15:13:17,140 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2020-09-22 15:13:17,192 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2020-09-22 15:13:17,453 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
-2020-09-22 15:13:17,453 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2e3cf216
-2020-09-22 15:13:17,864 INFO com.renaissance.DemoApplication [restartedMain] Started DemoApplication in 1.34 seconds (JVM running for 75723.724)
-2020-09-22 15:13:17,866 INFO com.renaissance.DemoApplication [restartedMain] Simple log statement with inputs 1, 2 and 3
+2020-11-04 09:39:26,726 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-6 housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=22h45m45s48ms174µs800ns).
+2020-11-04 09:39:55,662 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Found matching User details for: {}renaissance
+2020-11-04 09:39:56,092 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 09:40:21,063 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Controller invoked to retrieve recruiter list 
+2020-11-04 09:40:21,072 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Recruiter list size...,2 
+2020-11-04 09:40:28,107 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Found matching User details for: {}renaissance
+2020-11-04 09:40:39,694 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 09:42:20,559 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Controller invoked to retrieve recruiter list 
+2020-11-04 09:42:20,566 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-4] Recruiter list size...,2 
+2020-11-04 10:07:07,542 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-6 housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=12m10s701ms240µs800ns).
+2020-11-04 10:10:55,949 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Found matching User details for: {}renaissance
+2020-11-04 10:10:56,141 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:11:00,399 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Controller invoked to retrieve recruiter list 
+2020-11-04 10:11:00,406 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Recruiter list size...,2 
+2020-11-04 10:11:51,871 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Controller invoked to retrieve recruiter list 
+2020-11-04 10:11:51,875 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-1] Recruiter list size...,2 
+2020-11-04 10:12:00,197 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Controller invoked to retrieve recruiter list 
+2020-11-04 10:12:00,200 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Recruiter list size...,2 
+2020-11-04 10:13:43,307 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-11-04 10:13:43,310 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 
+2020-11-04 10:13:47,828 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:13:50,323 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Controller invoked to retrieve recruiter list 
+2020-11-04 10:13:50,325 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-5] Recruiter list size...,2 
+2020-11-04 10:13:52,277 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-6] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:13:54,649 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-7] Controller invoked to retrieve recruiter list 
+2020-11-04 10:13:54,652 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-7] Recruiter list size...,2 
+2020-11-04 10:13:56,026 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:14:31,671 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:14:59,522 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:01,808 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-11-04 10:15:01,810 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 
+2020-11-04 10:15:03,188 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:06,470 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-5] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:09,447 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-7] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:11,312 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Controller invoked to retrieve recruiter list 
+2020-11-04 10:15:11,314 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-2] Recruiter list size...,2 
+2020-11-04 10:15:12,555 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:16,118 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-1] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:19,143 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-10] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:21,073 INFO com.renaissance.commission.web.CommissionsLookupMVCController [http-nio-8090-exec-8] Commission lookup values from DB,[CommissionsLookupDTO [range=1-5, percentage=10.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=11-15, percentage=7.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=16-20, percentage=6.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=21-25, percentage=5.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=26-30, percentage=5.0, commissionType=PERMANENT, minRange=null, maxRange=null], CommissionsLookupDTO [range=31-35, percentage=2.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=36-40, percentage=1.0, commissionType=CONTRACT, minRange=null, maxRange=null], CommissionsLookupDTO [range=6-10, percentage=8.0, commissionType=CONTRACT, minRange=null, maxRange=null]] 
+2020-11-04 10:15:22,225 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:15:26,430 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-2] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:17:44,020 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-4] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:17:45,568 INFO com.renaissance.profile.parser.web.LoginController [http-nio-8090-exec-9] Logged in user name before rendering page, pageload.. Renaissance
+2020-11-04 10:17:46,606 INFO com.renaissance.profile.parser.web.RegisterEmployeeMvcController [http-nio-8090-exec-8] Controller invoked to retrieve recruiter list 
+2020-11-04 10:17:46,609 INFO com.re

@@ -14,10 +14,18 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -31,6 +39,7 @@ import org.slf4j.LoggerFactory;
 
 import com.renaissance.contractor.dto.MarginDTO;
 import com.renaissance.invoice.dto.InvoiceDTO;
+import com.sun.mail.smtp.SMTPTransport;
 
 import pl.jsolve.templ4docx.core.Docx;
 import pl.jsolve.templ4docx.core.VariablePattern;
@@ -390,5 +399,62 @@ public static int getLastDayOfMonth(String dateString) {
     YearMonth yearMonth = YearMonth.parse(dateString, pattern);
     LocalDate date = yearMonth.atEndOfMonth();
     return date.lengthOfMonth();
+}
+
+public static void sendEmail(String toEmail) {
+	
+	 String SMTP_SERVER = "smtp.gmail.com";
+    String USERNAME = "vasavi.vakkanti@gmail.com";
+     String PASSWORD = "@@Bangaru82";
+
+    String EMAIL_FROM = "vasavi.vakkanti@gmail.com";
+     String EMAIL_TO = "vasavi.vakkanti@gmail.com";
+    String EMAIL_TO_CC = "";
+
+     String EMAIL_SUBJECT = "Test Send Email via SMTP";
+     String EMAIL_TEXT = "Hello Java Mail \n ABC123";
+	// Recipient's email ID needs to be mentioned.
+     Properties properties = System.getProperties();
+     properties.put("mail.smtp.host", SMTP_SERVER);
+     properties.put("mail.smtp.port", "465");
+     properties.put("mail.smtp.ssl.enable", "true");
+     properties.put("mail.smtp.auth", "true");
+
+     // Get the Session object.// and pass username and password
+     Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+
+         protected PasswordAuthentication getPasswordAuthentication() {
+
+             return new PasswordAuthentication(USERNAME,PASSWORD);
+
+         }
+
+     });
+
+     // Used to debug SMTP issues
+     session.setDebug(true);
+     try {
+         // Create a default MimeMessage object.
+         MimeMessage message = new MimeMessage(session);
+
+         // Set From: header field of the header.
+         message.setFrom(new InternetAddress(EMAIL_FROM));
+
+         // Set To: header field of the header.
+         message.addRecipient(Message.RecipientType.TO, new InternetAddress(EMAIL_TO));
+
+         // Set Subject: header field
+         message.setSubject("This is the Subject Line!");
+
+         // Now set the actual message
+         message.setText("This is actual message");
+
+         System.out.println("sending...");
+         // Send message
+         Transport.send(message);
+         System.out.println("Sent message successfully....");
+     } catch (MessagingException mex) {
+         mex.printStackTrace();
+     }
 }
 }

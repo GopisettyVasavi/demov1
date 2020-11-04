@@ -276,9 +276,9 @@ function additionalSAChecked() {
 		$("#addnlSAInfo").hide();
 	}
 }
-function backToIndex() {
+/*function backToIndex() {
 	window.location = '/index'
-}
+}*/
 
 function clickonsave(mode) {
 

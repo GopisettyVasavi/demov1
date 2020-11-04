@@ -29,9 +29,9 @@ function initialize(){
 	
 }
 
-function backToIndex() {
+/*function backToIndex() {
 	window.location = '/index'
-}
+}*/
 function createCommission(){
 	event.preventDefault();
 	document.getElementById('recruiters_div').innerHTML = '';

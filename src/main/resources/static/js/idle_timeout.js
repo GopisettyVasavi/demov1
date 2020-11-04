@@ -28,3 +28,7 @@ function clearSessionExpireTimeout () {
 
     clearTimeout(inactivitySessionExpireTimeOut);
 }
+
+function backToIndex() {
+	window.location = '/index'
+}

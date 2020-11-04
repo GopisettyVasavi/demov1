@@ -5,9 +5,9 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 	
 });
 
-function backToIndex() {
+/*function backToIndex() {
 	window.location = '/index'
-}
+}*/
 
 function initialize(){
 	document.getElementById("invoicemonth").focus();

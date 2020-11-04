@@ -90,6 +90,13 @@
 					</h5>
 
 				</div>
+				<div class="row" id="requirementdiv" >
+					<h5>
+						<a href="#" onclick="openRequirementManagement()"
+							style="text-decoration: underline;"> Requirement Management</a>
+					</h5>
+
+				</div>
 				<div class="row" id="bulkfileuploaddiv" >
 					<h5>
 						<a href="#" onclick="openBulkFileUpload()"
@@ -115,6 +122,13 @@
 					<h5>
 						<a href="#" onclick="openclientlookup()"
 							style="text-decoration: underline;"> Client Company Details</a>
+					</h5>
+
+				</div>
+				<div class="row" id="registeremp" >
+					<h5>
+						<a href="#" onclick="registerEmployee()"
+							style="text-decoration: underline;"> Register Employee</a>
 					</h5>
 
 				</div>
@@ -169,6 +183,8 @@
 	         $("#commissionslookupdiv").hide();
 	         $("#invoicediv").hide();
 	         $("#clientlookupdiv").hide();
+	         $("#requirementdiv").hide();
+	         $("#registeremp").hide(); 
 	         
 		}
 		if(role=="Recruiter"){
@@ -181,6 +197,7 @@
 	         $("#commissionslookupdiv").hide();
 	         $("#invoicediv").hide();
 	         $("#clientlookupdiv").hide();
+	         $("#requirementdiv").show();
 		}
 		if(role=="Data Entry Operator"){
 			$("#parserdiv").hide();
@@ -191,6 +208,7 @@
 	         $("#commissionslookupdiv").hide();
 	         $("#invoicediv").hide();
 	         $("#clientlookupdiv").hide();
+	         $("#requirementdiv").show();
 		}
 		if(role=="Admin"){
 			 $("#parserdiv").show();
@@ -201,8 +219,8 @@
 	         $("#commissionslookupdiv").show();
 	         $("#invoicediv").show();
 	         $("#clientlookupdiv").show();
-	         
-	         
+	         $("#requirementdiv").show();
+	         $("#registeremp").show(); 
 		}
 	}
 function initialize(){
@@ -215,6 +233,8 @@ function initialize(){
     $("#commissionslookupdiv").hide();
     $("#invoicediv").hide();
     $("#clientlookupdiv").hide();
+    $("#requirementdiv").hide();
+    $("#registeremp").hide();
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
@@ -259,6 +279,12 @@ function openInvoiceManagement(){
 }
 function openclientlookup(){
 	window.location='/clientlookup'
+}
+function openRequirementManagement(){
+	window.location='/requirementmain'
+}
+function registerEmployee(){
+	 window.location='/registeremployee'
 }
  </script>
 <script src="js/idle_timeout.js"></script>

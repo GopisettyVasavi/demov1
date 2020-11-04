@@ -2,6 +2,7 @@ package com.renaissance.profile.parser.service;
 
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.renaissance.profile.parser.model.EmployeeEntity;
 import com.renaissance.profile.parser.model.EmployeeForm;
+import com.renaissance.profile.parser.model.User;
 import com.renaissance.profile.parser.repository.EmployeeRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 
@@ -51,4 +53,14 @@ public class EmployeeService {
 		return employeeForm;
 	}
 
+	public User getRecruiterDetails(Integer employeeId) {
+		User recruiter=new User();
+		Optional<EmployeeEntity> employee=employeeRepository.findById(employeeId);
+		if(!ProfileParserUtils.isObjectEmpty(employee)) {
+		EmployeeEntity emp=employee.get();
+		recruiter.setEmail(emp.getEmail());
+		recruiter.setEmployeeName(emp.getEmployeeName());
+		}
+		return recruiter;
+	}
 }

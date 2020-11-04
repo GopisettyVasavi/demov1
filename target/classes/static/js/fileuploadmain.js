@@ -469,9 +469,9 @@ function uploadFiles(files) {
     xhr.send(formData);
 }
 
-function backToIndex(){
+/*function backToIndex(){
 	window.location='/index'
-}
+}*/
 function restSearchForm(){
 	$("#searchProfForm")[0].reset();
 	 event.preventDefault();
