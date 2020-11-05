@@ -368,23 +368,26 @@
 					var range= rowData.range.split("-");
 					$("#minRange").val(range[0]);
 					$("#maxRange").val(range[1]);
-					if(rowData.commissionType!='' && rowData.commissionType=='CONTRACT')
+					if(rowData.commissionType!='')
 						
 					{
-						$('#comm_type').val("CONTRACT").attr("selected","selected");
-						console.log("rowData.commissionType: "+rowData.commissionType);
+						
+						$("#comm_type").val(rowData.commissionType);
+						}
+						/* /* $('#comm_type').val("CONTRACT").attr("selected","selected");
+						//console.log("rowData.commissionType: "+rowData.commissionType);
 						$('#comm_type').trigger('chosen:updated');
-						 $("#comm_type option[value='CONTRACT']").attr('selected', 'selected'); 
+						 $("#comm_type option[value='CONTRACT']").attr('selected', 'selected');  */
 						//$("#select option[value='CONTRACT']").attr('selected', 'selected'); 
 						//  $('#comm_type option:selected').attr("selected",null);
 						//$('CONTRACT[name^="comm_type"] option:selected').attr("selected",null);
 						//$('CONTRACT[name^="comm_type"] option[value="CONTRACT"]').attr("selected","selected");
-						//$("#comm_type").val("CONTRACT"); 
-						}
-					else if(rowData.commissionType!='' && rowData.commissionType=='PERMANENT'){
+						//$("#comm_type").val("CONTRACT"); }
+						
+					/* else if(rowData.commissionType!='' && rowData.commissionType=='PERMANENT'){
 						$("#comm_type").val('PERMANENT');
-					}
-					console.log("rowData.commissionType: "+rowData.commissionType)
+					} */
+					//console.log("rowData.commissionType: "+rowData.commissionType) 
 					$("#percentage").val(rowData.percentage);
 					
 					$("#id").val(rowData.id);

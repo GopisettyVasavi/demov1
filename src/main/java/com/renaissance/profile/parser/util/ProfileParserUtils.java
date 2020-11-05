@@ -403,12 +403,12 @@ public static int getLastDayOfMonth(String dateString) {
 
 public static void sendEmail(String toEmail) {
 	
-	 String SMTP_SERVER = "smtp.gmail.com";
-    String USERNAME = "vasavi.vakkanti@gmail.com";
-     String PASSWORD = "@@Bangaru82";
+	 String SMTP_SERVER = "mail.reninfo.com.au";
+    String USERNAME = "vasavi@reninfo.com.au";
+     String PASSWORD = "Renaissance1234";
 
-    String EMAIL_FROM = "vasavi.vakkanti@gmail.com";
-     String EMAIL_TO = "vasavi.vakkanti@gmail.com";
+    String EMAIL_FROM = "TestUser1@reninfo.com.au";
+     String EMAIL_TO = "vasavi@reninfo.com.au";
     String EMAIL_TO_CC = "";
 
      String EMAIL_SUBJECT = "Test Send Email via SMTP";

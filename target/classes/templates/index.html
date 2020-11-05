@@ -97,6 +97,13 @@
 					</h5>
 
 				</div>
+				<div class="row" id="mappingrequirementdiv" >
+					<h5>
+						<a href="#" onclick="openMappingRequirementManagement()"
+							style="text-decoration: underline;"> Client Requirement</a>
+					</h5>
+
+				</div>
 				<div class="row" id="bulkfileuploaddiv" >
 					<h5>
 						<a href="#" onclick="openBulkFileUpload()"
@@ -185,6 +192,7 @@
 	         $("#clientlookupdiv").hide();
 	         $("#requirementdiv").hide();
 	         $("#registeremp").hide(); 
+	         $("#mappingrequirementdiv").hide(); 
 	         
 		}
 		if(role=="Recruiter"){
@@ -198,6 +206,7 @@
 	         $("#invoicediv").hide();
 	         $("#clientlookupdiv").hide();
 	         $("#requirementdiv").show();
+	         $("#mappingrequirementdiv").show(); 
 		}
 		if(role=="Data Entry Operator"){
 			$("#parserdiv").hide();
@@ -221,6 +230,7 @@
 	         $("#clientlookupdiv").show();
 	         $("#requirementdiv").show();
 	         $("#registeremp").show(); 
+	         $("#mappingrequirementdiv").show(); 
 		}
 	}
 function initialize(){
@@ -235,6 +245,7 @@ function initialize(){
     $("#clientlookupdiv").hide();
     $("#requirementdiv").hide();
     $("#registeremp").hide();
+    $("#mappingrequirementdiv").hide(); 
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
@@ -282,6 +293,9 @@ function openclientlookup(){
 }
 function openRequirementManagement(){
 	window.location='/requirementmain'
+}
+function openMappingRequirementManagement(){
+	window.location='/mappingrequirementmain'
 }
 function registerEmployee(){
 	 window.location='/registeremployee'

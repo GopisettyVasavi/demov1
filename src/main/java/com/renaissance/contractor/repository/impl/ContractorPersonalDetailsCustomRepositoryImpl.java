@@ -76,7 +76,7 @@ public class ContractorPersonalDetailsCustomRepositoryImpl implements Contractor
 			contractorPersonalList = entityManager.createQuery(query).getResultList();
 		}
 		if (!ProfileParserUtils.isObjectEmpty(contractorPersonalList)) {
-			System.out.println(" Query ..." + contractorPersonalList.size());
+			//System.out.println(" Query ..." + contractorPersonalList.size());
 			return contractorPersonalList;
 		} else
 			return new ArrayList<ContractorPersonalDetailsEntity>();

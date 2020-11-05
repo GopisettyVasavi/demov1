@@ -68,6 +68,9 @@ public class APIConstants {
 	public static final String EDIT_INVOICE="/editinvoice";
 	public static final String REQUIREMENT_MAIN="/requirementmain";
 	public static final String CREATE_REQUIREMENT="/createRequirement";
+	public static final String UPDATE_REQUIREMENT="/updateRequirement";
+	public static final String SEARCH_REQUIREMENT="/searchRequirement";
+	public static final String MAPPING_REQUIREMENT_MAIN="/mappingrequirementmain";
 	
 
 }
