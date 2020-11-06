@@ -1,5 +1,7 @@
 package com.renaissance.profile.parser.model;
 
+import java.math.BigInteger;
+
 /**
  * This form class will be mapped to the profile search screen and have fields for all the search criteria.
  * @author Vasavi
@@ -7,16 +9,16 @@ package com.renaissance.profile.parser.model;
  */
 public class ProfileSearchForm {
 	
-	String candidateName;//personal tab-1
-	String primaryEmail;//personal tab-2
-	String primaryContactNo;//personal tab-3
-	String skill;//profile tab-1
-	String currentLocation;//personal table-4
-	String availability;//profile table-2
-	String visaType;//personal tab-5
-	String workExperience;// personal tab-6
-	String certification;//profile table-3
-	
+	private String candidateName;//personal tab-1
+	private String primaryEmail;//personal tab-2
+	private String primaryContactNo;//personal tab-3
+	private String skill;//profile tab-1
+	private String currentLocation;//personal table-4
+	private String availability;//profile table-2
+	private String visaType;//personal tab-5
+	private String  workExperience;// personal tab-6
+	private String certification;//profile table-3
+	private BigInteger requirementId;
 	public String getCandidateName() {
 		return candidateName;
 	}
@@ -71,13 +73,21 @@ public class ProfileSearchForm {
 	public void setCertification(String certification) {
 		this.certification = certification;
 	}
+	
+	public BigInteger getRequirementId() {
+		return requirementId;
+	}
+	public void setRequirementId(BigInteger requirementId) {
+		this.requirementId = requirementId;
+	}
 	@Override
 	public String toString() {
 		return "ProfileSearchForm [candidateName=" + candidateName + ", primaryEmail=" + primaryEmail
 				+ ", primaryContactNo=" + primaryContactNo + ", skill=" + skill + ", currentLocation=" + currentLocation
 				+ ", availability=" + availability + ", visaType=" + visaType + ", workExperience=" + workExperience
-				+ ", certification=" + certification + "]";
+				+ ", certification=" + certification + ", requirementId=" + requirementId + "]";
 	}
+	
 	
 	
 	

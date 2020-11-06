@@ -1,5 +1,6 @@
 package com.renaissance.requirement.service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +11,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import com.renaissance.requirement.dto.MappingCandidateRqmtDTO;
 import com.renaissance.requirement.dto.RequirementDTO;
 import com.renaissance.requirement.model.JobRequirementEntity;
+import com.renaissance.requirement.model.MappingRequirementCandidateEntity;
 import com.renaissance.requirement.repository.JobRequirementRepository;
+import com.renaissance.requirement.repository.MappingRequirementCandidateRepository;
 
 @Service
 public class RequirementManagementService {
 	private static final Logger logger = LoggerFactory.getLogger(RequirementManagementService.class);
 	@Autowired
 	JobRequirementRepository jobRequirementRepository;
+	
+	@Autowired
+	MappingRequirementCandidateRepository mappingRepository;
+	
+	
 
 	
 	public RequirementDTO createRequirement(RequirementDTO requirementDto) {
@@ -53,5 +62,39 @@ public class RequirementManagementService {
 	}
 	public RequirementDTO updateRequirement(RequirementDTO requirementDto) {
 		return requirementDto;
+	}
+	
+	public List<MappingCandidateRqmtDTO> fetchRequirementMappings(BigInteger candidateId, BigInteger requirementId) {
+		List<MappingCandidateRqmtDTO> mappingCandidateList= new ArrayList<MappingCandidateRqmtDTO>();
+		List<MappingRequirementCandidateEntity> mappingList=mappingRepository.getCandidateRequirementMappings(candidateId, requirementId);
+		logger.info("Mapping results in service,{}",mappingList.size());
+		if(!ProfileParserUtils.isObjectEmpty(mappingList) ) {
+			for(MappingRequirementCandidateEntity mappingEntity : mappingList) {
+				MappingCandidateRqmtDTO mappingDto= new MappingCandidateRqmtDTO();
+				BeanUtils.copyProperties(mappingEntity, mappingDto);
+				mappingCandidateList.add(mappingDto);
+				
+				
+			}
+		}
+		return mappingCandidateList;
+	}
+	
+	public List<MappingCandidateRqmtDTO> saveCandidateMapping(List<MappingCandidateRqmtDTO> mappingList){
+		
+		//List<MappingCandidateRqmtDTO> mappingCandidateList= new ArrayList<MappingCandidateRqmtDTO>();
+		if(!ProfileParserUtils.isObjectEmpty(mappingList)) {
+			for(MappingCandidateRqmtDTO mappingDto: mappingList) {
+				MappingRequirementCandidateEntity mappingEntity = new MappingRequirementCandidateEntity();
+				//logger.info("Before: "+mappingDto.toString());
+				BeanUtils.copyProperties(mappingDto,mappingEntity);
+				//logger.info("After: "+mappingEntity.toString());
+				mappingEntity =mappingRepository.save(mappingEntity);
+				//MappingCandidateRqmtDTO mapping= new MappingCandidateRqmtDTO
+			}
+		}
+		
+		
+		return mappingList;
 	}
 }

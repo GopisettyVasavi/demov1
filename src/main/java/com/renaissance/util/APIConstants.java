@@ -71,6 +71,10 @@ public class APIConstants {
 	public static final String UPDATE_REQUIREMENT="/updateRequirement";
 	public static final String SEARCH_REQUIREMENT="/searchRequirement";
 	public static final String MAPPING_REQUIREMENT_MAIN="/mappingrequirementmain";
+	public static final String LOAD_ASSIGNED_REQUIREMENT="/loadassignedrequirements";
+	public static final String MAP_CANDIDATE_REQUIREMENT="/mapcandidaterequirement";
+	public static final String SEARCH_CANDIDATES_REQUIREMENT="/searchrequirementcandidates";
+	
 	
 
 }

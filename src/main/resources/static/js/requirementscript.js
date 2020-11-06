@@ -679,32 +679,44 @@ function populateRecruiters(selRec){
 			
 			options += "<optgroup label=\"ALL\">"; 
 			
-			for (i in list) {
-				/*if(selRec.indexOf(",")!=-1){
-				var recIds=selRec.split(",");
-				console.log(recIds.length)
-				}*/
-				if(selRec!=null &&  selRec.indexOf(",")==-1 && selRec==list[i].employeeId){
-				options += "<option value = " + list[i].employeeId
-						+ "  selected=\"selected\" >" + list[i].employeeName + "</option>";
+			var recruiterIds=[];
+			if(selRec!=null){
+				if(selRec.indexOf(",")!=-1){
+					recruiterIds=	selRec.split(",");
+				}else{
+					recruiterIds[0]=	selRec;
 				}
-				else if(selRec!=null &&  selRec.indexOf(",")!=-1){
-					var recIds=selRec.split(",");
-					if(recIds.length>1){
-						for(j in recIds){
-							if(recIds[j]==list[i].employeeId)
-								{
-								options += "<option value = " + list[i].employeeId
-								+ "  selected=\"selected\" >" + list[i].employeeName + "</option>";
-								}
+			}
+			
+			if(recruiterIds.length>0){
+				var added=[];
+			for (i in list) {
+					for(j in recruiterIds){
+						if(recruiterIds[j].trim()==list[i].employeeId)
+						{
+						options += "<option value = " + list[i].employeeId
+						+ "  selected=\"selected\" >" + list[i].employeeName + "</option>";
+						added.push( list[i].employeeId);
+						
 						}
 					}
-				}
-				else{
+					for (k in recruiterIds){
+						if(!added.includes(list[i].employeeId)){
+							options += "<option value = " + list[i].employeeId
+							+ " >" + list[i].employeeName + "</option>";
+							added.push( list[i].employeeId);
+						}
+					}
+				
+			}	
+				
+			}else{
+				for (i in list) {
 					options += "<option value = " + list[i].employeeId
 					+ " >" + list[i].employeeName + "</option>";
 				}
 			}
+				
 			options += "</optgroup>"; 
 			
 			$('#recruiter-select-edit select').append(options);

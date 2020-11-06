@@ -48,6 +48,9 @@ RequirementManagementService requirementService;
 			return EMPTY_REDIRECT;
 		}
 		if (ProfileParserConstants.ADMIN
+				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())
+				||
+				ProfileParserConstants.RECRUITER
 				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
 			return "requirementmain";
 		else

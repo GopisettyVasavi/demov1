@@ -472,7 +472,7 @@ function uploadFiles(files) {
 /*function backToIndex(){
 	window.location='/index'
 }*/
-function restSearchForm(){
+function resetSearchForm(){
 	$("#searchProfForm")[0].reset();
 	 event.preventDefault();
 	

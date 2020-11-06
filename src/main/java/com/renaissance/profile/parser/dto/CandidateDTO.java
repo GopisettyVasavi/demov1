@@ -49,6 +49,18 @@ public class CandidateDTO {
 	private String firstName;
 	private String fileName;
 
+	private String interestedInRole;
+	private String comments;
+	private String authorisation;
+	private BigInteger id;
+
+	private BigInteger requirementId;
+
+	private Integer recruiterId;
+
+	private String status;
+	private Integer sno;
+	private String disableRow;
 	public String getFileName() {
 		return fileName;
 	}
@@ -369,7 +381,77 @@ public class CandidateDTO {
 		this.workEndDate = workEndDate;
 	}
 
-	
+	public String getInterestedInRole() {
+		return interestedInRole;
+	}
+
+	public void setInterestedInRole(String interestedInRole) {
+		this.interestedInRole = interestedInRole;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public String getAuthorisation() {
+		return authorisation;
+	}
+
+	public void setAuthorisation(String authorisation) {
+		this.authorisation = authorisation;
+	}
+
+	public BigInteger getId() {
+		return id;
+	}
+
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+
+	public BigInteger getRequirementId() {
+		return requirementId;
+	}
+
+	public void setRequirementId(BigInteger requirementId) {
+		this.requirementId = requirementId;
+	}
+
+	public Integer getRecruiterId() {
+		return recruiterId;
+	}
+
+	public void setRecruiterId(Integer recruiterId) {
+		this.recruiterId = recruiterId;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Integer getSno() {
+		return sno;
+	}
+
+	public void setSno(Integer sno) {
+		this.sno = sno;
+	}
+
+	public String getDisableRow() {
+		return disableRow;
+	}
+
+	public void setDisableRow(String disableRow) {
+		this.disableRow = disableRow;
+	}
 
 	@Override
 	public String toString() {
@@ -386,7 +468,12 @@ public class CandidateDTO {
 				+ ", assignedDate=" + assignedDate + ", profileText=" + profileText + ", skills=" + skills
 				+ ", organization=" + organization + ", designation=" + designation + ", workStartDate=" + workStartDate
 				+ ", workEndDate=" + workEndDate + ", lastUpdatedByUser=" + lastUpdatedByUser + ", lastName=" + lastName
-				+ ", middleName=" + middleName + ", firstName=" + firstName + ", fileName=" + fileName + "]";
+				+ ", middleName=" + middleName + ", firstName=" + firstName + ", fileName=" + fileName
+				+ ", interestedInRole=" + interestedInRole + ", comments=" + comments + ", authorisation="
+				+ authorisation + ", id=" + id + ", requirementId=" + requirementId + ", recruiterId=" + recruiterId
+				+ ", status=" + status + "]";
 	}
+
+	
 
 }
