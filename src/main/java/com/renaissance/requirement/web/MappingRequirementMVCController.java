@@ -29,6 +29,7 @@ import com.renaissance.profile.parser.service.ProfileService;
 import com.renaissance.profile.parser.util.ProfileParserConstants;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
 import com.renaissance.requirement.dto.MappingCandidateRqmtDTO;
+import com.renaissance.requirement.dto.MappingRequirement;
 import com.renaissance.requirement.dto.RequirementDTO;
 import com.renaissance.requirement.service.RequirementManagementService;
 @Controller
@@ -76,10 +77,20 @@ public class MappingRequirementMVCController {
 			logger.info("EMPLOYEE_ID, EMPLOYEE_NAME, EMPLOYEE_ROLE,{},{}, {}", request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)
 					,request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME), request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE));
 			RequirementDTO requirementDto= new RequirementDTO();
+			
 			if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID))) {
 			requirementDto.setAssignedRecruiter(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)+"");
 			Integer recruiterId=Integer.valueOf(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)+"");
 			requirementDto.setRecruiterId(recruiterId);
+			
+			}
+			if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE)) &&
+					ProfileParserConstants.ADMIN
+					.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString().trim())) {
+				//logger.info("admin");
+				requirementDto.setRecruiterName(ProfileParserConstants.ALL);
+				requirementDto.setRecruiterId(000);
+				requirementDto.setAssignedRecruiter(null);
 			}
 			requirementList=requirementService.searchRequirements(requirementDto);
 			
@@ -93,27 +104,36 @@ public class MappingRequirementMVCController {
 	}
 	
 	@PostMapping(MAP_CANDIDATE_REQUIREMENT)
-	public ResponseEntity<?> mapCandidateRequirement(@RequestBody List<MappingCandidateRqmtDTO> mappingCandidateRqmtList,
+	public ResponseEntity<?> mapCandidateRequirement(@RequestBody MappingRequirement mappingRequirement,
 			HttpServletRequest request) {
+		List<CandidateDTO> candidates= new ArrayList<CandidateDTO>();
 		try {
-			logger.info("Create Requirement..,{}", mappingCandidateRqmtList.toString());
+			//logger.info("Mapping Requirement..,{}", mappingCandidateRqmtList.toString());
+			List<MappingCandidateRqmtDTO>mappingCandidateRqmtList=mappingRequirement.getMappingCandidateRqmtList();
 			if(!ProfileParserUtils.isObjectEmpty(mappingCandidateRqmtList)) {
 			for(MappingCandidateRqmtDTO mappingDto: mappingCandidateRqmtList) {
 				logger.info(" MappingCandidateRqmtDTO : , {}",mappingDto.toString());
 				if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID))) {
 					Integer recruiterId=Integer.valueOf(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)+"");
-					mappingDto.setRecruiterId(recruiterId);
+					if(ProfileParserUtils.isObjectEmpty(mappingDto.getRecruiterId())) {
+						mappingDto.setRecruiterId(recruiterId);
+					}
+					
 					}
 				
 			}
 			requirementService.saveCandidateMapping(mappingCandidateRqmtList);
+			
+			ProfileSearchForm searchForm= mappingRequirement.getSearchForm();
+			searchForm.setRequirementId(mappingCandidateRqmtList.get(0).getRequirementId());
+			 candidates=processSearchMappingCandidates(searchForm, request);
 			}
 		} catch (Exception e) {
 			logger.error("Error in Creating contract,{}", e.getMessage());
 			return ResponseEntity.badRequest()
 					.body(" An issue in creating contract. Please try again. \n" + e.getMessage());
 		}
-		return ResponseEntity.ok(mappingCandidateRqmtList);
+		return ResponseEntity.ok(candidates);
 	}
 	
 	
@@ -130,54 +150,68 @@ public class MappingRequirementMVCController {
 			logger.info("Session has expired.");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Search details, {}", searchForm.toString());
-		 candidates=profileService.searchProfiles(searchForm);
-		 logger.info("List size:, {}",candidates.size());
-		 List<MappingCandidateRqmtDTO> mappingList=requirementService.fetchRequirementMappings(null, searchForm.getRequirementId());
-		 logger.info("mappingList size:, {}",mappingList.size());
-		 if(!ProfileParserUtils.isObjectEmpty(mappingList)) {
-			 int i=1;
-			 for(MappingCandidateRqmtDTO mappingDto: mappingList) {
-			 CandidateDTO candidateDto=profileService.getCandidateFullDetails(mappingDto.getCandidateId());
-			 candidateDto.setRecruiterId(mappingDto.getRecruiterId());
-			 candidateDto.setRequirementId(mappingDto.getRequirementId());
-			 candidateDto.setInterestedInRole(mappingDto.getInterestedInRole());
-			 candidateDto.setStatus(mappingDto.getStatus());
-			 candidateDto.setAuthorisation(mappingDto.getAuthorisation());
-			 candidateDto.setComments(mappingDto.getComments());
-			 candidateDto.setInterestedInRole(mappingDto.getInterestedInRole());
-			 candidateDto.setSno(i);
-			 //get Logged in recruiterID
-			 if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID))) {
-					Integer recruiterId=Integer.valueOf(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)+"");
-					
-					if(!ProfileParserUtils.isObjectEmpty(recruiterId) && !ProfileParserUtils.isObjectEmpty(candidateDto.getRecruiterId())
-						&&candidateDto.getRecruiterId().intValue() !=recruiterId ) {
-						candidateDto.setDisableRow("true");
-					}else {
-						candidateDto.setDisableRow("false");
-					}
-			 }	
-					
-			 i++;
-			 Predicate<CandidateDTO> condition = employee -> employee.getCandidateId()==mappingDto.getCandidateId();
-	         
-			 candidates.removeIf(condition);
-			// candidates.re
-			 candidates.add(candidateDto);
-			 }
-			 
-		 }
-		 if(!ProfileParserUtils.isObjectEmpty(candidates)) {
-			 for(CandidateDTO candidate:candidates) {
-				 if(candidate.getSno()==null)
-					 candidate.setSno(99999);
-			 }
-		 }
-		 candidates.sort(Comparator.comparing(CandidateDTO::getSno));
-
-		 logger.info("After process List size:, {}",candidates.size());
+		candidates=processSearchMappingCandidates(searchForm, request);
+		
 		return new ResponseEntity<>(candidates, HttpStatus.OK);
 		
 	}
+
+
+private List<CandidateDTO> processSearchMappingCandidates( ProfileSearchForm searchForm,  HttpServletRequest request) {
+	List<CandidateDTO> candidates= new ArrayList<CandidateDTO>();
+	
+	logger.info("Search details, {}", searchForm.toString());
+	 candidates=profileService.searchProfiles(searchForm);
+	 logger.info("List size:, {}",candidates.size());
+	 List<MappingCandidateRqmtDTO> mappingList=requirementService.fetchRequirementMappings(null, searchForm.getRequirementId());
+	 logger.info("mappingList size:, {}",mappingList.size());
+	 if(!ProfileParserUtils.isObjectEmpty(mappingList)) {
+		 int i=1;
+		 for(MappingCandidateRqmtDTO mappingDto: mappingList) {
+		 CandidateDTO candidateDto=profileService.getCandidateFullDetails(mappingDto.getCandidateId());
+		 candidateDto.setRecruiterId(mappingDto.getRecruiterId());
+		 candidateDto.setRequirementId(mappingDto.getRequirementId());
+		 candidateDto.setInterestedInRole(mappingDto.getInterestedInRole());
+		 candidateDto.setStatus(mappingDto.getStatus());
+		 candidateDto.setAuthorisation(mappingDto.getAuthorisation());
+		 candidateDto.setComments(mappingDto.getComments());
+		 candidateDto.setInterestedInRole(mappingDto.getInterestedInRole());
+		 candidateDto.setSno(i);
+		 candidateDto.setId(mappingDto.getId());
+		 if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE)) &&
+					! ProfileParserConstants.ADMIN
+					.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString().trim())) {
+		 //get Logged in recruiterID
+		 if(!ProfileParserUtils.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID))) {
+				Integer recruiterId=Integer.valueOf(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID)+"");
+				
+				if(!ProfileParserUtils.isObjectEmpty(recruiterId) && !ProfileParserUtils.isObjectEmpty(candidateDto.getRecruiterId())
+					&&candidateDto.getRecruiterId().intValue() !=recruiterId ) {
+					candidateDto.setDisableRow("true");
+				}else {
+					candidateDto.setDisableRow("false");
+					
+				}
+		 }	
+			
+		 }
+		 i++;
+		 Predicate<CandidateDTO> condition = employee -> employee.getCandidateId().intValue()==mappingDto.getCandidateId().intValue();
+		 candidates.removeIf(condition);
+		 candidates.add(candidateDto);
+		 }
+		 
+	 }
+	 if(!ProfileParserUtils.isObjectEmpty(candidates)) {
+		 for(CandidateDTO candidate:candidates) {
+			 if(candidate.getSno()==null)
+				 candidate.setSno(99999);
+		 }
+	 }
+	 candidates.sort(Comparator.comparing(CandidateDTO::getSno));
+
+	 logger.info("After process List size:, {}",candidates.size());
+	 
+	 return candidates;
+}
 }

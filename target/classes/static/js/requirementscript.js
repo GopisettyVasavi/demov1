@@ -407,7 +407,8 @@ function requirementSearch(){
 					{
 						"data" : 'assignedRecruiter',
 						"name" : "assignedRecruiter",
-						"title" : "Assigned recruiter"
+						"title" : "Assigned recruiter",
+						"visible": false
 					},
 					{
 						"data" : 'recruiterId',
@@ -458,7 +459,8 @@ $(document).on(
 			var table = $('#requirementTable').DataTable();
 			var rowData = table.row(this).data();
 			// alert('called'+rowData.contractorId);
-
+			$('#requirementTable tbody > tr').removeClass('selected');
+			 $(this).addClass('selected');
 			$("#editdetails_div").show();
 			//$("#invoiceNodet").val(rowData.vendorName);
 			$("#requirementid_edit").val(rowData.requirementId);

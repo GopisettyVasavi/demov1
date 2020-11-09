@@ -90,58 +90,173 @@
 </div>
 <!--/ bradcam_area  -->
 <body onload="initialize()">
+<div class="tblcontainer" >
 
-	<div class="col-lg-12">
-		<form class="form-contact contact_form" id="indexform">
+												<div class="card" style="width: 100%">
+														<div id="headingOne"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseOne" aria-expanded="false"
+																			aria-controls="collapseOne"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">
+																			Open Requirements</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseOne"
+																	aria-expanded="false" aria-controls="collapseOpen"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseOne" aria-labelledby="headingOne"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		
+																		<div id="opentabl_div"> <br>
+																		<div id="open_msg"></div>
+				
 			<div class="container-fluid"
-				style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem">
+				style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" id="open_div">
 
 
-				<table id="assignedrequirements_tbl" class="display">
+				<table id="openassignedrequirements_tbl" class="display">
 
 				</table>
 			</div>
-			<div class="col-sm-12" style="padding-top: 10px"></div>
-			<!-- <div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-4">
-					<div class="form-group">
+			</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="card">
+														<div id="headingTwo"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseTwo" aria-expanded="false"
+																			aria-controls="collapseTwo"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">
+																			Submitted/Waiting for Approval Requirements</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseTwo"
+																	aria-expanded="false" aria-controls="collapseTwo"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseTwo" aria-labelledby="headingTwo"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div id="waittabl_div"> <br>
+																		<div id="wait_msg"></div>
+				
+			<div class="container-fluid"
+				style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" id="wait_div">
 
-						<button type="submit" id="btn-save"
-							class="button button-contactForm boxed-btn"
-							onclick="searchCandidates()">Add New Lookup</button>
 
-					</div>
-				</div>
-			</div> -->
+				<table id="waitassignedrequirements_tbl" class="display">
+
+				</table>
+			</div>
+			</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+											<div class="card">
+														<div id="headingThree"
+															class="card-header bg-white shadow-sm border-0">
+															<div class="edit-form">
+																<li><h6 class="mb-0 font-weight-bold">
+																		<a href="#" data-toggle="collapse"
+																			data-target="#collapseThree" aria-expanded="false"
+																			aria-controls="collapseThree"
+																			class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">
+																			Closed/Cancelled Requirements</a>
+																	</h6></li>
+																<li class="pull-right"><a href="#"
+																	data-toggle="collapse" data-target="#collapseThree"
+																	aria-expanded="false" aria-controls="collapseThree"
+																	class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2"><i
+																		class="fa fa-caret-down"></i> </a></li>
+															</div>
+														</div>
+														<div id="collapseThree" aria-labelledby="headingThree"
+															data-parent="#accordionExample" class="collapse">
+															<div class="card-body">
+																<div class="col-lg-12">
+																	<form class="form-contact contact_form"
+																		action="contact_process.php" method="post"
+																		id="contactForm" novalidate="novalidate">
+																		<div id="closetabl_div"> <br>
+																		<div id="cls_msg"></div>
+				
+			<div class="container-fluid"
+				style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem" id="cls_div">
+	
+
+				<table id="closeassignedrequirements_tbl" class="display">
+
+				</table>
+			</div>
+			</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+
+</div>		
+
+	<!-- <div class="col-lg-12">
+		<form class="form-contact contact_form" id="indexform">
+		
+		
+</div> -->
+ <div class="tblcontainer">
+ 
 			
 			<div id="searchcandidates_div" style="display: none">
 				<div > <br>
 				<h3 align="center">Search Candidates</h3></div>
 
 					<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 							<div class="form-group">
 								<label for="name" style="font-weight: bold">Requirement Id</label>
 								<input type="text" name="requirementid_s" placeholder="Requirement Id"
 									class="single-input" id="requirementid_s" readonly="readonly">
 							</div>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<div class="form-group">
 								<label for="name" style="font-weight: bold">Name</label>
 								<input type="text" name="candidateName_s" placeholder="Candidate Name"
 									class="single-input" id="candidateName_s" >
 							</div>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<div class="form-group">
 								<label for="name" style="font-weight: bold">Location</label>
 								<input type="text" name="location_s" placeholder="Location"
 									class="single-input" id="location_s" >
 							</div>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<div class="form-group">
 								<label for="name" style="font-weight: bold">Skill set</label>
 								<input type="text" name="skill_s" placeholder="Skills"
@@ -163,9 +278,11 @@
 									onclick="resetSearch()">Reset</button>
 								
 							</div>
+							<div class="col-sm-4"></div>
+							<div id="search_feedback" style=" font-size:14px; padding-top: 20px"></div>	
 						</div>
-						<div id="search_feedback" style=" font-size:14px; padding-top: 20px"></div>
-			
+					
+						
 			<div class="col-sm-12" id="searchresults_div" >
 							
 			<div  style="border: 1px solid rgba(0, 0, 0, .125); border-radius: .25rem; display: none" id="candidates_div">
@@ -177,6 +294,7 @@
 			
 								
 							</div>
+							
 							
 							<div class="col-sm-12" style="padding-top: 10px"></div>
 							<div class="row">
@@ -191,6 +309,7 @@
 									
 								
 							</div>
+							<div id="map_msg"></div>
 						</div>
 						</div>
 							</div>
@@ -203,10 +322,6 @@
 				
 			</div>
 	</div>
-
-	</div>
-
-	</form>
 
 	<div class="col-sm-12" style="padding-top: 10px"></div>
 

@@ -593,7 +593,13 @@ pre code {
     margin-right: auto;
     margin-left: auto
 }
-
+.tblcontainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
 @media (min-width:576px) {
     .container {
         max-width: 540px
@@ -615,6 +621,9 @@ pre code {
 @media (min-width:1200px) {
     .container {
         max-width: 1140px
+    }
+     .tblcontainer {
+        max-width: 1800px
     }
 }
 

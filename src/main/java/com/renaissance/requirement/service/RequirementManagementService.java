@@ -44,6 +44,7 @@ public class RequirementManagementService {
 	public List<RequirementDTO> searchRequirements(RequirementDTO requirementDto){
 		List<RequirementDTO> requirementList= new ArrayList<RequirementDTO>();
 		if(!ProfileParserUtils.isObjectEmpty(requirementDto)) {
+			logger.info("REqmt: {}",requirementDto.toString());
 			List<JobRequirementEntity> requirementEntityList=jobRequirementRepository.searchRequirements(requirementDto);
 			if(!ProfileParserUtils.isObjectEmpty(requirementEntityList) ) {
 				for(JobRequirementEntity requirementEntity : requirementEntityList) {
@@ -82,19 +83,25 @@ public class RequirementManagementService {
 	
 	public List<MappingCandidateRqmtDTO> saveCandidateMapping(List<MappingCandidateRqmtDTO> mappingList){
 		
-		//List<MappingCandidateRqmtDTO> mappingCandidateList= new ArrayList<MappingCandidateRqmtDTO>();
+		List<MappingCandidateRqmtDTO> mappingCandidateList= new ArrayList<MappingCandidateRqmtDTO>();
 		if(!ProfileParserUtils.isObjectEmpty(mappingList)) {
 			for(MappingCandidateRqmtDTO mappingDto: mappingList) {
 				MappingRequirementCandidateEntity mappingEntity = new MappingRequirementCandidateEntity();
-				//logger.info("Before: "+mappingDto.toString());
+			//	logger.info("Before: "+mappingDto.toString());
 				BeanUtils.copyProperties(mappingDto,mappingEntity);
 				//logger.info("After: "+mappingEntity.toString());
 				mappingEntity =mappingRepository.save(mappingEntity);
-				//MappingCandidateRqmtDTO mapping= new MappingCandidateRqmtDTO
+				mappingDto.setId(mappingEntity.getId());
+				logger.info("After mappingEntity : "+mappingEntity.getId());
+				/*
+				 * MappingCandidateRqmtDTO savedMappingDto= new MappingCandidateRqmtDTO();
+				 * BeanUtils.copyProperties(mappingEntity,savedMappingDto);
+				 */
+				mappingCandidateList.add(mappingDto);
 			}
 		}
 		
 		
-		return mappingList;
+		return mappingCandidateList;
 	}
 }
