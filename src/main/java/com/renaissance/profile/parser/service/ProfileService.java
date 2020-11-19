@@ -289,8 +289,7 @@ public class ProfileService {
 			if (!ProfileParserUtils.isObjectEmpty(educationDetail)) {
 				BeanUtils.copyProperties(educationDetail, candidateDetailsDto);
 			}
-			logger.info("All details,{}", candidateDetailsDto.getCandidateId() + " "
-					+ candidateDetailsDto.getCandidateName() + " " + candidateDetailsDto.getVisaType());
+			
 		} catch (Exception e) {
 			logger.error("Error in retrieving details...{}", new Exception(e.getMessage()));
 		}

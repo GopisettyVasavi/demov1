@@ -69,6 +69,11 @@ public class JobRequirementCustomRepositoryImpl implements JobRequirementCustomR
 					ProfileParserConstants.ALL.equalsIgnoreCase(requirementDto.getRecruiterName())) {
 				predicates.add(cb.isNotNull(jobRequirement.get("assignedRecruiter")));
 			}
+			if (!ProfileParserUtils.isObjectEmpty(requirementDto.getRecruiterId()) &&
+					!ProfileParserUtils.isObjectEmpty(requirementDto.getRecruiterName()) && 
+					ProfileParserConstants.NONE.equalsIgnoreCase(requirementDto.getRecruiterName())) {
+				//predicates.add(cb.isNotNull(jobRequirement.get("assignedRecruiter")));
+			}
 			if (!ProfileParserUtils.isObjectEmpty(requirementDto.getDatePosted())) {
 				predicates.add(cb.equal(jobRequirement.get("datePosted"),
 						ProfileParserUtils.parseStringDate(requirementDto.getDatePosted())));
@@ -91,6 +96,9 @@ public class JobRequirementCustomRepositoryImpl implements JobRequirementCustomR
 			// "ACTIVE"));
 			Predicate[] predicatesArray = new Predicate[predicates.size()];
 			query.select(jobRequirement).where(cb.and(predicates.toArray(predicatesArray)));
+			requirementList = entityManager.createQuery(query).getResultList();
+		}else {
+			query.select(jobRequirement);
 			requirementList = entityManager.createQuery(query).getResultList();
 		}
 		if (!ProfileParserUtils.isObjectEmpty(requirementList))

@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -19,13 +20,20 @@ import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -39,7 +47,6 @@ import org.slf4j.LoggerFactory;
 
 import com.renaissance.contractor.dto.MarginDTO;
 import com.renaissance.invoice.dto.InvoiceDTO;
-import com.sun.mail.smtp.SMTPTransport;
 
 import pl.jsolve.templ4docx.core.Docx;
 import pl.jsolve.templ4docx.core.VariablePattern;
@@ -400,9 +407,27 @@ public static int getLastDayOfMonth(String dateString) {
     LocalDate date = yearMonth.atEndOfMonth();
     return date.lengthOfMonth();
 }
+public static boolean dateLessthanAMonth(LocalDate appDate) {
+	LocalDate currentDate = LocalDate.now();
+   // LocalDate newDate = LocalDate.of(2019, 8, 23);
 
-public static void sendEmail(String toEmail) {
+    
+
+    Period period = Period.between( appDate,currentDate);
+  // logger.info("Period ...{}",period.getMonths());
+    if (period.getMonths() >=1) {
+       // System.out.println("date: " + appDate + " is older than 1 months!");
+        return false;
+    }else
+    	return true;
+    
+}
+public static void sendEmail(String toEmail, String subject, String body) {
+	//Add email domain check
+	if(!isObjectEmpty(toEmail) && toEmail.contains("reninfo.com.au")) {
+		
 	
+	logger.info("Mail started...");
 	 String SMTP_SERVER = "mail.reninfo.com.au";
     String USERNAME = "vasavi@reninfo.com.au";
      String PASSWORD = "Renaissance1234";
@@ -444,11 +469,33 @@ public static void sendEmail(String toEmail) {
          message.addRecipient(Message.RecipientType.TO, new InternetAddress(EMAIL_TO));
 
          // Set Subject: header field
-         message.setSubject("This is the Subject Line!");
+         message.setSubject(subject);
 
          // Now set the actual message
-         message.setText("This is actual message");
-
+         //message.setText("This is actual message");
+         BodyPart messageBodyPart1 = new MimeBodyPart();  
+			/*
+			 * StringBuilder sb= new StringBuilder(); for(int i=0;i<10;i++) {
+			 * sb.append("Val: "+i).append(System.lineSeparator());
+			 * 
+			 * }
+			 */
+         messageBodyPart1.setText("This is message body "+body); 
+         MimeBodyPart messageBodyPart2 = new MimeBodyPart();  
+         
+         String filename = "C:\\Users\\Renaissance\\Downloads\\Vasavi_gopisetty_Detailed_Jul2020.docx";//change accordingly  
+         DataSource source = new FileDataSource(filename);  
+         messageBodyPart2.setDataHandler(new DataHandler(source));  
+         messageBodyPart2.setFileName(filename);  
+          
+          
+         //5) create Multipart object and add MimeBodyPart objects to this object      
+         Multipart multipart = new MimeMultipart();  
+         multipart.addBodyPart(messageBodyPart1);  
+         multipart.addBodyPart(messageBodyPart2);  
+       
+         //6) set the multiplart object to the message object  
+         message.setContent(multipart ); 
          System.out.println("sending...");
          // Send message
          Transport.send(message);
@@ -456,5 +503,6 @@ public static void sendEmail(String toEmail) {
      } catch (MessagingException mex) {
          mex.printStackTrace();
      }
+	}
 }
 }

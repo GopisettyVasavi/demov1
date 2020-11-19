@@ -41,6 +41,8 @@ public class ProfileParserConstants {
 	public final static String TEMPORARY="TEMPORARY";
 	public final static String NONE="none";
 	public final static String ALL="All";
+	public final static String STATUS_OPEN="Open";
+	public final static String STATUS_CLOSED="Closed";
 	//public final static String PATH_TO_VIEW_FILE = "E:\profileparser\temp\";
 	
 

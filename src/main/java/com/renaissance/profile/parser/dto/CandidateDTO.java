@@ -1,6 +1,7 @@
 package com.renaissance.profile.parser.dto;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 
 public class CandidateDTO {
 	private static final long serialVersionUID = -4500094586165758427L;
@@ -61,6 +62,15 @@ public class CandidateDTO {
 	private String status;
 	private Integer sno;
 	private String disableRow;
+	private LocalDate createdDate;
+	private String disableStatus;
+	private String expectedSalary;
+	private String totalExp;
+	private String relevantExp;
+	private String availabilityToJoin;
+	private String relocationInFuture;
+	private String appliedBefore;
+	private String authoriseRenaissance;
 	public String getFileName() {
 		return fileName;
 	}
@@ -453,6 +463,79 @@ public class CandidateDTO {
 		this.disableRow = disableRow;
 	}
 
+	
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getDisableStatus() {
+		return disableStatus;
+	}
+
+	public void setDisableStatus(String disableStatus) {
+		this.disableStatus = disableStatus;
+	}
+
+	public String getExpectedSalary() {
+		return expectedSalary;
+	}
+
+	public void setExpectedSalary(String expectedSalary) {
+		this.expectedSalary = expectedSalary;
+	}
+
+	public String getTotalExp() {
+		return totalExp;
+	}
+
+	public void setTotalExp(String totalExp) {
+		this.totalExp = totalExp;
+	}
+
+	public String getRelevantExp() {
+		return relevantExp;
+	}
+
+	public void setRelevantExp(String relevantExp) {
+		this.relevantExp = relevantExp;
+	}
+
+	public String getAvailabilityToJoin() {
+		return availabilityToJoin;
+	}
+
+	public void setAvailabilityToJoin(String availabilityToJoin) {
+		this.availabilityToJoin = availabilityToJoin;
+	}
+
+	public String getRelocationInFuture() {
+		return relocationInFuture;
+	}
+
+	public void setRelocationInFuture(String relocationInFuture) {
+		this.relocationInFuture = relocationInFuture;
+	}
+
+	public String getAppliedBefore() {
+		return appliedBefore;
+	}
+
+	public void setAppliedBefore(String appliedBefore) {
+		this.appliedBefore = appliedBefore;
+	}
+
+	public String getAuthoriseRenaissance() {
+		return authoriseRenaissance;
+	}
+
+	public void setAuthoriseRenaissance(String authoriseRenaissance) {
+		this.authoriseRenaissance = authoriseRenaissance;
+	}
+
 	@Override
 	public String toString() {
 		return "CandidateDTO [candidateId=" + candidateId + ", candidateName=" + candidateName + ", primaryEmail="
@@ -471,9 +554,12 @@ public class CandidateDTO {
 				+ ", middleName=" + middleName + ", firstName=" + firstName + ", fileName=" + fileName
 				+ ", interestedInRole=" + interestedInRole + ", comments=" + comments + ", authorisation="
 				+ authorisation + ", id=" + id + ", requirementId=" + requirementId + ", recruiterId=" + recruiterId
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", sno=" + sno + ", disableRow=" + disableRow + ", createdDate=" + createdDate
+				+ ", disableStatus=" + disableStatus + ", expectedSalary=" + expectedSalary + ", totalExp=" + totalExp
+				+ ", relevantExp=" + relevantExp + ", availabilityToJoin=" + availabilityToJoin
+				+ ", relocationInFuture=" + relocationInFuture + ", appliedBefore=" + appliedBefore
+				+ ", authoriseRenaissance=" + authoriseRenaissance + "]";
 	}
 
 	
-
 }

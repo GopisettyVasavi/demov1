@@ -6,6 +6,7 @@ import static com.renaissance.util.APIConstants.REQUIREMENT_MAIN;
 import static com.renaissance.util.APIConstants.SEARCH_REQUIREMENT;
 import static com.renaissance.util.APIConstants.UPDATE_REQUIREMENT;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,12 +72,24 @@ RequirementManagementService requirementService;
 		try {
 			logger.info("Create Requirement..,{}", requirementDto.toString());
 			String recruiters="";
+			//getLogged in user id and email
+			if (!ProfileParserUtils
+					.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID))) {
+				Integer userId = Integer
+						.valueOf(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ID) + "");
+				User loggedInUser=employeeService.getRecruiterDetails(userId);
+				requirementDto.setRequirementCreaterId(userId);
+				requirementDto.setRequirementCreaterEmail(loggedInUser.getEmail());
+			}
 			if(!ProfileParserUtils.isObjectEmpty(requirementDto) && !ProfileParserUtils.isObjectEmpty( requirementDto.getRecruiters())
 					&& requirementDto.getRecruiters().size()>0) {
 				for(Integer employeeId:requirementDto.getRecruiters()) {
 					recruiters+=employeeId+" ,";
+					//Send Email
 					User recruiter=employeeService.getRecruiterDetails(employeeId);
-					ProfileParserUtils.sendEmail(recruiter.getEmail());
+					String emailBody=prepareEmailBody(requirementDto);
+					String subject=requirementDto.getVendorName()+" , "+requirementDto.getJobTitle()+" , "+requirementDto.getLocation()+" , "+requirementDto.getJobType();
+					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,emailBody);
 				}
 			}
 			if(recruiters.length()>0) {
@@ -84,6 +97,7 @@ RequirementManagementService requirementService;
 				requirementDto.setAssignedRecruiter(recruiters);
 			}
 			requirementDto.setStatus("Open");
+			requirementDto.setCreatedDate(LocalDate.now());
 			requirementService.createRequirement(requirementDto);		
 			//employeeService.getRecruiterDetails(employeeId)
 			// contractorDto.getPersonalDetails().setL
@@ -114,7 +128,7 @@ RequirementManagementService requirementService;
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
 
-			logger.info("Search details, {}", requirementDto.toString());
+			//logger.info("Search details, {}", requirementDto.toString());
 			requirements=requirementService.searchRequirements(requirementDto);
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
@@ -137,14 +151,15 @@ RequirementManagementService requirementService;
 	public ResponseEntity<?> updateRequirement(@RequestBody RequirementDTO requirementDto,
 			HttpServletRequest request) {
 		try {
-			logger.info("Create Requirement..,{}", requirementDto.toString());
+			logger.info("Update Requirement..,{}", requirementDto.toString());
 			String recruiters="";
 			if(!ProfileParserUtils.isObjectEmpty(requirementDto) && !ProfileParserUtils.isObjectEmpty( requirementDto.getRecruiters())
 					&& requirementDto.getRecruiters().size()>0) {
 				for(Integer employeeId:requirementDto.getRecruiters()) {
 					recruiters+=employeeId+" ,";
 					User recruiter=employeeService.getRecruiterDetails(employeeId);
-					ProfileParserUtils.sendEmail(recruiter.getEmail());
+					String subject=requirementDto.getVendorName()+" , "+requirementDto.getJobTitle()+" , "+requirementDto.getLocation()+" , "+requirementDto.getJobType();
+					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,"");
 				}
 			}
 			if(recruiters.length()>0) {
@@ -152,6 +167,7 @@ RequirementManagementService requirementService;
 				requirementDto.setAssignedRecruiter(recruiters);
 			}
 			//requirementDto.setStatus("Open");
+			requirementDto.setModifiedDate(LocalDate.now());
 			requirementService.createRequirement(requirementDto);		
 			//employeeService.getRecruiterDetails(employeeId)
 			// contractorDto.getPersonalDetails().setL
@@ -162,5 +178,20 @@ RequirementManagementService requirementService;
 		}
 		return ResponseEntity.ok(requirementDto);
 	}
-	
+	private String prepareEmailBody(RequirementDTO requirementDto ) {
+		 StringBuilder sb = new StringBuilder();
+		  sb.append("***********REQUIREMENT DETAILS************************** ").append(System.lineSeparator());
+		  sb.append("Vendor Name: " + requirementDto.getVendorName()); 
+		  sb.append(" :Requirement Id: " + requirementDto.getRequirementId()); 
+		  sb.append(" :Job Type: " + requirementDto.getJobType()); 
+		  sb.append(" :Job Title: " + requirementDto.getJobTitle()).append(System.lineSeparator()); 
+		  sb.append(" :Location: " + requirementDto.getLocation()); 
+		  sb.append(" :Salary: " + requirementDto.getSalary()); 
+		  sb.append(" :Job Description: " + requirementDto.getJobDescription()).append(System.lineSeparator()); 
+		 
+		  logger.info("Mail data: {}", sb.toString());
+		  
+		  return sb.toString();
+		  
+	}
 }

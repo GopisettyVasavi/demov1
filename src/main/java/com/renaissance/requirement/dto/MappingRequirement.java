@@ -9,6 +9,8 @@ public class MappingRequirement {
 
 	private List<MappingCandidateRqmtDTO> mappingCandidateRqmtList= new ArrayList<MappingCandidateRqmtDTO>();
 	private ProfileSearchForm searchForm= new ProfileSearchForm();
+	//private BigInteger requirementId;//Primary key of Requirement
+	
 	public List<MappingCandidateRqmtDTO> getMappingCandidateRqmtList() {
 		return mappingCandidateRqmtList;
 	}
@@ -21,5 +23,6 @@ public class MappingRequirement {
 	public void setSearchForm(ProfileSearchForm searchForm) {
 		this.searchForm = searchForm;
 	}
+
 	
 }

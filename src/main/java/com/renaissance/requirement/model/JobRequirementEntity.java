@@ -68,7 +68,19 @@ public class JobRequirementEntity {
 	
 	@Column(name = "\"STATUS\"")
 	private String status;
+	
+	@Column(name = "\"CREATED_DATE\"")
+	private LocalDate createdDate;
+	
+	@Column(name = "\"MODIFIED_DATE\"")
+	private LocalDate modifiedDate;
+	
+	@Column(name = "\"REQUIREMENT_CREATER_ID\"")
+	private Integer requirementCreaterId;
 
+	@Column(name = "\"REQUIREMENT_CREATER_EMAIL\"")
+	private String requirementCreaterEmail;
+	
 	public BigInteger getId() {
 		return id;
 	}
@@ -205,15 +217,49 @@ public class JobRequirementEntity {
 		this.status = status;
 	}
 
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDate getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(LocalDate modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public Integer getRequirementCreaterId() {
+		return requirementCreaterId;
+	}
+
+	public void setRequirementCreaterId(Integer requirementCreaterId) {
+		this.requirementCreaterId = requirementCreaterId;
+	}
+
+	public String getRequirementCreaterEmail() {
+		return requirementCreaterEmail;
+	}
+
+	public void setRequirementCreaterEmail(String requirementCreaterEmail) {
+		this.requirementCreaterEmail = requirementCreaterEmail;
+	}
+
 	@Override
 	public String toString() {
-		return "JobRequirementEntity [Id=" + id + ", requirementId=" + requirementId + ", vendorName=" + vendorName
+		return "JobRequirementEntity [id=" + id + ", requirementId=" + requirementId + ", vendorName=" + vendorName
 				+ ", jobTitle=" + jobTitle + ", jobType=" + jobType + ", contractStartDate=" + contractStartDate
 				+ ", contractEndDate=" + contractEndDate + ", salary=" + salary + ", location=" + location
 				+ ", datePosted=" + datePosted + ", jobDescription=" + jobDescription + ", confidentialInformation="
 				+ confidentialInformation + ", contactPersonName=" + contactPersonName + ", contactPersonEmail="
 				+ contactPersonEmail + ", contactPersonPhone=" + contactPersonPhone + ", assignedRecruiter="
-				+ assignedRecruiter + ", status=" + status + "]";
+				+ assignedRecruiter + ", status=" + status + ", createdDate=" + createdDate + ", modifiedDate="
+				+ modifiedDate + ", requirementCreaterId=" + requirementCreaterId + ", requirementCreaterEmail="
+				+ requirementCreaterEmail + "]";
 	}
 
 	

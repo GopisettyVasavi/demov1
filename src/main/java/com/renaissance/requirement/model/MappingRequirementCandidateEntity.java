@@ -1,6 +1,7 @@
 package com.renaissance.requirement.model;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,6 +41,33 @@ public class MappingRequirementCandidateEntity {
 	
 	@Column(name = "\"INTERESTED_IN_ROLE\"")
 	private String interestedInRole;
+	
+	@Column(name = "\"CREATED_DATE\"")
+	private LocalDate createdDate;
+	
+	@Column(name = "\"MODIFIED_DATE\"")
+	private LocalDate modifiedDate;
+
+	@Column(name = "\"EXPECTED_SALARY\"")
+	private String expectedSalary;
+	
+	@Column(name = "\"TOTAL_EXP\"")
+	private String totalExp;
+	
+	@Column(name = "\"RELEVANT_EXP\"")
+	private String relevantExp;
+	
+	@Column(name = "\"AVAILABILITY_TO_JOIN\"")
+	private String availabilityToJoin;
+	
+	@Column(name = "\"RELOCATION_IN_FUTURE\"")
+	private String relocationInFuture;
+	
+	@Column(name = "\"APPLIED_BEFORE\"")
+	private String appliedBefore;
+	
+	@Column(name = "\"AUTHORISE_RENAISSANCE\"")
+	private String authoriseRenaissance;
 	
 	public BigInteger getId() {
 		return id;
@@ -105,16 +133,88 @@ public class MappingRequirementCandidateEntity {
 		this.interestedInRole = interestedInRole;
 	}
 
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDate getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(LocalDate modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public String getExpectedSalary() {
+		return expectedSalary;
+	}
+
+	public void setExpectedSalary(String expectedSalary) {
+		this.expectedSalary = expectedSalary;
+	}
+
+	public String getTotalExp() {
+		return totalExp;
+	}
+
+	public void setTotalExp(String totalExp) {
+		this.totalExp = totalExp;
+	}
+
+	public String getRelevantExp() {
+		return relevantExp;
+	}
+
+	public void setRelevantExp(String relevantExp) {
+		this.relevantExp = relevantExp;
+	}
+
+	public String getAvailabilityToJoin() {
+		return availabilityToJoin;
+	}
+
+	public void setAvailabilityToJoin(String availabilityToJoin) {
+		this.availabilityToJoin = availabilityToJoin;
+	}
+
+	public String getRelocationInFuture() {
+		return relocationInFuture;
+	}
+
+	public void setRelocationInFuture(String relocationInFuture) {
+		this.relocationInFuture = relocationInFuture;
+	}
+
+	public String getAppliedBefore() {
+		return appliedBefore;
+	}
+
+	public void setAppliedBefore(String appliedBefore) {
+		this.appliedBefore = appliedBefore;
+	}
+
+	public String getAuthoriseRenaissance() {
+		return authoriseRenaissance;
+	}
+
+	public void setAuthoriseRenaissance(String authoriseRenaissance) {
+		this.authoriseRenaissance = authoriseRenaissance;
+	}
+
 	@Override
 	public String toString() {
 		return "MappingRequirementCandidateEntity [id=" + id + ", requirementId=" + requirementId + ", candidateId="
 				+ candidateId + ", recruiterId=" + recruiterId + ", status=" + status + ", comments=" + comments
-				+ ", authorisation=" + authorisation + ", interestedInRole=" + interestedInRole + "]";
+				+ ", authorisation=" + authorisation + ", interestedInRole=" + interestedInRole + ", createdDate="
+				+ createdDate + ", modifiedDate=" + modifiedDate + ", expectedSalary=" + expectedSalary + ", totalExp="
+				+ totalExp + ", relevantExp=" + relevantExp + ", availabilityToJoin=" + availabilityToJoin
+				+ ", relocationInFuture=" + relocationInFuture + ", appliedBefore=" + appliedBefore
+				+ ", authoriseRenaissance=" + authoriseRenaissance + "]";
 	}
 
-	
-
-	
-	
 	
 }

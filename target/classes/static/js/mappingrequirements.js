@@ -1,5 +1,5 @@
 function initialize() {
-	//document.getElementById("minRange").focus();
+	// document.getElementById("minRange").focus();
 	$("#addlookup_div").hide();
 	$("#id").val("");
 
@@ -12,48 +12,48 @@ function initialize() {
 				cache : false,
 				timeout : 600000,
 				success : function(data) {
-					//var json=data
-					//console.log("success")
-					var openrqmt=[];
-					var oi=0;
-					var clsrqmt=[];
-					var ci=0;
-					var waitrqmt=[];
-					var wi=0;
-	
-					for(i in data){
-					//console.log(data[i].status);
-					if (data[i].status == 'Cancelled'
-						|| data[i].status == 'Closed'){
-						
-						
-						clsrqmt[ci]=data[i];
-						ci++;
-						//break;
+					// var json=data
+					// console.log("success")
+					var openrqmt = [];
+					var oi = 0;
+					var clsrqmt = [];
+					var ci = 0;
+					var waitrqmt = [];
+					var wi = 0;
+
+					for (i in data) {
+						// console.log(data[i].status);
+						if (data[i].status == 'Cancelled'
+								|| data[i].status == 'Closed') {
+
+							clsrqmt[ci] = data[i];
+							ci++;
+							// break;
+						}
+
+						if (data[i].status == 'Submitted'
+								|| data[i].status == 'submitted'
+								|| data[i].status == 'Awaiting Approval'
+								|| data[i].status == 'awaiting approval') {
+
+							waitrqmt[wi] = data[i];
+							wi++;
+							// break;
+
+						} else if (data[i].status == 'Open'
+								|| data[i].status == 'open') {
+							openrqmt[oi] = data[i];
+							oi++;
+
+						}
+						i++;
+
 					}
-					
-					if (data[i].status == 'Submitted'
-						|| data[i].status == 'submitted' || data[i].status == 'Awaiting Approval'
-							|| data[i].status == 'awaiting approval'){
-						
-						waitrqmt[wi]=data[i];
-						wi++;
-						//break;
-						
-					}else if(data[i].status == 'Open'
-						|| data[i].status == 'open'){
-						openrqmt[oi]=data[i];
-						oi++;
-						
-					}
-					i++;
-					
-					}
-					if(openrqmt.length>0){
-						//$("#opentabl_div").show();
-						
-						var table = $('#openassignedrequirements_tbl').DataTable(
-								{
+					if (openrqmt.length > 0) {
+						// $("#opentabl_div").show();
+
+						var table = $('#openassignedrequirements_tbl')
+								.DataTable({
 
 									destroy : true,
 									searching : false,
@@ -65,18 +65,15 @@ function initialize() {
 									},
 									data : openrqmt,
 
-									columns : [
-										{
+									columns : [ {
 										"data" : 'vendorName',
 										"name" : "vendorName",
 										"title" : "Vendor Name"
-									},
-									{
+									}, {
 										"data" : 'requirementId',
 										"name" : "requirementId",
 										"title" : "Requirement Id"
-									},
-									{
+									}, {
 										"data" : 'jobType',
 										"name" : "jobType",
 										"title" : "Job Type"
@@ -117,35 +114,33 @@ function initialize() {
 										"name" : "id",
 										"title" : "id",
 										"visible" : false
-									} ]/*,
-									"createdRow" : function(row, data, dataIndex) {
-										// console.log(data.changeColor);
-										if (data.status == 'Cancelled'
-												|| data.status == 'Closed') {
-											//console.log(data[11]);
-											$(row).css('background-color',
-													'#dc3545');
-										}
-
-									}*/
+									} ]
+								/*
+								 * , "createdRow" : function(row, data,
+								 * dataIndex) { //
+								 * console.log(data.changeColor); if
+								 * (data.status == 'Cancelled' || data.status ==
+								 * 'Closed') { //console.log(data[11]);
+								 * $(row).css('background-color', '#dc3545'); }
+								 *  }
+								 */
 
 								});
 						$('#openassignedrequirements_tbl tfoot tr').appendTo(
-						'#openassignedrequirements_tbl thead');
+								'#openassignedrequirements_tbl thead');
 
-				$("#openassignedrequirements_tbl tfoot tr").hide();
-						
-					}
-					else{
+						$("#openassignedrequirements_tbl tfoot tr").hide();
+
+					} else {
 						var json = "<h6>There are no Open Requirements assigned to you.</h6><pre>";
-					$('#open_msg').html(json);
-					$("#open_div").hide();
+						$('#open_msg').html(json);
+						$("#open_div").hide();
 					}
-					if(clsrqmt.length>0){
-//$("#closetabl_div").show();
-						
-						var table = $('#closeassignedrequirements_tbl').DataTable(
-								{
+					if (clsrqmt.length > 0) {
+						// $("#closetabl_div").show();
+
+						var table = $('#closeassignedrequirements_tbl')
+								.DataTable({
 
 									destroy : true,
 									searching : false,
@@ -157,18 +152,15 @@ function initialize() {
 									},
 									data : clsrqmt,
 
-									columns : [
-										{
+									columns : [ {
 										"data" : 'vendorName',
 										"name" : "vendorName",
 										"title" : "Vendor Name"
-									},
-									{
+									}, {
 										"data" : 'requirementId',
 										"name" : "requirementId",
 										"title" : "Requirement Id"
-									},
-									{
+									}, {
 										"data" : 'jobType',
 										"name" : "jobType",
 										"title" : "Job Type"
@@ -209,34 +201,33 @@ function initialize() {
 										"name" : "id",
 										"title" : "id",
 										"visible" : false
-									} ]/*,
-									"createdRow" : function(row, data, dataIndex) {
-										// console.log(data.changeColor);
-										if (data.status == 'Cancelled'
-												|| data.status == 'Closed') {
-											//console.log(data[11]);
-											$(row).css('background-color',
-													'#dc3545');
-										}
-
-									}*/
+									} ]
+								/*
+								 * , "createdRow" : function(row, data,
+								 * dataIndex) { //
+								 * console.log(data.changeColor); if
+								 * (data.status == 'Cancelled' || data.status ==
+								 * 'Closed') { //console.log(data[11]);
+								 * $(row).css('background-color', '#dc3545'); }
+								 *  }
+								 */
 
 								});
 						$('#closeassignedrequirements_tbl tfoot tr').appendTo(
-						'#closeassignedrequirements_tbl thead');
+								'#closeassignedrequirements_tbl thead');
 
-				$("#closeassignedrequirements_tbl tfoot tr").hide();
-						
-					}else{
+						$("#closeassignedrequirements_tbl tfoot tr").hide();
+
+					} else {
 						var json = "<h6>There are no Closed Requirements.</h6><pre>";
 						$('#cls_msg').html(json);
 						$("#cls_div").hide();
-						}
-					if(waitrqmt.length>0){
-						//$("#waittabl_div").show();
-						
-						var table = $('#waitassignedrequirements_tbl').DataTable(
-								{
+					}
+					if (waitrqmt.length > 0) {
+						// $("#waittabl_div").show();
+
+						var table = $('#waitassignedrequirements_tbl')
+								.DataTable({
 
 									destroy : true,
 									searching : false,
@@ -248,18 +239,15 @@ function initialize() {
 									},
 									data : waitrqmt,
 
-									columns : [
-										{
+									columns : [ {
 										"data" : 'vendorName',
 										"name" : "vendorName",
 										"title" : "Vendor Name"
-									},
-									{
+									}, {
 										"data" : 'requirementId',
 										"name" : "requirementId",
 										"title" : "Requirement Id"
-									},
-									{
+									}, {
 										"data" : 'jobType',
 										"name" : "jobType",
 										"title" : "Job Type"
@@ -300,28 +288,26 @@ function initialize() {
 										"name" : "id",
 										"title" : "id",
 										"visible" : false
-									} ]/*,
-									"createdRow" : function(row, data, dataIndex) {
-										// console.log(data.changeColor);
-										if (data.status == 'Cancelled'
-												|| data.status == 'Closed') {
-											//console.log(data[11]);
-											$(row).css('background-color',
-													'#dc3545');
-										}
-
-									}*/
+									} ]
+								/*
+								 * , "createdRow" : function(row, data,
+								 * dataIndex) { //
+								 * console.log(data.changeColor); if
+								 * (data.status == 'Cancelled' || data.status ==
+								 * 'Closed') { //console.log(data[11]);
+								 * $(row).css('background-color', '#dc3545'); }
+								 *  }
+								 */
 
 								});
 						$('#waitassignedrequirements_tbl tfoot tr').appendTo(
-						'#waitassignedrequirements_tbl thead');
+								'#waitassignedrequirements_tbl thead');
 
-				$("#waitassignedrequirements_tbl tfoot tr").hide();
-					}
-					else{
+						$("#waitassignedrequirements_tbl tfoot tr").hide();
+					} else {
 						var json = "<h6>There are no Submitted/Waiting for Approval Requirements.</h6><pre>";
-					$('#wait_msg').html(json);
-					$("#wait_div").hide();
+						$('#wait_msg').html(json);
+						$("#wait_div").hide();
 					}
 				},
 				error : function(e) {
@@ -336,7 +322,7 @@ function initialize() {
 			});
 
 }
-
+var jobType = "";
 $(document).on("click", "#openassignedrequirements_tbl tbody tr", function(e)
 
 {
@@ -345,103 +331,99 @@ $(document).on("click", "#openassignedrequirements_tbl tbody tr", function(e)
 	$('#waitassignedrequirements_tbl tbody > tr').removeClass('selected');
 	$('#closeassignedrequirements_tbl tbody > tr').removeClass('selected');
 	$('#openassignedrequirements_tbl tbody > tr').removeClass('selected');
-	  $(this).addClass('selected');
+	$(this).addClass('selected');
 	var rowData = table.row(this).data();
 	$("#idPkey").val(rowData.id);
 	$("#requirementid_s").val(rowData.requirementId);
-	//console.log("id: "+$("#idPkey").val())
+	jobType = rowData.jobType;
+	// console.log("jobType "+rowData.jobType)
 	resetSearch();
 	searchCandidates();
 });
 $(document).on("click", "#closeassignedrequirements_tbl tbody tr", function(e)
 
-		{
-			$('#feedback').html("");
-			var table = $('#closeassignedrequirements_tbl').DataTable();
-			$('#waitassignedrequirements_tbl tbody > tr').removeClass('selected');
-			$('#closeassignedrequirements_tbl tbody > tr').removeClass('selected');
-			$('#openassignedrequirements_tbl tbody > tr').removeClass('selected');
-			  $(this).addClass('selected');
-			var rowData = table.row(this).data();
-			$("#idPkey").val(rowData.id);
-			$("#requirementid_s").val(rowData.requirementId);
-			resetSearch();
-			searchCandidates();
-		});
+{
+	$('#feedback').html("");
+	var table = $('#closeassignedrequirements_tbl').DataTable();
+	$('#waitassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$('#closeassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$('#openassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$(this).addClass('selected');
+	var rowData = table.row(this).data();
+	jobType = rowData.jobType;
+	$("#idPkey").val(rowData.id);
+	$("#requirementid_s").val(rowData.requirementId);
+	resetSearch();
+	searchCandidates();
+});
 $(document).on("click", "#waitassignedrequirements_tbl tbody tr", function(e)
 
-		{
-			$('#feedback').html("");
-			var table = $('#waitassignedrequirements_tbl').DataTable();
-			
-			$('#waitassignedrequirements_tbl tbody > tr').removeClass('selected');
-			$('#closeassignedrequirements_tbl tbody > tr').removeClass('selected');
-			$('#openassignedrequirements_tbl tbody > tr').removeClass('selected');
-			  $(this).addClass('selected');
-			var rowData = table.row(this).data();
-			$("#idPkey").val(rowData.id);
-			$("#requirementid_s").val(rowData.requirementId);
-			resetSearch();
-			searchCandidates();
-		});
+{
+	$('#feedback').html("");
+	var table = $('#waitassignedrequirements_tbl').DataTable();
+
+	$('#waitassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$('#closeassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$('#openassignedrequirements_tbl tbody > tr').removeClass('selected');
+	$(this).addClass('selected');
+	var rowData = table.row(this).data();
+	jobType = rowData.jobType;
+	$("#idPkey").val(rowData.id);
+	$("#requirementid_s").val(rowData.requirementId);
+	resetSearch();
+	searchCandidates();
+});
 function searchCandidates() {
 
-	//alert( $("#currentLocation_s").val());
+	// alert( $("#currentLocation_s").val());
 	$('#search_feedback').html("");
-	//console.log("search")
+	$('#map_msg').html("");
+	// console.log("search")
 	event.preventDefault();
-	/*if ($("#candidateName_s").val() == "" && $("#location_s").val() == ""
-			&& $("#skill_s").val() == "") {
-		document.getElementById("search_feedback").style.color = "red";
+	
+	var searchForm = {}
+	searchForm["candidateName"] = $("#candidateName_s").val();
 
-		$('#search_feedback').html(
-				"Please enter at least one value to search candidates.");
-		//alert("Please enter at least one value to search profiles.");
-	} else {*/
-		var searchForm = {}
-		searchForm["candidateName"] = $("#candidateName_s").val();
+	searchForm["skill"] = $("#skill_s").val();
 
-		searchForm["skill"] = $("#skill_s").val();
+	searchForm["currentLocation"] = $("#location_s").val();
+	searchForm["requirementId"] = $("#idPkey").val();
 
-		searchForm["currentLocation"] = $("#location_s").val();
-		searchForm["requirementId"] = $("#idPkey").val();
+	$
+			.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/searchrequirementcandidates",
+				data : JSON.stringify(searchForm),
+				dataType : 'json',
+				cache : false,
+				timeout : 600000,
+				success : function(data) {
 
-		$
-				.ajax({
-					type : "POST",
-					contentType : "application/json",
-					url : "/searchrequirementcandidates",
-					data : JSON.stringify(searchForm),
-					dataType : 'json',
-					cache : false,
-					timeout : 600000,
-					success : function(data) {
-
-						if(data.length>0){
-							populateCandidatesList(data);
-						}
-						else{
-							var json = "<h6>Response :There are no matching candidates for the given criteria.</h6>";
+					if (data.length > 0) {
+						populateCandidatesList(data);
+					} else {
+						var json = "<h6>Response :There are no matching candidates for the given criteria.</h6>";
 						$('#search_feedback').html(json);
 						$('#searchresults_div').hide();
 						$('#candidates_div').hide();
 						$('#mapcandidate_div').hide();
-						
-						}
-
-					},
-					error : function(e) {
-
-						var json = "<h6>Response Error:Error occured while searching for candidates.</h6><pre>"
-								+ e.responseText + "</pre>";
-						$('#search_feedback').html(json);
-
-						console.log("ERROR : ", e);
-						// $("#btn-search").prop("disabled", false);
 
 					}
-				});
-	//}
+
+				},
+				error : function(e) {
+
+					var json = "<h6>Response Error:Error occured while searching for candidates.</h6><pre>"
+							+ e.responseText + "</pre>";
+					$('#search_feedback').html(json);
+
+					console.log("ERROR : ", e);
+					// $("#btn-search").prop("disabled", false);
+
+				}
+			});
+	// }
 
 }
 function resetSearch() {
@@ -450,120 +432,177 @@ function resetSearch() {
 	$("#location_s").val("");
 	$("#skill_s").val("");
 	$("#searchcandidates_div").show();
-	//$("#searchresults_div").hide();
+	// $("#searchresults_div").hide();
 	$('#search_feedback').html("");
-	//$('#searchresults_div').show();
+	// $('#searchresults_div').show();
 	$('#candidates_div').hide();
 	$('#mapcandidate_div').hide();
-	
-	//console.log("reset")
+
+	// console.log("reset")
 
 }
 
-$(document).on(
-		"click",
-		"#candidates_tbl tbody tr",
-		function(e)
+$(document)
+		.on(
+				"click",
+				"#candidates_tbl tbody tr",
+				function(e)
 
-		{
-			console.log('cal')
-			var ctable = $('#candidates_tbl').DataTable();
-			var rowData = ctable.row(this).data();
-			if(rowData.disableRow != 'true'){
-			
-			$("#candidates_tbl tbody ").on(
-					'click',
-					'td',
-					function() {
-						var that=this;
-						var idx = ctable.cell( that ).index().column;
-						var title = ctable.column( idx ).header();
-						var titleText=$(title).html();
-						//console.log("name "+ titleText.trim() )
-						if (titleText.trim()=='Interested In Role?' || titleText.trim()=='Authorisation Received?' || titleText.trim()=='Comments'
-							|| titleText.trim()=='Status') { // provide index of your column in which you prevent row click here is column of 4 index
-							//event.preventDefault();
-							return;
-						} else {
-							
-							
-							$.ajax({
-								type : "GET",
-								contentType : "application/json",
-								url : "/candidatedetails",
-								cache : false,
-								timeout : 600000,
-								success : function(data) {
+				{
+					// console.log('cal')
+					var ctable = $('#candidates_tbl').DataTable();
+					var rowData = ctable.row(this).data();
+					if (rowData.disableRow != 'true') {
 
-									var win = window.open("/candidatedetails/"
-											+ rowData.candidateId,
-											"candidatedetails",
-											"status=1,toolbar=0");
-									win.focus();
+						$("#candidates_tbl tbody ")
+								.on(
+										'click',
+										'td',
+										function() {
+											var that = this;
+											var idx = ctable.cell(that).index().column;
+											var title = ctable.column(idx)
+													.header();
+											var titleText = $(title).html();
+											// console.log("name "+
+											// titleText.trim() )
+											if (titleText.trim() == 'Interested In Role?'
+													|| titleText.trim() == 'Authorisation Received?'
+													|| titleText.trim() == 'Comments'
+													|| titleText.trim() == 'Status'
+													|| titleText.trim() == 'Expected Salary'
+													|| titleText.trim() == 'Total Experience'
+													|| titleText.trim() == 'Relevant Experience'
+													|| titleText.trim() == 'Relocation In Future?'
+													|| titleText.trim() == 'Applied For This Role Before?'
+													|| titleText.trim() == 'Authorise Renaissance?'
+													|| titleText.trim() == 'Availability To Join?'
+													|| titleText.trim() == 'Expected Rate(Incl Super)') { 
+												return;
+											} else {
 
-								},
-								error : function(e) {
+												$
+														.ajax({
+															type : "GET",
+															contentType : "application/json",
+															url : "/candidatedetails",
+															cache : false,
+															timeout : 600000,
+															success : function(
+																	data) {
 
-									alert("Unable to load details");
+																var win = window
+																		.open(
+																				"/candidatedetails/"
+																						+ rowData.candidateId,
+																				"candidatedetails",
+																				"status=1,toolbar=0");
+																win.focus();
 
-								}
-							});
-						}
+															},
+															error : function(e) {
 
-					});
-			}else{
-				console.log('Row sel')
-				 $(this).closest('tr').find(":input").attr('disabled', true);
-			}
+																alert("Unable to load details");
 
-		});
+															}
+														});
+											}
 
-function mapCandidates(){
-	
+										});
+					} else {
+						// console.log('Row sel')
+						$(this).closest('tr').find(":input").attr('disabled',
+								true);
+					}
+
+				});
+
+function mapCandidates() {
+
 	event.preventDefault();
-	var mappingList=[];
-	
+	$('#map_msg').html("");
+	var mappingList = [];
+
 	var table = $('#candidates_tbl').DataTable();
-	var i=0;
-	 var j=0;
-	//console.log("Requirement Id: "+$("#idPkey").val());
-	table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
-	    var d = this.data();
-	    var mappingCandidateRqmtDTO = {}
-	    var interestedInRole="interestedInRole"+i;
-	    var authorisation="authorisation"+i;
-	    var comments="#comments"+i;
-	   // console.log("document.getElementById(interestedInRole): "+document.getElementById(interestedInRole));
-	   if(document.getElementById(interestedInRole)!=null && document.getElementById(interestedInRole).checked)
-	   { 
-		   
-		   mappingCandidateRqmtDTO["requirementId"] = $("#idPkey").val();
+	var i = 0;
+	var j = 0;
+	// console.log("Requirement Id: "+$("#idPkey").val());
+	table.rows().every(
+			function(rowIdx, tableLoop, rowLoop) {
+				var d = this.data();
+				console.log(d);
+				var mappingCandidateRqmtDTO = {}
+				var interestedInRole = "interestedInRole" + i;
+				var authorisation = "authorisation" + i;
+				var availabilityToJoin = "availabilityToJoin" + i;
+				var relocationInFuture = "relocationInFuture" + i;
+				var appliedBefore = "appliedBefore" + i;
+				var authoriseRenaissance = "authoriseRenaissance" + i;
+				// console.log(availabilityToJoin)
+				var expectedSalary = "#expectedSalary" + i;
+				var totalExp = "#totalExp" + i;
+				var relevantExp = "#relevantExp" + i;
+				var comments = "#comments" + i;
+				var status = "#status_" + i;
 
-			mappingCandidateRqmtDTO["candidateId"] = d.candidateId;
-			mappingCandidateRqmtDTO["recruiterId"] = d.recruiterId;
-			mappingCandidateRqmtDTO["id"] = d.id;
+				if (document.getElementById(interestedInRole) != null
+						&& document.getElementById(interestedInRole).checked) {
 
-			//mappingCandidateRqmtDTO["recruiterId"] = "";
-			mappingCandidateRqmtDTO["status"] = d.status;
-			mappingCandidateRqmtDTO["comments"] =$(comments).val();
-			mappingCandidateRqmtDTO["authorisation"] = document.getElementById(authorisation).checked;
-			mappingCandidateRqmtDTO["interestedInRole"] = document.getElementById(interestedInRole).checked;
-			 mappingList[j]=mappingCandidateRqmtDTO;
-			 
-			 j++;
-			 //console.log("j val: "+j)
-	   }
-	  // console.log(d);
-	  //console.log("i val: "+i)
-	  
-	   i++;
-	});
-	
-	if(mappingList.length>0){
-		
-		
-		var mappingRequirement={}
-		mappingRequirement["mappingCandidateRqmtList"]=mappingList;
+					mappingCandidateRqmtDTO["requirementId"] = $("#idPkey")
+							.val();
+
+					mappingCandidateRqmtDTO["candidateId"] = d.candidateId;
+					mappingCandidateRqmtDTO["recruiterId"] = d.recruiterId;
+					mappingCandidateRqmtDTO["id"] = d.id;
+
+					// mappingCandidateRqmtDTO["recruiterId"] = "";
+					// console.log("Status while saving: "+$(status).val());
+					mappingCandidateRqmtDTO["status"] = $(status).val();
+					mappingCandidateRqmtDTO["createdDate"] = d.createdDate;
+					mappingCandidateRqmtDTO["expectedSalary"] = $(
+							expectedSalary).val();
+					mappingCandidateRqmtDTO["totalExp"] = $(totalExp).val();
+					mappingCandidateRqmtDTO["relevantExp"] = $(relevantExp)
+							.val();
+					mappingCandidateRqmtDTO["comments"] = $(comments).val();
+					mappingCandidateRqmtDTO["authorisation"] = document
+							.getElementById(authorisation).checked;
+					mappingCandidateRqmtDTO["interestedInRole"] = document
+							.getElementById(interestedInRole).checked;
+					 mappingCandidateRqmtDTO["availabilityToJoin"] =
+					 document.getElementById(availabilityToJoin).checked;
+					 mappingCandidateRqmtDTO["relocationInFuture"] =
+					 document.getElementById(relocationInFuture).checked;
+					 mappingCandidateRqmtDTO["appliedBefore"] =
+					 document.getElementById(appliedBefore).checked;
+					 mappingCandidateRqmtDTO["authoriseRenaissance"] =
+				 document.getElementById(authoriseRenaissance).checked;
+					console.log("mappingCandidateRqmtDTO: "
+							+ $(relevantExp).val())
+						 mappingCandidateRqmtDTO["candidateName"]= d.candidateName;
+							 
+						 mappingCandidateRqmtDTO["location"]=d.currentLocation;
+						mappingCandidateRqmtDTO["contactNumber"]=d.primaryPhone;
+						mappingCandidateRqmtDTO["email"]=d.primaryEmail;
+						mappingCandidateRqmtDTO["visaStatus"]=d.currentLocation;
+							mappingCandidateRqmtDTO["visaNo"]=	d.visaNo;
+						
+					
+					mappingList[j] = mappingCandidateRqmtDTO;
+
+					j++;
+					// console.log("j val: "+j)
+				}
+				// console.log(d);
+				// console.log("i val: "+i)
+
+				i++;
+			});
+
+	if (mappingList.length > 0) {
+
+		var mappingRequirement = {}
+		mappingRequirement["mappingCandidateRqmtList"] = mappingList;
 		var searchForm = {}
 		searchForm["candidateName"] = $("#candidateName_s").val();
 
@@ -571,48 +610,52 @@ function mapCandidates(){
 
 		searchForm["currentLocation"] = $("#location_s").val();
 		searchForm["requirementId"] = $("#idPkey").val();
-		//searchForm["requirementId"] = $("#idPkey").val();
-		mappingRequirement["searchForm"]=searchForm;
-	  $.ajax({
-				type : "POST",
-				contentType : "application/json",
-				url : "/mapcandidaterequirement",
-				data : JSON.stringify(mappingRequirement),
-				dataType : 'json',
-				cache : false,
-				timeout : 600000,
-				success : function(data) {
+		// searchForm["requirementId"] = $("#idPkey").val();
+		mappingRequirement["searchForm"] = searchForm;
+		
+		//var requirementDto={}
+		//requirementDto
+		
+		$
+				.ajax({
+					type : "POST",
+					contentType : "application/json",
+					url : "/mapcandidaterequirement",
+					data : JSON.stringify(mappingRequirement),
+					dataType : 'json',
+					cache : false,
+					timeout : 600000,
+					success : function(data) {
 
-					console.log("mapping success");
-					var json = "<h6>Response:Mapping candidate for the requirement has been done successfully.</h6><pre>";
-					$('#map_msg').html(json);
-					populateCandidatesList(data);
-				},
-				error : function(e) {
+						// console.log("mapping success");
+						var json = "<h6>Response:Mapping candidate for the requirement has been done successfully.</h6><pre>";
+						$('#map_msg').html(json);
+						populateCandidatesList(data);
+					},
+					error : function(e) {
 
-					var json = "<h6>Response Error:Error occured while mapping  candidates.</h6><pre>"
-							+ e.responseText + "</pre>";
-					$('#map_msg').html(json);
+						var json = "<h6>Response Error:Error occured while mapping  candidates.</h6><pre>"
+								+ e.responseText + "</pre>";
+						$('#map_msg').html(json);
 
-					console.log("ERROR : ", e);
-					// $("#btn-search").prop("disabled", false);
+						console.log("ERROR : ", e);
+						// $("#btn-search").prop("disabled", false);
 
-				}
-			});
-	}
-	else{
+					}
+				});
+	} else {
 		var json = "<h6>Response:Please select at least one candidate to map for the requirement.</h6><pre>";
-	$('#map_msg').html(json);
+		$('#map_msg').html(json);
 	}
-	
+
 }
-function populateCandidatesList(data){
+function populateCandidatesList(data) {
 
 	$('#searchresults_div').show();
 	$('#candidates_div').show();
 	$('#mapcandidate_div').show();
-	$('#map_msg').html("");
-	
+	// $('#map_msg').html("");
+
 	// DataTable
 	var p = -1;
 	var table = $('#candidates_tbl')
@@ -628,7 +671,7 @@ function populateCandidatesList(data){
 						renderer : {
 							"header" : "bootstrap"
 						},
-						"order": [[ 1, "asc" ]],
+						"order" : [ [ 1, "asc" ] ],
 						data : data,
 
 						columns : [
@@ -641,7 +684,7 @@ function populateCandidatesList(data){
 									"data" : 'sno',
 									"name" : "sno",
 									"title" : "sno",
-									"visible": false
+									"visible" : false
 								},
 								{
 									"data" : 'primaryEmail',
@@ -664,6 +707,16 @@ function populateCandidatesList(data){
 									"title" : "Location"
 								},
 								{
+									"data" : 'visaType',
+									"name" : "visaType",
+									"title" : "Visa Status"
+								},
+								{
+									"data" : 'visaNo',
+									"name" : "visaNo",
+									"title" : "Visa Subclass"
+								},
+								{
 									"data" : 'candidateId',
 									"name" : "candidateId",
 									"title" : "Candidate Id",
@@ -674,53 +727,58 @@ function populateCandidatesList(data){
 									"name" : "recruiterId",
 									"title" : "recruiter Id",
 									"visible" : false
-								},{
+								},
+								{
 									"data" : 'id',
 									"name" : "id",
 									"title" : "id",
 									"visible" : false
 								},
 								{
+									"data" : 'createdDate',
+									"name" : "createdDate",
+									"title" : "createdDate",
+									"visible" : false
+								},
+								{
 									"data" : 'interestedInRole',
-									render : function(data,
-											type, row) {
-										
+									render : function(data, type, row) {
+
 										if (type === 'display') {
 											var val = "";
 											if (data != null)
 												val = data;
-											console.log("data: id"+row.id);
 											p++;
-											//console.log("interestedInRole: "+row.disableRow);
-											//var dis=false;
-											if(row.disableRow=='true'){
-												if(val=='true' || val==true){
+											
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
 													return '<input type="checkbox" checked  disabled value="'
 															+ val
 															+ '"  class="editor-active" id="interestedInRole'
-															+ p
-															+ '"  >';
-													}else{
-														return '<input type="checkbox"  value="'
-														+ val
-														+ '"  class="editor-active" id="interestedInRole'+ p + '" >';
-													}
-											}else{
-												
-												if(val=='true' || val==true){
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="interestedInRole'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
 													return '<input type="checkbox" checked   value="'
 															+ val
 															+ '"  class="editor-active" id="interestedInRole'
-															+ p
-															+ '"  >';
-													}else{
-														return '<input type="checkbox"  value="'
-														+ val
-														+ '"  class="editor-active" id="interestedInRole'+ p + '" >';
-													}
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="interestedInRole'
+															+ p + '" >';
+												}
 											}
-												
-											
+
 										}
 										return '';
 									},
@@ -730,47 +788,43 @@ function populateCandidatesList(data){
 								},
 								{
 									"data" : 'authorisation',
-									render : function(data,
-											type, row) {
-										//var p = -1;
+									render : function(data, type, row) {
+										// var p = -1;
 										if (type === 'display') {
 											var val = "";
 											if (data != null)
 												val = data;
-											
-											var dis=false;
-											if(row.disableRow=='true'){
-												
-												if(val=='true' || val==true){
+
+											var dis = false;
+											if (row.disableRow == 'true') {
+
+												if (val == 'true'
+														|| val == true) {
 													return '<input type="checkbox" checked  disabled value="'
 															+ val
 															+ '"  class="editor-active" id="authorisation'
-															+ p
-															+ '" >';
-													}else{
-														return '<input type="checkbox" disabled value="'
-														+ val
-														+ '"  class="editor-active" id="authorisation'
-														+ p
-														+ '" >';
-													}
-											}else{
-												if(val=='true' || val==true){
+															+ p + '" >';
+												} else {
+													return '<input type="checkbox" disabled value="'
+															+ val
+															+ '"  class="editor-active" id="authorisation'
+															+ p + '" >';
+												}
+											} else {
+												if (val == 'true'
+														|| val == true) {
 													return '<input type="checkbox" checked   value="'
 															+ val
 															+ '"  class="editor-active" id="authorisation'
-															+ p
-															+ '" >';
-													}else{
-														return '<input type="checkbox"  value="'
-														+ val
-														+ '"  class="editor-active" id="authorisation'
-														+ p
-														+ '" >';
-													}
+															+ p + '" >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="authorisation'
+															+ p + '" >';
+												}
 											}
-											
-											
+
 										}
 										return '';
 									},
@@ -779,23 +833,350 @@ function populateCandidatesList(data){
 
 								},
 								{
-									"data" : 'comments',
-									render : function(data,
-											type, row) {
-										//var p = -1;
+									"data" : 'availabilityToJoin',
+									render : function(data, type, row) {
+
 										if (type === 'display') {
 											var val = "";
 											if (data != null)
 												val = data;
-											
-											if(row.disableRow=='true'){
-												return '<textarea rows="3" cols="50" disabled  class="editor-active" id="comments' + p+'" >'
-												 +val +'</textarea>';
-											}else{
-												return '<textarea rows="3" cols="50"   class="editor-active" id="comments' + p+'" >'
-												 +val +'</textarea>';;
+											// console.log("data: id"+row.id);
+											//p++;
+											// console.log("interestedInRole:
+											// "+row.disableRow);
+											// var dis=false;
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked  disabled value="'
+															+ val
+															+ '"  class="editor-active" id="availabilityToJoin'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="availabilityToJoin'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked   value="'
+															+ val
+															+ '"  class="editor-active" id="availabilityToJoin'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="availabilityToJoin'
+															+ p + '" >';
+												}
 											}
-											 
+
+										}
+										return '';
+									},
+
+									"title" : "Availability To Join?"
+
+								},
+								{
+									"data" : 'expectedSalary',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+											//p++;
+
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"   disabled value="'
+															+ val
+															+ '"  class="editor-active" id="expectedSalary'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="expectedSalary'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"    value="'
+															+ val
+															+ '"  class="editor-active" id="expectedSalary'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="expectedSalary'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Expected Salary"
+
+								},
+								{
+									"data" : 'totalExp',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+											//p++;
+
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"   disabled value="'
+															+ val
+															+ '"  class="editor-active" id="totalExp'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="totalExp'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"    value="'
+															+ val
+															+ '"  class="editor-active" id="totalExp'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="totalExp'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Total Experience"
+
+								},
+								{
+									"data" : 'relevantExp',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+										//	p++;
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"   disabled value="'
+															+ val
+															+ '"  class="editor-active" id="relevantExp'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="relevantExp'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="textbox"    value="'
+															+ val
+															+ '"  class="editor-active" id="relevantExp'
+															+ p + '"  >';
+												} else {
+													return '<input type="textbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="relevantExp'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Relevant Experience"
+
+								},
+								{
+									"data" : 'relocationInFuture',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+											//p++;
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked  disabled value="'
+															+ val
+															+ '"  class="editor-active" id="relocationInFuture'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="relocationInFuture'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked   value="'
+															+ val
+															+ '"  class="editor-active" id="relocationInFuture'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="relocationInFuture'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Relocation In Future?"
+
+								},
+								{
+									"data" : 'appliedBefore',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+											//p++;
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked  disabled value="'
+															+ val
+															+ '"  class="editor-active" id="appliedBefore'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="appliedBefore'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked   value="'
+															+ val
+															+ '"  class="editor-active" id="appliedBefore'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="appliedBefore'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Applied For This Role Before?"
+
+								},
+								{
+									"data" : 'authoriseRenaissance',
+									render : function(data, type, row) {
+
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+											//p++;
+											if (row.disableRow == 'true') {
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked  disabled value="'
+															+ val
+															+ '"  class="editor-active" id="authoriseRenaissance'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="authoriseRenaissance'
+															+ p + '" >';
+												}
+											} else {
+
+												if (val == 'true'
+														|| val == true) {
+													return '<input type="checkbox" checked   value="'
+															+ val
+															+ '"  class="editor-active" id="authoriseRenaissance'
+															+ p + '"  >';
+												} else {
+													return '<input type="checkbox"  value="'
+															+ val
+															+ '"  class="editor-active" id="authoriseRenaissance'
+															+ p + '" >';
+												}
+											}
+
+										}
+										return '';
+									},
+
+									"title" : "Authorise Renaissance?"
+
+								},
+								{
+									"data" : 'comments',
+									render : function(data, type, row) {
+										// var p = -1;
+										if (type === 'display') {
+											var val = "";
+											if (data != null)
+												val = data;
+
+											if (row.disableRow == 'true') {
+												return '<textarea rows="3" cols="50" disabled  class="editor-active" id="comments'
+														+ p
+														+ '" >'
+														+ val
+														+ '</textarea>';
+											} else {
+												return '<textarea rows="3" cols="50"   class="editor-active" id="comments'
+														+ p
+														+ '" >'
+														+ val
+														+ '</textarea>';
+												;
+											}
+
 										}
 										return '';
 									},
@@ -803,58 +1184,74 @@ function populateCandidatesList(data){
 									"title" : "Comments"
 
 								},
-								/*{
-									"data" : 'disableRow',
-									"name" : "disableRow",
-									"title" : "disableRow"
-								},*/
-								
+								/*
+								 * { "data" : 'disableRow', "name" :
+								 * "disableRow", "title" : "disableRow" },
+								 */
+
 								{
-									
-							        "title": "Status",
-							        "render": function(sdata, type, row, meta) {
-							          // var a = data.indexOf(row);
-							          // console.log('a: '+a);
-							        	
-							        	var options="";
-							        	options += "<option value=\"none\"  >Select Requirement Status</option>";
 
+									"title" : "Status",
+									"render" : function(sdata, type, row, meta) {
+										// var a = data.indexOf(row);
+										// console.log('a: '+a);
 
-							        	options += "<option value=\"Accepted\" >Accepted</option>";
-							        	options += "<option value=\"Profile Submitted\" >Profile Submitted</option>";
-							        	options += "<option value=\"Interviewed\" >Interviewed</option>";
-							        	options += "<option value=\"Waiting for Approval\" >Waiting for Approval</option>";
-							        	options += "<option value=\"Rejected\" >Rejected</option>";
-							           var select = $("<select id='role_"+p+"'>"+ options +"</select>");
-							           
-							           $("#role_"+p).val(row.status);
-							           console.log("sdata: "+row.status);
-							           
-							           return select.prop("outerHTML")
+										var options = "";
+										options += "<option value=\"none\"  >Select Requirement Status</option>";
 
-							        }
-							      },
-								],
-								"createdRow" : function(row, data, dataIndex) {
-									// console.log(data.changeColor);
-									if (data.disableRow == 'true'
-											) {
-										
-										$(row).css('background-color',
-												'#D3D3D3');
-										
-										
+										options += "<option value=\"Accepted\" >Accepted</option>";
+										options += "<option value=\"Open\" >Open</option>";
+										options += "<option value=\"Profile Submitted\" >Profile Submitted</option>";
+										options += "<option value=\"Interviewed\" >Interviewed</option>";
+										options += "<option value=\"Waiting for Approval\" >Waiting for Approval</option>";
+										options += "<option value=\"Rejected\" >Rejected</option>";
+										if (row.disableRow == 'true'
+												|| row.disableStatus == 'true') {
+											var select = $("<select id='status_"
+													+ p
+													+ "' disabled>"
+													+ options + "</select>");
+										} else {
+											var select = $("<select id='status_"
+													+ p
+													+ "' >"
+													+ options
+													+ "</select>");
+										}
+
+										select.find(
+												'option[value="' + row.status
+														+ '"]').attr(
+												'selected', 'selected');
+										return select[0].outerHTML;
+
 									}
+								},
 
-								}
+						],
+						"createdRow" : function(row, data, dataIndex) {
+							// console.log(data.changeColor);
+							if (data.disableRow == 'true') {
+
+								$(row).css('background-color', '#D3D3D3');
+
+							}
+
+						}
 
 					});
 
-	$('#candidates_tbl tfoot tr').appendTo(
-			'#candidates_tbl thead');
+	$('#candidates_tbl tfoot tr').appendTo('#candidates_tbl thead');
 
 	$("#candidates_tbl tfoot tr").hide();
-	// $("#paginatedTable_foot").style.visibility='block';
-	//table.destroy();
-	
+	if (jobType == 'Contract') {
+		var table1 = $('#candidates_tbl').DataTable();
+
+		$(table1.column(15).header()).text('Expected Rate(Incl Super)');
+	} else {
+		var table1 = $('#candidates_tbl').DataTable();
+
+		$(table1.column(15).header()).text('Expected Salary');
+	}
+
 }

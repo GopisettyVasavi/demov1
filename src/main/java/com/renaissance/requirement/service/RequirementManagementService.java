@@ -3,6 +3,7 @@ package com.renaissance.requirement.service;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +28,6 @@ public class RequirementManagementService {
 	@Autowired
 	MappingRequirementCandidateRepository mappingRepository;
 	
-	
-
-	
 	public RequirementDTO createRequirement(RequirementDTO requirementDto) {
 		logger.info("Details in service..{}",requirementDto.toString());
 		JobRequirementEntity requirementEntity= new JobRequirementEntity();
@@ -37,6 +35,8 @@ public class RequirementManagementService {
 		requirementEntity.setDatePosted(ProfileParserUtils.parseStringDate(requirementDto.getDatePosted()));
 		requirementEntity.setContractStartDate(ProfileParserUtils.parseStringDate(requirementDto.getContractStartDate()));
 		requirementEntity.setContractEndDate(ProfileParserUtils.parseStringDate(requirementDto.getContractEndDate()));
+		requirementEntity.setCreatedDate(requirementDto.getCreatedDate());
+		requirementEntity.setModifiedDate(requirementDto.getModifiedDate());
 		jobRequirementRepository.save(requirementEntity);
 		return requirementDto;
 	}
@@ -44,7 +44,7 @@ public class RequirementManagementService {
 	public List<RequirementDTO> searchRequirements(RequirementDTO requirementDto){
 		List<RequirementDTO> requirementList= new ArrayList<RequirementDTO>();
 		if(!ProfileParserUtils.isObjectEmpty(requirementDto)) {
-			logger.info("REqmt: {}",requirementDto.toString());
+			//logger.info("REqmt: {}",requirementDto.toString());
 			List<JobRequirementEntity> requirementEntityList=jobRequirementRepository.searchRequirements(requirementDto);
 			if(!ProfileParserUtils.isObjectEmpty(requirementEntityList) ) {
 				for(JobRequirementEntity requirementEntity : requirementEntityList) {
@@ -87,21 +87,35 @@ public class RequirementManagementService {
 		if(!ProfileParserUtils.isObjectEmpty(mappingList)) {
 			for(MappingCandidateRqmtDTO mappingDto: mappingList) {
 				MappingRequirementCandidateEntity mappingEntity = new MappingRequirementCandidateEntity();
-			//	logger.info("Before: "+mappingDto.toString());
 				BeanUtils.copyProperties(mappingDto,mappingEntity);
-				//logger.info("After: "+mappingEntity.toString());
 				mappingEntity =mappingRepository.save(mappingEntity);
 				mappingDto.setId(mappingEntity.getId());
-				logger.info("After mappingEntity : "+mappingEntity.getId());
-				/*
-				 * MappingCandidateRqmtDTO savedMappingDto= new MappingCandidateRqmtDTO();
-				 * BeanUtils.copyProperties(mappingEntity,savedMappingDto);
-				 */
+				
 				mappingCandidateList.add(mappingDto);
 			}
 		}
 		
 		
 		return mappingCandidateList;
+	}
+	public MappingCandidateRqmtDTO getCandidateMappingById(BigInteger id) {
+		MappingCandidateRqmtDTO mappingDto= new MappingCandidateRqmtDTO();
+		Optional<MappingRequirementCandidateEntity> mappingObj= mappingRepository.findById(id);
+		MappingRequirementCandidateEntity mappingEntity=mappingObj.get();
+		BeanUtils.copyProperties(mappingEntity, mappingDto);
+		return mappingDto;
+	}
+	public RequirementDTO getRequirementDetails(BigInteger requirementId){
+		RequirementDTO requirement= new RequirementDTO();
+		Optional<JobRequirementEntity> requirementOptnl=jobRequirementRepository.findById(requirementId);
+		JobRequirementEntity requirementEntity=requirementOptnl.get();
+					//RequirementDTO requirement= new RequirementDTO();
+					BeanUtils.copyProperties(requirementEntity, requirement);
+					requirement.setDatePosted(ProfileParserUtils.parseDateToString(requirementEntity.getDatePosted()));
+					requirement.setContractStartDate(ProfileParserUtils.parseDateToString(requirementEntity.getContractStartDate()));
+					requirement.setContractEndDate(ProfileParserUtils.parseDateToString(requirementEntity.getContractEndDate()));
+					
+			
+		return requirement;
 	}
 }

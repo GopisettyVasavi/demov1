@@ -1,6 +1,7 @@
 package com.renaissance.requirement.dto;
 
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,10 @@ public class RequirementDTO {
 	private List<Integer>recruiters =new ArrayList<Integer>();
 	private Integer recruiterId;
 	private String recruiterName;
+	private LocalDate createdDate;
+	private LocalDate modifiedDate;
+	private Integer requirementCreaterId;
+	private String requirementCreaterEmail;
 	private BigInteger id;
 	
 	public String getVendorName() {
@@ -149,6 +154,31 @@ public class RequirementDTO {
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+	public LocalDate getModifiedDate() {
+		return modifiedDate;
+	}
+	public void setModifiedDate(LocalDate modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+	
+	public Integer getRequirementCreaterId() {
+		return requirementCreaterId;
+	}
+	public void setRequirementCreaterId(Integer requirementCreaterId) {
+		this.requirementCreaterId = requirementCreaterId;
+	}
+	public String getRequirementCreaterEmail() {
+		return requirementCreaterEmail;
+	}
+	public void setRequirementCreaterEmail(String requirementCreaterEmail) {
+		this.requirementCreaterEmail = requirementCreaterEmail;
+	}
 	@Override
 	public String toString() {
 		return "RequirementDTO [vendorName=" + vendorName + ", requirementId=" + requirementId + ", jobTitle="
@@ -158,8 +188,11 @@ public class RequirementDTO {
 				+ ", contactPersonEmail=" + contactPersonEmail + ", contactPersonPhone=" + contactPersonPhone
 				+ ", assignedRecruiter=" + assignedRecruiter + ", contractStartDate=" + contractStartDate
 				+ ", contractEndDate=" + contractEndDate + ", recruiters=" + recruiters + ", recruiterId=" + recruiterId
-				+ ", recruiterName=" + recruiterName + ", id=" + id + "]";
+				+ ", recruiterName=" + recruiterName + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate
+				+ ", requirementCreaterId=" + requirementCreaterId + ", requirementCreaterEmail="
+				+ requirementCreaterEmail + ", id=" + id + "]";
 	}
+	
 	
 	
 	
