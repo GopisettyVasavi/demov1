@@ -422,7 +422,7 @@ public static boolean dateLessthanAMonth(LocalDate appDate) {
     	return true;
     
 }
-public static void sendEmail(String toEmail, String subject, String body) {
+public static void sendEmail(String toEmail, String subject, String body, String attachment) {
 	//Add email domain check
 	if(!isObjectEmpty(toEmail) && toEmail.contains("reninfo.com.au")) {
 		
@@ -483,11 +483,12 @@ public static void sendEmail(String toEmail, String subject, String body) {
          messageBodyPart1.setText("This is message body "+body); 
          MimeBodyPart messageBodyPart2 = new MimeBodyPart();  
          
-         String filename = "C:\\Users\\Renaissance\\Downloads\\Vasavi_gopisetty_Detailed_Jul2020.docx";//change accordingly  
-         DataSource source = new FileDataSource(filename);  
+        // String filename = "C:\\Users\\Renaissance\\Downloads\\Vasavi_gopisetty_Detailed_Jul2020.docx";//change accordingly  
+         //String filename
+         DataSource source = new FileDataSource(attachment);  
          messageBodyPart2.setDataHandler(new DataHandler(source));  
-         messageBodyPart2.setFileName(filename);  
-          
+         messageBodyPart2.setFileName( attachment);  
+          logger.info("Source{}",source);
           
          //5) create Multipart object and add MimeBodyPart objects to this object      
          Multipart multipart = new MimeMultipart();  

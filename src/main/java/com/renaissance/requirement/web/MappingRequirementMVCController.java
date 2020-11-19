@@ -143,6 +143,7 @@ public class MappingRequirementMVCController {
 		try {
 			// logger.info("Mapping Requirement..,{}", mappingCandidateRqmtList.toString());
 			List<MappingCandidateRqmtDTO> mappingCandidateRqmtList = mappingRequirement.getMappingCandidateRqmtList();
+			
 			if (!ProfileParserUtils.isObjectEmpty(mappingCandidateRqmtList)) {
 				for (MappingCandidateRqmtDTO mappingDto : mappingCandidateRqmtList) {
 					 //logger.info(" MappingCandidateRqmtDTO : , {}",mappingDto.toString());
@@ -175,8 +176,19 @@ public class MappingRequirementMVCController {
 							//Send Email
 							RequirementDTO requirementDto=requirementService.getRequirementDetails(prevMapDto.getRequirementId());
 							prepareEmailBody(requirementDto,mappingDto);
-							 //Call Email here from Util class 
-							//Send email to requirementDto.getRequirementCreaterEmailId
+							/*String body="";
+							 * body=prepareEmailBody(requirementDto,mappingDto); //Call Email here from Util
+							 * class //Send email to requirementDto.getRequirementCreaterEmailId
+							 * CandidateDTO candidateDto =
+							 * profileService.getCandidateFullDetails(mappingDto.getCandidateId()); String
+							 * attachment=ProfileParserConstants.CURRENT_DIR+
+							 * "\\src\\main\\resources\\static\\"+"\\"+ candidateDto.getFilePath();
+							 * //attachment=attachment.replaceAll("//", "\\");
+							 * 
+							 * logger.info("File Path: {}",attachment);
+							 * ProfileParserUtils.sendEmail("vasavi@reninfo.com.au", "subject", body,
+							 * attachment);
+							 */
 							 
 						}
 						

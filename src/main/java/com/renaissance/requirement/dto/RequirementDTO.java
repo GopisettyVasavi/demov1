@@ -30,6 +30,7 @@ public class RequirementDTO {
 	private Integer requirementCreaterId;
 	private String requirementCreaterEmail;
 	private BigInteger id;
+	private String disableStatus;
 	
 	public String getVendorName() {
 		return vendorName;
@@ -179,6 +180,13 @@ public class RequirementDTO {
 	public void setRequirementCreaterEmail(String requirementCreaterEmail) {
 		this.requirementCreaterEmail = requirementCreaterEmail;
 	}
+	
+	public String getDisableStatus() {
+		return disableStatus;
+	}
+	public void setDisableStatus(String disableStatus) {
+		this.disableStatus = disableStatus;
+	}
 	@Override
 	public String toString() {
 		return "RequirementDTO [vendorName=" + vendorName + ", requirementId=" + requirementId + ", jobTitle="
@@ -190,11 +198,7 @@ public class RequirementDTO {
 				+ ", contractEndDate=" + contractEndDate + ", recruiters=" + recruiters + ", recruiterId=" + recruiterId
 				+ ", recruiterName=" + recruiterName + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate
 				+ ", requirementCreaterId=" + requirementCreaterId + ", requirementCreaterEmail="
-				+ requirementCreaterEmail + ", id=" + id + "]";
+				+ requirementCreaterEmail + ", id=" + id + ", disableStatus=" + disableStatus + "]";
 	}
 	
-	
-	
-	
-
 }

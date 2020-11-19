@@ -128,11 +128,10 @@ public class FileuploadMvcController {
 				String filenameWithoutX=FilenameUtils.removeExtension(convFile.getName());
 				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
 				Thread.sleep(5000);
-				logger.info("FILE EXISTS...."+pdfFile.exists());
+				//logger.info("FILE EXISTS...."+pdfFile.exists());
 				if(!pdfFile.exists()) {
 				FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
-				logger.info("File before redirecting..{},{}", convertedFile.getFilepath(),
-						convertedFile.getConvertedFile().getName());
+				//logger.info("File before redirecting..{},{}", convertedFile.getFilepath(),convertedFile.getConvertedFile().getName());
 
 				redirectAttributes.addFlashAttribute("fileLocation",
 						ProfileParserConstants.DEST_FOLDER + convertedFile.getConvertedFile().getName());

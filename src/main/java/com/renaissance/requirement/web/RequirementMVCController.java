@@ -89,7 +89,7 @@ RequirementManagementService requirementService;
 					User recruiter=employeeService.getRecruiterDetails(employeeId);
 					String emailBody=prepareEmailBody(requirementDto);
 					String subject=requirementDto.getVendorName()+" , "+requirementDto.getJobTitle()+" , "+requirementDto.getLocation()+" , "+requirementDto.getJobType();
-					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,emailBody);
+					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,emailBody,null);
 				}
 			}
 			if(recruiters.length()>0) {
@@ -130,6 +130,21 @@ RequirementManagementService requirementService;
 
 			//logger.info("Search details, {}", requirementDto.toString());
 			requirements=requirementService.searchRequirements(requirementDto);
+			String disableStatus="";
+			if (!ProfileParserUtils
+					.isObjectEmpty(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE))
+					&& !ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession()
+							.getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString().trim())) {
+
+				disableStatus="true";
+			} else {
+				disableStatus="false";
+			}
+			if(!ProfileParserUtils.isObjectEmpty(requirements)) {
+				for(RequirementDTO requirement:requirements) {
+					requirement.setDisableStatus(disableStatus);
+				}
+			}
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
 			e.printStackTrace();
@@ -159,7 +174,7 @@ RequirementManagementService requirementService;
 					recruiters+=employeeId+" ,";
 					User recruiter=employeeService.getRecruiterDetails(employeeId);
 					String subject=requirementDto.getVendorName()+" , "+requirementDto.getJobTitle()+" , "+requirementDto.getLocation()+" , "+requirementDto.getJobType();
-					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,"");
+					ProfileParserUtils.sendEmail(recruiter.getEmail(),subject,"",null);
 				}
 			}
 			if(recruiters.length()>0) {

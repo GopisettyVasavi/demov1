@@ -421,6 +421,12 @@ function requirementSearch(){
 						"name" : "recruiterName",
 						"title" : "Recruiter Name",
 						"visible": false
+					},
+					{
+						"data" : 'disableStatus',
+						"name" : "disableStatus",
+						"title" : "disableStatus",
+						"visible": false
 					},]
 
 				});
@@ -490,7 +496,7 @@ $(document).on(
 			}
 			
 			
-		/**** CLIENT DROPDOWN */
+		/**** CLIENT DROPDOWN  */
 			
 
 var dd = document.getElementById('client_edit');
@@ -518,28 +524,12 @@ for (var i = 0; i < status.options.length; i++) {
        break;
     }
 }
+//console.log("disableStatus: "+rowData.disableStatus)
+if(rowData.disableStatus=='true'){
+document.getElementById('requirement_status').disabled=rowData.disableStatus;
+}
 /*** RECRUITER DROPDOWN */
 populateRecruiters(rowData.assignedRecruiter);
-/*var recruiter = document.getElementById('recruiter_edit');
-
-var values="vasavi,kavitha";
-$.each(values.split(","), function(i,e){
-    $("#recruiter_edit option[text='" + e + "']").prop("selected", true);
-});
-for (var i = 0; i < recruiter.options.length; i++) {
-	
-	var op=recruiter.options[i].value;
-	var rowval=rowData.assignedRecruiter;
-	console.log(op.trim() +" : "+ rowval.trim());
-    if (op.trim() === rowval.trim()) {
-    	console.log('sel '+recruiter.options[i].value);
-    	recruiter.selectedIndex = [2,3];
-       
-        break;
-    }
-}*/
-
-//console.log($('#recruiter_edit').val());
 
 });	
 
