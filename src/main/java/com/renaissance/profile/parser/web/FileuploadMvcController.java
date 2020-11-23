@@ -239,6 +239,8 @@ public class FileuploadMvcController {
 	@RequestMapping(value = COPY_FILE, method = RequestMethod.POST)
 	public ResponseEntity<?> copySingleFile(@RequestParam("selFile") MultipartFile file, HttpServletRequest request) {
 		logger.info("File selected... {}", file);
+		File pdfFile=null;
+		String filenameWithoutX="";
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
@@ -281,8 +283,8 @@ public class FileuploadMvcController {
 			}
 
 			// Check file type. If not pdf, convert to pdf
-			String filenameWithoutX=FilenameUtils.removeExtension(file.getOriginalFilename());
-			File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+			 filenameWithoutX=FilenameUtils.removeExtension(file.getOriginalFilename());
+			 pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
 			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())&&!pdfFile.exists()) {
 				//FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
 				Thread.sleep(5000);
@@ -292,8 +294,9 @@ public class FileuploadMvcController {
 			logger.error("There is an issue in uploading  profile...{}",new Exception(e.getMessage()));
 			e.printStackTrace();
 		}
+		logger.info("File uploaded...{}", ProfileParserConstants.DEST_FOLDER + filenameWithoutX+".pdf");
 
-		return ResponseEntity.ok("Success");
+		return ResponseEntity.ok(ProfileParserConstants.DEST_FOLDER + filenameWithoutX+".pdf");
 
 	}
 
@@ -303,6 +306,91 @@ public class FileuploadMvcController {
 		logger.info("INVOKE SERVICE...");
 		return "redirect:/profileparser";
 		
+	}
+	@RequestMapping(value = UPLOAD_NEW_PROFILE, method = RequestMethod.POST)
+	public ResponseEntity<?> uploadNewProfile(@RequestParam("selFile") MultipartFile file, HttpServletRequest request) {
+		
+		String filePath="";
+		try {
+
+			// Get the file and save it somewhere
+			// byte[] bytes = file.getBytes();
+			File convFile = null;
+			boolean isChrome = false;
+
+			logger.info("uploadNewProfile: Selected File original file name::{} ", file.getOriginalFilename());
+
+			String fileName = null;
+			
+			// Copy file from source o destination(root dir). Since it is from IE, it will
+			// have full path
+			if (file.getOriginalFilename().contains(":")) {// From IE
+				fileName = file.getOriginalFilename();
+				convFile = new File(fileName);// Converts multi part file to file
+
+				Path src = Paths.get(file.getOriginalFilename());
+				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
+						+ src.getFileName();
+				Path dest = Paths.get(fileName);
+				try {
+					Files.copy(src.toFile(), dest.toFile());
+				} catch (IOException e) {
+					logger.error("error in copying file,{},{},{}", src, dest,new Exception(e.getMessage()));
+					e.printStackTrace();
+				}
+			} else {
+				// Since it is not from IE, it will not have path. It only have file name.
+
+				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
+						+ file.getOriginalFilename(); // chrome convFile
+
+				isChrome = true;
+				convFile = new File(fileName);
+				file.transferTo(convFile);// Converts multi part file to file
+
+			}
+			//profileParserService.parseMetaData(fileName);
+			// Parse the given file and populates the data to DTO
+			
+			//logger.info("CANDIDATE DTO , {} ", candidateDto.toString());
+			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())) {
+				String filenameWithoutX=FilenameUtils.removeExtension(convFile.getName());
+				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+				//Thread.sleep(5000);
+				//logger.info("FILE EXISTS...."+pdfFile.exists());
+				if(!pdfFile.exists()) {
+				FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
+				//logger.info("File before redirecting..{},{}", convertedFile.getFilepath(),convertedFile.getConvertedFile().getName());
+
+				
+				filePath=ProfileParserConstants.DEST_FOLDER + convertedFile.getConvertedFile().getName();
+				}else {
+					
+					filePath=ProfileParserConstants.DEST_FOLDER + pdfFile.getName();
+				}
+				
+				
+			} else {
+				
+				if (!isChrome) {
+					logger.info("File for IE render.. {}", file.getOriginalFilename());
+					
+					filePath=file.getOriginalFilename();
+				} else {
+					logger.info("FuploadNewProfile: ile for chrome render.. {}", file.getOriginalFilename());
+					filePath=ProfileParserConstants.DEST_FOLDER + file.getOriginalFilename();
+
+				}
+
+			}
+		} catch (Exception e) {
+			logger.error("There is an issue in uploading  profile..{}",new Exception(e.getMessage()));
+			e.printStackTrace();
+		}
+
+		logger.info("FuploadNewProfile: filePath returned.. {}", filePath);
+		return ResponseEntity.ok(filePath);
+
 	}
 	
 }

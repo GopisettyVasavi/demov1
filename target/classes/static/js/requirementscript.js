@@ -1,5 +1,10 @@
-function initialize(){
+$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 	
+	document.getElementById('client').focus();
+	document.getElementById("vendorname_s").focus();
+    //alert('TAB CHANGED');
+});
+function initialize(){
 	retrieveClients();
 	retrieveRecruiters();
 }

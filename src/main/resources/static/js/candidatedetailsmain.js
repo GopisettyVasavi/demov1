@@ -13,6 +13,7 @@ function initialize(){
 //alert($("#lastupdateddatetime_dtl").val());
 	document.getElementById("firstName_dtl").focus();
 	disableRefresh();
+	console.log(document.getElementById("filePath_dtl").value)
 	if(document.getElementById("filePath_dtl").value!=null){
 		//alert(document.getElementById("embedId").src);
 		document.getElementById("objid_dtl").src=document.getElementById("filePath_dtl").value;
@@ -112,7 +113,12 @@ alert(d);*/
 		candidateDto["socialMediaLink"] = $("#socialMediaLink_dtl").val();
 		candidateDto["nationality"] = $("#nationality_dtl").val();
 		candidateDto["version"] = $("#version_dtl").val();
+		if(profile==""){
 		candidateDto["filePath"] = $("#filePath_dtl").val();
+		}
+		else{
+			candidateDto["filePath"] = profile;
+		}
 		candidateDto["additionalNotes"] = $("#additionalNotes_dtl").val();
 		candidateDto["assignedToEmployeeId"] = $("#assignedToEmployeeId_dtl").val();
 		candidateDto["assignedToEmployeeName"] = $("#assignedToEmployeeName_dtl")
@@ -213,4 +219,38 @@ alert(d);*/
 
 	}
 }
+var profile="";
 
+function copyFile(){
+	//var file=document.getElementById("selectFileId").value.replace(/C:\\fakepath\\/i, '');
+	var file=selectFileId.files[0];
+	 var formData = new FormData();
+	 formData.append("selFile", file);
+	 var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "/uploadNewProfile");
+	    xhr.onload = function() {
+	       /* console.log(xhr.responseText);
+	        alert(xhr.responseText);*/
+	        profile=xhr.responseText;
+	       // var response = JSON.parse(xhr.responseText);
+	      if(xhr.status == 200) {
+	    	  document.getElementById("objid_dtl").src=xhr.responseText;
+	  		document.getElementById("objid_dtl").data=xhr.responseText;
+	  		
+	  		var object = document.getElementById("objid_dtl");
+	  		  object.setAttribute('data', xhr.responseText);
+	  		  object.setAttribute('src', xhr.responseText);
+
+	  		  var clone = object.cloneNode(true);
+	  		  var parent = object.parentNode;
+
+	  		  parent.removeChild(object );
+	  		  parent.appendChild(clone );
+	           // alert("Success");
+	        } else {
+	          // alert("error");
+	        }
+	    }
+//alert(xhr.responseText);
+	    xhr.send(formData);
+}

@@ -58,13 +58,24 @@
 							<div th:switch="${profile}">
 								<h2 th:case="null"></h2>
 								<div th:case="*">
+								
 									<div class="col-lg-6">
+									
+																				<div class="form-group" id="pipl_div1" >
+																					<label for="name" id="pipl_lbl1" style="font-weight:bold">Upload New Profile?</label>	
+																		<input type="file"
+											class="form-control" name="file" accept=".doc,.docx,.pdf,"
+											id="selectFileId" oninput="copyFile()">
+											
+																		</div>
+																		
 										<div class="pdf-container">
 											<object th:src="${profile.filePath}" height="1126px" width="500px" id="objid_dtl">
 												<embed th:src="${profile.filePath}"  id="embedid_dtl"/>
 											</object>
 										</div>
 									</div>
+									
 								</div>
 							</div>
 							<div class="col-lg-6">

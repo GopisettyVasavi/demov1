@@ -35,6 +35,7 @@ public class APIConstants {
 	public static final String UPLOAD_STATUS="/uploadStatus";
 	public static final String CREATE_PROFILE="/createProfile";
 	public static final String COPY_FILE="/copyFile";
+	public static final String UPLOAD_NEW_PROFILE="/uploadNewProfile";
 	public static final String LOGIN="/login";
 	public static final String INDEX="/index";
 	public static final String INDEX_LOAD="/indexload";

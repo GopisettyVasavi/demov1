@@ -437,7 +437,7 @@ function resetSearch() {
 	// $('#searchresults_div').show();
 	$('#candidates_div').hide();
 	$('#mapcandidate_div').hide();
-
+	document.getElementById('candidateName_s').focus();
 	// console.log("reset")
 
 }
