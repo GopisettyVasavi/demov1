@@ -3,6 +3,8 @@ package com.renaissance.profile.parser.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,7 @@ import com.renaissance.profile.parser.util.ProfileParserUtils;
  */
 @Service
 public class UserService {
+	private static final Logger logger=LoggerFactory.getLogger(UserService.class);
 
 	@Autowired
 	EmployeeRepository employeeRepository;
@@ -27,9 +30,15 @@ public class UserService {
 
 		// do stuffs
 		// dump user data
-		EmployeeEntity employee = employeeRepository.getEmployeeDetails(loginForm.getUsername(),
+		logger.info("Inside User Service...,{}",loginForm);
+		logger.info("Inside employeeRepository...,{}",employeeRepository);
+		EmployeeEntity employee =null;
+		try {
+		 employee = employeeRepository.getEmployeeDetails(loginForm.getUsername(),
 				loginForm.getPassword());
-
+		}catch(Exception e) {
+			logger.error("Error occured while invoking employee service...{},",e.getMessage());
+		}
 		if (!ProfileParserUtils.isObjectEmpty(employee)) {// user exist.
 			User user = new User(employee.getProfileParserAppLogin(), employee.getEmail(), employee.getEmployeeId(),
 					employee.getEmployeeName(), employee.getEmployeeRole());

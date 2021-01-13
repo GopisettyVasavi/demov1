@@ -67,7 +67,7 @@ function visaSelection() {
 
 function updateProfile() {
 	//alert( $("#validUpto_dtl").val());
-	var url = "/createProfile";
+	var url = "./createProfile";
 	event.preventDefault();
 	 $('#personal_feedback').html("");
 	//alert($("#lastupdateddatetime_dtl").val());
@@ -145,7 +145,7 @@ alert(d);*/
 		$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url : "/createProfile",
+			 url: "./createProfile",
 			data : JSON.stringify(candidateDto),
 			dataType : 'json',
 			cache : false,
@@ -211,7 +211,7 @@ alert(d);*/
 
 				alert("Error:: " + e.responseText);
 				if (e.responseText.includes('Session Expired')) {
-					window.location = '/'
+					window.location = './'
 				}
 
 			}
@@ -227,7 +227,7 @@ function copyFile(){
 	 var formData = new FormData();
 	 formData.append("selFile", file);
 	 var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "/uploadNewProfile");
+	    xhr.open("POST", "./uploadNewProfile");
 	    xhr.onload = function() {
 	       /* console.log(xhr.responseText);
 	        alert(xhr.responseText);*/

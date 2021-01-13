@@ -6,19 +6,23 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 function checkFileSelected(event) {
 
 	$('#file_feedback').html("");
+	$("#file_feedback").hide();
 	$('#divUploadSuccess').html("");
+	$("#divUploadSuccess").hide();
 	var selectedFile = document.getElementById("selectFileId").value;
 	if (null == selectedFile || selectedFile == '') {
 		event.preventDefault();
 		document.getElementById("file_feedback").style.color = "red";
-
+		$("#file_feedback").show();
   	  $('#file_feedback').html("Please select a profile to upload.");
 		//alert("Please select a profile to upload.");
 		return false;
 	} else{
 		$('#divUploadSuccess').html("");
-		
+		$('#file_feedback').html("");
 		 $("#singlefileupload_btn").val("Processing ...").button("refresh");
+		 $("#file_feedback").show();
+		 $("#divUploadSuccess").show();
 		return true;
 	}
 		
@@ -29,7 +33,7 @@ function copyFile(){
 	 var formData = new FormData();
 	 formData.append("selFile", file);
 	 var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "/copyFile");
+	    xhr.open("POST", "./copyFile");
 	    xhr.onload = function() {
 	        console.log(xhr.responseText);
 	       // var response = JSON.parse(xhr.responseText);
@@ -43,7 +47,7 @@ function copyFile(){
 	    xhr.send(formData);
 }
 function createProfile() {
-	var url = "/createProfile";
+	var url = "./createProfile";
 	event.preventDefault();
 	$('#personal_feedback').html("");
 	var firstName = document.getElementById("firstName").value;
@@ -114,7 +118,7 @@ alert(d);*/
 		$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url : "/createProfile",
+			url : "./createProfile",
 			data : JSON.stringify(candidateDto),
 			dataType : 'json',
 			cache : false,
@@ -179,7 +183,7 @@ alert(d);*/
 
 				alert("Error:: " + e.responseText);
 				if (e.responseText.includes('Session Expired')) {
-					window.location = '/'
+					window.location = './'
 				}
 
 			}
@@ -195,7 +199,7 @@ function cleardata() {
 			.ajax({
 				type : "GET",
 				contentType : "application/json",
-				url : "/logoutuser",
+				url : "./logoutuser",
 				cache : false,
 				timeout : 600000,
 				success : function(data) {
@@ -265,7 +269,7 @@ function renderfile(){
 
 function doesFileExist(urlToFile)
 {
-    var xhr = new XMLHttpRequest();
+    /*var xhr = new XMLHttpRequest();
     xhr.open('HEAD', urlToFile, false);
     xhr.send();
    
@@ -276,7 +280,8 @@ function doesFileExist(urlToFile)
     } else {
         console.log("File exists");
         return true;
-    }
+    }*/
+	return true;
 }
 
 
@@ -308,7 +313,7 @@ function copySingleFile(file){
 	 var formData = new FormData();
 	 formData.append("selFile", file);
 	 var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "/copyFile");
+	    xhr.open("POST", "./copyFile");
 	    xhr.onload = function() {
 	        console.log(xhr.responseText);
 	       // alert(xhr.responseText);
@@ -344,7 +349,7 @@ function uploadSingleFile(file){
 	 var formData = new FormData();
 	 formData.append("file", file);
 	 var xhr = new XMLHttpRequest();
-	    xhr.open("POST", "/bulkupload");
+	    xhr.open("POST", "./bulkupload");
 	    xhr.onload = function() {
 	        console.log(xhr.responseText);
 	       // alert(xhr.responseText);
@@ -418,7 +423,7 @@ function uploadFiles(files) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/bulkupload");
+    xhr.open("POST", "./bulkupload");
 
     xhr.onload = function() {
         console.log(xhr.responseText);
@@ -432,7 +437,7 @@ function uploadFiles(files) {
             for(var i = 0; i < response.successProfiles.length; i++) {
                // content += "<p>" + response.successProfiles[i].fileName+ "</p>";
             	console.log("Response..:"+response.successProfiles[i].candidateId);
-                content  +="<p><u><a href='/candidatedetails/" + response.successProfiles[i].candidateId + "' target='_blank'>" 
+                content  +="<p><u><a href='./candidatedetails/" + response.successProfiles[i].candidateId + "' target='_blank'>" 
                 + response.successProfiles[i].fileName + "</a></u></p>";
             }
             multipleFileUploadSuccess.innerHTML = content;
@@ -451,7 +456,7 @@ function uploadFiles(files) {
             	
             	console.log("Response..:"+candidateDto );
             	//console.log("Response type..:"+typeof (candidate));
-            	errorcontent+="<p><u><a href='/failedcandidatedetails/" + response.errorProfiles[i].fileName + "' target='_blank'>" 
+            	errorcontent+="<p><u><a href='./failedcandidatedetails/" + response.errorProfiles[i].fileName + "' target='_blank'>" 
             	+ response.errorProfiles[i].fileName + "</a></u></p>";
             }
             multipleFileUploadError.innerHTML = errorcontent;

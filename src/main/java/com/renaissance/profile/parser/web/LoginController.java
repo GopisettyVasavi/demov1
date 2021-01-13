@@ -35,6 +35,7 @@ public class LoginController {
 	
 	 @GetMapping("/")
 	    public String index() {
+		 logger.info("Login invoked...");
 	        return "login";
 	    }
 /**
@@ -48,7 +49,7 @@ public class LoginController {
 		@PostMapping(LOGIN)
 	    public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody LoginForm loginForm, Errors errors, RedirectAttributes redirectAttributes, HttpServletRequest request) {
 			    AjaxResponseBody result = new AjaxResponseBody();
-
+			    logger.info("Inside Login user entered values...,{}",loginForm.getUsername());
 	        //If error, just return a 400 bad request, along with the error message
 	        if (errors.hasErrors()) {
 
@@ -58,7 +59,7 @@ public class LoginController {
 	            return ResponseEntity.badRequest().body(result);
 
 	        }
-
+	       
 	        User user = userService.login(loginForm);
 	        if (null==user) {
 	            result.setMsg("No user found!");
@@ -81,11 +82,10 @@ public class LoginController {
 		
 		@GetMapping(INDEX)
 	    public String indexForm(HttpServletRequest request) {
-			if (!ProfileParserUtils.isSessionAlive(request)) {
-				logger.info("null session");
-				return "redirect:/";
-			}
-			
+		/*
+		 * if (!ProfileParserUtils.isSessionAlive(request)) {
+		 * logger.info("null session"); return "redirect:/"; }
+		 */
 	        return "index";
 	    }
 		

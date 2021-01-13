@@ -7,11 +7,11 @@
 <title>Client Company</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/renaissance/img/renfavicon.ico">
 <!-- CSS here -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
-<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="./css/starter-template.css" rel="stylesheet"	media="screen" />
+<link href="./css/datatables.min.css" rel="stylesheet" media="screen" />
 <link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
@@ -42,6 +42,11 @@
     padding-bottom: 6px;
 }
 </style>
+
+<style>
+   tr.selected {background-color: #007bff;}
+ </style>
+ 
 </head>
 
 <!-- header-start -->
@@ -51,11 +56,11 @@
           
 			<div class="logo">
 				<a href="https://reninfo.com.au/"> <img
-					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+					src="img/Renaissance_logo.png" alt="" height="30px" width="150px">
 
 				</a>
-				<a   href="#" onclick="window.location = '/index' ">Back>></a>
-				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				<a   href="#" onclick="window.location = './index' ">Back>></a>
+				<a  style="text-align: right;padding-left: 1550px;" href="logout" onclick="cleardata()">Logout</a>
 				
 				
 				
@@ -205,7 +210,7 @@
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
 
 
-<script src="/js/fixedHeadermin.js" ></script>
+<script src="js/fixedHeadermin.js" ></script>
 	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 	 <script src="js/vendor/sweetalert2.js"></script>
        
@@ -242,7 +247,7 @@
 	
 	function goBack(){
 		//alert('test');
-		window.location='/index'
+		window.location='./index'
 
 	}
 	
@@ -329,7 +334,7 @@ if(isValid){
 			$.ajax({
 						type : "POST",
 						contentType : "application/json",
-						url : "/updateclientcompanies",
+						url : "./updateclientcompanies",
 						data : JSON.stringify(clientCompanyDTO),
 						dataType : 'json',
 						cache : false,
@@ -358,7 +363,7 @@ if(isValid){
 						$.ajax({
 						type : "GET",
 						contentType : "application/json",
-						url : "/getclientcompanies",
+						url : "./getclientcompanies",
 						dataType : 'json',
 						cache : false,
 						timeout : 600000,
@@ -456,6 +461,8 @@ if(isValid){
 					document.getElementById("companyname").focus();
 					$('#feedback').html("");
 					var table = $('#company_tbl').DataTable();
+					$('#company_tbl tbody > tr').removeClass('selected');
+					 $(this).addClass('selected');
 					var rowData = table.row(this).data();
 					// alert('called'+rowData.contractorId);
 					$("#addlookup_div").show();

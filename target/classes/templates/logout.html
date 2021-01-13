@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
- <title>Renaissance</title>
+<title>Renaissance</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/renaissance/img/renfavicon.ico">
 <!-- CSS here -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -22,30 +22,36 @@
 <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <!-- header-start -->
-	<header>
-		<div class="col-xl-3 col-lg-2">
+    <header>
+            <div class="header-area ">
+            <div class="col-xl-3 col-lg-2">
 			<div class="logo">
 				<a href="https://reninfo.com.au/"> <img
-					src="/img/Renaissance_logo.png" alt="" height="50px" width="150px">
+					src="img/Renaissance_logo.png" alt="" height="30px" width="150px">
 
 				</a>
+				
+				<a  style="text-align: right;padding-left: 1550px;" href="logout" onclick="cleardata()">Logout</a>
 			</div>
 		</div>
-
-</header>
-	<!-- header-end -->
-	 <div class="bradcam_area bradcam_bg_1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="bradcam_text">
-                                <h3>Logout</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
+        </header>
+        <!-- header-end -->
+	<!-- bradcam_area  -->
+	<div class="bradcam_area bradcam_bg_1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="bradcam_text">
+						<h3>Logout</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <body >
 
 <div class="container" style="min-height: 500px">
@@ -72,7 +78,7 @@
 
 <script type="text/javascript">
 function relogin(){
-	window.location='/'
+	window.location='./'
 	
 }
 </script>

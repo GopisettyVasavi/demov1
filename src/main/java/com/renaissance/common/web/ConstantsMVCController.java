@@ -17,13 +17,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
+import com.renaissance.requirement.model.UserBean;
+import com.renaissance.requirement.social.providers.LinkedInProvider;
 
 @Controller
 public class ConstantsMVCController {
@@ -31,6 +36,9 @@ public class ConstantsMVCController {
 
 	@Autowired
 	ConstantsService constantsService;
+	
+	@Autowired 
+	LinkedInProvider linkedInProvider;
 
 	@GetMapping(CONSTANTS_DEF)
 	public String indexForm(HttpServletRequest request) {
@@ -81,6 +89,13 @@ public class ConstantsMVCController {
 		}
 
 		return new ResponseEntity<>(constantsList, HttpStatus.OK);
+	}
+	
+	//@RequestMapping(value = "/linkedin", method = RequestMethod.GET)
+	@GetMapping("/linkedin")
+	public String helloLinkedIn(Model model) {
+		logger.info("Linked in method invoked");
+		return linkedInProvider.getLinkedInUserData(model, new UserBean());
 	}
 
 }

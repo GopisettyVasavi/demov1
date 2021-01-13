@@ -65,17 +65,19 @@ $(document).on("click","#paginatedTable tbody tr", function (e)
 		{
 	var table = $('#paginatedTable').DataTable();
 		   var rowData = table.row( this ).data();
+		   $('#paginatedTable tbody > tr').removeClass('selected');
+			 $(this).addClass('selected');
 		   $.ajax({
 		        type: "GET",
 		        contentType: "application/json",
-		        url: "/candidatedetails",
+		        url: "./candidatedetails",
 		        cache: false,
 		        timeout: 600000,
 		        success: function (data) {
 		        	
 		           //alert("pageloaded"+rowData.candidateId);
 		          // alert("page loaded.."+data[0]);
-		          var win = window.open("/candidatedetails/"+rowData.candidateId,"candidatedetails","status=1,toolbar=0");
+		          var win = window.open("./candidatedetails/"+rowData.candidateId,"candidatedetails","status=1,toolbar=0");
 		        	// var win = window.open("/profileparser");
 		           win.focus();
 		            
@@ -117,7 +119,7 @@ function clickonsearch(){
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "/searchcandidates",
+        url: "./searchcandidates",
         data: JSON.stringify(searchForm),
         dataType: 'json',
         cache: false,

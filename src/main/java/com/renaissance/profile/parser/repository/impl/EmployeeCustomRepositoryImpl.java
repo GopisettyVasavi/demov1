@@ -9,7 +9,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import com.renaissance.profile.parser.model.CandidateEducationEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.renaissance.profile.parser.model.EmployeeEntity;
 import com.renaissance.profile.parser.repository.EmployeeCustomRepository;
 import com.renaissance.profile.parser.util.ProfileParserUtils;
@@ -21,11 +23,14 @@ import com.renaissance.profile.parser.util.ProfileParserUtils;
 public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
+	private static final Logger logger=LoggerFactory.getLogger(EmployeeCustomRepositoryImpl.class);
+
 	/**
 	 * This method will fetch employee details for the logged in user name and password.
 	 */
-	public EmployeeEntity getEmployeeDetails(String loggedInUserName, String loginPwd) {
+	public EmployeeEntity getEmployeeDetails(String loggedInUserName, String loginPwd) throws Exception {
 		
+		logger.info("Inside entity...{}",loggedInUserName);
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<EmployeeEntity> query = cb.createQuery(EmployeeEntity.class);
 		Root<EmployeeEntity> employeeEntity = query.from(EmployeeEntity.class);

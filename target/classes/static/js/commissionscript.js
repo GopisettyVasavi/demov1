@@ -43,7 +43,7 @@ function createCommission(){
 		$.ajax({
 			type : "GET",
 			contentType : "application/json",
-			url : "/createcommission/"+monthyear,
+			 url: "./createcommission/"+monthyear,
 			cache : false,
 			timeout : 600000,
 			success : function(data) {
@@ -260,7 +260,7 @@ function invokeMarginCalc(commissionList){
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/calculatecommission",
+		 url: "./calculatecommission",
 		data : JSON.stringify(commissionList),
 		dataType : 'json',
 		cache : false,
@@ -535,7 +535,7 @@ function getSuperPercent(){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/superPercent",
+		 url: "./superPercent",
 		cache : false,
 		timeout : 600000,  
 		success : function(data) {
@@ -631,7 +631,7 @@ var commissionList=[];
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/savecommission",
+		 url: "./savecommission",
 		data : JSON.stringify(commissionList),
 		dataType : 'json',
 		cache : false,
@@ -751,7 +751,7 @@ function save(commissionList){
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/finalsavecommission",
+		 url: "./finalsavecommission",
 		data : JSON.stringify(finalCommissionsDTO),
 		dataType : 'json',
 		cache : false,
@@ -795,7 +795,7 @@ function searchcommissions(){
 		$.ajax({
 					type : "POST",
 					contentType : "application/json",
-					url : "/searchcommissions",
+					 url: "./searchcommissions",
 					data : JSON.stringify(searchCommissionForm),
 					dataType : 'json',
 					cache : false,
@@ -956,12 +956,14 @@ $(document).on(
 
 			var table = $('#commissionsearch_tbl').DataTable();
 			var rowData = table.row(this).data();
+			$('#commissionsearch_tbl tbody > tr').removeClass('selected');
+			 $(this).addClass('selected');
 			// alert('called'+rowData.contractorId);
 			
 			$.ajax({
 				type : "POST",
 				contentType : "application/json",
-				url : "/commissiondetails/"+rowData.monthYear+"/"+ rowData.recruiterName,
+				 url: "./commissiondetails/"+rowData.monthYear+"/"+ rowData.recruiterName,
 				dataType : 'json',
 				cache : false,
 				timeout : 600000,

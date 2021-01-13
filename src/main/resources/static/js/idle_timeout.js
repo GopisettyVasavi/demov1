@@ -19,7 +19,7 @@ console.log('session expired');
 alert('Session has expired. Please login again.');
 clearSessionExpireTimeout();
 //document.location.href = "login.html";
-window.location='/'
+window.location='./'
 
 }
 
@@ -30,5 +30,5 @@ function clearSessionExpireTimeout () {
 }
 
 function backToIndex() {
-	window.location = '/index'
+	window.location = './index'
 }

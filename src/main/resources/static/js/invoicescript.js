@@ -44,7 +44,7 @@ function createinvoice(){
 		$.ajax({
 			type : "GET",
 			contentType : "application/json",
-			url : "/createinvoice/"+monthyear,
+			url : "./createinvoice/"+monthyear,
 			cache : false,
 			timeout : 600000,
 			success : function(data) {
@@ -476,7 +476,7 @@ var invoiceList=populateList();
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/saveinvoice",
+		url : "./saveinvoice",
 		data : JSON.stringify(invoiceList),
 		dataType : 'json',
 		cache : false,
@@ -605,7 +605,7 @@ function generateInvoice(){
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/generateinvoice/"+  filePath,
+		url : "./generateinvoice/"+  filePath,
 		data : JSON.stringify(invoiceList),
 		dataType : 'json',
 		cache : false,
@@ -642,7 +642,7 @@ function retrieveClients(){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/getclientcompanies",
+		url : "./getclientcompanies",
 		cache : false,
 		timeout : 600000,
 		success : function(list) {
@@ -721,7 +721,7 @@ function searchinvoices(){
 		$.ajax({
 					type : "POST",
 					contentType : "application/json",
-					url : "/searchinvoices",
+					url : "./searchinvoices",
 					data : JSON.stringify(invoiceSearchForm),
 					dataType : 'json',
 					cache : false,
@@ -902,6 +902,9 @@ $(document).on(
 			//$('#feedback').html("");
 			var table = $('#invoicesearchtbl').DataTable();
 			var rowData = table.row(this).data();
+			$('#invoicesearchtbl tbody > tr').removeClass('selected');
+			 $(this).addClass('selected');
+			
 			// alert('called'+rowData.contractorId);
 			$("#editdetails_div").show();
 			$("#invoiceNodet").val(rowData.invoiceNo);
@@ -925,7 +928,7 @@ function populateClientList(clientCompName){
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
-	        url: "/getclientcompanies",
+	        url: "./getclientcompanies",
 	        cache: false,
 	        timeout: 600000,
 	        success: function (list) {
@@ -996,7 +999,7 @@ function editInvoice(){
 			type : "POST",
 			contentType : "application/json",
 
-			url : "/editinvoice",
+			url : "./editinvoice",
 			data : JSON.stringify(invoiceDTO),
 			dataType : 'json',
 			cache : false,

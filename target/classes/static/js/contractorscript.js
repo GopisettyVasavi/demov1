@@ -12,7 +12,7 @@ function initialize() {
 	$.ajax({
 				type : "GET",
 				contentType : "application/json",
-				url : "/recruiterList",
+				 url: "./recruiterList",
 				cache : false,
 				timeout : 600000,
 				success : function(list) {
@@ -57,7 +57,7 @@ function retrieveClients(){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/getclientcompanies",
+		 url: "./getclientcompanies",
 		cache : false,
 		timeout : 600000,
 		success : function(list) {
@@ -600,7 +600,7 @@ function clickonsave(mode) {
 				type : "POST",
 				contentType : "application/json",
 
-				url : "/createContractor",
+				 url: "./createContractor",
 				data : JSON.stringify(contractorDetailsDTO),
 				dataType : 'json',
 				cache : false,
@@ -644,7 +644,7 @@ function clickonsave(mode) {
 				type : "POST",
 				contentType : "application/json",
 
-				url : "/updateContractor",
+				 url: "./updateContractor",
 				data : JSON.stringify(contractorDetailsDTO),
 				dataType : 'json',
 				cache : false,
@@ -680,7 +680,7 @@ function getFilePath(file, variable) {
 	var formData = new FormData();
 	formData.append("uploadedCertificate", file.files[0]);
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "/copyCertificate");
+	xhr.open("POST", "./copyCertificate");
 	xhr.onload = function() {
 		console.log(xhr.responseText);
 		if (variable == "gstCert") {
@@ -849,6 +849,8 @@ function contractorSearch() {
 		document.getElementById("search_feedback").style.color = "red";
 		$('#search_feedback').html(
 				"Please enter at least one value to search contractors.");
+		$("#searchresults_div").hide();
+		$("#contractorTable").hide();
 		// alert("Please enter at least one value to search profiles.");
 	} else {
 		var contractorSearchForm = {}
@@ -877,7 +879,7 @@ function contractorSearch() {
 				.ajax({
 					type : "POST",
 					contentType : "application/json",
-					url : "/searchContractors",
+					 url: "./searchContractors",
 					data : JSON.stringify(contractorSearchForm),
 					dataType : 'json',
 					cache : false,
@@ -1000,7 +1002,9 @@ function resetSearch() {
 
 	$("#searchForm")[0].reset();
 
-	$("#workLocationState_s").val('none');
+	//$("#workLocationState_s").val('none');
+//	$("#abnholder_s").val('none');
+	
 	$("#contractorTable").hide();
 	$("#searchresults_div").hide();
 	event.preventDefault();
@@ -1015,16 +1019,18 @@ $(document).on(
 
 			var table = $('#contractorTable').DataTable();
 			var rowData = table.row(this).data();
+			$('#contractorTable tbody > tr').removeClass('selected');
+			 $(this).addClass('selected');
 			// alert('called'+rowData.contractorId);
 			$.ajax({
 				type : "GET",
 				contentType : "application/json",
-				url : "/contractordetails",
+				 url: "./contractordetails",
 				cache : false,
 				timeout : 600000,
 				success : function(data) {
 					
-					var win = window.open("/contractordetails/"
+					var win = window.open("./contractordetails/"
 							+ rowData.contractorId, "mywindow","status=1,toolbar=0");
 				},
 				error : function(e) {
@@ -1054,7 +1060,7 @@ function calculateMargin(){
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : "/calculatemargin",
+		 url: "./calculatemargin",
 		data : JSON.stringify(marginDTO),
 		dataType : 'json',
 		cache : false,
@@ -1108,7 +1114,7 @@ function retrievePayrollTax(){
 		$.ajax({
 			type : "GET",
 			contentType : "application/json",
-			url : "/payrolltax/"+$("#workLocationState").val(),
+			 url: "./payrolltax/"+$("#workLocationState").val(),
 			cache : false,
 			timeout : 600000,
 			success : function(data) {
@@ -1146,7 +1152,7 @@ function retrieveInsurancePercent(){
 		$.ajax({
 			type : "GET",
 			contentType : "application/json",
-			url : "/insurancePercent",
+			 url: "./insurancePercent",
 			cache : false,
 			timeout : 600000,
 			success : function(data) {

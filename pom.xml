@@ -13,6 +13,7 @@
 	<artifactId>profileparser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -27,11 +28,30 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			 <exclusions>
+        <exclusion>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </exclusion>
+    </exclusions>
 		</dependency>
+		<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-jdbc</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+</dependency>
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+         <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+    </dependency>
         <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-test</artifactId>
@@ -266,6 +286,30 @@
 
         
 <!-- DOCx4J END -->
+<!-- https://mvnrepository.com/artifact/org.springframework.social/spring-social-core -->
+<dependency>
+    <groupId>org.springframework.social</groupId>
+    <artifactId>spring-social-core</artifactId>
+    <version>1.1.6.RELEASE</version>
+</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.social/spring-social-config -->
+<dependency>
+    <groupId>org.springframework.social</groupId>
+    <artifactId>spring-social-config</artifactId>
+    <version>1.1.6.RELEASE</version>
+</dependency>
+
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.social/spring-social-linkedin -->
+<dependency>
+    <groupId>org.springframework.social</groupId>
+    <artifactId>spring-social-linkedin</artifactId>
+    <version>1.0.2.RELEASE</version>
+</dependency>
+
+		
 <!-- https://mvnrepository.com/artifact/pl.jsolve/templ4docx -->
 <dependency>
     <groupId>pl.jsolve</groupId>
@@ -287,4 +331,32 @@
 </dependency>
 
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>alfresco-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	 <build>
+        <finalName>renaissance</finalName>
+        <plugins>
+
+            <!-- Package as an executable jar/war -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+
+        </plugins>
+
+    </build>
 </project>

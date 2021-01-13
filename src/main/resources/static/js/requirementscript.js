@@ -13,7 +13,7 @@ function retrieveClients(){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/getclientcompanies",
+		url : "./getclientcompanies",
 		cache : false,
 		timeout : 600000,
 		success : function(list) {
@@ -52,7 +52,7 @@ function retrieveRecruiters(){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/recruiterList",
+		url : "./recruiterList",
 		cache : false,
 		timeout : 600000,
 		success : function(list) {
@@ -223,7 +223,7 @@ function createrequirement(){
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/createRequirement",
+		url : "./createRequirement",
 		data : JSON.stringify(RequirementDTO),
 		dataType : 'json',
 		cache : false,
@@ -259,7 +259,9 @@ function resetSearch(){
 	$("#searchresults_div").hide();
 	event.preventDefault();
 }
-
+function resetEdit(){
+	event.preventDefault();
+}
 function requirementSearch(){
 	$('#search_feedback').html("");
 	$("#editdetails_div").hide();
@@ -307,7 +309,7 @@ function requirementSearch(){
 		$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url : "/searchRequirement",
+			url : "./searchRequirement",
 			data : JSON.stringify(RequirementDTO),
 			dataType : 'json',
 			cache : false,
@@ -628,7 +630,7 @@ function updaterequirement(){
 		type : "POST",
 		contentType : "application/json",
 
-		url : "/updateRequirement",
+		url : "./updateRequirement",
 		data : JSON.stringify(RequirementDTO),
 		dataType : 'json',
 		cache : false,
@@ -664,7 +666,7 @@ function populateRecruiters(selRec){
 	$.ajax({
 		type : "GET",
 		contentType : "application/json",
-		url : "/recruiterList",
+		url : "./recruiterList",
 		cache : false,
 		timeout : 600000,
 		success : function(list) {

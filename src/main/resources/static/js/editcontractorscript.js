@@ -120,7 +120,7 @@ disableRefresh();
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : "/calculatemargin",
+		 url: "./calculatemargin",
 		data : JSON.stringify(marginDTO),
 		dataType : 'json',
 		cache : false,
@@ -174,7 +174,7 @@ function populateRecruiterList(){
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
-	        url: "/recruiterList",
+	        url: "./recruiterList",
 	        cache: false,
 	        timeout: 600000,
 	        success: function (list) {
@@ -217,7 +217,7 @@ function populateClientList(){
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
-	        url: "/getclientcompanies",
+	        url: "./getclientcompanies",
 	        cache: false,
 	        timeout: 600000,
 	        success: function (list) {
@@ -456,13 +456,13 @@ function bankHistoryCheck(){
 	  event.preventDefault();
 	 var contractorId= $("#contractorId").val();
 	 
-	 var url="/bankhistory/"+contractorId;
+	 var url="./bankhistory/"+contractorId;
 	 
 	// alert("ID;;; "+contractorId+" "+url);
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/bankhistory/"+contractorId,
+			 url: "./bankhistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,
@@ -525,7 +525,7 @@ $('#sa_feedback').html("");
   $.ajax({
 		type : "POST",
 		contentType : "application/json",		
-		url : "/sahistory/"+contractorId,
+		 url: "./sahistory/"+contractorId,
 		dataType : 'json',
 		cache : false,
 		timeout : 600000,
@@ -589,7 +589,7 @@ function abnHistoryCheck(){
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/abnhistory/"+contractorId,
+			 url: "./abnhistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,
@@ -655,7 +655,7 @@ function abnbankHistoryCheck(){
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/bankhistory/"+contractorId,
+			 url: "./bankhistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,
@@ -715,7 +715,7 @@ function tfnHistoryCheck(){
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/tfnhistory/"+contractorId,
+			 url: "./tfnhistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,
@@ -780,7 +780,7 @@ function empHistoryCheck(){
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/emphistory/"+contractorId,
+			 url: "./emphistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,
@@ -852,7 +852,7 @@ function rateHistoryCheck(){
 	  $.ajax({
 			type : "POST",
 			contentType : "application/json",		
-			url : "/ratehistory/"+contractorId,
+			 url: "./ratehistory/"+contractorId,
 			dataType : 'json',
 			cache : false,
 			timeout : 600000,

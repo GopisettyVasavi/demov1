@@ -7,7 +7,7 @@
 <title>Renaissance</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/renaissance/img/renfavicon.ico">
 <!-- CSS here -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -29,11 +29,11 @@
             <div class="col-xl-3 col-lg-2">
 			<div class="logo">
 				<a href="https://reninfo.com.au/"> <img
-					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+					src="img/Renaissance_logo.png" alt="" height="30px" width="150px">
 
 				</a>
 				
-				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				<a  style="text-align: right;padding-left: 1550px;" href="logout" onclick="cleardata()">Logout</a>
 			</div>
 		</div>
                
@@ -249,17 +249,17 @@ function initialize(){
 	 $.ajax({
 	        type: "GET",
 	        contentType: "application/json",
-	        url: "/indexload",
+	        url: "./indexload",
 	         cache: false,
 	        timeout: 600000,
 	        success: function (data) {
 	        	
-	          // window.location='/changepassword'
+	          // window.location='./changepassword'
 	        	renderLinksByRole(data);
 
 	        },
 	        error: function (e) {
-	        	 var json = "<h4>Response Error: Error in redirecting.";
+	        	 var json = "<h4>Response Error: Error in redirecting."+e.responseText;
 	             $('#feedback').html(json);
 
 	        }
@@ -268,37 +268,37 @@ function initialize(){
 	
 }
 function openProfileParser(){
-	window.location='/profileparser'
+	window.location='./profileparser'
 }
 function openContractorManagement(){
-	window.location='/contractormain'
+	window.location='./contractormain'
 }
 function openBulkFileUpload(){
-	window.location='/bulkfileupload'
+	window.location='./bulkfileupload'
 }
 function openConstantsDef(){
-	window.location='/constantsdef'
+	window.location='./constantsdef'
 }
 function openCommissionManagement(){
-	window.location='/commissionmain'
+	window.location='./commissionmain'
 }
 function opencommissionsLookup(){
-	window.location='/commissionslookup'
+	window.location='./commissionslookup'
 }
 function openInvoiceManagement(){
-	window.location='/invoicemain'
+	window.location='./invoicemain'
 }
 function openclientlookup(){
-	window.location='/clientlookup'
+	window.location='./clientlookup'
 }
 function openRequirementManagement(){
-	window.location='/requirementmain'
+	window.location='./requirementmain'
 }
 function openMappingRequirementManagement(){
-	window.location='/mappingrequirementmain'
+	window.location='./mappingrequirementmain'
 }
 function registerEmployee(){
-	 window.location='/registeremployee'
+	 window.location='./registeremployee'
 }
  </script>
 <script src="js/idle_timeout.js"></script>

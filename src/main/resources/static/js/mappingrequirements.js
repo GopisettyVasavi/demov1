@@ -7,7 +7,7 @@ function initialize() {
 			.ajax({
 				type : "GET",
 				contentType : "application/json",
-				url : "/loadassignedrequirements",
+				url : "./loadassignedrequirements",
 				dataType : 'json',
 				cache : false,
 				timeout : 600000,
@@ -393,7 +393,7 @@ function searchCandidates() {
 			.ajax({
 				type : "POST",
 				contentType : "application/json",
-				url : "/searchrequirementcandidates",
+				url : "./searchrequirementcandidates",
 				data : JSON.stringify(searchForm),
 				dataType : 'json',
 				cache : false,
@@ -452,6 +452,8 @@ $(document)
 					// console.log('cal')
 					var ctable = $('#candidates_tbl').DataTable();
 					var rowData = ctable.row(this).data();
+					$('#candidates_tbl tbody > tr').removeClass('selected');
+					 $(this).addClass('selected');
 					if (rowData.disableRow != 'true') {
 
 						$("#candidates_tbl tbody ")
@@ -485,7 +487,7 @@ $(document)
 														.ajax({
 															type : "GET",
 															contentType : "application/json",
-															url : "/candidatedetails",
+															url : "./candidatedetails",
 															cache : false,
 															timeout : 600000,
 															success : function(
@@ -493,7 +495,7 @@ $(document)
 
 																var win = window
 																		.open(
-																				"/candidatedetails/"
+																				"./candidatedetails/"
 																						+ rowData.candidateId,
 																				"candidatedetails",
 																				"status=1,toolbar=0");
@@ -620,7 +622,7 @@ function mapCandidates() {
 				.ajax({
 					type : "POST",
 					contentType : "application/json",
-					url : "/mapcandidaterequirement",
+					url : "./mapcandidaterequirement",
 					data : JSON.stringify(mappingRequirement),
 					dataType : 'json',
 					cache : false,

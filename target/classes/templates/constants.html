@@ -7,11 +7,11 @@
 <title>Metadata</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/renaissance/img/renfavicon.ico">
 <!-- CSS here -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
-<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link href="./css/starter-template.css" rel="stylesheet"	media="screen" />
+<link href="./css/datatables.min.css" rel="stylesheet" media="screen" />
 <link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
@@ -42,6 +42,10 @@
     padding-bottom: 6px;
 }
 </style>
+
+<style>
+   tr.selected {background-color: #007bff;}
+ </style>
 </head>
 
 <!-- header-start -->
@@ -51,11 +55,11 @@
           
 			<div class="logo">
 				<a href="https://reninfo.com.au/"> <img
-					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+					src="img/Renaissance_logo.png" alt="" height="30px" width="150px">
 
 				</a>
-				<a   href="#" onclick="window.location = '/index' ">Back>></a>
-				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				<a   href="#" onclick="window.location = './index' ">Back>></a>
+				<a  style="text-align: right;padding-left: 1550px;" href="logout" onclick="cleardata()">Logout</a>
 				
 				
 				
@@ -99,6 +103,10 @@
 							<button type="submit" id="btn-save"
 								class="button button-contactForm boxed-btn"
 								onclick="addnewLookup()"  >Add New Constant</button>
+								
+								<button type="submit" id="btn-save"
+								class="button button-contactForm boxed-btn"
+								onclick="linkedin()"  >Linked In</button>
 								
 						</div>
 					</div>
@@ -180,7 +188,13 @@
 	</div>
 
 	</form> 
-
+<!-- <form action="/linkedin" method="GET" style="display: inline">
+			<input type="hidden" name="scope"
+				value="r_basicprofile,r_emailaddress" />
+			<button type="submit" class="btn btn-primary">
+				LinkedIn <span class="fa fa-linkedin"></span>
+			</button>
+		</form> -->
 	<div class="col-sm-12" style="padding-top: 10px"></div>
 					
 					<div id="feedback" style="padding-left: 400px; color: red"></div>
@@ -198,7 +212,7 @@
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
 
 
-<script src="/js/fixedHeadermin.js" ></script>
+<script src="js/fixedHeadermin.js" ></script>
 	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 	 <script src="js/vendor/sweetalert2.js"></script>
        
@@ -252,7 +266,7 @@
 	});
 	function goBack(){
 		//alert('test');
-		window.location='/index'
+		window.location='./index'
 
 	}
 	
@@ -327,7 +341,7 @@ if(isValid){
 			$.ajax({
 						type : "POST",
 						contentType : "application/json",
-						url : "/updateconstants",
+						url : "./updateconstants",
 						data : JSON.stringify(constantsDTO),
 						dataType : 'json',
 						cache : false,
@@ -347,7 +361,30 @@ if(isValid){
 					});
 }
 		}
+function linkedin(){
+	
+		$.ajax({
+			type : "GET",
+			contentType : "application/json",
+			url : "/linkedin",
+			dataType : 'json',
+			cache : false,
+			timeout : 600000,
+			success : function(data) {
+			alert("linkedin Successfully.");
+			//initialize();
+		},
+		error : function(e) {
 
+			var json = "Response Error:Error occured while updating.<pre>"
+					+ e.responseText + "</pre>";
+			$('#feedback').html(json);
+
+			console.log("ERROR : ", e);
+		}
+	});
+	
+}
 		function initialize() {
 			$("#addlookup_div").hide();
 			document.getElementById("constantName").focus();
@@ -356,7 +393,7 @@ if(isValid){
 						$.ajax({
 						type : "GET",
 						contentType : "application/json",
-						url : "/getconstants",
+						url : "./getconstants",
 						dataType : 'json',
 						cache : false,
 						timeout : 600000,
@@ -449,6 +486,8 @@ if(isValid){
 					document.getElementById("constantName").focus();
 					$('#feedback').html("");
 					var table = $('#constants_tbl').DataTable();
+					$('#constants_tbl tbody > tr').removeClass('selected');
+					 $(this).addClass('selected');
 					var rowData = table.row(this).data();
 					// alert('called'+rowData.contractorId);
 					$("#addlookup_div").show();

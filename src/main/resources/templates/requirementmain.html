@@ -4,14 +4,14 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Commissions Lookup</title>
+<title>Requirement Management</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="/img/renfavicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/renaissance/img/renfavicon.ico">
 <!-- CSS here -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link th:href="@{../css/starter-template.css}" rel="stylesheet"	media="screen" />
-<link th:href="@{../css/datatables.min.css}" rel="stylesheet" media="screen" />
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link href="./css/starter-template.css" rel="stylesheet"	media="screen" />
+<link href="./css/datatables.min.css" rel="stylesheet" media="screen" />
 <link href="css/jquery-ui.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" media="screen" />	
 <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet" media="screen" />
@@ -57,11 +57,11 @@
           
 			<div class="logo">
 				<a href="https://reninfo.com.au/"> <img
-					src="/img/Renaissance_logo.png" alt="" height="30px" width="150px">
+					src="img/Renaissance_logo.png" alt="" height="30px" width="150px">
 
 				</a>
 				<a   href="#" onclick="backToIndex()">Back>></a>
-				<a  style="text-align: right;padding-left: 1250px;" href="logout" onclick="cleardata()">Logout</a>
+				<a  style="text-align: right;padding-left: 1550px;" href="logout" onclick="cleardata()">Logout</a>
 				
 				
 				
@@ -782,8 +782,9 @@
 								<div class="form-group text-center">
 									<input type="submit"
 										class="button button-contactForm boxed-btn" onclick="updaterequirement()" value="Update"/>
-										<input type="submit" formnovalidate name="cancel" value="Reset" class="button button-contactForm boxed-btn" 
-										onclick="" > 
+										<!-- <button type="submit"
+										class="button button-contactForm boxed-btn" onclick="resetEdit()">Reset</button> -->
+										
 								</div>
 							</div>
 							</div>
@@ -815,7 +816,7 @@
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
 
 
-<script src="/js/fixedHeadermin.js" ></script>
+<script src="js/fixedHeadermin.js" ></script>
 	 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
 	 <script src="js/vendor/sweetalert2.js"></script>
        
