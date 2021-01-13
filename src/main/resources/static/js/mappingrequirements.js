@@ -449,20 +449,20 @@ $(document)
 				function(e)
 
 				{
-					// console.log('cal')
+					
 					var ctable = $('#candidates_tbl').DataTable();
 					var rowData = ctable.row(this).data();
+					console.log("BEF: "+ rowData.candidateId+ " "+rowData.candidateName);
 					$('#candidates_tbl tbody > tr').removeClass('selected');
 					 $(this).addClass('selected');
-					if (rowData.disableRow != 'true') {
-
+					if (rowData.disableRow != 'true' ) {
 						$("#candidates_tbl tbody ")
 								.on(
 										'click',
 										'td',
 										function() {
 											var that = this;
-											var idx = ctable.cell(that).index().column;
+											var idx = ctable.cell(this).index().column;
 											var title = ctable.column(idx)
 													.header();
 											var titleText = $(title).html();
@@ -482,6 +482,7 @@ $(document)
 													|| titleText.trim() == 'Expected Rate(Incl Super)') { 
 												return;
 											} else {
+												console.log("ELSE: "+ rowData.candidateId+ " "+rowData.candidateName);
 
 												$
 														.ajax({
@@ -656,8 +657,17 @@ function populateCandidatesList(data) {
 	$('#searchresults_div').show();
 	$('#candidates_div').show();
 	$('#mapcandidate_div').show();
-	// $('#map_msg').html("");
-
+	
+	
+	
+	
+	if ( $.fn.DataTable.isDataTable( '#candidates_tbl' ) ) {
+	    $("#candidates_tbl").dataTable().fnDestroy();
+	    $('#candidates_tbl').empty(); 
+	}
+	
+	
+	
 	// DataTable
 	var p = -1;
 	var table = $('#candidates_tbl')
