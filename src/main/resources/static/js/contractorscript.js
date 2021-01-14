@@ -8,6 +8,10 @@ function initialize() {
 	
 	
 	document.getElementById("firstName").focus();
+	/* if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+	   alert('Session Expired. Please login.');
+	   window.location = './'
+	} */
 
 	$.ajax({
 				type : "GET",
@@ -44,7 +48,13 @@ function initialize() {
 				},
 				error : function(e) {
 
-					alert("Unable to load details");
+					//alert("Unable to load details");
+					//alert("Error:  "+ e.responseText);
+					console.log("Error: While Retrieving recruiters List."+e.responseText);
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});
@@ -88,7 +98,13 @@ function retrieveClients(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details");
+			//alert("Unable to load details");
+			console.log("Error:  While loading clients: "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -615,7 +631,12 @@ function clickonsave(mode) {
 				error : function(e) {
 					// var response = JSON.stringify(e);
 					console.log(e.responseText);
-					alert("Error " + e.responseText);
+					alert("Error:  "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});
@@ -659,7 +680,12 @@ function clickonsave(mode) {
 				error : function(e) {
 					// var response = JSON.stringify(e);
 					console.log(e.responseText);
-					alert("Error " + e.responseText);
+					alert("Error:  "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});
@@ -981,7 +1007,12 @@ function contractorSearch() {
 
 						console.log("ERROR : ", e);
 						// $("#btn-search").prop("disabled", false);
-
+						//alert("Error:  "+ e.responseText);
+						
+						if (e.responseText.includes('Session Expired')) {
+							//alert("Session has expired. Please Login.")
+							window.location = './'
+						}
 					}
 				});
 	}
@@ -1035,7 +1066,13 @@ $(document).on(
 				},
 				error : function(e) {
 
-					alert("Unable to load details. " + e);
+					//alert("Unable to load details. " + e);
+					alert("Error:  "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});
@@ -1131,7 +1168,12 @@ function retrievePayrollTax(){
 			},
 			error : function(e) {
 
-				alert("Unable to load details. " + e);
+alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 
 			}
 		});
@@ -1166,7 +1208,12 @@ function retrieveInsurancePercent(){
 			},
 			error : function(e) {
 
-				alert("Unable to load details. " + e);
+				console.log("Error: while getting Insurance Percent "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 
 			}
 		});

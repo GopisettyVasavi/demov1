@@ -258,6 +258,10 @@
 <script type="text/javascript">
 function init(){
 	document.getElementById("firstName").focus();
+	/* if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+		   alert('Session Expired. Please login.');
+		   window.location = './'
+		} */
 
 }
 function reset() {
@@ -266,7 +270,8 @@ function reset() {
 	window.close();
 	}
 	function goback(){
-		history.go(-1);
+		//history.go(-1);
+		backToIndex();
 		return false;
 	}
 function windowclose() {
@@ -344,8 +349,11 @@ $(document).ready(function(){
            // var json = "<h4>Response Error: Employee with name "+$("#employeeName").val() +" already exists.</h4>";
             $('#feedback').html("Error in registering Employee. Please check details and try again.");
 			alert("Error"+e.responseText);
-            console.log("ERROR : ", e);
-           // $("#btn-login").prop("disabled", false);
+            console.log("ERROR : ", e.responseText);
+            if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
         }
     });

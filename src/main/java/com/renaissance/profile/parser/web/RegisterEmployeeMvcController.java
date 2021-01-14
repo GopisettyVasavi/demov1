@@ -56,6 +56,10 @@ public class RegisterEmployeeMvcController {
 		logger.info("Employee details...,{},{}", employeeForm.getEmployeeName(), employeeForm.getEmployeeRole());
 
 		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("null session");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			//employeeForm.setLastUpdatedByUser(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME).toString());
 			employeeService.registerEmployee(employeeForm);
 		} catch (Exception e) {

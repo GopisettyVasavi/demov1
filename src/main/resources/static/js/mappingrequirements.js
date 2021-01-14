@@ -316,8 +316,13 @@ function initialize() {
 							+ e.responseText + "</pre>";
 					$('#feedback').html(json);
 
-					console.log("ERROR : ", e);
-
+					//console.log("ERROR : ", e);
+					console.log("Error:  while loading requirements: "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 				}
 			});
 
@@ -420,6 +425,12 @@ function searchCandidates() {
 
 					console.log("ERROR : ", e);
 					// $("#btn-search").prop("disabled", false);
+					alert("Error:  "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});
@@ -505,7 +516,12 @@ $(document)
 															},
 															error : function(e) {
 
-																alert("Unable to load details");
+																alert("Error:  "+ e.responseText);
+																
+																if (e.responseText.includes('Session Expired')) {
+																	//alert("Session has expired. Please Login.")
+																	window.location = './'
+																}
 
 															}
 														});
@@ -642,7 +658,12 @@ function mapCandidates() {
 						$('#map_msg').html(json);
 
 						console.log("ERROR : ", e);
-						// $("#btn-search").prop("disabled", false);
+						alert("Error:  "+ e.responseText);
+						
+						if (e.responseText.includes('Session Expired')) {
+							//alert("Session has expired. Please Login.")
+							window.location = './'
+						}
 
 					}
 				});

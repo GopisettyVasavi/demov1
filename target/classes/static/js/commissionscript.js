@@ -6,6 +6,10 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
 
 function initialize(){
 	document.getElementById("commissionMonth").focus();
+	/* if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+	   alert('Session Expired. Please login.');
+	   window.location = './'
+	} */
 	$("#commissions_feedback").hide();
 	$("#commissions_div").hide();
 	$("#commissiontable").hide();
@@ -178,8 +182,12 @@ function createCommission(){
 			},
 			error : function(e) {
 
-				alert("Unable to load details. " + e);
-				//console.log(e.responseText);
+				alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 			}
 		});
 	}else{
@@ -273,7 +281,13 @@ function invokeMarginCalc(commissionList){
 			// var response = JSON.stringify(e);
 			//console.log(e.responseText);
 			alert("Error " + e.responseText);
-
+			
+			//console.log(e.responseText);
+			//alert("Error:: " + e.responseText);
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login. " );
+				window.location = './'
+			}
 		}
 	});
 }
@@ -545,7 +559,13 @@ function getSuperPercent(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details. " + e);
+			//alert("Unable to load details. " + e);
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -643,6 +663,12 @@ var commissionList=[];
 		error : function(e) {
 
 			alert("Unable to load details. " + e);
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -764,7 +790,12 @@ function save(commissionList){
 
 			alert("Unable to load details. " + e);
 			console.log(e);
-
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 		}
 	});
 }
@@ -864,7 +895,12 @@ function searchcommissions(){
 
 						console.log("ERROR : ", e);
 						// $("#btn-search").prop("disabled", false);
-
+						//alert("Error:  "+ e.responseText);
+						
+						if (e.responseText.includes('Session Expired')) {
+							//alert("Session has expired. Please Login.")
+							window.location = './'
+						}
 					}
 						
 				});
@@ -1050,6 +1086,12 @@ $(document).on(
 				error : function(e) {
 
 					alert("Unable to load details. " + e);
+					//alert("Error:  "+ e.responseText);
+					
+					if (e.responseText.includes('Session Expired')) {
+						//alert("Session has expired. Please Login.")
+						window.location = './'
+					}
 
 				}
 			});

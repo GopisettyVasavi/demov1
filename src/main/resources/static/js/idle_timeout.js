@@ -32,3 +32,33 @@ function clearSessionExpireTimeout () {
 function backToIndex() {
 	window.location = './index'
 }
+/*$(window).on('beforeunload', function(){
+    return false;
+});*/
+function relogin(){
+	window.location='./'
+	
+}
+function cleardata() {
+	//alert("Logout invoked");
+
+	$
+			.ajax({
+				type : "GET",
+				contentType : "application/json",
+				url : "./logoutuser",
+				cache : false,
+				timeout : 600000,
+				success : function(data) {
+
+				},
+				error : function(e) {
+
+					var json = "<h4>Response Error: Issue in looging out user.</h4><pre>"
+							+ e.responseText + "</pre>";
+					console.log("ERROR : ", e);
+
+				}
+			});
+}
+

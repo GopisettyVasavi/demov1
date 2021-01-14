@@ -211,6 +211,7 @@ alert(d);*/
 
 				alert("Error:: " + e.responseText);
 				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login. " );
 					window.location = './'
 				}
 

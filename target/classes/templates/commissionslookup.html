@@ -271,11 +271,21 @@
 							$('#feedback').html(json);
 
 							console.log("ERROR : ", e);
+							//alert("Error:  "+ e.responseText);
+							
+							if (e.responseText.includes('Session Expired')) {
+								//alert("Session has expired. Please Login.")
+								window.location = './'
+							}
 						}
 					});
 		}
 
 		function initialize() {
+			if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+			   // alert('Got here using the browser "Back" or "Forward" button.');
+			}
+			
 			document.getElementById("minRange").focus();
 			$("#addlookup_div").hide();
 			 $("#id").val("");
@@ -339,7 +349,12 @@
 							$('#feedback').html(json);
 
 							console.log("ERROR : ", e);
+							//alert("Error:  "+ e.responseText);
 							
+							if (e.responseText.includes('Session Expired')) {
+								//alert("Session has expired. Please Login.")
+								window.location = './'
+							}
 
 						}
 					});

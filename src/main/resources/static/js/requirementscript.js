@@ -41,7 +41,12 @@ function retrieveClients(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details");
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -106,7 +111,12 @@ function retrieveRecruiters(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details");
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -241,7 +251,12 @@ function createrequirement(){
 	         $('#personal_feedback').html(json);
 
 	         console.log("ERROR : ", e);
-
+	        // alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 		}
 	});
 	
@@ -449,7 +464,12 @@ function requirementSearch(){
 				$('#search_feedback').html(json);
 
 				console.log("ERROR : ", e);
-				// $("#btn-search").prop("disabled", false);
+
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 
 			}
 		});
@@ -648,7 +668,12 @@ function updaterequirement(){
 	         $('#edit_feedback').html(json);
 
 	         console.log("ERROR : ", e);
-
+	        // alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 		}
 	});
 	
@@ -729,7 +754,12 @@ function populateRecruiters(selRec){
 		},
 		error : function(e) {
 
-			alert("Unable to load details");
+			alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});

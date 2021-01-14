@@ -77,7 +77,10 @@ public class MappingRequirementMVCController {
 		List<RequirementDTO> processedList = new ArrayList<RequirementDTO>();
 
 		try {
-
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("null session");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			// lookupList=commissionService.loadAllCommissionsLookupValues();
 
 			/*

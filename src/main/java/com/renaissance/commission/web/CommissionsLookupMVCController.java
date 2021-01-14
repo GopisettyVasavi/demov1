@@ -50,7 +50,10 @@ public class CommissionsLookupMVCController {
 			HttpServletRequest request) {
 		List<CommissionsLookupDTO> lookupList=null;
 		try {
-			
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			lookupList=commissionService.loadAllCommissionsLookupValues();
 			if(!ProfileParserUtils.isObjectEmpty(lookupList)) {
 			logger.info("Commission lookup values from DB,{} ",lookupList);
@@ -75,6 +78,10 @@ public class CommissionsLookupMVCController {
 	public ResponseEntity<?> saveCommissionLookup(@RequestBody CommissionsLookupDTO commissionsLookupDTO,
 			HttpServletRequest request) {
 		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			commissionsLookupDTO=commissionService.saveCommissionLookup(commissionsLookupDTO);
 			
 		} catch (Exception e) {

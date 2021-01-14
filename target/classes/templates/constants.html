@@ -104,9 +104,9 @@
 								class="button button-contactForm boxed-btn"
 								onclick="addnewLookup()"  >Add New Constant</button>
 								
-								<button type="submit" id="btn-save"
+								<!-- <button type="submit" id="btn-save"
 								class="button button-contactForm boxed-btn"
-								onclick="linkedin()"  >Linked In</button>
+								onclick="linkedin()"  >Linked In</button> -->
 								
 						</div>
 					</div>
@@ -357,6 +357,12 @@ if(isValid){
 							$('#feedback').html(json);
 
 							console.log("ERROR : ", e);
+							//alert("Error:  "+ e.responseText);
+							
+							if (e.responseText.includes('Session Expired')) {
+								//alert("Session has expired. Please Login.")
+								window.location = './'
+							}
 						}
 					});
 }
@@ -381,6 +387,12 @@ function linkedin(){
 			$('#feedback').html(json);
 
 			console.log("ERROR : ", e);
+			//alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 		}
 	});
 	
@@ -455,7 +467,12 @@ function linkedin(){
 							$('#feedback').html(json);
 
 							console.log("ERROR : ", e);
+						//	alert("Error:  "+ e.responseText);
 							
+							if (e.responseText.includes('Session Expired')) {
+								//salert("Session has expired. Please Login.")
+								window.location = './'
+							}
 
 						}
 					});

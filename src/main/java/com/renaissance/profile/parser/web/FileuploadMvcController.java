@@ -76,6 +76,7 @@ public class FileuploadMvcController {
 
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
+			redirectAttributes.addFlashAttribute("message", "Session Expired. Please login.");
 			return EMPTY_REDIRECT;
 		}
 		if (file.isEmpty()) {

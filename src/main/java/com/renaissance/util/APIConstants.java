@@ -3,7 +3,7 @@ package com.renaissance.util;
 public class APIConstants {
 	public static final String CONTRACTOR_DETAILS="/contractordetails";
 	public static final String CONTRACTOR_DETAILS_CONTRACTORID="/contractordetails/{contractorId}";
-	public static final String EMPTY_REDIRECT="redirect:/";
+	public static final String EMPTY_REDIRECT="login";
 	public static final String REDIRECT_CONTRACTOR_DETAILS="redirect:/contractordetails";
 	public static final String UPDATE_CONTRACTOR="/updateContractor";
 	public static final String BANK_HISTORY="/bankhistory/{contractorId}";

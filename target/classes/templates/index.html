@@ -261,7 +261,11 @@ function initialize(){
 	        error: function (e) {
 	        	 var json = "<h4>Response Error: Error in redirecting."+e.responseText;
 	             $('#feedback').html(json);
-
+	             //alert("Error:: " + e.responseText);
+					alert("Error:: " + e.responseText);
+				if (e.responseText.includes('Session Expired')) {
+					window.location = './'
+				}
 	        }
 	    });
 	//alert(document.getElementById("employeeName").value);

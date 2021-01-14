@@ -21,8 +21,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.renaissance.common.dto.ConstantsDTO;
 import com.renaissance.common.service.ConstantsService;
@@ -60,6 +58,10 @@ public class ConstantsMVCController {
 	public ResponseEntity<?> updateConstants(@RequestBody ConstantsDTO constantsDto, HttpServletRequest request,
 			HttpServletResponse response) {
 		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			constantsDto = constantsService.saveConstant(constantsDto);
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
@@ -80,7 +82,10 @@ public class ConstantsMVCController {
 	public ResponseEntity<?> getConstants(HttpServletRequest request) {
 		List<ConstantsDTO> constantsList = new ArrayList<ConstantsDTO>();
 		try {
-
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			constantsList = constantsService.getConstants();
 		} catch (Exception e) {
 			logger.error("Error in loading constants,{}", e.getMessage());

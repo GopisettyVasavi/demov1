@@ -127,6 +127,14 @@
 									enctype="multipart/form-data" id="singleUploadForm"
 									onsubmit="checkFileSelected(event)" >
 									<div class="form-group ">
+									<!-- <p>
+    Is session empty?
+    <th:block th:text="${session.isEmpty()} ? 'Yes' : 'No'">Yes</th:block>
+</p>
+<p>
+    Is session empty?
+   <div th:text="${#session.getAttribute('EMPLOYEE_NAME')}" id="sessionCheck">John Doe</div>
+</p> -->
 										<label style="font-weight:bold">Upload Your resume </label> <input type="file"
 											class="form-control" name="file" accept=".doc,.docx,.pdf,"
 											id="selectFileId" oninput="copyFile()">

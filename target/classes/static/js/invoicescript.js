@@ -64,8 +64,14 @@ function createinvoice(){
 			},
 			error : function(e) {
 
-				alert("Unable to load details. " + e);
+				
 				console.log(e.responseText);
+alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					////alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 			}
 		});
 	}else{
@@ -493,9 +499,14 @@ var invoiceList=populateList();
 		},
 		error : function(e) {
 
-			alert("Unable to load details. " + e);
+			//alert("Unable to load details. " + e);
 			console.log(e);
-
+			alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 		}
 	});
 	
@@ -623,9 +634,14 @@ function generateInvoice(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details. " + e);
+			//alert("Unable to load details. " + e);
 			console.log(e);
-
+			alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 		}
 	
 	});
@@ -673,7 +689,12 @@ function retrieveClients(){
 		},
 		error : function(e) {
 
-			alert("Unable to load details");
+			alert("Error:  "+ e.responseText);
+			
+			if (e.responseText.includes('Session Expired')) {
+				//alert("Session has expired. Please Login.")
+				window.location = './'
+			}
 
 		}
 	});
@@ -862,7 +883,12 @@ function searchinvoices(){
 
 						console.log("ERROR : ", e);
 						// $("#btn-search").prop("disabled", false);
-
+						//alert("Error:  "+ e.responseText);
+						
+						if (e.responseText.includes('Session Expired')) {
+							//alert("Session has expired. Please Login.")
+							window.location = './'
+						}
 					}
 				});
 	}
@@ -1014,8 +1040,13 @@ function editInvoice(){
 			},
 			error : function(e) {
 
-				alert("Unable to load details. " + e);
 				console.log(e);
+alert("Error:  "+ e.responseText);
+				
+				if (e.responseText.includes('Session Expired')) {
+					//alert("Session has expired. Please Login.")
+					window.location = './'
+				}
 
 			}
 		});

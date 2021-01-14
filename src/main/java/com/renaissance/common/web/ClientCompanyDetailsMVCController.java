@@ -52,7 +52,10 @@ public class ClientCompanyDetailsMVCController {
 			HttpServletRequest request) {
 		List<ClientCompanyDTO> companyList=new ArrayList<ClientCompanyDTO>();
 		try {
-			
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			companyList=companyService.loadClientCompanies();
 		} catch (Exception e) {
 			logger.error("Error in loading Client Companies,{}", e.getMessage());
@@ -74,6 +77,10 @@ public class ClientCompanyDetailsMVCController {
 	public ResponseEntity<?> updateConstants(@RequestBody ClientCompanyDTO companyDto,
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (!ProfileParserUtils.isSessionAlive(request)) {
+				logger.info("Session has expired.");
+				return ResponseEntity.badRequest().body("Session Expired. Please Login");
+			}
 			companyDto=companyService.saveClientCompany(companyDto);
 			
 

@@ -34,17 +34,24 @@ function copyFile(){
 	 formData.append("selFile", file);
 	 var xhr = new XMLHttpRequest();
 	    xhr.open("POST", "./copyFile");
+	   
 	    xhr.onload = function() {
-	        console.log(xhr.responseText);
-	       // var response = JSON.parse(xhr.responseText);
+	       
 	      if(xhr.status == 200) {
 	           // alert("Success");
 	        } else {
-	          // alert("error");
+	           //alert("error: "+xhr.responseText);
+	           console.log("xhr.responseText: "+xhr.responseText);
+	           console.log(xhr+"  : "+xhr.responseText);
+	           console.log(xhr.status);
+	   	    if(xhr.responseText!=null && xhr.responseText.includes('Session Expired')) {
+	   	    	window.location = './'
+	   	    }
 	        }
 	    }
 
 	    xhr.send(formData);
+
 }
 function createProfile() {
 	var url = "./createProfile";
@@ -246,6 +253,11 @@ function setSelectedVisaType() {
 
 function renderfile(){
 	document.getElementById("selectFileId").focus();
+	
+	/*if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+		   alert('Session Expired. Please login.');
+		   window.location = './'
+		}*/
 	if(document.getElementById("embedId")!=null){
 		 $("#singlefileupload_btn").val("Upload").button("refresh");
 		var val=doesFileExist(document.getElementById("embedId").src);
