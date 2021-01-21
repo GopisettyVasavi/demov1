@@ -272,10 +272,10 @@ public static Double roundValue(Double amount) {
 	
 }
 
-public static String generateInvoice(InvoiceDTO invoiceDto,String filePath) {
+public static String generateInvoice(InvoiceDTO invoiceDto) {
 	String generatedFilePath="";
 	try {
-	Docx docx = new Docx("D:\\template.docx"); 
+	Docx docx = new Docx(ProfileParserConstants.INVOICE_TEMPLATE_FILE_LOC); 
 	docx.setVariablePattern(new VariablePattern("#{", "}"));
 	
 	 
@@ -365,17 +365,18 @@ public static String generateInvoice(InvoiceDTO invoiceDto,String filePath) {
 		  variables.addTextVariable(new TextVariable("#{total_amount_gst}", "$0.00"));
 	  // fill template 
 	  docx.fillTemplate(variables);
-	  File fileLoc= new File(filePath);
-		if(fileLoc.exists()) {
-			logger.info("Valid path");
-			 generatedFilePath=filePath;
-			 docx.save(filePath+"\\"+invoiceDto.getContractorName()+".docx");
-			
-		}else {
-			generatedFilePath="D:\\invoices\\";
-			docx.save("D:\\invoices\\"+invoiceDto.getContractorName()+".docx");	
-			
-			}
+	 // File fileLoc= new File(filePath);
+	  generatedFilePath=ProfileParserConstants.INVOICE_FILE_LOC;
+		  docx.save(generatedFilePath+invoiceDto.getContractorName()+".docx");
+			/*
+			 * if(fileLoc.exists()) { logger.info("Valid path"); generatedFilePath=filePath;
+			 * docx.save(filePath+"\\"+invoiceDto.getContractorName()+".docx");
+			 * 
+			 * }else { generatedFilePath="D:\\invoices\\";
+			 * docx.save("D:\\invoices\\"+invoiceDto.getContractorName()+".docx");
+			 * 
+			 * }
+			 */
 	  // save filled .docx file 
 	 
 	}catch(Exception e) {

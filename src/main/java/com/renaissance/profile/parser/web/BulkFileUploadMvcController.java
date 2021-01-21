@@ -86,8 +86,7 @@ public class BulkFileUploadMvcController {
 						convFile = new File(fileName);// Converts multi part file to file
 
 						Path src = Paths.get(file.getOriginalFilename());
-						fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-								+ src.getFileName();
+						fileName = ProfileParserConstants.CURRENT_DIR + src.getFileName();
 						Path dest = Paths.get(fileName);
 						try {
 							Files.copy(src.toFile(), dest.toFile());
@@ -98,8 +97,7 @@ public class BulkFileUploadMvcController {
 					} else {
 						// Since it is not from IE, it will not have path. It only have file name.
 
-						fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-								+ file.getOriginalFilename(); // chrome convFile
+						fileName = ProfileParserConstants.CURRENT_DIR +  file.getOriginalFilename(); // chrome convFile
 
 						isChrome = true;
 						convFile = new File(fileName);
@@ -111,7 +109,7 @@ public class BulkFileUploadMvcController {
 					if (!FileUtils.isFileTypePdf(file.getOriginalFilename())) {
 						String filenameWithoutX = FilenameUtils.removeExtension(convFile.getName());
 						File pdfFile = new File(ProfileParserConstants.CURRENT_DIR
-								+ ProfileParserConstants.UPLOAD_FOLDER + filenameWithoutX + ".pdf");
+								 + filenameWithoutX + ".pdf");
 						if (!pdfFile.exists()) {
 							FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile,
 									file.getContentType());
@@ -176,7 +174,7 @@ public class BulkFileUploadMvcController {
 		logger.info("File name... {}", fileName);
 		String filenameWithoutX = FilenameUtils.removeExtension(fileName);
 		File convFile = new File(
-				ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER + filenameWithoutX + ".pdf");
+				ProfileParserConstants.CURRENT_DIR + filenameWithoutX + ".pdf");
 		if (!ProfileParserUtils.isObjectEmpty(convFile)) {
 			CandidateDTO candidateDto = profileParserService.parse(convFile);
 			candidateDto.setFilePath(ProfileParserConstants.DEST_FOLDER + filenameWithoutX + ".pdf");

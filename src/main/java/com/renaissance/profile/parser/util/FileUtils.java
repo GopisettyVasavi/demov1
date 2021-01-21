@@ -30,7 +30,7 @@ public class FileUtils {
 		FileConversionDTO fileDto= new FileConversionDTO();
 	
 		String filenameWithoutX=FilenameUtils.removeExtension(docFile.getName());
-		File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+		File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+filenameWithoutX+".pdf");
 		try {
 		 ByteArrayOutputStream bo = new ByteArrayOutputStream();
 		 

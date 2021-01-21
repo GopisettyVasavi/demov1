@@ -8,10 +8,15 @@ public class ProfileParserConstants {
 	public final static String EMPLOYEE_NAME="EMPLOYEE_NAME";
 	public final static String EMPLOYEE_ID="EMPLOYEE_ID";
 	public final static String EMPLOYEE_ROLE="EMPLOYEE_ROLE";
-	public final static String UPLOAD_FOLDER = "\\content\\";
-	public final static String DEST_FOLDER = "http://127.0.0.1:8887/";
-	public final static String CURRENT_DIR="D:\\UploadProfiles\\Profiles";
+	//public final static String UPLOAD_FOLDER = "\\content\\";
+	public final static String DEST_FOLDER = "http://192.168.1.20:8060/Profiles/";
+	//public final static String DEST_FOLDER = "//webapps//UploadProfiles//Profiles//content//";
+	public final static String CURRENT_DIR="D:\\UploadProfiles\\Profiles\\";
+	//public final static String CURRENT_DIR="D:\\Tomcat\\apache-tomcat-8.5.61\\webapps\\UploadProfiles\\Profiles";
+	
 	public final static String PDF = "pdf";
+	public final static String INVOICE_FILE_LOC="D:\\UploadProfiles\\Invoices\\";
+	public final static String INVOICE_TEMPLATE_FILE_LOC="D:\\UploadProfiles\\Invoices\\template.docx";
 	public final static String RECRUITER="Recruiter";
 	public final static String DATA_ENTRY_OPERATOR="Data Entry Operator";
 	public final static String ADMIN="Admin";

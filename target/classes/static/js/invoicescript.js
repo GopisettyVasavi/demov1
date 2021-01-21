@@ -605,30 +605,43 @@ function generateInvoice(){
 	if(invChecked==true || invChecked=='true'){
 	var invoiceList=populateList();
 	
-	while(!filePath){
+	/*while(!filePath){
 		 var filePath = prompt("Please enter File path.", 
 	     ""); 
 		 //console.log("filePath: "+filePath);
 		 filePath= filePath.replace(/\\/g, "SLASH");
-		}
+		}*/
 	 
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
 
-		url : "./generateinvoice/"+  filePath,
+		url : "./generateinvoice/",
 		data : JSON.stringify(invoiceList),
 		dataType : 'json',
 		cache : false,
 		timeout : 600000,
 		success : function(data) {
-			//alert("Invoices Generated details data saved.");
-			//console.log(data.length);
+			
 			if(data.length>0){
 				populateInvoiceTable(data);
-				 filePath= filePath.replaceAll("SLASH", "\\");
+				// filePath= filePath.replaceAll("SLASH", "\\");
 				document.getElementById("invoices_generated_mesg").style.color = "black";
-			$('#invoices_generated_mesg').html("Invoices are generated successfully and stored at location: "+filePath);
+			$('#invoices_generated_mesg').html("Invoices are generated successfully.");
+			var files=[];
+			var j=0;
+			for(var i=1;i<invoiceList.length; i++){
+				
+				if(invoiceList[i].generateInvoice=='true' || invoiceList[i].generateInvoice==true){
+				var fileName="http://192.168.1.20:8060/Invoices/"+invoiceList[i].contractorName+".docx";
+				files[j]=fileName;
+				j++;
+				
+				//downloadUrl(invoiceList[i].contractorName+".docx");
+				}
+				
+			}
+			downloadFiles(files);
 			}
 			//document.getElementById("tempSave_btn").disabled = true;
 		},
@@ -1059,4 +1072,32 @@ function cancelInvoice(){
 	$('#save_feedback').html("");
 	$("#editdetails_div").hide();
 	
+}
+
+/*function downloadUrl(fileName){
+	var link = document.createElement("a");
+    // If you don't know the name or want to use
+    // the webserver default set name = ''
+    link.setAttribute('download', '');
+    link.href = "http://192.168.1.20:8060/Invoices/"+fileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    console.log('file downloaded: '+fileName);
+}*/
+
+
+function downloadFiles(files) {
+    $.each(files, function(key, value) {
+        $('<iframe></iframe>')
+            .hide()
+            .attr('src', value)
+            .appendTo($('body'))
+            .load(function() {
+                var that = this;
+                setTimeout(function() {
+                    $(that).remove();
+                }, 100);
+            });
+    });
 }

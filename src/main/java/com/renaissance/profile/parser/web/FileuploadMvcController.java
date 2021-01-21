@@ -102,8 +102,7 @@ public class FileuploadMvcController {
 				convFile = new File(fileName);// Converts multi part file to file
 
 				Path src = Paths.get(file.getOriginalFilename());
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ src.getFileName();
+				fileName = ProfileParserConstants.CURRENT_DIR + src.getFileName();
 				Path dest = Paths.get(fileName);
 				try {
 					Files.copy(src.toFile(), dest.toFile());
@@ -114,7 +113,7 @@ public class FileuploadMvcController {
 			} else {
 				// Since it is not from IE, it will not have path. It only have file name.
 
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
+				fileName = ProfileParserConstants.CURRENT_DIR 
 						+ file.getOriginalFilename(); // chrome convFile
 
 				isChrome = true;
@@ -128,7 +127,7 @@ public class FileuploadMvcController {
 			//logger.info("CANDIDATE DTO , {} ", candidateDto.toString());
 			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())) {
 				String filenameWithoutX=FilenameUtils.removeExtension(convFile.getName());
-				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR +filenameWithoutX+".pdf");
 				Thread.sleep(5000);
 				//logger.info("FILE EXISTS...."+pdfFile.exists());
 				if(!pdfFile.exists()) {
@@ -260,8 +259,7 @@ public class FileuploadMvcController {
 				convFile = new File(fileName);// Converts multi part file to file
 
 				Path src = Paths.get(file.getOriginalFilename());
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ src.getFileName();
+				fileName = ProfileParserConstants.CURRENT_DIR +  src.getFileName();
 				Path dest = Paths.get(fileName);
 				try {
 					Files.copy(src.toFile(), dest.toFile());
@@ -271,8 +269,7 @@ public class FileuploadMvcController {
 					e.printStackTrace();
 				}
 			} else {
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ file.getOriginalFilename(); // chrome convFile
+				fileName = ProfileParserConstants.CURRENT_DIR +  file.getOriginalFilename(); // chrome convFile
 				convFile = new File(fileName);
 				file.transferTo(convFile);// Converts multi part file to file
 				try {
@@ -286,7 +283,7 @@ public class FileuploadMvcController {
 
 			// Check file type. If not pdf, convert to pdf
 			 filenameWithoutX=FilenameUtils.removeExtension(file.getOriginalFilename());
-			 pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+			 pdfFile= new File(ProfileParserConstants.CURRENT_DIR+filenameWithoutX+".pdf");
 			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())&&!pdfFile.exists()) {
 				//FileConversionDTO convertedFile = FileUtils.convertDoctoPdf(convFile, file.getContentType());
 				Thread.sleep(5000);
@@ -331,8 +328,7 @@ public class FileuploadMvcController {
 				convFile = new File(fileName);// Converts multi part file to file
 
 				Path src = Paths.get(file.getOriginalFilename());
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ src.getFileName();
+				fileName = ProfileParserConstants.CURRENT_DIR + src.getFileName();
 				Path dest = Paths.get(fileName);
 				try {
 					Files.copy(src.toFile(), dest.toFile());
@@ -343,8 +339,7 @@ public class FileuploadMvcController {
 			} else {
 				// Since it is not from IE, it will not have path. It only have file name.
 
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ file.getOriginalFilename(); // chrome convFile
+				fileName = ProfileParserConstants.CURRENT_DIR + file.getOriginalFilename(); // chrome convFile
 
 				isChrome = true;
 				convFile = new File(fileName);
@@ -357,7 +352,7 @@ public class FileuploadMvcController {
 			//logger.info("CANDIDATE DTO , {} ", candidateDto.toString());
 			if (!FileUtils.isFileTypePdf(file.getOriginalFilename())) {
 				String filenameWithoutX=FilenameUtils.removeExtension(convFile.getName());
-				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+ProfileParserConstants.UPLOAD_FOLDER +filenameWithoutX+".pdf");
+				File pdfFile= new File(ProfileParserConstants.CURRENT_DIR+filenameWithoutX+".pdf");
 				//Thread.sleep(5000);
 				//logger.info("FILE EXISTS...."+pdfFile.exists());
 				if(!pdfFile.exists()) {

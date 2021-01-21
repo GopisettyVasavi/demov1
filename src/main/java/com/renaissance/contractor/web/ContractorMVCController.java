@@ -131,8 +131,7 @@ public class ContractorMVCController {
 				// convFile = new File(fileName);// Converts multi part file to file
 
 				Path src = Paths.get(file.getOriginalFilename());
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ src.getFileName();
+				fileName = ProfileParserConstants.CURRENT_DIR +  src.getFileName();
 				Path dest = Paths.get(fileName);
 				try {
 					Files.copy(src.toFile(), dest.toFile());
@@ -142,8 +141,7 @@ public class ContractorMVCController {
 					e.printStackTrace();
 				}
 			} else {
-				fileName = ProfileParserConstants.CURRENT_DIR + ProfileParserConstants.UPLOAD_FOLDER
-						+ file.getOriginalFilename(); // chrome convFile
+				fileName = ProfileParserConstants.CURRENT_DIR +  file.getOriginalFilename(); // chrome convFile
 				convFile = new File(fileName);
 				file.transferTo(convFile);// Converts multi part file to file
 
