@@ -44,7 +44,7 @@ public class ConstantsMVCController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
-
+		logger.info("Constants Module: Loading initial landing page.");
 		return "constants";
 	}
 
@@ -62,6 +62,7 @@ public class ConstantsMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Constants Module: Updating constants. {}",constantsDto.toString());
 			constantsDto = constantsService.saveConstant(constantsDto);
 		} catch (Exception e) {
 			logger.error("Error in Creating constants,{}", e.getMessage());
@@ -86,6 +87,7 @@ public class ConstantsMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Constants Module: Loading all constants.");
 			constantsList = constantsService.getConstants();
 		} catch (Exception e) {
 			logger.error("Error in loading constants,{}", e.getMessage());

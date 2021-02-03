@@ -38,6 +38,8 @@ public class CandidateDetailsMvcController {
 				logger.info("null session");
 				return EMPTY_REDIRECT;
 			}
+			logger.info("Candidate details Module: Loading main landing page.");
+
 	        return "candidatedetails";
 	    }
 	 
@@ -49,7 +51,8 @@ public class CandidateDetailsMvcController {
 				return "redirect:/";
 			}
 		 //logger.info("Controller invoked, id is, {}", candidateId);
-		 
+			logger.info("Candidate details Module: Loading candidate details for id.{}",candidateId);
+
 		 CandidateDTO candidateDto=profileService.getCandidateFullDetails(candidateId);
 		 candidateDto=profileparserService.splitName(candidateDto);
 		// candidateDto=ProfileParserUtils.parseAllDates(candidateDto);

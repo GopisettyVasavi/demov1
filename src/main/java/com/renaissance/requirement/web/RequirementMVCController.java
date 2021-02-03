@@ -52,8 +52,10 @@ RequirementManagementService requirementService;
 				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())
 				||
 				ProfileParserConstants.RECRUITER
-				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info("Requirement Module: Loading Initial landing page.");
 			return "requirementmain";
+		}
 		else
 			return "unauthorizedaccess";
 
@@ -70,7 +72,7 @@ RequirementManagementService requirementService;
 	public ResponseEntity<?> createRequirement(@RequestBody RequirementDTO requirementDto,
 			HttpServletRequest request) {
 		try {
-			logger.info("Create Requirement..,{}", requirementDto.toString());
+			logger.info("Requirement Module: Create Requirement..,{}", requirementDto.toString());
 			String recruiters="";
 			//getLogged in user id and email
 			if (!ProfileParserUtils
@@ -127,7 +129,7 @@ RequirementManagementService requirementService;
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
-
+			logger.info("Requirement Module: Searching Requirements.{}",requirementDto.toString());
 			//logger.info("Search details, {}", requirementDto.toString());
 			requirements=requirementService.searchRequirements(requirementDto);
 			String disableStatus="";
@@ -166,7 +168,7 @@ RequirementManagementService requirementService;
 	public ResponseEntity<?> updateRequirement(@RequestBody RequirementDTO requirementDto,
 			HttpServletRequest request) {
 		try {
-			logger.info("Update Requirement..,{}", requirementDto.toString());
+			logger.info("Requirement Module: Update Requirement..,{}", requirementDto.toString());
 			String recruiters="";
 			if(!ProfileParserUtils.isObjectEmpty(requirementDto) && !ProfileParserUtils.isObjectEmpty( requirementDto.getRecruiters())
 					&& requirementDto.getRecruiters().size()>0) {

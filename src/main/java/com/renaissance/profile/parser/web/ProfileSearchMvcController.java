@@ -32,6 +32,7 @@ public class ProfileSearchMvcController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
+		logger.info("Profile search Module: Loading main page.");
 		return "profilesearch";
 	}
 	/**
@@ -47,7 +48,7 @@ public class ProfileSearchMvcController {
 			logger.info("Session has expired.");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Search details, {}", searchForm.toString());
+		logger.info("Profile Search Module: Search details, {}", searchForm.toString());
 		List<CandidateDTO> candidates=profileService.searchProfiles(searchForm);
 		logger.info("Search Results, {}", candidates.size());
 		return new ResponseEntity<>(candidates, HttpStatus.OK);

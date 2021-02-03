@@ -53,7 +53,7 @@ public class RegisterEmployeeMvcController {
 	public ResponseEntity<?> saveEmployee(@RequestBody EmployeeForm employeeForm, HttpServletRequest request) {
 		AjaxResponseBody result = new AjaxResponseBody();
 		EmployeeForm employee=null;
-		logger.info("Employee details...,{},{}", employeeForm.getEmployeeName(), employeeForm.getEmployeeRole());
+		logger.info("Register Employee: Saving employee details...,{},{}", employeeForm.getEmployeeName(), employeeForm.getEmployeeRole());
 
 		try {
 			if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -79,7 +79,7 @@ public class RegisterEmployeeMvcController {
 	public ResponseEntity<?> passwordChange(@RequestBody PasswordChangeForm passwordChangeForm, HttpServletRequest request) {
 		AjaxResponseBody result = new AjaxResponseBody();
 
-		logger.info("Employee details...,{}", passwordChangeForm.toString());
+		logger.info("Changing Password...,{}", passwordChangeForm.toString());
 
 		try {
 			userService.passwordchange(passwordChangeForm);
@@ -101,7 +101,7 @@ public class RegisterEmployeeMvcController {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-	logger.info("Controller invoked to retrieve recruiter list ");
+	logger.info("Employee Module: Retrieving recruiter list ");
 	 
 	List<User> recruiterList=userService.getRecruitersList();
 	 redirectAttributes.addFlashAttribute("recruiters", recruiterList);

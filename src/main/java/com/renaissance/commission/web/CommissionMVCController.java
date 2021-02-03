@@ -60,8 +60,10 @@ public class CommissionMVCController {
 			return EMPTY_REDIRECT;
 		}
 		if (ProfileParserConstants.ADMIN
-				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info("Commission Module: Loading main landing page.");
 			return "commissionmain";
+		}
 		else
 			return "unauthorizedaccess";
 
@@ -84,6 +86,7 @@ public class CommissionMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Commission Module: Creating commission run..");
 			if (!ProfileParserUtils.isObjectEmpty(monthyear) && monthyear.indexOf("-") != -1) {
 				String[] mmyy = monthyear.split("-");
 				if (mmyy.length > 1) {
@@ -114,7 +117,7 @@ public class CommissionMVCController {
 	public ResponseEntity<?> calculateCommission(@RequestBody List<CommissionDTO> commissionDtoList,
 			HttpServletRequest request) {
 		Map<String, List<CommissionDTO>> recruiterMap = new HashMap<String, List<CommissionDTO>>();
-		;
+		logger.info("Commission Module: Calculating commissions.");
 		try {
 			logger.info("Commission List..,{}", commissionDtoList.size());
 			if (!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
@@ -228,6 +231,7 @@ public class CommissionMVCController {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
+		logger.info("Commission Module: Get Super annuation percentage.");
 		Double superPercent = constantsService.getConstantValue(ProfileParserConstants.SUPER_ANNUATION);
 		// logger.info("Super %" + superPercent);
 		return new ResponseEntity<>(superPercent, HttpStatus.OK);
@@ -244,6 +248,7 @@ public class CommissionMVCController {
 	public ResponseEntity<?> saveCommissions(@RequestBody List<CommissionDTO> commissionDtoList,
 			HttpServletRequest request) {
 		List<CommissionDTO> savedCommissions = null;
+		logger.info("Commission Module: Saving commissions.");
 		try {
 			logger.info("Commission List for save..,{}", commissionDtoList.size());
 			if (!ProfileParserUtils.isObjectEmpty(commissionDtoList)) {
@@ -283,7 +288,7 @@ public class CommissionMVCController {
 	public ResponseEntity<?> finalSaveCommissions(@RequestBody FinalCommissionsDTO finalCommissions,HttpServletRequest request) {
 		FinalCommissionsDTO savedCommissions = null;
 		try {
-			logger.info("Invoked final save..{}",finalCommissions.toString());
+			logger.info("Commission Module: Invoked final save..{}",finalCommissions.toString());
 			//logger.info("Commission List for save..Final Save..,{}", commissionDtoList.size());
 			if (!ProfileParserUtils.isObjectEmpty(finalCommissions)) {
 
@@ -291,10 +296,10 @@ public class CommissionMVCController {
 			}
 
 		} catch (Exception e) {
-			logger.error("Error in saving commission,{}", e.getMessage());
+			logger.error("Error in final saving commission,{}", e.getMessage());
 			e.printStackTrace();
 			return ResponseEntity.badRequest()
-					.body(" An issue in saving commission. Please try again. \n" + e.getMessage());
+					.body(" An issue in final saving commission. Please try again. \n" + e.getMessage());
 		}
 		return new ResponseEntity<>(savedCommissions, HttpStatus.OK);
 	}
@@ -315,7 +320,7 @@ public class CommissionMVCController {
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
 
-			logger.info("Search details, {}", searchCommissionForm.toString());
+			logger.info("Commission module: Search details, {}", searchCommissionForm.toString());
 
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
@@ -430,7 +435,7 @@ if(period.equalsIgnoreCase("DateRange")) {
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
 
-			logger.info("Controller invoked, to load details...id is, {}, {}", monthyear,recruiter);
+			logger.info("Commission module: Controller invoked, to load details...id is, {}, {}", monthyear,recruiter);
 			
 			String formattedDate=ProfileParserUtils.formatStringDateToString(monthyear);
 			logger.info("Controller invoked, after format ...id is, {}", formattedDate);

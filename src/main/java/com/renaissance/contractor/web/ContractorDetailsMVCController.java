@@ -43,6 +43,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
+		logger.info("Contractor Details Module: Loading contractor details screen.");
 		return "contractordetails";
 	}
 
@@ -63,15 +64,15 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
-		logger.info("Controller invoked, to load details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load details...id is, {}", contractorId);
 		ContractorDetailsDTO contractorDto = contractorService.getContractorFullDetails(contractorId);
-		logger.info("Details...,{} ", contractorDto.getPersonalDetails().toString());
-		logger.info("Details...,{} ", contractorDto.getBankList().toString());
-		logger.info("Details...,{} ", contractorDto.getSuperAnnuationList().toString());
+		logger.info("Details Personal...,{} ", contractorDto.getPersonalDetails().toString());
+		logger.info("Details Bank...,{} ", contractorDto.getBankList().toString());
+		logger.info("Details Super annuation...,{} ", contractorDto.getSuperAnnuationList().toString());
 		// logger.info("Details...,{} ",contractorDto.getTfnList().toString());
 		// logger.info("Details...,{} ",contractorDto.getAbnList().toString());
-		logger.info("Details...,{} ", contractorDto.getEmployerList().toString());
-		logger.info("Details...,{} ", contractorDto.getRateList().toString());
+		logger.info("Details Employer...,{} ", contractorDto.getEmployerList().toString());
+		logger.info("Details Rates...,{} ", contractorDto.getRateList().toString());
 		redirectAttributes.addFlashAttribute("contractor", contractorDto);
 		model.addAttribute("contractor", contractorDto);
 
@@ -99,7 +100,7 @@ public class ContractorDetailsMVCController {
 			// logger.info("Update Contractor TFN details..,{}",
 			// contractorDto.getTfnList().toString());
 
-			logger.info("Service call");
+			//logger.info("Service call");
 
 			contractorDto = contractorService.updateContractorDetails(contractorDto,
 					request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_NAME).toString());
@@ -126,7 +127,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load bank details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load bank details...id is, {}", contractorId);
 		List<ContractorBankDetailsDTO> bankList = contractorService.getBankHistoryByContractorId(contractorId);
 
 		return new ResponseEntity<>(bankList, HttpStatus.OK);
@@ -144,7 +145,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load abn details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load abn details...id is, {}", contractorId);
 		List<ContractorABNDetailsDTO> abnList = contractorService.getAbnHistoryByContractorId(contractorId);
 		
 		
@@ -164,7 +165,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load tfn details...id is, {}", contractorId);
 		List<ContractorTFNDetailsDTO> tfnList = contractorService.getTfnHistoryByContractorId(contractorId);
 
 		return new ResponseEntity<>(tfnList, HttpStatus.OK);
@@ -182,7 +183,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load tfn details...id is, {}", contractorId);
 		List<ContractorRateDetailsDTO> rateList = contractorService.getRateHistoryByContractorId(contractorId);
 		
 		
@@ -203,7 +204,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load super annuation details...id is, {}", contractorId);
 		List<ContractorSuperAnnuationDetailsDTO> saList = contractorService.getSAHistoryByContractorId(contractorId);
 
 		return new ResponseEntity<>(saList, HttpStatus.OK);
@@ -221,7 +222,7 @@ public class ContractorDetailsMVCController {
 			logger.info("null session");
 			return  ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
-		logger.info("Controller invoked, to load tfn details...id is, {}", contractorId);
+		logger.info("Contractor Details Module: Controller invoked, to load employer details...id is, {}", contractorId);
 		List<ContractorEmploymentDetailsDTO> empList = contractorService.getEmployerHistoryByContractorId(contractorId);
 		
 		return new ResponseEntity<>(empList, HttpStatus.OK);

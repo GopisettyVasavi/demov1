@@ -33,7 +33,7 @@ public class LogoutController {
 	 @GetMapping(LOGOUT_USER)
 		public String logout(HttpServletRequest request){
 			try {
-				logger.info("Logout invoked...");
+				logger.info("Logout module: Logout invoked...");
 				request.logout();
 			
 			HttpSession session = request.getSession(false);

@@ -8,20 +8,7 @@ import static com.renaissance.util.APIConstants.INVOICE_MAIN;
 import static com.renaissance.util.APIConstants.SAVE_INVOICE;
 import static com.renaissance.util.APIConstants.SEARCH_INVOICES;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.math.BigInteger;
-import java.net.MalformedURLException;
-import java.net.Socket;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -29,18 +16,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -78,8 +56,10 @@ public class InvoiceMVCController {
 			return EMPTY_REDIRECT;
 		}
 		if (ProfileParserConstants.ADMIN
-				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info("Invoice Module: Loading initial Landing page.");
 			return "invoicemain";
+		}
 		else
 			return "unauthorizedaccess";
 
@@ -103,6 +83,8 @@ public class InvoiceMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Invoice Module: Initial create invoice run.");
+
 			if (!ProfileParserUtils.isObjectEmpty(monthyear) && monthyear.indexOf("-") != -1) {
 				String[] mmyy = monthyear.split("-");
 				if (mmyy.length > 1) {
@@ -180,6 +162,8 @@ public class InvoiceMVCController {
 			HttpServletRequest request) {
 		String generatedFilePath = "";
 		List<InvoiceDTO> returnInvoiceList = null;
+		logger.info("Invoice Module: Generating Invoice.");
+
 		try {
 			/*
 			 * if (!ProfileParserUtils.isObjectEmpty(filePath)) { filePath =
@@ -196,10 +180,6 @@ public class InvoiceMVCController {
 
 							invoiceDto.setInvoiceGeneratedDate(LocalDate.now());
 							generatedFilePath = ProfileParserUtils.generateInvoice(invoiceDto);
-							logger.info("File saving invoked.. client,{} ",
-									generatedFilePath + "\\" + invoiceDto.getContractorName() + ".docx");
-							
-							logger.info("File saving invoked..finished client");
 							invoiceDto.setFilePath(generatedFilePath);
 							invoiceDto.setStatus("Submitted");
 
@@ -239,6 +219,8 @@ public class InvoiceMVCController {
 	@PostMapping(EDIT_INVOICE)
 	public ResponseEntity<?> editInvoice(@RequestBody InvoiceDTO invoiceDto, HttpServletRequest request) {
 
+		logger.info("Invoice Module: Editing Invoice.");
+
 		try {
 			if (!ProfileParserUtils.isObjectEmpty(invoiceDto)) {
 				invoiceDto = invoiceService.editInvoice(invoiceDto);
@@ -271,7 +253,7 @@ public class InvoiceMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
-			logger.info("Invoice Search Criteria, {}", invoiceSearchForm);
+			logger.info("Invoice module: Invoice Search Criteria, {}", invoiceSearchForm);
 			returnInvoiceList = invoiceService.searchInvoices(invoiceSearchForm);
 
 			if (!ProfileParserUtils.isObjectEmpty(returnInvoiceList)) {
@@ -302,6 +284,8 @@ public class InvoiceMVCController {
 	@PostMapping(SAVE_INVOICE)
 	public ResponseEntity<?> saveInvoices(@RequestBody List<InvoiceDTO> invoiceList, HttpServletRequest request) {
 		List<InvoiceDTO> returnInvoiceList = null;
+		logger.info("Invoice Module: Saving Invoices.");
+
 		try {
 			if (!ProfileParserUtils.isObjectEmpty(invoiceList)) {
 

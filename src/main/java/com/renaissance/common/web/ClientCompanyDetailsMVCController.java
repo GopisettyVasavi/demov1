@@ -38,7 +38,7 @@ public class ClientCompanyDetailsMVCController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
-		
+		logger.info("Client lookup module: Loading initial landing page.");
         return "clientlookup";
     }
 
@@ -51,6 +51,8 @@ public class ClientCompanyDetailsMVCController {
 	public ResponseEntity<?> getConstants(
 			HttpServletRequest request) {
 		List<ClientCompanyDTO> companyList=new ArrayList<ClientCompanyDTO>();
+		logger.info("Client lookup module: Loading all clients.");
+
 		try {
 			if (!ProfileParserUtils.isSessionAlive(request)) {
 				logger.info("Session has expired.");
@@ -81,6 +83,8 @@ public class ClientCompanyDetailsMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Client lookup module: Saving client lookup details. {}",companyDto.toString());
+
 			companyDto=companyService.saveClientCompany(companyDto);
 			
 

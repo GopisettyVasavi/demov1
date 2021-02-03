@@ -54,8 +54,10 @@ public class FileuploadMvcController {
 		}
 		//logger.info("USER ROLE",request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString());
 		if(ProfileParserConstants.RECRUITER.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()) ||
-				ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info(" Profile parser Module: Loading main landing page.");
 		return "fileupload";
+		}
 		else
 			return "unauthorizedaccess";
 	}
@@ -83,6 +85,7 @@ public class FileuploadMvcController {
 			redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
 			return null;
 		}
+		logger.info(" Profile parser Module: Uploading single file.");
 		CandidateDTO candidateDto = null;
 
 		try {
@@ -202,6 +205,7 @@ public class FileuploadMvcController {
 			logger.info("Session has expired.");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
+		logger.info(" Profile parser Module: Creating profile.");
 		try {
 			long days=0;
 			logger.info("Saving the details for candidate: {},{},{}", profile.getCandidateName(),
@@ -239,6 +243,7 @@ public class FileuploadMvcController {
  */
 	@RequestMapping(value = COPY_FILE, method = RequestMethod.POST)
 	public ResponseEntity<?> copySingleFile(@RequestParam("selFile") MultipartFile file, HttpServletRequest request) {
+		logger.info(" Profile parser Module: Copying single file.");
 		logger.info("File selected... {}", file);
 		File pdfFile=null;
 		String filenameWithoutX="";
@@ -317,7 +322,7 @@ public class FileuploadMvcController {
 			File convFile = null;
 			boolean isChrome = false;
 
-			logger.info("uploadNewProfile: Selected File original file name::{} ", file.getOriginalFilename());
+			logger.info("Profile parser module: UploadNewProfile: Selected File original file name::{} ", file.getOriginalFilename());
 
 			String fileName = null;
 			

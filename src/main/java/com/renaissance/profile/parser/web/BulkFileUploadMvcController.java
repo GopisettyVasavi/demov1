@@ -52,8 +52,10 @@ public class BulkFileUploadMvcController {
 			return EMPTY_REDIRECT;
 		}
 		if(ProfileParserConstants.DATA_ENTRY_OPERATOR.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())||
-				ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				ProfileParserConstants.ADMIN.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info("Bulk File upload: Loading main landing page.");
 			return "bulkfileupload";
+		}
 			else
 				return "unauthorizedaccess";
 		
@@ -170,6 +172,8 @@ public class BulkFileUploadMvcController {
 			logger.info("null session");
 			return "redirect:/";
 		}
+		logger.info("Bulk File upload: Loading details of candidate whose details are failed to upload.");
+
 		try {
 		logger.info("File name... {}", fileName);
 		String filenameWithoutX = FilenameUtils.removeExtension(fileName);

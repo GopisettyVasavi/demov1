@@ -58,8 +58,11 @@ public class MappingRequirementMVCController {
 		if (ProfileParserConstants.ADMIN
 				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())
 				|| (ProfileParserConstants.RECRUITER.equalsIgnoreCase(
-						request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())))
+						request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))) {
+			logger.info("Mapping client requirement Module: Loading initial Landing page.");
+
 			return "mappingrequirementmain";
+		}
 		else
 			return "unauthorizedaccess";
 
@@ -75,6 +78,7 @@ public class MappingRequirementMVCController {
 	public ResponseEntity<?> loadassignedrequests(HttpServletRequest request) {
 		List<RequirementDTO> requirementList = new ArrayList<RequirementDTO>();
 		List<RequirementDTO> processedList = new ArrayList<RequirementDTO>();
+		logger.info("Mapping client requirement Module: Loading assigned requirements.");
 
 		try {
 			if (!ProfileParserUtils.isSessionAlive(request)) {
@@ -143,6 +147,8 @@ public class MappingRequirementMVCController {
 	public ResponseEntity<?> mapCandidateRequirement(@RequestBody MappingRequirement mappingRequirement,
 			HttpServletRequest request) {
 		List<CandidateDTO> candidates = new ArrayList<CandidateDTO>();
+		logger.info("Mapping client requirement Module: Mapping candidate requirement.");
+
 		try {
 			// logger.info("Mapping Requirement..,{}", mappingCandidateRqmtList.toString());
 			List<MappingCandidateRqmtDTO> mappingCandidateRqmtList = mappingRequirement.getMappingCandidateRqmtList();
@@ -228,6 +234,8 @@ public class MappingRequirementMVCController {
 			logger.info("Session has expired.");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
+		logger.info("Mapping client requirement Module: Searching candidates for requirement.{}",searchForm.toString());
+
 		candidates = processSearchMappingCandidates(searchForm, request);
 
 		return new ResponseEntity<>(candidates, HttpStatus.OK);
@@ -238,7 +246,7 @@ public class MappingRequirementMVCController {
 			HttpServletRequest request) {
 		List<CandidateDTO> candidates = new ArrayList<CandidateDTO>();
 
-		logger.info("Search details, {}", searchForm.toString());
+		logger.info("Mapping client requirement Module: Processing Search details, {}", searchForm.toString());
 		candidates = profileService.searchProfiles(searchForm);
 		// logger.info("List size:, {}",candidates.size());
 		List<MappingCandidateRqmtDTO> mappingList = requirementService.fetchRequirementMappings(null,

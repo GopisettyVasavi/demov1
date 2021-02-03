@@ -37,7 +37,7 @@ public class CommissionsLookupMVCController {
 			logger.info("null session");
 			return EMPTY_REDIRECT;
 		}
-		
+		logger.info("Commission Lookup Module: Loading main landing page.");
         return "commissionslookup";
     }
 	/**
@@ -54,6 +54,8 @@ public class CommissionsLookupMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Commission Lookup Module: Loading all commissions.");
+
 			lookupList=commissionService.loadAllCommissionsLookupValues();
 			if(!ProfileParserUtils.isObjectEmpty(lookupList)) {
 			logger.info("Commission lookup values from DB,{} ",lookupList);
@@ -82,6 +84,8 @@ public class CommissionsLookupMVCController {
 				logger.info("Session has expired.");
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
+			logger.info("Commission Lookup Module: Saving commission lookup values. {}", commissionsLookupDTO.toString());
+
 			commissionsLookupDTO=commissionService.saveCommissionLookup(commissionsLookupDTO);
 			
 		} catch (Exception e) {

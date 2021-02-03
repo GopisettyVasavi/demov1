@@ -66,8 +66,10 @@ public class ContractorMVCController {
 			return EMPTY_REDIRECT;
 		}
 		if (ProfileParserConstants.ADMIN
-				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString()))
+				.equalsIgnoreCase(request.getSession().getAttribute(ProfileParserConstants.EMPLOYEE_ROLE).toString())) {
+			logger.info("Rendering Contractor main landing page.");
 			return "contractormain";
+		}
 		else
 			return "unauthorizedaccess";
 
@@ -84,6 +86,7 @@ public class ContractorMVCController {
 	public ResponseEntity<?> createContractor(@RequestBody ContractorDetailsDTO contractorDto,
 			HttpServletRequest request) {
 		try {
+			logger.info("Creating Contractor....");
 			logger.info("Create Contractor..,{}", contractorDto.getPersonalDetails().toString());
 			logger.info("Create Contractor Bank details..,{}", contractorDto.getBankList().toString());
 			logger.info("Create Contractor SA details..,{}", contractorDto.getSuperAnnuationList().toString());
@@ -112,7 +115,7 @@ public class ContractorMVCController {
 	@RequestMapping(value = "/copyCertificate", method = RequestMethod.POST)
 	public ResponseEntity<?> copySingleFile(@RequestParam("uploadedCertificate") MultipartFile file,
 			HttpServletRequest request) {
-		logger.info("File selected... {}", file);
+		logger.info("Copying file selected in contractor module... {}", file);
 		String fileName = null;
 		if (!ProfileParserUtils.isSessionAlive(request)) {
 			logger.info("null session");
@@ -133,6 +136,7 @@ public class ContractorMVCController {
 				Path src = Paths.get(file.getOriginalFilename());
 				fileName = ProfileParserConstants.CURRENT_DIR +  src.getFileName();
 				Path dest = Paths.get(fileName);
+				
 				try {
 					Files.copy(src.toFile(), dest.toFile());
 					Thread.sleep(5000);
@@ -172,7 +176,7 @@ public class ContractorMVCController {
 				return ResponseEntity.badRequest().body("Session Expired. Please Login");
 			}
 
-			logger.info("Search details, {}", contractorSearchForm.toString());
+			logger.info("Searching contractor details, {}", contractorSearchForm.toString());
 
 		} catch (Exception e) {
 			logger.error("There is an issue in searching contractors...{}", new Exception(e.getMessage()));
@@ -226,7 +230,7 @@ public class ContractorMVCController {
 
 		marginDto = ProfileParserUtils.calculateMargin(marginDto);
 
-		logger.info("Controller invoked, to calculateMargin... {}", marginDto.toString());
+		logger.info("Contractor module: Controller invoked, to calculateMargin... {}", marginDto.toString());
 
 		return new ResponseEntity<>(marginDto, HttpStatus.OK);
 	}
@@ -247,6 +251,8 @@ public class ContractorMVCController {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
+		logger.info("Contractor Module: Loading state payroll tax value.");
+
 		Double payrollTax = 0.0;
 		if (!ProfileParserUtils.isObjectEmpty(state)) {
 			payrollTax = constantsService.getConstantValue(state);
@@ -271,6 +277,7 @@ public class ContractorMVCController {
 			logger.info("null session");
 			return ResponseEntity.badRequest().body("Session Expired. Please Login");
 		}
+		logger.info("Contractor Module: Loading Insurance percent value.");
 		Double insurancePercent = constantsService.getConstantValue(ProfileParserConstants.INSURANCE);
 
 		return new ResponseEntity<>(insurancePercent, HttpStatus.OK);

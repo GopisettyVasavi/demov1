@@ -35,7 +35,7 @@ public class LoginController {
 	
 	 @GetMapping("/")
 	    public String index() {
-		 logger.info("Login invoked...");
+		 logger.info("Login Module: Login Main landing page loaded...");
 	        return "login";
 	    }
 /**
